@@ -32,7 +32,12 @@
       '<div class="pick__top"><div><p class="card__title">' + group.name + "</p>" +
       '<p class="card__meta">' + ui.formatDay(session.startsAt) + " · " + ui.formatTime(session.startsAt) + " · " + group.venue + "</p></div>" +
       (badge ? '<span class="tag">' + badge + "</span>" : "") + "</div>" +
-      (why ? '<p class="pick__why">' + why + "</p>" : "") + "</a>";
+      (why ? '<p class="pick__why">' + why + "</p>" : "") + going(session) + "</a>";
+  }
+
+  function going(session) {
+    var list = Empower.people.attendeesOf(store.getPopulation(), session);
+    return list.length ? '<p class="pick__social">' + ui.namesText(list) + " from Empower " + (list.length === 1 ? "is" : "are") + " going</p>" : "";
   }
 
   var rest = sessions.filter(function (s) {
