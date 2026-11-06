@@ -4,7 +4,8 @@
    - Empower.clock: the app's "now", with a demo time-travel offset
    - Empower.ui: bottom nav, URL params, date and time text, escaping
    Load order on every page: data/groups.js, js/ui.js, js/store.js,
-   js/schedule.js, js/logic.js, then the page's own script.
+   js/schedule.js, js/logic.js, data/population.js, js/people.js, then the
+   page's own script.
    ========================================================================== */
 
 window.Empower = window.Empower || {};
@@ -55,6 +56,7 @@ Empower.ui = (function () {
     home: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
     events: '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     reflect: '<path d="M20 6L9 17l-5-5"/>',
+    people: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.8-5.5 6.5-5.5s5.5 2 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.6c2.6.2 4.6 2 5.5 5.4"/>',
     me: '<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/>'
   };
 
@@ -62,6 +64,7 @@ Empower.ui = (function () {
     { key: "home", label: "Home", href: "index.html" },
     { key: "events", label: "This week", href: "pages/events.html" },
     { key: "reflect", label: "Check in", href: "pages/reflect.html" },
+    { key: "people", label: "People", href: "pages/people.html" },
     { key: "me", label: "Me", href: "pages/me.html" }
   ];
 
@@ -120,8 +123,24 @@ Empower.ui = (function () {
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
+  /* "Maya K., Sam P. and 3 others" (people from the synthetic population). */
+  function namesText(people, max) {
+    max = max || 2;
+    var names = people.slice(0, max).map(function (p) { return p.name; });
+    var more = people.length - names.length;
+    if (!names.length) return "";
+    if (!more) return names.length === 2 ? names[0] + " and " + names[1] : names[0];
+    return names.join(", ") + " and " + more + (more === 1 ? " other" : " others");
+  }
+
+  function initials(name) {
+    return String(name).split(" ").map(function (w) { return w.charAt(0); }).join("").slice(0, 2).toUpperCase();
+  }
+
   return {
     renderNav: renderNav,
+    namesText: namesText,
+    initials: initials,
     page: page,
     root: root,
     param: param,

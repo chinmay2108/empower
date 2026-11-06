@@ -29,6 +29,9 @@
     attendedGroupIds: attendedBefore ? [group.id] : []
   }).reasons) : "";
   var started = new Date(session.startsAt) <= now;
+  var population = store.getPopulation();
+  var stats = Empower.people.groupStats(population, group.id, now);
+  var goingList = Empower.people.attendeesOf(population, session);
   var structureText = { high: "High: the activity does the talking", medium: "Some structure", low: "Open mingling" }[group.structure];
 
   var action;
@@ -49,6 +52,8 @@
     "<li><span>Where</span><span>" + group.venue + "</span></li>" +
     "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li>" +
     "<li><span>Structure</span><span>" + structureText + "</span></li>" +
+    "<li><span>Empower members, last 8 weeks</span><span>" + stats.people + " (" + stats.regulars + " regulars)</span></li>" +
+    "<li><span>Going from Empower</span><span>" + (goingList.length ? ui.namesText(goingList, 3) : "Be the first") + "</span></li>" +
     (attendedBefore ? "<li><span>You've been</span><span>" + attendedBefore + (attendedBefore === 1 ? " time" : " times") + "</span></li>" : "") +
     "</ul>" +
     (why ? '<div class="card card--accent"><p class="card__title">Why it fits you</p><p class="card__meta">' + why + "</p></div>" : "") +

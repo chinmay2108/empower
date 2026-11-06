@@ -33,6 +33,7 @@
     low: "It's open mingling. Find one person standing alone and say hi."
   };
   var confirmingCancel = false;
+  var going = Empower.people.attendeesOf(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt });
 
   function travelText() {
     return c.leaveAt ? ui.formatHHMM(c.leaveAt) + (c.travelMode ? " by " + c.travelMode : "") : "Your choice";
@@ -58,7 +59,8 @@
       '<h1 class="title">' + group.name + "</h1>" +
       '<ul class="facts"><li><span>Leave</span><span>' + travelText() + "</span></li>" +
       "<li><span>Where</span><span>" + group.venue + "</span></li>" +
-      "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li></ul>" +
+      "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li>" +
+      (going.length ? "<li><span>Also going</span><span>" + ui.namesText(going, 2) + "</span></li>" : "") + "</ul>" +
       '<p class="label">What to expect</p><p class="small muted">' + EXPECT[group.structure] + "</p>" +
       '<p class="label mt-4">Two easy openers</p><ul class="tips small"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>" +
       '<p class="label">If it\'s not your night</p><p class="small muted">Give it 30 minutes. Leaving after that is completely fine.</p>' +
