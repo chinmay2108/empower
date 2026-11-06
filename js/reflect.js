@@ -92,7 +92,8 @@
         var shared = Empower.people.sharedInterests(p, profile);
         return '<div class="person"><div class="avatar">' + ui.initials(p.name) + '</div><div class="person__body">' +
           '<p class="person__name">' + p.name + '</p><p class="person__meta">' +
-          (shared.length ? "Also likes " + shared.slice(0, 2).join(", ") : p.neighborhood) + "</p></div>" +
+          (Empower.people.sessionsTogether(p, store.getCommitments()) >= 2 ? "You've been at " + Empower.people.sessionsTogether(p, store.getCommitments()) + " sessions together" :
+            shared.length ? "Also likes " + shared.slice(0, 2).join(", ") : p.neighborhood) + "</p></div>" +
           '<button type="button" class="mini-btn' + (on ? " is-on" : "") + '" data-add="' + p.id + '" aria-pressed="' + on + '">' +
           (on ? "Added" : "Add") + "</button></div>";
       }).join("") +

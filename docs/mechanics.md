@@ -118,6 +118,9 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
 | `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
 | `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+| `Empower.people.familiarFaces(population, commitments, connections, minSessions)` | People you keep seeing but haven't added: `[{ person, sessions }]`, 3+ sessions together by default, top 5. Shown on People as "Familiar faces". |
+| `Empower.people.lastSeenTogether(person, commitments)` / `needsNudge(person, commitments, now)` | Latest session together; `true` once it's been 3 weeks. Stages never cool down; People shows a nudge instead. |
+| `Empower.people.warmGoing(population, session, connections, commitments, groups, profile)` | Matches at Kindling or warmer going to a session, for prep ("Emeka will be there"). |
 | `Empower.people.familiarGoing(population, sessions, connections, commitments, groups, profile)` | `{ sessionId: { count, warm, firstName } }`: people the user has met who are going; `warm` = matches at Kindling or warmer. |
 | `Empower.people.timeTogether(person, commitments, groups)` | `{ sessions, hours, plans, weekendSessions, byGroup }` with one person. Sessions you both attended count; a commitment made together from chat (`withPersonId`) counts as both there. |
 | `Empower.people.warmthStage(time, matched)` | `"spark"` (matched), `"kindling"` (3 sessions), `"warm"` (10 hours and a plan made together), `"glow"` (50 hours), `"bonfire"` (90 hours), or `"none"`. Unmatched people stop at kindling. |

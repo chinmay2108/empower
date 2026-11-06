@@ -169,3 +169,46 @@ test("familiarGoing counts only people the user has met who are going to each se
   assert.equal(out[s.id].warm, 0); // no time together yet
   assert.deepEqual(people.familiarGoing(POP, sessions, [], [], GROUPS, RICK), {});
 });
+
+/* ---------- Familiar faces and nudges ---------- */
+
+// A trivia regular and the Thursdays they went (any 3 weeks they attended).
+const regular = POP.find((x) => x.memberships.some((m) => m.groupId === "g01" && m.p > 0.6));
+const theirThursdays = (() => {
+  const out = [];
+  for (let w = regular.joinedWeek; out.length < 4 && w < 60; w++) {
+    if (people.attends(regular, "g01", w)) out.push(new Date(2026, 0, 4 + w * 7 + 4, 19));
+  }
+  return out;
+})();
+const triviaOn = (d, i) => ({ id: "ff" + i, groupId: "g01", startsAt: d.toISOString(), status: "attended" });
+
+test("Given 3 sessions with someone you haven't added, Then they show as a familiar face", () => {
+  const cs = theirThursdays.slice(0, 3).map(triviaOn);
+  const faces = people.familiarFaces(POP, cs, [], 3);
+  const me = faces.find((f) => f.person.id === regular.id);
+  assert.ok(me);
+  assert.equal(me.sessions, 3);
+  assert.ok(faces.length <= 5);
+  // Once added, they move to People instead.
+  assert.ok(!people.familiarFaces(POP, cs, [{ personId: regular.id }], 3).some((f) => f.person.id === regular.id));
+});
+
+test("needsNudge: 3 weeks since you last saw each other, never before you've met", () => {
+  const cs = theirThursdays.slice(0, 2).map(triviaOn);
+  const last = theirThursdays[1];
+  assert.equal(people.lastSeenTogether(regular, cs), last.toISOString());
+  assert.equal(people.needsNudge(regular, cs, new Date(last.getTime() + 20 * 864e5)), false);
+  assert.equal(people.needsNudge(regular, cs, new Date(last.getTime() + 21 * 864e5)), true);
+  assert.equal(people.needsNudge(regular, [], NOW), false);
+});
+
+test("warmGoing lists only added matches at Kindling or warmer who are going", () => {
+  const session = { groupId: "g01", startsAt: theirThursdays[3].toISOString() };
+  const cs = theirThursdays.slice(0, 3).map(triviaOn);
+  const conn = [{ personId: regular.id }];
+  const matched = people.willAddBack(regular, RICK, 3, RICK.createdAt);
+  const out = people.warmGoing(POP, session, conn, cs, GROUPS, RICK);
+  assert.equal(out.some((p) => p.id === regular.id), matched);
+  assert.deepEqual(people.warmGoing(POP, session, [], cs, GROUPS, RICK), []);
+});

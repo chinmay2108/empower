@@ -34,6 +34,8 @@
   };
   var confirmingCancel = false;
   var going = Empower.people.attendeesOf(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt });
+  var warm = Empower.people.warmGoing(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt },
+    store.getConnections(), store.getCommitments(), store.getGroups(), store.getProfile());
 
   function travelText() {
     return c.leaveAt ? ui.formatHHMM(c.leaveAt) + (c.travelMode ? " by " + c.travelMode : "") : "Your choice";
@@ -55,6 +57,8 @@
       '<button type="button" class="btn btn--secondary" data-action="ask-cancel">Can\'t make it</button>';
 
     host.innerHTML =
+      (warm.length ? '<div class="card card--accent"><p class="card__title">' + ui.namesText(warm, 2) + (warm.length === 1 ? " will" : " will all") +
+        ' be there</p><p class="card__meta">A familiar face makes walking in easier.</p></div>' : "") +
       '<p class="eyebrow">' + ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt) + "</p>" +
       '<h1 class="title">' + group.name + "</h1>" +
       '<ul class="facts"><li><span>Leave</span><span>' + travelText() + "</span></li>" +

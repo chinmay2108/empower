@@ -287,6 +287,54 @@ Empower.people = (function () {
   }
 
   /*
+   * familiarFaces(population, commitments, connections, minSessions)
+   * People the user keeps seeing but hasn't added: [{ person, sessions }]
+   * with at least minSessions (default 3) sessions together, most first,
+   * at most 5. Lets the app say "You've been at 3 sessions with Hassan".
+   */
+  function familiarFaces(population, commitments, connections, minSessions) {
+    var min = minSessions || 3;
+    var added = {};
+    (connections || []).forEach(function (k) { added[k.personId] = true; });
+    return population
+      .filter(function (p) { return !added[p.id]; })
+      .map(function (p) { return { person: p, sessions: sessionsTogether(p, commitments) }; })
+      .filter(function (x) { return x.sessions >= min; })
+      .sort(function (a, b) { return b.sessions - a.sessions || (a.person.id < b.person.id ? -1 : 1); })
+      .slice(0, 5);
+  }
+
+  /* lastSeenTogether(person, commitments): start time of the latest session you both attended, or null. */
+  function lastSeenTogether(person, commitments) {
+    var times = sharedSessions(person, commitments).map(function (c) { return c.startsAt; }).sort();
+    return times.length ? times[times.length - 1] : null;
+  }
+
+  /*
+   * needsNudge(person, commitments, now)
+   * True when you've spent time together before but not in the last 3
+   * weeks. Stages never cool down; this is a gentle nudge instead.
+   */
+  function needsNudge(person, commitments, now) {
+    var last = lastSeenTogether(person, commitments);
+    return !!last && new Date(now).getTime() - new Date(last).getTime() >= 21 * 86400000;
+  }
+
+  /*
+   * warmGoing(population, session, connections, commitments, groups, profile)
+   * Matches at Kindling or warmer who are going to a session, for day-of
+   * prep ("Emeka will be there").
+   */
+  function warmGoing(population, session, connections, commitments, groups, profile) {
+    var met = {};
+    (connections || []).forEach(function (k) { met[k.personId] = true; });
+    return attendeesOf(population, session).filter(function (p) {
+      if (!met[p.id] || !willAddBack(p, profile, sessionsTogether(p, commitments), profile && profile.createdAt)) return false;
+      return stageRank(warmthStage(timeTogether(p, commitments, groups), true)) >= stageRank("kindling");
+    });
+  }
+
+  /*
    * scoreOf(person): a synthetic person's public Empower score, fixed per
    * person. Warmer, more reliable people have met up more. 0 to about 120.
    */
@@ -305,6 +353,10 @@ Empower.people = (function () {
   }
 
   return {
+    familiarFaces: familiarFaces,
+    lastSeenTogether: lastSeenTogether,
+    needsNudge: needsNudge,
+    warmGoing: warmGoing,
     familiarGoing: familiarGoing,
     timeTogether: timeTogether,
     warmthStage: warmthStage,

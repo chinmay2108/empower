@@ -18,6 +18,19 @@
   var userKey = profile ? profile.createdAt : "";
 
   var STAGE_LABELS = { spark: "Spark", kindling: "Kindling", warm: "Warm", glow: "Glow", bonfire: "Bonfire" };
+  var now = Empower.clock.now();
+
+  /* People you keep seeing but haven't added: shown softly, first names only. */
+  function familiarSection() {
+    var faces = people.familiarFaces(store.getPopulation(), commitments, store.getConnections(), 3);
+    if (!faces.length) return "";
+    return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f) {
+      return '<div class="person"><div class="avatar">' + ui.initials(f.person.name) + '</div><div class="person__body">' +
+        '<p class="person__name">' + f.person.name.split(" ")[0] + '</p><p class="person__meta">You\'ve been at ' + f.sessions +
+        " sessions together. Say hi next time.</p></div></div>";
+    }).join("");
+  }
+
   var rows = store.getConnections().map(function (k) {
     var person = store.getPerson(k.personId);
     var together = people.sessionsTogether(person, commitments);
@@ -35,12 +48,14 @@
       var last = store.getMessages(r.person.id).slice(-1)[0];
       return '<a class="person" href="person.html?id=' + r.person.id + '"><div class="avatar">' + ui.initials(r.person.name) + "</div>" +
         '<div class="person__body"><p class="person__name">' + r.person.name + '</p><p class="person__meta">' +
-        (last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
+        (people.needsNudge(r.person, commitments, now) ? "It's been 3 weeks. Go together this week?" :
+          last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
         " · " + STAGE_LABELS[people.warmthStage(people.timeTogether(r.person, commitments, store.getGroups()), true)] +
         "</p></div>" + (last ? "" : '<span class="tag">New</span>') + "</a>";
     }).join("") :
       '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">After a session, check in and add the people you met. If they add you too, they show up here.</p>' +
       '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>') +
+    familiarSection() +
     (pending ? '<p class="small muted mt-4">' + pending + (pending === 1 ? " person hasn't" : " people haven't") +
       " added you back yet. Matches only show when it's mutual.</p>" : "");
 
