@@ -342,6 +342,25 @@ Empower.logic = (function () {
     return next;
   }
 
+  /* ---------- This week: swipe to decide ---------- */
+
+  var SWIPES_PER_WEEK = 3;
+
+  /* passesThisWeek(passes, now): passes ({ sessionId, groupId, at }) from the last 7 days. */
+  function passesThisWeek(passes, now) {
+    var cutoff = new Date(now).getTime() - 7 * 86400000;
+    return (passes || []).filter(function (p) { return new Date(p.at).getTime() > cutoff; });
+  }
+
+  /*
+   * swipesLeft(passes, now): how many more picks the user can see this
+   * week. They get 3; each left swipe uses one. At 0 they go to the full
+   * list instead (pages/browse.html).
+   */
+  function swipesLeft(passes, now) {
+    return Math.max(0, SWIPES_PER_WEEK - passesThisWeek(passes, now).length);
+  }
+
   /* ---------- Session threads (E16) ---------- */
 
   var THREAD_DAYS = 7;
@@ -479,7 +498,8 @@ Empower.logic = (function () {
    * Top sessions for the user, at most one per group. Skips sessions that
    * already started, ones they're going to, groups they've hidden (rated
    * "probably not" twice) and groups two or more steps above their comfort
-   * step. extras (optional): { reflections, familiarBySession }.
+   * step. extras (optional): { reflections, familiarBySession,
+   * passedGroupIds } (groups swiped left this week are skipped).
    * Ties break by earliest start, then session id, so order is stable.
    */
   function rankPicks(sessions, groups, profile, commitments, now, limit, extras) {
@@ -494,7 +514,8 @@ Empower.logic = (function () {
       .filter(function (s) {
         return new Date(s.startsAt).getTime() > nowMs && committedIds.indexOf(s.id) === -1 &&
           levelGap(byId[s.groupId], stepOf(profile)) < 2 &&
-          history.hiddenGroupIds.indexOf(s.groupId) === -1;
+          history.hiddenGroupIds.indexOf(s.groupId) === -1 &&
+          (x.passedGroupIds || []).indexOf(s.groupId) === -1;
       })
       .map(function (s) {
         var r = scoreSession(s, byId[s.groupId], profile, history);
@@ -698,6 +719,8 @@ Empower.logic = (function () {
     stepUpDue: stepUpDue,
     stepDown: stepDown,
     threadOpen: threadOpen,
+    passesThisWeek: passesThisWeek,
+    swipesLeft: swipesLeft,
     slotsToCheck: slotsToCheck,
     answerSlotCheck: answerSlotCheck
   };

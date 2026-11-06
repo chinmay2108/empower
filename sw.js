@@ -21,6 +21,7 @@ var NETWORK_WAIT_MS = 3000;
 
 var FILES = [
   "./index.html",
+  "./pages/browse.html",
   "./pages/chat.html",
   "./pages/commit.html",
   "./pages/events.html",
@@ -34,6 +35,7 @@ var FILES = [
   "./pages/reflect.html",
   "./pages/thread.html",
   "./css/styles.css",
+  "./js/browse.js",
   "./js/chat.js",
   "./js/commit.js",
   "./js/demo.js",

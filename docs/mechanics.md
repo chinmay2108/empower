@@ -99,7 +99,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `thread.viewed`, `thread.posted`, `chat.voice_sent`, `chat.voice_played`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `events.swiped_right`, `events.swiped_left`, `browse.viewed`, `lab.ran`, `prep.intro_shown`, `thread.viewed`, `thread.posted`, `chat.voice_sent`, `chat.voice_played`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -177,3 +177,14 @@ A thread per session for everyone who went, open for 7 days after it ends. Text 
 | `Empower.ui.chatTime(iso)`, `Empower.ui.scrollToLatest()` | "6:31 PM" for bubbles; keep the newest message in view. |
 
 Voice notes are saved in this browser with the message (`audio`, `seconds`). `addMessage` and `addThreadPost` return `null` when storage is full, so the page can say so. A minute is roughly 100 KB.
+
+### This week: swipe to decide
+
+This week shows one pick at a time as a card: swipe right (or tap the check) to commit, left (or the cross) for the next best. Up to 3 a week; after 3 passes the user lands on `pages/browse.html`, the full list.
+
+| Call | What it decides |
+| --- | --- |
+| `passesThisWeek(passes, now)` | Passes from the last 7 days. |
+| `swipesLeft(passes, now)` | Picks left to see this week: 3 minus passes this week, never below 0. |
+| `Empower.store.getPasses()` / `addPass({ sessionId, groupId, at })` | Picks swiped left. `rankPicks` skips their groups via `extras.passedGroupIds`. |
+
