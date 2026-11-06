@@ -1,7 +1,8 @@
 /* ==========================================================================
    reflect.js: Flow 4, check in after an event and rate it in three taps
    Without ?c: lists sessions to confirm ("did you go?") and sessions to rate.
-   With ?c=commitmentId: the rating form for that session.
+   With ?c=commitmentId: the rating form, then "who did you meet?" (people
+   from the synthetic population who were at that session), then progress.
    ========================================================================== */
 
 (function () {
@@ -15,6 +16,8 @@
   ui.renderNav("reflect");
 
   var form = { enjoyed: null, talkedToSomeone: null, wouldReturn: null, note: "", error: "" };
+  var meet = { people: [], added: [] };
+  var MAX_TO_SHOW = 8;
 
   function footer(inner) { return '<div class="footer-action"><div class="footer-action__inner">' + inner + "</div></div>"; }
   function groupOf(c) { return store.getGroup(c.groupId); }
@@ -71,6 +74,32 @@
       footer('<button type="button" class="btn" data-action="save">Save</button>');
   }
 
+  /* Who was there: people from the population at this session, most in common first. */
+  function renderMeet(c) {
+    var profile = store.getProfile();
+    var already = store.getConnections().map(function (k) { return k.personId; });
+    meet.people = Empower.people.attendeesOf(store.getPopulation(), c)
+      .filter(function (p) { return already.indexOf(p.id) === -1; })
+      .sort(function (a, b) {
+        return Empower.people.sharedInterests(b, profile).length - Empower.people.sharedInterests(a, profile).length || (a.id < b.id ? -1 : 1);
+      }).slice(0, MAX_TO_SHOW);
+    if (!meet.people.length) return renderDone(c);
+    host.innerHTML =
+      '<h1 class="title">Who did you meet?</h1>' +
+      '<p class="subtitle">Add anyone you\'d see again. If they add you too, you\'re matched. Nobody sees who didn\'t add them.</p>' +
+      meet.people.map(function (p) {
+        var on = meet.added.indexOf(p.id) !== -1;
+        var shared = Empower.people.sharedInterests(p, profile);
+        return '<div class="person"><div class="avatar">' + ui.initials(p.name) + '</div><div class="person__body">' +
+          '<p class="person__name">' + p.name + '</p><p class="person__meta">' +
+          (shared.length ? "Also likes " + shared.slice(0, 2).join(", ") : p.neighborhood) + "</p></div>" +
+          '<button type="button" class="mini-btn' + (on ? " is-on" : "") + '" data-add="' + p.id + '" aria-pressed="' + on + '">' +
+          (on ? "Added" : "Add") + "</button></div>";
+      }).join("") +
+      footer('<button type="button" class="btn" data-action="meet-done">Done</button>' +
+        '<button type="button" class="btn btn--secondary" data-action="meet-skip">Skip</button>');
+  }
+
   function renderDone(c) {
     var g = groupOf(c);
     var row = logic.progressByGroup(store.getCommitments(), groups).find(function (r) { return r.group.id === g.id; });
@@ -84,6 +113,8 @@
       liked +
       (next ? '<div class="card card--outline"><p class="eyebrow">Next session</p><p class="card__title">' + g.name +
         '</p><p class="card__meta">' + ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt) + "</p></div>" : "") +
+      (meet.added.length ? '<p class="small muted center">You added ' + meet.added.length + (meet.added.length === 1 ? " person" : " people") +
+        '. Matches show up in <a href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');
   }
@@ -106,6 +137,28 @@
       renderList();
       return;
     }
+    var add = e.target.closest("[data-add]");
+    if (add) {
+      var pid = add.getAttribute("data-add");
+      var i = meet.added.indexOf(pid);
+      if (i === -1) meet.added.push(pid); else meet.added.splice(i, 1);
+      renderMeet(current);
+      return;
+    }
+    if (e.target.closest('[data-action="meet-done"]')) {
+      meet.added.forEach(function (pid) {
+        store.addConnection({ personId: pid, sessionId: current.sessionId, groupId: current.groupId });
+      });
+      Empower.log("reflect.people_added", { commitment: current.id, count: meet.added.length });
+      renderDone(current);
+      return;
+    }
+    if (e.target.closest('[data-action="meet-skip"]')) {
+      meet.added = [];
+      Empower.log("reflect.people_skipped", { commitment: current.id });
+      renderDone(current);
+      return;
+    }
     var choice = e.target.closest("[data-field]");
     if (choice) {
       form[choice.getAttribute("data-field")] = choice.getAttribute("data-value");
@@ -124,7 +177,7 @@
         talkedToSomeone: form.talkedToSomeone === "yes", wouldReturn: form.wouldReturn === "yes", note: form.note.trim()
       });
       Empower.log("reflect.saved", { commitment: current.id, enjoyed: Number(form.enjoyed), wouldReturn: form.wouldReturn === "yes" });
-      renderDone(current);
+      renderMeet(current);
     }
   });
 

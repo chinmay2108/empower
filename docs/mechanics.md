@@ -53,3 +53,22 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 ## Tests
 
 `node --test tests/*.test.js` runs the logic tests. GitHub runs them on every PR ("App unit tests").
+
+## People: synthetic population and matching
+
+`data/population.js` holds **500 synthetic people** (invented by `scripts/generate_population.py`, fixed seed). They are not real users. Each has interests, free times, a comfort level, and memberships in 1 to 3 groups with a weekly attendance probability. A few per group are regulars.
+
+| Call | Returns |
+| --- | --- |
+| `Empower.store.getPopulation()` / `getPerson(id)` | The synthetic people. Read-only. |
+| `Empower.store.getConnections()` / `addConnection({ personId, sessionId, groupId })` | People the user added after a session. |
+| `Empower.store.getMessages(personId)` / `addMessage({ personId, from, text, sessionId? })` | Chat history. `from` is `"me"`, `"them"` or `"app"`. |
+| `Empower.people.attendeesOf(population, session)` | Who was at (or is going to) a session. Same answer every time, for any week. |
+| `Empower.people.groupStats(population, groupId, now)` | `{ people, regulars, avgTurnout }` over the last 8 weeks. |
+| `Empower.people.sharedInterests(person, profile)` | Interests in common. |
+| `Empower.people.sessionsTogether(person, commitments)` | Sessions the user attended where this person was too. |
+| `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
+| `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
+| `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+
+To regenerate the population: `python3 scripts/generate_population.py`.

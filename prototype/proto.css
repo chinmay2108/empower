@@ -15,67 +15,6 @@
   padding: 2px var(--space-3);
 }
 
-/* People rows */
-.person {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--color-line);
-  text-decoration: none;
-}
-.person__body { flex: 1; min-width: 0; }
-.person__name { font-weight: 700; margin: 0; }
-.person__meta { font-size: var(--text-sm); color: var(--color-muted); margin: 0; }
-
-.avatar {
-  flex: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  font-size: var(--text-sm);
-  background: var(--color-accent-soft);
-  color: var(--color-accent);
-}
-.avatar--lg { width: 72px; height: 72px; font-size: var(--text-lg); }
-
-.mini-btn {
-  flex: none;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-line);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-decoration: none;
-}
-.mini-btn.is-on { background: var(--color-text); color: var(--color-bg); border-color: var(--color-text); }
-
-/* Chat */
-.chat { display: grid; gap: var(--space-2); margin-bottom: var(--space-5); }
-.bubble {
-  max-width: 80%;
-  padding: var(--space-3) var(--space-4);
-  border-radius: 18px;
-  font-size: var(--text-sm);
-}
-.bubble--them { background: var(--color-surface); justify-self: start; border-bottom-left-radius: 6px; }
-.bubble--me { background: var(--color-text); color: var(--color-bg); justify-self: end; border-bottom-right-radius: 6px; }
-.bubble--app {
-  justify-self: stretch;
-  max-width: none;
-  background: var(--color-accent-soft);
-  border-radius: var(--radius-card);
-}
-
-.composer {
-  display: flex;
-  gap: var(--space-2);
-}
-.composer .input { border-radius: var(--radius-pill); }
-
 /* Flow map on prototype/index.html */
 .flow { margin-bottom: var(--space-6); }
 .flow__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }

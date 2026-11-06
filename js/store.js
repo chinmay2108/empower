@@ -19,6 +19,9 @@
      Session      generated:        see js/schedule.js
      Commitment   many:             { id, sessionId, groupId, startsAt, leaveAt, travelMode, status, createdAt }
                                     status: "committed" | "cancelled" | "attended" | "missed"
+     Person       seed data:        data/population.js (SYNTHETIC, read-only)
+     Connection   many:             { id, personId, sessionId, groupId, addedAt }
+     Message      many:             { id, personId, from, text, at, sessionId? }
      Reflection   many:             { id, commitmentId, enjoyed (1-3), talkedToSomeone (bool),
                                       wouldReturn (bool), note, createdAt }
    ========================================================================== */
@@ -29,7 +32,9 @@ Empower.store = (function () {
   var KEYS = {
     profile: "empower.profile",
     commitments: "empower.commitments",
-    reflections: "empower.reflections"
+    reflections: "empower.reflections",
+    connections: "empower.connections",
+    messages: "empower.messages"
   };
 
   function read(key, fallback) {
@@ -114,6 +119,40 @@ Empower.store = (function () {
       list.push(item);
       write(KEYS.reflections, list);
       Empower.log("store.reflection_added", { id: item.id, commitmentId: item.commitmentId });
+      return item;
+    },
+
+    /* ---- People (synthetic population, read-only) ---- */
+    getPopulation: function () {
+      return Empower.POPULATION || [];
+    },
+    getPerson: function (id) {
+      return (Empower.POPULATION || []).find(function (p) { return p.id === id; }) || null;
+    },
+
+    /* ---- Connections: people the user added after a session ---- */
+    getConnections: function () {
+      return read(KEYS.connections, []);
+    },
+    addConnection: function (fields) {
+      var list = read(KEYS.connections, []);
+      if (list.some(function (c) { return c.personId === fields.personId; })) return null;
+      var item = Object.assign({ id: newId("k"), addedAt: new Date().toISOString() }, fields);
+      list.push(item);
+      write(KEYS.connections, list);
+      Empower.log("store.connection_added", { personId: item.personId });
+      return item;
+    },
+
+    /* ---- Messages: { personId, from: "me" | "them" | "app", text, at, sessionId? } ---- */
+    getMessages: function (personId) {
+      return read(KEYS.messages, []).filter(function (m) { return m.personId === personId; });
+    },
+    addMessage: function (fields) {
+      var list = read(KEYS.messages, []);
+      var item = Object.assign({ id: newId("m"), at: new Date().toISOString() }, fields);
+      list.push(item);
+      write(KEYS.messages, list);
       return item;
     },
 
