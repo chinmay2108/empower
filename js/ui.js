@@ -1,23 +1,51 @@
 /* ==========================================================================
    ui.js: shared helpers every page uses
    - Empower.log: one place for observability (console now, analytics later)
-   - Empower.ui.renderNav: the bottom navigation, so no page copies it
-   - Empower.ui.formatX: consistent date and time text across pages
+   - Empower.clock: the app's "now", with a demo time-travel offset
+   - Empower.ui: bottom nav, URL params, date and time text, escaping
    Load order on every page: data/groups.js, js/ui.js, js/store.js,
-   js/schedule.js, then the page's own script.
+   js/schedule.js, js/logic.js, then the page's own script.
    ========================================================================== */
 
 window.Empower = window.Empower || {};
 
 /*
  * Empower.log(eventName, details)
- * Use for anything you would want to see when debugging or measuring.
- * Name events as "area.what_happened", e.g. "events.commit_clicked".
+ * Name events "area.what_happened", e.g. "commit.saved".
  * Session 11 (analytics) will forward these to PostHog from this one place.
  */
 Empower.log = function (eventName, details) {
   console.info("[empower]", eventName, details || {});
 };
+
+/*
+ * Empower.clock.now()
+ * Every page asks this for the current time instead of calling new Date()
+ * directly. For demos, Me > Demo tools can move the clock forward so you can
+ * check in to an event without waiting for Thursday.
+ */
+Empower.clock = (function () {
+  var KEY = "empower.clockOffsetMs";
+  function offset() {
+    try { return Number(window.localStorage.getItem(KEY)) || 0; } catch (e) { return 0; }
+  }
+  return {
+    now: function () { return new Date(Date.now() + offset()); },
+    isShifted: function () { return offset() !== 0; },
+    shiftHours: function (hours) {
+      window.localStorage.setItem(KEY, String(offset() + hours * 3600000));
+      Empower.log("clock.shifted", { hours: hours });
+    },
+    jumpTo: function (date) {
+      window.localStorage.setItem(KEY, String(new Date(date).getTime() - Date.now()));
+      Empower.log("clock.jumped", { to: new Date(date).toISOString() });
+    },
+    reset: function () {
+      window.localStorage.removeItem(KEY);
+      Empower.log("clock.reset", {});
+    }
+  };
+})();
 
 Empower.ui = (function () {
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -34,7 +62,7 @@ Empower.ui = (function () {
     { key: "home", label: "Home", href: "index.html" },
     { key: "events", label: "This week", href: "pages/events.html" },
     { key: "reflect", label: "Check in", href: "pages/reflect.html" },
-    { key: "me", label: "Me", href: "pages/onboarding.html" }
+    { key: "me", label: "Me", href: "pages/me.html" }
   ];
 
   function icon(key) {
@@ -43,22 +71,25 @@ Empower.ui = (function () {
       'aria-hidden="true">' + ICONS[key] + "</svg>";
   }
 
-  /*
-   * renderNav(activeKey)
-   * Pages inside /pages/ pass their depth so links resolve correctly.
-   * Put <nav id="nav"></nav> at the end of <body>.
-   */
+  /* Pages set <body data-root="../"> when they live in /pages/. */
+  function root() { return document.body.getAttribute("data-root") || ""; }
+
+  /* renderNav(activeKey): put <nav id="nav"></nav> at the end of <body>. */
   function renderNav(activeKey) {
     var host = document.getElementById("nav");
     if (!host) return;
-    var prefix = document.body.getAttribute("data-root") || "";
     host.className = "nav";
     host.innerHTML = '<div class="nav__inner">' + NAV_ITEMS.map(function (item) {
       var current = item.key === activeKey ? ' aria-current="page"' : "";
-      return '<a class="nav__link" href="' + prefix + item.href + '"' + current + ">" +
+      return '<a class="nav__link" href="' + root() + item.href + '"' + current + ">" +
         icon(item.key) + "<span>" + item.label + "</span></a>";
     }).join("") + "</div>";
   }
+
+  /* Link to another page from anywhere, e.g. page("group.html?session=x"). */
+  function page(path) { return root() ? path : "pages/" + path; }
+
+  function param(name) { return new URLSearchParams(window.location.search).get(name); }
 
   function formatDay(iso) {
     var d = new Date(iso);
@@ -67,14 +98,22 @@ Empower.ui = (function () {
 
   function formatTime(iso) {
     var d = new Date(iso);
-    var h = d.getHours();
-    var m = d.getMinutes();
-    var suffix = h >= 12 ? "pm" : "am";
-    h = h % 12 || 12;
-    return h + (m ? ":" + (m < 10 ? "0" : "") + m : "") + suffix;
+    return formatClock(d.getHours(), d.getMinutes());
   }
 
-  /* Escape user-typed text before putting it into HTML. */
+  /* "18:40" -> "6:40pm" */
+  function formatHHMM(hhmm) {
+    var p = String(hhmm || "").split(":");
+    return p.length === 2 ? formatClock(Number(p[0]), Number(p[1])) : "";
+  }
+
+  function formatClock(h, m) {
+    var suffix = h >= 12 ? "pm" : "am";
+    var hh = h % 12 || 12;
+    return hh + (m ? ":" + (m < 10 ? "0" : "") + m : "") + suffix;
+  }
+
+  /* Escape any text that came from the user before putting it in HTML. */
   function escapeHtml(text) {
     return String(text == null ? "" : text)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -83,8 +122,12 @@ Empower.ui = (function () {
 
   return {
     renderNav: renderNav,
+    page: page,
+    root: root,
+    param: param,
     formatDay: formatDay,
     formatTime: formatTime,
+    formatHHMM: formatHHMM,
     escapeHtml: escapeHtml
   };
 })();

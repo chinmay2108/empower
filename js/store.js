@@ -13,7 +13,8 @@
      and tell the team, because every page depends on it.
 
    Entities (see README, "Data model"):
-     Profile      one per browser:  { name, interests[], freeDays[], comfort, createdAt }
+     Profile      one per browser:  { name, interests[], freeSlots[], comfort, createdAt }
+                                    freeSlots like "thu-eve", "sat-am"; comfort "easy" | "nervous" | "anxious"
      Group        seed data:        see data/groups.js
      Session      generated:        see js/schedule.js
      Commitment   many:             { id, sessionId, groupId, startsAt, leaveAt, travelMode, status, createdAt }
@@ -116,9 +117,14 @@ Empower.store = (function () {
       return item;
     },
 
+    getCommitment: function (id) {
+      return read(KEYS.commitments, []).find(function (c) { return c.id === id; }) || null;
+    },
+
     /* ---- Testing helper: wipe all saved data in this browser ---- */
     resetAll: function () {
       Object.keys(KEYS).forEach(function (k) { window.localStorage.removeItem(KEYS[k]); });
+      window.localStorage.removeItem("empower.clockOffsetMs");
       Empower.log("store.reset", {});
     }
   };
