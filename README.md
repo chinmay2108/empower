@@ -21,6 +21,8 @@ Then open http://localhost:8000.
 
 **Install it like an app:** open the live site on your phone. iPhone (Safari): Share > Add to Home Screen. Android (Chrome): menu > Install app. It opens full-screen, works offline, and picks up new versions the first time it's opened after a deploy (no reinstall). This only works on the live site (https), not when you open `index.html` as a file; the app itself works the same either way. How it works: `manifest.webmanifest` (name, icons) and `sw.js` (saves every file for offline). Adding a page or script? Add it to the list in `sw.js`; `tests/pwa.test.js` checks.
 
+**Photos:** every synthetic person has an AI-generated face (StyleGAN2, nobody real) from [sejas/ai-StyleGAN2-faces](https://github.com/sejas/ai-StyleGAN2-faces), hand-picked to adults and matched to first names. `scripts/add_photos.py` makes `img/people/` and `data/photos.js`; `scripts/face_labels.txt` lists the picks.
+
 **Clickable mockups of every flow:** open `prototype/index.html` (live: https://chinmay2108.github.io/empower/prototype/). Sample data, no logic. Use them to agree on a screen before building it.
 
 **Start from a clean slate:** open the browser console (Cmd+Option+J) and run `Empower.store.resetAll()`, then reload.

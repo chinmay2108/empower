@@ -191,8 +191,14 @@ Empower.ui = (function () {
     return '<div class="' + cls + '">' + initials(person.name) + "</div>";
   }
 
+  /* faces(people, max): a small overlapping row of photos, for "who's going". */
+  function faces(list, max) {
+    return '<span class="faces">' + list.slice(0, max || 3).map(function (p) { return avatar(p, "sm"); }).join("") + "</span>";
+  }
+
   return {
     toast: toast,
+    faces: faces,
     ember: ember,
     avatar: avatar,
     renderNav: renderNav,
