@@ -1,0 +1,6949 @@
+{
+  "format_version": "1.0",
+  "document_kind": "derived_system",
+  "system_id": "events_system",
+  "tier": 1,
+  "category": "Primitives",
+  "status": "complete",
+  "allowed_dependency_tiers": [
+    0
+  ],
+  "purpose": "Reusable primitives composed from lower tiers.",
+  "tokens": [],
+  "components": [
+    {
+      "component_id": "icon_signal",
+      "category": "Primitives",
+      "name": "Icons / signal",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / signal for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:2",
+        "slots": [
+          "53:2",
+          "53:3"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:2",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:2",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:2",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:2",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:2",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:2",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:2",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:2",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:2",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:2",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:2",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:2",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:2",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:3",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:3",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:3",
+          "property": "width",
+          "token_name": "events.icon.signal.width"
+        },
+        {
+          "slot": "53:3",
+          "property": "height",
+          "token_name": "events.icon.signal.height"
+        },
+        {
+          "slot": "53:3",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:3",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:3",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:3",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:3",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:3",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:3",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:3",
+          "property": "vectorPaths",
+          "token_name": "events.icon.signal.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_signal",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:2",
+          "53:3"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_wifi",
+      "category": "Primitives",
+      "name": "Icons / wifi",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / wifi for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:4",
+        "slots": [
+          "53:4",
+          "53:5"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:4",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:4",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:4",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:4",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:4",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:4",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:4",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:4",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:4",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:4",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:4",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:4",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:4",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:5",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:5",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:5",
+          "property": "width",
+          "token_name": "events.icon.wifi.width"
+        },
+        {
+          "slot": "53:5",
+          "property": "height",
+          "token_name": "events.icon.wifi.height"
+        },
+        {
+          "slot": "53:5",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:5",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:5",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:5",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:5",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:5",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:5",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:5",
+          "property": "vectorPaths",
+          "token_name": "events.icon.wifi.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_wifi",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:4",
+          "53:5"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_battery",
+      "category": "Primitives",
+      "name": "Icons / battery",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / battery for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:6",
+        "slots": [
+          "53:6",
+          "53:7"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:6",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:6",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:6",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:6",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:6",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:6",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:6",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:6",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:6",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:6",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:6",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:6",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:6",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:7",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:7",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:7",
+          "property": "width",
+          "token_name": "events.icon.battery.width"
+        },
+        {
+          "slot": "53:7",
+          "property": "height",
+          "token_name": "events.icon.battery.height"
+        },
+        {
+          "slot": "53:7",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:7",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:7",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:7",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:7",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:7",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:7",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:7",
+          "property": "vectorPaths",
+          "token_name": "events.icon.battery.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_battery",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:6",
+          "53:7"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_plus",
+      "category": "Primitives",
+      "name": "Icons / plus",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / plus for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:8",
+        "slots": [
+          "53:8",
+          "53:9"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:8",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:8",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:8",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:8",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:8",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:8",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:8",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:8",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:8",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:8",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:8",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:8",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:8",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:9",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:9",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:9",
+          "property": "width",
+          "token_name": "events.icon.plus.width"
+        },
+        {
+          "slot": "53:9",
+          "property": "height",
+          "token_name": "events.icon.plus.height"
+        },
+        {
+          "slot": "53:9",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:9",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:9",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:9",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:9",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:9",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:9",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:9",
+          "property": "vectorPaths",
+          "token_name": "events.icon.plus.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_plus",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:8",
+          "53:9"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_bell",
+      "category": "Primitives",
+      "name": "Icons / bell",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / bell for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:10",
+        "slots": [
+          "53:10",
+          "53:11"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:10",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:10",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:10",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:10",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:10",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:10",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:10",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:10",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:10",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:10",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:10",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:10",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:10",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:11",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:11",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:11",
+          "property": "width",
+          "token_name": "events.icon.bell.width"
+        },
+        {
+          "slot": "53:11",
+          "property": "height",
+          "token_name": "events.icon.bell.height"
+        },
+        {
+          "slot": "53:11",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:11",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:11",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:11",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:11",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:11",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:11",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:11",
+          "property": "vectorPaths",
+          "token_name": "events.icon.bell.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_bell",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:10",
+          "53:11"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_home",
+      "category": "Primitives",
+      "name": "Icons / home",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / home for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:12",
+        "slots": [
+          "53:12",
+          "53:13"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:12",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:12",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:12",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:12",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:12",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:12",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:12",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:12",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:12",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:12",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:12",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:12",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:12",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:13",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:13",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:13",
+          "property": "width",
+          "token_name": "events.icon.home.width"
+        },
+        {
+          "slot": "53:13",
+          "property": "height",
+          "token_name": "events.icon.home.height"
+        },
+        {
+          "slot": "53:13",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:13",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:13",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:13",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:13",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:13",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:13",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:13",
+          "property": "vectorPaths",
+          "token_name": "events.icon.home.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_home",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:12",
+          "53:13"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_back",
+      "category": "Primitives",
+      "name": "Icons / back",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / back for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:14",
+        "slots": [
+          "53:14",
+          "53:15"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:14",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:14",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:14",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:14",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:14",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:14",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:14",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:14",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:14",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:14",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:14",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:14",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:14",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:15",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:15",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:15",
+          "property": "width",
+          "token_name": "events.icon.back.width"
+        },
+        {
+          "slot": "53:15",
+          "property": "height",
+          "token_name": "events.icon.back.height"
+        },
+        {
+          "slot": "53:15",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:15",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:15",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:15",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:15",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:15",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:15",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:15",
+          "property": "vectorPaths",
+          "token_name": "events.icon.back.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_back",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:14",
+          "53:15"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_share",
+      "category": "Primitives",
+      "name": "Icons / share",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / share for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:16",
+        "slots": [
+          "53:16",
+          "53:17"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:16",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:16",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:16",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:16",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:16",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:16",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:16",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:16",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:16",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:16",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:16",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:16",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:16",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:17",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:17",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:17",
+          "property": "width",
+          "token_name": "events.icon.share.width"
+        },
+        {
+          "slot": "53:17",
+          "property": "height",
+          "token_name": "events.icon.share.height"
+        },
+        {
+          "slot": "53:17",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:17",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:17",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:17",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:17",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:17",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:17",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:17",
+          "property": "vectorPaths",
+          "token_name": "events.icon.share.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_share",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:16",
+          "53:17"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_ticket",
+      "category": "Primitives",
+      "name": "Icons / ticket",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / ticket for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "53:18",
+        "slots": [
+          "53:18",
+          "53:19"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "53:18",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:18",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "53:18",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:18",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:18",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "53:18",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:18",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "53:18",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "53:18",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "53:18",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:18",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:18",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:18",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "53:19",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:19",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "53:19",
+          "property": "width",
+          "token_name": "events.icon.ticket.width"
+        },
+        {
+          "slot": "53:19",
+          "property": "height",
+          "token_name": "events.icon.ticket.height"
+        },
+        {
+          "slot": "53:19",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "53:19",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "53:19",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "53:19",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "53:19",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "53:19",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "53:19",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "53:19",
+          "property": "vectorPaths",
+          "token_name": "events.icon.ticket.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_ticket",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "53:18",
+          "53:19"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_contact",
+      "category": "Primitives",
+      "name": "Icons / contact",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / contact for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:2",
+        "slots": [
+          "54:2",
+          "54:3"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:2",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:2",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:2",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:2",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:2",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:2",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:2",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:2",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:2",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:2",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:2",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:2",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:2",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:3",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:3",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:3",
+          "property": "width",
+          "token_name": "events.icon.contact.width"
+        },
+        {
+          "slot": "54:3",
+          "property": "height",
+          "token_name": "events.icon.contact.height"
+        },
+        {
+          "slot": "54:3",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:3",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:3",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:3",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:3",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:3",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:3",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:3",
+          "property": "vectorPaths",
+          "token_name": "events.icon.contact.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_contact",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:2",
+          "54:3"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_close",
+      "category": "Primitives",
+      "name": "Icons / close",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / close for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:4",
+        "slots": [
+          "54:4",
+          "54:5"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:4",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:4",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:4",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:4",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:4",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:4",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:4",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:4",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:4",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:4",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:4",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:4",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:4",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:5",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:5",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:5",
+          "property": "width",
+          "token_name": "events.icon.close.width"
+        },
+        {
+          "slot": "54:5",
+          "property": "height",
+          "token_name": "events.icon.close.height"
+        },
+        {
+          "slot": "54:5",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:5",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:5",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:5",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:5",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:5",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:5",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:5",
+          "property": "vectorPaths",
+          "token_name": "events.icon.close.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_close",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:4",
+          "54:5"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_clock",
+      "category": "Primitives",
+      "name": "Icons / clock",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / clock for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:6",
+        "slots": [
+          "54:6",
+          "54:7"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:6",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:6",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:6",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:6",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:6",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:6",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:6",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:6",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:6",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:6",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:6",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:6",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:6",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:7",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:7",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:7",
+          "property": "width",
+          "token_name": "events.icon.clock.width"
+        },
+        {
+          "slot": "54:7",
+          "property": "height",
+          "token_name": "events.icon.clock.height"
+        },
+        {
+          "slot": "54:7",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:7",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:7",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:7",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:7",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:7",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:7",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:7",
+          "property": "vectorPaths",
+          "token_name": "events.icon.clock.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_clock",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:6",
+          "54:7"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_pin",
+      "category": "Primitives",
+      "name": "Icons / pin",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / pin for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:8",
+        "slots": [
+          "54:8",
+          "54:9"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:8",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:8",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:8",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:8",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:8",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:8",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:8",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:8",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:8",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:8",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:8",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:8",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:8",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:9",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:9",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:9",
+          "property": "width",
+          "token_name": "events.icon.pin.width"
+        },
+        {
+          "slot": "54:9",
+          "property": "height",
+          "token_name": "events.icon.pin.height"
+        },
+        {
+          "slot": "54:9",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:9",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:9",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:9",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:9",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:9",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:9",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:9",
+          "property": "vectorPaths",
+          "token_name": "events.icon.pin.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_pin",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:8",
+          "54:9"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_chevron",
+      "category": "Primitives",
+      "name": "Icons / chevron",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / chevron for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:10",
+        "slots": [
+          "54:10",
+          "54:11"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:10",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:10",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:10",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:10",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:10",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:10",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:10",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:10",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:10",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:10",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:10",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:10",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:10",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:11",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:11",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:11",
+          "property": "width",
+          "token_name": "events.icon.chevron.width"
+        },
+        {
+          "slot": "54:11",
+          "property": "height",
+          "token_name": "events.icon.chevron.height"
+        },
+        {
+          "slot": "54:11",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:11",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:11",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:11",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:11",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:11",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:11",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:11",
+          "property": "vectorPaths",
+          "token_name": "events.icon.chevron.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_chevron",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:10",
+          "54:11"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_filter",
+      "category": "Primitives",
+      "name": "Icons / filter",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / filter for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:12",
+        "slots": [
+          "54:12",
+          "54:13"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:12",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:12",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:12",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:12",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:12",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:12",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:12",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:12",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:12",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:12",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:12",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:12",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:12",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:13",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:13",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:13",
+          "property": "width",
+          "token_name": "events.icon.filter.width"
+        },
+        {
+          "slot": "54:13",
+          "property": "height",
+          "token_name": "events.icon.filter.height"
+        },
+        {
+          "slot": "54:13",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:13",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:13",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:13",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:13",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:13",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:13",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:13",
+          "property": "vectorPaths",
+          "token_name": "events.icon.filter.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_filter",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:12",
+          "54:13"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_check",
+      "category": "Primitives",
+      "name": "Icons / check",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / check for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:14",
+        "slots": [
+          "54:14",
+          "54:15"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:14",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:14",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:14",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:14",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:14",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:14",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:14",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:14",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:14",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:14",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:14",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:14",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:14",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:15",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:15",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:15",
+          "property": "width",
+          "token_name": "events.icon.check.width"
+        },
+        {
+          "slot": "54:15",
+          "property": "height",
+          "token_name": "events.icon.check.height"
+        },
+        {
+          "slot": "54:15",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:15",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:15",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:15",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:15",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:15",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:15",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:15",
+          "property": "vectorPaths",
+          "token_name": "events.icon.check.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_check",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:14",
+          "54:15"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_hourglass",
+      "category": "Primitives",
+      "name": "Icons / hourglass",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / hourglass for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:16",
+        "slots": [
+          "54:16",
+          "54:17"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:16",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:16",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:16",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:16",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:16",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:16",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:16",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:16",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:16",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:16",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:16",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:16",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:16",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:17",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:17",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:17",
+          "property": "width",
+          "token_name": "events.icon.hourglass.width"
+        },
+        {
+          "slot": "54:17",
+          "property": "height",
+          "token_name": "events.icon.hourglass.height"
+        },
+        {
+          "slot": "54:17",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:17",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:17",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:17",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:17",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:17",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:17",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:17",
+          "property": "vectorPaths",
+          "token_name": "events.icon.hourglass.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_hourglass",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:16",
+          "54:17"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_waitlist",
+      "category": "Primitives",
+      "name": "Icons / waitlist",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / waitlist for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:18",
+        "slots": [
+          "54:18",
+          "54:19"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:18",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:18",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:18",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:18",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:18",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:18",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:18",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:18",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:18",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:18",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:18",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:18",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:18",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:19",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:19",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:19",
+          "property": "width",
+          "token_name": "events.icon.waitlist.width"
+        },
+        {
+          "slot": "54:19",
+          "property": "height",
+          "token_name": "events.icon.waitlist.height"
+        },
+        {
+          "slot": "54:19",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:19",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:19",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:19",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:19",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:19",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:19",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:19",
+          "property": "vectorPaths",
+          "token_name": "events.icon.waitlist.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_waitlist",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:18",
+          "54:19"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_video",
+      "category": "Primitives",
+      "name": "Icons / video",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / video for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:20",
+        "slots": [
+          "54:20",
+          "54:21"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:20",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:20",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:20",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:20",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:20",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:20",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:20",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:20",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:20",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:20",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:20",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:20",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:20",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:21",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:21",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:21",
+          "property": "width",
+          "token_name": "events.icon.video.width"
+        },
+        {
+          "slot": "54:21",
+          "property": "height",
+          "token_name": "events.icon.video.height"
+        },
+        {
+          "slot": "54:21",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:21",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:21",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:21",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:21",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:21",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:21",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:21",
+          "property": "vectorPaths",
+          "token_name": "events.icon.video.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_video",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:20",
+          "54:21"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_instagram",
+      "category": "Primitives",
+      "name": "Icons / instagram",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / instagram for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:22",
+        "slots": [
+          "54:22",
+          "54:23"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:22",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:22",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:22",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:22",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:22",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:22",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:22",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:22",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:22",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:22",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:22",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:22",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:22",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:23",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:23",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:23",
+          "property": "width",
+          "token_name": "events.icon.instagram.width"
+        },
+        {
+          "slot": "54:23",
+          "property": "height",
+          "token_name": "events.icon.instagram.height"
+        },
+        {
+          "slot": "54:23",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:23",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:23",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:23",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:23",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:23",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:23",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:23",
+          "property": "vectorPaths",
+          "token_name": "events.icon.instagram.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_instagram",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:22",
+          "54:23"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_discover",
+      "category": "Primitives",
+      "name": "Icons / discover",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / discover for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:24",
+        "slots": [
+          "54:24",
+          "54:25"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:24",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:24",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:24",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:24",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:24",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:24",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:24",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:24",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:24",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:24",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:24",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:24",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:24",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:25",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:25",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:25",
+          "property": "width",
+          "token_name": "events.icon.discover.width"
+        },
+        {
+          "slot": "54:25",
+          "property": "height",
+          "token_name": "events.icon.discover.height"
+        },
+        {
+          "slot": "54:25",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:25",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:25",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:25",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:25",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:25",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:25",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:25",
+          "property": "vectorPaths",
+          "token_name": "events.icon.discover.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_discover",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:24",
+          "54:25"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_chat",
+      "category": "Primitives",
+      "name": "Icons / chat",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / chat for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:26",
+        "slots": [
+          "54:26",
+          "54:27"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:26",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:26",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:26",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:26",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:26",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:26",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:26",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:26",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:26",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:26",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:26",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:26",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:26",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:27",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:27",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:27",
+          "property": "width",
+          "token_name": "events.icon.chat.width"
+        },
+        {
+          "slot": "54:27",
+          "property": "height",
+          "token_name": "events.icon.chat.height"
+        },
+        {
+          "slot": "54:27",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:27",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:27",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:27",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:27",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:27",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:27",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:27",
+          "property": "vectorPaths",
+          "token_name": "events.icon.chat.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_chat",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:26",
+          "54:27"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_empty_ticket",
+      "category": "Primitives",
+      "name": "Icons / empty_ticket",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / empty_ticket for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:28",
+        "slots": [
+          "54:28",
+          "54:29"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:28",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:28",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:28",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:28",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:28",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:28",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:28",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:28",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:28",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:28",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:28",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:28",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:28",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:29",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:29",
+          "property": "strokeWeight",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "54:29",
+          "property": "width",
+          "token_name": "events.icon.empty_ticket.width"
+        },
+        {
+          "slot": "54:29",
+          "property": "height",
+          "token_name": "events.icon.empty_ticket.height"
+        },
+        {
+          "slot": "54:29",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:29",
+          "property": "strokes",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:29",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:29",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:29",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:29",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.round"
+        },
+        {
+          "slot": "54:29",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.round"
+        },
+        {
+          "slot": "54:29",
+          "property": "vectorPaths",
+          "token_name": "events.icon.empty_ticket.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_empty_ticket",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:28",
+          "54:29"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_more",
+      "category": "Primitives",
+      "name": "Icons / more",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / more for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:30",
+        "slots": [
+          "54:30",
+          "54:31"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:30",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:30",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:30",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:30",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:30",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:30",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:30",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:30",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:30",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:30",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:30",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:30",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:30",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:31",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:31",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:31",
+          "property": "width",
+          "token_name": "events.icon.more.width"
+        },
+        {
+          "slot": "54:31",
+          "property": "height",
+          "token_name": "events.icon.more.height"
+        },
+        {
+          "slot": "54:31",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:31",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:31",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:31",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:31",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:31",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:31",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:31",
+          "property": "vectorPaths",
+          "token_name": "events.icon.more.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_more",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:30",
+          "54:31"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_heart",
+      "category": "Primitives",
+      "name": "Icons / heart",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / heart for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "hinge_decision"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:32",
+        "slots": [
+          "54:32",
+          "54:33"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:32",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:32",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:32",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:32",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:32",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:32",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:32",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:32",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:32",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:32",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:32",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:32",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:32",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:33",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:33",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:33",
+          "property": "width",
+          "token_name": "events.icon.heart.width"
+        },
+        {
+          "slot": "54:33",
+          "property": "height",
+          "token_name": "events.icon.heart.height"
+        },
+        {
+          "slot": "54:33",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:33",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:33",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:33",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:33",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:33",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:33",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:33",
+          "property": "vectorPaths",
+          "token_name": "events.icon.heart.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_heart",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:32",
+          "54:33"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_pass",
+      "category": "Primitives",
+      "name": "Icons / pass",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Icons / pass for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "hinge_decision"
+      ],
+      "design_spec": {
+        "figma_component_id": "54:34",
+        "slots": [
+          "54:34",
+          "54:35"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "54:34",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:34",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "54:34",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:34",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:34",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "54:34",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:34",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "54:34",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "54:34",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "54:34",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:34",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:34",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:34",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "54:35",
+          "property": "cornerRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:35",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "54:35",
+          "property": "width",
+          "token_name": "events.icon.pass.width"
+        },
+        {
+          "slot": "54:35",
+          "property": "height",
+          "token_name": "events.icon.pass.height"
+        },
+        {
+          "slot": "54:35",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "54:35",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "54:35",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "54:35",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "54:35",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.center"
+        },
+        {
+          "slot": "54:35",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "54:35",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "54:35",
+          "property": "vectorPaths",
+          "token_name": "events.icon.pass.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_icon_pass",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "54:34",
+          "54:35"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "avatar_neutral",
+      "category": "Primitives",
+      "name": "Avatar / neutral",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Avatar / neutral for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:2",
+        "slots": [
+          "55:2",
+          "55:3"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:2",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "width",
+          "token_name": "events.size.36"
+        },
+        {
+          "slot": "55:2",
+          "property": "height",
+          "token_name": "events.size.36"
+        },
+        {
+          "slot": "55:2",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:2",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:2",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:2",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:2",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:2",
+          "property": "fills",
+          "token_name": "events.color.selected"
+        },
+        {
+          "slot": "55:2",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:2",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:2",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:2",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:2",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:2",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:2",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:2",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:2",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:3",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:3",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:3",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "55:3",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:3",
+          "property": "fontSize",
+          "token_name": "events.type.meta.size"
+        },
+        {
+          "slot": "55:3",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:3",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:3",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:3",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:3",
+          "property": "lineHeight",
+          "token_name": "events.type.meta.leading"
+        },
+        {
+          "slot": "55:3",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:3",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:3",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:3",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:3",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:3",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:3",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:3",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label",
+          "initials",
+          "image"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_avatar_neutral",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:2",
+          "55:3"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "avatar_selected",
+      "category": "Primitives",
+      "name": "Avatar / selected",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Avatar / selected for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:4",
+        "slots": [
+          "55:4",
+          "55:5"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:4",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "width",
+          "token_name": "events.size.36"
+        },
+        {
+          "slot": "55:4",
+          "property": "height",
+          "token_name": "events.size.36"
+        },
+        {
+          "slot": "55:4",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:4",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:4",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:4",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:4",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:4",
+          "property": "fills",
+          "token_name": "events.color.purple_bg"
+        },
+        {
+          "slot": "55:4",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:4",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:4",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:4",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:4",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:4",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:4",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:4",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:4",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:5",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:5",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:5",
+          "property": "fills",
+          "token_name": "events.color.purple"
+        },
+        {
+          "slot": "55:5",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:5",
+          "property": "fontSize",
+          "token_name": "events.type.meta.size"
+        },
+        {
+          "slot": "55:5",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:5",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:5",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:5",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:5",
+          "property": "lineHeight",
+          "token_name": "events.type.meta.leading"
+        },
+        {
+          "slot": "55:5",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:5",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:5",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:5",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:5",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:5",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:5",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:5",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "accessible_label",
+          "initials",
+          "image"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_avatar_selected",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:4",
+          "55:5"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Scoped to the events journey and supporting reference families in screens-and-components-inventory.md. Unrelated template candidates are excluded by that documented scope decision.",
+    "Complete means fully specified for this design derivation. Provisional typography and new product compositions remain visibly flagged for review; executable PandaCSS and backend behavior are not claimed."
+  ]
+}

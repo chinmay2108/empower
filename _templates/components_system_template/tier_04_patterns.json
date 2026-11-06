@@ -1,0 +1,444 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 4,
+  "category": "Patterns",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "purpose": "Reusable patterns composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "list_row",
+      "token_name": "patterns.list_row.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "list_row",
+      "token_name": "patterns.list_row.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "tabs",
+      "token_name": "patterns.tabs.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "tabs",
+      "token_name": "patterns.tabs.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "disclosure",
+      "token_name": "patterns.disclosure.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "select",
+      "token_name": "patterns.select.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "field_group",
+      "token_name": "patterns.field_group.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "search_field",
+      "token_name": "patterns.search_field.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "list_row",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "tabs",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "disclosure",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "select",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "field_group",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "search_field",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "card",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
+    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+  ]
+}

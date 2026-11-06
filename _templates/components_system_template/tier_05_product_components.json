@@ -1,0 +1,21 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 5,
+  "category": "Product components",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "purpose": "Flow-specific product components; populate after identifying the elements required by screens.",
+  "tokens": [],
+  "components": [],
+  "notes": [
+    "Intentionally empty: product-specific entries will be added during flow derivation."
+  ]
+}

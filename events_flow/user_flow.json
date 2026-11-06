@@ -1,0 +1,560 @@
+{
+  "flow_id": "events_flow",
+  "objective": "Help users browse interesting events or decide on a small prescribed feed, save interest, optionally choose companions, confirm their own attendance, and see events their friends have joined.",
+  "reference": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=1-2",
+  "working_library": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-27",
+  "priority": "Editable reusable nested elements and direct Foundation bindings. Accurate element coverage takes priority over speculative production states.",
+  "scope_boundaries": [
+    "Attendee journey only; hosting labels are data states, not an event-creation flow.",
+    "Paid and waitlist detail states are included; checkout and waitlist forms are not supplied by the reference.",
+    "Discover and Chat are navigation destinations only; their separate flows are outside this inventory.",
+    "OS status indicators are editable presentation specimens, not simulated device APIs.",
+    "Mobbin attribution strips are source framing and are excluded from app screens.",
+    "Duplicate captures 13:7, 13:16, and 13:20 map to home_saved, home_scrolled, and detail_invited.",
+    "No motion can be inferred from still images. Prototype routing will use an explicitly documented instantaneous transition.",
+    "Font choice remains provisional, as authorized by Daniel."
+  ],
+  "transitions": [
+    {
+      "from": "browse",
+      "action": "open_event",
+      "to": "detail"
+    },
+    {
+      "from": "browse",
+      "action": "select_for_you",
+      "to": "prescribed"
+    },
+    {
+      "from": "prescribed",
+      "action": "pass",
+      "to": "prescribed"
+    },
+    {
+      "from": "prescribed",
+      "action": "want_to_go_save_interest",
+      "to": "companions"
+    },
+    {
+      "from": "detail",
+      "action": "want_to_go_save_interest",
+      "to": "companions"
+    },
+    {
+      "from": "companions",
+      "action": "continue_on_my_own",
+      "to": "review_solo"
+    },
+    {
+      "from": "companions",
+      "action": "continue_with_selection",
+      "to": "review_group"
+    },
+    {
+      "from": "review_solo",
+      "action": "confirm_own_attendance",
+      "to": "confirmed"
+    },
+    {
+      "from": "review_group",
+      "action": "confirm_own_attendance_and_request_invitations",
+      "to": "confirmed"
+    },
+    {
+      "from": "confirmed",
+      "action": "view_my_events",
+      "to": "upcoming"
+    },
+    {
+      "from": "friends",
+      "action": "open_event",
+      "to": "detail"
+    },
+    {
+      "from": "upcoming",
+      "action": "select_past",
+      "to": "past"
+    },
+    {
+      "from": "prescribed",
+      "action": "finish_batch",
+      "to": "batch_complete"
+    },
+    {
+      "from": "batch_complete",
+      "action": "browse",
+      "to": "browse"
+    },
+    {
+      "from": "batch_complete",
+      "action": "view_saved_interests",
+      "to": "interests"
+    },
+    {
+      "from": "upcoming",
+      "action": "view_saved_interests",
+      "to": "interests"
+    },
+    {
+      "from": "interests",
+      "action": "continue_planning",
+      "to": "companions"
+    }
+  ],
+  "reference_specimens": [
+    {
+      "id": "home_empty",
+      "screen": "Home / no saved events",
+      "goal": "Find an event worth attending",
+      "reference_node": "13:3",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-3",
+      "family": "home",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "home_saved",
+      "screen": "Home / saved events",
+      "goal": "Resume an invitation or registration",
+      "reference_node": "13:4",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-4",
+      "family": "home",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "home_scrolled",
+      "screen": "Home / discovery feed",
+      "goal": "Compare nearby events",
+      "reference_node": "13:5",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-5",
+      "family": "home",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "upcoming_empty",
+      "screen": "Upcoming / empty",
+      "goal": "Understand there are no upcoming events",
+      "reference_node": "13:8",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-8",
+      "family": "events",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "upcoming",
+      "screen": "Upcoming / populated",
+      "goal": "Review upcoming commitments and their status",
+      "reference_node": "13:9",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-9",
+      "family": "events",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "past",
+      "screen": "Past events",
+      "goal": "Return to an earlier event",
+      "reference_node": "13:10",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-10",
+      "family": "events",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_free",
+      "screen": "Event / free",
+      "goal": "Evaluate an event and register",
+      "reference_node": "13:17",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-17",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_paid",
+      "screen": "Event / paid",
+      "goal": "Evaluate an event with a visible price",
+      "reference_node": "13:18",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-18",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_limited",
+      "screen": "Event / limited capacity",
+      "goal": "Evaluate remaining availability",
+      "reference_node": "13:19",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-19",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_invited",
+      "screen": "Event / invited",
+      "goal": "Read an invitation and accept",
+      "reference_node": "13:12",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-12",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_waitlist",
+      "screen": "Event / waitlist",
+      "goal": "Understand availability and join the waitlist",
+      "reference_node": "13:21",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-21",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_going",
+      "screen": "Event / registered",
+      "goal": "Find the ticket for an event already joined",
+      "reference_node": "13:22",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-22",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_location",
+      "screen": "Event / location, hosts and attendees",
+      "goal": "Evaluate venue and social context",
+      "reference_node": "13:23",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-23",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_about",
+      "screen": "Event / about",
+      "goal": "Understand the event purpose and participants",
+      "reference_node": "13:24",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-24",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_hosts",
+      "screen": "Event / host biographies",
+      "goal": "Understand who is organizing",
+      "reference_node": "13:25",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-25",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "detail_conduct",
+      "screen": "Event / code of conduct",
+      "goal": "Understand expectations before attending",
+      "reference_node": "13:26",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-26",
+      "family": "detail",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "confirm",
+      "screen": "Invitation / confirm registration",
+      "goal": "Confirm the selected invitation",
+      "reference_node": "13:13",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-13",
+      "family": "registration",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    },
+    {
+      "id": "success",
+      "screen": "Invitation / success",
+      "goal": "Know registration succeeded",
+      "reference_node": "13:14",
+      "reference_url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-14",
+      "family": "registration",
+      "needs": [
+        "Editable content",
+        "Foundation-bound visual values",
+        "Reusable nested elements",
+        "Explicit input and action contract"
+      ]
+    }
+  ],
+  "decisions": [
+    "User confirmed: I want to go saves interest first; companion selection is optional; attendance is confirmed afterward.",
+    "Selecting companions does not register them. Invitations and each person's registration remain separate states.",
+    "Browse, prescribed feed, friends' attendance and saved/confirmed events are distinct reusable views.",
+    "Friends' attendance must be shared/authorized data; no contact scraping or inferred attendance.",
+    "The number and ranking of prescribed events are product inputs. A finite example batch is fixture content, not a ranking algorithm."
+  ],
+  "nodes": [
+    {
+      "id": "browse",
+      "screen": "Browse events",
+      "goal": "Scan and compare interesting events",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_row",
+        "date_group",
+        "friends_attending",
+        "event_navigation"
+      ]
+    },
+    {
+      "id": "prescribed",
+      "screen": "For you / decision card",
+      "goal": "Decide on each event in a small prescribed feed",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_decision_card",
+        "pass_action",
+        "interest_action",
+        "batch_progress",
+        "friends_attending"
+      ]
+    },
+    {
+      "id": "detail",
+      "screen": "Event details",
+      "goal": "Evaluate event, venue, hosts and social context",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_hero",
+        "event_metadata",
+        "registration_status",
+        "location_map",
+        "host_row",
+        "attendee_stack",
+        "rich_description",
+        "interest_action"
+      ]
+    },
+    {
+      "id": "companions",
+      "screen": "Choose companions / optional",
+      "goal": "Choose friends to invite or continue alone",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_summary",
+        "companion_row",
+        "selection_indicator",
+        "selected_count",
+        "continue_action",
+        "continue_alone_action"
+      ]
+    },
+    {
+      "id": "review_solo",
+      "screen": "Review / on my own",
+      "goal": "Confirm own attendance without companions",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_summary",
+        "attendance_boundary",
+        "confirm_action"
+      ]
+    },
+    {
+      "id": "review_group",
+      "screen": "Review / with companions",
+      "goal": "Confirm own attendance and review invitations",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_summary",
+        "selected_companions",
+        "invitation_status",
+        "confirm_action"
+      ]
+    },
+    {
+      "id": "confirmed",
+      "screen": "Attendance confirmed",
+      "goal": "Know own attendance is confirmed and invitations remain separate",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "success_mark",
+        "event_summary",
+        "own_attendance_status",
+        "companion_invitation_status",
+        "my_events_action"
+      ]
+    },
+    {
+      "id": "friends",
+      "screen": "Friends' events",
+      "goal": "See events friends have signed up for",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "friend_activity_row",
+        "event_row",
+        "attendance_status",
+        "open_event_action"
+      ]
+    },
+    {
+      "id": "upcoming",
+      "screen": "My events / upcoming",
+      "goal": "Distinguish interested, going and waiting events",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_period_tabs",
+        "event_row",
+        "registration_badge"
+      ]
+    },
+    {
+      "id": "past",
+      "screen": "My events / past",
+      "goal": "Revisit previous events",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "event_period_tabs",
+        "event_row"
+      ]
+    },
+    {
+      "id": "batch_complete",
+      "screen": "For you / decisions complete",
+      "goal": "Know the current prescribed batch is finished",
+      "needs": [
+        "Editable nested components",
+        "Direct Foundation references",
+        "Explicit presentation, behavior and data contract"
+      ],
+      "components": [
+        "completion_message",
+        "saved_interests_action",
+        "browse_action"
+      ]
+    },
+    {
+      "id": "interests",
+      "screen": "Saved interests",
+      "goal": "Return to saved events and continue planning without confusing interest with registration",
+      "needs": [
+        "Retained interest state",
+        "Explicit next action"
+      ],
+      "components": [
+        "event_row_interested",
+        "continue_planning_action"
+      ]
+    }
+  ],
+  "prototype_scope": "Representative event and Maya invitation path; the displayed final prescribed card routes Pass to batch completion. Screens are fixture states, not persistent data. Other controls remain documented component contracts."
+}

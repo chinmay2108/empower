@@ -1,0 +1,239 @@
+{
+  "format_version": "1.0",
+  "document_kind": "derived_system",
+  "system_id": "events_system",
+  "status": "complete",
+  "derived_from": "_templates/components_system_template",
+  "core_token_file": "tier_00_foundations.json",
+  "tiers": [
+    {
+      "tier": 0,
+      "category": "Foundations",
+      "file": "tier_00_foundations.json"
+    },
+    {
+      "tier": 1,
+      "category": "Primitives",
+      "file": "tier_01_primitives.json"
+    },
+    {
+      "tier": 2,
+      "category": "Controls",
+      "file": "tier_02_controls.json"
+    },
+    {
+      "tier": 3,
+      "category": "Overlays and feedback",
+      "file": "tier_03_overlays_and_feedback.json"
+    },
+    {
+      "tier": 4,
+      "category": "Patterns",
+      "file": "tier_04_patterns.json"
+    },
+    {
+      "tier": 5,
+      "category": "Product components",
+      "file": "tier_05_product_components.json"
+    },
+    {
+      "tier": 6,
+      "category": "Regions",
+      "file": "tier_06_regions.json"
+    },
+    {
+      "tier": 7,
+      "category": "Screens",
+      "file": "tier_07_screens.json"
+    }
+  ],
+  "workflow": {
+    "current": "Derive reference-faithful editable Figma components and assemble the required screens.",
+    "next": "Convert the Figma components into reusable PandaCSS recipes with semantic token bindings.",
+    "later": "Systematize across multiple flows and reference apps in a separate workflow.",
+    "priority": "Efficient component derivation and effective MVP user experience; missing element references and unresolved component specifications take priority over production completeness."
+  },
+  "rules": [
+    "Each tier may depend only on lower tiers. Components within the same tier must not depend on each other.",
+    "Every token value is null until populated from verified evidence or an explicit design decision.",
+    "Tier 0 owns literal core values and optional aliases. Higher tiers reference Foundation tokens directly and leave token_value null.",
+    "A token uses exactly one of token_value or reference_token when populated. Foundation alias chains must resolve without cycles.",
+    "Multiple components bind to the same semantic roles. Do not copy a color hex or spacing literal into each component or recipe.",
+    "Token names are candidate placeholders and may be refined during derivation; they do not establish the final cross-flow system.",
+    "PNGs are reference evidence. They do not constitute editable components or establish exact typography or motion specifications.",
+    "Keep unverified colors, typography, spacing, and motion unresolved instead of silently inventing values.",
+    "Use named component variants and inputs/actions to support reuse without copying components for each screen.",
+    "Native Figma bindings and generated synchronization mappings are implemented. The recipe documents are declarative specifications; executable PandaCSS follows in a separate workflow.",
+    "Completion gate: run skills/validate_component_tiers.py on this entire folder. Only exit 0 clears the gate; incomplete fields, downstream literals, invalid references, and unvalidated files fail."
+  ],
+  "entry_shapes": {
+    "dependency": {
+      "tier": null,
+      "component_id": null
+    },
+    "token_binding": {
+      "slot": null,
+      "property": null,
+      "token_name": null
+    },
+    "reference": {
+      "reference_id": null,
+      "url": null,
+      "node_id": null,
+      "evidence_kind": null
+    },
+    "variant": {
+      "name": null,
+      "values": [],
+      "default_value": null
+    }
+  },
+  "token_binding_plan": {
+    "source_of_truth": "The Foundation registry; every downstream value binding references Foundation tokens directly.",
+    "figma": "Native properties bind directly to Events flow / Foundations. Enum properties, content crops, vector paths and gradient structures use generated Foundation mappings.",
+    "pandacss": "Declarative recipe specifications exist in recipes/events.recipe-specs.json. Executable PandaCSS recipes are the next workflow.",
+    "cross_tool_sync": "figma/export_foundation_sync.py emits bounded Figma MCP scripts from the registry and ledger. Apply the variable batch, then geometry batches. This is an explicit synchronization step, not a filesystem watcher.",
+    "expected_result": "After those bindings and synchronization are implemented, changing a core value propagates through dependent aliases, recipes, and component instances."
+  },
+  "themes": [],
+  "references": [
+    {
+      "reference_id": "luma_13_3",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-3",
+      "node_id": "13:3",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_4",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-4",
+      "node_id": "13:4",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_5",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-5",
+      "node_id": "13:5",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_7",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-7",
+      "node_id": "13:7",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_8",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-8",
+      "node_id": "13:8",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_9",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-9",
+      "node_id": "13:9",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_10",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-10",
+      "node_id": "13:10",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_12",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-12",
+      "node_id": "13:12",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_13",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-13",
+      "node_id": "13:13",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_14",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-14",
+      "node_id": "13:14",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_16",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-16",
+      "node_id": "13:16",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_17",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-17",
+      "node_id": "13:17",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_18",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-18",
+      "node_id": "13:18",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_19",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-19",
+      "node_id": "13:19",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_20",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-20",
+      "node_id": "13:20",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_21",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-21",
+      "node_id": "13:21",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_22",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-22",
+      "node_id": "13:22",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_23",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-23",
+      "node_id": "13:23",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_24",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-24",
+      "node_id": "13:24",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_25",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-25",
+      "node_id": "13:25",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "luma_13_26",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=13-26",
+      "node_id": "13:26",
+      "evidence_kind": "raster_reference"
+    },
+    {
+      "reference_id": "hinge_decision",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK/Coding-with-GPT-Project?node-id=20-49",
+      "node_id": "20:49",
+      "evidence_kind": "editable_reference"
+    },
+    {
+      "reference_id": "product_brief",
+      "url": "../user_flow.json",
+      "node_id": null,
+      "evidence_kind": "explicit_design_decision"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 7,
+  "category": "Screens",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "purpose": "Whole screens assembled from lower-tier components.",
+  "tokens": [],
+  "components": [],
+  "notes": [
+    "Intentionally empty: product-specific entries will be added during flow derivation."
+  ]
+}

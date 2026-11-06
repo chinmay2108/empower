@@ -1,0 +1,793 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 2,
+  "category": "Controls",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [
+    0,
+    1
+  ],
+  "purpose": "Reusable controls composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "button",
+      "token_name": "controls.button.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon_button",
+      "token_name": "controls.icon_button.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon_button",
+      "token_name": "controls.icon_button.size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.border_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text_area",
+      "token_name": "controls.text_area.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text_area",
+      "token_name": "controls.text_area.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "checkbox",
+      "token_name": "controls.checkbox.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "toggle",
+      "token_name": "controls.toggle.track_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "chip",
+      "token_name": "controls.chip.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "chip",
+      "token_name": "controls.chip.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "badge",
+      "token_name": "controls.badge.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "badge",
+      "token_name": "controls.badge.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "avatar",
+      "token_name": "controls.avatar.size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "avatar",
+      "token_name": "controls.avatar.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "link",
+      "token_name": "controls.link.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "progress",
+      "token_name": "controls.progress.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "loader",
+      "token_name": "controls.loader.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "button",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_button",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "input",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "text_area",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "checkbox",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "toggle",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "chip",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "avatar",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "link",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "progress",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "loader",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
+    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+  ]
+}

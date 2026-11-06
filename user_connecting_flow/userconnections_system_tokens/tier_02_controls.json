@@ -1,0 +1,3045 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "tier": 2,
+  "category": "Controls",
+  "status": "in_progress",
+  "allowed_dependency_tiers": [
+    0,
+    1
+  ],
+  "purpose": "Reusable controls composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "button",
+      "token_name": "controls.button.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "button",
+      "token_name": "controls.button.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon_button",
+      "token_name": "controls.icon_button.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon_button",
+      "token_name": "controls.icon_button.size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "input",
+      "token_name": "controls.input.border_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text_area",
+      "token_name": "controls.text_area.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text_area",
+      "token_name": "controls.text_area.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "checkbox",
+      "token_name": "controls.checkbox.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "toggle",
+      "token_name": "controls.toggle.track_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "chip",
+      "token_name": "controls.chip.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "chip",
+      "token_name": "controls.chip.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "badge",
+      "token_name": "controls.badge.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "badge",
+      "token_name": "controls.badge.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "avatar",
+      "token_name": "controls.avatar.size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "avatar",
+      "token_name": "controls.avatar.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "link",
+      "token_name": "controls.link.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "progress",
+      "token_name": "controls.progress.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "loader",
+      "token_name": "controls.loader.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "button",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon_button",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "input",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "text_area",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "checkbox",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "toggle",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "chip",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "avatar",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "link",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "progress",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "loader",
+      "category": "Controls",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "profile_like",
+      "category": "Controls",
+      "name": "Profile / like",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "profile_icon_heart"
+        }
+      ],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:46",
+        "slots": [
+          "root",
+          "icon"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:46",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:46",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "20:46",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:46",
+          "property": "width",
+          "token_name": "profile.size.like"
+        },
+        {
+          "slot": "20:46",
+          "property": "height",
+          "token_name": "profile.size.like"
+        },
+        {
+          "slot": "20:46",
+          "property": "fills",
+          "token_name": "profile.color.action"
+        },
+        {
+          "slot": "20:47",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:47",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:47",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId"
+        ],
+        "actions": [
+          "onLike"
+        ]
+      },
+      "recipe": {
+        "name": "profile_like",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable."
+        ]
+      }
+    },
+    {
+      "component_id": "profile_pass",
+      "category": "Controls",
+      "name": "Profile / pass",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "profile_icon_pass"
+        }
+      ],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:49",
+        "slots": [
+          "root",
+          "icon"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:49",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:49",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "20:49",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:49",
+          "property": "width",
+          "token_name": "profile.size.pass"
+        },
+        {
+          "slot": "20:49",
+          "property": "height",
+          "token_name": "profile.size.pass"
+        },
+        {
+          "slot": "20:49",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "20:50",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:50",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:50",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId"
+        ],
+        "actions": [
+          "onPass"
+        ]
+      },
+      "recipe": {
+        "name": "profile_pass",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_detail_field",
+      "category": "Controls",
+      "name": "Connections / Profile detail field",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived detail field. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_age"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:297",
+        "slots": [
+          "root",
+          "icon_age"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:297",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:297",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:297",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "29:297",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "29:297",
+          "property": "height",
+          "token_name": "connections.details.row_height"
+        },
+        {
+          "slot": "I29:298;28:25",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:300",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:300",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:300",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:300",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:300",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:300",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:300",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:300",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:300",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:300",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "label",
+          "icon"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_detail_field",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_age"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_start_badge",
+      "category": "Controls",
+      "name": "Connections / Start chat badge",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived start badge. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:333",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:333",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:333",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:333",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:333",
+          "property": "paddingLeft",
+          "token_name": "connections.badge.inline"
+        },
+        {
+          "slot": "29:333",
+          "property": "paddingRight",
+          "token_name": "connections.badge.inline"
+        },
+        {
+          "slot": "29:333",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:333",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:333",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:333",
+          "property": "height",
+          "token_name": "connections.badge.height"
+        },
+        {
+          "slot": "29:333",
+          "property": "fills",
+          "token_name": "connections.color.badge"
+        },
+        {
+          "slot": "29:334",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:334",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:334",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:334",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:334",
+          "property": "fontSize",
+          "token_name": "connections.type.badge.size"
+        },
+        {
+          "slot": "29:334",
+          "property": "lineHeight",
+          "token_name": "connections.type.badge.leading"
+        },
+        {
+          "slot": "29:334",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:334",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:334",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:334",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_start_badge",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_home_indicator",
+      "category": "Controls",
+      "name": "Connections / Home indicator",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived home indicator. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:380",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:380",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:380",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:380",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:380",
+          "property": "height",
+          "token_name": "connections.home.container"
+        },
+        {
+          "slot": "29:381",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:381",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:381",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:381",
+          "property": "width",
+          "token_name": "connections.home.width"
+        },
+        {
+          "slot": "29:381",
+          "property": "height",
+          "token_name": "connections.home.height"
+        },
+        {
+          "slot": "29:381",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_home_indicator",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_timestamp",
+      "category": "Controls",
+      "name": "Connections / Timestamp",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived timestamp. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:423",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:423",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:423",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:423",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:424",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:424",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:424",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:424",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:424",
+          "property": "fontSize",
+          "token_name": "connections.type.caption.size"
+        },
+        {
+          "slot": "29:424",
+          "property": "lineHeight",
+          "token_name": "connections.type.caption.leading"
+        },
+        {
+          "slot": "29:424",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:424",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:424",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:424",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "label"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_timestamp",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_keyboard_key",
+      "category": "Controls",
+      "name": "Connections / Keyboard key",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived keyboard key. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:456",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:456",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:456",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.key"
+        },
+        {
+          "slot": "29:456",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:456",
+          "property": "width",
+          "token_name": "connections.keyboard.key_width"
+        },
+        {
+          "slot": "29:456",
+          "property": "height",
+          "token_name": "connections.keyboard.key_height"
+        },
+        {
+          "slot": "29:456",
+          "property": "fills",
+          "token_name": "connections.color.content"
+        },
+        {
+          "slot": "29:457",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:457",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:457",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:457",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:457",
+          "property": "fontSize",
+          "token_name": "connections.type.key.size"
+        },
+        {
+          "slot": "29:457",
+          "property": "lineHeight",
+          "token_name": "connections.type.key.leading"
+        },
+        {
+          "slot": "29:457",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:457",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:457",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:457",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "label"
+        ],
+        "actions": [
+          "onKey"
+        ]
+      },
+      "recipe": {
+        "name": "connections_keyboard_key",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_detail_gender",
+      "category": "Controls",
+      "name": "Connections / Profile detail / gender",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived detail gender. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_gender"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "41:1054",
+        "slots": [
+          "root",
+          "icon_gender"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "41:1054",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "41:1054",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "41:1054",
+          "property": "height",
+          "token_name": "connections.details.row_height"
+        },
+        {
+          "slot": "41:1054",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1054",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1055",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "width",
+          "token_name": "connections.icon.gender.width"
+        },
+        {
+          "slot": "41:1055",
+          "property": "height",
+          "token_name": "connections.icon.gender.height"
+        },
+        {
+          "slot": "41:1055",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1055",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "width",
+          "token_name": "connections.icon.gender.width"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "height",
+          "token_name": "connections.icon.gender.height"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1055;28:27",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1056",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1056",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1056",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1056",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "41:1056",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "41:1056",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "41:1056",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "41:1056",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1056",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1056",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_detail_gender",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_gender"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_detail_orientation",
+      "category": "Controls",
+      "name": "Connections / Profile detail / orientation",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived detail orientation. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_orientation"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "41:1061",
+        "slots": [
+          "root",
+          "icon_orientation"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "41:1061",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "41:1061",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "41:1061",
+          "property": "height",
+          "token_name": "connections.details.row_height"
+        },
+        {
+          "slot": "41:1061",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1061",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1062",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "width",
+          "token_name": "connections.icon.orientation.width"
+        },
+        {
+          "slot": "41:1062",
+          "property": "height",
+          "token_name": "connections.icon.orientation.height"
+        },
+        {
+          "slot": "41:1062",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1062",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "width",
+          "token_name": "connections.icon.orientation.width"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "height",
+          "token_name": "connections.icon.orientation.height"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1062;28:29",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1063",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1063",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1063",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1063",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "41:1063",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "41:1063",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "41:1063",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "41:1063",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1063",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1063",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_detail_orientation",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_orientation"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_detail_ethnicity",
+      "category": "Controls",
+      "name": "Connections / Profile detail / ethnicity",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived detail ethnicity. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_ethnicity"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "41:1068",
+        "slots": [
+          "root",
+          "icon_ethnicity"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "41:1068",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "41:1068",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "41:1068",
+          "property": "height",
+          "token_name": "connections.details.row_height"
+        },
+        {
+          "slot": "41:1068",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1068",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1069",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "width",
+          "token_name": "connections.icon.ethnicity.width"
+        },
+        {
+          "slot": "41:1069",
+          "property": "height",
+          "token_name": "connections.icon.ethnicity.height"
+        },
+        {
+          "slot": "41:1069",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1069",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "width",
+          "token_name": "connections.icon.ethnicity.width"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "height",
+          "token_name": "connections.icon.ethnicity.height"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1069;28:31",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1070",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1070",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1070",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1070",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "41:1070",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "41:1070",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "41:1070",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "41:1070",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1070",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1070",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_detail_ethnicity",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_ethnicity"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_detail_relationship",
+      "category": "Controls",
+      "name": "Connections / Profile detail / relationship",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived detail relationship. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_relationship"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "41:1075",
+        "slots": [
+          "root",
+          "icon_relationship"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "41:1075",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "41:1075",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "41:1075",
+          "property": "height",
+          "token_name": "connections.details.row_height"
+        },
+        {
+          "slot": "41:1075",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1075",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1076",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "width",
+          "token_name": "connections.icon.relationship.width"
+        },
+        {
+          "slot": "41:1076",
+          "property": "height",
+          "token_name": "connections.icon.relationship.height"
+        },
+        {
+          "slot": "41:1076",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1076",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "width",
+          "token_name": "connections.icon.relationship.width"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "height",
+          "token_name": "connections.icon.relationship.height"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "I41:1076;28:33",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1077",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1077",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "41:1077",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "41:1077",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "41:1077",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "41:1077",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "41:1077",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "41:1077",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1077",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "41:1077",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_detail_relationship",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_relationship"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs."
+  ]
+}

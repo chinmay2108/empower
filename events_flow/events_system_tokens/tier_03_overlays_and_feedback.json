@@ -1,0 +1,2610 @@
+{
+  "format_version": "1.0",
+  "document_kind": "derived_system",
+  "system_id": "events_system",
+  "tier": 3,
+  "category": "Overlays and feedback",
+  "status": "complete",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2
+  ],
+  "purpose": "Reusable overlays and feedback composed from lower tiers.",
+  "tokens": [],
+  "components": [
+    {
+      "component_id": "badge_going",
+      "category": "Overlays and feedback",
+      "name": "Status badge / going",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / going for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:42",
+        "slots": [
+          "55:42",
+          "55:43"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "going"
+            ],
+            "default_value": "going"
+          }
+        ],
+        "interaction_states": [
+          "going"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:42",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:42",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:42",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:42",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:42",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:42",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:42",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:42",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:42",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:42",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:42",
+          "property": "fills",
+          "token_name": "events.color.green_bg"
+        },
+        {
+          "slot": "55:42",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:42",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:42",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:42",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:42",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:42",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:42",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:42",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:42",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:43",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:43",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:43",
+          "property": "fills",
+          "token_name": "events.color.green"
+        },
+        {
+          "slot": "55:43",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:43",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:43",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:43",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:43",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:43",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:43",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:43",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:43",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:43",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:43",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:43",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:43",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:43",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:43",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_going",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:42",
+          "55:43"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "going"
+            ],
+            "default_value": "going"
+          }
+        ],
+        "default_variants": {
+          "state": "going"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_waitlisted",
+      "category": "Overlays and feedback",
+      "name": "Status badge / waitlisted",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / waitlisted for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:44",
+        "slots": [
+          "55:44",
+          "55:45"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "waitlisted"
+            ],
+            "default_value": "waitlisted"
+          }
+        ],
+        "interaction_states": [
+          "waitlisted"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:44",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:44",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:44",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:44",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:44",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:44",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:44",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:44",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:44",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:44",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:44",
+          "property": "fills",
+          "token_name": "events.color.amber_bg"
+        },
+        {
+          "slot": "55:44",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:44",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:44",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:44",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:44",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:44",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:44",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:44",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:44",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:45",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:45",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:45",
+          "property": "fills",
+          "token_name": "events.color.amber"
+        },
+        {
+          "slot": "55:45",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:45",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:45",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:45",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:45",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:45",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:45",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:45",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:45",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:45",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:45",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:45",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:45",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:45",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:45",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_waitlisted",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:44",
+          "55:45"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "waitlisted"
+            ],
+            "default_value": "waitlisted"
+          }
+        ],
+        "default_variants": {
+          "state": "waitlisted"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_invited",
+      "category": "Overlays and feedback",
+      "name": "Status badge / invited",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / invited for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:46",
+        "slots": [
+          "55:46",
+          "55:47"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "invited"
+            ],
+            "default_value": "invited"
+          }
+        ],
+        "interaction_states": [
+          "invited"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:46",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:46",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:46",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:46",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:46",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:46",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:46",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:46",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:46",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:46",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:46",
+          "property": "fills",
+          "token_name": "events.color.purple_bg"
+        },
+        {
+          "slot": "55:46",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:46",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:46",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:46",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:46",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:46",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:46",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:46",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:46",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:47",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:47",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:47",
+          "property": "fills",
+          "token_name": "events.color.purple"
+        },
+        {
+          "slot": "55:47",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:47",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:47",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:47",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:47",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:47",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:47",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:47",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:47",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:47",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:47",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:47",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:47",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:47",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:47",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_invited",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:46",
+          "55:47"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "invited"
+            ],
+            "default_value": "invited"
+          }
+        ],
+        "default_variants": {
+          "state": "invited"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_interested",
+      "category": "Overlays and feedback",
+      "name": "Status badge / interested",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / interested for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:48",
+        "slots": [
+          "55:48",
+          "55:49"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "interested"
+            ],
+            "default_value": "interested"
+          }
+        ],
+        "interaction_states": [
+          "interested"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:48",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:48",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:48",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:48",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:48",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:48",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:48",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:48",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:48",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:48",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:48",
+          "property": "fills",
+          "token_name": "events.color.purple_bg"
+        },
+        {
+          "slot": "55:48",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:48",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:48",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:48",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:48",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:48",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:48",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:48",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:48",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:49",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:49",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:49",
+          "property": "fills",
+          "token_name": "events.color.purple"
+        },
+        {
+          "slot": "55:49",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:49",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:49",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:49",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:49",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:49",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:49",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:49",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:49",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:49",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:49",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:49",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:49",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:49",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:49",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_interested",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:48",
+          "55:49"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "interested"
+            ],
+            "default_value": "interested"
+          }
+        ],
+        "default_variants": {
+          "state": "interested"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_hosting",
+      "category": "Overlays and feedback",
+      "name": "Status badge / hosting",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / hosting for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:50",
+        "slots": [
+          "55:50",
+          "55:51"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "hosting"
+            ],
+            "default_value": "hosting"
+          }
+        ],
+        "interaction_states": [
+          "hosting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:50",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:50",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:50",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:50",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:50",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:50",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:50",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:50",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:50",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:50",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:50",
+          "property": "fills",
+          "token_name": "events.color.purple_bg"
+        },
+        {
+          "slot": "55:50",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:50",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:50",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:50",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:50",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:50",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:50",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:50",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:50",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:51",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:51",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:51",
+          "property": "fills",
+          "token_name": "events.color.purple"
+        },
+        {
+          "slot": "55:51",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:51",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:51",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:51",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:51",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:51",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:51",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:51",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:51",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:51",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:51",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:51",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:51",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:51",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:51",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_hosting",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:50",
+          "55:51"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "hosting"
+            ],
+            "default_value": "hosting"
+          }
+        ],
+        "default_variants": {
+          "state": "hosting"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_paid",
+      "category": "Overlays and feedback",
+      "name": "Status badge / paid",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / paid for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:52",
+        "slots": [
+          "55:52",
+          "55:53"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "paid"
+            ],
+            "default_value": "paid"
+          }
+        ],
+        "interaction_states": [
+          "paid"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:52",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:52",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:52",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:52",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:52",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:52",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:52",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:52",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:52",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:52",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:52",
+          "property": "fills",
+          "token_name": "events.color.green_bg"
+        },
+        {
+          "slot": "55:52",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:52",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:52",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:52",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:52",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:52",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:52",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:52",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:52",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:53",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:53",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:53",
+          "property": "fills",
+          "token_name": "events.color.green"
+        },
+        {
+          "slot": "55:53",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:53",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:53",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:53",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:53",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:53",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:53",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:53",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:53",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:53",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:53",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:53",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:53",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:53",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:53",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_paid",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:52",
+          "55:53"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "paid"
+            ],
+            "default_value": "paid"
+          }
+        ],
+        "default_variants": {
+          "state": "paid"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_limited",
+      "category": "Overlays and feedback",
+      "name": "Status badge / limited",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Status badge / limited for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:54",
+        "slots": [
+          "55:54",
+          "55:55"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "limited"
+            ],
+            "default_value": "limited"
+          }
+        ],
+        "interaction_states": [
+          "limited"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:54",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:54",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:54",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:54",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "55:54",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:54",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:54",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:54",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:54",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:54",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:54",
+          "property": "fills",
+          "token_name": "events.color.amber_bg"
+        },
+        {
+          "slot": "55:54",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:54",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:54",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "55:54",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:54",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:54",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:54",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:54",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:54",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:55",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:55",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:55",
+          "property": "fills",
+          "token_name": "events.color.amber"
+        },
+        {
+          "slot": "55:55",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:55",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:55",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:55",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:55",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:55",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:55",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:55",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:55",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:55",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:55",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:55",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:55",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:55",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:55",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_limited",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:54",
+          "55:55"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "limited"
+            ],
+            "default_value": "limited"
+          }
+        ],
+        "default_variants": {
+          "state": "limited"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "success_mark",
+      "category": "Overlays and feedback",
+      "name": "Success mark",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Success mark for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "icon_check"
+        }
+      ],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:57",
+        "slots": [
+          "55:57",
+          "55:58"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:57",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "width",
+          "token_name": "events.size.64"
+        },
+        {
+          "slot": "55:57",
+          "property": "height",
+          "token_name": "events.size.64"
+        },
+        {
+          "slot": "55:57",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:57",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:57",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:57",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:57",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:57",
+          "property": "fills",
+          "token_name": "events.color.success"
+        },
+        {
+          "slot": "55:57",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:57",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:57",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:57",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:57",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:57",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:57",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:57",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:57",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:58",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "width",
+          "token_name": "events.size.40"
+        },
+        {
+          "slot": "55:58",
+          "property": "height",
+          "token_name": "events.size.40"
+        },
+        {
+          "slot": "55:58",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:58",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:58",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:58",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_success_mark",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:57",
+          "55:58"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "badge_free",
+      "category": "Overlays and feedback",
+      "name": "Availability / Free",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Availability / Free for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "61:2562",
+        "slots": [
+          "61:2562",
+          "61:2563"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "free"
+            ],
+            "default_value": "free"
+          }
+        ],
+        "interaction_states": [
+          "free"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "61:2562",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2562",
+          "property": "paddingLeft",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "61:2562",
+          "property": "paddingTop",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "61:2562",
+          "property": "paddingRight",
+          "token_name": "events.size.6"
+        },
+        {
+          "slot": "61:2562",
+          "property": "paddingBottom",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "61:2562",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "61:2562",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "61:2562",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "61:2562",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2562",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "61:2562",
+          "property": "fills",
+          "token_name": "events.color.green_bg"
+        },
+        {
+          "slot": "61:2562",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "61:2562",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "61:2562",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.auto"
+        },
+        {
+          "slot": "61:2562",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "61:2562",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "61:2562",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "61:2562",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "61:2562",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "61:2562",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "61:2563",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2563",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "61:2563",
+          "property": "fills",
+          "token_name": "events.color.green"
+        },
+        {
+          "slot": "61:2563",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2563",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "61:2563",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "61:2563",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "61:2563",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2563",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "61:2563",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "61:2563",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "61:2563",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "61:2563",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "61:2563",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "61:2563",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "61:2563",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "61:2563",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "61:2563",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_badge_free",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "61:2562",
+          "61:2563"
+        ],
+        "variants": [
+          {
+            "name": "state",
+            "values": [
+              "free"
+            ],
+            "default_value": "free"
+          }
+        ],
+        "default_variants": {
+          "state": "free"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Scoped to the events journey and supporting reference families in screens-and-components-inventory.md. Unrelated template candidates are excluded by that documented scope decision.",
+    "Complete means fully specified for this design derivation. Provisional typography and new product compositions remain visibly flagged for review; executable PandaCSS and backend behavior are not claimed."
+  ]
+}

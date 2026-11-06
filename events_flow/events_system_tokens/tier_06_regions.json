@@ -1,0 +1,3910 @@
+{
+  "format_version": "1.0",
+  "document_kind": "derived_system",
+  "system_id": "events_system",
+  "tier": 6,
+  "category": "Regions",
+  "status": "complete",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "purpose": "Reusable regions composed from lower tiers.",
+  "tokens": [],
+  "components": [
+    {
+      "component_id": "nav_browse",
+      "category": "Regions",
+      "name": "Event navigation / browse",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Event navigation / browse for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "icon_chat"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_discover"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_home"
+        }
+      ],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:83",
+        "slots": [
+          "55:83",
+          "55:84",
+          "55:85",
+          "55:87",
+          "55:88",
+          "55:89",
+          "55:91",
+          "55:92",
+          "55:93",
+          "55:95"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:83",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:83",
+          "property": "paddingLeft",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:83",
+          "property": "paddingTop",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:83",
+          "property": "paddingRight",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:83",
+          "property": "paddingBottom",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:83",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "55:83",
+          "property": "height",
+          "token_name": "events.size.64"
+        },
+        {
+          "slot": "55:83",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:83",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:83",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:83",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:83",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:83",
+          "property": "fills",
+          "token_name": "events.color.canvas"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokes",
+          "token_name": "events.color.line"
+        },
+        {
+          "slot": "55:83",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:83",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:83",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:83",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:83",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:83",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:83",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:83",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:83",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:84",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:84",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:84",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:84",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:84",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:84",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:84",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:84",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:84",
+          "property": "fills",
+          "token_name": "events.color.selected"
+        },
+        {
+          "slot": "55:84",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:84",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:84",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:84",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:84",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:84",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:84",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:84",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:84",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:85",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:85",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:85",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:85",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:85",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:85",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:87",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:87",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:87",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "55:87",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:87",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:87",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:87",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:87",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:87",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:87",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:87",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:87",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:87",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:87",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:87",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:87",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:87",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:87",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:88",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:88",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:88",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:88",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:88",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:88",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:88",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:88",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:88",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:88",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:88",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:88",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:88",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:88",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:88",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:88",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:88",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:89",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:89",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:89",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:89",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:89",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:89",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:91",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:91",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:91",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:91",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:91",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:91",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:91",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:91",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:91",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:91",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:91",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:91",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:91",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:91",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:91",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:91",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:91",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:91",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:92",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:92",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:92",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:92",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:92",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:92",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:92",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:92",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:92",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:92",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:92",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:92",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:92",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:92",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:92",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:92",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:92",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:93",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:93",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:93",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:93",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:93",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:93",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:95",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:95",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:95",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:95",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:95",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:95",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:95",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:95",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:95",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:95",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:95",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:95",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:95",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:95",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:95",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:95",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:95",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:95",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_nav_browse",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:83",
+          "55:84",
+          "55:85",
+          "55:87",
+          "55:88",
+          "55:89",
+          "55:91",
+          "55:92",
+          "55:93",
+          "55:95"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "nav_prescribed",
+      "category": "Regions",
+      "name": "Event navigation / prescribed",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Event navigation / prescribed for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "icon_chat"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_discover"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_home"
+        }
+      ],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:96",
+        "slots": [
+          "55:96",
+          "55:97",
+          "55:98",
+          "55:100",
+          "55:101",
+          "55:102",
+          "55:104",
+          "55:105",
+          "55:106",
+          "55:108"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:96",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:96",
+          "property": "paddingLeft",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:96",
+          "property": "paddingTop",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:96",
+          "property": "paddingRight",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:96",
+          "property": "paddingBottom",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:96",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "55:96",
+          "property": "height",
+          "token_name": "events.size.64"
+        },
+        {
+          "slot": "55:96",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:96",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:96",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:96",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:96",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:96",
+          "property": "fills",
+          "token_name": "events.color.canvas"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokes",
+          "token_name": "events.color.line"
+        },
+        {
+          "slot": "55:96",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:96",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:96",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:96",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:96",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:96",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:96",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:96",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:96",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:97",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:97",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:97",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:97",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:97",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:97",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:97",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:97",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:97",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:97",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:97",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:97",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:97",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:97",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:97",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:97",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:97",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:98",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:98",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:98",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:98",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:98",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:98",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:100",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:100",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:100",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:100",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:100",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:100",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:100",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:100",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:100",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:100",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:100",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:100",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:100",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:100",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:100",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:100",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:100",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:100",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:101",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:101",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:101",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:101",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:101",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:101",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:101",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:101",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:101",
+          "property": "fills",
+          "token_name": "events.color.selected"
+        },
+        {
+          "slot": "55:101",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:101",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:101",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:101",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:101",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:101",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:101",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:101",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:101",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:102",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:102",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:102",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:102",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:102",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:102",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:104",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:104",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:104",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "55:104",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:104",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:104",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:104",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:104",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:104",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:104",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:104",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:104",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:104",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:104",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:104",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:104",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:104",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:104",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:105",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:105",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:105",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:105",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:105",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:105",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:105",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:105",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:105",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:105",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:105",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:105",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:105",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:105",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:105",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:105",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:105",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:106",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:106",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:106",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:106",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:106",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:106",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:108",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:108",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:108",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:108",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:108",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:108",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:108",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:108",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:108",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:108",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:108",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:108",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:108",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:108",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:108",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:108",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:108",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:108",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_nav_prescribed",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:96",
+          "55:97",
+          "55:98",
+          "55:100",
+          "55:101",
+          "55:102",
+          "55:104",
+          "55:105",
+          "55:106",
+          "55:108"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "nav_friends",
+      "category": "Regions",
+      "name": "Event navigation / friends",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Event navigation / friends for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "icon_chat"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_discover"
+        },
+        {
+          "tier": 1,
+          "component_id": "icon_home"
+        }
+      ],
+      "reference_ids": [
+        "luma_13_3",
+        "luma_13_9",
+        "product_brief"
+      ],
+      "design_spec": {
+        "figma_component_id": "55:109",
+        "slots": [
+          "55:109",
+          "55:110",
+          "55:111",
+          "55:113",
+          "55:114",
+          "55:115",
+          "55:117",
+          "55:118",
+          "55:119",
+          "55:121"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "55:109",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:109",
+          "property": "paddingLeft",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:109",
+          "property": "paddingTop",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:109",
+          "property": "paddingRight",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:109",
+          "property": "paddingBottom",
+          "token_name": "events.size.4"
+        },
+        {
+          "slot": "55:109",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "55:109",
+          "property": "height",
+          "token_name": "events.size.64"
+        },
+        {
+          "slot": "55:109",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:109",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:109",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:109",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.1"
+        },
+        {
+          "slot": "55:109",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:109",
+          "property": "fills",
+          "token_name": "events.color.canvas"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokes",
+          "token_name": "events.color.line"
+        },
+        {
+          "slot": "55:109",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.horizontal"
+        },
+        {
+          "slot": "55:109",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:109",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:109",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "55:109",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "55:109",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:109",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:109",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:109",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:110",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:110",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:110",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:110",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:110",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:110",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:110",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:110",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:110",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:110",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:110",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:110",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:110",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:110",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:110",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:110",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:110",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:111",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:111",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:111",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:111",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:111",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:111",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:113",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:113",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:113",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:113",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:113",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:113",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:113",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:113",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:113",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:113",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:113",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:113",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:113",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:113",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:113",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:113",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:113",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:113",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:114",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:114",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:114",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:114",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:114",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:114",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:114",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:114",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:114",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:114",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:114",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:114",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:114",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:114",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:114",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:114",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:114",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:115",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:115",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:115",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:115",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:115",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:115",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:117",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:117",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:117",
+          "property": "fills",
+          "token_name": "events.color.muted"
+        },
+        {
+          "slot": "55:117",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:117",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:117",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:117",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:117",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:117",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:117",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:117",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:117",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:117",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:117",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:117",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:117",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:117",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:117",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:118",
+          "property": "itemSpacing",
+          "token_name": "events.size.2"
+        },
+        {
+          "slot": "55:118",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "width",
+          "token_name": "events.size.112"
+        },
+        {
+          "slot": "55:118",
+          "property": "height",
+          "token_name": "events.size.56"
+        },
+        {
+          "slot": "55:118",
+          "property": "topLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:118",
+          "property": "topRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:118",
+          "property": "bottomLeftRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:118",
+          "property": "bottomRightRadius",
+          "token_name": "events.radius.pill"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:118",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:118",
+          "property": "fills",
+          "token_name": "events.color.selected"
+        },
+        {
+          "slot": "55:118",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "55:118",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:118",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "55:118",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.center"
+        },
+        {
+          "slot": "55:118",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.center"
+        },
+        {
+          "slot": "55:118",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:118",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:118",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "55:118",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "55:119",
+          "property": "itemSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "width",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:119",
+          "property": "height",
+          "token_name": "events.size.24"
+        },
+        {
+          "slot": "55:119",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:119",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:119",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "55:119",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.fixed"
+        },
+        {
+          "slot": "55:121",
+          "property": "strokeWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:121",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "55:121",
+          "property": "fills",
+          "token_name": "events.color.ink"
+        },
+        {
+          "slot": "55:121",
+          "property": "letterSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:121",
+          "property": "fontSize",
+          "token_name": "events.type.caption.size"
+        },
+        {
+          "slot": "55:121",
+          "property": "fontStyle",
+          "token_name": "events.font.regular"
+        },
+        {
+          "slot": "55:121",
+          "property": "fontFamily",
+          "token_name": "events.font.family"
+        },
+        {
+          "slot": "55:121",
+          "property": "paragraphSpacing",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:121",
+          "property": "paragraphIndent",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "55:121",
+          "property": "lineHeight",
+          "token_name": "events.type.caption.leading"
+        },
+        {
+          "slot": "55:121",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.hug"
+        },
+        {
+          "slot": "55:121",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "55:121",
+          "property": "textAutoResize",
+          "token_name": "events.structure.textAutoResize.width_and_height"
+        },
+        {
+          "slot": "55:121",
+          "property": "textAlignHorizontal",
+          "token_name": "events.structure.textAlignHorizontal.left"
+        },
+        {
+          "slot": "55:121",
+          "property": "textAlignVertical",
+          "token_name": "events.structure.textAlignVertical.top"
+        },
+        {
+          "slot": "55:121",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.outside"
+        },
+        {
+          "slot": "55:121",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "55:121",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "events_nav_friends",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "55:109",
+          "55:110",
+          "55:111",
+          "55:113",
+          "55:114",
+          "55:115",
+          "55:117",
+          "55:118",
+          "55:119",
+          "55:121"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "friend_activity",
+      "category": "Regions",
+      "name": "Friend attendance activity",
+      "status": "complete",
+      "include_in_flow": true,
+      "purpose": "Reusable Friend attendance activity for the attendee discovery, optional companion and attendance journey.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "friends_attending"
+        },
+        {
+          "tier": 5,
+          "component_id": "event_row_paws"
+        }
+      ],
+      "reference_ids": [
+        "product_brief",
+        "luma_13_23"
+      ],
+      "design_spec": {
+        "figma_component_id": "56:218",
+        "slots": [
+          "56:218",
+          "56:219",
+          "56:226"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "56:218",
+          "property": "itemSpacing",
+          "token_name": "events.size.16"
+        },
+        {
+          "slot": "56:218",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "56:218",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:218",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "56:218",
+          "property": "layoutMode",
+          "token_name": "events.structure.layoutMode.vertical"
+        },
+        {
+          "slot": "56:218",
+          "property": "primaryAxisSizingMode",
+          "token_name": "events.structure.primaryAxisSizingMode.auto"
+        },
+        {
+          "slot": "56:218",
+          "property": "counterAxisSizingMode",
+          "token_name": "events.structure.counterAxisSizingMode.fixed"
+        },
+        {
+          "slot": "56:218",
+          "property": "primaryAxisAlignItems",
+          "token_name": "events.structure.primaryAxisAlignItems.min"
+        },
+        {
+          "slot": "56:218",
+          "property": "counterAxisAlignItems",
+          "token_name": "events.structure.counterAxisAlignItems.min"
+        },
+        {
+          "slot": "56:218",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "56:218",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeAlign",
+          "token_name": "events.structure.strokeAlign.inside"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeCap",
+          "token_name": "events.structure.strokeCap.none"
+        },
+        {
+          "slot": "56:218",
+          "property": "strokeJoin",
+          "token_name": "events.structure.strokeJoin.miter"
+        },
+        {
+          "slot": "56:218",
+          "property": "clipsContent",
+          "token_name": "events.structure.clipsContent.false"
+        },
+        {
+          "slot": "56:219",
+          "property": "itemSpacing",
+          "token_name": "events.size.8"
+        },
+        {
+          "slot": "56:219",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "56:219",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:219",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "56:219",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "56:219",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        },
+        {
+          "slot": "56:226",
+          "property": "itemSpacing",
+          "token_name": "events.size.16"
+        },
+        {
+          "slot": "56:226",
+          "property": "paddingLeft",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "paddingTop",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "paddingRight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "paddingBottom",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "width",
+          "token_name": "events.size.353"
+        },
+        {
+          "slot": "56:226",
+          "property": "topLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "topRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "bottomLeftRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "bottomRightRadius",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "strokeTopWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "strokeBottomWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "strokeLeftWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "strokeRightWeight",
+          "token_name": "events.size.0"
+        },
+        {
+          "slot": "56:226",
+          "property": "opacity",
+          "token_name": "events.opacity.full"
+        },
+        {
+          "slot": "56:226",
+          "property": "layoutSizingHorizontal",
+          "token_name": "events.structure.layoutSizingHorizontal.fixed"
+        },
+        {
+          "slot": "56:226",
+          "property": "layoutSizingVertical",
+          "token_name": "events.structure.layoutSizingVertical.hug"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "authorized_attendee_previews",
+          "attendance_status",
+          "attendance_count"
+        ],
+        "actions": [
+          "onOpenEvent"
+        ]
+      },
+      "recipe": {
+        "name": "events_friend_activity",
+        "kind": "declarative_slot_recipe",
+        "file_path": "events_flow/recipes/events.recipe-specs.json",
+        "slots": [
+          "56:218",
+          "56:219",
+          "56:226"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Scoped to the events journey and supporting reference families in screens-and-components-inventory.md. Unrelated template candidates are excluded by that documented scope decision.",
+    "Complete means fully specified for this design derivation. Provisional typography and new product compositions remain visibly flagged for review; executable PandaCSS and backend behavior are not claimed."
+  ]
+}

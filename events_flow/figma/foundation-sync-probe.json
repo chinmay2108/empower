@@ -1,0 +1,8 @@
+{
+  "token": "events.size.62",
+  "result": "main component and screen instance changed together, then restored",
+  "before": "Foundation value",
+  "during": "temporary verification override",
+  "after": "Foundation value restored",
+  "missing_font_count": "none"
+}

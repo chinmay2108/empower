@@ -1,0 +1,167 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "tier": 5,
+  "category": "Product components",
+  "status": "in_progress",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "purpose": "Flow-specific product components; populate after identifying the elements required by screens.",
+  "tokens": [],
+  "components": [
+    {
+      "component_id": "profile_assembly",
+      "category": "Product components",
+      "name": "Profile / assembly",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "profile_photo"
+        },
+        {
+          "tier": 4,
+          "component_id": "profile_prompt"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_profile_details"
+        }
+      ],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:61",
+        "slots": [
+          "root",
+          "photo",
+          "prompt",
+          "details"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:61",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:61",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:61",
+          "property": "itemSpacing",
+          "token_name": "profile.space.card_gap"
+        },
+        {
+          "slot": "20:61",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "20:62",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:62",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:62",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.card"
+        },
+        {
+          "slot": "20:66",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:66",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:66",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.card"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "profile_assembly",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "photo",
+          "prompt",
+          "details"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and prompt layout require review."
+        ]
+      }
+    }
+  ],
+  "notes": []
+}

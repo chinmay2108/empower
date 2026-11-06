@@ -1,0 +1,6770 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "tier": 4,
+  "category": "Patterns",
+  "status": "in_progress",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "purpose": "Reusable patterns composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "list_row",
+      "token_name": "patterns.list_row.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "list_row",
+      "token_name": "patterns.list_row.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "tabs",
+      "token_name": "patterns.tabs.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "tabs",
+      "token_name": "patterns.tabs.indicator_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "disclosure",
+      "token_name": "patterns.disclosure.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "select",
+      "token_name": "patterns.select.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "field_group",
+      "token_name": "patterns.field_group.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "search_field",
+      "token_name": "patterns.search_field.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "card",
+      "token_name": "patterns.card.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "list_row",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "tabs",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "disclosure",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "select",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "field_group",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "search_field",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "card",
+      "category": "Patterns",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "profile_photo",
+      "category": "Patterns",
+      "name": "Profile / photo",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [
+        {
+          "tier": 2,
+          "component_id": "profile_like"
+        }
+      ],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:52",
+        "slots": [
+          "root",
+          "like"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:52",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:52",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:52",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.card"
+        },
+        {
+          "slot": "20:52",
+          "property": "paddingLeft",
+          "token_name": "profile.space.photo_inset"
+        },
+        {
+          "slot": "20:52",
+          "property": "paddingRight",
+          "token_name": "profile.space.photo_inset"
+        },
+        {
+          "slot": "20:52",
+          "property": "paddingTop",
+          "token_name": "profile.space.photo_inset"
+        },
+        {
+          "slot": "20:52",
+          "property": "paddingBottom",
+          "token_name": "profile.space.photo_inset"
+        },
+        {
+          "slot": "20:52",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:52",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "20:52",
+          "property": "height",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "20:53",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:53",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:53",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.photo.crop_x"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.photo.crop_y"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.photo.crop_width"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.photo.crop_height"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "20:52",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId",
+          "photoSource",
+          "showLike"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "profile_photo",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "like"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable."
+        ]
+      }
+    },
+    {
+      "component_id": "profile_prompt",
+      "category": "Patterns",
+      "name": "Profile / prompt",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:58",
+        "slots": [
+          "root",
+          "prompt",
+          "answer"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:58",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:58",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:58",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.card"
+        },
+        {
+          "slot": "20:58",
+          "property": "paddingLeft",
+          "token_name": "profile.space.prompt_inline"
+        },
+        {
+          "slot": "20:58",
+          "property": "paddingRight",
+          "token_name": "profile.space.prompt_inline"
+        },
+        {
+          "slot": "20:58",
+          "property": "paddingTop",
+          "token_name": "profile.space.prompt_top"
+        },
+        {
+          "slot": "20:58",
+          "property": "paddingBottom",
+          "token_name": "profile.space.prompt_bottom"
+        },
+        {
+          "slot": "20:58",
+          "property": "itemSpacing",
+          "token_name": "profile.space.prompt_gap"
+        },
+        {
+          "slot": "20:58",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "20:58",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "20:59",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:59",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:59",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "20:59",
+          "property": "fontStyle",
+          "token_name": "profile.type.prompt.style"
+        },
+        {
+          "slot": "20:59",
+          "property": "fontSize",
+          "token_name": "profile.type.prompt.size"
+        },
+        {
+          "slot": "20:59",
+          "property": "lineHeight",
+          "token_name": "profile.type.prompt.line_height"
+        },
+        {
+          "slot": "20:59",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "20:59",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:59",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:59",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "20:60",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:60",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:60",
+          "property": "fontFamily",
+          "token_name": "profile.type.answer.family"
+        },
+        {
+          "slot": "20:60",
+          "property": "fontStyle",
+          "token_name": "profile.type.answer.style"
+        },
+        {
+          "slot": "20:60",
+          "property": "fontSize",
+          "token_name": "profile.type.answer.size"
+        },
+        {
+          "slot": "20:60",
+          "property": "lineHeight",
+          "token_name": "profile.type.answer.line_height"
+        },
+        {
+          "slot": "20:60",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "20:60",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:60",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:60",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId",
+          "prompt",
+          "answer"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "profile_prompt",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "prompt",
+          "answer"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and prompt layout require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_profile_details",
+      "category": "Patterns",
+      "name": "Connections / Profile details",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived profile details. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 2,
+          "component_id": "connections_detail_field"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_detail_gender"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_detail_orientation"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_detail_ethnicity"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_detail_relationship"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:301",
+        "slots": [
+          "root",
+          "demographics",
+          "ethnicity",
+          "relationship"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:301",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:301",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:301",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.card"
+        },
+        {
+          "slot": "29:301",
+          "property": "paddingLeft",
+          "token_name": "connections.details.padding"
+        },
+        {
+          "slot": "29:301",
+          "property": "paddingRight",
+          "token_name": "connections.details.padding"
+        },
+        {
+          "slot": "29:301",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:301",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:301",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:301",
+          "property": "width",
+          "token_name": "profile.size.card"
+        },
+        {
+          "slot": "29:301",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:302",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:302",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:302",
+          "property": "height",
+          "token_name": "connections.details.first_height"
+        },
+        {
+          "slot": "29:303",
+          "property": "width",
+          "token_name": "connections.details.age_width"
+        },
+        {
+          "slot": "29:303",
+          "property": "height",
+          "token_name": "connections.details.first_height"
+        },
+        {
+          "slot": "29:308",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:308",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:308",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:308",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:308",
+          "property": "width",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:308",
+          "property": "height",
+          "token_name": "connections.details.divider_height"
+        },
+        {
+          "slot": "29:309",
+          "property": "width",
+          "token_name": "connections.details.gender_width"
+        },
+        {
+          "slot": "29:309",
+          "property": "height",
+          "token_name": "connections.details.first_height"
+        },
+        {
+          "slot": "29:314",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:314",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:314",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:314",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:314",
+          "property": "width",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:314",
+          "property": "height",
+          "token_name": "connections.details.divider_height"
+        },
+        {
+          "slot": "29:315",
+          "property": "width",
+          "token_name": "connections.details.orientation_width"
+        },
+        {
+          "slot": "29:315",
+          "property": "height",
+          "token_name": "connections.details.first_height"
+        },
+        {
+          "slot": "29:320",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:320",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:320",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:320",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:320",
+          "property": "height",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:326",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:326",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:326",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:326",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:326",
+          "property": "height",
+          "token_name": "connections.border.hairline"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "age",
+          "gender",
+          "orientation",
+          "ethnicity",
+          "relationship"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_profile_details",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "demographics",
+          "ethnicity",
+          "relationship"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_row_new",
+      "category": "Patterns",
+      "name": "Connections / Conversation row / new",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived row new. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_start_badge"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:335",
+        "slots": [
+          "root",
+          "avatar",
+          "start_badge"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "new"
+          }
+        ],
+        "interaction_states": [
+          "new"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:335",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:335",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:335",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:335",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:335",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:335",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:335",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:335",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:335",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:335",
+          "property": "height",
+          "token_name": "connections.list.row_height"
+        },
+        {
+          "slot": "29:335",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:336",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:336",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:336",
+          "property": "itemSpacing",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:338",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:338",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:338",
+          "property": "itemSpacing",
+          "token_name": "connections.space.tiny"
+        },
+        {
+          "slot": "29:339",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:339",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:339",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:340",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:340",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:340",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:340",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:340",
+          "property": "fontSize",
+          "token_name": "connections.type.name.size"
+        },
+        {
+          "slot": "29:340",
+          "property": "lineHeight",
+          "token_name": "connections.type.name.leading"
+        },
+        {
+          "slot": "29:340",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:340",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:340",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:340",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:341",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:341",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:341",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:344",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:344",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:344",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:344",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:344",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "29:344",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "29:344",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:344",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:344",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:344",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:345",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:345",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:345",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:345",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:345",
+          "property": "height",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:341",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "name",
+          "avatarSource",
+          "preview",
+          "state"
+        ],
+        "actions": [
+          "onOpenConversation"
+        ]
+      },
+      "recipe": {
+        "name": "connections_row_new",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar",
+          "start_badge"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "new"
+          }
+        ],
+        "default_variants": {
+          "State": "new"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_row_unread",
+      "category": "Patterns",
+      "name": "Connections / Conversation row / unread",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived row unread. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:346",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "unread"
+          }
+        ],
+        "interaction_states": [
+          "unread"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:346",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:346",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:346",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:346",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:346",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:346",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:346",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:346",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:346",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:346",
+          "property": "height",
+          "token_name": "connections.list.row_height"
+        },
+        {
+          "slot": "29:346",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:347",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:347",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:347",
+          "property": "itemSpacing",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:349",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:349",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:349",
+          "property": "itemSpacing",
+          "token_name": "connections.space.tiny"
+        },
+        {
+          "slot": "29:350",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:350",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:350",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:351",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:351",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:351",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:351",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:351",
+          "property": "fontSize",
+          "token_name": "connections.type.name.size"
+        },
+        {
+          "slot": "29:351",
+          "property": "lineHeight",
+          "token_name": "connections.type.name.leading"
+        },
+        {
+          "slot": "29:351",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:351",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:351",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:351",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:352",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:352",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:352",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:353",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:353",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:353",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:353",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:353",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "29:353",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "29:353",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:353",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:353",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:353",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:354",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:354",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:354",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:354",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:354",
+          "property": "height",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:352",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "name",
+          "avatarSource",
+          "preview",
+          "state"
+        ],
+        "actions": [
+          "onOpenConversation"
+        ]
+      },
+      "recipe": {
+        "name": "connections_row_unread",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "unread"
+          }
+        ],
+        "default_variants": {
+          "State": "unread"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_row_read",
+      "category": "Patterns",
+      "name": "Connections / Conversation row / read",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived row read. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:355",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "read"
+          }
+        ],
+        "interaction_states": [
+          "read"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:355",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:355",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:355",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:355",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:355",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:355",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:355",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:355",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:355",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:355",
+          "property": "height",
+          "token_name": "connections.list.row_height"
+        },
+        {
+          "slot": "29:355",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:356",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:356",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:356",
+          "property": "itemSpacing",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:358",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:358",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:358",
+          "property": "itemSpacing",
+          "token_name": "connections.space.tiny"
+        },
+        {
+          "slot": "29:359",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:359",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:359",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:360",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:360",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:360",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:360",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:360",
+          "property": "fontSize",
+          "token_name": "connections.type.name.size"
+        },
+        {
+          "slot": "29:360",
+          "property": "lineHeight",
+          "token_name": "connections.type.name.leading"
+        },
+        {
+          "slot": "29:360",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:360",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:360",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:360",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:361",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:361",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:361",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:362",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:362",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:362",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:362",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:362",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "29:362",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "29:362",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:362",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:362",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:362",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        },
+        {
+          "slot": "29:363",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:363",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:363",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:363",
+          "property": "fills",
+          "token_name": "connections.color.separator"
+        },
+        {
+          "slot": "29:363",
+          "property": "height",
+          "token_name": "connections.border.hairline"
+        },
+        {
+          "slot": "29:361",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "name",
+          "avatarSource",
+          "preview",
+          "state"
+        ],
+        "actions": [
+          "onOpenConversation"
+        ]
+      },
+      "recipe": {
+        "name": "connections_row_read",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "new",
+              "unread",
+              "read"
+            ],
+            "default_value": "read"
+          }
+        ],
+        "default_variants": {
+          "State": "read"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_list_section",
+      "category": "Patterns",
+      "name": "Connections / Conversation group header",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived list section. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_chevron"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:365",
+        "slots": [
+          "root",
+          "icon_chevron"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:365",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:365",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:365",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:365",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:365",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:365",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:365",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:365",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:365",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:365",
+          "property": "height",
+          "token_name": "connections.list.section_height"
+        },
+        {
+          "slot": "29:366",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:366",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:366",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:366",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:366",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:366",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:366",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:366",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:366",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:366",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:367",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:367",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:367",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I29:368;28:39",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:367",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "title",
+          "count",
+          "expanded"
+        ],
+        "actions": [
+          "onToggle"
+        ]
+      },
+      "recipe": {
+        "name": "connections_list_section",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_chevron"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_status_bar",
+      "category": "Patterns",
+      "name": "Connections / Status bar",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived status bar. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:370",
+        "slots": [
+          "root",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:370",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:370",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:370",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:370",
+          "property": "paddingLeft",
+          "token_name": "connections.status.left"
+        },
+        {
+          "slot": "29:370",
+          "property": "paddingRight",
+          "token_name": "connections.status.right"
+        },
+        {
+          "slot": "29:370",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:370",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:370",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:370",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:370",
+          "property": "height",
+          "token_name": "connections.status.height"
+        },
+        {
+          "slot": "29:371",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:371",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:371",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:371",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:371",
+          "property": "fontSize",
+          "token_name": "connections.type.status.size"
+        },
+        {
+          "slot": "29:371",
+          "property": "lineHeight",
+          "token_name": "connections.type.status.leading"
+        },
+        {
+          "slot": "29:371",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:371",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:371",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:371",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:372",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:372",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:372",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:373",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:373",
+          "property": "itemSpacing",
+          "token_name": "connections.space.small"
+        },
+        {
+          "slot": "I29:374;28:41",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "I29:376;28:43",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "I29:378;28:45",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:372",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_status_bar",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_header",
+      "category": "Patterns",
+      "name": "Connections / Conversation header",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation header. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_back"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_more"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:404",
+        "slots": [
+          "root",
+          "icon_back",
+          "icon_more"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:404",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:404",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:404",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:404",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:404",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:404",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:404",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:404",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:404",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:404",
+          "property": "height",
+          "token_name": "connections.header.height"
+        },
+        {
+          "slot": "29:405",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:405",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:405",
+          "property": "width",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:405",
+          "property": "height",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "I29:406;28:35",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:408",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:408",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:408",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:408",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:408",
+          "property": "fontSize",
+          "token_name": "connections.type.name.size"
+        },
+        {
+          "slot": "29:408",
+          "property": "lineHeight",
+          "token_name": "connections.type.name.leading"
+        },
+        {
+          "slot": "29:408",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:408",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:408",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:408",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:409",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:409",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:409",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:410",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:410",
+          "property": "width",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:410",
+          "property": "height",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "I29:411;28:37",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:409",
+          "property": "height",
+          "token_name": "profile.number.zero"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "name"
+        ],
+        "actions": [
+          "onBack",
+          "onMore"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_header",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_back",
+          "icon_more"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_tabs",
+      "category": "Patterns",
+      "name": "Connections / Chat and profile tabs",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation tabs. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:413",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:413",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:413",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:413",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:413",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:413",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:413",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:413",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:413",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:413",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:413",
+          "property": "height",
+          "token_name": "connections.tabs.height"
+        },
+        {
+          "slot": "29:414",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:414",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:414",
+          "property": "height",
+          "token_name": "connections.tabs.height"
+        },
+        {
+          "slot": "29:415",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:415",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:415",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:416",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:416",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:416",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:416",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:416",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:416",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:416",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:416",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:416",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:416",
+          "property": "fills",
+          "token_name": "connections.color.accent"
+        },
+        {
+          "slot": "29:417",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:417",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:417",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:417",
+          "property": "width",
+          "token_name": "connections.tabs.underline_width"
+        },
+        {
+          "slot": "29:417",
+          "property": "height",
+          "token_name": "connections.tabs.underline_height"
+        },
+        {
+          "slot": "29:417",
+          "property": "fills",
+          "token_name": "connections.color.accent"
+        },
+        {
+          "slot": "29:418",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:418",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:418",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:418",
+          "property": "width",
+          "token_name": "connections.shape.tab_slash_width"
+        },
+        {
+          "slot": "29:418",
+          "property": "height",
+          "token_name": "connections.shape.tab_slash_height"
+        },
+        {
+          "slot": "29:418",
+          "property": "fills",
+          "token_name": "connections.color.border"
+        },
+        {
+          "slot": "29:419",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:419",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:419",
+          "property": "height",
+          "token_name": "connections.tabs.height"
+        },
+        {
+          "slot": "29:420",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:420",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:420",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:421",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:421",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:421",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:421",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:421",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:421",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:421",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:421",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:421",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:421",
+          "property": "fills",
+          "token_name": "connections.color.border"
+        },
+        {
+          "slot": "29:422",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:422",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:422",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:422",
+          "property": "width",
+          "token_name": "connections.tabs.underline_width"
+        },
+        {
+          "slot": "29:422",
+          "property": "height",
+          "token_name": "connections.tabs.underline_height"
+        },
+        {
+          "slot": "29:422",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:418",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.shape.tab_slash"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "activeTab"
+        ],
+        "actions": [
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_tabs",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_start_notice",
+      "category": "Patterns",
+      "name": "Connections / Start conversation notice",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived start notice. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:425",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:425",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:425",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:425",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:425",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:425",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:425",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:425",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:425",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:425",
+          "property": "fills",
+          "token_name": "connections.color.incoming"
+        },
+        {
+          "slot": "29:426",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:426",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:426",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:426",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:426",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:426",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:426",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:426",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:426",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:426",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "name"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_start_notice",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_matched_photo",
+      "category": "Patterns",
+      "name": "Connections / Matched photo context",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived matched photo. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:427",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:427",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:427",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:427",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:427",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:427",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:427",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:427",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:427",
+          "property": "itemSpacing",
+          "token_name": "connections.photo.overlap"
+        },
+        {
+          "slot": "29:427",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:428",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:428",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:428",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:428",
+          "property": "width",
+          "token_name": "connections.photo.width"
+        },
+        {
+          "slot": "29:428",
+          "property": "height",
+          "token_name": "connections.photo.height"
+        },
+        {
+          "slot": "29:429",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:429",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:429",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:430",
+          "property": "width",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "29:430",
+          "property": "height",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "29:431",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:431",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:431",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:431",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:431",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:431",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:431",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:431",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:431",
+          "property": "fills",
+          "token_name": "connections.color.context"
+        },
+        {
+          "slot": "29:432",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:432",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:432",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:432",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.italic"
+        },
+        {
+          "slot": "29:432",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:432",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:432",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:432",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:432",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:432",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.x"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.y"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.width"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.height"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "29:428",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "photoSource",
+          "avatarSource",
+          "context"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_matched_photo",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_incoming_message",
+      "category": "Patterns",
+      "name": "Connections / Incoming message",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived incoming message. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:433",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:433",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:433",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:433",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:433",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:433",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:433",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:433",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:433",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:433",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:434",
+          "property": "width",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "29:434",
+          "property": "height",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "29:435",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:435",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:435",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:435",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:435",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:435",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:435",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:435",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:435",
+          "property": "fills",
+          "token_name": "connections.color.incoming"
+        },
+        {
+          "slot": "29:436",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:436",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:436",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:436",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:436",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:436",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:436",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:436",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:436",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:436",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.x"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.y"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.width"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.height"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "29:434",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "messageId",
+          "body",
+          "avatarSource",
+          "deliveryLabel"
+        ],
+        "actions": [
+          "onLikeMessage"
+        ]
+      },
+      "recipe": {
+        "name": "connections_incoming_message",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_outgoing_message",
+      "category": "Patterns",
+      "name": "Connections / Outgoing message",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived outgoing message. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:437",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:437",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:437",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:437",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:437",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:437",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "29:437",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:437",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:437",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:437",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:438",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:438",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:438",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:439",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:439",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:439",
+          "property": "topLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:439",
+          "property": "topRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:439",
+          "property": "bottomLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:439",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:439",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:439",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:439",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "29:439",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:439",
+          "property": "width",
+          "token_name": "connections.bubble.width"
+        },
+        {
+          "slot": "29:439",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:439",
+          "property": "fills",
+          "token_name": "connections.color.accent"
+        },
+        {
+          "slot": "29:440",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:440",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:440",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:440",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:440",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:440",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:440",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:440",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:440",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:440",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:441",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:441",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:441",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:441",
+          "property": "width",
+          "token_name": "connections.bubble.tail_width"
+        },
+        {
+          "slot": "29:441",
+          "property": "height",
+          "token_name": "connections.bubble.tail_height"
+        },
+        {
+          "slot": "29:441",
+          "property": "fills",
+          "token_name": "connections.color.accent"
+        },
+        {
+          "slot": "29:442",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:442",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:442",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:442",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:442",
+          "property": "fontSize",
+          "token_name": "connections.type.caption.size"
+        },
+        {
+          "slot": "29:442",
+          "property": "lineHeight",
+          "token_name": "connections.type.caption.leading"
+        },
+        {
+          "slot": "29:442",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:442",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:442",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:442",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        },
+        {
+          "slot": "29:439",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:441",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.shape.bubble_tail"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "messageId",
+          "body",
+          "avatarSource",
+          "deliveryLabel"
+        ],
+        "actions": [
+          "onLikeMessage"
+        ]
+      },
+      "recipe": {
+        "name": "connections_outgoing_message",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_composer_idle",
+      "category": "Patterns",
+      "name": "Connections / Composer / idle",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived composer idle. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_mic"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:443",
+        "slots": [
+          "root",
+          "icon_mic"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "idle",
+              "typing"
+            ],
+            "default_value": "idle"
+          }
+        ],
+        "interaction_states": [
+          "idle"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:443",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:443",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:443",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:443",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:443",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:443",
+          "property": "paddingTop",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:443",
+          "property": "paddingBottom",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:443",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:443",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:443",
+          "property": "height",
+          "token_name": "connections.composer.height"
+        },
+        {
+          "slot": "29:443",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:444",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:444",
+          "property": "strokeWeight",
+          "token_name": "connections.border.default"
+        },
+        {
+          "slot": "29:444",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:444",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:444",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:444",
+          "property": "paddingTop",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:444",
+          "property": "paddingBottom",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:444",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:444",
+          "property": "height",
+          "token_name": "connections.composer.field_height"
+        },
+        {
+          "slot": "29:444",
+          "property": "strokes",
+          "token_name": "connections.color.border"
+        },
+        {
+          "slot": "29:445",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:445",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:445",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:445",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:445",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:445",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:445",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:445",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:445",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:445",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        },
+        {
+          "slot": "29:446",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:446",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:446",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:446",
+          "property": "width",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:446",
+          "property": "height",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:446",
+          "property": "fills",
+          "token_name": "connections.color.incoming"
+        },
+        {
+          "slot": "I29:447;28:47",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "draft",
+          "canSend"
+        ],
+        "actions": [
+          "onChange",
+          "onRecordVoice"
+        ]
+      },
+      "recipe": {
+        "name": "connections_composer_idle",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_mic"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "idle",
+              "typing"
+            ],
+            "default_value": "idle"
+          }
+        ],
+        "default_variants": {
+          "State": "idle"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_composer_typing",
+      "category": "Patterns",
+      "name": "Connections / Composer / typing",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived composer typing. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_send"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:449",
+        "slots": [
+          "root",
+          "icon_send"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "idle",
+              "typing"
+            ],
+            "default_value": "typing"
+          }
+        ],
+        "interaction_states": [
+          "typing"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:449",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:449",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:449",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:449",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:449",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:449",
+          "property": "paddingTop",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:449",
+          "property": "paddingBottom",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:449",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:449",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "29:449",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:450",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:450",
+          "property": "strokeWeight",
+          "token_name": "connections.border.default"
+        },
+        {
+          "slot": "29:450",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "29:450",
+          "property": "paddingLeft",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:450",
+          "property": "paddingRight",
+          "token_name": "connections.space.inline"
+        },
+        {
+          "slot": "29:450",
+          "property": "paddingTop",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:450",
+          "property": "paddingBottom",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "29:450",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:450",
+          "property": "strokes",
+          "token_name": "connections.color.border"
+        },
+        {
+          "slot": "29:451",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:451",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:451",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:451",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:451",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:451",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:451",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:451",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:451",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:451",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:452",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:452",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:452",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:452",
+          "property": "width",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:452",
+          "property": "height",
+          "token_name": "connections.icon.action"
+        },
+        {
+          "slot": "29:452",
+          "property": "fills",
+          "token_name": "connections.color.accent"
+        },
+        {
+          "slot": "I29:453;28:69",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:450",
+          "property": "minHeight",
+          "token_name": "connections.composer.draft_height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "draft",
+          "canSend"
+        ],
+        "actions": [
+          "onChange",
+          "onSend"
+        ]
+      },
+      "recipe": {
+        "name": "connections_composer_typing",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_send"
+        ],
+        "variants": [
+          {
+            "name": "State",
+            "values": [
+              "idle",
+              "typing"
+            ],
+            "default_value": "typing"
+          }
+        ],
+        "default_variants": {
+          "State": "typing"
+        }
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_voice_prompt",
+      "category": "Patterns",
+      "name": "Connections / Voice note prompt",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived voice prompt. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_icon_close"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_waveform"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:539",
+        "slots": [
+          "root",
+          "icon_close",
+          "icon_waveform"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:539",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:539",
+          "property": "strokeWeight",
+          "token_name": "connections.border.default"
+        },
+        {
+          "slot": "29:539",
+          "property": "cornerRadius",
+          "token_name": "connections.radius.panel"
+        },
+        {
+          "slot": "29:539",
+          "property": "paddingLeft",
+          "token_name": "connections.voice.padding"
+        },
+        {
+          "slot": "29:539",
+          "property": "paddingRight",
+          "token_name": "connections.voice.padding"
+        },
+        {
+          "slot": "29:539",
+          "property": "paddingTop",
+          "token_name": "connections.voice.padding"
+        },
+        {
+          "slot": "29:539",
+          "property": "paddingBottom",
+          "token_name": "connections.voice.padding"
+        },
+        {
+          "slot": "29:539",
+          "property": "itemSpacing",
+          "token_name": "connections.voice.gap"
+        },
+        {
+          "slot": "29:539",
+          "property": "width",
+          "token_name": "connections.voice.width"
+        },
+        {
+          "slot": "29:539",
+          "property": "strokes",
+          "token_name": "connections.color.border"
+        },
+        {
+          "slot": "29:539",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "29:540",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:540",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:540",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I29:541;28:65",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:543",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:543",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:543",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "I29:544;28:67",
+          "property": "fills",
+          "token_name": "connections.color.teal"
+        },
+        {
+          "slot": "29:546",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:546",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:546",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:546",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "29:546",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "29:546",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "29:546",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:546",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:546",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:546",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "29:547",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:547",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:547",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "29:547",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "29:547",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "29:547",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "29:547",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "29:547",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:547",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:547",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "title",
+          "description"
+        ],
+        "actions": [
+          "onDismiss"
+        ]
+      },
+      "recipe": {
+        "name": "connections_voice_prompt",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "icon_close",
+          "icon_waveform"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_matched_photo_partial",
+      "category": "Patterns",
+      "name": "Connections / Matched photo context / partial",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived matched photo partial. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "32:1054",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "32:1054",
+          "property": "itemSpacing",
+          "token_name": "connections.photo.overlap"
+        },
+        {
+          "slot": "32:1054",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "32:1054",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "32:1054",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "32:1054",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1054",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1055",
+          "property": "width",
+          "token_name": "connections.photo.partial_width"
+        },
+        {
+          "slot": "32:1055",
+          "property": "height",
+          "token_name": "connections.photo.partial_height"
+        },
+        {
+          "slot": "32:1055",
+          "property": "topLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1055",
+          "property": "topRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1055",
+          "property": "bottomLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1055",
+          "property": "bottomRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1055",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1055",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1055",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1055",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1055",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1056",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "32:1056",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1056",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1057",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "width",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "32:1057",
+          "property": "height",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "32:1057",
+          "property": "topLeftRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1057",
+          "property": "topRightRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1057",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1057",
+          "property": "bottomRightRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1057",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1057",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1058",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1058",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1058",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1058",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1058",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1058",
+          "property": "topLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1058",
+          "property": "topRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1058",
+          "property": "bottomLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1058",
+          "property": "bottomRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1058",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1058",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1058",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1058",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1058",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1058",
+          "property": "fills",
+          "token_name": "connections.color.context"
+        },
+        {
+          "slot": "32:1059",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1059",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1059",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "32:1059",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "32:1059",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "32:1059",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.italic"
+        },
+        {
+          "slot": "32:1059",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "32:1059",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1059",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1059",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.received_photo.x"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.received_photo.y"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.received_photo.width"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.received_photo.height"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "32:1055",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.x"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.y"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.width"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.height"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "32:1057",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "photoSource",
+          "avatarSource",
+          "context"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_matched_photo_partial",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_matched_photo_compact",
+      "category": "Patterns",
+      "name": "Connections / Matched photo context / compact",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived matched photo compact. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "32:1065",
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "32:1065",
+          "property": "itemSpacing",
+          "token_name": "connections.photo.overlap"
+        },
+        {
+          "slot": "32:1065",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "32:1065",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "32:1065",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "32:1065",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1065",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1066",
+          "property": "width",
+          "token_name": "connections.photo.width"
+        },
+        {
+          "slot": "32:1066",
+          "property": "height",
+          "token_name": "connections.photo.compact_height"
+        },
+        {
+          "slot": "32:1066",
+          "property": "topLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1066",
+          "property": "topRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1066",
+          "property": "bottomLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1066",
+          "property": "bottomRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1066",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1066",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1066",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1066",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1066",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1067",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "32:1067",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "topLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "topRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "bottomRightRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1067",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1068",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "width",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "32:1068",
+          "property": "height",
+          "token_name": "connections.avatar.message"
+        },
+        {
+          "slot": "32:1068",
+          "property": "topLeftRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1068",
+          "property": "topRightRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1068",
+          "property": "bottomLeftRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1068",
+          "property": "bottomRightRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "32:1068",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1068",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1069",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1069",
+          "property": "paddingLeft",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1069",
+          "property": "paddingTop",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1069",
+          "property": "paddingRight",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1069",
+          "property": "paddingBottom",
+          "token_name": "connections.bubble.pad"
+        },
+        {
+          "slot": "32:1069",
+          "property": "topLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1069",
+          "property": "topRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1069",
+          "property": "bottomLeftRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1069",
+          "property": "bottomRightRadius",
+          "token_name": "connections.radius.bubble"
+        },
+        {
+          "slot": "32:1069",
+          "property": "strokeTopWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1069",
+          "property": "strokeBottomWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1069",
+          "property": "strokeLeftWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1069",
+          "property": "strokeRightWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1069",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1069",
+          "property": "fills",
+          "token_name": "connections.color.context"
+        },
+        {
+          "slot": "32:1070",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1070",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "32:1070",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "32:1070",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "32:1070",
+          "property": "fontSize",
+          "token_name": "connections.type.body.size"
+        },
+        {
+          "slot": "32:1070",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.italic"
+        },
+        {
+          "slot": "32:1070",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "32:1070",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1070",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "32:1070",
+          "property": "lineHeight",
+          "token_name": "connections.type.body.leading"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.x"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.y"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.width"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.matched_photo.height"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "connections.photo.compact_height"
+        },
+        {
+          "slot": "32:1066",
+          "property": "generated_imageTransform",
+          "token_name": "profile.scale.source_pixels_per_unit"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "photoSource",
+          "avatarSource",
+          "context"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_matched_photo_compact",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "avatar"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs."
+  ]
+}

@@ -1,0 +1,722 @@
+{
+  "format_version": "1.0",
+  "manifest": {
+    "type": "object",
+    "properties": {
+      "format_version": {
+        "type": "string"
+      },
+      "document_kind": {
+        "type": "string"
+      },
+      "system_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "derived_from": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "core_token_file": {
+        "type": "string"
+      },
+      "tiers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "tier": {
+              "type": "integer"
+            },
+            "category": {
+              "type": "string"
+            },
+            "file": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tier",
+            "category",
+            "file"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "workflow": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "string"
+          },
+          "next": {
+            "type": "string"
+          },
+          "later": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "current",
+          "next",
+          "later",
+          "priority"
+        ],
+        "additionalProperties": false
+      },
+      "rules": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "entry_shapes": {
+        "type": "object",
+        "properties": {
+          "dependency": {
+            "type": "object",
+            "properties": {
+              "tier": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "component_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "tier",
+              "component_id"
+            ],
+            "additionalProperties": false
+          },
+          "token_binding": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "property": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "token_name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "slot",
+              "property",
+              "token_name"
+            ],
+            "additionalProperties": false
+          },
+          "reference": {
+            "type": "object",
+            "properties": {
+              "reference_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "node_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence_kind": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "reference_id",
+              "url",
+              "node_id",
+              "evidence_kind"
+            ],
+            "additionalProperties": false
+          },
+          "variant": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "default_value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "values",
+              "default_value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "dependency",
+          "token_binding",
+          "reference",
+          "variant"
+        ],
+        "additionalProperties": false
+      },
+      "token_binding_plan": {
+        "type": "object",
+        "properties": {
+          "source_of_truth": {
+            "type": "string"
+          },
+          "figma": {
+            "type": "string"
+          },
+          "pandacss": {
+            "type": "string"
+          },
+          "cross_tool_sync": {
+            "type": "string"
+          },
+          "expected_result": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_of_truth",
+          "figma",
+          "pandacss",
+          "cross_tool_sync",
+          "expected_result"
+        ],
+        "additionalProperties": false
+      },
+      "themes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "foundation_overrides": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "name",
+            "foundation_overrides"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "references": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "reference_id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "node_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence_kind": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "reference_id",
+            "url",
+            "node_id",
+            "evidence_kind"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "format_version",
+      "document_kind",
+      "system_id",
+      "status",
+      "derived_from",
+      "core_token_file",
+      "tiers",
+      "workflow",
+      "rules",
+      "entry_shapes",
+      "token_binding_plan",
+      "themes",
+      "references"
+    ],
+    "additionalProperties": false
+  },
+  "tier": {
+    "type": "object",
+    "properties": {
+      "format_version": {
+        "type": "string"
+      },
+      "document_kind": {
+        "type": "string"
+      },
+      "system_id": {
+        "type": "string"
+      },
+      "tier": {
+        "type": "integer"
+      },
+      "category": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "allowed_dependency_tiers": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "purpose": {
+        "type": "string"
+      },
+      "tokens": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "token_name": {
+              "type": "string"
+            },
+            "token_value": {},
+            "value_type": {
+              "type": "string"
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference_token": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "object",
+              "properties": {
+                "reference_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "figma_node_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "measurement_method": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "notes": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "reference_id",
+                "figma_node_id",
+                "measurement_method",
+                "notes"
+              ],
+              "additionalProperties": false
+            },
+            "value_rule": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "category",
+            "token_name",
+            "token_value",
+            "value_type",
+            "unit",
+            "reference_token",
+            "status",
+            "evidence",
+            "value_rule"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "components": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "component_id": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "type": "string"
+            },
+            "include_in_flow": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "purpose": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "depends_on": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "tier": {
+                    "type": "integer"
+                  },
+                  "component_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tier",
+                  "component_id"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "reference_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "design_spec": {
+              "type": "object",
+              "properties": {
+                "figma_component_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "slots": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "variants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "values": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "default_value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "values",
+                      "default_value"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "interaction_states": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "motion_reference_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "figma_component_id",
+                "slots",
+                "variants",
+                "interaction_states",
+                "motion_reference_ids"
+              ],
+              "additionalProperties": false
+            },
+            "token_bindings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "slot": {
+                    "type": "string"
+                  },
+                  "property": {
+                    "type": "string"
+                  },
+                  "token_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "slot",
+                  "property",
+                  "token_name"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "interface": {
+              "type": "object",
+              "properties": {
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "inputs",
+                "actions"
+              ],
+              "additionalProperties": false
+            },
+            "recipe": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "kind": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "file_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "slots": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "variants": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "values": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "default_value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "values",
+                      "default_value"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "default_variants": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "kind",
+                "file_path",
+                "slots",
+                "variants",
+                "default_variants"
+              ],
+              "additionalProperties": false
+            },
+            "derivation": {
+              "type": "object",
+              "properties": {
+                "source_status": {
+                  "type": "string"
+                },
+                "missing_element_references": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "unresolved_specifications": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "source_status",
+                "missing_element_references",
+                "unresolved_specifications"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "component_id",
+            "category",
+            "name",
+            "status",
+            "include_in_flow",
+            "purpose",
+            "depends_on",
+            "reference_ids",
+            "design_spec",
+            "token_bindings",
+            "interface",
+            "recipe",
+            "derivation"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "notes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "format_version",
+      "document_kind",
+      "system_id",
+      "tier",
+      "category",
+      "status",
+      "allowed_dependency_tiers",
+      "purpose",
+      "tokens",
+      "components",
+      "notes"
+    ],
+    "additionalProperties": false
+  }
+}

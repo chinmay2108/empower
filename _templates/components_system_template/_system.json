@@ -1,0 +1,100 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "status": "unpopulated",
+  "derived_from": null,
+  "core_token_file": "tier_00_foundations.json",
+  "tiers": [
+    {
+      "tier": 0,
+      "category": "Foundations",
+      "file": "tier_00_foundations.json"
+    },
+    {
+      "tier": 1,
+      "category": "Primitives",
+      "file": "tier_01_primitives.json"
+    },
+    {
+      "tier": 2,
+      "category": "Controls",
+      "file": "tier_02_controls.json"
+    },
+    {
+      "tier": 3,
+      "category": "Overlays and feedback",
+      "file": "tier_03_overlays_and_feedback.json"
+    },
+    {
+      "tier": 4,
+      "category": "Patterns",
+      "file": "tier_04_patterns.json"
+    },
+    {
+      "tier": 5,
+      "category": "Product components",
+      "file": "tier_05_product_components.json"
+    },
+    {
+      "tier": 6,
+      "category": "Regions",
+      "file": "tier_06_regions.json"
+    },
+    {
+      "tier": 7,
+      "category": "Screens",
+      "file": "tier_07_screens.json"
+    }
+  ],
+  "workflow": {
+    "current": "Derive reference-faithful editable Figma components and assemble the required screens.",
+    "next": "Convert the Figma components into reusable PandaCSS recipes with semantic token bindings.",
+    "later": "Systematize across multiple flows and reference apps in a separate workflow.",
+    "priority": "Efficient component derivation and effective MVP user experience; missing element references and unresolved component specifications take priority over production completeness."
+  },
+  "rules": [
+    "Each tier may depend only on lower tiers. Components within the same tier must not depend on each other.",
+    "Every token value is null until populated from verified evidence or an explicit design decision.",
+    "Tier 0 owns literal core values and optional aliases. Higher tiers reference Foundation tokens directly and leave token_value null.",
+    "A token uses exactly one of token_value or reference_token when populated. Foundation alias chains must resolve without cycles.",
+    "Multiple components bind to the same semantic roles. Do not copy a color hex or spacing literal into each component or recipe.",
+    "Token names are candidate placeholders and may be refined during derivation; they do not establish the final cross-flow system.",
+    "PNGs are reference evidence. They do not constitute editable components or establish exact typography or motion specifications.",
+    "Keep unverified colors, typography, spacing, and motion unresolved instead of silently inventing values.",
+    "Use named component variants and inputs/actions to support reuse without copying components for each screen.",
+    "These files describe future bindings; a generator or synchronization integration is not implemented by this scaffold.",
+    "Completion gate: run skills/validate_component_tiers.py on this entire folder. Only exit 0 clears the gate; incomplete fields, downstream literals, invalid references, and unvalidated files fail."
+  ],
+  "entry_shapes": {
+    "dependency": {
+      "tier": null,
+      "component_id": null
+    },
+    "token_binding": {
+      "slot": null,
+      "property": null,
+      "token_name": null
+    },
+    "reference": {
+      "reference_id": null,
+      "url": null,
+      "node_id": null,
+      "evidence_kind": null
+    },
+    "variant": {
+      "name": null,
+      "values": [],
+      "default_value": null
+    }
+  },
+  "token_binding_plan": {
+    "source_of_truth": "The Foundation registry; every downstream value binding references Foundation tokens directly.",
+    "figma": "Bind editable component properties to Figma variables or styles rather than independent literals.",
+    "pandacss": "Map core values to Panda tokens and semantic tokens; recipes consume token references.",
+    "cross_tool_sync": "Not implemented. A later explicit export/generation step must keep the shared registry, Figma variables, and Panda definitions aligned.",
+    "expected_result": "After those bindings and synchronization are implemented, changing a core value propagates through dependent aliases, recipes, and component instances."
+  },
+  "themes": [],
+  "references": []
+}

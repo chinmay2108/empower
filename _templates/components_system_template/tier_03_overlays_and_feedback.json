@@ -1,0 +1,491 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 3,
+  "category": "Overlays and feedback",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2
+  ],
+  "purpose": "Reusable overlays and feedback composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "tooltip",
+      "token_name": "overlays_and_feedback.tooltip.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "tooltip",
+      "token_name": "overlays_and_feedback.tooltip.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "popover",
+      "token_name": "overlays_and_feedback.popover.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "popover",
+      "token_name": "overlays_and_feedback.popover.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "menu",
+      "token_name": "overlays_and_feedback.menu.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "menu",
+      "token_name": "overlays_and_feedback.menu.item_gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "dialog",
+      "token_name": "overlays_and_feedback.dialog.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "dialog",
+      "token_name": "overlays_and_feedback.dialog.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "drawer",
+      "token_name": "overlays_and_feedback.drawer.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "drawer",
+      "token_name": "overlays_and_feedback.drawer.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "toast",
+      "token_name": "overlays_and_feedback.toast.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "toast",
+      "token_name": "overlays_and_feedback.toast.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "alert",
+      "token_name": "overlays_and_feedback.alert.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "alert",
+      "token_name": "overlays_and_feedback.alert.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "tooltip",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "popover",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "menu",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "dialog",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "drawer",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "toast",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "alert",
+      "category": "Overlays and feedback",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
+    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+  ]
+}

@@ -62,3 +62,5 @@ Use `Empower.log("area.what_happened", { details })` for key moments. Logs show 
 ## Working on the code
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for branches, PRs, and reviews. The backlog is in [docs/backlog.md](docs/backlog.md).
+
+The imported Figma assets, their completion status, and automated check commands are documented in [Design assets and validation](docs/design-assets.md).

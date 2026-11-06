@@ -1,0 +1,657 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "component_system_template",
+  "tier": 0,
+  "category": "Foundations",
+  "status": "unpopulated",
+  "allowed_dependency_tiers": [],
+  "purpose": "Central token definitions. Names are provisional slots, not approved values or a final scale.",
+  "tokens": [
+    {
+      "category": "color",
+      "token_name": "color.surface.canvas",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.panel",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.overlay",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.primary",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.secondary",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.inverse",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.primary",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.secondary",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.border.default",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.focus.ring",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.success",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.warning",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.error",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.family.body",
+      "token_value": null,
+      "value_type": "font_family",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.family.heading",
+      "token_value": null,
+      "value_type": "font_family",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.body",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.heading",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.label",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.weight.regular",
+      "token_value": null,
+      "value_type": "font_weight",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.weight.emphasis",
+      "token_value": null,
+      "value_type": "font_weight",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.line_height.body",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.line_height.heading",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.letter_spacing.default",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.small",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.medium",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.large",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.small",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.medium",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.pill",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "border",
+      "token_name": "border.width.default",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.elevated",
+      "token_value": null,
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "blur",
+      "token_name": "blur.overlay",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.short",
+      "token_value": null,
+      "value_type": "duration",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.medium",
+      "token_value": null,
+      "value_type": "duration",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.easing.standard",
+      "token_value": null,
+      "value_type": "easing",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.base",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.overlay",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.disabled",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "sizing",
+      "token_name": "size.touch_target",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "breakpoint",
+      "token_name": "breakpoint.compact",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    }
+  ],
+  "components": [],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
+    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+  ]
+}
