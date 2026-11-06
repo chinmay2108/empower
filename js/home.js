@@ -54,7 +54,38 @@
         '<p class="mt-4"><a class="btn btn--inline" href="pages/events.html">See this week</a></p></div>';
     }
   }
-  host.innerHTML = html + dailyCard();
+  var DAY_NAMES = { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" };
+  var PART_NAMES = { eve: "evenings", day: "daytimes", am: "mornings", pm: "afternoons" };
+  host.innerHTML = slotCard() + html + dailyCard();
+
+  /* ---------- "Still free Thursday evenings?" ---------- */
+
+  function slotName(slot) {
+    var bits = slot.split("-");
+    return DAY_NAMES[bits[0]] + " " + PART_NAMES[bits[1]];
+  }
+
+  function slotCard() {
+    if (!profile) return "";
+    var slot = logic.slotsToCheck(profile, commitments, groups, now)[0];
+    if (!slot) return "";
+    return '<div class="card card--accent" data-slot-card><p class="card__title">Still free ' + slotName(slot) + "?</p>" +
+      '<p class="card__meta">The last couple didn\'t work out. No problem, plans change. Should we keep suggesting this time?</p>' +
+      '<div class="btn-row mt-3"><button type="button" class="btn btn--small" data-slot="' + slot + '" data-free="yes">Yes, keep it</button>' +
+      '<button type="button" class="btn btn--secondary btn--small" data-slot="' + slot + '" data-free="no">Not anymore</button></div></div>';
+  }
+
+  host.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-slot]");
+    if (!el) return;
+    var slot = el.getAttribute("data-slot");
+    var yes = el.getAttribute("data-free") === "yes";
+    profile = logic.answerSlotCheck(profile, slot, yes, now);
+    store.saveProfile(profile);
+    Empower.log("home.slot_checked", { slot: slot, stillFree: yes });
+    el.closest("[data-slot-card]").remove();
+    ui.toast(yes ? "Got it, keeping " + slotName(slot) : "Removed " + slotName(slot));
+  });
 
   /* ---------- Daily "this or that" question ---------- */
 

@@ -272,3 +272,42 @@ test("stepDown moves one step down and stops at Cozy", () => {
   assert.equal(logic.stepDown("social"), "cozy");
   assert.equal(logic.stepDown("cozy"), "cozy");
 });
+
+/* ---------- Say vs do: "Still free?" ---------- */
+
+const missedThu = (day, extra = {}) => Object.assign({ id: "m" + day, groupId: "g01", startsAt: at(2026, 10, day, 19).toISOString(), status: "missed" }, extra);
+const SAT = at(2026, 10, 31, 12);
+const THU_FAN = { freeSlots: ["thu-eve", "sat-am"] };
+
+test("Given 2 missed Thursday sessions in 4 weeks, Then we ask about Thursday evenings", () => {
+  assert.deepEqual(logic.slotsToCheck(THU_FAN, [missedThu(22)], GROUPS, SAT), []);
+  assert.deepEqual(logic.slotsToCheck(THU_FAN, [missedThu(22), missedThu(29)], GROUPS, SAT), ["thu-eve"]);
+});
+
+test("Early cancellations and misses older than 4 weeks don't count; unmarked past sessions do", () => {
+  assert.deepEqual(logic.slotsToCheck(THU_FAN, [missedThu(22), missedThu(29, { status: "cancelled" })], GROUPS, SAT), []);
+  assert.deepEqual(logic.slotsToCheck(THU_FAN, [missedThu(1), missedThu(29)], GROUPS, SAT), []);
+  assert.deepEqual(logic.slotsToCheck(THU_FAN, [missedThu(22), missedThu(29, { status: "committed" })], GROUPS, SAT), ["thu-eve"]);
+});
+
+test("Yes keeps the slot and restarts the count; No removes it; we ask again after 2 new misses", () => {
+  const twoMisses = [missedThu(22), missedThu(29)];
+  const yes = logic.answerSlotCheck(THU_FAN, "thu-eve", true, SAT);
+  assert.deepEqual(yes.freeSlots, ["thu-eve", "sat-am"]);
+  assert.deepEqual(logic.slotsToCheck(yes, twoMisses, GROUPS, SAT), []);
+  const later = twoMisses.concat([{ id: "n1", groupId: "g01", startsAt: at(2026, 11, 5, 19).toISOString(), status: "missed" },
+    { id: "n2", groupId: "g01", startsAt: at(2026, 11, 12, 19).toISOString(), status: "missed" }]);
+  assert.deepEqual(logic.slotsToCheck(yes, later, GROUPS, at(2026, 11, 14, 12)), ["thu-eve"]);
+  const no = logic.answerSlotCheck(THU_FAN, "thu-eve", false, SAT);
+  assert.deepEqual(no.freeSlots, ["sat-am"]);
+  assert.deepEqual(THU_FAN.freeSlots, ["thu-eve", "sat-am"]); // original not changed
+});
+
+test("Until they answer, sessions in a slot we're asking about score 3 lower", () => {
+  const rick = Object.assign({}, RICK);
+  const thu = at(2026, 11, 2, 12); // Monday; misses on Oct 22 and 29
+  const sessions = schedule.upcomingSessions(GROUPS, thu, 7);
+  const triviaWith = logic.rankPicks(sessions, GROUPS, rick, [missedThu(22), missedThu(29)], thu, 15).find((p) => p.group.id === "g01");
+  const triviaWithout = logic.rankPicks(sessions, GROUPS, rick, [], thu, 15).find((p) => p.group.id === "g01");
+  assert.equal(triviaWithout.score - triviaWith.score, 3);
+});

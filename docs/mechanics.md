@@ -64,6 +64,13 @@ Questions live in `data/questions.js` (`Empower.QUESTIONS`). Pages that use them
 
 In `scoreSession`, Cozy and Social get +2 for high structure and lose points for open mingling (Cozy also +1 for 10 people or fewer). A `style` of -0.5 or lower adds +2 for `mode: "doing"` groups; 0.5 or higher adds +2 for `mode: "talking"` groups.
 
+### Say vs do: "Still free Thursday evenings?"
+
+| Call | What it decides |
+| --- | --- |
+| `slotsToCheck(profile, commitments, groups, now)` | Free slots with 2 or more misses in the last 4 weeks since the user last said "still free" (`profile.slotConfirmedAt`). Early cancellations don't count. Asked every time it happens again. Until answered, `rankPicks` takes 3 points off sessions in those slots. |
+| `answerSlotCheck(profile, slot, stillFree, now)` | A new profile: yes restarts the count for that slot; no removes the slot from `freeSlots`. |
+
 ### Comfort ladder
 
 | Call | What it decides |
@@ -86,7 +93,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
