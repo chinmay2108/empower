@@ -82,7 +82,7 @@
   function downloadIcs() {
     var stamp = function (iso) { return new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); };
     var ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Empower//EN", "BEGIN:VEVENT",
-      "UID:" + state.done.id + "@empower", "DTSTAMP:" + stamp(new Date().toISOString()),
+      "UID:" + state.done.id + "@empower", "DTSTAMP:" + stamp(now.toISOString()),
       "DTSTART:" + stamp(session.startsAt), "DTEND:" + stamp(session.endsAt),
       "SUMMARY:" + group.name, "LOCATION:" + group.venue,
       "DESCRIPTION:Leave at " + ui.formatHHMM(state.done.leaveAt) + " (" + state.done.travelMode + ")",

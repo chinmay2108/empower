@@ -69,6 +69,10 @@ Use `Empower.log("area.what_happened", { details })` for key moments. Logs show 
 
 ## Working on the code
 
+- **How the app works, in plain English:** [docs/how-it-works.md](docs/how-it-works.md)
+- **Rules for AI agents (Codex, Claude):** [AGENTS.md](AGENTS.md). Both tools read it automatically.
+- **Before a PR:** `node --test tests/*.test.js` and `node scripts/check_architecture.js`. GitHub runs both.
+
 See [CONTRIBUTING.md](CONTRIBUTING.md) for branches, PRs, and reviews. The backlog is in [docs/backlog.md](docs/backlog.md).
 
 The imported Figma assets, their completion status, and automated check commands are documented in [Design assets and validation](docs/design-assets.md).

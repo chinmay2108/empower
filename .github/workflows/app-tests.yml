@@ -20,3 +20,5 @@ jobs:
           node-version: '22'
       - name: Run unit tests
         run: node --test tests/*.test.js
+      - name: Check architecture rules (see AGENTS.md)
+        run: node scripts/check_architecture.js
