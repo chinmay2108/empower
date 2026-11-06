@@ -19,7 +19,7 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | `getAnswers()` / `saveAnswer({ questionId, choice, at })` | Answers to "this or that" questions. `choice` is `"a"`, `"b"` or `"skip"`; `at` is an ISO time from `Empower.clock.now()`. Saving again replaces that question's answer. |
 | `getGroups()` / `getGroup(id)` | Recurring groups from `data/groups.js`. |
 | `getCommitments()` / `getCommitment(id)` | All commitments, or one. |
-| `addCommitment({ sessionId, groupId, startsAt, leaveAt, travelMode })` | The saved commitment, `status: "committed"`. |
+| `addCommitment({ sessionId, groupId, startsAt, leaveAt, travelMode, withPersonId? })` | The saved commitment, `status: "committed"`. `withPersonId` is set when it was made together from chat (`commit.html?session=...&with=u123`). |
 | `updateCommitment(id, changes)` | The updated commitment. Status moves to `"attended"`, `"cancelled"` or `"missed"`. |
 | `getReflections()` / `addReflection({ commitmentId, enjoyed, talkedToSomeone, wouldReturn, note })` | Reflections. `enjoyed` is 1 to 3. |
 | `resetAll()` | Erases this browser's data and the demo clock. |
@@ -77,7 +77,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -101,5 +101,9 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
 | `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
 | `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+| `Empower.people.timeTogether(person, commitments, groups)` | `{ sessions, hours, plans, weekendSessions, byGroup }` with one person. Sessions you both attended count; a commitment made together from chat (`withPersonId`) counts as both there. |
+| `Empower.people.warmthStage(time, matched)` | `"spark"` (matched), `"kindling"` (3 sessions), `"warm"` (10 hours and a plan made together), `"glow"` (50 hours), `"bonfire"` (90 hours), or `"none"`. Unmatched people stop at kindling. |
+| `Empower.people.stageRank(stage)` | Position of a stage, to check whether it went up. |
+| `Empower.people.pairTags(person, commitments, groups)` | Shared-history tags: `"<Group> regulars"`, `"First-timers"`, `"Weekend crew"`, `"Plan makers"`. Shown only to the pair. |
 
 To regenerate the population: `python3 scripts/generate_population.py`.

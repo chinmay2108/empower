@@ -22,7 +22,8 @@
      Answer       many:             { questionId, choice: "a" | "b" | "skip", at }  (data/questions.js)
      Group        seed data:        see data/groups.js
      Session      generated:        see js/schedule.js
-     Commitment   many:             { id, sessionId, groupId, startsAt, leaveAt, travelMode, status, createdAt }
+     Commitment   many:             { id, sessionId, groupId, startsAt, leaveAt, travelMode, status, createdAt,
+                                      withPersonId? }  (withPersonId: committed together from chat)
                                     status: "committed" | "cancelled" | "attended" | "missed"
      Person       seed data:        data/population.js (SYNTHETIC, read-only)
      Connection   many:             { id, personId, sessionId, groupId, addedAt }

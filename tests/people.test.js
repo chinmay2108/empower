@@ -106,3 +106,55 @@ test("confirmsMeetup: synthetic people confirm only if they're a mutual match", 
     assert.equal(people.confirmsMeetup(p, RICK, 2, RICK.createdAt), people.willAddBack(p, RICK, 2, RICK.createdAt));
   });
 });
+
+/* ---------- Warmth stages and tags ---------- */
+
+const trivia = (day, extra = {}) => Object.assign({ id: "c" + day, groupId: "g01", startsAt: at(2026, 11, day, 19).toISOString(), status: "attended" }, extra);
+const nobody = { id: "zz1", memberships: [], joinedWeek: 0 }; // never at any group on their own
+
+test("timeTogether counts plans made together as both there, with hours from session length", () => {
+  const cs = [trivia(5, { withPersonId: "zz1" }), trivia(12, { withPersonId: "zz1" }), trivia(19)];
+  const t = people.timeTogether(nobody, cs, GROUPS);
+  assert.equal(t.sessions, 2);
+  assert.equal(t.hours, 4);          // trivia is 120 minutes
+  assert.equal(t.plans, 2);
+  assert.deepEqual(t.byGroup, { g01: 2 });
+});
+
+test("warmthStage: Spark when matched, Kindling at 3 sessions, Warm at 10 hours plus a plan, Glow 50h, Bonfire 90h", () => {
+  assert.equal(people.warmthStage({ sessions: 1, hours: 2, plans: 0 }, true), "spark");
+  assert.equal(people.warmthStage({ sessions: 3, hours: 6, plans: 0 }, true), "kindling");
+  assert.equal(people.warmthStage({ sessions: 5, hours: 10, plans: 0 }, true), "kindling"); // no plan yet
+  assert.equal(people.warmthStage({ sessions: 5, hours: 10, plans: 1 }, true), "warm");
+  assert.equal(people.warmthStage({ sessions: 25, hours: 50, plans: 0 }, true), "glow");
+  assert.equal(people.warmthStage({ sessions: 45, hours: 90, plans: 0 }, true), "bonfire");
+});
+
+test("Given someone you keep seeing but haven't matched, Then they stop at Kindling", () => {
+  assert.equal(people.warmthStage({ sessions: 2, hours: 4, plans: 0 }, false), "none");
+  assert.equal(people.warmthStage({ sessions: 40, hours: 90, plans: 2 }, false), "kindling");
+  assert.ok(people.stageRank("warm") > people.stageRank("kindling"));
+});
+
+test("pairTags: group regulars at 4 sessions, Weekend crew at 3 weekend sessions, Plan makers after a plan", () => {
+  const cs = [5, 12, 19, 26].map((d) => trivia(d, { withPersonId: "zz1" }));
+  assert.deepEqual(people.pairTags(nobody, cs, GROUPS), ["Thursday Trivia Crew regulars", "Plan makers"]);
+  const runs = [7, 14, 21].map((d) => ({ id: "r" + d, groupId: "g02", startsAt: at(2026, 11, d, 8).toISOString(), status: "attended", withPersonId: "zz1" }));
+  assert.ok(people.pairTags(nobody, runs, GROUPS).includes("Weekend crew"));
+  assert.deepEqual(people.pairTags(nobody, [trivia(5)], GROUPS), []);
+});
+
+test("First-timers: they were at your first session of a group, and it was their first time too", () => {
+  // Find a synthetic trivia member and the first week they went.
+  const p = POP.find((x) => x.memberships.some((m) => m.groupId === "g01" && m.p > 0.3));
+  let first = p.joinedWeek;
+  while (!people.attends(p, "g01", first)) first += 1;
+  const thursday = new Date(2026, 0, 4 + first * 7 + 4, 19);
+  const c = { id: "f1", groupId: "g01", startsAt: thursday.toISOString(), status: "attended" };
+  assert.ok(people.pairTags(p, [c], GROUPS).includes("First-timers"));
+  // Their second time there is not a first time.
+  let second = first + 1;
+  while (!people.attends(p, "g01", second)) second += 1;
+  const later = { id: "f2", groupId: "g01", startsAt: new Date(2026, 0, 4 + second * 7 + 4, 19).toISOString(), status: "attended" };
+  assert.ok(!people.pairTags(p, [later], GROUPS).includes("First-timers"));
+});

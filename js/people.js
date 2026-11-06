@@ -158,6 +158,109 @@ Empower.people = (function () {
     return pick(warm ? ["Ha, totally.", "Love that.", "Same here!", "That's great."] : ["Nice.", "Makes sense.", "Ha, yeah."]);
   }
 
+  /* ---------- Warmth stages and tags ---------- */
+
+  var STAGE_ORDER = ["none", "spark", "kindling", "warm", "glow", "bonfire"];
+
+  function sharedSessions(person, commitments) {
+    return commitments.filter(function (c) {
+      return c.status === "attended" &&
+        (c.withPersonId === person.id || attends(person, c.groupId, weekIndex(c.startsAt)));
+    });
+  }
+
+  /*
+   * timeTogether(person, commitments, groups)
+   * Time with one person: sessions you both attended (a plan made together
+   * from chat counts as both there), hours from those sessions' lengths,
+   * plans made together from chat, weekend sessions, and sessions per group.
+   * Returns { sessions, hours, plans, weekendSessions, byGroup: { groupId: n } }.
+   */
+  function timeTogether(person, commitments, groups) {
+    var byId = {};
+    groups.forEach(function (g) { byId[g.id] = g; });
+    var shared = sharedSessions(person, commitments);
+    var minutes = 0;
+    var byGroup = {};
+    var weekend = 0;
+    shared.forEach(function (c) {
+      minutes += (byId[c.groupId] && byId[c.groupId].durationMin) || 0;
+      byGroup[c.groupId] = (byGroup[c.groupId] || 0) + 1;
+      var day = new Date(c.startsAt).getDay();
+      if (day === 0 || day === 6) weekend += 1;
+    });
+    return {
+      sessions: shared.length,
+      hours: Math.round(minutes / 6) / 10,
+      plans: commitments.filter(function (c) { return c.withPersonId === person.id && c.status !== "cancelled"; }).length,
+      weekendSessions: weekend,
+      byGroup: byGroup
+    };
+  }
+
+  /*
+   * warmthStage(time, matched)
+   * How warm a connection is, from timeTogether():
+   *   spark    matched (you added each other)
+   *   kindling 3 sessions together
+   *   warm     10 hours together and at least one plan made together
+   *   glow     50 hours (Hall: casual friend)
+   *   bonfire  90 hours (Hall: friend)
+   * Someone you keep seeing but haven't matched with can reach kindling
+   * (a familiar face) but no further. Otherwise "none".
+   */
+  function warmthStage(time, matched) {
+    var kindling = time.sessions >= 3;
+    if (!matched) return kindling ? "kindling" : "none";
+    if (time.hours >= 90) return "bonfire";
+    if (time.hours >= 50) return "glow";
+    if (time.hours >= 10 && time.plans >= 1) return "warm";
+    if (kindling) return "kindling";
+    return "spark";
+  }
+
+  /* stageRank(stage): position in the order, so pages can tell if a stage went up. */
+  function stageRank(stage) {
+    return STAGE_ORDER.indexOf(stage);
+  }
+
+  /*
+   * pairTags(person, commitments, groups)
+   * Labels for the pair's shared history (never for the person alone):
+   *   "<Group> regulars"  4+ sessions of the same group together
+   *   "First-timers"      they were at your first session of a group, and it
+   *                       was their first time there too
+   *   "Weekend crew"      3+ weekend sessions together
+   *   "Plan makers"       you committed to a session together from chat
+   */
+  function pairTags(person, commitments, groups) {
+    var time = timeTogether(person, commitments, groups);
+    var tags = [];
+    groups.forEach(function (g) {
+      if ((time.byGroup[g.id] || 0) >= 4) tags.push(g.name + " regulars");
+    });
+    if (firstTimers(person, commitments)) tags.push("First-timers");
+    if (time.weekendSessions >= 3) tags.push("Weekend crew");
+    if (time.plans >= 1) tags.push("Plan makers");
+    return tags;
+  }
+
+  function firstTimers(person, commitments) {
+    var attended = commitments.filter(function (c) { return c.status === "attended"; })
+      .sort(function (a, b) { return a.startsAt < b.startsAt ? -1 : 1; });
+    var seen = {};
+    return attended.some(function (c) {
+      if (seen[c.groupId]) return false;
+      seen[c.groupId] = true;
+      var week = weekIndex(c.startsAt);
+      if (!attends(person, c.groupId, week)) return false;
+      for (var w = person.joinedWeek; w < week; w++) {
+        if (attends(person, c.groupId, w)) return false;
+      }
+      return true;
+    });
+  }
+
   /*
    * scoreOf(person): a synthetic person's public Empower score, fixed per
    * person. Warmer, more reliable people have met up more. 0 to about 120.
@@ -177,6 +280,10 @@ Empower.people = (function () {
   }
 
   return {
+    timeTogether: timeTogether,
+    warmthStage: warmthStage,
+    stageRank: stageRank,
+    pairTags: pairTags,
     scoreOf: scoreOf,
     confirmsMeetup: confirmsMeetup,
     hash01: hash01,

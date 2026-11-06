@@ -100,8 +100,31 @@
         '<button type="button" class="btn btn--secondary" data-action="meet-skip">Skip</button>');
   }
 
+  var STAGE_WORDS = { kindling: "are kindling", warm: "are warm", glow: "are glowing", bonfire: "are a bonfire" };
+
+  /*
+   * Matches whose warmth stage went up because of this session: compare
+   * each match's stage without this session and with it.
+   */
+  function stageChanges(c) {
+    var all = store.getCommitments();
+    var without = all.filter(function (x) { return x.id !== c.id; });
+    var profile = store.getProfile();
+    return store.getConnections().map(function (k) {
+      var person = store.getPerson(k.personId);
+      var together = Empower.people.sessionsTogether(person, all);
+      if (!Empower.people.willAddBack(person, profile, together, profile.createdAt)) return null;
+      var before = Empower.people.warmthStage(Empower.people.timeTogether(person, without, groups), true);
+      var time = Empower.people.timeTogether(person, all, groups);
+      var after = Empower.people.warmthStage(time, true);
+      return Empower.people.stageRank(after) > Empower.people.stageRank(before) && STAGE_WORDS[after]
+        ? { person: person, stage: after, time: time } : null;
+    }).filter(Boolean);
+  }
+
   function renderDone(c) {
     var g = groupOf(c);
+    var changes = stageChanges(c);
     var row = logic.progressByGroup(store.getCommitments(), groups).find(function (r) { return r.group.id === g.id; });
     var next = Empower.schedule.upcomingSessions([g], new Date(c.startsAt), 15).find(function (s) { return s.startsAt > c.startsAt && new Date(s.startsAt) > now; });
     var liked = form.talkedToSomeone === "yes" ?
@@ -111,12 +134,20 @@
       '<h1 class="title">' + row.sessions + (row.sessions === 1 ? " session" : " sessions") + " with this group.</h1>" +
       '<p class="subtitle">That\'s about ' + row.hours + " hours with " + g.name + ". Friendships take repeat time, so keep going back.</p></div>" +
       liked +
+      changes.map(function (ch) {
+        return '<div class="card card--accent"><p class="card__title">Things with ' + ch.person.name.split(" ")[0] + " " + STAGE_WORDS[ch.stage] +
+          '</p><p class="card__meta">' + ch.time.sessions + " sessions, " + ch.time.hours + " hours together.</p></div>";
+      }).join("") +
       (next ? '<div class="card card--outline"><p class="eyebrow">Next session</p><p class="card__title">' + g.name +
         '</p><p class="card__meta">' + ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt) + "</p></div>" : "") +
       (meet.added.length ? '<p class="small muted center">You added ' + meet.added.length + (meet.added.length === 1 ? " person" : " people") +
         '. Matches show up in <a href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');
+    if (changes.length) {
+      ui.toast("Things with " + changes[0].person.name.split(" ")[0] + " " + STAGE_WORDS[changes[0].stage]);
+      Empower.log("reflect.stage_up", { person: changes[0].person.id, stage: changes[0].stage });
+    }
   }
 
   /* ---------- Events ---------- */
