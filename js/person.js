@@ -7,6 +7,7 @@
   var store = Empower.store;
   var ui = Empower.ui;
   var people = Empower.people;
+  var logic = Empower.logic;
   var host = document.getElementById("person-root");
   var now = Empower.clock.now();
 
@@ -30,16 +31,43 @@
 
   host.innerHTML =
     '<div class="center"><div class="avatar avatar--lg avatar--center">' + ui.initials(person.name) + "</div>" +
-    '<h1 class="title">' + person.name + '</h1><p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
+    '<h1 class="title">' + person.name + '</h1><p><span class="score-badge">Empower score ' + people.scoreOf(person) + "</span></p>" +
+    '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
     '<ul class="facts">' +
     "<li><span>Met at</span><span>" + store.getGroup(connection.groupId).name + "</span></li>" +
     "<li><span>Sessions together</span><span>" + together + "</span></li>" +
     "<li><span>You both like</span><span>" + (shared.length ? shared.join(", ") : "Still finding out") + "</span></li>" +
     (groupsInCommon.length ? "<li><span>Groups in common</span><span>" + groupsInCommon.map(function (g) { return g.name; }).join(", ") + "</span></li>" : "") +
-    "<li><span>Shows up</span><span>" + reliability + "</span></li></ul>" +
+    "<li><span>Shows up</span><span>" + reliability + "</span></li>" +
+    "<li><span>Meetups outside sessions</span><span id=\"meetup-count\">" + meetupsWith().length + "</span></li></ul>" +
+    '<div class="card card--outline"><p class="card__title">Met up outside a session?</p>' +
+    '<p class="card__meta">Coffee, a walk, anything. When you both confirm, it adds 10 to your Empower score.</p>' +
+    '<p class="mt-4" id="meetup-action">' + meetupButton() + "</p></div>" +
     '<p class="small muted">Synthetic demo profile.</p>' +
     '<div class="footer-action"><div class="footer-action__inner"><a class="btn" href="chat.html?id=' + person.id + '">Message ' +
     person.name.split(" ")[0] + "</a></div></div>";
+
+  function meetupsWith() {
+    return store.getMeetups().filter(function (m) { return m.personId === person.id && m.confirmed; });
+  }
+
+  function meetupButton() {
+    return logic.canLogMeetup(store.getMeetups(), person.id, now)
+      ? '<button type="button" class="btn btn--secondary btn--small" data-action="meetup">We met up</button>'
+      : '<span class="small muted">Logged for today.</span>';
+  }
+
+  host.addEventListener("click", function (e) {
+    if (!e.target.closest("[data-action=meetup]")) return;
+    if (!logic.canLogMeetup(store.getMeetups(), person.id, now)) return;
+    var confirmed = people.confirmsMeetup(person, profile, together, profile.createdAt);
+    store.addMeetup({ personId: person.id, at: now.toISOString(), confirmed: confirmed });
+    Empower.log("person.meetup_logged", { id: person.id, confirmed: confirmed });
+    document.getElementById("meetup-action").innerHTML = '<span class="small muted">' +
+      (confirmed ? person.name.split(" ")[0] + " confirmed. Logged for today." : "Waiting for " + person.name.split(" ")[0] + " to confirm.") + "</span>";
+    document.getElementById("meetup-count").textContent = meetupsWith().length;
+    if (confirmed) ui.toast("+10 Empower score with " + person.name.split(" ")[0]);
+  });
 
   Empower.log("person.viewed", { id: person.id, together: together, at: now.toISOString() });
 })();

@@ -137,7 +137,24 @@ Empower.ui = (function () {
     return String(name).split(" ").map(function (w) { return w.charAt(0); }).join("").slice(0, 2).toUpperCase();
   }
 
+  /*
+   * toast(text): a short message at the bottom of the screen for small
+   * wins ("+1 Empower score"), with a light vibration where the phone
+   * supports it. Gone after about 2.5 seconds.
+   */
+  function toast(text) {
+    var el = document.createElement("div");
+    el.className = "toast";
+    el.setAttribute("role", "status");
+    el.textContent = text;
+    document.body.appendChild(el);
+    if (navigator.vibrate) navigator.vibrate(25);
+    setTimeout(function () { el.remove(); }, 2600);
+    Empower.log("ui.toast", { text: text });
+  }
+
   return {
+    toast: toast,
     renderNav: renderNav,
     namesText: namesText,
     initials: initials,

@@ -64,9 +64,20 @@ Questions live in `data/questions.js` (`Empower.QUESTIONS`). Pages that use them
 
 In `scoreSession`, Cozy and Social get +2 for high structure and lose points for open mingling (Cozy also +1 for 10 people or fewer). A `style` of -0.5 or lower adds +2 for `mode: "doing"` groups; 0.5 or higher adds +2 for `mode: "talking"` groups.
 
+### Empower score
+
+| Call | What it decides |
+| --- | --- |
+| `Empower.store.getMeetups()` / `addMeetup({ personId, at, confirmed })` | Private meetups with a match, outside sessions. |
+| `empowerScore(meetups, answers)` | The public score: 10 per confirmed meetup, 1 per answered pair. Skips and unconfirmed meetups don't count. |
+| `canLogMeetup(meetups, personId, now)` | `false` if a meetup with that person was already logged today. |
+| `Empower.people.scoreOf(person)` | A synthetic person's fixed public score (0 to 120). |
+| `Empower.people.confirmsMeetup(person, profile, together, userKey)` | Whether a synthetic person confirms a meetup: yes if they're a mutual match. A real backend (E12) replaces this with the other person tapping confirm. |
+| `Empower.ui.toast(text)` | A short message at the bottom of the screen with a light vibration, for small wins. |
+
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 

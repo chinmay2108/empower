@@ -218,3 +218,20 @@ test("Given onboarding is done, dailyQuestion asks the next pair once a day unti
   const all = QUESTIONS.map((q) => answer(q.id, "b"));
   assert.equal(logic.dailyQuestion(QUESTIONS, all, at(2026, 11, 9, 9)), null);
 });
+
+/* ---------- Empower score ---------- */
+
+test("empowerScore: 10 per confirmed meetup, 1 per answered pair, skips and unconfirmed meetups don't count", () => {
+  const meetups = [{ personId: "u001", at: WED.toISOString(), confirmed: true },
+    { personId: "u002", at: WED.toISOString(), confirmed: false }];
+  const answers = [answer("q01", "a"), answer("q02", "b"), answer("q09", "skip")];
+  assert.equal(logic.empowerScore(meetups, answers), 12);
+  assert.equal(logic.empowerScore([], []), 0);
+});
+
+test("Given a meetup logged today with someone, canLogMeetup blocks a second one until tomorrow", () => {
+  const meetups = [{ personId: "u001", at: at(2026, 11, 4, 10).toISOString(), confirmed: true }];
+  assert.equal(logic.canLogMeetup(meetups, "u001", at(2026, 11, 4, 22)), false);
+  assert.equal(logic.canLogMeetup(meetups, "u002", at(2026, 11, 4, 22)), true);
+  assert.equal(logic.canLogMeetup(meetups, "u001", at(2026, 11, 5, 9)), true);
+});

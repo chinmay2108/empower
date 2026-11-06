@@ -149,6 +149,32 @@ Empower.logic = (function () {
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
 
+  /* ---------- Empower score ---------- */
+
+  var MEETUP_POINTS = 10;
+  var ANSWER_POINTS = 1;
+
+  /*
+   * empowerScore(meetups, answers)
+   * The public number on a profile: 10 per confirmed meetup with a match,
+   * plus 1 per daily or onboarding answer (skips don't count). Meetups are
+   * worth much more so the score mostly reflects meeting people in person.
+   */
+  function empowerScore(meetups, answers) {
+    var met = (meetups || []).filter(function (m) { return m.confirmed; }).length;
+    var answered = (answers || []).filter(function (a) { return a.choice === "a" || a.choice === "b"; }).length;
+    return met * MEETUP_POINTS + answered * ANSWER_POINTS;
+  }
+
+  /*
+   * canLogMeetup(meetups, personId, now)
+   * One meetup per person per day, so tapping twice can't double count.
+   */
+  function canLogMeetup(meetups, personId, now) {
+    var today = localDay(now);
+    return !(meetups || []).some(function (m) { return m.personId === personId && localDay(m.at) === today; });
+  }
+
   /*
    * dailyQuestion(questions, answers, now)
    * The next pair to ask on Home, or null. At most one a day: null if any
@@ -376,7 +402,9 @@ Empower.logic = (function () {
     startingStep: startingStep,
     personaFor: personaFor,
     stepOf: stepOf,
-    dailyQuestion: dailyQuestion
+    dailyQuestion: dailyQuestion,
+    empowerScore: empowerScore,
+    canLogMeetup: canLogMeetup
   };
 })();
 
