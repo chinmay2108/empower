@@ -25,7 +25,9 @@
     Empower.log("thread.locked", { commitment: ui.param("c") });
     return;
   }
-  document.getElementById("topbar").innerHTML = '<a class="back" href="prep.html?c=' + c.id + '">&larr; ' + group.name + "</a>";
+  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="prep.html?c=' + c.id + '" aria-label="Back">&larr;</a>' +
+    '<span class="chat-header__who"><span class="chat-header__group" aria-hidden="true">' + ui.initials(group.name) + "</span>" +
+    '<span><span class="chat-header__name">' + group.name + '</span><span class="chat-header__sub">' + ui.formatDay(c.startsAt) + "</span></span></span>";
 
   var session = { groupId: c.groupId, startsAt: c.startsAt };
   var there = people.attendeesOf(store.getPopulation(), session);
@@ -40,37 +42,38 @@
       .concat(mine).sort(function (a, b) { return a.at < b.at ? -1 : 1; });
   }
 
+  var typing = null;
+
   function render() {
-    host.innerHTML =
-      '<p class="eyebrow">' + ui.formatDay(c.startsAt) + "</p>" +
-      '<h1 class="title">' + group.name + "</h1>" +
-      '<p class="subtitle">' + (state === "open" ? "You and " + there.length + " others were there. Say thanks while it\'s fresh." :
+    host.innerHTML = '<div class="chat">' +
+      '<p class="chat__note">' + (state === "open" ? "You and " + there.length + " others were there. Say thanks while it\'s fresh." :
         "This one\'s wrapped up. See you at the next.") + "</p>" +
-      '<div class="chat">' + posts().map(function (p) {
+      posts().map(function (p) {
         return '<div class="bubble bubble--' + (p.me ? "me" : "them") + '">' +
           (p.me ? "" : '<span class="bubble__who">' + (p.person ? ui.avatar(p.person, "sm") : "") + "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong></span>") +
-          ui.escapeHtml(p.text) + "</div>";
-      }).join("") + "</div>" +
-      (state === "open" ? '<form class="composer mt-4" id="composer"><input class="input" id="post" autocomplete="off" maxlength="300" placeholder="Say something to the group">' +
-        '<button class="btn btn--inline" type="submit">Post</button></form>' +
-        '<p class="small muted">Photos coming soon.</p>' : "");
+          ui.escapeHtml(p.text) + '<span class="bubble__time">' + ui.chatTime(p.at) + "</span></div>";
+      }).join("") +
+      (typing ? '<div class="bubble bubble--them bubble--typing" aria-label="' + ui.escapeHtml(typing) + ' is typing"><span></span><span></span><span></span></div>' : "") +
+      "</div>";
+    ui.scrollToLatest();
   }
 
-  host.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var text = document.getElementById("post").value.trim();
-    if (!text || state !== "open") return;
-    store.addThreadPost({ sessionId: c.sessionId, from: "me", text: text, at: Empower.clock.now().toISOString() });
-    Empower.log("thread.posted", { session: c.sessionId, length: text.length });
-    render();
-    var replier = there[Math.floor(people.hash01(c.sessionId + text) * there.length)];
-    if (!replier) return;
-    setTimeout(function () {
-      var turn = store.getThreadPosts(c.sessionId).length;
-      store.addThreadPost({ sessionId: c.sessionId, from: replier.id, text: people.reply(replier, text, turn), at: Empower.clock.now().toISOString() });
+  if (state === "open") {
+    ui.composer("Say something to the group", function (text) {
+      store.addThreadPost({ sessionId: c.sessionId, from: "me", text: text, at: Empower.clock.now().toISOString() });
+      Empower.log("thread.posted", { session: c.sessionId, length: text.length });
+      var replier = there[Math.floor(people.hash01(c.sessionId + text) * there.length)];
+      typing = replier ? replier.name.split(" ")[0] : null;
       render();
-    }, REPLY_DELAY_MS);
-  });
+      if (!replier) return;
+      setTimeout(function () {
+        var turn = store.getThreadPosts(c.sessionId).length;
+        store.addThreadPost({ sessionId: c.sessionId, from: replier.id, text: people.reply(replier, text, turn), at: Empower.clock.now().toISOString() });
+        typing = null;
+        render();
+      }, REPLY_DELAY_MS);
+    });
+  }
 
   render();
   Empower.log("thread.viewed", { session: c.sessionId, state: state });
