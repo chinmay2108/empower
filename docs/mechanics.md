@@ -94,7 +94,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -137,3 +137,15 @@ To regenerate the population: `python3 scripts/generate_population.py`.
 | --- | --- |
 | `Empower.demo.list()` | `[{ key, label }]`: `maya` (Cozy, hands busy), `rick` (Social, a bit of everything), `priya` (Open, big crowds and good talks). |
 | `Empower.demo.build(key, now, groups, population, questions)` | `{ profile, answers, commitments, reflections, connections, meetups, messages }` for six weeks before `now`. Me > Demo tools erases this browser's data and saves these through `Empower.store`. |
+
+## Matching Lab (E8)
+
+`js/lab.js` (pure, unit tested) simulates the synthetic population for a number of weeks under three strategies: `random`, `interests` (most shared interests) and `empower` (`rankPicks`). Each week one session is picked per person; a behavior model written at the top of `js/lab.js` decides if they go and if they liked it. The page is `pages/lab.html` (linked from Me > Demo tools).
+
+| Call | Returns |
+| --- | --- |
+| `Empower.lab.strategies` | `["random", "interests", "empower"]`. |
+| `Empower.lab.showChance(person, session, group)` | The model's chance they go: reliability, x0.3 outside their free times, x0.7 one comfort step up, x0.4 two or more. |
+| `Empower.lab.likeChance(person, group, beenBefore)` | The model's chance they rate it Good or Great (0.05 to 0.95). |
+| `Empower.lab.simulatePerson(person, strategy, start, weeks, groups, population)` | `{ commitments, reflections, kindlingByWeek[] }` for one person. |
+| `Empower.lab.run(population, groups, start, weeks, limit)` | Per strategy: `{ people, committed, showUpRate, likedRate, returnRate, kindlingAt4, kindlingAt8 }`. Deterministic. |

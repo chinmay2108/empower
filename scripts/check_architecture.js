@@ -11,7 +11,7 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const list = (dir, ext) => fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith(ext)).map((f) => path.join(dir, f));
 const problems = [];
 
-const RULE_FILES = ["js/logic.js", "js/people.js", "js/schedule.js", "js/demo.js"];
+const RULE_FILES = ["js/logic.js", "js/people.js", "js/schedule.js", "js/demo.js", "js/lab.js"];
 const STORAGE_ALLOWED = ["js/store.js", "js/ui.js"]; // ui.js: demo clock only
 const SCRIPT_ORDER = ["data/groups.js", "js/ui.js", "js/store.js", "js/schedule.js", "js/logic.js", "data/population.js", "js/people.js"];
 const appScripts = list("js", ".js");
@@ -40,7 +40,8 @@ const exported = {
   "js/logic.js": Object.keys(require(path.join(ROOT, "js/logic.js"))),
   "js/people.js": Object.keys(require(path.join(ROOT, "js/people.js"))),
   "js/schedule.js": Object.keys(require(path.join(ROOT, "js/schedule.js"))),
-  "js/demo.js": Object.keys(require(path.join(ROOT, "js/demo.js")))
+  "js/demo.js": Object.keys(require(path.join(ROOT, "js/demo.js"))),
+  "js/lab.js": Object.keys(require(path.join(ROOT, "js/lab.js")))
 };
 Object.entries(exported).forEach(([file, names]) => names.forEach((name) => {
   if (!doc.includes(name)) problems.push(`${file}: ${name}() is not documented in docs/mechanics.md.`);

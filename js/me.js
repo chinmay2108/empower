@@ -47,6 +47,7 @@
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +
     '<div class="demo"><p class="label">Demo tools</p>' +
+    '<p class="mt-3"><a class="btn btn--secondary btn--small" href="lab.html">Open the Matching Lab</a></p>' +
     '<p class="small muted">Load a sample user with six weeks of history (replaces your data in this browser):</p>' +
     '<div class="btn-row mt-3">' + Empower.demo.list().map(function (d) {
       return '<button type="button" class="btn btn--secondary btn--small" data-persona="' + d.key + '">' + d.label.split(":")[0] + "</button>";
