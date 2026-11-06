@@ -36,51 +36,107 @@ Empower.logic = (function () {
 
   /*
    * scoreSession(session, group, profile, history)
-   * Returns { score, reasons[] }. Higher is better. Reasons are short
-   * phrases used to explain the pick to the user.
-   *   history.attendedGroupIds: groups the user has gone to before
+   * Picks v2, "Glad you went": points for how likely this person is to go,
+   * enjoy it, and want to go back (PRD section 4). Returns
+   * { score, reasons[] }; reasons are sorted by how many points they added,
+   * so explain() can show the two biggest.
+   *   history comes from historyFor() (all fields optional).
    */
   function scoreSession(session, group, profile, history) {
+    var h = history || {};
     var score = 0;
-    var reasons = [];
+    var why = [];
+    // rank decides the order reasons are shown in (default: the points).
+    function add(points, text, rank) {
+      score += points;
+      if (text && points > 0) why.push({ points: rank === undefined ? points : rank, text: text });
+    }
     var interests = (profile && profile.interests) || [];
     var freeSlots = (profile && profile.freeSlots) || [];
     var step = stepOf(profile);
-    var style = (profile && profile.traits && profile.traits.style) || 0;
-
-    var shared = group.interests.filter(function (i) { return interests.indexOf(i) !== -1; });
-    if (shared.length) {
-      score += 3 + shared.length;
-      reasons.push("you like " + shared[0]);
-    }
-
-    if (freeSlots.indexOf(slotFor(session.startsAt)) !== -1) {
-      score += 4;
-      reasons.push("it fits a time you're free");
-    } else {
-      score -= 4;
-    }
-
-    if (history && history.attendedGroupIds && history.attendedGroupIds.indexOf(group.id) !== -1) {
-      score += 3;
-      reasons.unshift("you've been before, and going back is how it sticks");
-    }
-
-    if (levelGap(group, step) === 1) score -= 3;
-
+    var traits = (profile && profile.traits) || {};
     var slot = slotFor(session.startsAt);
-    if (history && history.slotsToCheck && history.slotsToCheck.indexOf(slot) !== -1) score -= 3;
+    var been = (h.attendedGroupIds || []).indexOf(group.id) !== -1;
 
-    if (step !== "open") {
-      if (group.structure === "high") { score += 2; reasons.push("there's an activity to focus on"); }
-      if (group.structure === "low") score -= step === "cozy" ? 4 : 2;
-      if (step === "cozy" && group.typicalSize <= 10) { score += 1; reasons.push("it's a small group"); }
+    // Lower the friction: a time they said they're free.
+    // Shown last: nearly every pick fits a free time, so it explains little.
+    if (freeSlots.indexOf(slot) !== -1) add(4, "it fits a time you're free", 0); else add(-4);
+    // Watch, then ask: missed this slot twice and haven't answered "still free?".
+    if ((h.slotsToCheck || []).indexOf(slot) !== -1) add(-3);
+
+    // Repetition and feedback.
+    if (been) add(3, "you've been before, and going back is how it sticks");
+    var last = (h.lastWouldReturn || {})[group.id];
+    if (last === true) add(2, "you said you'd go back");
+    if (last === false) add(-4);
+
+    // Familiar faces: +1 per person you've met who's going, +2 at Kindling or warmer (max +5).
+    var f = (h.familiarBySession || {})[session.id];
+    if (f && f.count) {
+      var pts = Math.min(5, f.count + f.warm);
+      add(pts, f.count === 1 ? f.firstName + "'s going" : f.count + " people you've met are going");
     }
 
-    if (style <= -0.5 && group.mode === "doing") { score += 2; reasons.push("you'd be doing something together"); }
-    if (style >= 0.5 && group.mode === "talking") { score += 2; reasons.push("there's room to really talk"); }
+    // Motivation: interests.
+    var shared = group.interests.filter(function (i) { return interests.indexOf(i) !== -1; });
+    if (shared.length) add(Math.min(4, 2 + shared.length), "you like " + shared[0]);
 
-    return { score: score, reasons: reasons };
+    // Step up gradually.
+    if (levelGap(group, step) === 1) add(-3);
+    if (step !== "open") {
+      if (group.structure === "high") add(2, "there's an activity to focus on");
+      if (group.structure === "low") add(step === "cozy" ? -4 : -2);
+      if (step === "cozy" && group.typicalSize <= 10) add(1, "it's a small group");
+    }
+
+    // Explore early, exploit later.
+    if (!been && (h.regularGroupCount || 0) < 2) add(1, "it's worth a first try");
+
+    // Quiz answers: connection style, novelty, rhythm.
+    if (traits.style <= -0.5 && group.mode === "doing") add(2, "you'd be doing something together");
+    if (traits.style >= 0.5 && group.mode === "talking") add(2, "there's room to really talk");
+    if (traits.novelty >= 0.5 && !been) add(1, "it's something new");
+    if (traits.novelty <= -0.5 && been) add(1, "it's a favorite");
+    if (traits.rhythm <= -0.5 && (h.attendedSlots || []).indexOf(slot) !== -1) add(1, "it keeps your weekly routine");
+
+    why.sort(function (a, b) { return b.points - a.points; });
+    return { score: score, reasons: why.map(function (r) { return r.text; }) };
+  }
+
+  /*
+   * historyFor(profile, commitments, reflections, groups, now, familiarBySession)
+   * Everything scoreSession needs to know about the user's past:
+   *   attendedGroupIds, attendedSlots, regularGroupCount (groups attended 2+
+   *   times), lastWouldReturn { groupId: true | false } from their latest
+   *   rating there, hiddenGroupIds (rated "probably not" twice),
+   *   slotsToCheck, and familiarBySession as passed in
+   *   ({ sessionId: { count, warm, firstName } }, from Empower.people.familiarGoing).
+   */
+  function historyFor(profile, commitments, reflections, groups, now, familiarBySession) {
+    var cs = commitments || [];
+    var attended = cs.filter(function (c) { return c.status === "attended"; });
+    var perGroup = {};
+    attended.forEach(function (c) { perGroup[c.groupId] = (perGroup[c.groupId] || 0) + 1; });
+    var byCommitment = {};
+    cs.forEach(function (c) { byCommitment[c.id] = c; });
+    var rated = (reflections || []).filter(function (r) { return byCommitment[r.commitmentId]; })
+      .sort(function (a, b) { return byCommitment[a.commitmentId].startsAt < byCommitment[b.commitmentId].startsAt ? -1 : 1; });
+    var lastWouldReturn = {};
+    var noCount = {};
+    rated.forEach(function (r) {
+      var gid = byCommitment[r.commitmentId].groupId;
+      lastWouldReturn[gid] = !!r.wouldReturn;
+      if (!r.wouldReturn) noCount[gid] = (noCount[gid] || 0) + 1;
+    });
+    return {
+      attendedGroupIds: Object.keys(perGroup),
+      attendedSlots: attended.map(function (c) { return slotFor(c.startsAt); }),
+      regularGroupCount: Object.keys(perGroup).filter(function (g) { return perGroup[g] >= 2; }).length,
+      lastWouldReturn: lastWouldReturn,
+      hiddenGroupIds: Object.keys(noCount).filter(function (g) { return noCount[g] >= 2; }),
+      slotsToCheck: slotsToCheck(profile, cs, groups, now),
+      familiarBySession: familiarBySession || {}
+    };
   }
 
   /* ---------- Quiz, comfort step and daily question ---------- */
@@ -293,26 +349,26 @@ Empower.logic = (function () {
   }
 
   /*
-   * rankPicks(sessions, groups, profile, commitments, now, limit)
-   * Top sessions for the user, at most one per group, skipping sessions
-   * that already started or that the user already committed to.
+   * rankPicks(sessions, groups, profile, commitments, now, limit, extras)
+   * Top sessions for the user, at most one per group. Skips sessions that
+   * already started, ones they're going to, groups they've hidden (rated
+   * "probably not" twice) and groups two or more steps above their comfort
+   * step. extras (optional): { reflections, familiarBySession }.
    * Ties break by earliest start, then session id, so order is stable.
    */
-  function rankPicks(sessions, groups, profile, commitments, now, limit) {
+  function rankPicks(sessions, groups, profile, commitments, now, limit, extras) {
+    var x = extras || {};
     var byId = {};
     groups.forEach(function (g) { byId[g.id] = g; });
     var committedIds = activeCommitments(commitments).map(function (c) { return c.sessionId; });
-    var history = {
-      attendedGroupIds: commitments.filter(function (c) { return c.status === "attended"; })
-        .map(function (c) { return c.groupId; })
-    };
-    history.slotsToCheck = slotsToCheck(profile, commitments, groups, now);
+    var history = historyFor(profile, commitments, x.reflections, groups, now, x.familiarBySession);
     var nowMs = new Date(now).getTime();
 
     var scored = sessions
       .filter(function (s) {
         return new Date(s.startsAt).getTime() > nowMs && committedIds.indexOf(s.id) === -1 &&
-          levelGap(byId[s.groupId], stepOf(profile)) < 2;
+          levelGap(byId[s.groupId], stepOf(profile)) < 2 &&
+          history.hiddenGroupIds.indexOf(s.groupId) === -1;
       })
       .map(function (s) {
         var r = scoreSession(s, byId[s.groupId], profile, history);
@@ -487,6 +543,7 @@ Empower.logic = (function () {
   return {
     slotFor: slotFor,
     scoreSession: scoreSession,
+    historyFor: historyFor,
     rankPicks: rankPicks,
     explain: explain,
     findConflict: findConflict,

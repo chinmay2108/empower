@@ -158,3 +158,14 @@ test("First-timers: they were at your first session of a group, and it was their
   const later = { id: "f2", groupId: "g01", startsAt: new Date(2026, 0, 4 + second * 7 + 4, 19).toISOString(), status: "attended" };
   assert.ok(!people.pairTags(p, [later], GROUPS).includes("First-timers"));
 });
+
+test("familiarGoing counts only people the user has met who are going to each session", () => {
+  const sessions = schedule.upcomingSessions(GROUPS, NOW, 7);
+  const s = sessions.find((x) => people.attendeesOf(POP, x).length >= 2);
+  const going = people.attendeesOf(POP, s);
+  const out = people.familiarGoing(POP, sessions, [{ personId: going[0].id }, { personId: "nobody" }], [], GROUPS, RICK);
+  assert.equal(out[s.id].count, 1);
+  assert.equal(out[s.id].firstName, going[0].name.split(" ")[0]);
+  assert.equal(out[s.id].warm, 0); // no time together yet
+  assert.deepEqual(people.familiarGoing(POP, sessions, [], [], GROUPS, RICK), {});
+});

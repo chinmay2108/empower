@@ -37,8 +37,9 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | Call | What it decides |
 | --- | --- |
 | `slotFor(date)` | The free-time slot a moment falls in, e.g. `"thu-eve"`, `"sat-am"`. |
-| `scoreSession(session, group, profile, history)` | `{ score, reasons[] }` for one session (used by `rankPicks`). |
-| `rankPicks(sessions, groups, profile, commitments, now, limit)` | Top picks, one per group: `[{ session, group, score, reasons }]`. |
+| `scoreSession(session, group, profile, history)` | Picks v2 ("Glad you went", PRD section 4): `{ score, reasons[] }`, reasons sorted by points. Free time +4/-4, still-free check -3, been before +3, would go back +2 / probably not -4, people you've met going +1 each (+2 at Kindling or warmer, max +5), interests +2 plus 1 per shared (max +4), one step up -3, comfort-step structure points, first try +1 while under 2 regular groups, quiz style +2, novelty +1, rhythm +1. |
+| `historyFor(profile, commitments, reflections, groups, now, familiarBySession)` | The `history` scoreSession needs: attended groups and slots, regular group count, latest "would go back" per group, hidden groups ("probably not" twice), slots to check, familiar faces. |
+| `rankPicks(sessions, groups, profile, commitments, now, limit, extras)` | Top picks, one per group: `[{ session, group, score, reasons }]`. Skips hidden groups and groups 2+ steps above the user. `extras`: `{ reflections, familiarBySession }`. |
 | `explain(reasons)` | One sentence for "why this fits you". |
 | `findConflict(commitments, session, groups)` | The overlapping commitment, or `null`. |
 | `suggestLeaveTime(startsAt, travelMode)` | `"HH:MM"` (walk 25, bus 30, bike or drive 20 minutes before). |
@@ -117,6 +118,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
 | `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
 | `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+| `Empower.people.familiarGoing(population, sessions, connections, commitments, groups, profile)` | `{ sessionId: { count, warm, firstName } }`: people the user has met who are going; `warm` = matches at Kindling or warmer. |
 | `Empower.people.timeTogether(person, commitments, groups)` | `{ sessions, hours, plans, weekendSessions, byGroup }` with one person. Sessions you both attended count; a commitment made together from chat (`withPersonId`) counts as both there. |
 | `Empower.people.warmthStage(time, matched)` | `"spark"` (matched), `"kindling"` (3 sessions), `"warm"` (10 hours and a plan made together), `"glow"` (50 hours), `"bonfire"` (90 hours), or `"none"`. Unmatched people stop at kindling. |
 | `Empower.people.stageRank(stage)` | Position of a stage, to check whether it went up. |

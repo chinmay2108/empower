@@ -64,8 +64,9 @@ test("a user starting at Cozy is not offered open mingling over structured group
 
 test("a group the user already attended gets a boost", () => {
   const board = sessionsFrom(WED).find((s) => s.groupId === "g06");
-  const fresh = logic.scoreSession(board, group("g06"), RICK, { attendedGroupIds: [] });
-  const returning = logic.scoreSession(board, group("g06"), RICK, { attendedGroupIds: ["g06"] });
+  // regularGroupCount 2 turns off the "worth a first try" point, so only the boost differs.
+  const fresh = logic.scoreSession(board, group("g06"), RICK, { attendedGroupIds: [], regularGroupCount: 2 });
+  const returning = logic.scoreSession(board, group("g06"), RICK, { attendedGroupIds: ["g06"], regularGroupCount: 2 });
   assert.equal(returning.score - fresh.score, 3);
   assert.match(logic.explain(returning.reasons), /been before/);
 });
@@ -310,4 +311,66 @@ test("Until they answer, sessions in a slot we're asking about score 3 lower", (
   const triviaWith = logic.rankPicks(sessions, GROUPS, rick, [missedThu(22), missedThu(29)], thu, 15).find((p) => p.group.id === "g01");
   const triviaWithout = logic.rankPicks(sessions, GROUPS, rick, [], thu, 15).find((p) => p.group.id === "g01");
   assert.equal(triviaWithout.score - triviaWith.score, 3);
+});
+
+/* ---------- Picks v2: "Glad you went" ---------- */
+
+const triviaSession = () => sessionsFrom(WED).find((s) => s.groupId === "g01");
+const score = (profile, history) => logic.scoreSession(triviaSession(), group("g01"), profile, history);
+const ratedTrivia = (n, wouldReturn) => {
+  const cs = []; const rs = [];
+  for (let i = 0; i < n; i++) {
+    cs.push({ id: "t" + i, groupId: "g01", startsAt: at(2026, 10, 1 + i * 7, 19).toISOString(), status: "attended" });
+    rs.push({ commitmentId: "t" + i, enjoyed: 2, wouldReturn });
+  }
+  return { cs, rs };
+};
+
+test("PRD example: Rick, trivia twice and would go back, Emeka (Kindling) going, Thursday evening", () => {
+  const { cs, rs } = ratedTrivia(2, true);
+  const familiar = { [triviaSession().id]: { count: 1, warm: 1, firstName: "Emeka" } };
+  const h = logic.historyFor(RICK, cs, rs, GROUPS, WED, familiar);
+  const r = score(RICK, h);
+  // +4 time, +3 been, +2 would go back, +2 Emeka, +4 interests (trivia, games), +2 activity (Social)
+  assert.equal(r.score, 17);
+  assert.match(logic.explain(r.reasons), /time you're free.*interests|you like trivia|been before/i);
+  assert.ok(r.reasons.includes("Emeka's going"));
+});
+
+test("Rated 'probably not' costs 4 points; twice hides the group from picks", () => {
+  const once = ratedTrivia(1, false);
+  const h1 = logic.historyFor(RICK, once.cs, once.rs, GROUPS, WED);
+  assert.equal(h1.lastWouldReturn.g01, false);
+  const twice = ratedTrivia(2, false);
+  const picks = logic.rankPicks(sessionsFrom(WED), GROUPS, RICK, twice.cs, WED, 15, { reflections: twice.rs });
+  assert.ok(!picks.some((p) => p.group.id === "g01"));
+});
+
+test("Familiar faces add +1 each, +2 each at Kindling or warmer, up to +5", () => {
+  const id = triviaSession().id;
+  const base = score(RICK, { regularGroupCount: 2 }).score;
+  assert.equal(score(RICK, { regularGroupCount: 2, familiarBySession: { [id]: { count: 2, warm: 0, firstName: "A" } } }).score - base, 2);
+  assert.equal(score(RICK, { regularGroupCount: 2, familiarBySession: { [id]: { count: 2, warm: 2, firstName: "A" } } }).score - base, 4);
+  assert.equal(score(RICK, { regularGroupCount: 2, familiarBySession: { [id]: { count: 4, warm: 4, firstName: "A" } } }).score - base, 5);
+});
+
+test("Explore early: +1 for an untried group while the user has fewer than 2 regular groups", () => {
+  assert.equal(score(RICK, { regularGroupCount: 0 }).score - score(RICK, { regularGroupCount: 2 }).score, 1);
+});
+
+test("Quiz novelty and rhythm: new-seekers get +1 for new groups, routine-lovers +1 for a slot they keep", () => {
+  const h = { regularGroupCount: 2 };
+  const plain = score(RICK, h).score;
+  assert.equal(score(Object.assign({}, RICK, { traits: { novelty: 1 } }), h).score - plain, 1);
+  const been = { regularGroupCount: 2, attendedGroupIds: ["g01"], attendedSlots: ["thu-eve"] };
+  const beenPlain = score(RICK, been).score;
+  assert.equal(score(Object.assign({}, RICK, { traits: { novelty: -1 } }), been).score - beenPlain, 1);
+  assert.equal(score(Object.assign({}, RICK, { traits: { rhythm: -1 } }), been).score - beenPlain, 1);
+});
+
+test("Reasons are sorted by points, with 'fits a time you're free' last since nearly every pick has it", () => {
+  const r = score(RICK, { regularGroupCount: 2, attendedGroupIds: ["g01"] });
+  assert.equal(r.reasons[0], "you like trivia");                       // +4
+  assert.equal(r.reasons[1], "you've been before, and going back is how it sticks"); // +3
+  assert.equal(r.reasons[r.reasons.length - 1], "it fits a time you're free");
 });
