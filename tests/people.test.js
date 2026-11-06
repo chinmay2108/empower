@@ -10,7 +10,7 @@ const POP = require("../data/population.js");
 
 const at = (y, m, d, h = 0) => new Date(y, m - 1, d, h);
 const NOW = at(2026, 11, 8, 12);
-const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], comfort: "nervous", createdAt: "2026-11-05T12:00:00.000Z" };
+const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], step: "social", createdAt: "2026-11-05T12:00:00.000Z" };
 
 test("population is synthetic, sized, and every membership points at a real group", () => {
   assert.equal(POP.length, 500);

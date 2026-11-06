@@ -45,7 +45,8 @@ Empower.logic = (function () {
     var reasons = [];
     var interests = (profile && profile.interests) || [];
     var freeSlots = (profile && profile.freeSlots) || [];
-    var comfort = (profile && profile.comfort) || "nervous";
+    var step = stepOf(profile);
+    var style = (profile && profile.traits && profile.traits.style) || 0;
 
     var shared = group.interests.filter(function (i) { return interests.indexOf(i) !== -1; });
     if (shared.length) {
@@ -65,13 +66,106 @@ Empower.logic = (function () {
       reasons.unshift("you've been before, and going back is how it sticks");
     }
 
-    if (comfort !== "easy") {
+    if (step !== "open") {
       if (group.structure === "high") { score += 2; reasons.push("there's an activity to focus on"); }
-      if (group.structure === "low") score -= comfort === "anxious" ? 4 : 2;
-      if (comfort === "anxious" && group.typicalSize <= 10) { score += 1; reasons.push("it's a small group"); }
+      if (group.structure === "low") score -= step === "cozy" ? 4 : 2;
+      if (step === "cozy" && group.typicalSize <= 10) { score += 1; reasons.push("it's a small group"); }
     }
 
+    if (style <= -0.5 && group.mode === "doing") { score += 2; reasons.push("you'd be doing something together"); }
+    if (style >= 0.5 && group.mode === "talking") { score += 2; reasons.push("there's room to really talk"); }
+
     return { score: score, reasons: reasons };
+  }
+
+  /* ---------- Quiz, comfort step and daily question ---------- */
+
+  var DIMENSIONS = ["energy", "style", "novelty", "rhythm"];
+  var LEGACY_STEPS = { anxious: "cozy", nervous: "social", easy: "open" };
+
+  /*
+   * traitsFromAnswers(answers, questions)
+   * answers: [{ questionId, choice: "a" | "b" | "skip", at }]
+   * Returns { energy, style, novelty, rhythm }, each from -1 to 1:
+   * the average lean of the answered pairs for that dimension
+   * ("a" = -1, "b" = +1). Skips and unknown questions are ignored;
+   * a dimension with no answers is 0.
+   */
+  function traitsFromAnswers(answers, questions) {
+    var byId = {};
+    questions.forEach(function (q) { byId[q.id] = q; });
+    var sum = {};
+    var count = {};
+    DIMENSIONS.forEach(function (d) { sum[d] = 0; count[d] = 0; });
+    (answers || []).forEach(function (a) {
+      var q = byId[a.questionId];
+      if (!q || (a.choice !== "a" && a.choice !== "b")) return;
+      sum[q.dim] += a.choice === "a" ? -1 : 1;
+      count[q.dim] += 1;
+    });
+    var traits = {};
+    DIMENSIONS.forEach(function (d) {
+      traits[d] = count[d] ? Math.round((sum[d] / count[d]) * 100) / 100 : 0;
+    });
+    return traits;
+  }
+
+  /*
+   * startingStep(traits)
+   * Where someone starts on the comfort ladder, from their social energy.
+   * Leans small and familiar -> "cozy"; leans big and lively -> "open";
+   * mixed -> "social".
+   */
+  function startingStep(traits) {
+    var energy = (traits && traits.energy) || 0;
+    if (energy <= -0.5) return "cozy";
+    if (energy >= 0.5) return "open";
+    return "social";
+  }
+
+  /*
+   * personaFor(traits)
+   * One of six hidden personas: starting step x connection style, e.g.
+   * "cozy-doing" or "open-talking". Used inside the algorithm and in logs;
+   * never shown to the user.
+   */
+  function personaFor(traits) {
+    return startingStep(traits) + "-" + ((traits && traits.style) > 0 ? "talking" : "doing");
+  }
+
+  /*
+   * stepOf(profile)
+   * The user's comfort step: "cozy", "social" or "open". Profiles saved
+   * before the quiz have comfort "anxious" | "nervous" | "easy" instead;
+   * those map to cozy, social and open.
+   */
+  function stepOf(profile) {
+    if (profile && profile.step) return profile.step;
+    return (profile && LEGACY_STEPS[profile.comfort]) || "social";
+  }
+
+  function localDay(date) {
+    var d = new Date(date);
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+
+  /*
+   * dailyQuestion(questions, answers, now)
+   * The next pair to ask on Home, or null. At most one a day: null if any
+   * answer (or skip) was saved on now's local day. Otherwise the first
+   * pair in bank order that hasn't been answered or skipped. Null once the
+   * bank runs out.
+   */
+  function dailyQuestion(questions, answers, now) {
+    var list = answers || [];
+    var today = localDay(now);
+    if (list.some(function (a) { return localDay(a.at) === today; })) return null;
+    var done = {};
+    list.forEach(function (a) { done[a.questionId] = true; });
+    for (var i = 0; i < questions.length; i++) {
+      if (!done[questions[i].id]) return questions[i];
+    }
+    return null;
   }
 
   /*
@@ -277,7 +371,12 @@ Empower.logic = (function () {
     awaitingReflection: awaitingReflection,
     progressByGroup: progressByGroup,
     totalHours: totalHours,
-    showUpScore: showUpScore
+    showUpScore: showUpScore,
+    traitsFromAnswers: traitsFromAnswers,
+    startingStep: startingStep,
+    personaFor: personaFor,
+    stepOf: stepOf,
+    dailyQuestion: dailyQuestion
   };
 })();
 

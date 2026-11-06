@@ -15,7 +15,8 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 
 | Call | Returns |
 | --- | --- |
-| `getProfile()` / `saveProfile({ name, interests[], freeSlots[], comfort })` | The user's profile or `null`. `freeSlots` like `"thu-eve"`, `"sat-am"`. `comfort` is `"easy"`, `"nervous"` or `"anxious"`. |
+| `getProfile()` / `saveProfile({ name, interests[], freeSlots[], step, traits, createdAt })` | The user's profile or `null`. `freeSlots` like `"thu-eve"`, `"sat-am"`. `step` is `"cozy"`, `"social"` or `"open"`; read it with `Empower.logic.stepOf(profile)`, which also handles older profiles that saved `comfort` instead. `traits` comes from `traitsFromAnswers`. |
+| `getAnswers()` / `saveAnswer({ questionId, choice, at })` | Answers to "this or that" questions. `choice` is `"a"`, `"b"` or `"skip"`; `at` is an ISO time from `Empower.clock.now()`. Saving again replaces that question's answer. |
 | `getGroups()` / `getGroup(id)` | Recurring groups from `data/groups.js`. |
 | `getCommitments()` / `getCommitment(id)` | All commitments, or one. |
 | `addCommitment({ sessionId, groupId, startsAt, leaveAt, travelMode })` | The saved commitment, `status: "committed"`. |
@@ -49,9 +50,23 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | `progressByGroup(commitments, groups)`, `totalHours(...)` | Sessions and hours per group, from attended sessions. |
 | `showUpScore(commitments, groups, now)` | `{ attended, total }` over the last 10 resolved commitments. |
 
+### Quiz, comfort step and daily question
+
+Questions live in `data/questions.js` (`Empower.QUESTIONS`). Pages that use them load it after `js/people.js`. Option `"a"` leans to -1 and `"b"` to +1 on its dimension: `energy` (small and familiar vs big and lively), `style` (doing vs talking), `novelty` (same vs new), `rhythm` (routine vs spontaneous).
+
+| Call | What it decides |
+| --- | --- |
+| `traitsFromAnswers(answers, questions)` | `{ energy, style, novelty, rhythm }`, each -1 to 1: the average lean of answered pairs. Skips are ignored; no answers gives 0. |
+| `startingStep(traits)` | `"cozy"` if energy is -0.5 or lower, `"open"` if 0.5 or higher, else `"social"`. |
+| `personaFor(traits)` | One of six hidden personas, e.g. `"cozy-doing"`. For the algorithm and logs only; never shown. |
+| `stepOf(profile)` | The comfort step. Maps old `comfort` values: anxious to cozy, nervous to social, easy to open. Default `"social"`. |
+| `dailyQuestion(questions, answers, now)` | The next unanswered pair, or `null` if an answer or skip was saved today or the bank is used up. |
+
+In `scoreSession`, Cozy and Social get +2 for high structure and lose points for open mingling (Cozy also +1 for 10 people or fewer). A `style` of -0.5 or lower adds +2 for `mode: "doing"` groups; 0.5 or higher adds +2 for `mode: "talking"` groups.
+
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -59,7 +74,7 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 
 ## People: synthetic population and matching
 
-`data/population.js` holds **500 synthetic people** (invented by `scripts/generate_population.py`, fixed seed). They are not real users. Each has interests, free times, a comfort level, and memberships in 1 to 3 groups with a weekly attendance probability. A few per group are regulars.
+`data/population.js` holds **500 synthetic people** (invented by `scripts/generate_population.py`, fixed seed). They are not real users. Each has interests, free times, a comfort step, and memberships in 1 to 3 groups with a weekly attendance probability. A few per group are regulars.
 
 | Call | Returns |
 | --- | --- |

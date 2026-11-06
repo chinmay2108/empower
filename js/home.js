@@ -54,7 +54,36 @@
         '<p class="mt-4"><a class="btn btn--inline" href="pages/events.html">See this week</a></p></div>';
     }
   }
-  host.innerHTML = html;
+  host.innerHTML = html + dailyCard();
+
+  /* ---------- Daily "this or that" question ---------- */
+
+  function dailyCard() {
+    if (!profile) return "";
+    var q = logic.dailyQuestion(Empower.QUESTIONS, store.getAnswers(), now);
+    if (!q) return "";
+    return '<p class="eyebrow mt-4">Today\'s this or that</p><div class="card card--outline">' +
+      ["a", "b"].map(function (side) {
+        return '<button type="button" class="option" data-daily="' + side + '" data-q="' + q.id + '"><p class="option__title">' +
+          ui.escapeHtml(q[side]) + "</p></button>";
+      }).join("") +
+      '<button type="button" class="btn btn--secondary btn--small" data-daily="skip" data-q="' + q.id + '">Skip today</button></div>';
+  }
+
+  host.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-daily]");
+    if (!el) return;
+    var choice = el.getAttribute("data-daily");
+    var questionId = el.getAttribute("data-q");
+    store.saveAnswer({ questionId: questionId, choice: choice, at: now.toISOString() });
+    if (choice !== "skip") {
+      profile.traits = logic.traitsFromAnswers(store.getAnswers(), Empower.QUESTIONS);
+      store.saveProfile(profile);
+    }
+    Empower.log("home.daily_answered", { questionId: questionId, choice: choice });
+    var card = el.closest(".card");
+    card.innerHTML = '<p class="card__title">' + (choice === "skip" ? "No problem. See you tomorrow." : "Got it. Your picks just got sharper.") + "</p>";
+  });
 
   var score = logic.showUpScore(commitments, groups, now);
   document.getElementById("home-stats").innerHTML =

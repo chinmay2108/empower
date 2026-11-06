@@ -38,7 +38,7 @@
     '<h2 class="section-title">Your setup</h2>' +
     (profile ? '<ul class="facts"><li><span>Interests</span><span>' + profile.interests.join(", ") + "</span></li>" +
       "<li><span>Free</span><span>" + profile.freeSlots.map(slotLabel).join(", ") + "</span></li>" +
-      "<li><span>Comfort</span><span>" + { easy: "Easy", nervous: "A bit nervous", anxious: "Pretty anxious" }[profile.comfort] + "</span></li></ul>" +
+      "<li><span>Picks start at</span><span>" + { cozy: "Cozy", social: "Social", open: "Open" }[logic.stepOf(profile)] + "</span></li></ul>" +
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +
     '<div class="demo"><p class="label">Demo tools</p>' +
