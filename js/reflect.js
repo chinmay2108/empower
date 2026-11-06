@@ -171,6 +171,7 @@
       (meet.added.length ? '<p class="small muted center">You added ' + meet.added.length + (meet.added.length === 1 ? " person" : " people") +
         '. Matches show up in <a href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
+        '<a class="btn btn--secondary" href="thread.html?c=' + c.id + '">Say thanks in the session thread</a>' +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');
     stepUp();
     if (changes.length) {

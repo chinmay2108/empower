@@ -19,6 +19,7 @@
                                     traits { energy, style, novelty, rhythm } from Empower.logic.traitsFromAnswers.
                                     Older profiles have comfort "easy" | "nervous" | "anxious" instead of step
                                     (read it with Empower.logic.stepOf).
+     ThreadPost   many:             { id, sessionId, from: "me" | personId, text, at }  (session threads, E16)
      Meetup       many:             { id, personId, at, confirmed }  (a private meetup with a match)
      Answer       many:             { questionId, choice: "a" | "b" | "skip", at }  (data/questions.js)
      Group        seed data:        see data/groups.js
@@ -43,7 +44,8 @@ Empower.store = (function () {
     connections: "empower.connections",
     messages: "empower.messages",
     answers: "empower.answers",
-    meetups: "empower.meetups"
+    meetups: "empower.meetups",
+    threadPosts: "empower.threadPosts"
   };
 
   function read(key, fallback) {
@@ -92,6 +94,18 @@ Empower.store = (function () {
       list.push(item);
       write(KEYS.answers, list);
       Empower.log("store.answer_saved", { questionId: item.questionId, choice: item.choice });
+      return item;
+    },
+
+    /* ---- Session threads: posts by the user and replies ---- */
+    getThreadPosts: function (sessionId) {
+      return read(KEYS.threadPosts, []).filter(function (p) { return p.sessionId === sessionId; });
+    },
+    addThreadPost: function (fields) {
+      var list = read(KEYS.threadPosts, []);
+      var item = { id: newId("t"), sessionId: fields.sessionId, from: fields.from, text: fields.text, at: fields.at };
+      list.push(item);
+      write(KEYS.threadPosts, list);
       return item;
     },
 

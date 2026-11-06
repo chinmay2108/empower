@@ -286,6 +286,33 @@ Empower.people = (function () {
     return out;
   }
 
+  var THREAD_LINES = [
+    "That was fun, thanks everyone!", "Same time next week?", "Great to meet the new faces tonight.",
+    "Who's in for next week?", "Thanks for having me on your team!", "Already looking forward to the next one.",
+    "Nice meeting you all.", "Best one in a while."
+  ];
+
+  /*
+   * threadSeed(population, session, groupDurationMin)
+   * What other people posted in a session's thread (synthetic): 2 or 3 of
+   * the people who were there, each with one line, a little after it
+   * ended. Same session, same posts. Returns [{ personId, name, text, at }].
+   */
+  function threadSeed(population, session, groupDurationMin) {
+    var end = new Date(session.startsAt).getTime() + (groupDurationMin || 0) * 60000;
+    var there = attendeesOf(population, session).slice().sort(function (a, b) {
+      return hash01(session.groupId + session.startsAt + a.id) - hash01(session.groupId + session.startsAt + b.id);
+    });
+    var count = Math.min(there.length, 2 + Math.floor(hash01(session.startsAt + "|n") * 2));
+    return there.slice(0, count).map(function (p, i) {
+      return {
+        personId: p.id, name: p.name,
+        text: THREAD_LINES[Math.floor(hash01(p.id + session.startsAt) * THREAD_LINES.length)],
+        at: new Date(end + (i + 1) * 40 * 60000).toISOString()
+      };
+    });
+  }
+
   /*
    * introFor(population, session, profile, connections)
    * At most one intro per session (E9): someone going who is a regular
@@ -379,6 +406,7 @@ Empower.people = (function () {
   }
 
   return {
+    threadSeed: threadSeed,
     introFor: introFor,
     familiarFaces: familiarFaces,
     lastSeenTogether: lastSeenTogether,

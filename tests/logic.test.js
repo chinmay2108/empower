@@ -374,3 +374,13 @@ test("Reasons are sorted by points, with 'fits a time you're free' last since ne
   assert.equal(r.reasons[1], "you've been before, and going back is how it sticks"); // +3
   assert.equal(r.reasons[r.reasons.length - 1], "it fits a time you're free");
 });
+
+/* ---------- Session threads (E16) ---------- */
+
+test("threadOpen: locked until check-in, open for 7 days after the session ends, then closed", () => {
+  const c = { startsAt: at(2026, 11, 5, 19).toISOString(), status: "attended" }; // trivia, 2 hours
+  assert.equal(logic.threadOpen(Object.assign({}, c, { status: "committed" }), group("g01"), at(2026, 11, 5, 22)), "locked");
+  assert.equal(logic.threadOpen(null, group("g01"), WED), "locked");
+  assert.equal(logic.threadOpen(c, group("g01"), at(2026, 11, 12, 20)), "open");   // 6 days 23 hours after the end
+  assert.equal(logic.threadOpen(c, group("g01"), at(2026, 11, 12, 21)), "closed"); // exactly 7 days after
+});
