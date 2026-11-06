@@ -29,7 +29,8 @@
                                     status: "committed" | "cancelled" | "attended" | "missed"
      Person       seed data:        data/population.js (SYNTHETIC, read-only)
      Connection   many:             { id, personId, sessionId, groupId, addedAt }
-     Message      many:             { id, personId, from, text, at, sessionId? }
+     Message      many:             { id, personId, from, text, at, sessionId?, audio?, seconds? }
+                                    (audio: a voice note as a data: URL; seconds: its length)
      Reflection   many:             { id, commitmentId, enjoyed (1-3), talkedToSomeone (bool),
                                       wouldReturn (bool), note, createdAt }
    ========================================================================== */
@@ -104,9 +105,9 @@ Empower.store = (function () {
     addThreadPost: function (fields) {
       var list = read(KEYS.threadPosts, []);
       var item = { id: newId("t"), sessionId: fields.sessionId, from: fields.from, text: fields.text, at: fields.at };
+      if (fields.audio) { item.audio = fields.audio; item.seconds = fields.seconds; }
       list.push(item);
-      write(KEYS.threadPosts, list);
-      return item;
+      return write(KEYS.threadPosts, list) ? item : null;
     },
 
     /* ---- Meetups: private meetups with a match, outside sessions ---- */
@@ -201,8 +202,7 @@ Empower.store = (function () {
       var list = read(KEYS.messages, []);
       var item = Object.assign({ id: newId("m"), at: new Date().toISOString() }, fields);
       list.push(item);
-      write(KEYS.messages, list);
-      return item;
+      return write(KEYS.messages, list) ? item : null;
     },
 
     getCommitment: function (id) {

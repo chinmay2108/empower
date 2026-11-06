@@ -253,3 +253,12 @@ test("familiarFaces includes the latest session together, to add them from", () 
   assert.equal(me.last.id, "ff2");
   assert.equal(me.last.groupId, "g01");
 });
+
+test("replyToVoice: a short, repeatable line back to a voice note", () => {
+  const p = POP[0];
+  const a = people.replyToVoice(p, 0);
+  assert.equal(typeof a, "string");
+  assert.ok(a.length > 0 && a.length < 80);
+  assert.equal(people.replyToVoice(p, 0), a);
+  assert.notEqual(people.replyToVoice(p, 1), a);
+});

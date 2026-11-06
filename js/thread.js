@@ -36,7 +36,7 @@
   function posts() {
     var mine = store.getThreadPosts(c.sessionId).map(function (p) {
       var person = p.from === "me" ? null : store.getPerson(p.from);
-      return { person: person, name: person ? person.name : "You", text: p.text, at: p.at, me: p.from === "me" };
+      return { person: person, name: person ? person.name : "You", text: p.text, audio: p.audio, seconds: p.seconds, at: p.at, me: p.from === "me" };
     });
     return seed.map(function (p) { return { person: store.getPerson(p.personId), name: p.name, text: p.text, at: p.at, me: false }; })
       .concat(mine).sort(function (a, b) { return a.at < b.at ? -1 : 1; });
@@ -51,7 +51,7 @@
       posts().map(function (p) {
         return '<div class="bubble bubble--' + (p.me ? "me" : "them") + '">' +
           (p.me ? "" : '<span class="bubble__who">' + (p.person ? ui.avatar(p.person, "sm") : "") + "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong></span>") +
-          ui.escapeHtml(p.text) + '<span class="bubble__time">' + ui.chatTime(p.at) + "</span></div>";
+          (p.audio ? ui.voiceNote(p.audio, p.seconds) : ui.escapeHtml(p.text)) + '<span class="bubble__time">' + ui.chatTime(p.at) + "</span></div>";
       }).join("") +
       (typing ? '<div class="bubble bubble--them bubble--typing" aria-label="' + ui.escapeHtml(typing) + ' is typing"><span></span><span></span><span></span></div>' : "") +
       "</div>";
@@ -72,6 +72,20 @@
         typing = null;
         render();
       }, REPLY_DELAY_MS);
+    }, function (note) {
+      var saved = store.addThreadPost({ sessionId: c.sessionId, from: "me", text: "Voice note", audio: note.audio, seconds: note.seconds, at: Empower.clock.now().toISOString() });
+      if (!saved) { ui.toast("Couldn't save that voice note. Storage is full."); return; }
+      Empower.log("thread.voice_sent", { session: c.sessionId, seconds: note.seconds });
+      var replier = there[Math.floor(people.hash01(c.sessionId + note.seconds) * there.length)];
+      typing = replier ? replier.name.split(" ")[0] : null;
+      render();
+      if (!replier) return;
+      setTimeout(function () {
+        var turn = store.getThreadPosts(c.sessionId).length;
+        store.addThreadPost({ sessionId: c.sessionId, from: replier.id, text: people.replyToVoice(replier, turn), at: Empower.clock.now().toISOString() });
+        typing = null;
+        render();
+      }, REPLY_DELAY_MS * 2);
     });
   }
 

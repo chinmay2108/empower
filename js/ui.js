@@ -198,32 +198,153 @@ Empower.ui = (function () {
 
   var SEND_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg>';
 
+  var MIC_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6 6 0 0 0 5 5.9V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.6a6 6 0 0 0 5-5.9z"/></svg>';
+  var MAX_VOICE_SECONDS = 60;
+
+  /* canRecord(): voice notes need a microphone and https (or localhost). */
+  function canRecord() {
+    return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder && window.isSecureContext);
+  }
+
   /*
-   * composer(placeholder): the message box pinned to the bottom of a chat,
-   * like a messaging app. Added to the page once (so the keyboard stays up
-   * after sending); calls onSend(text) and clears itself.
+   * composer(placeholder, onSend, onVoice): the message box pinned to the
+   * bottom of a chat, like a messaging app. Added to the page once (so the
+   * keyboard stays up after sending); calls onSend(text) and clears itself.
+   * With onVoice, an empty box shows a mic instead of send: tap to record a
+   * voice note (up to 60 seconds), then Send or Cancel. onVoice gets
+   * { audio: data: URL, seconds }.
    */
-  function composer(placeholder, onSend) {
+  function composer(placeholder, onSend, onVoice) {
+    var voice = !!onVoice && canRecord();
     var form = document.createElement("form");
     form.className = "composer";
-    form.innerHTML = '<div class="composer__inner"><input class="composer__input" id="message" autocomplete="off" maxlength="300"' +
+    form.innerHTML = '<div class="composer__inner composer__type"><input class="composer__input" id="message" autocomplete="off" maxlength="300"' +
       ' placeholder="' + escapeHtml(placeholder) + '" aria-label="' + escapeHtml(placeholder) + '">' +
-      '<button class="composer__send" type="submit" aria-label="Send" disabled>' + SEND_ICON + "</button></div>";
+      '<button class="composer__send" type="submit" aria-label="Send"' + (voice ? "" : " disabled") + ">" + SEND_ICON + "</button></div>" +
+      '<div class="composer__inner composer__rec" hidden><button type="button" class="composer__cancel" data-rec="cancel">Cancel</button>' +
+      '<span class="composer__timer"><span class="rec-dot"></span><span data-rec="time">0:00</span></span>' +
+      '<button type="button" class="composer__send" data-rec="send" aria-label="Send voice note">' + SEND_ICON + "</button></div>";
     document.body.appendChild(form);
     var input = form.querySelector("input");
-    var send = form.querySelector("button");
-    input.addEventListener("input", function () { send.disabled = !input.value.trim(); });
+    var send = form.querySelector(".composer__type .composer__send");
+    var typeRow = form.querySelector(".composer__type");
+    var recRow = form.querySelector(".composer__rec");
+    var timeEl = form.querySelector('[data-rec="time"]');
+
+    function refresh() {
+      var hasText = !!input.value.trim();
+      if (voice) {
+        send.innerHTML = hasText ? SEND_ICON : MIC_ICON;
+        send.setAttribute("aria-label", hasText ? "Send" : "Record a voice note");
+        send.classList.toggle("composer__send--mic", !hasText);
+      } else {
+        send.disabled = !hasText;
+      }
+    }
+    refresh();
+    input.addEventListener("input", refresh);
+
+    var recorder = null, chunks = [], started = 0, ticker = null, keep = false;
+
+    function stopRecording(shouldKeep) {
+      keep = shouldKeep;
+      if (recorder && recorder.state !== "inactive") recorder.stop();
+    }
+
+    function startRecording() {
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+        chunks = [];
+        recorder = new MediaRecorder(stream);
+        recorder.ondataavailable = function (e) { if (e.data.size) chunks.push(e.data); };
+        recorder.onstop = function () {
+          stream.getTracks().forEach(function (t) { t.stop(); });
+          clearInterval(ticker);
+          recRow.hidden = true;
+          typeRow.hidden = false;
+          var seconds = Math.max(1, Math.round((Date.now() - started) / 1000));
+          if (!keep || !chunks.length) { Empower.log("chat.voice_cancelled", {}); return; }
+          var reader = new FileReader();
+          reader.onload = function () { onVoice({ audio: reader.result, seconds: Math.min(seconds, MAX_VOICE_SECONDS) }); };
+          reader.readAsDataURL(new Blob(chunks, { type: recorder.mimeType || "audio/webm" }));
+        };
+        recorder.start();
+        started = Date.now();
+        typeRow.hidden = true;
+        recRow.hidden = false;
+        timeEl.textContent = "0:00";
+        ticker = setInterval(function () {
+          var s = Math.floor((Date.now() - started) / 1000);
+          timeEl.textContent = Math.floor(s / 60) + ":" + (s % 60 < 10 ? "0" : "") + (s % 60);
+          if (s >= MAX_VOICE_SECONDS) stopRecording(true);
+        }, 250);
+        Empower.log("chat.voice_started", {});
+      }).catch(function (err) {
+        Empower.log("chat.voice_denied", { error: String(err) });
+        toast("Allow the microphone to send voice notes");
+      });
+    }
+
+    recRow.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-rec]");
+      if (b && b.getAttribute("data-rec") === "cancel") stopRecording(false);
+      if (b && b.getAttribute("data-rec") === "send") stopRecording(true);
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var text = input.value.trim();
-      if (!text) return;
+      if (!text) {
+        if (voice) startRecording();
+        return;
+      }
       input.value = "";
-      send.disabled = true;
+      refresh();
       input.focus();
       onSend(text);
     });
     return form;
   }
+
+  /* duration(seconds): "0:07". */
+  function duration(seconds) {
+    return Math.floor(seconds / 60) + ":" + (seconds % 60 < 10 ? "0" : "") + (seconds % 60);
+  }
+
+  /*
+   * voiceNote(src, seconds): a playable voice-note bubble body: play
+   * button, progress bar, length. Only data:audio URLs are accepted.
+   */
+  function voiceNote(src, seconds) {
+    if (!/^data:audio\//.test(String(src))) return "";
+    return '<span class="voice" data-voice="' + escapeHtml(src) + '">' +
+      '<button type="button" class="voice__play" aria-label="Play voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>' +
+      '<span class="voice__track"><span class="voice__fill"></span></span>' +
+      '<span class="voice__len">' + duration(seconds || 0) + "</span></span>";
+  }
+
+  /* One player for every voice note on the page: tap to play, tap again to pause. */
+  var playing = null;
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".voice__play");
+    if (!btn) return;
+    var box = btn.closest(".voice");
+    if (playing && playing.box === box) {
+      if (playing.audio.paused) playing.audio.play(); else playing.audio.pause();
+      return;
+    }
+    if (playing) { playing.audio.pause(); playing.box.classList.remove("is-playing"); }
+    var audio = new Audio(box.getAttribute("data-voice"));
+    var fill = box.querySelector(".voice__fill");
+    playing = { box: box, audio: audio };
+    audio.addEventListener("play", function () { box.classList.add("is-playing"); });
+    audio.addEventListener("pause", function () { box.classList.remove("is-playing"); });
+    audio.addEventListener("timeupdate", function () {
+      if (audio.duration && isFinite(audio.duration)) fill.style.width = Math.round((audio.currentTime / audio.duration) * 100) + "%";
+    });
+    audio.addEventListener("ended", function () { fill.style.width = "0%"; box.classList.remove("is-playing"); });
+    audio.play();
+    Empower.log("chat.voice_played", {});
+  });
 
   /* chatTime(iso): "6:31 PM" for message bubbles. */
   function chatTime(iso) {
@@ -238,6 +359,8 @@ Empower.ui = (function () {
   return {
     toast: toast,
     composer: composer,
+    voiceNote: voiceNote,
+    canRecord: canRecord,
     chatTime: chatTime,
     scrollToLatest: scrollToLatest,
     faces: faces,

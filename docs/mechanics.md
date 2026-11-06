@@ -99,7 +99,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `thread.viewed`, `thread.posted`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `thread.viewed`, `thread.posted`, `chat.voice_sent`, `chat.voice_played`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -123,6 +123,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
 | `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
 | `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+| `Empower.people.replyToVoice(person, turn)` | What a synthetic person says back to a voice note; warmer people sound warmer. |
 | `Empower.people.introFor(population, session, profile, connections)` | At most one intro per session (E9): a regular there (4+ of the last 8 weeks) who's going, shares an interest, and isn't added yet. `{ person, shared[] }` or `null`. Shown on the day-of plan. |
 | `Empower.people.familiarFaces(population, commitments, connections, minSessions)` | People you keep seeing but haven't added: `[{ person, sessions, last }]` (`last` = latest commitment together, to add them from), 3+ sessions together by default, top 5. Shown on People as "Familiar faces". |
 | `Empower.people.lastSeenTogether(person, commitments)` / `needsNudge(person, commitments, now)` | Latest session together; `true` once it's been 3 weeks. Stages never cool down; People shows a nudge instead. |
@@ -165,3 +166,14 @@ A thread per session for everyone who went, open for 7 days after it ends. Text 
 | `Empower.logic.threadOpen(commitment, group, now)` | `"open"` from check-in until 7 days after the session ends, then `"closed"`; `"locked"` if not checked in. |
 | `Empower.people.threadSeed(population, session, groupDurationMin)` | Synthetic posts from 2 or 3 people who were there: `[{ personId, name, text, at }]`. Same session, same posts. |
 | `Empower.store.getThreadPosts(sessionId)` / `addThreadPost({ sessionId, from, text, at })` | The user's posts and replies. `from` is `"me"` or a person id. |
+
+## Chat screens and voice notes
+
+| Call | Returns |
+| --- | --- |
+| `Empower.ui.composer(placeholder, onSend, onVoice)` | The message box pinned to the bottom of chat and thread screens. `onSend(text)`. With `onVoice`, an empty box shows a mic: tap to record up to 60 seconds, then Send or Cancel; `onVoice({ audio, seconds })` gets the note as a `data:audio/...` URL. Needs https or localhost and microphone permission. |
+| `Empower.ui.canRecord()` | Whether this browser can record voice notes here. |
+| `Empower.ui.voiceNote(src, seconds)` | A playable voice-note bubble (play, progress, length). Only `data:audio/` URLs are accepted. |
+| `Empower.ui.chatTime(iso)`, `Empower.ui.scrollToLatest()` | "6:31 PM" for bubbles; keep the newest message in view. |
+
+Voice notes are saved in this browser with the message (`audio`, `seconds`). `addMessage` and `addThreadPost` return `null` when storage is full, so the page can say so. A minute is roughly 100 KB.
