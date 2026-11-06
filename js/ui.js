@@ -153,6 +153,20 @@ Empower.ui = (function () {
     Empower.log("ui.toast", { text: text });
   }
 
+  /*
+   * Installable app: on the live site (https, or localhost for testing), register the service worker
+   * (sw.js) so Empower can be added to the home screen and works offline.
+   * Opening index.html as a file skips this; the app works the same.
+   */
+  var secure = window.location.protocol === "https:" || window.location.hostname === "localhost";
+  if ("serviceWorker" in navigator && secure) {
+    navigator.serviceWorker.register(root() + "sw.js").then(function () {
+      Empower.log("app.offline_ready", {});
+    }).catch(function (err) {
+      Empower.log("app.offline_failed", { error: String(err) });
+    });
+  }
+
   return {
     toast: toast,
     renderNav: renderNav,
