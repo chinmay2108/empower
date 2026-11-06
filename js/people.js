@@ -262,6 +262,31 @@ Empower.people = (function () {
   }
 
   /*
+   * familiarGoing(population, sessions, connections, commitments, groups, profile)
+   * For each session, the people the user has met (added after a session)
+   * who are going: { sessionId: { count, warm, firstName } }. warm counts
+   * mutual matches at Kindling or warmer. Feeds Empower.logic.rankPicks.
+   */
+  function familiarGoing(population, sessions, connections, commitments, groups, profile) {
+    var met = {};
+    (connections || []).forEach(function (k) { met[k.personId] = true; });
+    var out = {};
+    if (!Object.keys(met).length) return out;
+    var userKey = profile && profile.createdAt;
+    sessions.forEach(function (s) {
+      var going = attendeesOf(population, s).filter(function (p) { return met[p.id]; });
+      if (!going.length) return;
+      var warm = going.filter(function (p) {
+        var together = sessionsTogether(p, commitments);
+        if (!willAddBack(p, profile, together, userKey)) return false;
+        return stageRank(warmthStage(timeTogether(p, commitments, groups), true)) >= stageRank("kindling");
+      }).length;
+      out[s.id] = { count: going.length, warm: warm, firstName: going[0].name.split(" ")[0] };
+    });
+    return out;
+  }
+
+  /*
    * scoreOf(person): a synthetic person's public Empower score, fixed per
    * person. Warmer, more reliable people have met up more. 0 to about 120.
    */
@@ -280,6 +305,7 @@ Empower.people = (function () {
   }
 
   return {
+    familiarGoing: familiarGoing,
     timeTogether: timeTogether,
     warmthStage: warmthStage,
     stageRank: stageRank,

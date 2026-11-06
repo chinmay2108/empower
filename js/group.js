@@ -25,9 +25,9 @@
   var commitments = store.getCommitments();
   var mine = commitments.find(function (c) { return c.sessionId === session.id && c.status === "committed"; });
   var attendedBefore = commitments.filter(function (c) { return c.groupId === group.id && c.status === "attended"; }).length;
-  var why = profile ? logic.explain(logic.scoreSession(session, group, profile, {
-    attendedGroupIds: attendedBefore ? [group.id] : []
-  }).reasons) : "";
+  var why = profile ? logic.explain(logic.scoreSession(session, group, profile, logic.historyFor(profile, commitments,
+    store.getReflections(), store.getGroups(), now,
+    Empower.people.familiarGoing(store.getPopulation(), [session], store.getConnections(), commitments, store.getGroups(), profile))).reasons) : "";
   var started = new Date(session.startsAt) <= now;
   var population = store.getPopulation();
   var stats = Empower.people.groupStats(population, group.id, now);

@@ -23,7 +23,9 @@
   var groups = store.getGroups();
   var sessions = Empower.schedule.upcomingSessions(groups, now, 8);
   var commitments = store.getCommitments();
-  var picks = logic.rankPicks(sessions, groups, profile, commitments, now, 3);
+  var familiar = Empower.people.familiarGoing(store.getPopulation(), sessions, store.getConnections(), commitments, groups, profile);
+  var picks = logic.rankPicks(sessions, groups, profile, commitments, now, 3,
+    { reflections: store.getReflections(), familiarBySession: familiar });
   var pickIds = picks.map(function (p) { return p.session.id; });
   var committedIds = commitments.filter(function (c) { return c.status === "committed"; }).map(function (c) { return c.sessionId; });
 
