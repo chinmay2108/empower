@@ -29,7 +29,7 @@
       '<div><p class="card__title">Empower score</p><p class="card__meta">' +
       parts.meetups + (parts.meetups === 1 ? " meetup" : " meetups") + " · " + parts.answers + (parts.answers === 1 ? " answer" : " answers") +
       (lvl.next ? " · next glow at " + lvl.next : " · fully lit") + "</p>" +
-      '<p class="small muted flush">Meetups with your people count most. Public on your profile.</p></div></div>';
+      '<p class="small muted flush">Grows most when you meet up with your people. Others see it on your profile.</p></div></div>';
   }
 
   var STEP_NAMES = { cozy: "Cozy", social: "Social", open: "Open" };
@@ -38,7 +38,7 @@
 
   host.innerHTML =
     '<h1 class="title">' + (profile ? ui.escapeHtml(profile.name) : "Your progress") + "</h1>" +
-    '<p class="subtitle">Friendships take repeat time with the same people. Here\'s yours.</p>' +
+    '<p class="subtitle">' + (logic.totalHours(commitments, groups) ? logic.totalHours(commitments, groups) + " hours with your people so far." : "Your first hours with new people start here.") + "</p>" +
     (profile ? scoreCard() : "") +
     '<div class="stat-row">' +
     '<div class="stat"><div class="stat__value">' + logic.totalHours(commitments, groups) + '</div><div class="stat__label">hours together</div></div>' +
@@ -47,13 +47,13 @@
     (rows.length ? rows.map(function (r) {
       return '<div class="card"><p class="card__title">' + r.group.name + '</p><p class="card__meta">' +
         r.sessions + (r.sessions === 1 ? " session" : " sessions") + " · " + r.hours + " hours</p></div>";
-    }).join("") : '<p class="small muted">None yet. Your first check-in will show up here.</p>') +
+    }).join("") : '<p class="small muted">Nothing yet. Your first session will land here.</p>') +
     (next ? '<p class="small muted mt-4">Next: ' + store.getGroup(next.groupId).name + ", " + ui.formatDay(next.startsAt) + "</p>" : "") +
     '<h2 class="section-title">Your setup</h2>' +
     (profile ? '<ul class="facts"><li><span>Interests</span><span>' + profile.interests.join(", ") + "</span></li>" +
       "<li><span>Free</span><span>" + profile.freeSlots.map(slotLabel).join(", ") + "</span></li>" +
       "<li><span>Comfort step</span><span><span class=\"score-badge\">" + STEP_NAMES[logic.stepOf(profile)] + "</span></span></li></ul>" +
-      (logic.stepOf(profile) !== "cozy" ? '<p class="small muted">Picks feeling like too much? <button type="button" class="link-btn" data-action="step-down">Move back to ' +
+      (logic.stepOf(profile) !== "cozy" ? '<p class="small muted">Been a lot lately? <button type="button" class="link-btn" data-action="step-down">Ease back to ' +
         STEP_NAMES[logic.stepDown(logic.stepOf(profile))] + "</button></p>" : "") +
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +

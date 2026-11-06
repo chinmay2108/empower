@@ -83,20 +83,20 @@
       case 0:
         return '<div class="center"><p class="eyebrow mt-4">New in town?</p>' +
           '<h1 class="title">Find your people.<br>One group at a time.</h1>' +
-          '<p class="subtitle">We pick one thing a week that fits you, help you actually go, and get you back to the same people until they feel like yours.</p></div>' +
+          '<p class="subtitle">Tell us a little about you. We\'ll find a few places worth coming back to.</p></div>' +
           '<div class="field"><label class="label" for="name">Your first name</label>' +
           '<input class="input" id="name" autocomplete="given-name" value="' + ui.escapeHtml(state.name) + '"></div>';
       case 1:
-        return '<h1 class="title">What do you enjoy?</h1><p class="subtitle">Pick at least ' + MIN_INTERESTS + '. You can change these later.</p>' +
+        return '<h1 class="title">What do you enjoy?</h1><p class="subtitle">Pick three or more. You can change them anytime.</p>' +
           chips(INTERESTS, state.interests, "interests") +
           '<p class="small muted mt-4">' + state.interests.length + " selected</p>";
       case 2:
-        return '<h1 class="title">When are you usually free?</h1><p class="subtitle">We only suggest things that fit.</p>' +
+        return '<h1 class="title">When are you usually free?</h1><p class="subtitle">We\'ll only suggest things that fit your week.</p>' +
           '<p class="label">Weeknight evenings</p>' + chips(SLOTS, state.freeSlots, "freeSlots") +
           '<p class="label mt-4">Weekends</p>' + chips(WEEKEND, state.freeSlots, "freeSlots");
       case 3:
         var q = QUIZ[state.quizIndex];
-        return '<h1 class="title">This or that?</h1><p class="subtitle">Go with your gut. Both are good answers.</p>' +
+        return '<h1 class="title">This or that?</h1><p class="subtitle">First instinct wins. There\'s no wrong pick.</p>' +
           '<p class="label">' + (state.quizIndex + 1) + " of " + QUIZ.length + "</p>" +
           ["a", "b"].map(function (side) {
             return '<button type="button" class="option' + (state.answers[q.id] === side ? " is-selected" : "") +
@@ -105,7 +105,7 @@
       default:
         return '<div class="center"><div class="big-check">&#10003;</div>' +
           '<h1 class="title">You\'re set, ' + ui.escapeHtml(state.name) + ".</h1>" +
-          '<p class="subtitle">Your picks for this week are ready.</p></div>';
+          '<p class="subtitle">We found a few spots you\'ll like.</p></div>';
     }
   }
 

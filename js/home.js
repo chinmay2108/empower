@@ -23,7 +23,7 @@
   var html = "";
   if (!profile) {
     html = '<div class="card card--accent"><p class="card__title">Start in two minutes</p>' +
-      '<p class="card__meta">Tell us what you like and when you are free.</p>' +
+      '<p class="card__meta">Two minutes and we\'ll find your first spot.</p>' +
       '<p class="mt-4"><a class="btn btn--accent" href="pages/onboarding.html">Get started</a></p></div>';
   } else {
     var today = logic.todaysCommitments(commitments, now).filter(function (c) {
@@ -38,19 +38,19 @@
     today.forEach(function (c) {
       var g = store.getGroup(c.groupId);
       html += card("card--accent", "pages/prep.html?c=" + c.id, g.name + " · " + ui.formatTime(c.startsAt),
-        (c.leaveAt ? "Leave at " + ui.formatHHMM(c.leaveAt) + ". " : "") + "Tap for your plan and tips.", "Today");
+        (c.leaveAt ? "Head out at " + ui.formatHHMM(c.leaveAt) + ". " : "") + "Everything you need is in here.", "Today");
     });
     if (toCheck.length || toRate.length) {
       var first = toCheck[0] || toRate[0];
       html += card("card--outline", "pages/reflect.html", "How was " + store.getGroup(first.groupId).name + "?",
-        "Check in, it takes 15 seconds.", "After your last session");
+        "How'd it go? Tell us in a tap.", "After your last session");
     }
     if (next && !today.some(function (c) { return c.id === next.id; })) {
       html += card("card--outline", "pages/prep.html?c=" + next.id, store.getGroup(next.groupId).name,
         ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt), "Next up");
     }
     if (!html) {
-      html = '<div class="empty"><p class="empty__title">No plans yet</p><p class="small">Pick one thing this week.</p>' +
+      html = '<div class="empty"><p class="empty__title">No plans yet</p><p class="small">Just one thing. We\'ve lined up a few.</p>' +
         '<p class="mt-4"><a class="btn btn--inline" href="pages/events.html">See this week</a></p></div>';
     }
   }
@@ -70,7 +70,7 @@
     var slot = logic.slotsToCheck(profile, commitments, groups, now)[0];
     if (!slot) return "";
     return '<div class="card card--accent" data-slot-card><p class="card__title">Still free ' + slotName(slot) + "?</p>" +
-      '<p class="card__meta">The last couple didn\'t work out. No problem, plans change. Should we keep suggesting this time?</p>' +
+      '<p class="card__meta">' + slotName(slot) + " haven't worked out lately, totally fine. Keep them?</p>" +
       '<div class="btn-row mt-3"><button type="button" class="btn btn--small" data-slot="' + slot + '" data-free="yes">Yes, keep it</button>' +
       '<button type="button" class="btn btn--secondary btn--small" data-slot="' + slot + '" data-free="no">Not anymore</button></div></div>';
   }
@@ -123,6 +123,12 @@
     '<div class="stat"><div class="stat__value">' + (score.total ? score.attended + "/" + score.total : logic.progressByGroup(commitments, groups).length) +
     '</div><div class="stat__label">' + (score.total ? "show-up score" : "groups you return to") + "</div></div>";
 
+  if (profile) {
+    var upcoming = logic.nextCommitment(commitments, now);
+    document.getElementById("home-sub").textContent = upcoming
+      ? store.getGroup(upcoming.groupId).name + " on " + new Date(upcoming.startsAt).toLocaleDateString("en-US", { weekday: "long" }) + ". Nice."
+      : "Got a free evening this week?";
+  }
   document.getElementById("home-date").textContent = ui.formatDay(now.toISOString());
   if (profile) document.getElementById("home-greeting").textContent = "Hi, " + profile.name + ".";
   ui.renderNav("home");

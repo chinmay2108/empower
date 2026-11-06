@@ -40,7 +40,7 @@
     '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
     '<p class="center"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
     tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</p>" +
-    '<p class="small muted center">Only the two of you see this.</p>' +
+    '<p class="small muted center">Just between you two.</p>' +
     '<ul class="facts">' +
     "<li><span>Met at</span><span>" + store.getGroup(connection.groupId).name + "</span></li>" +
     "<li><span>Time together</span><span>" + time.sessions + (time.sessions === 1 ? " session, " : " sessions, ") + time.hours + " hours</span></li>" +
@@ -49,9 +49,9 @@
     "<li><span>Shows up</span><span>" + reliability + "</span></li>" +
     "<li><span>Meetups outside sessions</span><span id=\"meetup-count\">" + meetupsWith().length + "</span></li></ul>" +
     '<div class="card card--outline"><p class="card__title">Met up outside a session?</p>' +
-    '<p class="card__meta">Coffee, a walk, anything. When you both confirm, it adds 10 to your Empower score.</p>' +
+    '<p class="card__meta">Saw ' + person.name.split(" ")[0] + " outside a session? Log it and it counts for both of you.</p>" +
     '<p class="mt-4" id="meetup-action">' + meetupButton() + "</p></div>" +
-    '<p class="small muted">Synthetic demo profile.</p>' +
+    '<p class="small muted">Demo profile, not a real person.</p>' +
     '<div class="footer-action"><div class="footer-action__inner"><a class="btn" href="chat.html?id=' + person.id + '">Message ' +
     person.name.split(" ")[0] + "</a></div></div>";
 
@@ -72,7 +72,7 @@
     store.addMeetup({ personId: person.id, at: now.toISOString(), confirmed: confirmed });
     Empower.log("person.meetup_logged", { id: person.id, confirmed: confirmed });
     document.getElementById("meetup-action").innerHTML = '<span class="small muted">' +
-      (confirmed ? person.name.split(" ")[0] + " confirmed. Logged for today." : "Waiting for " + person.name.split(" ")[0] + " to confirm.") + "</span>";
+      (confirmed ? person.name.split(" ")[0] + " confirmed. Nice one." : "Waiting for " + person.name.split(" ")[0] + " to confirm.") + "</span>";
     document.getElementById("meetup-count").textContent = meetupsWith().length;
     if (confirmed) ui.toast("+10 Empower score with " + person.name.split(" ")[0]);
   });

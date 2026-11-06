@@ -39,7 +39,7 @@
     host.innerHTML =
       '<p class="eyebrow">' + group.name + " · " + ui.formatDay(session.startsAt) + " · " + ui.formatTime(session.startsAt) + "</p>" +
       '<h1 class="title">Make it a plan.</h1>' +
-      '<p class="subtitle">Deciding when and how you\'ll go makes you far more likely to show up.</p>' +
+      '<p class="subtitle">Let\'s make it a plan. When are you heading out?</p>' +
       '<div class="field"><p class="label">I\'ll get there by</p><div class="chip-row">' +
       MODES.map(function (m) {
         return '<button type="button" class="chip" data-mode="' + m[0] + '" aria-pressed="' + (state.travelMode === m[0]) + '">' + m[1] + "</button>";
@@ -62,7 +62,7 @@
       '<div class="center"><div class="big-check">&#10003;</div><h1 class="title">You\'re going.</h1>' +
       '<p class="subtitle">' + group.name + " · " + ui.formatDay(session.startsAt) + " · " + ui.formatTime(session.startsAt) +
       "<br>Leave at " + ui.formatHHMM(state.done.leaveAt) + ".</p></div>" +
-      '<div class="card"><p class="card__title">What happens next</p><p class="card__meta">On the day, your plan and a few tips are on Home. Plans change? Cancel at least a day ahead and it won\'t count against you.</p></div>' +
+      '<div class="card"><p class="card__title">What happens next</p><p class="card__meta">Your plan will be on Home that day. Can\'t make it? Cancel a day ahead, no big deal.</p></div>' +
       '<div class="footer-action"><div class="footer-action__inner">' +
       '<button type="button" class="btn btn--secondary" data-action="ics">Add to calendar</button>' +
       '<a class="btn" href="../index.html">Done</a></div></div>';

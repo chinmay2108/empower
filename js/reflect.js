@@ -30,9 +30,9 @@
     var toConfirm = commitments.filter(function (c) { return logic.canCheckIn(c, groupOf(c), now) && new Date(c.startsAt) <= now; });
     var toRate = logic.awaitingReflection(commitments, store.getReflections());
 
-    var html = '<h1 class="title">Check in</h1><p class="subtitle">Fifteen seconds after each session. It\'s how you see your progress.</p>';
+    var html = '<h1 class="title">Check in</h1><p class="subtitle">How did your last one go?</p>';
     if (!toConfirm.length && !toRate.length) {
-      html += '<div class="empty"><p class="empty__title">Nothing to check in yet</p><p class="small">After a session you committed to, it shows up here.</p>' +
+      html += '<div class="empty"><p class="empty__title">Nothing to check in yet</p><p class="small">Once you\'ve been somewhere, it\'ll show up here.</p>' +
         '<p class="mt-4"><a class="btn btn--inline" href="events.html">See this week</a></p></div>';
     }
     if (toConfirm.length) {
@@ -86,7 +86,7 @@
     if (!meet.people.length) return renderDone(c);
     host.innerHTML =
       '<h1 class="title">Who did you meet?</h1>' +
-      '<p class="subtitle">Add anyone you\'d see again. If they add you too, you\'re matched. Nobody sees who didn\'t add them.</p>' +
+      '<p class="subtitle">Anyone you\'d like to see again? If they add you too, you\'ll match. No one sees who didn\'t.</p>' +
       meet.people.map(function (p) {
         var on = meet.added.indexOf(p.id) !== -1;
         var shared = Empower.people.sharedInterests(p, profile);
@@ -156,11 +156,11 @@
     var row = logic.progressByGroup(store.getCommitments(), groups).find(function (r) { return r.group.id === g.id; });
     var next = Empower.schedule.upcomingSessions([g], new Date(c.startsAt), 15).find(function (s) { return s.startsAt > c.startsAt && new Date(s.startsAt) > now; });
     var liked = form.talkedToSomeone === "yes" ?
-      '<div class="card card--accent"><p class="card__meta">People usually enjoyed your company more than you think. Most of us underestimate how much others liked us after a first conversation.</p></div>' : "";
+      '<div class="card card--accent"><p class="card__meta">They probably liked you more than you think. Most people do.</p></div>' : "";
     host.innerHTML =
       '<div class="center"><div class="big-check">&#10003;</div>' +
       '<h1 class="title">' + row.sessions + (row.sessions === 1 ? " session" : " sessions") + " with this group.</h1>" +
-      '<p class="subtitle">That\'s about ' + row.hours + " hours with " + g.name + ". Friendships take repeat time, so keep going back.</p></div>" +
+      '<p class="subtitle">That\'s ' + row.hours + " hours with this crew so far. Same time next week?</p></div>" +
       liked +
       changes.map(function (ch) {
         return '<div class="card card--accent"><p class="card__title">Things with ' + ch.person.name.split(" ")[0] + " " + STAGE_WORDS[ch.stage] +
@@ -168,8 +168,8 @@
       }).join("") +
       (next ? '<div class="card card--outline"><p class="eyebrow">Next session</p><p class="card__title">' + g.name +
         '</p><p class="card__meta">' + ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt) + "</p></div>" : "") +
-      (meet.added.length ? '<p class="small muted center">You added ' + meet.added.length + (meet.added.length === 1 ? " person" : " people") +
-        '. Matches show up in <a href="people.html">People</a>.</p>' : "") +
+      (meet.added.length ? '<p class="small muted center">Added ' + meet.added.length +
+        '. If they add you back, they\'ll be in <a href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
         '<a class="btn btn--secondary" href="thread.html?c=' + c.id + '">Say thanks in the session thread</a>' +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');
