@@ -28,10 +28,15 @@
   function familiarSection() {
     var faces = people.familiarFaces(store.getPopulation(), commitments, store.getConnections(), 3);
     if (!faces.length) return "";
-    return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f) {
+    var LINES = [
+      function (n) { return n + " sessions in the same room. Maybe say hi?"; },
+      function (n) { return "You've crossed paths " + n + " times. Worth a hello?"; },
+      function (n) { return "You keep ending up at the same sessions (" + n + " so far)."; },
+      function (n) { return n + " sessions together, and you haven't added each other yet."; }
+    ];
+    return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f, i) {
       return '<div class="person">' + ui.avatar(f.person) + '<div class="person__body">' +
-        '<p class="person__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="person__meta">You\'ve been at ' + f.sessions +
-        " sessions together.</p></div>" +
+        '<p class="person__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="person__meta">' + ui.escapeHtml(LINES[i % LINES.length](f.sessions)) + "</p></div>" +
         '<button type="button" class="mini-btn" data-add="' + f.person.id + '">Add</button></div>';
     }).join("");
   }
@@ -47,7 +52,7 @@
 
   host.innerHTML =
     '<h1 class="title">Your people</h1>' +
-    '<p class="subtitle">People you met who added you back.</p>' +
+    '<p class="subtitle">The people you keep running into.</p>' +
     (matches.length ? matches.map(function (r) {
       var g = store.getGroup(r.connection.groupId);
       var last = store.getMessages(r.person.id).slice(-1)[0];
@@ -60,11 +65,10 @@
         "</p>" + '<div class="person__actions"><a class="mini-btn mini-btn--dark" href="chat.html?id=' + r.person.id + '">Message</a>' +
         '<a class="mini-btn" href="person.html?id=' + r.person.id + '">Profile</a></div></div></div>';
     }).join("") :
-      '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">After a session, check in and add the people you met. If they add you too, they show up here.</p>' +
+      '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">Met someone you liked? Add them after you check in. If they add you too, they\'ll show up here.</p>' +
       '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>') +
     familiarSection() +
-    (pending ? '<p class="small muted mt-4">' + pending + (pending === 1 ? " person hasn't" : " people haven't") +
-      " added you back yet. Matches only show when it's mutual.</p>" : "");
+    (pending ? '<p class="small muted mt-4">' + pending + " more might add you back soon.</p>" : "");
 
   /* Add a familiar face. If they add you back you match; either way they leave Familiar faces. */
   host.addEventListener("click", function (e) {

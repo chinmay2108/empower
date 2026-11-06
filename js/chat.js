@@ -52,7 +52,7 @@
         return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + ui.escapeHtml(m.text) + "</div>";
       }).join("") + "</div>" +
       (theirs === 0 && !messages.some(function (m) { return m.from === "me"; }) ?
-        '<p class="small muted">Say hi to ' + first + ". Replies in this demo are simulated.</p>" : "") +
+        '<p class="small muted">Say hi to ' + first + ". (Replies are simulated in this demo.)</p>" : "") +
       '<form class="composer mt-4" id="composer"><input class="input" id="message" autocomplete="off" placeholder="Message ' + first +
       '" maxlength="300"><button class="btn btn--inline" type="submit">Send</button></form>';
     var box = document.getElementById("message");

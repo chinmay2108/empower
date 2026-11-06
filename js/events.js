@@ -16,7 +16,7 @@
 
   if (!profile) {
     host.innerHTML = '<h1 class="title">This week</h1><div class="empty"><p class="empty__title">Tell us about you first</p>' +
-      '<p class="small">Two minutes, so your picks fit.</p><p class="mt-4"><a class="btn btn--inline" href="onboarding.html">Get started</a></p></div>';
+      '<p class="small">Tell us a bit about you first.</p><p class="mt-4"><a class="btn btn--inline" href="onboarding.html">Get started</a></p></div>';
     return;
   }
 
@@ -41,7 +41,7 @@
 
   function going(session) {
     var list = Empower.people.attendeesOf(store.getPopulation(), session);
-    return list.length ? '<p class="pick__social">' + ui.faces(list, 3) + ui.namesText(list) + " from Empower " + (list.length === 1 ? "is" : "are") + " going</p>" : "";
+    return list.length ? '<p class="pick__social">' + ui.faces(list, 3) + ui.namesText(list) + (list.length === 1 ? " is" : " are") + " going</p>" : "";
   }
 
   var rest = sessions.filter(function (s) {
@@ -50,10 +50,10 @@
 
   host.innerHTML =
     '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
-    '<h1 class="title">Pick one.</h1><p class="subtitle">Three picks that fit your week. One is enough.</p>' +
+    '<h1 class="title">Pick one.</h1><p class="subtitle">A few we think you\'ll like. Just pick one.</p>' +
     (picks.length ? picks.map(function (p, i) {
       return card(p.session, p.group, logic.pitch(p.session, p.group, profile, history, usedLines), i === 0 ? "Top pick" : "");
-    }).join("") : '<div class="empty"><p class="empty__title">Nothing left this week</p><p class="small">Check back tomorrow.</p></div>') +
+    }).join("") : '<div class="empty"><p class="empty__title">Nothing left this week</p><p class="small">That\'s the week. New picks tomorrow.</p></div>') +
     '<h2 class="section-title">Everything else this week</h2>' +
     rest.map(function (s) {
       var g = store.getGroup(s.groupId);

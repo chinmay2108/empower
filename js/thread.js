@@ -20,7 +20,7 @@
   var state = Empower.logic.threadOpen(c, group, now);
   if (state === "locked") {
     host.innerHTML = '<div class="empty"><p class="empty__title">Threads are for people who went</p>' +
-      '<p class="small">Check in after the session to join its thread.</p>' +
+      '<p class="small">Check in after you go and you can join the chat.</p>' +
       '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>';
     Empower.log("thread.locked", { commitment: ui.param("c") });
     return;
@@ -44,8 +44,8 @@
     host.innerHTML =
       '<p class="eyebrow">' + ui.formatDay(c.startsAt) + "</p>" +
       '<h1 class="title">' + group.name + "</h1>" +
-      '<p class="subtitle">' + there.length + " people from Empower were there. " +
-      (state === "open" ? "Open for a week after the session." : "This thread closed a week after the session.") + "</p>" +
+      '<p class="subtitle">' + (state === "open" ? "You and " + there.length + " others were there. Say thanks while it\'s fresh." :
+        "This one\'s wrapped up. See you at the next.") + "</p>" +
       '<div class="chat">' + posts().map(function (p) {
         return '<div class="bubble bubble--' + (p.me ? "me" : "them") + '">' +
           (p.me ? "" : '<span class="bubble__who">' + (p.person ? ui.avatar(p.person, "sm") : "") + "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong></span>") +
@@ -53,7 +53,7 @@
       }).join("") + "</div>" +
       (state === "open" ? '<form class="composer mt-4" id="composer"><input class="input" id="post" autocomplete="off" maxlength="300" placeholder="Say something to the group">' +
         '<button class="btn btn--inline" type="submit">Post</button></form>' +
-        '<p class="small muted">Text only for now. Photos come once there\'s a real backend.</p>' : "");
+        '<p class="small muted">Photos coming soon.</p>' : "");
   }
 
   host.addEventListener("submit", function (e) {

@@ -28,9 +28,9 @@
     low: ["\"What brought you here tonight?\"", "\"Do you come to these often?\""]
   };
   var EXPECT = {
-    high: "There's a shared activity, so the conversation comes from that. Nobody expects you to perform.",
-    medium: "There's some structure, then time to chat. Asking a question is the easiest way in.",
-    low: "It's open mingling. Find one person standing alone and say hi."
+    high: "The game does the talking, so you don't have to.",
+    medium: "A bit of structure, then chatting. A question is the easy way in.",
+    low: "It's a mingle. Look for someone on their own and say hi."
   };
   var confirmingCancel = false;
   var going = Empower.people.attendeesOf(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt });
@@ -52,16 +52,16 @@
     var lateCancel = logic.cancellationOutcome(c, now) === "missed";
     var actions = confirmingCancel ?
       '<div class="notice ' + (lateCancel ? "notice--error" : "notice--success") + '">' +
-      (lateCancel ? "It's less than a day away, so this counts as a missed session." : "More than a day ahead, so this won't count against you.") + "</div>" +
+      (lateCancel ? "It's less than a day away, so this counts as a miss. It happens." : "Thanks for the heads up. No harm done.") + "</div>" +
       '<div class="btn-row"><button type="button" class="btn btn--secondary" data-action="keep">Keep my plan</button>' +
       '<button type="button" class="btn" data-action="cancel">Cancel it</button></div>' :
       '<button type="button" class="btn" data-action="here"' + (open ? "" : " disabled") + '>I\'m here</button>' +
-      (open ? "" : '<p class="small muted center flush">Check-in opens 30 minutes before the start.</p>') +
+      (open ? "" : '<p class="small muted center flush">You can check in from ' + ui.formatTime(new Date(new Date(c.startsAt).getTime() - 30 * 60000).toISOString()) + ".</p>") +
       '<button type="button" class="btn btn--secondary" data-action="ask-cancel">Can\'t make it</button>';
 
     host.innerHTML =
       (warm.length ? '<div class="card card--accent"><p class="faces-row">' + ui.faces(warm, 3) + '</p><p class="card__title">' + ui.namesText(warm, 2) + (warm.length === 1 ? " will" : warm.length === 2 ? " will both" : " will all") +
-        ' be there</p><p class="card__meta">A familiar face makes walking in easier.</p></div>' : "") +
+        ' be there</p><p class="card__meta">So you won\'t walk in alone.</p></div>' : "") +
       '<p class="eyebrow">' + ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt) + "</p>" +
       '<h1 class="title">' + group.name + "</h1>" +
       '<ul class="facts"><li><span>Leave</span><span>' + travelText() + "</span></li>" +
@@ -70,20 +70,20 @@
       (going.length ? "<li><span>Also going</span><span>" + ui.namesText(going, 2) + "</span></li>" : "") + "</ul>" +
       (intro ? '<div class="card card--outline intro-card">' + ui.avatar(intro.person, "lg") + '<div><p class="eyebrow">Someone to look for</p><p class="card__title">' +
         intro.person.name.split(" ")[0] + " will be there. You two would get on.</p>" +
-        '<p class="card__meta">They\'re a regular here and also like ' + intro.shared.slice(0, 2).join(" and ") +
-        ". Ask what keeps them coming back.</p></div></div>" : "") +
+        '<p class="card__meta">They\'re a regular, and into ' + intro.shared[0] + " too." +
+        " Ask what keeps them coming back.</p></div></div>" : "") +
       '<p class="label">What to expect</p><p class="small muted">' + EXPECT[group.structure] + "</p>" +
       '<p class="label mt-4">Two easy openers</p><ul class="tips small"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>" +
-      '<p class="label">If it\'s not your night</p><p class="small muted">Give it 30 minutes. Leaving after that is completely fine.</p>' +
+      '<p class="label">If it\'s not your night</p><p class="small muted">Give it half an hour. Still not clicking? Head home, no guilt.</p>' +
       '<div class="footer-action"><div class="footer-action__inner">' + actions + "</div></div>";
   }
 
   function renderClosed(status) {
     var text = {
-      attended: ["You went.", "Nice. That's the hard part.", '<a class="btn" href="reflect.html?c=' + c.id + '">Check in on how it went</a>' +
+      attended: ["You went.", "You showed up. That's the hard part done.", '<a class="btn" href="reflect.html?c=' + c.id + '">Check in on how it went</a>' +
         '<a class="btn btn--secondary" href="thread.html?c=' + c.id + '">Session thread</a>'],
-      cancelled: ["Cancelled.", "No problem. It won't count against you.", '<a class="btn" href="events.html">Pick something else</a>'],
-      missed: ["Missed this one.", "It happens. The next session is a fresh start.", '<a class="btn" href="events.html">See this week</a>']
+      cancelled: ["Cancelled.", "All good. Plans change.", '<a class="btn" href="events.html">Pick something else</a>'],
+      missed: ["Missed this one.", "It happens. Next week's a fresh start.", '<a class="btn" href="events.html">See this week</a>']
     }[status];
     host.innerHTML = '<div class="center"><div class="big-check">&#10003;</div><h1 class="title">' + text[0] +
       '</h1><p class="subtitle">' + text[1] + "</p></div>" +
