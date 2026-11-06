@@ -19,6 +19,8 @@ Then open http://localhost:8000.
 
 **Live site:** GitHub Pages, at https://chinmay2108.github.io/empower/ once Pages is turned on (Settings > Pages > Deploy from branch > `main`).
 
+**Clickable mockups of every flow:** open `prototype/index.html` (live: https://chinmay2108.github.io/empower/prototype/). Sample data, no logic. Use them to agree on a screen before building it.
+
 **Start from a clean slate:** open the browser console (Cmd+Option+J) and run `Empower.store.resetAll()`, then reload.
 
 ## Stack
