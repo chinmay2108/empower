@@ -21,7 +21,7 @@
   var now = Empower.clock.now();
 
   function scoreBadge(person) {
-    return ' <span class="score-badge score-badge--sm" title="Empower score">' + people.scoreOf(person) + "</span>";
+    return " " + ui.ember(people.scoreOf(person));
   }
 
   /* People you keep seeing but haven't added: first names only, with an Add button. */
@@ -29,7 +29,7 @@
     var faces = people.familiarFaces(store.getPopulation(), commitments, store.getConnections(), 3);
     if (!faces.length) return "";
     return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f) {
-      return '<div class="person"><div class="avatar">' + ui.initials(f.person.name) + '</div><div class="person__body">' +
+      return '<div class="person">' + ui.avatar(f.person) + '<div class="person__body">' +
         '<p class="person__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="person__meta">You\'ve been at ' + f.sessions +
         " sessions together.</p></div>" +
         '<button type="button" class="mini-btn" data-add="' + f.person.id + '">Add</button></div>';
@@ -51,7 +51,7 @@
     (matches.length ? matches.map(function (r) {
       var g = store.getGroup(r.connection.groupId);
       var last = store.getMessages(r.person.id).slice(-1)[0];
-      return '<div class="person"><div class="avatar">' + ui.initials(r.person.name) + "</div>" +
+      return '<div class="person">' + ui.avatar(r.person) +
         '<div class="person__body"><p class="person__name">' + r.person.name + scoreBadge(r.person) +
         (last ? "" : ' <span class="tag">New</span>') + '</p><p class="person__meta">' +
         (people.needsNudge(r.person, commitments, now) ? "It's been 3 weeks. Go together this week?" :

@@ -20,6 +20,18 @@
   var score = logic.showUpScore(commitments, groups, now);
   var next = logic.nextCommitment(commitments, now);
 
+  /* The Empower score, explained: what it's made of and how far to the next glow. */
+  function scoreCard() {
+    var total = logic.empowerScore(store.getMeetups(), store.getAnswers());
+    var parts = logic.scoreParts(store.getMeetups(), store.getAnswers());
+    var lvl = logic.emberLevel(total);
+    return '<div class="card card--outline ember-card">' + ui.ember(total, "lg") +
+      '<div><p class="card__title">Empower score</p><p class="card__meta">' +
+      parts.meetups + (parts.meetups === 1 ? " meetup" : " meetups") + " · " + parts.answers + (parts.answers === 1 ? " answer" : " answers") +
+      (lvl.next ? " · next glow at " + lvl.next : " · fully lit") + "</p>" +
+      '<p class="small muted flush">Meetups with your people count most. Public on your profile.</p></div></div>';
+  }
+
   var STEP_NAMES = { cozy: "Cozy", social: "Social", open: "Open" };
   var SLOT_LABELS = { "sat-am": "Sat morning", "sat-pm": "Sat afternoon", "sun-am": "Sun morning", "sun-pm": "Sun afternoon" };
   function slotLabel(s) { return SLOT_LABELS[s] || s.slice(0, 3).replace(/^./, function (x) { return x.toUpperCase(); }) + " evening"; }
@@ -27,8 +39,7 @@
   host.innerHTML =
     '<h1 class="title">' + (profile ? ui.escapeHtml(profile.name) : "Your progress") + "</h1>" +
     '<p class="subtitle">Friendships take repeat time with the same people. Here\'s yours.</p>' +
-    (profile ? '<p><span class="score-badge">Empower score ' +
-      logic.empowerScore(store.getMeetups(), store.getAnswers()) + "</span></p>" : "") +
+    (profile ? scoreCard() : "") +
     '<div class="stat-row">' +
     '<div class="stat"><div class="stat__value">' + logic.totalHours(commitments, groups) + '</div><div class="stat__label">hours together</div></div>' +
     '<div class="stat"><div class="stat__value">' + (score.total ? score.attended + "/" + score.total : "–") + '</div><div class="stat__label">show-up score</div></div></div>' +

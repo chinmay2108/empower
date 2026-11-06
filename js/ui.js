@@ -167,8 +167,34 @@ Empower.ui = (function () {
     });
   }
 
+  var FLAME = '<svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg>';
+
+  /*
+   * ember(score, size): the Empower score as a small flame and the number.
+   * The flame warms with the score (spark, warm, glow, blaze; see
+   * Empower.logic.emberLevel). size "lg" for Me and profiles.
+   */
+  function ember(score, size) {
+    var lvl = Empower.logic.emberLevel(score);
+    return '<span class="ember ember--' + lvl.name + (size ? " ember--" + size : "") + '" title="Empower score ' + score +
+      '" aria-label="Empower score ' + score + '">' + FLAME + '<span class="ember__value">' + score + "</span></span>";
+  }
+
+  /*
+   * avatar(person, size): the person's photo if data/photos.js has one,
+   * otherwise their initials. size "lg" for profiles.
+   */
+  function avatar(person, size) {
+    var cls = "avatar" + (size ? " avatar--" + size : "");
+    var file = Empower.PHOTOS && Empower.PHOTOS[person.id];
+    if (file) return '<img class="' + cls + ' avatar--photo" src="' + root() + "img/people/" + file + '" alt="">';
+    return '<div class="' + cls + '">' + initials(person.name) + "</div>";
+  }
+
   return {
     toast: toast,
+    ember: ember,
+    avatar: avatar,
     renderNav: renderNav,
     namesText: namesText,
     initials: initials,

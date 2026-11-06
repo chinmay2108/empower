@@ -421,6 +421,31 @@ Empower.logic = (function () {
     return met * MEETUP_POINTS + answered * ANSWER_POINTS;
   }
 
+  var EMBER_LEVELS = [
+    { min: 0, name: "spark" }, { min: 10, name: "warm" }, { min: 30, name: "glow" }, { min: 60, name: "blaze" }
+  ];
+
+  /*
+   * emberLevel(score)
+   * How warm someone's Empower score looks: { level 0-3, name, next }.
+   *   spark 0-9, warm 10-29, glow 30-59, blaze 60+.
+   * next is the score where the next level starts (null at blaze).
+   */
+  function emberLevel(score) {
+    var level = 0;
+    EMBER_LEVELS.forEach(function (l, i) { if (score >= l.min) level = i; });
+    var next = EMBER_LEVELS[level + 1];
+    return { level: level, name: EMBER_LEVELS[level].name, next: next ? next.min : null };
+  }
+
+  /* scoreParts(meetups, answers): { meetups, answers } that count toward the score, for "3 meetups · 9 answers". */
+  function scoreParts(meetups, answers) {
+    return {
+      meetups: (meetups || []).filter(function (m) { return m.confirmed; }).length,
+      answers: (answers || []).filter(function (a) { return a.choice === "a" || a.choice === "b"; }).length
+    };
+  }
+
   /*
    * canLogMeetup(meetups, personId, now)
    * One meetup per person per day, so tapping twice can't double count.
@@ -666,6 +691,8 @@ Empower.logic = (function () {
     dailyQuestion: dailyQuestion,
     empowerScore: empowerScore,
     canLogMeetup: canLogMeetup,
+    emberLevel: emberLevel,
+    scoreParts: scoreParts,
     groupLevel: groupLevel,
     levelGap: levelGap,
     stepUpDue: stepUpDue,

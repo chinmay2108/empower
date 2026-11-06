@@ -17,6 +17,10 @@
   --color-success-soft: #e8f6ef;
   --color-danger: #b4401a;
   --color-danger-soft: #fdf0ea;
+  --color-ember-spark: #9a9aa6;
+  --color-ember-warm: #d97706;
+  --color-ember-glow: #ea580c;
+  --color-ember-blaze: #dc2626;
 
   /* Type */
   --font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, system-ui, sans-serif;
@@ -68,7 +72,7 @@ a { color: inherit; }
 .page {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-5) calc(var(--nav-height) + var(--space-6));
+  padding: var(--space-5) var(--space-5) calc(var(--nav-height) + var(--space-6) + env(safe-area-inset-bottom, 0px));
   min-height: 100vh;
 }
 
@@ -396,7 +400,7 @@ a { color: inherit; }
   gap: var(--space-2);
 }
 
-.has-nav .footer-action { bottom: var(--nav-height); }
+.has-nav .footer-action { bottom: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px)); }
 
 /* Selectable option cards (comfort level, which event) */
 .option {
@@ -494,7 +498,7 @@ a { color: inherit; }
 .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
 .btn--small { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); }
 /* Leave room so a pinned action never covers the last card */
-.page:has(.footer-action) { padding-bottom: calc(var(--nav-height) + 168px); }
+.page:has(.footer-action) { padding-bottom: calc(var(--nav-height) + 168px + env(safe-area-inset-bottom, 0px)); }
 
 /* People rows */
 .person {
@@ -779,3 +783,28 @@ a { color: inherit; }
 .lab-w-98 { width: 98%; }
 .lab-w-99 { width: 99%; }
 .lab-w-100 { width: 100%; }
+
+/* ---------- Empower score: an ember that warms as it grows ---------- */
+
+.ember {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  vertical-align: middle;
+}
+.ember__icon { width: 14px; height: 14px; fill: currentColor; }
+.ember--spark .ember__icon { color: var(--color-ember-spark); fill: none; stroke: currentColor; stroke-width: 2; }
+.ember--warm .ember__icon { color: var(--color-ember-warm); }
+.ember--glow .ember__icon { color: var(--color-ember-glow); }
+.ember--blaze .ember__icon { color: var(--color-ember-blaze); filter: drop-shadow(0 0 3px var(--color-ember-glow)); }
+.ember--lg { font-size: var(--text-lg); gap: var(--space-1); }
+.ember--lg .ember__icon { width: 24px; height: 24px; }
+.ember-line { display: flex; align-items: center; justify-content: center; gap: var(--space-2); margin: 0; }
+.ember-card { display: flex; align-items: center; gap: var(--space-4); }
+.ember-card .ember--lg .ember__icon { width: 32px; height: 32px; }
+
+.avatar--photo { object-fit: cover; padding: 0; }
+.avatar-wrap { display: flex; justify-content: center; margin-bottom: var(--space-3); }

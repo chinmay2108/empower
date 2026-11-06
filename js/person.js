@@ -34,8 +34,9 @@
   var reliability = person.reliability >= 0.8 ? "Almost always" : person.reliability >= 0.65 ? "Usually" : "Sometimes";
 
   host.innerHTML =
-    '<div class="center"><div class="avatar avatar--lg avatar--center">' + ui.initials(person.name) + "</div>" +
-    '<h1 class="title">' + person.name + '</h1><p><span class="score-badge">Empower score ' + people.scoreOf(person) + "</span></p>" +
+    '<div class="center"><div class="avatar-wrap">' + ui.avatar(person, "lg") + "</div>" +
+    '<h1 class="title">' + person.name + '</h1><p class="ember-line">' + ui.ember(people.scoreOf(person), "lg") +
+    ' <span class="small muted">Empower score</span></p>' +
     '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
     '<p class="center"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
     tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</p>" +
