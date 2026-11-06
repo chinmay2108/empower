@@ -24,6 +24,10 @@
     return;
   }
 
+  var STAGE_LABELS = { spark: "Spark", kindling: "Kindling", warm: "Warm", glow: "Glow", bonfire: "Bonfire" };
+  var time = people.timeTogether(person, store.getCommitments(), store.getGroups());
+  var stage = people.warmthStage(time, true);
+  var tags = people.pairTags(person, store.getCommitments(), store.getGroups());
   var shared = people.sharedInterests(person, profile);
   var groupsInCommon = person.memberships.map(function (m) { return store.getGroup(m.groupId); })
     .filter(function (g) { return store.getCommitments().some(function (c) { return c.groupId === g.id; }); });
@@ -33,9 +37,12 @@
     '<div class="center"><div class="avatar avatar--lg avatar--center">' + ui.initials(person.name) + "</div>" +
     '<h1 class="title">' + person.name + '</h1><p><span class="score-badge">Empower score ' + people.scoreOf(person) + "</span></p>" +
     '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
+    '<p class="center"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
+    tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</p>" +
+    '<p class="small muted center">Only the two of you see this.</p>' +
     '<ul class="facts">' +
     "<li><span>Met at</span><span>" + store.getGroup(connection.groupId).name + "</span></li>" +
-    "<li><span>Sessions together</span><span>" + together + "</span></li>" +
+    "<li><span>Time together</span><span>" + time.sessions + (time.sessions === 1 ? " session, " : " sessions, ") + time.hours + " hours</span></li>" +
     "<li><span>You both like</span><span>" + (shared.length ? shared.join(", ") : "Still finding out") + "</span></li>" +
     (groupsInCommon.length ? "<li><span>Groups in common</span><span>" + groupsInCommon.map(function (g) { return g.name; }).join(", ") + "</span></li>" : "") +
     "<li><span>Shows up</span><span>" + reliability + "</span></li>" +

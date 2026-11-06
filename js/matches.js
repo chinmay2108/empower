@@ -17,6 +17,7 @@
   var commitments = store.getCommitments();
   var userKey = profile ? profile.createdAt : "";
 
+  var STAGE_LABELS = { spark: "Spark", kindling: "Kindling", warm: "Warm", glow: "Glow", bonfire: "Bonfire" };
   var rows = store.getConnections().map(function (k) {
     var person = store.getPerson(k.personId);
     var together = people.sessionsTogether(person, commitments);
@@ -34,7 +35,8 @@
       var last = store.getMessages(r.person.id).slice(-1)[0];
       return '<a class="person" href="person.html?id=' + r.person.id + '"><div class="avatar">' + ui.initials(r.person.name) + "</div>" +
         '<div class="person__body"><p class="person__name">' + r.person.name + '</p><p class="person__meta">' +
-        (last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name + " · " + r.together + (r.together === 1 ? " session" : " sessions") + " together") +
+        (last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
+        " · " + STAGE_LABELS[people.warmthStage(people.timeTogether(r.person, commitments, store.getGroups()), true)] +
         "</p></div>" + (last ? "" : '<span class="tag">New</span>') + "</a>";
     }).join("") :
       '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">After a session, check in and add the people you met. If they add you too, they show up here.</p>' +

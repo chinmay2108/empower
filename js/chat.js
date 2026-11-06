@@ -47,7 +47,7 @@
       '<div class="chat">' + messages.map(function (m) {
         if (m.from === "app") {
           return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
-            (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + '">Commit to it</a></p>' : "") + "</div>";
+            (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
         }
         return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + ui.escapeHtml(m.text) + "</div>";
       }).join("") + "</div>" +

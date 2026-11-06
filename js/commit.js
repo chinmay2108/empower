@@ -71,7 +71,8 @@
   function save() {
     var c = store.addCommitment({
       sessionId: session.id, groupId: group.id, startsAt: session.startsAt,
-      leaveAt: state.leaveAt, travelMode: state.travelMode
+      leaveAt: state.leaveAt, travelMode: state.travelMode,
+      withPersonId: ui.param("with") || undefined
     });
     state.done = c;
     Empower.log("commit.saved", { session: session.id, travelMode: state.travelMode, leaveAt: state.leaveAt });
