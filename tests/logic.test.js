@@ -453,3 +453,20 @@ test("scoreParts counts confirmed meetups and real answers", () => {
   const answers = [{ choice: "a" }, { choice: "skip" }, { choice: "b" }];
   assert.deepEqual(logic.scoreParts(meetups, answers), { meetups: 1, answers: 2 });
 });
+
+/* ---------- This week: swipe to decide ---------- */
+
+test("swipesLeft: 3 a week, one used per pass in the last 7 days", () => {
+  const pass = (daysAgo) => ({ sessionId: "s" + daysAgo, groupId: "g01", at: new Date(WED.getTime() - daysAgo * 864e5).toISOString() });
+  assert.equal(logic.swipesLeft([], WED), 3);
+  assert.equal(logic.swipesLeft([pass(1), pass(2)], WED), 1);
+  assert.equal(logic.swipesLeft([pass(1), pass(2), pass(3), pass(4)], WED), 0);
+  assert.equal(logic.swipesLeft([pass(8), pass(9), pass(10)], WED), 3); // last week's don't count
+  assert.equal(logic.passesThisWeek([pass(1), pass(8)], WED).length, 1);
+});
+
+test("Given a group swiped left, rankPicks offers the next best instead", () => {
+  const first = logic.rankPicks(sessionsFrom(WED), GROUPS, RICK, [], WED, 1)[0];
+  const next = logic.rankPicks(sessionsFrom(WED), GROUPS, RICK, [], WED, 1, { passedGroupIds: [first.group.id] })[0];
+  assert.notEqual(next.group.id, first.group.id);
+});

@@ -19,6 +19,7 @@
                                     traits { energy, style, novelty, rhythm } from Empower.logic.traitsFromAnswers.
                                     Older profiles have comfort "easy" | "nervous" | "anxious" instead of step
                                     (read it with Empower.logic.stepOf).
+     Pass         many:             { sessionId, groupId, at }  (a pick swiped left on This week)
      ThreadPost   many:             { id, sessionId, from: "me" | personId, text, at }  (session threads, E16)
      Meetup       many:             { id, personId, at, confirmed }  (a private meetup with a match)
      Answer       many:             { questionId, choice: "a" | "b" | "skip", at }  (data/questions.js)
@@ -46,7 +47,8 @@ Empower.store = (function () {
     messages: "empower.messages",
     answers: "empower.answers",
     meetups: "empower.meetups",
-    threadPosts: "empower.threadPosts"
+    threadPosts: "empower.threadPosts",
+    passes: "empower.passes"
   };
 
   function read(key, fallback) {
@@ -95,6 +97,19 @@ Empower.store = (function () {
       list.push(item);
       write(KEYS.answers, list);
       Empower.log("store.answer_saved", { questionId: item.questionId, choice: item.choice });
+      return item;
+    },
+
+    /* ---- Passes: picks swiped left on This week ---- */
+    getPasses: function () {
+      return read(KEYS.passes, []);
+    },
+    addPass: function (fields) {
+      var list = read(KEYS.passes, []);
+      var item = { sessionId: fields.sessionId, groupId: fields.groupId, at: fields.at };
+      list.push(item);
+      write(KEYS.passes, list);
+      Empower.log("store.pass_added", { sessionId: item.sessionId });
       return item;
     },
 
