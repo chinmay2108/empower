@@ -94,7 +94,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -128,3 +128,12 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.pairTags(person, commitments, groups)` | Shared-history tags: `"<Group> regulars"`, `"First-timers"`, `"Weekend crew"`, `"Plan makers"`. Shown only to the pair. |
 
 To regenerate the population: `python3 scripts/generate_population.py`.
+
+## Demo: sample users
+
+`js/demo.js` (pure, unit tested) builds six weeks of made-up history so a class demo shows stages, tags, the score and the ladder right away. Me loads it after `data/questions.js`.
+
+| Call | Returns |
+| --- | --- |
+| `Empower.demo.list()` | `[{ key, label }]`: `maya` (Cozy, hands busy), `rick` (Social, a bit of everything), `priya` (Open, big crowds and good talks). |
+| `Empower.demo.build(key, now, groups, population, questions)` | `{ profile, answers, commitments, reflections, connections, meetups, messages }` for six weeks before `now`. Me > Demo tools erases this browser's data and saves these through `Empower.store`. |
