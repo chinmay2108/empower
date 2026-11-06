@@ -68,6 +68,9 @@ Empower.logic = (function () {
 
     if (levelGap(group, step) === 1) score -= 3;
 
+    var slot = slotFor(session.startsAt);
+    if (history && history.slotsToCheck && history.slotsToCheck.indexOf(slot) !== -1) score -= 3;
+
     if (step !== "open") {
       if (group.structure === "high") { score += 2; reasons.push("there's an activity to focus on"); }
       if (group.structure === "low") score -= step === "cozy" ? 4 : 2;
@@ -149,6 +152,54 @@ Empower.logic = (function () {
   function localDay(date) {
     var d = new Date(date);
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+
+  /* ---------- Say vs do: "Still free Thursday evenings?" ---------- */
+
+  var MISSES_TO_ASK = 2;
+  var MISS_WINDOW_DAYS = 28;
+
+  /*
+   * slotsToCheck(profile, commitments, groups, now)
+   * Free-time slots the user said they're free but missed 2+ sessions in
+   * within the last 4 weeks, counting only misses after they last said
+   * "yes, still free" (profile.slotConfirmedAt[slot]). Early cancellations
+   * don't count; late cancellations and no-shows do. Asked every time it
+   * happens again. In bank order of profile.freeSlots.
+   */
+  function slotsToCheck(profile, commitments, groups, now) {
+    if (!profile) return [];
+    var byId = {};
+    groups.forEach(function (g) { byId[g.id] = g; });
+    var nowMs = new Date(now).getTime();
+    var confirmed = profile.slotConfirmedAt || {};
+    var misses = {};
+    (commitments || []).forEach(function (c) {
+      var g = byId[c.groupId];
+      if (!g || effectiveStatus(c, g, now) !== "missed") return;
+      var t = new Date(c.startsAt).getTime();
+      var slot = slotFor(c.startsAt);
+      if (t > nowMs || nowMs - t > MISS_WINDOW_DAYS * 86400000) return;
+      if (confirmed[slot] && t <= new Date(confirmed[slot]).getTime()) return;
+      misses[slot] = (misses[slot] || 0) + 1;
+    });
+    return (profile.freeSlots || []).filter(function (s) { return (misses[s] || 0) >= MISSES_TO_ASK; });
+  }
+
+  /*
+   * answerSlotCheck(profile, slot, stillFree, now)
+   * A new profile after the user answers. Yes: the slot stays and the miss
+   * count starts over. No: the slot is removed from their free times.
+   */
+  function answerSlotCheck(profile, slot, stillFree, now) {
+    var next = Object.assign({}, profile);
+    if (stillFree) {
+      next.slotConfirmedAt = Object.assign({}, profile.slotConfirmedAt);
+      next.slotConfirmedAt[slot] = new Date(now).toISOString();
+    } else {
+      next.freeSlots = profile.freeSlots.filter(function (s) { return s !== slot; });
+    }
+    return next;
   }
 
   /* ---------- Comfort ladder ---------- */
@@ -255,6 +306,7 @@ Empower.logic = (function () {
       attendedGroupIds: commitments.filter(function (c) { return c.status === "attended"; })
         .map(function (c) { return c.groupId; })
     };
+    history.slotsToCheck = slotsToCheck(profile, commitments, groups, now);
     var nowMs = new Date(now).getTime();
 
     var scored = sessions
@@ -458,7 +510,9 @@ Empower.logic = (function () {
     groupLevel: groupLevel,
     levelGap: levelGap,
     stepUpDue: stepUpDue,
-    stepDown: stepDown
+    stepDown: stepDown,
+    slotsToCheck: slotsToCheck,
+    answerSlotCheck: answerSlotCheck
   };
 })();
 
