@@ -138,7 +138,7 @@ test("Given someone you keep seeing but haven't matched, Then they stop at Kindl
 
 test("pairTags: group regulars at 4 sessions, Weekend crew at 3 weekend sessions, Plan makers after a plan", () => {
   const cs = [5, 12, 19, 26].map((d) => trivia(d, { withPersonId: "zz1" }));
-  assert.deepEqual(people.pairTags(nobody, cs, GROUPS), ["Thursday Trivia Crew regulars", "Plan makers"]);
+  assert.deepEqual(people.pairTags(nobody, cs, GROUPS), ["Thursday Trivia at Alamo Drafthouse regulars", "Plan makers"]);
   const runs = [7, 14, 21].map((d) => ({ id: "r" + d, groupId: "g02", startsAt: at(2026, 11, d, 8).toISOString(), status: "attended", withPersonId: "zz1" }));
   assert.ok(people.pairTags(nobody, runs, GROUPS).includes("Weekend crew"));
   assert.deepEqual(people.pairTags(nobody, [trivia(5)], GROUPS), []);

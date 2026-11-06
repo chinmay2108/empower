@@ -17,7 +17,7 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | --- | --- |
 | `getProfile()` / `saveProfile({ name, interests[], freeSlots[], step, traits, createdAt })` | The user's profile or `null`. `freeSlots` like `"thu-eve"`, `"sat-am"`. `step` is `"cozy"`, `"social"` or `"open"`; read it with `Empower.logic.stepOf(profile)`, which also handles older profiles that saved `comfort` instead. `traits` comes from `traitsFromAnswers`. |
 | `getAnswers()` / `saveAnswer({ questionId, choice, at })` | Answers to "this or that" questions. `choice` is `"a"`, `"b"` or `"skip"`; `at` is an ISO time from `Empower.clock.now()`. Saving again replaces that question's answer. |
-| `getGroups()` / `getGroup(id)` | Recurring groups from `data/groups.js`. |
+| `getGroups()` / `getGroup(id)` | Recurring groups from `data/groups.js`: 15 real weekly Charlottesville groups. Each has `source` (public link), `checked` (date researched) and `verify` (what a human should still confirm). `tests/groups.test.js` enforces these fields. |
 | `getCommitments()` / `getCommitment(id)` | All commitments, or one. |
 | `addCommitment({ sessionId, groupId, startsAt, leaveAt, travelMode, withPersonId? })` | The saved commitment, `status: "committed"`. `withPersonId` is set when it was made together from chat (`commit.html?session=...&with=u123`). |
 | `updateCommitment(id, changes)` | The updated commitment. Status moves to `"attended"`, `"cancelled"` or `"missed"`. |

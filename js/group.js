@@ -57,6 +57,8 @@
     (attendedBefore ? "<li><span>You've been</span><span>" + attendedBefore + (attendedBefore === 1 ? " time" : " times") + "</span></li>" : "") +
     "</ul>" +
     (why ? '<div class="card card--accent"><p class="card__title">Why it fits you</p><p class="card__meta">' + why + "</p></div>" : "") +
+    '<p class="small muted mt-4">Listing checked ' + ui.escapeHtml(group.checked || "") +
+    ' · <a href="' + ui.escapeHtml(group.source || "#") + '" target="_blank" rel="noopener">where we found it</a></p>' +
     '<div class="footer-action"><div class="footer-action__inner">' + action + "</div></div>";
 
   Empower.log("group.viewed", { session: session.id, committed: !!mine });

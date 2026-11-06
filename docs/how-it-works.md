@@ -17,13 +17,13 @@ Every group meets weekly, so the app first lists every session in the next 8 day
 | +1 | You're at Cozy and the group is small (10 or fewer) |
 | +2 | Your answers lean "doing something together" and it's an activity group, or lean "talking" and it's a talk group |
 
-**Rick's week:**
+**Rick's week** (likes trivia, games, running and board games; free Monday and Thursday evenings and Sunday afternoons; computed for the week of Nov 9, 2026):
 
-| Session | Score | Why it shows |
+| Session | Score | Main reasons |
 | --- | --- | --- |
-| Thursday Trivia Crew | 10 | Trivia (+4), Thursday evening (+4), activity-based (+2) |
-| Beginner Pottery Night | 6 | Tuesday evening (+4), activity-based (+2) |
-| Spanish Language Exchange | 6 | Tuesday evening (+4), activity-based (+2) |
+| Thursday Trivia at Alamo Drafthouse | 13 | Likes trivia, fits a free time, an activity to focus on, worth a first try |
+| Charlottesville Chess Club | 12 | Likes games, fits a free time, an activity to focus on, worth a first try |
+| Monday Game Night at Starr Hill | 11 | Likes games, fits a free time, doing something together |
 
 Ties go to the earlier session. The line "You like trivia, and it fits a time you're free" is built from the same reasons, so the explanation always matches the score.
 
@@ -49,7 +49,7 @@ There are no real users yet, so `data/population.js` holds **500 invented people
 - next week's sessions have a stable "who's going",
 - and nothing has to be saved.
 
-**Thursday Trivia Crew, example:** over the last 8 weeks, 8 different Empower people came, 3 of them regulars, with about 3.4 per session. Next Thursday, 5 are going: Marco J., Emeka K., Luis J., Emeka F. and Hassan R.
+**Thursday Trivia at Alamo Drafthouse, example:** over the last 8 weeks, 9 different Empower people came, 5 of them regulars, with about 5.5 per session. The groups are real (see `data/groups.js`); the people are synthetic.
 
 Code: `attends`, `attendeesOf`, `groupStats` in `js/people.js`.
 

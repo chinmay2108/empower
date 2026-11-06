@@ -12,9 +12,9 @@
   var QUIZ = Empower.QUESTIONS.filter(function (q) { return q.onboarding; });
   var host = document.getElementById("onboarding-root");
 
-  var INTERESTS = ["trivia", "board games", "games", "running", "hiking", "outdoors", "books",
-    "arts", "crafts", "cooking", "food", "volleyball", "climbing", "music", "comedy",
-    "volunteering", "photography", "languages"];
+  var INTERESTS = ["trivia", "board games", "chess", "games", "running", "fitness", "pickleball",
+    "sports", "dancing", "music", "singing", "comedy", "performance", "food", "markets",
+    "volunteering", "community", "movies"];
   var SLOTS = [
     ["mon-eve", "Mon"], ["tue-eve", "Tue"], ["wed-eve", "Wed"], ["thu-eve", "Thu"], ["fri-eve", "Fri"]
   ];
