@@ -26,6 +26,8 @@
   var familiar = Empower.people.familiarGoing(store.getPopulation(), sessions, store.getConnections(), commitments, groups, profile);
   var picks = logic.rankPicks(sessions, groups, profile, commitments, now, 3,
     { reflections: store.getReflections(), familiarBySession: familiar });
+  var usedLines = [];
+  var history = logic.historyFor(profile, commitments, store.getReflections(), groups, now, familiar);
   var pickIds = picks.map(function (p) { return p.session.id; });
   var committedIds = commitments.filter(function (c) { return c.status === "committed"; }).map(function (c) { return c.sessionId; });
 
@@ -50,7 +52,7 @@
     '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
     '<h1 class="title">Pick one.</h1><p class="subtitle">Three picks that fit your week. One is enough.</p>' +
     (picks.length ? picks.map(function (p, i) {
-      return card(p.session, p.group, logic.explain(p.reasons), i === 0 ? "Top pick" : "");
+      return card(p.session, p.group, logic.pitch(p.session, p.group, profile, history, usedLines), i === 0 ? "Top pick" : "");
     }).join("") : '<div class="empty"><p class="empty__title">Nothing left this week</p><p class="small">Check back tomorrow.</p></div>') +
     '<h2 class="section-title">Everything else this week</h2>' +
     rest.map(function (s) {
