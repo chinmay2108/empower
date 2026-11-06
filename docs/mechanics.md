@@ -94,7 +94,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `thread.viewed`, `thread.posted`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -150,3 +150,13 @@ To regenerate the population: `python3 scripts/generate_population.py`.
 | `Empower.lab.likeChance(person, group, beenBefore)` | The model's chance they rate it Good or Great (0.05 to 0.95). |
 | `Empower.lab.simulatePerson(person, strategy, start, weeks, groups, population)` | `{ commitments, reflections, kindlingByWeek[] }` for one person. |
 | `Empower.lab.run(population, groups, start, weeks, limit)` | Per strategy: `{ people, committed, showUpRate, likedRate, returnRate, kindlingAt4, kindlingAt8 }`. Deterministic. |
+
+## Session threads (E16)
+
+A thread per session for everyone who went, open for 7 days after it ends. Text only; photos wait for a real backend (E12). Page: `pages/thread.html?c=<commitment id>`, linked from check-in and from a past session's plan.
+
+| Call | Returns |
+| --- | --- |
+| `Empower.logic.threadOpen(commitment, group, now)` | `"open"` from check-in until 7 days after the session ends, then `"closed"`; `"locked"` if not checked in. |
+| `Empower.people.threadSeed(population, session, groupDurationMin)` | Synthetic posts from 2 or 3 people who were there: `[{ personId, name, text, at }]`. Same session, same posts. |
+| `Empower.store.getThreadPosts(sessionId)` / `addThreadPost({ sessionId, from, text, at })` | The user's posts and replies. `from` is `"me"` or a person id. |

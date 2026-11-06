@@ -18,7 +18,7 @@ A mobile web app that helps people new to a city keep going back to the same gro
 | Data layer | `js/store.js` | Chinmaya | The only file that touches localStorage (except the demo clock in `js/ui.js`). |
 | Data | `data/groups.js`, `data/population.js`, `scripts/` | Chinmaya | `data/population.js` is generated: change `scripts/generate_population.py` and rerun it, never hand-edit. All people are synthetic. |
 | Tests | `tests/` | Chinmaya | Every rule has a test. |
-| UI | `css/styles.css`, `pages/*.html`, `index.html`, the page scripts (`js/home.js`, `js/events.js`, `js/group.js`, `js/commit.js`, `js/prep.js`, `js/reflect.js`, `js/me.js`, `js/matches.js`, `js/person.js`, `js/chat.js`, `js/onboarding.js`, `js/lab-page.js`) | Daniel | Layout, styling, markup and wording. Page scripts call the API in `docs/mechanics.md`; they do not contain business rules. |
+| UI | `css/styles.css`, `pages/*.html`, `index.html`, the page scripts (`js/home.js`, `js/events.js`, `js/group.js`, `js/commit.js`, `js/prep.js`, `js/reflect.js`, `js/me.js`, `js/matches.js`, `js/person.js`, `js/chat.js`, `js/onboarding.js`, `js/lab-page.js`, `js/thread.js`) | Daniel | Layout, styling, markup and wording. Page scripts call the API in `docs/mechanics.md`; they do not contain business rules. |
 | Design assets | `events_flow/`, `user_connecting_flow/`, `skills/`, `_templates/` | Daniel | Design specs and validators. |
 | Mockups | `prototype/` | Reference only | Superseded by Daniel's designs. Don't extend. |
 

@@ -258,6 +258,23 @@ Empower.logic = (function () {
     return next;
   }
 
+  /* ---------- Session threads (E16) ---------- */
+
+  var THREAD_DAYS = 7;
+
+  /*
+   * threadOpen(commitment, group, now)
+   * A session's thread is for people who went: it opens once the user has
+   * checked in (status "attended") and closes 7 days after the session ends,
+   * so it stays about that night.
+   * Returns "open", "closed" or "locked" (not checked in).
+   */
+  function threadOpen(commitment, group, now) {
+    if (!commitment || commitment.status !== "attended") return "locked";
+    var end = new Date(commitment.startsAt).getTime() + group.durationMin * 60000;
+    return new Date(now).getTime() < end + THREAD_DAYS * 86400000 ? "open" : "closed";
+  }
+
   /* ---------- Comfort ladder ---------- */
 
   var STEPS = ["cozy", "social", "open"];
@@ -568,6 +585,7 @@ Empower.logic = (function () {
     levelGap: levelGap,
     stepUpDue: stepUpDue,
     stepDown: stepDown,
+    threadOpen: threadOpen,
     slotsToCheck: slotsToCheck,
     answerSlotCheck: answerSlotCheck
   };

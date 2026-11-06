@@ -80,7 +80,8 @@
 
   function renderClosed(status) {
     var text = {
-      attended: ["You went.", "Nice. That's the hard part.", '<a class="btn" href="reflect.html?c=' + c.id + '">Check in on how it went</a>'],
+      attended: ["You went.", "Nice. That's the hard part.", '<a class="btn" href="reflect.html?c=' + c.id + '">Check in on how it went</a>' +
+        '<a class="btn btn--secondary" href="thread.html?c=' + c.id + '">Session thread</a>'],
       cancelled: ["Cancelled.", "No problem. It won't count against you.", '<a class="btn" href="events.html">Pick something else</a>'],
       missed: ["Missed this one.", "It happens. The next session is a fresh start.", '<a class="btn" href="events.html">See this week</a>']
     }[status];

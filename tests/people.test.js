@@ -233,3 +233,16 @@ test("introFor picks one regular going who shares an interest and isn't added ye
   // Nobody shares an interest: no intro.
   assert.equal(people.introFor(POP, s, { interests: [] }, []), null);
 });
+
+test("threadSeed: 2 or 3 people who were there post after it ends, the same every time", () => {
+  const s = schedule.upcomingSessions(GROUPS, NOW, 7).find((x) => people.attendeesOf(POP, x).length >= 3);
+  const g = GROUPS.find((x) => x.id === s.groupId);
+  const posts = people.threadSeed(POP, s, g.durationMin);
+  assert.ok(posts.length >= 2 && posts.length <= 3);
+  const there = people.attendeesOf(POP, s).map((p) => p.id);
+  posts.forEach((p) => {
+    assert.ok(there.includes(p.personId));
+    assert.ok(new Date(p.at) > new Date(new Date(s.startsAt).getTime() + g.durationMin * 60000));
+  });
+  assert.deepEqual(people.threadSeed(POP, s, g.durationMin), posts);
+});
