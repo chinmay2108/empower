@@ -1,0 +1,1170 @@
+{
+  "page_id": "13:28",
+  "review_id": "20:69",
+  "collection_id": "VariableCollectionId:20:2",
+  "mode_id": "20:0",
+  "created_node_ids": [
+    "20:42",
+    "20:43",
+    "20:44",
+    "20:45",
+    "20:46",
+    "20:47",
+    "20:49",
+    "20:50",
+    "20:52",
+    "20:53",
+    "20:58",
+    "20:59",
+    "20:60",
+    "20:61",
+    "20:62",
+    "20:66",
+    "20:69",
+    "20:70",
+    "20:78",
+    "20:79",
+    "20:80",
+    "20:81",
+    "20:84",
+    "20:85",
+    "20:88"
+  ],
+  "component_ids": {
+    "icon_heart": "20:42",
+    "icon_pass": "20:44",
+    "like": "20:46",
+    "pass": "20:49",
+    "photo": "20:52",
+    "prompt": "20:58",
+    "assembly": "20:61"
+  },
+  "text_style_ids": {
+    "prompt": "S:b81022b7d3080772c288b0453951fc31c660ff2f,",
+    "answer": "S:24dd0e47870753595381a17cec7c4ca7996b42e3,"
+  },
+  "variables": {
+    "profile.scale.source_pixels_per_unit": "VariableID:20:3",
+    "profile.color.surface": "VariableID:20:4",
+    "profile.color.canvas": "VariableID:20:5",
+    "profile.color.action": "VariableID:20:6",
+    "profile.color.ink": "VariableID:20:7",
+    "profile.color.icon_inverse": "VariableID:20:8",
+    "profile.size.card": "VariableID:20:9",
+    "profile.size.like": "VariableID:20:10",
+    "profile.size.pass": "VariableID:20:11",
+    "profile.radius.card": "VariableID:20:12",
+    "profile.space.photo_inset": "VariableID:20:13",
+    "profile.space.card_gap": "VariableID:20:14",
+    "profile.space.prompt_inline": "VariableID:20:15",
+    "profile.space.prompt_top": "VariableID:20:16",
+    "profile.space.prompt_bottom": "VariableID:20:17",
+    "profile.space.prompt_gap": "VariableID:20:18",
+    "profile.space.review": "VariableID:20:19",
+    "profile.radius.round": "VariableID:20:20",
+    "profile.number.zero": "VariableID:20:21",
+    "profile.number.one": "VariableID:20:22",
+    "profile.type.prompt.family": "VariableID:20:23",
+    "profile.type.answer.family": "VariableID:20:24",
+    "profile.type.prompt.style": "VariableID:20:25",
+    "profile.type.answer.style": "VariableID:20:26",
+    "profile.type.prompt.size": "VariableID:20:27",
+    "profile.type.prompt.line_height": "VariableID:20:28",
+    "profile.type.answer.size": "VariableID:20:29",
+    "profile.type.answer.line_height": "VariableID:20:30",
+    "profile.type.tracking": "VariableID:20:31",
+    "profile.icon.heart.width": "VariableID:20:32",
+    "profile.icon.heart.height": "VariableID:20:33",
+    "profile.icon.pass.width": "VariableID:20:34",
+    "profile.icon.pass.height": "VariableID:20:35",
+    "profile.source.width": "VariableID:20:36",
+    "profile.source.height": "VariableID:20:37",
+    "profile.photo.crop_x": "VariableID:20:38",
+    "profile.photo.crop_y": "VariableID:20:39",
+    "profile.photo.crop_width": "VariableID:20:40",
+    "profile.photo.crop_height": "VariableID:20:41",
+    "profile.opacity.full": "VariableID:21:24"
+  },
+  "bindings": [
+    {
+      "node_id": "20:42",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:42",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:42",
+      "property": "itemSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:43",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:43",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:43",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:43",
+      "property": "width",
+      "token_name": "profile.icon.heart.width",
+      "variable_id": "VariableID:20:32"
+    },
+    {
+      "node_id": "20:43",
+      "property": "height",
+      "token_name": "profile.icon.heart.height",
+      "variable_id": "VariableID:20:33"
+    },
+    {
+      "node_id": "20:43",
+      "property": "fills",
+      "token_name": "profile.color.icon_inverse",
+      "variable_id": "VariableID:20:8"
+    },
+    {
+      "node_id": "20:42",
+      "property": "width",
+      "token_name": "profile.icon.heart.width",
+      "variable_id": "VariableID:20:32"
+    },
+    {
+      "node_id": "20:42",
+      "property": "height",
+      "token_name": "profile.icon.heart.height",
+      "variable_id": "VariableID:20:33"
+    },
+    {
+      "node_id": "20:44",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:44",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:44",
+      "property": "itemSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:45",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:45",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:45",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:45",
+      "property": "width",
+      "token_name": "profile.icon.pass.width",
+      "variable_id": "VariableID:20:34"
+    },
+    {
+      "node_id": "20:45",
+      "property": "height",
+      "token_name": "profile.icon.pass.height",
+      "variable_id": "VariableID:20:35"
+    },
+    {
+      "node_id": "20:45",
+      "property": "fills",
+      "token_name": "profile.color.action",
+      "variable_id": "VariableID:20:6"
+    },
+    {
+      "node_id": "20:44",
+      "property": "width",
+      "token_name": "profile.icon.pass.width",
+      "variable_id": "VariableID:20:34"
+    },
+    {
+      "node_id": "20:44",
+      "property": "height",
+      "token_name": "profile.icon.pass.height",
+      "variable_id": "VariableID:20:35"
+    },
+    {
+      "node_id": "20:46",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:46",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.round",
+      "variable_id": "VariableID:20:20"
+    },
+    {
+      "node_id": "20:46",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "itemSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:46",
+      "property": "width",
+      "token_name": "profile.size.like",
+      "variable_id": "VariableID:20:10"
+    },
+    {
+      "node_id": "20:46",
+      "property": "height",
+      "token_name": "profile.size.like",
+      "variable_id": "VariableID:20:10"
+    },
+    {
+      "node_id": "20:46",
+      "property": "fills",
+      "token_name": "profile.color.action",
+      "variable_id": "VariableID:20:6"
+    },
+    {
+      "node_id": "20:47",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:47",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:47",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:49",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.round",
+      "variable_id": "VariableID:20:20"
+    },
+    {
+      "node_id": "20:49",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "itemSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:49",
+      "property": "width",
+      "token_name": "profile.size.pass",
+      "variable_id": "VariableID:20:11"
+    },
+    {
+      "node_id": "20:49",
+      "property": "height",
+      "token_name": "profile.size.pass",
+      "variable_id": "VariableID:20:11"
+    },
+    {
+      "node_id": "20:49",
+      "property": "fills",
+      "token_name": "profile.color.surface",
+      "variable_id": "VariableID:20:4"
+    },
+    {
+      "node_id": "20:50",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:50",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:50",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:52",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:52",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:52",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.card",
+      "variable_id": "VariableID:20:12"
+    },
+    {
+      "node_id": "20:52",
+      "property": "paddingLeft",
+      "token_name": "profile.space.photo_inset",
+      "variable_id": "VariableID:20:13"
+    },
+    {
+      "node_id": "20:52",
+      "property": "paddingRight",
+      "token_name": "profile.space.photo_inset",
+      "variable_id": "VariableID:20:13"
+    },
+    {
+      "node_id": "20:52",
+      "property": "paddingTop",
+      "token_name": "profile.space.photo_inset",
+      "variable_id": "VariableID:20:13"
+    },
+    {
+      "node_id": "20:52",
+      "property": "paddingBottom",
+      "token_name": "profile.space.photo_inset",
+      "variable_id": "VariableID:20:13"
+    },
+    {
+      "node_id": "20:52",
+      "property": "itemSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:52",
+      "property": "width",
+      "token_name": "profile.size.card",
+      "variable_id": "VariableID:20:9"
+    },
+    {
+      "node_id": "20:52",
+      "property": "height",
+      "token_name": "profile.size.card",
+      "variable_id": "VariableID:20:9"
+    },
+    {
+      "node_id": "20:53",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:53",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:53",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.round",
+      "variable_id": "VariableID:20:20"
+    },
+    {
+      "node_id": "20:58",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:58",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:58",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.card",
+      "variable_id": "VariableID:20:12"
+    },
+    {
+      "node_id": "20:58",
+      "property": "paddingLeft",
+      "token_name": "profile.space.prompt_inline",
+      "variable_id": "VariableID:20:15"
+    },
+    {
+      "node_id": "20:58",
+      "property": "paddingRight",
+      "token_name": "profile.space.prompt_inline",
+      "variable_id": "VariableID:20:15"
+    },
+    {
+      "node_id": "20:58",
+      "property": "paddingTop",
+      "token_name": "profile.space.prompt_top",
+      "variable_id": "VariableID:20:16"
+    },
+    {
+      "node_id": "20:58",
+      "property": "paddingBottom",
+      "token_name": "profile.space.prompt_bottom",
+      "variable_id": "VariableID:20:17"
+    },
+    {
+      "node_id": "20:58",
+      "property": "itemSpacing",
+      "token_name": "profile.space.prompt_gap",
+      "variable_id": "VariableID:20:18"
+    },
+    {
+      "node_id": "20:58",
+      "property": "width",
+      "token_name": "profile.size.card",
+      "variable_id": "VariableID:20:9"
+    },
+    {
+      "node_id": "20:58",
+      "property": "fills",
+      "token_name": "profile.color.surface",
+      "variable_id": "VariableID:20:4"
+    },
+    {
+      "node_id": "20:59",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:59",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:59",
+      "property": "fontFamily",
+      "token_name": "profile.type.prompt.family",
+      "variable_id": "VariableID:20:23"
+    },
+    {
+      "node_id": "20:59",
+      "property": "fontStyle",
+      "token_name": "profile.type.prompt.style",
+      "variable_id": "VariableID:20:25"
+    },
+    {
+      "node_id": "20:59",
+      "property": "fontSize",
+      "token_name": "profile.type.prompt.size",
+      "variable_id": "VariableID:20:27"
+    },
+    {
+      "node_id": "20:59",
+      "property": "lineHeight",
+      "token_name": "profile.type.prompt.line_height",
+      "variable_id": "VariableID:20:28"
+    },
+    {
+      "node_id": "20:59",
+      "property": "letterSpacing",
+      "token_name": "profile.type.tracking",
+      "variable_id": "VariableID:20:31"
+    },
+    {
+      "node_id": "20:59",
+      "property": "paragraphSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:59",
+      "property": "paragraphIndent",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:59",
+      "property": "fills",
+      "token_name": "profile.color.ink",
+      "variable_id": "VariableID:20:7"
+    },
+    {
+      "node_id": "20:60",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:60",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:60",
+      "property": "fontFamily",
+      "token_name": "profile.type.answer.family",
+      "variable_id": "VariableID:20:24"
+    },
+    {
+      "node_id": "20:60",
+      "property": "fontStyle",
+      "token_name": "profile.type.answer.style",
+      "variable_id": "VariableID:20:26"
+    },
+    {
+      "node_id": "20:60",
+      "property": "fontSize",
+      "token_name": "profile.type.answer.size",
+      "variable_id": "VariableID:20:29"
+    },
+    {
+      "node_id": "20:60",
+      "property": "lineHeight",
+      "token_name": "profile.type.answer.line_height",
+      "variable_id": "VariableID:20:30"
+    },
+    {
+      "node_id": "20:60",
+      "property": "letterSpacing",
+      "token_name": "profile.type.tracking",
+      "variable_id": "VariableID:20:31"
+    },
+    {
+      "node_id": "20:60",
+      "property": "paragraphSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:60",
+      "property": "paragraphIndent",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:60",
+      "property": "fills",
+      "token_name": "profile.color.ink",
+      "variable_id": "VariableID:20:7"
+    },
+    {
+      "node_id": "20:61",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:61",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:61",
+      "property": "itemSpacing",
+      "token_name": "profile.space.card_gap",
+      "variable_id": "VariableID:20:14"
+    },
+    {
+      "node_id": "20:61",
+      "property": "width",
+      "token_name": "profile.size.card",
+      "variable_id": "VariableID:20:9"
+    },
+    {
+      "node_id": "20:62",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:62",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:62",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.card",
+      "variable_id": "VariableID:20:12"
+    },
+    {
+      "node_id": "20:66",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:66",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:66",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.card",
+      "variable_id": "VariableID:20:12"
+    },
+    {
+      "node_id": "20:69",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:69",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:69",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:69",
+      "property": "paddingLeft",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:69",
+      "property": "paddingRight",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:69",
+      "property": "paddingTop",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:69",
+      "property": "paddingBottom",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:69",
+      "property": "itemSpacing",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:69",
+      "property": "fills",
+      "token_name": "profile.color.canvas",
+      "variable_id": "VariableID:20:5"
+    },
+    {
+      "node_id": "20:70",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:70",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:70",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:78",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:78",
+      "property": "itemSpacing",
+      "token_name": "profile.space.review",
+      "variable_id": "VariableID:20:19"
+    },
+    {
+      "node_id": "20:78",
+      "property": "width",
+      "token_name": "profile.size.card",
+      "variable_id": "VariableID:20:9"
+    },
+    {
+      "node_id": "20:79",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:79",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:79",
+      "property": "fontFamily",
+      "token_name": "profile.type.prompt.family",
+      "variable_id": "VariableID:20:23"
+    },
+    {
+      "node_id": "20:79",
+      "property": "fontStyle",
+      "token_name": "profile.type.prompt.style",
+      "variable_id": "VariableID:20:25"
+    },
+    {
+      "node_id": "20:79",
+      "property": "fontSize",
+      "token_name": "profile.type.prompt.size",
+      "variable_id": "VariableID:20:27"
+    },
+    {
+      "node_id": "20:79",
+      "property": "lineHeight",
+      "token_name": "profile.type.prompt.line_height",
+      "variable_id": "VariableID:20:28"
+    },
+    {
+      "node_id": "20:79",
+      "property": "letterSpacing",
+      "token_name": "profile.type.tracking",
+      "variable_id": "VariableID:20:31"
+    },
+    {
+      "node_id": "20:79",
+      "property": "paragraphSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:79",
+      "property": "paragraphIndent",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:79",
+      "property": "fills",
+      "token_name": "profile.color.ink",
+      "variable_id": "VariableID:20:7"
+    },
+    {
+      "node_id": "20:80",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:80",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:80",
+      "property": "fontFamily",
+      "token_name": "profile.type.prompt.family",
+      "variable_id": "VariableID:20:23"
+    },
+    {
+      "node_id": "20:80",
+      "property": "fontStyle",
+      "token_name": "profile.type.prompt.style",
+      "variable_id": "VariableID:20:25"
+    },
+    {
+      "node_id": "20:80",
+      "property": "fontSize",
+      "token_name": "profile.type.prompt.size",
+      "variable_id": "VariableID:20:27"
+    },
+    {
+      "node_id": "20:80",
+      "property": "lineHeight",
+      "token_name": "profile.type.prompt.line_height",
+      "variable_id": "VariableID:20:28"
+    },
+    {
+      "node_id": "20:80",
+      "property": "letterSpacing",
+      "token_name": "profile.type.tracking",
+      "variable_id": "VariableID:20:31"
+    },
+    {
+      "node_id": "20:80",
+      "property": "paragraphSpacing",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:80",
+      "property": "paragraphIndent",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:80",
+      "property": "fills",
+      "token_name": "profile.color.ink",
+      "variable_id": "VariableID:20:7"
+    },
+    {
+      "node_id": "20:81",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:81",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:81",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.card",
+      "variable_id": "VariableID:20:12"
+    },
+    {
+      "node_id": "20:84",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:84",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "cornerRadius",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "paddingLeft",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "paddingRight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "paddingTop",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "paddingBottom",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:84",
+      "property": "itemSpacing",
+      "token_name": "profile.space.card_gap",
+      "variable_id": "VariableID:20:14"
+    },
+    {
+      "node_id": "20:85",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:85",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:85",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.round",
+      "variable_id": "VariableID:20:20"
+    },
+    {
+      "node_id": "20:88",
+      "property": "opacity",
+      "token_name": "profile.opacity.full",
+      "variable_id": "VariableID:21:24"
+    },
+    {
+      "node_id": "20:88",
+      "property": "strokeWeight",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "20:88",
+      "property": "cornerRadius",
+      "token_name": "profile.radius.round",
+      "variable_id": "VariableID:20:20"
+    }
+  ],
+  "generated_geometry": [
+    {
+      "node_id": "20:43",
+      "property": "vectorPaths",
+      "token_name": "profile.icon.heart.path"
+    },
+    {
+      "node_id": "20:45",
+      "property": "vectorPaths",
+      "token_name": "profile.icon.pass.path"
+    },
+    {
+      "node_id": "20:52",
+      "property": "imageTransform",
+      "token_names": [
+        "profile.photo.crop_x",
+        "profile.photo.crop_y",
+        "profile.photo.crop_width",
+        "profile.photo.crop_height",
+        "profile.source.width",
+        "profile.source.height"
+      ]
+    }
+  ]
+}

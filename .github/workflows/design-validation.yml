@@ -1,0 +1,30 @@
+name: Design validation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  design-validation:
+    name: Design validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run validator regression tests
+        run: python -B skills/test_validate_component_tiers.py
+      - name: Validate completed events specification
+        run: python -B skills/validate_component_tiers.py events_flow/events_system_tokens
+      # The connection specification is still in_progress. Its completion gate
+      # fails intentionally; export generation does not certify completeness.
+      - name: Check Figma export generation without applying changes
+        run: |
+          python -B events_flow/figma/export_foundation_sync.py --plan
+          python -B user_connecting_flow/figma/export_foundation_sync.py --plan

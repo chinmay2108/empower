@@ -1,0 +1,158 @@
+{
+  "page_id": "13:28",
+  "created_node_ids": [
+    "32:1054",
+    "32:1055",
+    "32:1056",
+    "32:1057",
+    "32:1058",
+    "32:1059",
+    "32:1065",
+    "32:1066",
+    "32:1067",
+    "32:1068",
+    "32:1069",
+    "32:1070"
+  ],
+  "component_ids": {
+    "matched_photo_partial": "32:1054",
+    "matched_photo_compact": "32:1065"
+  },
+  "component_meta": {
+    "matched_photo_partial": {
+      "name": "Connections / Matched photo context / partial",
+      "tier": 4,
+      "slots": [
+        "photo",
+        "attribution"
+      ]
+    },
+    "matched_photo_compact": {
+      "name": "Connections / Matched photo context / compact",
+      "tier": 4,
+      "slots": [
+        "photo",
+        "attribution"
+      ]
+    }
+  },
+  "component_set_ids": {},
+  "text_styles": {},
+  "bindings": [
+    {
+      "node_id": "29:341",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:352",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:361",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:367",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:372",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:409",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:534",
+      "property": "height",
+      "token_name": "profile.number.zero",
+      "variable_id": "VariableID:20:21"
+    },
+    {
+      "node_id": "29:450",
+      "property": "cornerRadius",
+      "token_name": "connections.radius.bubble",
+      "variable_id": "VariableID:27:78"
+    },
+    {
+      "node_id": "32:1055",
+      "property": "height",
+      "token_name": "connections.photo.partial_height",
+      "variable_id": "VariableID:27:119"
+    },
+    {
+      "node_id": "32:1066",
+      "property": "height",
+      "token_name": "connections.photo.compact_height",
+      "variable_id": "VariableID:27:121"
+    }
+  ],
+  "generated_geometry": [
+    {
+      "node_id": "32:1055",
+      "property": "imageTransform",
+      "token_names": {
+        "x": "connections.crop.received_photo.x",
+        "y": "connections.crop.received_photo.y",
+        "width": "connections.crop.received_photo.width",
+        "height": "connections.crop.received_photo.height",
+        "source_width": "profile.source.width",
+        "source_height": "profile.source.height"
+      },
+      "source_node_id": "2:63"
+    },
+    {
+      "node_id": "32:1057",
+      "property": "imageTransform",
+      "token_names": {
+        "x": "connections.crop.nick.x",
+        "y": "connections.crop.nick.y",
+        "width": "connections.crop.nick.width",
+        "height": "connections.crop.nick.height",
+        "source_width": "profile.source.width",
+        "source_height": "profile.source.height"
+      },
+      "source_node_id": "2:58"
+    }
+  ],
+  "mutated_node_ids": [
+    "29:341",
+    "29:352",
+    "29:361",
+    "29:367",
+    "29:372",
+    "29:409",
+    "29:534",
+    "29:450",
+    "30:305",
+    "30:556",
+    "30:292"
+  ],
+  "photo_variants": {
+    "partial": {
+      "component_id": "32:1054",
+      "photo_id": "32:1055",
+      "photo_height": 76,
+      "component_height": 85
+    },
+    "compact": {
+      "component_id": "32:1065",
+      "photo_id": "32:1066",
+      "photo_height": 108,
+      "component_height": 117
+    }
+  }
+}

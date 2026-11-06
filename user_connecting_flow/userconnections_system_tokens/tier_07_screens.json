@@ -1,0 +1,2192 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "tier": 7,
+  "category": "Screens",
+  "status": "in_progress",
+  "allowed_dependency_tiers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "purpose": "Whole screens assembled from lower-tier components.",
+  "tokens": [],
+  "components": [
+    {
+      "component_id": "connections_chat_list_screen",
+      "category": "Screens",
+      "name": "Connections / Screens / Chat list",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived chat list screen. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "connections_status_bar"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_list_section"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_row_new"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_start_badge"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_row_unread"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_row_read"
+        },
+        {
+          "tier": 6,
+          "component_id": "connections_bottom_navigation"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_brand"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_star"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_nav_heart"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_nav_chat"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "30:114",
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "list_section",
+          "row_new",
+          "avatar",
+          "start_badge",
+          "row_unread",
+          "row_read",
+          "bottom_navigation",
+          "icon_brand",
+          "icon_star",
+          "icon_nav_heart",
+          "icon_nav_chat"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "30:114",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:114",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:114",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:114",
+          "property": "height",
+          "token_name": "connections.screen.height"
+        },
+        {
+          "slot": "30:114",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "30:125",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:125",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:125",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:125",
+          "property": "paddingLeft",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:125",
+          "property": "paddingRight",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:125",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:125",
+          "property": "paddingBottom",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:125",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:125",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:125",
+          "property": "height",
+          "token_name": "connections.list.title_height"
+        },
+        {
+          "slot": "30:126",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:126",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:126",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "30:126",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.bold"
+        },
+        {
+          "slot": "30:126",
+          "property": "fontSize",
+          "token_name": "connections.type.title.size"
+        },
+        {
+          "slot": "30:126",
+          "property": "lineHeight",
+          "token_name": "connections.type.title.leading"
+        },
+        {
+          "slot": "30:126",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "30:126",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:126",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:126",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "30:170",
+          "property": "height",
+          "token_name": "connections.list.secondary_section_height"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.x"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.y"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.width"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.height"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "I30:132;29:337",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.x"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.y"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.width"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.nick.height"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "I30:143;29:348",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.daniel.x"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.daniel.y"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.daniel.width"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.daniel.height"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "I30:152;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.kristian.x"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.kristian.y"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.kristian.width"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.kristian.height"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "I30:161;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ivan.x"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ivan.y"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ivan.width"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ivan.height"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "I30:175;29:357",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "matches",
+          "messages",
+          "draft",
+          "activeTab"
+        ],
+        "actions": [
+          "onOpenConversation",
+          "onSend",
+          "onBack",
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_chat_list_screen",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "list_section",
+          "row_new",
+          "avatar",
+          "start_badge",
+          "row_unread",
+          "row_read",
+          "bottom_navigation",
+          "icon_brand",
+          "icon_star",
+          "icon_nav_heart",
+          "icon_nav_chat"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_start",
+      "category": "Screens",
+      "name": "Connections / Screens / Conversation \u00b7 start",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation start. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "connections_status_bar"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_header"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_back"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_more"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_tabs"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_timestamp"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_matched_photo"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_start_notice"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_composer_idle"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_mic"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_home_indicator"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "30:206",
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "timestamp",
+          "matched_photo",
+          "avatar",
+          "start_notice",
+          "composer_idle",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "30:206",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:206",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:206",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:206",
+          "property": "height",
+          "token_name": "connections.screen.height"
+        },
+        {
+          "slot": "30:206",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "30:236",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:236",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:236",
+          "property": "itemSpacing",
+          "token_name": "connections.space.compact"
+        },
+        {
+          "slot": "30:236",
+          "property": "fills",
+          "token_name": "connections.color.content"
+        },
+        {
+          "slot": "30:237",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:237",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:237",
+          "property": "height",
+          "token_name": "connections.conversation.start_space"
+        },
+        {
+          "slot": "30:250",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:250",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:250",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:251",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:251",
+          "property": "height",
+          "token_name": "connections.conversation.hint_height"
+        },
+        {
+          "slot": "30:252",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:252",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:252",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "30:252",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "30:252",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "30:252",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "30:252",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "30:252",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:252",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:252",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "matches",
+          "messages",
+          "draft",
+          "activeTab"
+        ],
+        "actions": [
+          "onOpenConversation",
+          "onSend",
+          "onBack",
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_start",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "timestamp",
+          "matched_photo",
+          "avatar",
+          "start_notice",
+          "composer_idle",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_composing",
+      "category": "Screens",
+      "name": "Connections / Screens / Conversation \u00b7 composing",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation composing. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "connections_status_bar"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_header"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_back"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_more"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_tabs"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_matched_photo_compact"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_timestamp"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_start_notice"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_composer_typing"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_send"
+        },
+        {
+          "tier": 6,
+          "component_id": "connections_keyboard"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_keyboard_key"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_shift"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_backspace"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_emoji"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_globe"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_mic"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_home_indicator"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "30:261",
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "matched_photo_compact",
+          "avatar",
+          "timestamp",
+          "start_notice",
+          "composer_typing",
+          "icon_send",
+          "keyboard",
+          "keyboard_key",
+          "icon_shift",
+          "icon_backspace",
+          "icon_emoji",
+          "icon_globe",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "30:261",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:261",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:261",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:261",
+          "property": "height",
+          "token_name": "connections.screen.height"
+        },
+        {
+          "slot": "30:261",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "30:291",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:291",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:291",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:291",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:291",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:291",
+          "property": "paddingTop",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:291",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:291",
+          "property": "itemSpacing",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:291",
+          "property": "fills",
+          "token_name": "connections.color.content"
+        },
+        {
+          "slot": "30:302",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:302",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:302",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:303",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:303",
+          "property": "height",
+          "token_name": "connections.conversation.hint_height"
+        },
+        {
+          "slot": "30:304",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:304",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:304",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "30:304",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "30:304",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "30:304",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "30:304",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "30:304",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:304",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:304",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "matches",
+          "messages",
+          "draft",
+          "activeTab"
+        ],
+        "actions": [
+          "onOpenConversation",
+          "onSend",
+          "onBack",
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_composing",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "matched_photo_compact",
+          "avatar",
+          "timestamp",
+          "start_notice",
+          "composer_typing",
+          "icon_send",
+          "keyboard",
+          "keyboard_key",
+          "icon_shift",
+          "icon_backspace",
+          "icon_emoji",
+          "icon_globe",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_sent",
+      "category": "Screens",
+      "name": "Connections / Screens / Conversation \u00b7 sent",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation sent. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "connections_status_bar"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_header"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_back"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_more"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_tabs"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_timestamp"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_start_notice"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_outgoing_message"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_composer_idle"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_mic"
+        },
+        {
+          "tier": 6,
+          "component_id": "connections_keyboard"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_keyboard_key"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_shift"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_backspace"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_emoji"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_globe"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_home_indicator"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "30:392",
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "timestamp",
+          "start_notice",
+          "outgoing_message",
+          "composer_idle",
+          "icon_mic",
+          "keyboard",
+          "keyboard_key",
+          "icon_shift",
+          "icon_backspace",
+          "icon_emoji",
+          "icon_globe",
+          "home_indicator"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "30:392",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:392",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:392",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:392",
+          "property": "height",
+          "token_name": "connections.screen.height"
+        },
+        {
+          "slot": "30:392",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "30:422",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:422",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:422",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:422",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:422",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:422",
+          "property": "paddingTop",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:422",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:422",
+          "property": "itemSpacing",
+          "token_name": "connections.space.standard"
+        },
+        {
+          "slot": "30:422",
+          "property": "fills",
+          "token_name": "connections.color.content"
+        },
+        {
+          "slot": "30:435",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:435",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:435",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:436",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:436",
+          "property": "height",
+          "token_name": "connections.conversation.hint_height"
+        },
+        {
+          "slot": "30:437",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:437",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:437",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "30:437",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "30:437",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "30:437",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "30:437",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "30:437",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:437",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:437",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "matches",
+          "messages",
+          "draft",
+          "activeTab"
+        ],
+        "actions": [
+          "onOpenConversation",
+          "onSend",
+          "onBack",
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_sent",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "timestamp",
+          "start_notice",
+          "outgoing_message",
+          "composer_idle",
+          "icon_mic",
+          "keyboard",
+          "keyboard_key",
+          "icon_shift",
+          "icon_backspace",
+          "icon_emoji",
+          "icon_globe",
+          "home_indicator"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_conversation_received",
+      "category": "Screens",
+      "name": "Connections / Screens / Conversation \u00b7 received",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived conversation received. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [
+        {
+          "tier": 4,
+          "component_id": "connections_status_bar"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_signal"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_wifi"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_battery"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_header"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_back"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_more"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_conversation_tabs"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_matched_photo_partial"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_avatar"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_timestamp"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_incoming_message"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_voice_prompt"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_close"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_waveform"
+        },
+        {
+          "tier": 4,
+          "component_id": "connections_composer_idle"
+        },
+        {
+          "tier": 1,
+          "component_id": "connections_icon_mic"
+        },
+        {
+          "tier": 2,
+          "component_id": "connections_home_indicator"
+        }
+      ],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "30:525",
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "matched_photo_partial",
+          "avatar",
+          "timestamp",
+          "incoming_message",
+          "voice_prompt",
+          "icon_close",
+          "icon_waveform",
+          "composer_idle",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "30:525",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:525",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:525",
+          "property": "width",
+          "token_name": "connections.screen.width"
+        },
+        {
+          "slot": "30:525",
+          "property": "height",
+          "token_name": "connections.screen.height"
+        },
+        {
+          "slot": "30:525",
+          "property": "fills",
+          "token_name": "profile.color.surface"
+        },
+        {
+          "slot": "30:555",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:555",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:555",
+          "property": "itemSpacing",
+          "token_name": "connections.space.medium"
+        },
+        {
+          "slot": "30:555",
+          "property": "fills",
+          "token_name": "connections.color.content"
+        },
+        {
+          "slot": "30:581",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:581",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:581",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:582",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:582",
+          "property": "height",
+          "token_name": "connections.conversation.hint_height"
+        },
+        {
+          "slot": "30:583",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "30:583",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:583",
+          "property": "fontFamily",
+          "token_name": "profile.type.prompt.family"
+        },
+        {
+          "slot": "30:583",
+          "property": "fontStyle",
+          "token_name": "connections.type.style.regular"
+        },
+        {
+          "slot": "30:583",
+          "property": "fontSize",
+          "token_name": "connections.type.preview.size"
+        },
+        {
+          "slot": "30:583",
+          "property": "lineHeight",
+          "token_name": "connections.type.preview.leading"
+        },
+        {
+          "slot": "30:583",
+          "property": "letterSpacing",
+          "token_name": "profile.type.tracking"
+        },
+        {
+          "slot": "30:583",
+          "property": "paragraphSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:583",
+          "property": "paragraphIndent",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "30:583",
+          "property": "fills",
+          "token_name": "connections.color.muted"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "matchId",
+          "matches",
+          "messages",
+          "draft",
+          "activeTab"
+        ],
+        "actions": [
+          "onOpenConversation",
+          "onSend",
+          "onBack",
+          "onTabChange"
+        ]
+      },
+      "recipe": {
+        "name": "connections_conversation_received",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root",
+          "status_bar",
+          "icon_signal",
+          "icon_wifi",
+          "icon_battery",
+          "conversation_header",
+          "icon_back",
+          "icon_more",
+          "conversation_tabs",
+          "matched_photo_partial",
+          "avatar",
+          "timestamp",
+          "incoming_message",
+          "voice_prompt",
+          "icon_close",
+          "icon_waveform",
+          "composer_idle",
+          "icon_mic",
+          "home_indicator"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,167 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "status": "in_progress",
+  "derived_from": "../../_templates/components_system_template",
+  "core_token_file": "tier_00_foundations.json",
+  "tiers": [
+    {
+      "tier": 0,
+      "category": "Foundations",
+      "file": "tier_00_foundations.json"
+    },
+    {
+      "tier": 1,
+      "category": "Primitives",
+      "file": "tier_01_primitives.json"
+    },
+    {
+      "tier": 2,
+      "category": "Controls",
+      "file": "tier_02_controls.json"
+    },
+    {
+      "tier": 3,
+      "category": "Overlays and feedback",
+      "file": "tier_03_overlays_and_feedback.json"
+    },
+    {
+      "tier": 4,
+      "category": "Patterns",
+      "file": "tier_04_patterns.json"
+    },
+    {
+      "tier": 5,
+      "category": "Product components",
+      "file": "tier_05_product_components.json"
+    },
+    {
+      "tier": 6,
+      "category": "Regions",
+      "file": "tier_06_regions.json"
+    },
+    {
+      "tier": 7,
+      "category": "Screens",
+      "file": "tier_07_screens.json"
+    }
+  ],
+  "workflow": {
+    "current": "Derive reference-faithful editable Figma components and assemble the required screens.",
+    "next": "Convert the Figma components into reusable PandaCSS recipes with semantic token bindings.",
+    "later": "Systematize across multiple flows and reference apps in a separate workflow.",
+    "priority": "Efficient component derivation and effective MVP user experience; missing element references and unresolved component specifications take priority over production completeness."
+  },
+  "rules": [
+    "Each tier may depend only on lower tiers. Components within the same tier must not depend on each other.",
+    "Every token value is null until populated from verified evidence or an explicit design decision.",
+    "Tier 0 owns literal core values and optional aliases. Higher tiers reference Foundation tokens directly and leave token_value null.",
+    "A token uses exactly one of token_value or reference_token when populated. Foundation alias chains must resolve without cycles.",
+    "Multiple components bind to the same semantic roles. Do not copy a color hex or spacing literal into each component or recipe.",
+    "Token names are candidate placeholders and may be refined during derivation; they do not establish the final cross-flow system.",
+    "PNGs are reference evidence. They do not constitute editable components or establish exact typography or motion specifications.",
+    "Keep unverified colors, typography, spacing, and motion unresolved instead of silently inventing values.",
+    "Use named component variants and inputs/actions to support reuse without copying components for each screen.",
+    "The profile and chat libraries have native Figma bindings and an explicit Foundation synchronization exporter; remaining scaffold candidates are unfinished.",
+    "Completion gate: run skills/validate_component_tiers.py on this entire folder. Only exit 0 clears the gate; incomplete fields, downstream literals, invalid references, and unvalidated files fail."
+  ],
+  "entry_shapes": {
+    "dependency": {
+      "tier": null,
+      "component_id": null
+    },
+    "token_binding": {
+      "slot": null,
+      "property": null,
+      "token_name": null
+    },
+    "reference": {
+      "reference_id": null,
+      "url": null,
+      "node_id": null,
+      "evidence_kind": null
+    },
+    "variant": {
+      "name": null,
+      "values": [],
+      "default_value": null
+    }
+  },
+  "token_binding_plan": {
+    "source_of_truth": "The Foundation registry; every downstream value binding references Foundation tokens directly.",
+    "figma": "Profile and chat properties bind to User Connections / Foundations. The local registry supplies values through the explicit synchronization exporter.",
+    "pandacss": "Map core values to Panda tokens and semantic tokens; recipes consume token references.",
+    "cross_tool_sync": "Run figma/export_foundation_sync.py --plan, then emit and apply each --batch in order through use_figma. Variables and recorded vector paths, photo crops and badge positions update on existing nodes. No live watcher or PandaCSS conversion exists yet.",
+    "expected_result": "After those bindings and synchronization are implemented, changing a core value propagates through dependent aliases, recipes, and component instances."
+  },
+  "themes": [],
+  "references": [
+    {
+      "reference_id": "hinge_profile_reference",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-6",
+      "node_id": "2:6",
+      "evidence_kind": "PNG visual measurements and traced control contours"
+    },
+    {
+      "reference_id": "hinge_clean_photo",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-3",
+      "node_id": "2:3",
+      "evidence_kind": "PNG photo source without an embedded like control"
+    },
+    {
+      "reference_id": "profile_derivation_decisions",
+      "url": "profile-family-notes.md",
+      "node_id": null,
+      "evidence_kind": "Documented prototype layout and normalization decisions"
+    },
+    {
+      "reference_id": "approved_provisional_typography",
+      "url": "profile-family-notes.md",
+      "node_id": null,
+      "evidence_kind": "User approved provisional font tokens; exact type remains under review"
+    },
+    {
+      "reference_id": "reference_details",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=6-3",
+      "node_id": "6:3",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_chat-list",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-58",
+      "node_id": "2:58",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_chat-start",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-59",
+      "node_id": "2:59",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_chat-sent",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-62",
+      "node_id": "2:62",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_chat-received",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-63",
+      "node_id": "2:63",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_nav-source",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=6-12",
+      "node_id": "6:12",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    },
+    {
+      "reference_id": "reference_chat-compose",
+      "url": "https://www.figma.com/design/AEV0dOjWeK6EzC1vR8zeVK?node-id=2-60",
+      "node_id": "2:60",
+      "evidence_kind": "PNG reference measurements, content crops and editable vector derivation"
+    }
+  ]
+}

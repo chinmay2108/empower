@@ -1,0 +1,63 @@
+{
+  "verified_date": "2026-11-05",
+  "figma_file_key": "AEV0dOjWeK6EzC1vR8zeVK",
+  "review_board_ids": [
+    "58:623",
+    "58:1438"
+  ],
+  "scope": "Completed design derivation and representative prototype; not runtime implementation or repository promotion.",
+  "checks": {
+    "strict_tier_gate": {
+      "files": 9,
+      "downstream_hardcoded_values": 0,
+      "result": "pass"
+    },
+    "validator_regression_tests": {
+      "tests": 20,
+      "result": "pass"
+    },
+    "recipe_foundation_references": {
+      "recipes": 116,
+      "references_resolved": 15013,
+      "result": "pass"
+    },
+    "figma_components": {
+      "expected": 116,
+      "missing": 0,
+      "foreign_variables": 0,
+      "missing_fonts": 0
+    },
+    "foundation_sync": {
+      "batches_applied": 4,
+      "result": "pass",
+      "propagation_probe": "foundation-sync-probe.json"
+    },
+    "fresh_reference_sweep": {
+      "findings": 4,
+      "repaired": 4,
+      "report": "../reference-coverage-sweep.md"
+    },
+    "visual_review": "Both review boards checked after synchronization; completion action stack reflowed and checked separately with both actions visible.",
+    "handoff_cold_read": "Completed; project location, review path, registry ownership and verification provenance clarified."
+  },
+  "local_specification_sha256": {
+    "events_flow/events_system_tokens/_system.json": "1e1bafead7321e1ac40d333a639f161f2bb6b90f76781b9f37952795e61f386a",
+    "events_flow/events_system_tokens/tier_00_foundations.json": "41b6e0254312fb9bfce3625478e9d53ebcd3d94bfd941047acc4cea31e4a412d",
+    "events_flow/events_system_tokens/tier_01_primitives.json": "050f47907d9e526c7125797c6286285a06698c9b1704a7ba9c45b60bbfd4a70e",
+    "events_flow/events_system_tokens/tier_02_controls.json": "6c083ca8ce3374fbcec6d60d1faa4b144b5d5710b1293f9484b9c95fe85afdad",
+    "events_flow/events_system_tokens/tier_03_overlays_and_feedback.json": "ff02e49c8836e3b8ec8d227c3914504710b4f782fc277875b60250c3737bd039",
+    "events_flow/events_system_tokens/tier_04_patterns.json": "33e320acad282f28ce0f32f4b7db3f986320a9422f47ed9a8ad4f02781c2eb4a",
+    "events_flow/events_system_tokens/tier_05_product_components.json": "261da9a3337dd1738450ea9c509b1b3cfda2b6ac629441d2080cce800bdaeb47",
+    "events_flow/events_system_tokens/tier_06_regions.json": "778659791aec1b4e8736f442ac7cf94da16b09fb8a99ef18e66fd560b97a30d7",
+    "events_flow/events_system_tokens/tier_07_screens.json": "10ea58d42ff9c657d795c6ce535d6651fd532eaecb9f03546284fb2cbf91c31f",
+    "events_flow/user_flow.json": "a25d7cd607ae1450721dd596816bb7881ce40dfab0ee325a03eae3adbb2515ed",
+    "events_flow/recipes/events.recipe-specs.json": "8f39f5e40a7ea08d5711b7def22fd09ac44b00dec73890dccf56a603cbf5cc22",
+    "events_flow/figma/component-ledger.json": "13098237a7ad61080d89083510e7c3489172360146589d1bcbad13c68afa876f"
+  },
+  "limits": [
+    "Figma can change after this snapshot.",
+    "DM Sans is provisional.",
+    "PandaCSS executable recipes are a later workflow.",
+    "Highproofhero repository access and destination remain unresolved; no promotion performed."
+  ]
+}

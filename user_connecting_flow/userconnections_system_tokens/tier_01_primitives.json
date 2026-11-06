@@ -1,0 +1,4284 @@
+{
+  "format_version": "1.0",
+  "document_kind": "flow_scaffold",
+  "system_id": "userconnections_system",
+  "tier": 1,
+  "category": "Primitives",
+  "status": "in_progress",
+  "allowed_dependency_tiers": [
+    0
+  ],
+  "purpose": "Reusable primitives composed from lower tiers.",
+  "tokens": [
+    {
+      "category": "surface",
+      "token_name": "primitives.surface.background",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "surface",
+      "token_name": "primitives.surface.border_color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "surface",
+      "token_name": "primitives.surface.corner_radius",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text",
+      "token_name": "primitives.text.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text",
+      "token_name": "primitives.text.font_family",
+      "token_value": null,
+      "value_type": "font_family",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text",
+      "token_name": "primitives.text.font_size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "text",
+      "token_name": "primitives.text.line_height",
+      "token_value": null,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon",
+      "token_name": "primitives.icon.foreground",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "icon",
+      "token_name": "primitives.icon.size",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "separator",
+      "token_name": "primitives.separator.color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "separator",
+      "token_name": "primitives.separator.thickness",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "focus_ring",
+      "token_name": "primitives.focus_ring.color",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "focus_ring",
+      "token_name": "primitives.focus_ring.width",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "stack",
+      "token_name": "primitives.stack.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "inline",
+      "token_name": "primitives.inline.gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "inset",
+      "token_name": "primitives.inset.padding",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    },
+    {
+      "category": "scroll_area",
+      "token_name": "primitives.scroll_area.content_gap",
+      "token_value": null,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "unpopulated",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": null
+      },
+      "value_rule": "Reference a token in Foundations; do not put a literal value here."
+    }
+  ],
+  "components": [
+    {
+      "component_id": "surface",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "text",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "icon",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "separator",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "focus_ring",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "stack",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "inline",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "inset",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "scroll_area",
+      "category": "Primitives",
+      "name": null,
+      "status": "unpopulated",
+      "include_in_flow": null,
+      "purpose": null,
+      "depends_on": [],
+      "reference_ids": [],
+      "design_spec": {
+        "figma_component_id": null,
+        "slots": [],
+        "variants": [],
+        "interaction_states": [],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [],
+      "interface": {
+        "inputs": [],
+        "actions": []
+      },
+      "recipe": {
+        "name": null,
+        "kind": null,
+        "file_path": null,
+        "slots": [],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "not_assessed",
+        "missing_element_references": [],
+        "unresolved_specifications": []
+      }
+    },
+    {
+      "component_id": "profile_icon_heart",
+      "category": "Primitives",
+      "name": "Profile / icon heart",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:42",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:42",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:42",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:42",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:43",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:43",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:43",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:43",
+          "property": "width",
+          "token_name": "profile.icon.heart.width"
+        },
+        {
+          "slot": "20:43",
+          "property": "height",
+          "token_name": "profile.icon.heart.height"
+        },
+        {
+          "slot": "20:43",
+          "property": "fills",
+          "token_name": "profile.color.icon_inverse"
+        },
+        {
+          "slot": "20:42",
+          "property": "width",
+          "token_name": "profile.icon.heart.width"
+        },
+        {
+          "slot": "20:42",
+          "property": "height",
+          "token_name": "profile.icon.heart.height"
+        },
+        {
+          "slot": "20:43",
+          "property": "generated_vectorPaths",
+          "token_name": "profile.icon.heart.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "profile_icon_heart",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable."
+        ]
+      }
+    },
+    {
+      "component_id": "profile_icon_pass",
+      "category": "Primitives",
+      "name": "Profile / icon pass",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Reference-derived editable profile card family element. See profile-family-notes.md for limits and proposed actions.",
+      "depends_on": [],
+      "reference_ids": [
+        "hinge_profile_reference",
+        "hinge_clean_photo",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "20:44",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "20:44",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:44",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:44",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:45",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "20:45",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:45",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "20:45",
+          "property": "width",
+          "token_name": "profile.icon.pass.width"
+        },
+        {
+          "slot": "20:45",
+          "property": "height",
+          "token_name": "profile.icon.pass.height"
+        },
+        {
+          "slot": "20:45",
+          "property": "fills",
+          "token_name": "profile.color.action"
+        },
+        {
+          "slot": "20:44",
+          "property": "width",
+          "token_name": "profile.icon.pass.width"
+        },
+        {
+          "slot": "20:44",
+          "property": "height",
+          "token_name": "profile.icon.pass.height"
+        },
+        {
+          "slot": "20:45",
+          "property": "generated_vectorPaths",
+          "token_name": "profile.icon.pass.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "profileId",
+          "contentId"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "profile_icon_pass",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_avatar",
+      "category": "Primitives",
+      "name": "Connections / Avatar",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived avatar. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "29:332",
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "29:332",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "29:332",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "cornerRadius",
+          "token_name": "profile.radius.round"
+        },
+        {
+          "slot": "29:332",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "29:332",
+          "property": "width",
+          "token_name": "connections.avatar.list"
+        },
+        {
+          "slot": "29:332",
+          "property": "height",
+          "token_name": "connections.avatar.list"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.x"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.y"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.width"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "connections.crop.ohbad.height"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.width"
+        },
+        {
+          "slot": "29:332",
+          "property": "generated_imageTransform",
+          "token_name": "profile.source.height"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "photoSource",
+          "accessibleName"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_avatar",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "root"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_age",
+      "category": "Primitives",
+      "name": "Connections / Icons / age",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon age. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:24",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:24",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:24",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:25",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:25",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:25",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:24",
+          "property": "width",
+          "token_name": "connections.icon.age.width"
+        },
+        {
+          "slot": "28:24",
+          "property": "height",
+          "token_name": "connections.icon.age.height"
+        },
+        {
+          "slot": "28:25",
+          "property": "width",
+          "token_name": "connections.icon.age.width"
+        },
+        {
+          "slot": "28:25",
+          "property": "height",
+          "token_name": "connections.icon.age.height"
+        },
+        {
+          "slot": "28:25",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:25",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.age.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_age",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_gender",
+      "category": "Primitives",
+      "name": "Connections / Icons / gender",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon gender. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:26",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:26",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:26",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:27",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:27",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:27",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:26",
+          "property": "width",
+          "token_name": "connections.icon.gender.width"
+        },
+        {
+          "slot": "28:26",
+          "property": "height",
+          "token_name": "connections.icon.gender.height"
+        },
+        {
+          "slot": "28:27",
+          "property": "width",
+          "token_name": "connections.icon.gender.width"
+        },
+        {
+          "slot": "28:27",
+          "property": "height",
+          "token_name": "connections.icon.gender.height"
+        },
+        {
+          "slot": "28:27",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:27",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.gender.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_gender",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_orientation",
+      "category": "Primitives",
+      "name": "Connections / Icons / orientation",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon orientation. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:28",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:28",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:28",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:29",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:29",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:29",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:28",
+          "property": "width",
+          "token_name": "connections.icon.orientation.width"
+        },
+        {
+          "slot": "28:28",
+          "property": "height",
+          "token_name": "connections.icon.orientation.height"
+        },
+        {
+          "slot": "28:29",
+          "property": "width",
+          "token_name": "connections.icon.orientation.width"
+        },
+        {
+          "slot": "28:29",
+          "property": "height",
+          "token_name": "connections.icon.orientation.height"
+        },
+        {
+          "slot": "28:29",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:29",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.orientation.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_orientation",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_ethnicity",
+      "category": "Primitives",
+      "name": "Connections / Icons / ethnicity",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon ethnicity. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:30",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:30",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:30",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:31",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:31",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:31",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:30",
+          "property": "width",
+          "token_name": "connections.icon.ethnicity.width"
+        },
+        {
+          "slot": "28:30",
+          "property": "height",
+          "token_name": "connections.icon.ethnicity.height"
+        },
+        {
+          "slot": "28:31",
+          "property": "width",
+          "token_name": "connections.icon.ethnicity.width"
+        },
+        {
+          "slot": "28:31",
+          "property": "height",
+          "token_name": "connections.icon.ethnicity.height"
+        },
+        {
+          "slot": "28:31",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:31",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.ethnicity.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_ethnicity",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_relationship",
+      "category": "Primitives",
+      "name": "Connections / Icons / relationship",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon relationship. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:32",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:32",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:32",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:33",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:33",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:33",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:32",
+          "property": "width",
+          "token_name": "connections.icon.relationship.width"
+        },
+        {
+          "slot": "28:32",
+          "property": "height",
+          "token_name": "connections.icon.relationship.height"
+        },
+        {
+          "slot": "28:33",
+          "property": "width",
+          "token_name": "connections.icon.relationship.width"
+        },
+        {
+          "slot": "28:33",
+          "property": "height",
+          "token_name": "connections.icon.relationship.height"
+        },
+        {
+          "slot": "28:33",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:33",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.relationship.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_relationship",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_back",
+      "category": "Primitives",
+      "name": "Connections / Icons / back",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon back. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:34",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:34",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:34",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:35",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:35",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:35",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:34",
+          "property": "width",
+          "token_name": "connections.icon.back.width"
+        },
+        {
+          "slot": "28:34",
+          "property": "height",
+          "token_name": "connections.icon.back.height"
+        },
+        {
+          "slot": "28:35",
+          "property": "width",
+          "token_name": "connections.icon.back.width"
+        },
+        {
+          "slot": "28:35",
+          "property": "height",
+          "token_name": "connections.icon.back.height"
+        },
+        {
+          "slot": "28:35",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:35",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.back.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_back",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_more",
+      "category": "Primitives",
+      "name": "Connections / Icons / more",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon more. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:36",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:36",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:36",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:37",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:37",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:37",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:36",
+          "property": "width",
+          "token_name": "connections.icon.more.width"
+        },
+        {
+          "slot": "28:36",
+          "property": "height",
+          "token_name": "connections.icon.more.height"
+        },
+        {
+          "slot": "28:37",
+          "property": "width",
+          "token_name": "connections.icon.more.width"
+        },
+        {
+          "slot": "28:37",
+          "property": "height",
+          "token_name": "connections.icon.more.height"
+        },
+        {
+          "slot": "28:37",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:37",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.more.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_more",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_chevron",
+      "category": "Primitives",
+      "name": "Connections / Icons / chevron",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon chevron. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:38",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:38",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:38",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:39",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:39",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:39",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:38",
+          "property": "width",
+          "token_name": "connections.icon.chevron.width"
+        },
+        {
+          "slot": "28:38",
+          "property": "height",
+          "token_name": "connections.icon.chevron.height"
+        },
+        {
+          "slot": "28:39",
+          "property": "width",
+          "token_name": "connections.icon.chevron.width"
+        },
+        {
+          "slot": "28:39",
+          "property": "height",
+          "token_name": "connections.icon.chevron.height"
+        },
+        {
+          "slot": "28:39",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:39",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.chevron.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_chevron",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_signal",
+      "category": "Primitives",
+      "name": "Connections / Icons / signal",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon signal. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:40",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:40",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:40",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:41",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:41",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:41",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:40",
+          "property": "width",
+          "token_name": "connections.icon.signal.width"
+        },
+        {
+          "slot": "28:40",
+          "property": "height",
+          "token_name": "connections.icon.signal.height"
+        },
+        {
+          "slot": "28:41",
+          "property": "width",
+          "token_name": "connections.icon.signal.width"
+        },
+        {
+          "slot": "28:41",
+          "property": "height",
+          "token_name": "connections.icon.signal.height"
+        },
+        {
+          "slot": "28:41",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:41",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.signal.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_signal",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_wifi",
+      "category": "Primitives",
+      "name": "Connections / Icons / wifi",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon wifi. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:42",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:42",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:42",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:43",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:43",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:43",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:42",
+          "property": "width",
+          "token_name": "connections.icon.wifi.width"
+        },
+        {
+          "slot": "28:42",
+          "property": "height",
+          "token_name": "connections.icon.wifi.height"
+        },
+        {
+          "slot": "28:43",
+          "property": "width",
+          "token_name": "connections.icon.wifi.width"
+        },
+        {
+          "slot": "28:43",
+          "property": "height",
+          "token_name": "connections.icon.wifi.height"
+        },
+        {
+          "slot": "28:43",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:43",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.wifi.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_wifi",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_battery",
+      "category": "Primitives",
+      "name": "Connections / Icons / battery",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon battery. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:44",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:44",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:44",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:45",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:45",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:45",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:44",
+          "property": "width",
+          "token_name": "connections.icon.battery.width"
+        },
+        {
+          "slot": "28:44",
+          "property": "height",
+          "token_name": "connections.icon.battery.height"
+        },
+        {
+          "slot": "28:45",
+          "property": "width",
+          "token_name": "connections.icon.battery.width"
+        },
+        {
+          "slot": "28:45",
+          "property": "height",
+          "token_name": "connections.icon.battery.height"
+        },
+        {
+          "slot": "28:45",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:45",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.battery.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_battery",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_mic",
+      "category": "Primitives",
+      "name": "Connections / Icons / mic",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon mic. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:46",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:46",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:46",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:47",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:47",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:47",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:46",
+          "property": "width",
+          "token_name": "connections.icon.mic.width"
+        },
+        {
+          "slot": "28:46",
+          "property": "height",
+          "token_name": "connections.icon.mic.height"
+        },
+        {
+          "slot": "28:47",
+          "property": "width",
+          "token_name": "connections.icon.mic.width"
+        },
+        {
+          "slot": "28:47",
+          "property": "height",
+          "token_name": "connections.icon.mic.height"
+        },
+        {
+          "slot": "28:47",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:47",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.mic.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_mic",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_brand",
+      "category": "Primitives",
+      "name": "Connections / Icons / brand",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon brand. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:48",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:48",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:48",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:49",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:49",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:49",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:48",
+          "property": "width",
+          "token_name": "connections.icon.brand.width"
+        },
+        {
+          "slot": "28:48",
+          "property": "height",
+          "token_name": "connections.icon.brand.height"
+        },
+        {
+          "slot": "28:49",
+          "property": "width",
+          "token_name": "connections.icon.brand.width"
+        },
+        {
+          "slot": "28:49",
+          "property": "height",
+          "token_name": "connections.icon.brand.height"
+        },
+        {
+          "slot": "28:49",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:49",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.brand.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_brand",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_star",
+      "category": "Primitives",
+      "name": "Connections / Icons / star",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon star. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:50",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:50",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:50",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:51",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:51",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:51",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:50",
+          "property": "width",
+          "token_name": "connections.icon.star.width"
+        },
+        {
+          "slot": "28:50",
+          "property": "height",
+          "token_name": "connections.icon.star.height"
+        },
+        {
+          "slot": "28:51",
+          "property": "width",
+          "token_name": "connections.icon.star.width"
+        },
+        {
+          "slot": "28:51",
+          "property": "height",
+          "token_name": "connections.icon.star.height"
+        },
+        {
+          "slot": "28:51",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:51",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.star.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_star",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_nav_heart",
+      "category": "Primitives",
+      "name": "Connections / Icons / nav_heart",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon nav heart. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:52",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:52",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:52",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:53",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:53",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:53",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:52",
+          "property": "width",
+          "token_name": "connections.icon.nav_heart.width"
+        },
+        {
+          "slot": "28:52",
+          "property": "height",
+          "token_name": "connections.icon.nav_heart.height"
+        },
+        {
+          "slot": "28:53",
+          "property": "width",
+          "token_name": "connections.icon.nav_heart.width"
+        },
+        {
+          "slot": "28:53",
+          "property": "height",
+          "token_name": "connections.icon.nav_heart.height"
+        },
+        {
+          "slot": "28:53",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:53",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.nav_heart.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_nav_heart",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_nav_chat",
+      "category": "Primitives",
+      "name": "Connections / Icons / nav_chat",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon nav chat. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:54",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:54",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:54",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:55",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:55",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:55",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:54",
+          "property": "width",
+          "token_name": "connections.icon.nav_chat.width"
+        },
+        {
+          "slot": "28:54",
+          "property": "height",
+          "token_name": "connections.icon.nav_chat.height"
+        },
+        {
+          "slot": "28:55",
+          "property": "width",
+          "token_name": "connections.icon.nav_chat.width"
+        },
+        {
+          "slot": "28:55",
+          "property": "height",
+          "token_name": "connections.icon.nav_chat.height"
+        },
+        {
+          "slot": "28:55",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:55",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.nav_chat.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_nav_chat",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_shift",
+      "category": "Primitives",
+      "name": "Connections / Icons / shift",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon shift. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:56",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:56",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:56",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:57",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:57",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:57",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:56",
+          "property": "width",
+          "token_name": "connections.icon.shift.width"
+        },
+        {
+          "slot": "28:56",
+          "property": "height",
+          "token_name": "connections.icon.shift.height"
+        },
+        {
+          "slot": "28:57",
+          "property": "width",
+          "token_name": "connections.icon.shift.width"
+        },
+        {
+          "slot": "28:57",
+          "property": "height",
+          "token_name": "connections.icon.shift.height"
+        },
+        {
+          "slot": "28:57",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:57",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.shift.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_shift",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_backspace",
+      "category": "Primitives",
+      "name": "Connections / Icons / backspace",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon backspace. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:58",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:58",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:58",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:59",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:59",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:59",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:58",
+          "property": "width",
+          "token_name": "connections.icon.backspace.width"
+        },
+        {
+          "slot": "28:58",
+          "property": "height",
+          "token_name": "connections.icon.backspace.height"
+        },
+        {
+          "slot": "28:59",
+          "property": "width",
+          "token_name": "connections.icon.backspace.width"
+        },
+        {
+          "slot": "28:59",
+          "property": "height",
+          "token_name": "connections.icon.backspace.height"
+        },
+        {
+          "slot": "28:59",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:59",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.backspace.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_backspace",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_emoji",
+      "category": "Primitives",
+      "name": "Connections / Icons / emoji",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon emoji. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:60",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:60",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:60",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:61",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:61",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:61",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:60",
+          "property": "width",
+          "token_name": "connections.icon.emoji.width"
+        },
+        {
+          "slot": "28:60",
+          "property": "height",
+          "token_name": "connections.icon.emoji.height"
+        },
+        {
+          "slot": "28:61",
+          "property": "width",
+          "token_name": "connections.icon.emoji.width"
+        },
+        {
+          "slot": "28:61",
+          "property": "height",
+          "token_name": "connections.icon.emoji.height"
+        },
+        {
+          "slot": "28:61",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:61",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.emoji.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_emoji",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_globe",
+      "category": "Primitives",
+      "name": "Connections / Icons / globe",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon globe. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:62",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:62",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:62",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:63",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:63",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:63",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:62",
+          "property": "width",
+          "token_name": "connections.icon.globe.width"
+        },
+        {
+          "slot": "28:62",
+          "property": "height",
+          "token_name": "connections.icon.globe.height"
+        },
+        {
+          "slot": "28:63",
+          "property": "width",
+          "token_name": "connections.icon.globe.width"
+        },
+        {
+          "slot": "28:63",
+          "property": "height",
+          "token_name": "connections.icon.globe.height"
+        },
+        {
+          "slot": "28:63",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:63",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.globe.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_globe",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_close",
+      "category": "Primitives",
+      "name": "Connections / Icons / close",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon close. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:64",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:64",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:64",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:65",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:65",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:65",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:64",
+          "property": "width",
+          "token_name": "connections.icon.close.width"
+        },
+        {
+          "slot": "28:64",
+          "property": "height",
+          "token_name": "connections.icon.close.height"
+        },
+        {
+          "slot": "28:65",
+          "property": "width",
+          "token_name": "connections.icon.close.width"
+        },
+        {
+          "slot": "28:65",
+          "property": "height",
+          "token_name": "connections.icon.close.height"
+        },
+        {
+          "slot": "28:65",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:65",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.close.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_close",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_waveform",
+      "category": "Primitives",
+      "name": "Connections / Icons / waveform",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon waveform. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:66",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:66",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:66",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:67",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:67",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:67",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:66",
+          "property": "width",
+          "token_name": "connections.icon.waveform.width"
+        },
+        {
+          "slot": "28:66",
+          "property": "height",
+          "token_name": "connections.icon.waveform.height"
+        },
+        {
+          "slot": "28:67",
+          "property": "width",
+          "token_name": "connections.icon.waveform.width"
+        },
+        {
+          "slot": "28:67",
+          "property": "height",
+          "token_name": "connections.icon.waveform.height"
+        },
+        {
+          "slot": "28:67",
+          "property": "fills",
+          "token_name": "connections.color.teal"
+        },
+        {
+          "slot": "28:67",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.waveform.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_waveform",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    },
+    {
+      "component_id": "connections_icon_send",
+      "category": "Primitives",
+      "name": "Connections / Icons / send",
+      "status": "in_progress",
+      "include_in_flow": true,
+      "purpose": "Editable reference-derived icon send. See profile-family-notes.md for scope, review links, and proposed runtime contracts.",
+      "depends_on": [],
+      "reference_ids": [
+        "reference_details",
+        "reference_chat-list",
+        "reference_chat-start",
+        "reference_chat-compose",
+        "reference_chat-sent",
+        "reference_chat-received",
+        "reference_nav-source",
+        "profile_derivation_decisions",
+        "approved_provisional_typography"
+      ],
+      "design_spec": {
+        "figma_component_id": "28:68",
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "interaction_states": [
+          "reference_resting"
+        ],
+        "motion_reference_ids": []
+      },
+      "token_bindings": [
+        {
+          "slot": "28:68",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:68",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "itemSpacing",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "paddingLeft",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "paddingRight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "paddingTop",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "paddingBottom",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:69",
+          "property": "opacity",
+          "token_name": "profile.opacity.full"
+        },
+        {
+          "slot": "28:69",
+          "property": "strokeWeight",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:69",
+          "property": "cornerRadius",
+          "token_name": "profile.number.zero"
+        },
+        {
+          "slot": "28:68",
+          "property": "width",
+          "token_name": "connections.icon.send.width"
+        },
+        {
+          "slot": "28:68",
+          "property": "height",
+          "token_name": "connections.icon.send.height"
+        },
+        {
+          "slot": "28:69",
+          "property": "width",
+          "token_name": "connections.icon.send.width"
+        },
+        {
+          "slot": "28:69",
+          "property": "height",
+          "token_name": "connections.icon.send.height"
+        },
+        {
+          "slot": "28:69",
+          "property": "fills",
+          "token_name": "profile.color.ink"
+        },
+        {
+          "slot": "28:69",
+          "property": "generated_vectorPaths",
+          "token_name": "connections.icon.send.path"
+        }
+      ],
+      "interface": {
+        "inputs": [
+          "content"
+        ],
+        "actions": []
+      },
+      "recipe": {
+        "name": "connections_icon_send",
+        "kind": "slot_recipe",
+        "file_path": null,
+        "slots": [
+          "shape"
+        ],
+        "variants": [],
+        "default_variants": {}
+      },
+      "derivation": {
+        "source_status": "explicit_design_decision",
+        "missing_element_references": [],
+        "unresolved_specifications": [
+          "PandaCSS conversion is a later deliverable.",
+          "Provisional typography and normalized geometry require review."
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs."
+  ]
+}
