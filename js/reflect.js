@@ -122,6 +122,33 @@
     }).filter(Boolean);
   }
 
+  /*
+   * After 3 good sessions the comfort step goes up one. Show the moment:
+   * a card that, when dismissed, shrinks toward the Me tab where the new
+   * step now shows.
+   */
+  var STEP_NAMES = { cozy: "Cozy", social: "Social", open: "Open" };
+  function stepUp() {
+    var profile = store.getProfile();
+    var next = logic.stepUpDue(profile, store.getCommitments(), store.getReflections());
+    if (!next) return;
+    store.saveProfile(Object.assign({}, profile, { step: next, stepChangedAt: now.toISOString() }));
+    Empower.log("reflect.step_up", { to: next });
+    var pop = document.createElement("div");
+    pop.className = "ladder-pop";
+    pop.innerHTML = '<div class="ladder-pop__card" role="dialog" aria-label="Ready for a little more?">' +
+      '<p class="eyebrow">Three good sessions</p><p class="card__title">Ready for a little more?</p>' +
+      '<p class="card__meta">We\'ll mix in some bigger groups. You\'re now at <strong>' + STEP_NAMES[next] +
+      '</strong>. You can move back anytime in Me.</p>' +
+      '<p class="mt-4"><button type="button" class="btn btn--small" data-action="ladder-ok">Sounds good</button></p></div>';
+    document.body.appendChild(pop);
+    pop.addEventListener("click", function (e) {
+      if (!e.target.closest('[data-action="ladder-ok"]')) return;
+      pop.classList.add("is-leaving");
+      setTimeout(function () { pop.remove(); }, 700);
+    });
+  }
+
   function renderDone(c) {
     var g = groupOf(c);
     var changes = stageChanges(c);
@@ -144,6 +171,7 @@
         '. Matches show up in <a href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');
+    stepUp();
     if (changes.length) {
       ui.toast("Things with " + changes[0].person.name.split(" ")[0] + " " + STAGE_WORDS[changes[0].stage]);
       Empower.log("reflect.stage_up", { person: changes[0].person.id, stage: changes[0].stage });

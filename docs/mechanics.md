@@ -64,6 +64,15 @@ Questions live in `data/questions.js` (`Empower.QUESTIONS`). Pages that use them
 
 In `scoreSession`, Cozy and Social get +2 for high structure and lose points for open mingling (Cozy also +1 for 10 people or fewer). A `style` of -0.5 or lower adds +2 for `mode: "doing"` groups; 0.5 or higher adds +2 for `mode: "talking"` groups.
 
+### Comfort ladder
+
+| Call | What it decides |
+| --- | --- |
+| `groupLevel(group)` | `"cozy"` (high structure, 10 or fewer), `"social"` (not open mingling, 15 or fewer) or `"open"`. |
+| `levelGap(group, step)` | Steps a group sits above the user's step. `rankPicks` drops groups 2 or more above; `scoreSession` takes 3 points off groups 1 above. |
+| `stepUpDue(profile, commitments, reflections)` | The next step once there are 3 attended sessions rated Good or Great since `profile.stepChangedAt`; else `null`. The app never moves anyone down. |
+| `stepDown(step)` | One step down (the user's choice in Me), stopping at `"cozy"`. |
+
 ### Empower score
 
 | Call | What it decides |
@@ -77,7 +86,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 

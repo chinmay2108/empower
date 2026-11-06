@@ -66,6 +66,8 @@ Empower.logic = (function () {
       reasons.unshift("you've been before, and going back is how it sticks");
     }
 
+    if (levelGap(group, step) === 1) score -= 3;
+
     if (step !== "open") {
       if (group.structure === "high") { score += 2; reasons.push("there's an activity to focus on"); }
       if (group.structure === "low") score -= step === "cozy" ? 4 : 2;
@@ -149,6 +151,51 @@ Empower.logic = (function () {
     return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   }
 
+  /* ---------- Comfort ladder ---------- */
+
+  var STEPS = ["cozy", "social", "open"];
+  var GOOD_SESSIONS_TO_STEP_UP = 3;
+
+  /*
+   * groupLevel(group): the lowest comfort step a group fits.
+   *   cozy   high structure and 10 people or fewer
+   *   social not open mingling, and 15 people or fewer
+   *   open   anything else
+   */
+  function groupLevel(group) {
+    if (group.structure === "high" && group.typicalSize <= 10) return "cozy";
+    if (group.structure !== "low" && group.typicalSize <= 15) return "social";
+    return "open";
+  }
+
+  /* levelGap(group, step): how many steps above the user's step a group is (0 or less = fits). */
+  function levelGap(group, step) {
+    return STEPS.indexOf(groupLevel(group)) - STEPS.indexOf(step);
+  }
+
+  /*
+   * stepUpDue(profile, commitments, reflections)
+   * The next step up ("social" or "open") once the user has 3 attended
+   * sessions rated Good or Great since their step last changed; otherwise
+   * null. Already at "open" -> null. The app only ever moves people up;
+   * moving down is the user's choice (stepDown).
+   */
+  function stepUpDue(profile, commitments, reflections) {
+    var i = STEPS.indexOf(stepOf(profile));
+    if (i === STEPS.length - 1) return null;
+    var since = profile && profile.stepChangedAt ? new Date(profile.stepChangedAt).getTime() : -Infinity;
+    var good = (reflections || []).filter(function (r) { return r.enjoyed >= 2; }).map(function (r) { return r.commitmentId; });
+    var count = (commitments || []).filter(function (c) {
+      return c.status === "attended" && good.indexOf(c.id) !== -1 && new Date(c.startsAt).getTime() > since;
+    }).length;
+    return count >= GOOD_SESSIONS_TO_STEP_UP ? STEPS[i + 1] : null;
+  }
+
+  /* stepDown(step): one step down, or the same step at "cozy". */
+  function stepDown(step) {
+    return STEPS[Math.max(0, STEPS.indexOf(step) - 1)];
+  }
+
   /* ---------- Empower score ---------- */
 
   var MEETUP_POINTS = 10;
@@ -211,7 +258,10 @@ Empower.logic = (function () {
     var nowMs = new Date(now).getTime();
 
     var scored = sessions
-      .filter(function (s) { return new Date(s.startsAt).getTime() > nowMs && committedIds.indexOf(s.id) === -1; })
+      .filter(function (s) {
+        return new Date(s.startsAt).getTime() > nowMs && committedIds.indexOf(s.id) === -1 &&
+          levelGap(byId[s.groupId], stepOf(profile)) < 2;
+      })
       .map(function (s) {
         var r = scoreSession(s, byId[s.groupId], profile, history);
         return { session: s, group: byId[s.groupId], score: r.score, reasons: r.reasons };
@@ -404,7 +454,11 @@ Empower.logic = (function () {
     stepOf: stepOf,
     dailyQuestion: dailyQuestion,
     empowerScore: empowerScore,
-    canLogMeetup: canLogMeetup
+    canLogMeetup: canLogMeetup,
+    groupLevel: groupLevel,
+    levelGap: levelGap,
+    stepUpDue: stepUpDue,
+    stepDown: stepDown
   };
 })();
 

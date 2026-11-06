@@ -13,7 +13,7 @@
      and tell the team, because every page depends on it.
 
    Entities (see README, "Data model"):
-     Profile      one per browser:  { name, interests[], freeSlots[], step, traits, createdAt }
+     Profile      one per browser:  { name, interests[], freeSlots[], step, stepChangedAt, traits, createdAt }
                                     freeSlots like "thu-eve", "sat-am"; step "cozy" | "social" | "open";
                                     traits { energy, style, novelty, rhythm } from Empower.logic.traitsFromAnswers.
                                     Older profiles have comfort "easy" | "nervous" | "anxious" instead of step

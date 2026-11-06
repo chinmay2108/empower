@@ -235,3 +235,40 @@ test("Given a meetup logged today with someone, canLogMeetup blocks a second one
   assert.equal(logic.canLogMeetup(meetups, "u002", at(2026, 11, 4, 22)), true);
   assert.equal(logic.canLogMeetup(meetups, "u001", at(2026, 11, 5, 9)), true);
 });
+
+/* ---------- Comfort ladder ---------- */
+
+test("groupLevel: Cozy is small and structured, Open is open mingling or big groups", () => {
+  assert.equal(logic.groupLevel(group("g01")), "cozy");    // trivia: high, 8
+  assert.equal(logic.groupLevel(group("g06")), "social");  // board games: high, 14
+  assert.equal(logic.groupLevel(group("g02")), "social");  // run club: medium, 15
+  assert.equal(logic.groupLevel(group("g11")), "open");    // open mic: low, 25
+});
+
+test("Given a user at Cozy, Then picks skip groups two steps up and mark down groups one step up", () => {
+  const cozy = { interests: ["music", "games", "trivia"], freeSlots: ["mon-eve", "thu-eve", "fri-eve"], step: "cozy" };
+  const picks = logic.rankPicks(sessionsFrom(WED), GROUPS, cozy, [], WED, 15);
+  assert.ok(!picks.some((p) => logic.groupLevel(p.group) === "open"));
+  const board = sessionsFrom(WED).find((s) => s.groupId === "g06");
+  const atCozy = logic.scoreSession(board, group("g06"), cozy, { attendedGroupIds: [] }).score;
+  const atSocial = logic.scoreSession(board, group("g06"), Object.assign({}, cozy, { step: "social" }), { attendedGroupIds: [] }).score;
+  assert.equal(atSocial - atCozy, 3);
+});
+
+test("Given 3 attended sessions rated Good or Great since the last change, stepUpDue moves up one step", () => {
+  const cs = [1, 2, 3, 4].map((i) => ({ id: "c" + i, status: "attended", startsAt: at(2026, 10, i * 7, 19).toISOString() }));
+  const rated = (ids, enjoyed) => ids.map((id) => ({ commitmentId: id, enjoyed }));
+  assert.equal(logic.stepUpDue({ step: "cozy" }, cs, rated(["c1", "c2"], 3)), null);
+  assert.equal(logic.stepUpDue({ step: "cozy" }, cs, rated(["c1", "c2", "c3"], 2)), "social");
+  assert.equal(logic.stepUpDue({ step: "cozy" }, cs, rated(["c1", "c2", "c3"], 1)), null); // "Meh" doesn't count
+  // Only sessions after the step last changed count.
+  const changed = { step: "social", stepChangedAt: at(2026, 10, 15).toISOString() };
+  assert.equal(logic.stepUpDue(changed, cs, rated(["c1", "c2", "c3", "c4"], 3)), null);
+  assert.equal(logic.stepUpDue({ step: "open" }, cs, rated(["c1", "c2", "c3"], 3)), null);
+});
+
+test("stepDown moves one step down and stops at Cozy", () => {
+  assert.equal(logic.stepDown("open"), "social");
+  assert.equal(logic.stepDown("social"), "cozy");
+  assert.equal(logic.stepDown("cozy"), "cozy");
+});
