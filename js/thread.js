@@ -34,9 +34,9 @@
   function posts() {
     var mine = store.getThreadPosts(c.sessionId).map(function (p) {
       var person = p.from === "me" ? null : store.getPerson(p.from);
-      return { name: person ? person.name : "You", text: p.text, at: p.at, me: p.from === "me" };
+      return { person: person, name: person ? person.name : "You", text: p.text, at: p.at, me: p.from === "me" };
     });
-    return seed.map(function (p) { return { name: p.name, text: p.text, at: p.at, me: false }; })
+    return seed.map(function (p) { return { person: store.getPerson(p.personId), name: p.name, text: p.text, at: p.at, me: false }; })
       .concat(mine).sort(function (a, b) { return a.at < b.at ? -1 : 1; });
   }
 
@@ -48,7 +48,8 @@
       (state === "open" ? "Open for a week after the session." : "This thread closed a week after the session.") + "</p>" +
       '<div class="chat">' + posts().map(function (p) {
         return '<div class="bubble bubble--' + (p.me ? "me" : "them") + '">' +
-          (p.me ? "" : "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong><br>") + ui.escapeHtml(p.text) + "</div>";
+          (p.me ? "" : '<span class="bubble__who">' + (p.person ? ui.avatar(p.person, "sm") : "") + "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong></span>") +
+          ui.escapeHtml(p.text) + "</div>";
       }).join("") + "</div>" +
       (state === "open" ? '<form class="composer mt-4" id="composer"><input class="input" id="post" autocomplete="off" maxlength="300" placeholder="Say something to the group">' +
         '<button class="btn btn--inline" type="submit">Post</button></form>' +

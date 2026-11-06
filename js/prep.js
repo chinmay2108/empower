@@ -60,7 +60,7 @@
       '<button type="button" class="btn btn--secondary" data-action="ask-cancel">Can\'t make it</button>';
 
     host.innerHTML =
-      (warm.length ? '<div class="card card--accent"><p class="card__title">' + ui.namesText(warm, 2) + (warm.length === 1 ? " will" : warm.length === 2 ? " will both" : " will all") +
+      (warm.length ? '<div class="card card--accent"><p class="faces-row">' + ui.faces(warm, 3) + '</p><p class="card__title">' + ui.namesText(warm, 2) + (warm.length === 1 ? " will" : warm.length === 2 ? " will both" : " will all") +
         ' be there</p><p class="card__meta">A familiar face makes walking in easier.</p></div>' : "") +
       '<p class="eyebrow">' + ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt) + "</p>" +
       '<h1 class="title">' + group.name + "</h1>" +
@@ -68,10 +68,10 @@
       "<li><span>Where</span><span>" + group.venue + "</span></li>" +
       "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li>" +
       (going.length ? "<li><span>Also going</span><span>" + ui.namesText(going, 2) + "</span></li>" : "") + "</ul>" +
-      (intro ? '<div class="card card--outline"><p class="eyebrow">Someone to look for</p><p class="card__title">' +
+      (intro ? '<div class="card card--outline intro-card">' + ui.avatar(intro.person, "lg") + '<div><p class="eyebrow">Someone to look for</p><p class="card__title">' +
         intro.person.name.split(" ")[0] + " will be there. You two would get on.</p>" +
         '<p class="card__meta">They\'re a regular here and also like ' + intro.shared.slice(0, 2).join(" and ") +
-        ". Ask what keeps them coming back.</p></div>" : "") +
+        ". Ask what keeps them coming back.</p></div></div>" : "") +
       '<p class="label">What to expect</p><p class="small muted">' + EXPECT[group.structure] + "</p>" +
       '<p class="label mt-4">Two easy openers</p><ul class="tips small"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>" +
       '<p class="label">If it\'s not your night</p><p class="small muted">Give it 30 minutes. Leaving after that is completely fine.</p>' +

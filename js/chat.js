@@ -25,7 +25,7 @@
   }
 
   var first = person.name.split(" ")[0];
-  document.getElementById("topbar").innerHTML = '<a class="back" href="person.html?id=' + person.id + '">&larr; ' + person.name + "</a>";
+  document.getElementById("topbar").innerHTML = '<a class="back back--person" href="person.html?id=' + person.id + '">&larr; ' + ui.avatar(person, "sm") + person.name + "</a>";
 
   /* Seed the conversation with a plan suggestion the first time. */
   if (!store.getMessages(person.id).length) {
