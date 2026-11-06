@@ -12,7 +12,7 @@
      "low"    = open mingling (open mic social)
    ========================================================================== */
 
-window.Empower = window.Empower || {};
+var Empower = typeof window !== "undefined" ? (window.Empower = window.Empower || {}) : {};
 
 Empower.SEED_GROUPS = [
   {
@@ -106,3 +106,5 @@ Empower.SEED_GROUPS = [
     description: "A weekly theme and a route. Phones are fine."
   }
 ];
+
+if (typeof module !== "undefined") { module.exports = Empower.SEED_GROUPS; }

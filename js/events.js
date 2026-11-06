@@ -1,22 +1,55 @@
 /* ==========================================================================
-   events.js: controller for pages/events.html
-
-   STORY (owner: TBD, decided at the Thursday team meeting)
-   As Rick the Relocator, I want to see this week's top picks and commit to one with a leave time, so that going feels decided.
-
-   Owner builds this in their PR. Guidelines from the course:
-   - Structure in pages/events.html, look in css/styles.css classes, behavior here.
-   - Use Empower.store for all saved data. Functions you will likely need:
-       getProfile(), getGroups(), Empower.schedule.upcomingSessions(...), getCommitments(), addCommitment(fields)
-   - Put rules in small named functions with no hidden inputs (pass "now" in
-     rather than reading the clock inside), so each Given-When-Then scenario
-     maps to one function you can check.
-   - Log key moments with Empower.log("events.something_happened", {...}).
-   - Do not edit other pages' files. Need a change to a shared file
-     (store.js, ui.js, styles.css)? Open a separate small PR for it.
+   events.js: Flow 2, this week's picks
+   Shows the top 3 sessions for the user (Empower.logic.rankPicks) and the
+   rest of the week below. No profile yet sends the user to onboarding.
    ========================================================================== */
 
 (function () {
-  Empower.ui.renderNav("events");
-  Empower.log("events.viewed", {});
+  var store = Empower.store;
+  var ui = Empower.ui;
+  var logic = Empower.logic;
+  var host = document.getElementById("events-root");
+  var now = Empower.clock.now();
+  var profile = store.getProfile();
+
+  ui.renderNav("events");
+
+  if (!profile) {
+    host.innerHTML = '<h1 class="title">This week</h1><div class="empty"><p class="empty__title">Tell us about you first</p>' +
+      '<p class="small">Two minutes, so your picks fit.</p><p class="mt-4"><a class="btn btn--inline" href="onboarding.html">Get started</a></p></div>';
+    return;
+  }
+
+  var groups = store.getGroups();
+  var sessions = Empower.schedule.upcomingSessions(groups, now, 8);
+  var commitments = store.getCommitments();
+  var picks = logic.rankPicks(sessions, groups, profile, commitments, now, 3);
+  var pickIds = picks.map(function (p) { return p.session.id; });
+  var committedIds = commitments.filter(function (c) { return c.status === "committed"; }).map(function (c) { return c.sessionId; });
+
+  function card(session, group, why, badge) {
+    return '<a class="card card--outline pick" href="group.html?session=' + encodeURIComponent(session.id) + '">' +
+      '<div class="pick__top"><div><p class="card__title">' + group.name + "</p>" +
+      '<p class="card__meta">' + ui.formatDay(session.startsAt) + " · " + ui.formatTime(session.startsAt) + " · " + group.venue + "</p></div>" +
+      (badge ? '<span class="tag">' + badge + "</span>" : "") + "</div>" +
+      (why ? '<p class="pick__why">' + why + "</p>" : "") + "</a>";
+  }
+
+  var rest = sessions.filter(function (s) {
+    return new Date(s.startsAt) > now && pickIds.indexOf(s.id) === -1;
+  });
+
+  host.innerHTML =
+    '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
+    '<h1 class="title">Pick one.</h1><p class="subtitle">Three picks that fit your week. One is enough.</p>' +
+    (picks.length ? picks.map(function (p, i) {
+      return card(p.session, p.group, logic.explain(p.reasons), i === 0 ? "Top pick" : "");
+    }).join("") : '<div class="empty"><p class="empty__title">Nothing left this week</p><p class="small">Check back tomorrow.</p></div>') +
+    '<h2 class="section-title">Everything else this week</h2>' +
+    rest.map(function (s) {
+      var g = store.getGroup(s.groupId);
+      return card(s, g, "", committedIds.indexOf(s.id) !== -1 ? "Going" : "");
+    }).join("");
+
+  Empower.log("events.viewed", { picks: pickIds });
 })();

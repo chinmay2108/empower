@@ -6,29 +6,20 @@
   <title>This week · Empower</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body data-root="../">
+<body data-root="../" class="has-nav">
   <main class="page">
-    <header class="topbar">
+    <header class="topbar" id="topbar">
       <a class="wordmark" href="../index.html">empower<span>.</span></a>
     </header>
-
-    <h1 class="title">This week</h1>
-
-    <!-- The story owner replaces everything inside #events-root in their PR. -->
-    <section id="events-root">
-      <div class="empty">
-        <p class="empty__title">Coming in a PR</p>
-        <p class="small">As Rick the Relocator, I want to see this week's top picks and commit to one with a leave time, so that going feels decided.</p>
-      </div>
-    </section>
+    <!-- Filled by js/events.js -->
+    <section id="events-root"></section>
   </main>
-
   <nav id="nav"></nav>
-
   <script src="../data/groups.js"></script>
   <script src="../js/ui.js"></script>
   <script src="../js/store.js"></script>
   <script src="../js/schedule.js"></script>
+  <script src="../js/logic.js"></script>
   <script src="../js/events.js"></script>
 </body>
 </html>

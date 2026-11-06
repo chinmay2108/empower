@@ -46,7 +46,20 @@ Empower.schedule = (function () {
     return sessions;
   }
 
-  return { upcomingSessions: upcomingSessions, dateKey: dateKey };
+  /*
+   * sessionById(groups, id): rebuild one session from its id
+   * ("g01@2026-11-05"). Returns null if the id or group is unknown.
+   */
+  function sessionById(groups, id) {
+    var parts = String(id || "").split("@");
+    var group = groups.find(function (g) { return g.id === parts[0]; });
+    var ymd = (parts[1] || "").split("-").map(Number);
+    if (!group || ymd.length !== 3) return null;
+    var day = new Date(ymd[0], ymd[1] - 1, ymd[2]);
+    return upcomingSessions([group], day, 1)[0] || null;
+  }
+
+  return { upcomingSessions: upcomingSessions, sessionById: sessionById, dateKey: dateKey };
 })();
 
 /* Lets Node-based unit tests load this file later without a browser. */
