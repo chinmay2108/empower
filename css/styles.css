@@ -941,3 +941,24 @@ a { color: inherit; }
 }
 .composer__send svg { width: 20px; height: 20px; fill: var(--color-bg); margin-left: 2px; }
 .composer__send:disabled { background: var(--color-line); cursor: default; }
+
+/* ---------- Voice notes ---------- */
+.composer__send--mic { background: var(--color-text); }
+.composer__rec { justify-content: space-between; }
+.composer__cancel { background: none; border: 0; font: inherit; color: var(--color-muted); min-height: 44px; padding: 0 var(--space-3); cursor: pointer; }
+.composer__timer { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+.rec-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-ember-blaze); animation: rec-pulse 1s infinite; }
+@keyframes rec-pulse { 50% { opacity: 0.3; } }
+.voice { display: inline-flex; align-items: center; gap: var(--space-2); min-width: 180px; vertical-align: middle; }
+.voice__play {
+  flex: none; width: 34px; height: 34px; border-radius: 50%; border: 0; display: grid; place-items: center;
+  background: var(--color-accent); cursor: pointer;
+}
+.voice__play svg { width: 16px; height: 16px; fill: var(--color-bg); margin-left: 2px; }
+.voice.is-playing .voice__play svg { margin-left: 0; }
+.voice.is-playing .voice__play svg path { d: path("M7 5h4v14H7zM13 5h4v14h-4z"); }
+.voice__track { flex: 1; height: 4px; border-radius: var(--radius-pill); position: relative; overflow: hidden; }
+.voice__track::before { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0.3; }
+.voice__fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: currentColor; }
+.voice__len { font-size: var(--text-xs); opacity: 0.8; font-variant-numeric: tabular-nums; }
+.composer [hidden] { display: none; }

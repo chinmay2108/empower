@@ -49,7 +49,7 @@
       return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
         (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
     }
-    return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + ui.escapeHtml(m.text) +
+    return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + (m.audio ? ui.voiceNote(m.audio, m.seconds) : ui.escapeHtml(m.text)) +
       '<span class="bubble__time">' + ui.chatTime(m.at) + "</span></div>";
   }
 
@@ -81,6 +81,18 @@
       typing = false;
       render();
     }, REPLY_DELAY_MS);
+  }, function (note) {
+    var saved = store.addMessage({ personId: person.id, from: "me", text: "Voice note", audio: note.audio, seconds: note.seconds, at: Empower.clock.now().toISOString() });
+    if (!saved) { ui.toast("Couldn't save that voice note. Storage is full."); return; }
+    Empower.log("chat.voice_sent", { person: person.id, seconds: note.seconds });
+    typing = true;
+    render();
+    var turn = store.getMessages(person.id).filter(function (m) { return m.from === "them"; }).length;
+    setTimeout(function () {
+      store.addMessage({ personId: person.id, from: "them", text: people.replyToVoice(person, turn), at: Empower.clock.now().toISOString() });
+      typing = false;
+      render();
+    }, REPLY_DELAY_MS * 2);
   });
 
   render();

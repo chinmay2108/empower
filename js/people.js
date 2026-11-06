@@ -410,7 +410,20 @@ Empower.people = (function () {
     return willAddBack(person, profile, together, userKey);
   }
 
+  /*
+   * replyToVoice(person, turn): what a synthetic person says back to a
+   * voice note. Warmer people sound warmer. Same person and turn, same line.
+   */
+  function replyToVoice(person, turn) {
+    var warm = person.warmth >= 0.55;
+    var lines = warm
+      ? ["Ha, love a voice note. Sounds good to me!", "Just listened, made me smile. See you Thursday?", "Haha yes! Let's talk properly at the next one."]
+      : ["Got your voice note, sounds good.", "Just listened. Works for me.", "Nice, thanks for the voice note."];
+    return lines[(turn + Math.floor(hash01(person.id + "|voice") * 7)) % lines.length];
+  }
+
   return {
+    replyToVoice: replyToVoice,
     threadSeed: threadSeed,
     introFor: introFor,
     familiarFaces: familiarFaces,
