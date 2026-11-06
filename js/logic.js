@@ -103,10 +103,93 @@ Empower.logic = (function () {
     return { score: score, reasons: why.map(function (r) { return r.text; }) };
   }
 
+  var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  /*
+   * choose(options, key, used): one option, picked by a hash of key, so the
+   * same key gives the same pick. Skips options already in used (when any
+   * are left), so a page doesn't repeat itself.
+   */
+  function choose(options, key, used) {
+    var left = options.filter(function (o) { return !used || used.indexOf(o) === -1; });
+    var pool = left.length ? left : options;
+    var h = 2166136261;
+    for (var i = 0; i < key.length; i++) { h ^= key.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return pool[(h >>> 0) % pool.length];
+  }
+
+  /*
+   * pitch(session, group, profile, history, used)
+   * The line under a pick on This week, in the voice of a friend who
+   * remembers: one or two short sentences built from the user's own
+   * history. First a personal hook (who's going, what they said last
+   * time, how often they've been, or that it's new to them), then why
+   * it's worth it (the habit forming, or what makes it easy to walk in,
+   * from the group's description). Each situation has a few phrasings,
+   * picked per user and session, so lines vary week to week but stay the
+   * same on a refresh. used (optional): an array of phrasings already on
+   * the page; pitch skips those and adds the ones it picks, so three picks
+   * never repeat a line.
+   */
+  function pitch(session, group, profile, history, used) {
+    var h = history || {};
+    var interests = (profile && profile.interests) || [];
+    var visits = (h.visitsByGroup || {})[group.id] || 0;
+    var saidBack = (h.lastWouldReturn || {})[group.id] === true;
+    var f = (h.familiarBySession || {})[session.id];
+    var shared = group.interests.filter(function (i) { return interests.indexOf(i) !== -1; });
+    var day = DAY_NAMES[new Date(session.startsAt).getDay()];
+    var key = ((profile && profile.createdAt) || "") + "|" + session.id;
+    var say = function (options, part) {
+      var picked = choose(options, key + "|" + part, used);
+      if (used) used.push(picked);
+      return picked;
+    };
+
+    var who = "";
+    if (f && f.count === 1) who = f.firstName + "'s going";
+    if (f && f.count > 1) who = f.firstName + " and " + (f.count - 1) + (f.count === 2 ? " other person" : " others") + " you've met are going";
+
+    var hook;
+    if (who && f.warm >= 1 && f.count === 1 && !saidBack) {
+      hook = say([who + ", and you two have been warming up.", who + ". Good chance to pick up where you left off.",
+        who + ". Things have been getting easier with " + f.firstName + "."], "hook");
+    } else if (who && saidBack) {
+      hook = say([who + ", and last time you said you'd be back.", who + ", and you said you'd come back.",
+        "You wanted to go back, and " + who + " too."], "hook");
+    } else if (who && visits) {
+      hook = say([who + ", and you know the room by now.", who + ". You already know how the night goes."], "hook");
+    } else if (who) {
+      hook = say([who + ", so you'll see a familiar face.", who + ", so you won't walk in alone."], "hook");
+    } else if (saidBack) {
+      hook = say(["Last time you said you'd be back.", "You left saying you'd come again.", "You wanted another " + day + " here.",
+        "You said this one was worth a repeat."], "hook");
+    } else if (visits) {
+      hook = say(["You've been " + (visits === 1 ? "once" : visits + " times") + " and it went well.",
+        (visits === 1 ? "One visit in" : visits + " visits in") + ", and you already know the drill."], "hook");
+    } else if (shared.length) {
+      hook = say(["You haven't tried this one yet, and it's " + shared[0] + ", right up your street.",
+        "New for you, and it's built around " + shared[0] + ".",
+        "A " + day + " of " + shared[0] + ", and you haven't been yet."], "hook");
+    } else {
+      hook = say(["Something new this week.", "A fresh one for your " + day + "."], "hook");
+    }
+
+    var why;
+    if (visits === 1) why = say(["A second visit is when faces start to look familiar.", "Going twice is when people start to remember you.",
+      "The second time is always easier than the first."], "why");
+    else if (visits === 2) why = say(["A third time would make it a habit.", "One more and it's your " + day + " thing."], "why");
+    else if (visits >= 3) why = say(["You're becoming a regular here.", "People there know you by now.",
+      "Your " + day + " crew will be expecting you.", "This is turning into your place."], "why");
+    else why = group.description;
+
+    return hook + " " + why;
+  }
+
   /*
    * historyFor(profile, commitments, reflections, groups, now, familiarBySession)
    * Everything scoreSession needs to know about the user's past:
-   *   attendedGroupIds, attendedSlots, regularGroupCount (groups attended 2+
+   *   attendedGroupIds, visitsByGroup { groupId: n }, attendedSlots, regularGroupCount (groups attended 2+
    *   times), lastWouldReturn { groupId: true | false } from their latest
    *   rating there, hiddenGroupIds (rated "probably not" twice),
    *   slotsToCheck, and familiarBySession as passed in
@@ -130,6 +213,7 @@ Empower.logic = (function () {
     });
     return {
       attendedGroupIds: Object.keys(perGroup),
+      visitsByGroup: perGroup,
       attendedSlots: attended.map(function (c) { return slotFor(c.startsAt); }),
       regularGroupCount: Object.keys(perGroup).filter(function (g) { return perGroup[g] >= 2; }).length,
       lastWouldReturn: lastWouldReturn,
@@ -561,6 +645,7 @@ Empower.logic = (function () {
     slotFor: slotFor,
     scoreSession: scoreSession,
     historyFor: historyFor,
+    pitch: pitch,
     rankPicks: rankPicks,
     explain: explain,
     findConflict: findConflict,

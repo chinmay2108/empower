@@ -384,3 +384,57 @@ test("threadOpen: locked until check-in, open for 7 days after the session ends,
   assert.equal(logic.threadOpen(c, group("g01"), at(2026, 11, 12, 20)), "open");   // 6 days 23 hours after the end
   assert.equal(logic.threadOpen(c, group("g01"), at(2026, 11, 12, 21)), "closed"); // exactly 7 days after
 });
+
+/* ---------- Pick lines in a friend's voice ---------- */
+
+test("pitch: a friend who remembers, from the user's own history", () => {
+  const s = triviaSession();
+  const g = group("g01");
+  const going = (extra) => ({ [s.id]: Object.assign({ count: 1, warm: 0, firstName: "Emeka" }, extra) });
+  // Someone you met is going and you said you'd be back: names Emeka and mentions coming back.
+  const a = logic.pitch(s, g, RICK, { familiarBySession: going(), lastWouldReturn: { g01: true }, visitsByGroup: { g01: 2 } });
+  assert.match(a, /Emeka/);
+  assert.match(a, /back/);
+  assert.match(a, /habit|Thursday thing/);
+  // Two sentences at most, and the same every time for the same user and session.
+  assert.ok(a.split(". ").length <= 3);
+  assert.equal(logic.pitch(s, g, RICK, { familiarBySession: going(), lastWouldReturn: { g01: true }, visitsByGroup: { g01: 2 } }), a);
+  // New to them: the group's own description says why it's easy to walk in.
+  const b = logic.pitch(s, g, RICK, {});
+  assert.match(b, /trivia/);
+  assert.ok(b.endsWith(g.description));
+  assert.match(logic.pitch(s, g, { interests: [] }, {}), /new|fresh/i);
+  assert.match(logic.pitch(s, g, RICK, { familiarBySession: going({ count: 3 }) }), /Emeka and 2 others you've met are going/);
+});
+
+test("pitch varies by design: different users get different phrasings for the same situation", () => {
+  const s = triviaSession();
+  const lines = new Set();
+  for (let i = 0; i < 30; i++) {
+    const user = Object.assign({}, RICK, { createdAt: "user-" + i });
+    lines.add(logic.pitch(s, group("g01"), user, { lastWouldReturn: { g01: true }, visitsByGroup: { g01: 1 } }));
+  }
+  assert.ok(lines.size >= 4, "got " + lines.size + " phrasings");
+});
+
+test("Given three picks on one page, pitch never repeats a phrasing", () => {
+  const used = [];
+  const lines = ["s1", "s2", "s3"].map((id) =>
+    logic.pitch(Object.assign({}, triviaSession(), { id }), group("g01"), RICK, { lastWouldReturn: { g01: true }, visitsByGroup: { g01: 4 } }, used));
+  const parts = lines.flatMap((l) => l.split(/(?<=\.) /));
+  assert.equal(new Set(parts).size, parts.length, lines.join(" / "));
+});
+
+test("pitch keeps names capitalised mid-sentence", () => {
+  const s = triviaSession();
+  for (let i = 0; i < 20; i++) {
+    const line = logic.pitch(s, group("g01"), Object.assign({}, RICK, { createdAt: "u" + i }),
+      { familiarBySession: { [s.id]: { count: 1, warm: 0, firstName: "Ava" } }, lastWouldReturn: { g01: true } });
+    assert.match(line, /Ava/);
+  }
+});
+
+test("historyFor counts visits per group for pitch", () => {
+  const { cs, rs } = ratedTrivia(2, true);
+  assert.deepEqual(logic.historyFor(RICK, cs, rs, GROUPS, WED).visitsByGroup, { g01: 2 });
+});
