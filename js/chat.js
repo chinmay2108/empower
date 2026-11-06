@@ -25,7 +25,9 @@
   }
 
   var first = person.name.split(" ")[0];
-  document.getElementById("topbar").innerHTML = '<a class="back back--person" href="person.html?id=' + person.id + '">&larr; ' + ui.avatar(person, "sm") + person.name + "</a>";
+  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="people.html" aria-label="Back to People">&larr;</a>' +
+    '<a class="chat-header__who" href="person.html?id=' + person.id + '">' + ui.avatar(person) +
+    '<span><span class="chat-header__name">' + person.name + '</span><span class="chat-header__sub">Tap for profile</span></span></a>';
 
   /* Seed the conversation with a plan suggestion the first time. */
   if (!store.getMessages(person.id).length) {
@@ -40,35 +42,43 @@
     }
   }
 
-  function render() {
-    var messages = store.getMessages(person.id);
-    var theirs = messages.filter(function (m) { return m.from === "them"; }).length;
-    host.innerHTML =
-      '<div class="chat">' + messages.map(function (m) {
-        if (m.from === "app") {
-          return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
-            (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
-        }
-        return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + ui.escapeHtml(m.text) + "</div>";
-      }).join("") + "</div>" +
-      (theirs === 0 && !messages.some(function (m) { return m.from === "me"; }) ?
-        '<p class="small muted">Say hi to ' + first + ". (Replies are simulated in this demo.)</p>" : "") +
-      '<form class="composer mt-4" id="composer"><input class="input" id="message" autocomplete="off" placeholder="Message ' + first +
-      '" maxlength="300"><button class="btn btn--inline" type="submit">Send</button></form>';
-    var box = document.getElementById("message");
-    if (box) box.focus();
+  var typing = false;
+
+  function bubble(m) {
+    if (m.from === "app") {
+      return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
+        (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
+    }
+    return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + ui.escapeHtml(m.text) +
+      '<span class="bubble__time">' + ui.chatTime(m.at) + "</span></div>";
   }
 
-  host.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var text = document.getElementById("message").value.trim();
-    if (!text) return;
-    store.addMessage({ personId: person.id, from: "me", text: text });
+  function render() {
+    var messages = store.getMessages(person.id);
+    var lastDay = "";
+    host.innerHTML = '<div class="chat">' +
+      (messages.some(function (m) { return m.from !== "app"; }) ? "" :
+        '<p class="chat__note">Say hi to ' + ui.escapeHtml(first) + ". (Replies are simulated in this demo.)</p>") +
+      messages.map(function (m) {
+        var day = ui.formatDay(m.at);
+        var sep = day !== lastDay ? '<p class="chat__day">' + day + "</p>" : "";
+        lastDay = day;
+        return sep + bubble(m);
+      }).join("") +
+      (typing ? '<div class="bubble bubble--them bubble--typing" aria-label="' + ui.escapeHtml(first) + ' is typing"><span></span><span></span><span></span></div>' : "") +
+      "</div>";
+    ui.scrollToLatest();
+  }
+
+  ui.composer("Message " + first, function (text) {
+    store.addMessage({ personId: person.id, from: "me", text: text, at: Empower.clock.now().toISOString() });
     Empower.log("chat.sent", { person: person.id, length: text.length });
+    typing = true;
     render();
     var turn = store.getMessages(person.id).filter(function (m) { return m.from === "them"; }).length;
     setTimeout(function () {
-      store.addMessage({ personId: person.id, from: "them", text: people.reply(person, text, turn) });
+      store.addMessage({ personId: person.id, from: "them", text: people.reply(person, text, turn), at: Empower.clock.now().toISOString() });
+      typing = false;
       render();
     }, REPLY_DELAY_MS);
   });

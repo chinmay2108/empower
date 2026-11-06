@@ -196,8 +196,50 @@ Empower.ui = (function () {
     return '<span class="faces">' + list.slice(0, max || 3).map(function (p) { return avatar(p, "sm"); }).join("") + "</span>";
   }
 
+  var SEND_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg>';
+
+  /*
+   * composer(placeholder): the message box pinned to the bottom of a chat,
+   * like a messaging app. Added to the page once (so the keyboard stays up
+   * after sending); calls onSend(text) and clears itself.
+   */
+  function composer(placeholder, onSend) {
+    var form = document.createElement("form");
+    form.className = "composer";
+    form.innerHTML = '<div class="composer__inner"><input class="composer__input" id="message" autocomplete="off" maxlength="300"' +
+      ' placeholder="' + escapeHtml(placeholder) + '" aria-label="' + escapeHtml(placeholder) + '">' +
+      '<button class="composer__send" type="submit" aria-label="Send" disabled>' + SEND_ICON + "</button></div>";
+    document.body.appendChild(form);
+    var input = form.querySelector("input");
+    var send = form.querySelector("button");
+    input.addEventListener("input", function () { send.disabled = !input.value.trim(); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text) return;
+      input.value = "";
+      send.disabled = true;
+      input.focus();
+      onSend(text);
+    });
+    return form;
+  }
+
+  /* chatTime(iso): "6:31 PM" for message bubbles. */
+  function chatTime(iso) {
+    return new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  }
+
+  /* scrollToLatest(): keep the newest message in view. */
+  function scrollToLatest() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
   return {
     toast: toast,
+    composer: composer,
+    chatTime: chatTime,
+    scrollToLatest: scrollToLatest,
     faces: faces,
     ember: ember,
     avatar: avatar,
