@@ -6,7 +6,8 @@
    and works with no signal. It does nothing when index.html is opened as
    a file from your computer.
 
-   How it serves a file: it asks the network first, so a new deploy shows
+   How it serves a file: it asks the network first (always checking with
+   GitHub, never reusing the browser's short-term copy), so a new deploy shows
    up the first time the app is opened, and saves that fresh copy. If the
    network fails or takes longer than 3 seconds, it uses the saved copy
    instead, so the app still opens fast offline or on a bad connection.
@@ -15,7 +16,7 @@
    fails if a file is missing from the list.
    ========================================================================== */
 
-var CACHE = "empower-v3";
+var CACHE = "empower-v4";
 var NETWORK_WAIT_MS = 3000;
 
 var FILES = [
@@ -65,7 +66,11 @@ var FILES = [
 ];
 
 self.addEventListener("install", function (event) {
-  event.waitUntil(caches.open(CACHE).then(function (cache) { return cache.addAll(FILES); }));
+  // cache: "reload" skips the browser's own short-term cache (GitHub Pages
+  // lets browsers keep files for 10 minutes), so installs get the newest files.
+  event.waitUntil(caches.open(CACHE).then(function (cache) {
+    return cache.addAll(FILES.map(function (f) { return new Request(f, { cache: "reload" }); }));
+  }));
   self.skipWaiting();
 });
 
@@ -81,7 +86,9 @@ self.addEventListener("fetch", function (event) {
   if (event.request.method !== "GET") return;
   event.respondWith(caches.open(CACHE).then(function (cache) {
     return cache.match(event.request, { ignoreSearch: true }).then(function (saved) {
-      var fresh = fetch(event.request).then(function (response) {
+      // cache: "no-cache" asks GitHub whether the file changed every time,
+      // instead of reusing the browser's copy for up to 10 minutes.
+      var fresh = fetch(event.request.url, { cache: "no-cache" }).then(function (response) {
         if (response.ok) cache.put(event.request, response.clone());
         return response;
       });
