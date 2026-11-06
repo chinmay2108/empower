@@ -1,12 +1,15 @@
 /* ==========================================================================
    onboarding.js: Flow 1, set up or edit the user's profile
-   Steps: name, interests (3+), free times (1+), comfort. Saves one Profile.
+   Steps: name, interests (3+), free times (1+), 8 "this or that" questions.
+   Saves the answers and one Profile (with its comfort step and traits).
    ?edit=1 opens with the saved profile filled in.
    ========================================================================== */
 
 (function () {
   var store = Empower.store;
   var ui = Empower.ui;
+  var logic = Empower.logic;
+  var QUIZ = Empower.QUESTIONS.filter(function (q) { return q.onboarding; });
   var host = document.getElementById("onboarding-root");
 
   var INTERESTS = ["trivia", "board games", "games", "running", "hiking", "outdoors", "books",
@@ -16,11 +19,6 @@
     ["mon-eve", "Mon"], ["tue-eve", "Tue"], ["wed-eve", "Wed"], ["thu-eve", "Thu"], ["fri-eve", "Fri"]
   ];
   var WEEKEND = [["sat-am", "Sat morning"], ["sat-pm", "Sat afternoon"], ["sun-am", "Sun morning"], ["sun-pm", "Sun afternoon"]];
-  var COMFORT = [
-    ["easy", "I'm easy", "Happy to walk into anything"],
-    ["nervous", "A bit nervous", "Start me with things that have an activity to focus on"],
-    ["anxious", "Pretty anxious", "Small, structured groups only"]
-  ];
   var MIN_INTERESTS = 3;
   var TOTAL_STEPS = 4;
 
@@ -31,17 +29,28 @@
     name: saved ? saved.name : "",
     interests: saved ? saved.interests.slice() : [],
     freeSlots: saved ? saved.freeSlots.slice() : [],
-    comfort: saved ? saved.comfort : "",
+    answers: savedAnswers(),
+    quizIndex: 0,
     error: ""
   };
 
-  /* ---------- Rules (pure) ---------- */
+  function savedAnswers() {
+    var map = {};
+    store.getAnswers().forEach(function (a) { if (a.choice !== "skip") map[a.questionId] = a.choice; });
+    return map;
+  }
+
+  function answeredCount() {
+    return QUIZ.filter(function (q) { return state.answers[q.id]; }).length;
+  }
+
+  /* ---------- Checks before moving on ---------- */
 
   function validate(step, s) {
     if (step === 0 && !s.name.trim()) return "Add your first name so we can say hi.";
     if (step === 1 && s.interests.length < MIN_INTERESTS) return "Pick at least " + MIN_INTERESTS + " so we have something to go on.";
     if (step === 2 && !s.freeSlots.length) return "Pick at least one time you're usually free.";
-    if (step === 3 && !s.comfort) return "Pick the one that fits best.";
+    if (step === 3 && answeredCount() < QUIZ.length) return "Pick one in each pair. Go with your gut.";
     return "";
   }
 
@@ -86,11 +95,12 @@
           '<p class="label">Weeknight evenings</p>' + chips(SLOTS, state.freeSlots, "freeSlots") +
           '<p class="label mt-4">Weekends</p>' + chips(WEEKEND, state.freeSlots, "freeSlots");
       case 3:
-        return '<h1 class="title">How do new groups feel?</h1><p class="subtitle">No wrong answer. This sets how we start.</p>' +
-          COMFORT.map(function (c) {
-            return '<button type="button" class="option' + (state.comfort === c[0] ? " is-selected" : "") +
-              '" data-kind="comfort" data-value="' + c[0] + '"><p class="option__title">' + c[1] +
-              '</p><p class="option__meta">' + c[2] + "</p></button>";
+        var q = QUIZ[state.quizIndex];
+        return '<h1 class="title">This or that?</h1><p class="subtitle">Go with your gut. Both are good answers.</p>' +
+          '<p class="label">' + (state.quizIndex + 1) + " of " + QUIZ.length + "</p>" +
+          ["a", "b"].map(function (side) {
+            return '<button type="button" class="option' + (state.answers[q.id] === side ? " is-selected" : "") +
+              '" data-kind="quiz" data-value="' + side + '"><p class="option__title">' + ui.escapeHtml(q[side]) + "</p></button>";
           }).join("");
       default:
         return '<div class="center"><div class="big-check">&#10003;</div>' +
@@ -132,16 +142,32 @@
     var action = el.getAttribute("data-action");
 
     if (kind === "interests" || kind === "freeSlots") toggle(state[kind], el.getAttribute("data-value"));
-    if (kind === "comfort") state.comfort = el.getAttribute("data-value");
+    if (kind === "quiz") {
+      state.answers[QUIZ[state.quizIndex].id] = el.getAttribute("data-value");
+      if (state.quizIndex < QUIZ.length - 1) state.quizIndex += 1;
+    }
     if (kind) { state.error = ""; render(); return; }
 
-    if (action === "back") { state.step -= 1; state.error = ""; render(); return; }
+    if (action === "back") {
+      if (state.step === 3 && state.quizIndex > 0) state.quizIndex -= 1; else state.step -= 1;
+      state.error = "";
+      render();
+      return;
+    }
     if (action === "next") {
       state.error = validate(state.step, state);
       if (state.error) { Empower.log("onboarding.blocked", { step: state.step }); render(); return; }
       if (state.step === TOTAL_STEPS - 1) {
-        store.saveProfile({ name: state.name.trim(), interests: state.interests, freeSlots: state.freeSlots, comfort: state.comfort });
-        Empower.log(editing ? "onboarding.updated" : "onboarding.completed", { interests: state.interests.length, slots: state.freeSlots.length, comfort: state.comfort });
+        var at = Empower.clock.now().toISOString();
+        QUIZ.forEach(function (q) { store.saveAnswer({ questionId: q.id, choice: state.answers[q.id], at: at }); });
+        var traits = logic.traitsFromAnswers(store.getAnswers(), Empower.QUESTIONS);
+        // Editing never moves the comfort step; only the ladder or the user in Me does.
+        var step = saved && (saved.step || saved.comfort) ? logic.stepOf(saved) : logic.startingStep(traits);
+        var profile = { name: state.name.trim(), interests: state.interests, freeSlots: state.freeSlots, step: step, traits: traits };
+        if (saved && saved.createdAt) profile.createdAt = saved.createdAt;
+        store.saveProfile(profile);
+        Empower.log(editing ? "onboarding.updated" : "onboarding.completed",
+          { interests: state.interests.length, slots: state.freeSlots.length, step: step, persona: logic.personaFor(traits) });
         if (editing) { window.location.href = "me.html"; return; }
       }
       state.step += 1;

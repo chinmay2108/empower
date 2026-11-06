@@ -26,6 +26,8 @@
   host.innerHTML =
     '<h1 class="title">' + (profile ? ui.escapeHtml(profile.name) : "Your progress") + "</h1>" +
     '<p class="subtitle">Friendships take repeat time with the same people. Here\'s yours.</p>' +
+    (profile ? '<p><span class="score-badge">Empower score ' +
+      logic.empowerScore(store.getMeetups(), store.getAnswers()) + "</span></p>" : "") +
     '<div class="stat-row">' +
     '<div class="stat"><div class="stat__value">' + logic.totalHours(commitments, groups) + '</div><div class="stat__label">hours together</div></div>' +
     '<div class="stat"><div class="stat__value">' + (score.total ? score.attended + "/" + score.total : "–") + '</div><div class="stat__label">show-up score</div></div></div>' +
@@ -38,7 +40,7 @@
     '<h2 class="section-title">Your setup</h2>' +
     (profile ? '<ul class="facts"><li><span>Interests</span><span>' + profile.interests.join(", ") + "</span></li>" +
       "<li><span>Free</span><span>" + profile.freeSlots.map(slotLabel).join(", ") + "</span></li>" +
-      "<li><span>Comfort</span><span>" + { easy: "Easy", nervous: "A bit nervous", anxious: "Pretty anxious" }[profile.comfort] + "</span></li></ul>" +
+      "<li><span>Picks start at</span><span>" + { cozy: "Cozy", social: "Social", open: "Open" }[logic.stepOf(profile)] + "</span></li></ul>" +
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +
     '<div class="demo"><p class="label">Demo tools</p>' +

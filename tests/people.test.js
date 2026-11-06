@@ -10,7 +10,7 @@ const POP = require("../data/population.js");
 
 const at = (y, m, d, h = 0) => new Date(y, m - 1, d, h);
 const NOW = at(2026, 11, 8, 12);
-const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], comfort: "nervous", createdAt: "2026-11-05T12:00:00.000Z" };
+const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], step: "social", createdAt: "2026-11-05T12:00:00.000Z" };
 
 test("population is synthetic, sized, and every membership points at a real group", () => {
   assert.equal(POP.length, 500);
@@ -89,4 +89,20 @@ test("chat replies answer yes, questions and greetings, deterministically", () =
   assert.match(people.reply(p, "What time?", 0), /usual/i);
   assert.equal(people.reply(p, "hello", 1), people.reply(p, "hello", 1));
   assert.ok(people.reply(p, "random words", 2).length > 0);
+});
+
+test("scoreOf gives each synthetic person a fixed public score between 0 and 120", () => {
+  const pop = require("../data/population.js");
+  pop.slice(0, 50).forEach((p) => {
+    const s = people.scoreOf(p);
+    assert.equal(s, people.scoreOf(p));
+    assert.ok(s >= 0 && s <= 120, p.id + " " + s);
+  });
+});
+
+test("confirmsMeetup: synthetic people confirm only if they're a mutual match", () => {
+  const pop = require("../data/population.js");
+  pop.slice(0, 30).forEach((p) => {
+    assert.equal(people.confirmsMeetup(p, RICK, 2, RICK.createdAt), people.willAddBack(p, RICK, 2, RICK.createdAt));
+  });
 });

@@ -13,8 +13,13 @@
      and tell the team, because every page depends on it.
 
    Entities (see README, "Data model"):
-     Profile      one per browser:  { name, interests[], freeSlots[], comfort, createdAt }
-                                    freeSlots like "thu-eve", "sat-am"; comfort "easy" | "nervous" | "anxious"
+     Profile      one per browser:  { name, interests[], freeSlots[], step, traits, createdAt }
+                                    freeSlots like "thu-eve", "sat-am"; step "cozy" | "social" | "open";
+                                    traits { energy, style, novelty, rhythm } from Empower.logic.traitsFromAnswers.
+                                    Older profiles have comfort "easy" | "nervous" | "anxious" instead of step
+                                    (read it with Empower.logic.stepOf).
+     Meetup       many:             { id, personId, at, confirmed }  (a private meetup with a match)
+     Answer       many:             { questionId, choice: "a" | "b" | "skip", at }  (data/questions.js)
      Group        seed data:        see data/groups.js
      Session      generated:        see js/schedule.js
      Commitment   many:             { id, sessionId, groupId, startsAt, leaveAt, travelMode, status, createdAt }
@@ -34,7 +39,9 @@ Empower.store = (function () {
     commitments: "empower.commitments",
     reflections: "empower.reflections",
     connections: "empower.connections",
-    messages: "empower.messages"
+    messages: "empower.messages",
+    answers: "empower.answers",
+    meetups: "empower.meetups"
   };
 
   function read(key, fallback) {
@@ -71,6 +78,32 @@ Empower.store = (function () {
       write(KEYS.profile, saved);
       Empower.log("store.profile_saved", { interests: saved.interests });
       return saved;
+    },
+
+    /* ---- Answers to "this or that" questions ---- */
+    getAnswers: function () {
+      return read(KEYS.answers, []);
+    },
+    saveAnswer: function (fields) {
+      var list = read(KEYS.answers, []).filter(function (a) { return a.questionId !== fields.questionId; });
+      var item = { questionId: fields.questionId, choice: fields.choice, at: fields.at };
+      list.push(item);
+      write(KEYS.answers, list);
+      Empower.log("store.answer_saved", { questionId: item.questionId, choice: item.choice });
+      return item;
+    },
+
+    /* ---- Meetups: private meetups with a match, outside sessions ---- */
+    getMeetups: function () {
+      return read(KEYS.meetups, []);
+    },
+    addMeetup: function (fields) {
+      var list = read(KEYS.meetups, []);
+      var item = { id: newId("u"), personId: fields.personId, at: fields.at, confirmed: !!fields.confirmed };
+      list.push(item);
+      write(KEYS.meetups, list);
+      Empower.log("store.meetup_added", { personId: item.personId, confirmed: item.confirmed });
+      return item;
     },
 
     /* ---- Groups (read-only seed data) ---- */

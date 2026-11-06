@@ -158,7 +158,27 @@ Empower.people = (function () {
     return pick(warm ? ["Ha, totally.", "Love that.", "Same here!", "That's great."] : ["Nice.", "Makes sense.", "Ha, yeah."]);
   }
 
+  /*
+   * scoreOf(person): a synthetic person's public Empower score, fixed per
+   * person. Warmer, more reliable people have met up more. 0 to about 120.
+   */
+  function scoreOf(person) {
+    return Math.round(hash01(person.id + "|score") * 60 * (person.warmth + person.reliability));
+  }
+
+  /*
+   * confirmsMeetup(person, profile, together, userKey)
+   * Meetups count only when both people confirm. Synthetic people confirm
+   * if they're a mutual match (they added the user back). With a real
+   * backend (E12) the other person taps confirm themselves.
+   */
+  function confirmsMeetup(person, profile, together, userKey) {
+    return willAddBack(person, profile, together, userKey);
+  }
+
   return {
+    scoreOf: scoreOf,
+    confirmsMeetup: confirmsMeetup,
     hash01: hash01,
     weekIndex: weekIndex,
     attends: attends,

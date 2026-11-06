@@ -5,7 +5,7 @@ random seed. No real people, no scraped data. Rerunning the script produces
 the same file.
 
 What it makes:
-  - 500 users in Charlottesville, each with interests, free times, a comfort
+  - 500 users in Charlottesville, each with interests, free times, a comfort step
     level, and memberships in 1 to 3 recurring groups that fit them.
   - Each membership has a weekly attendance probability. js/people.js turns
     that into who attended (or is going to) any session, for any week, with
@@ -64,7 +64,7 @@ def slot_for(group):
 
 
 def make_user(i, groups, all_interests):
-    comfort = rng.choices(["easy", "nervous", "anxious"], weights=[3, 5, 2])[0]
+    step = rng.choices(["open", "social", "cozy"], weights=[3, 5, 2])[0]
     interests = rng.sample(all_interests, rng.randint(3, 6))
     free = sorted(rng.sample(SLOTS, rng.randint(2, 5)), key=SLOTS.index)
     moved = rng.randint(1, 18)
@@ -72,7 +72,7 @@ def make_user(i, groups, all_interests):
     def fit(g):
         shared = len(set(g["interests"]) & set(interests))
         score = shared * 2 + (2 if slot_for(g) in free else -3)
-        if comfort != "easy" and g["structure"] == "low":
+        if step != "open" and g["structure"] == "low":
             score -= 2
         return score
 
@@ -94,7 +94,7 @@ def make_user(i, groups, all_interests):
             rng.choice(FROM), "%d months ago" % moved if moved > 1 else "last month", rng.choice(WHY)),
         "interests": interests,
         "freeSlots": free,
-        "comfort": comfort,
+        "step": step,
         "warmth": round(rng.uniform(0.2, 0.9), 2),
         "reliability": reliability,
         "memberships": memberships,

@@ -1,6 +1,6 @@
 # How Empower works (plain English)
 
-A 5-minute read so anyone on the team can explain the app in class. The examples use "Rick": he likes trivia, board games and hiking, is free Tuesday and Thursday evenings and Saturday mornings, and says new groups make him "a bit nervous". The numbers come from running the real code.
+A 5-minute read so anyone on the team can explain the app in class. The examples use "Rick": he likes trivia, board games and hiking, is free Tuesday and Thursday evenings and Saturday mornings, and his "this or that" answers were mixed on big vs small groups, so he starts at the Social step. The numbers come from running the real code.
 
 ## 1. How the weekly picks are chosen
 
@@ -12,9 +12,10 @@ Every group meets weekly, so the app first lists every session in the next 8 day
 | +4 | It's at a time you said you're free |
 | -4 | It isn't |
 | +3 | You've been to this group before (going back is how friendships form) |
-| +2 | You're nervous or anxious and the group has a built-in activity |
-| -2 or -4 | You're nervous or anxious and it's open mingling |
-| +1 | You're anxious and the group is small (10 or fewer) |
+| +2 | You're at Cozy or Social and the group has a built-in activity |
+| -2 or -4 | You're at Social or Cozy and it's open mingling |
+| +1 | You're at Cozy and the group is small (10 or fewer) |
+| +2 | Your answers lean "doing something together" and it's an activity group, or lean "talking" and it's a talk group |
 
 **Rick's week:**
 
@@ -40,7 +41,7 @@ Code: `findConflict`, `suggestLeaveTime`, `cancellationOutcome`, `canCheckIn`, `
 
 ## 3. The other users (synthetic)
 
-There are no real users yet, so `data/population.js` holds **500 invented people** made by `scripts/generate_population.py`. Each one has interests, free times, a comfort level, and membership in 1 to 3 groups that suit them. Each group has a few **regulars** (they come most weeks) and a long tail of occasional visitors.
+There are no real users yet, so `data/population.js` holds **500 invented people** made by `scripts/generate_population.py`. Each one has interests, free times, a comfort step, and membership in 1 to 3 groups that suit them. Each group has a few **regulars** (they come most weeks) and a long tail of occasional visitors.
 
 **Who goes to a session** isn't stored anywhere. For each person, the app turns "person + group + week" into a number between 0 and 1. If it's below that person's attendance rate for the group, they're there. The same inputs always give the same number, so:
 
@@ -78,3 +79,7 @@ Me > Demo tools moves the app's clock in your browser only. "Jump to my next ses
 
 - `AGENTS.md` (and `CLAUDE.md`) tell Codex and Claude the rules, so every teammate's AI follows them.
 - On every PR, GitHub runs the unit tests and `scripts/check_architecture.js`. That check fails if a page reads saved data directly, if rules touch the page or the clock, if a function is missing from `docs/mechanics.md`, or if scripts load in the wrong order.
+
+## Onboarding: "this or that"
+
+Instead of asking how nervous someone is, onboarding asks 8 quick pairs like "Building something side by side" or "A long conversation over coffee". Both sides are meant to sound equally good, so there's no right answer to pick. The answers place you on four dimensions (social energy, doing vs talking, same vs new, routine vs spontaneous). Social energy sets where you start on the comfort ladder: Cozy, Social or Open. After signup, Home asks one more pair a day, which you can skip; the answers keep sharpening your picks. Nobody is ever shown a personality label.

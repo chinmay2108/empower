@@ -16,7 +16,7 @@ const commitFor = (session, status = "committed", id = "c1") => ({
   id, sessionId: session.id, groupId: session.groupId, startsAt: session.startsAt, status
 });
 
-const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], comfort: "nervous" };
+const RICK = { interests: ["trivia", "games", "hiking"], freeSlots: ["tue-eve", "thu-eve", "sat-am"], step: "social" };
 
 test("slotFor maps times to free-time slots", () => {
   assert.equal(logic.slotFor(at(2026, 11, 5, 19)), "thu-eve");
@@ -56,9 +56,9 @@ test("rankPicks skips sessions already committed to and past sessions", () => {
   later.forEach((p) => assert.ok(new Date(p.session.startsAt) > afterThu));
 });
 
-test("an anxious user is not offered open mingling over structured groups", () => {
-  const anxious = { interests: ["music", "games"], freeSlots: ["fri-eve", "mon-eve"], comfort: "anxious" };
-  const picks = logic.rankPicks(sessionsFrom(WED), GROUPS, anxious, [], WED, 1);
+test("a user starting at Cozy is not offered open mingling over structured groups", () => {
+  const cozy = { interests: ["music", "games"], freeSlots: ["fri-eve", "mon-eve"], step: "cozy" };
+  const picks = logic.rankPicks(sessionsFrom(WED), GROUPS, cozy, [], WED, 1);
   assert.notEqual(picks[0].group.structure, "low");
 });
 
@@ -144,4 +144,94 @@ test("sessionById rebuilds a session from its id", () => {
   assert.equal(new Date(s.startsAt).getHours(), 19);
   assert.equal(schedule.sessionById(GROUPS, "nope"), null);
   assert.equal(schedule.sessionById(GROUPS, "g01@2026-11-06"), null); // trivia is Thursdays only
+});
+
+/* ---------- Quiz, comfort step and daily question ---------- */
+
+const QUESTIONS = require("../data/questions.js");
+const answer = (questionId, choice, at = WED.toISOString()) => ({ questionId, choice, at });
+
+test("the question bank has 8 onboarding pairs, 2 per dimension, and unique ids", () => {
+  const onboarding = QUESTIONS.filter((q) => q.onboarding);
+  assert.equal(onboarding.length, 8);
+  ["energy", "style", "novelty", "rhythm"].forEach((d) => {
+    assert.equal(onboarding.filter((q) => q.dim === d).length, 2, d);
+  });
+  assert.equal(new Set(QUESTIONS.map((q) => q.id)).size, QUESTIONS.length);
+  QUESTIONS.forEach((q) => assert.ok(q.a && q.b, q.id));
+});
+
+test("Given answers, traitsFromAnswers averages each dimension from -1 to 1 and ignores skips", () => {
+  const t = logic.traitsFromAnswers([
+    answer("q01", "a"), answer("q05", "a"),   // energy: both small and familiar
+    answer("q02", "b"), answer("q06", "a"),   // style: one each way
+    answer("q03", "skip"),                    // novelty: skipped
+    answer("nope", "b")                       // unknown question
+  ], QUESTIONS);
+  assert.deepEqual(t, { energy: -1, style: 0, novelty: 0, rhythm: 0 });
+});
+
+test("startingStep comes from social energy: small leans Cozy, mixed Social, big Open", () => {
+  assert.equal(logic.startingStep({ energy: -1 }), "cozy");
+  assert.equal(logic.startingStep({ energy: 0 }), "social");
+  assert.equal(logic.startingStep({ energy: 1 }), "open");
+  assert.equal(logic.startingStep(null), "social");
+});
+
+test("personaFor gives one of six hidden personas", () => {
+  assert.equal(logic.personaFor({ energy: -1, style: -1 }), "cozy-doing");
+  assert.equal(logic.personaFor({ energy: 1, style: 1 }), "open-talking");
+  assert.equal(logic.personaFor({ energy: 0, style: 0 }), "social-doing");
+});
+
+test("stepOf reads the new step and maps profiles saved before the quiz", () => {
+  assert.equal(logic.stepOf({ step: "open" }), "open");
+  assert.equal(logic.stepOf({ comfort: "anxious" }), "cozy");
+  assert.equal(logic.stepOf({ comfort: "nervous" }), "social");
+  assert.equal(logic.stepOf({ comfort: "easy" }), "open");
+  assert.equal(logic.stepOf(null), "social");
+});
+
+test("Given someone who likes doing things together, Then activity groups score higher than talk groups", () => {
+  const sessions = sessionsFrom(WED);
+  const doer = { interests: [], freeSlots: [], step: "open", traits: { style: -1 } };
+  const talker = { interests: [], freeSlots: [], step: "open", traits: { style: 1 } };
+  const trivia = sessions.find((s) => s.groupId === "g01");   // doing
+  const potluck = sessions.find((s) => s.groupId === "g14");  // talking
+  const none = { attendedGroupIds: [] };
+  assert.equal(logic.scoreSession(trivia, group("g01"), doer, none).score - logic.scoreSession(trivia, group("g01"), talker, none).score, 2);
+  assert.equal(logic.scoreSession(potluck, group("g14"), talker, none).score - logic.scoreSession(potluck, group("g14"), doer, none).score, 2);
+});
+
+test("Given onboarding is done, dailyQuestion asks the next pair once a day until the bank runs out", () => {
+  const onboarding = QUESTIONS.filter((q) => q.onboarding).map((q) => answer(q.id, "a"));
+  // Same day as onboarding: nothing more today.
+  assert.equal(logic.dailyQuestion(QUESTIONS, onboarding, at(2026, 11, 4, 20)), null);
+  // Next day: the first daily pair.
+  const thu = at(2026, 11, 5, 9);
+  assert.equal(logic.dailyQuestion(QUESTIONS, onboarding, thu).id, "q09");
+  // Skipping counts for today and moves on to the next pair tomorrow.
+  const skipped = onboarding.concat([answer("q09", "skip", thu.toISOString())]);
+  assert.equal(logic.dailyQuestion(QUESTIONS, skipped, at(2026, 11, 5, 21)), null);
+  assert.equal(logic.dailyQuestion(QUESTIONS, skipped, at(2026, 11, 6, 9)).id, "q10");
+  // Bank used up: no more questions.
+  const all = QUESTIONS.map((q) => answer(q.id, "b"));
+  assert.equal(logic.dailyQuestion(QUESTIONS, all, at(2026, 11, 9, 9)), null);
+});
+
+/* ---------- Empower score ---------- */
+
+test("empowerScore: 10 per confirmed meetup, 1 per answered pair, skips and unconfirmed meetups don't count", () => {
+  const meetups = [{ personId: "u001", at: WED.toISOString(), confirmed: true },
+    { personId: "u002", at: WED.toISOString(), confirmed: false }];
+  const answers = [answer("q01", "a"), answer("q02", "b"), answer("q09", "skip")];
+  assert.equal(logic.empowerScore(meetups, answers), 12);
+  assert.equal(logic.empowerScore([], []), 0);
+});
+
+test("Given a meetup logged today with someone, canLogMeetup blocks a second one until tomorrow", () => {
+  const meetups = [{ personId: "u001", at: at(2026, 11, 4, 10).toISOString(), confirmed: true }];
+  assert.equal(logic.canLogMeetup(meetups, "u001", at(2026, 11, 4, 22)), false);
+  assert.equal(logic.canLogMeetup(meetups, "u002", at(2026, 11, 4, 22)), true);
+  assert.equal(logic.canLogMeetup(meetups, "u001", at(2026, 11, 5, 9)), true);
 });
