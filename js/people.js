@@ -287,6 +287,32 @@ Empower.people = (function () {
   }
 
   /*
+   * introFor(population, session, profile, connections)
+   * At most one intro per session (E9): someone going who is a regular
+   * there (4+ of the last 8 weeks), shares at least one interest with the
+   * user, and hasn't been added yet. Most shared interests wins, then the
+   * most regular, then id. Returns { person, shared[] } or null.
+   */
+  function introFor(population, session, profile, connections) {
+    var added = {};
+    (connections || []).forEach(function (k) { added[k.personId] = true; });
+    var week = weekIndex(session.startsAt);
+    var best = null;
+    attendeesOf(population, session).forEach(function (p) {
+      if (added[p.id]) return;
+      var shared = sharedInterests(p, profile);
+      if (!shared.length) return;
+      var visits = 0;
+      for (var w = week - 8; w < week; w++) if (attends(p, session.groupId, w)) visits += 1;
+      if (visits < REGULAR_MIN) return;
+      var better = !best || shared.length > best.shared.length ||
+        (shared.length === best.shared.length && (visits > best.visits || (visits === best.visits && p.id < best.person.id)));
+      if (better) best = { person: p, shared: shared, visits: visits };
+    });
+    return best ? { person: best.person, shared: best.shared } : null;
+  }
+
+  /*
    * familiarFaces(population, commitments, connections, minSessions)
    * People the user keeps seeing but hasn't added: [{ person, sessions }]
    * with at least minSessions (default 3) sessions together, most first,
@@ -353,6 +379,7 @@ Empower.people = (function () {
   }
 
   return {
+    introFor: introFor,
     familiarFaces: familiarFaces,
     lastSeenTogether: lastSeenTogether,
     needsNudge: needsNudge,

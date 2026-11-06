@@ -212,3 +212,24 @@ test("warmGoing lists only added matches at Kindling or warmer who are going", (
   assert.equal(out.some((p) => p.id === regular.id), matched);
   assert.deepEqual(people.warmGoing(POP, session, [], cs, GROUPS, RICK), []);
 });
+
+/* ---------- Intros before sessions (E9) ---------- */
+
+test("introFor picks one regular going who shares an interest and isn't added yet", () => {
+  const sessions = schedule.upcomingSessions(GROUPS, NOW, 7);
+  const lover = { interests: GROUPS.flatMap((g) => g.interests), createdAt: "x" }; // shares something with everyone
+  const withIntro = sessions.map((s) => ({ s, intro: people.introFor(POP, s, lover, []) })).find((x) => x.intro);
+  assert.ok(withIntro, "some session has an intro");
+  const { s, intro } = withIntro;
+  assert.ok(people.attendeesOf(POP, s).some((p) => p.id === intro.person.id), "they're going");
+  assert.ok(intro.shared.length >= 1);
+  const week = people.weekIndex(s.startsAt);
+  let visits = 0;
+  for (let w = week - 8; w < week; w++) if (people.attends(intro.person, s.groupId, w)) visits += 1;
+  assert.ok(visits >= 4, "a regular");
+  // Once added, someone else (or nobody) is suggested.
+  const next = people.introFor(POP, s, lover, [{ personId: intro.person.id }]);
+  assert.ok(!next || next.person.id !== intro.person.id);
+  // Nobody shares an interest: no intro.
+  assert.equal(people.introFor(POP, s, { interests: [] }, []), null);
+});

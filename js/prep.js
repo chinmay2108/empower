@@ -34,6 +34,9 @@
   };
   var confirmingCancel = false;
   var going = Empower.people.attendeesOf(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt });
+  var intro = Empower.people.introFor(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt },
+    store.getProfile(), store.getConnections());
+  if (intro) Empower.log("prep.intro_shown", { person: intro.person.id, commitment: c.id });
   var warm = Empower.people.warmGoing(store.getPopulation(), { groupId: c.groupId, startsAt: c.startsAt },
     store.getConnections(), store.getCommitments(), store.getGroups(), store.getProfile());
 
@@ -65,6 +68,10 @@
       "<li><span>Where</span><span>" + group.venue + "</span></li>" +
       "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li>" +
       (going.length ? "<li><span>Also going</span><span>" + ui.namesText(going, 2) + "</span></li>" : "") + "</ul>" +
+      (intro ? '<div class="card card--outline"><p class="eyebrow">Someone to look for</p><p class="card__title">' +
+        intro.person.name.split(" ")[0] + " will be there. You two would get on.</p>" +
+        '<p class="card__meta">They\'re a regular here and also like ' + intro.shared.slice(0, 2).join(" and ") +
+        ". Ask what keeps them coming back.</p></div>" : "") +
       '<p class="label">What to expect</p><p class="small muted">' + EXPECT[group.structure] + "</p>" +
       '<p class="label mt-4">Two easy openers</p><ul class="tips small"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>" +
       '<p class="label">If it\'s not your night</p><p class="small muted">Give it 30 minutes. Leaving after that is completely fine.</p>' +
