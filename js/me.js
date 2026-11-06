@@ -26,6 +26,8 @@
   host.innerHTML =
     '<h1 class="title">' + (profile ? ui.escapeHtml(profile.name) : "Your progress") + "</h1>" +
     '<p class="subtitle">Friendships take repeat time with the same people. Here\'s yours.</p>' +
+    (profile ? '<p><span class="score-badge">Empower score ' +
+      logic.empowerScore(store.getMeetups(), store.getAnswers()) + "</span></p>" : "") +
     '<div class="stat-row">' +
     '<div class="stat"><div class="stat__value">' + logic.totalHours(commitments, groups) + '</div><div class="stat__label">hours together</div></div>' +
     '<div class="stat"><div class="stat__value">' + (score.total ? score.attended + "/" + score.total : "–") + '</div><div class="stat__label">show-up score</div></div></div>' +

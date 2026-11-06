@@ -18,6 +18,7 @@
                                     traits { energy, style, novelty, rhythm } from Empower.logic.traitsFromAnswers.
                                     Older profiles have comfort "easy" | "nervous" | "anxious" instead of step
                                     (read it with Empower.logic.stepOf).
+     Meetup       many:             { id, personId, at, confirmed }  (a private meetup with a match)
      Answer       many:             { questionId, choice: "a" | "b" | "skip", at }  (data/questions.js)
      Group        seed data:        see data/groups.js
      Session      generated:        see js/schedule.js
@@ -39,7 +40,8 @@ Empower.store = (function () {
     reflections: "empower.reflections",
     connections: "empower.connections",
     messages: "empower.messages",
-    answers: "empower.answers"
+    answers: "empower.answers",
+    meetups: "empower.meetups"
   };
 
   function read(key, fallback) {
@@ -88,6 +90,19 @@ Empower.store = (function () {
       list.push(item);
       write(KEYS.answers, list);
       Empower.log("store.answer_saved", { questionId: item.questionId, choice: item.choice });
+      return item;
+    },
+
+    /* ---- Meetups: private meetups with a match, outside sessions ---- */
+    getMeetups: function () {
+      return read(KEYS.meetups, []);
+    },
+    addMeetup: function (fields) {
+      var list = read(KEYS.meetups, []);
+      var item = { id: newId("u"), personId: fields.personId, at: fields.at, confirmed: !!fields.confirmed };
+      list.push(item);
+      write(KEYS.meetups, list);
+      Empower.log("store.meetup_added", { personId: item.personId, confirmed: item.confirmed });
       return item;
     },
 

@@ -81,6 +81,7 @@
       store.saveProfile(profile);
     }
     Empower.log("home.daily_answered", { questionId: questionId, choice: choice });
+    if (choice !== "skip") ui.toast("+1 Empower score");
     var card = el.closest(".card");
     card.innerHTML = '<p class="card__title">' + (choice === "skip" ? "No problem. See you tomorrow." : "Got it. Your picks just got sharper.") + "</p>";
   });
