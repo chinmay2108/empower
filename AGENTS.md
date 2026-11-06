@@ -14,7 +14,7 @@ A mobile web app that helps people new to a city keep going back to the same gro
 
 | Layer | Files | Owner | Rule |
 | --- | --- | --- | --- |
-| Rules (mechanics) | `js/logic.js`, `js/people.js`, `js/schedule.js` | Chinmaya | Pure functions only: no DOM, no localStorage, no `new Date()` without an argument. Pass `now` in. |
+| Rules (mechanics) | `js/logic.js`, `js/people.js`, `js/schedule.js`, `js/demo.js` | Chinmaya | Pure functions only: no DOM, no localStorage, no `new Date()` without an argument. Pass `now` in. |
 | Data layer | `js/store.js` | Chinmaya | The only file that touches localStorage (except the demo clock in `js/ui.js`). |
 | Data | `data/groups.js`, `data/population.js`, `scripts/` | Chinmaya | `data/population.js` is generated: change `scripts/generate_population.py` and rerun it, never hand-edit. All people are synthetic. |
 | Tests | `tests/` | Chinmaya | Every rule has a test. |

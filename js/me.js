@@ -47,6 +47,10 @@
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +
     '<div class="demo"><p class="label">Demo tools</p>' +
+    '<p class="small muted">Load a sample user with six weeks of history (replaces your data in this browser):</p>' +
+    '<div class="btn-row mt-3">' + Empower.demo.list().map(function (d) {
+      return '<button type="button" class="btn btn--secondary btn--small" data-persona="' + d.key + '">' + d.label.split(":")[0] + "</button>";
+    }).join("") + "</div>" +
     '<p class="small muted">App time: <strong>' + ui.formatDay(now.toISOString()) + " · " + ui.formatTime(now.toISOString()) + "</strong>" +
     (Empower.clock.isShifted() ? " (shifted)" : "") + "</p>" +
     (next ? '<button type="button" class="btn btn--small mt-3" data-demo="to-next">Jump to my next session</button>' : "") +
@@ -55,7 +59,24 @@
     '<div class="btn-row mt-3"><button type="button" class="btn btn--secondary btn--small" data-demo="now">Back to real time</button>' +
     '<button type="button" class="btn btn--secondary btn--small" data-demo="reset">Erase my data</button></div></div>';
 
+  /* Save a sample user through the store, then reload. */
+  function loadPersona(key) {
+    store.resetAll();
+    var d = Empower.demo.build(key, Empower.clock.now(), store.getGroups(), store.getPopulation(), Empower.QUESTIONS);
+    store.saveProfile(d.profile);
+    d.answers.forEach(function (a) { store.saveAnswer(a); });
+    d.commitments.forEach(function (c) { store.addCommitment(c); });
+    d.reflections.forEach(function (r) { store.addReflection(r); });
+    d.connections.forEach(function (k) { store.addConnection(k); });
+    d.meetups.forEach(function (m) { store.addMeetup(m); });
+    d.messages.forEach(function (m) { store.addMessage(m); });
+    Empower.log("me.persona_loaded", { persona: key, commitments: d.commitments.length, matches: d.connections.length });
+    window.location.reload();
+  }
+
   host.addEventListener("click", function (e) {
+    var persona = e.target.closest("[data-persona]");
+    if (persona) { loadPersona(persona.getAttribute("data-persona")); return; }
     if (e.target.closest('[data-action="step-down"]')) {
       var down = logic.stepDown(logic.stepOf(profile));
       store.saveProfile(Object.assign({}, profile, { step: down, stepChangedAt: now.toISOString() }));
