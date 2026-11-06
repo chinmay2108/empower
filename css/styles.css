@@ -1014,3 +1014,8 @@ a { color: inherit; }
 .deck__btn--no svg { stroke: var(--color-danger); }
 .deck__btn--yes { background: var(--color-text); border-color: var(--color-text); }
 .deck__btn--yes svg { stroke: var(--color-bg); }
+
+/* Browse: the passed picks, highlighted */
+.pick--highlight { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.pick__link { display: block; color: inherit; text-decoration: none; }
+.tag { white-space: nowrap; }
