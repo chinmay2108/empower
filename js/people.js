@@ -341,9 +341,11 @@ Empower.people = (function () {
 
   /*
    * familiarFaces(population, commitments, connections, minSessions)
-   * People the user keeps seeing but hasn't added: [{ person, sessions }]
+   * People the user keeps seeing but hasn't added: [{ person, sessions, last }]
    * with at least minSessions (default 3) sessions together, most first,
-   * at most 5. Lets the app say "You've been at 3 sessions with Hassan".
+   * at most 5. last is the latest commitment you were both at, so the
+   * user can add them "from" that session. Lets the app say "You've been
+   * at 3 sessions with Hassan".
    */
   function familiarFaces(population, commitments, connections, minSessions) {
     var min = minSessions || 3;
@@ -351,7 +353,10 @@ Empower.people = (function () {
     (connections || []).forEach(function (k) { added[k.personId] = true; });
     return population
       .filter(function (p) { return !added[p.id]; })
-      .map(function (p) { return { person: p, sessions: sessionsTogether(p, commitments) }; })
+      .map(function (p) {
+        var shared = sharedSessions(p, commitments).sort(function (a, b) { return a.startsAt < b.startsAt ? -1 : 1; });
+        return { person: p, sessions: shared.length, last: shared[shared.length - 1] || null };
+      })
       .filter(function (x) { return x.sessions >= min; })
       .sort(function (a, b) { return b.sessions - a.sessions || (a.person.id < b.person.id ? -1 : 1); })
       .slice(0, 5);

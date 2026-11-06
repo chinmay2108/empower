@@ -246,3 +246,10 @@ test("threadSeed: 2 or 3 people who were there post after it ends, the same ever
   });
   assert.deepEqual(people.threadSeed(POP, s, g.durationMin), posts);
 });
+
+test("familiarFaces includes the latest session together, to add them from", () => {
+  const cs = theirThursdays.slice(0, 3).map(triviaOn);
+  const me = people.familiarFaces(POP, cs, [], 3).find((f) => f.person.id === regular.id);
+  assert.equal(me.last.id, "ff2");
+  assert.equal(me.last.groupId, "g01");
+});
