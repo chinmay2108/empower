@@ -29,11 +29,14 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | --- | --- |
 | `upcomingSessions(groups, fromDate, days)` | Dated sessions, soonest first. Session id is `groupId@YYYY-MM-DD`. |
 | `sessionById(groups, id)` | One session, or `null`. |
+| `dateKey(date)` | Local date as `"YYYY-MM-DD"`. |
 
 ## Rules: `Empower.logic` (pure, unit tested)
 
 | Call | What it decides |
 | --- | --- |
+| `slotFor(date)` | The free-time slot a moment falls in, e.g. `"thu-eve"`, `"sat-am"`. |
+| `scoreSession(session, group, profile, history)` | `{ score, reasons[] }` for one session (used by `rankPicks`). |
 | `rankPicks(sessions, groups, profile, commitments, now, limit)` | Top picks, one per group: `[{ session, group, score, reasons }]`. |
 | `explain(reasons)` | One sentence for "why this fits you". |
 | `findConflict(commitments, session, groups)` | The overlapping commitment, or `null`. |
@@ -63,6 +66,8 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | `Empower.store.getPopulation()` / `getPerson(id)` | The synthetic people. Read-only. |
 | `Empower.store.getConnections()` / `addConnection({ personId, sessionId, groupId })` | People the user added after a session. |
 | `Empower.store.getMessages(personId)` / `addMessage({ personId, from, text, sessionId? })` | Chat history. `from` is `"me"`, `"them"` or `"app"`. |
+| `Empower.people.hash01(text)`, `weekIndex(date)` | Building blocks: a repeatable number in [0, 1) from text; weeks since Jan 4, 2026. |
+| `Empower.people.attends(person, groupId, week)` | Whether one person goes to a group that week. |
 | `Empower.people.attendeesOf(population, session)` | Who was at (or is going to) a session. Same answer every time, for any week. |
 | `Empower.people.groupStats(population, groupId, now)` | `{ people, regulars, avgTurnout }` over the last 8 weeks. |
 | `Empower.people.sharedInterests(person, profile)` | Interests in common. |
