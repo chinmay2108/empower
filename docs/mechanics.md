@@ -94,7 +94,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 
 ## Observability
 
-`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
+`Empower.log("area.what_happened", details)` at key moments. Current events include `onboarding.completed` (with `step` and `persona`), `home.daily_answered`, `person.meetup_logged`, `reflect.stage_up`, `reflect.step_up`, `me.stepped_down`, `home.slot_checked`, `me.persona_loaded`, `lab.ran`, `prep.intro_shown`, `ui.toast`, `commit.saved`, `commit.conflict`, `prep.checked_in`, `prep.cancelled`, `reflect.saved`.
 
 ## Tests
 
@@ -118,6 +118,7 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | `Empower.people.addBackChance(person, profile, together)` / `willAddBack(...)` | Whether a person adds the user back (0.2 base, plus shared interests, their warmth, and time together, max 0.9). Deterministic per person and user. |
 | `Empower.people.suggestPlan(person, profile, groups, sessions, now, excludeSessionIds)` | A session to go to together, or `null`. |
 | `Empower.people.reply(person, text, turn)` | A rule-based chat reply. Session 9 (agentic UX) could swap this for a model. |
+| `Empower.people.introFor(population, session, profile, connections)` | At most one intro per session (E9): a regular there (4+ of the last 8 weeks) who's going, shares an interest, and isn't added yet. `{ person, shared[] }` or `null`. Shown on the day-of plan. |
 | `Empower.people.familiarFaces(population, commitments, connections, minSessions)` | People you keep seeing but haven't added: `[{ person, sessions }]`, 3+ sessions together by default, top 5. Shown on People as "Familiar faces". |
 | `Empower.people.lastSeenTogether(person, commitments)` / `needsNudge(person, commitments, now)` | Latest session together; `true` once it's been 3 weeks. Stages never cool down; People shows a nudge instead. |
 | `Empower.people.warmGoing(population, session, connections, commitments, groups, profile)` | Matches at Kindling or warmer going to a session, for prep ("Emeka will be there"). |
