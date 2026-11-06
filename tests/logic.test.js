@@ -73,7 +73,7 @@ test("a group the user already attended gets a boost", () => {
 
 test("Given a commitment, When committing to an overlapping session, Then a conflict is found", () => {
   const sessions = sessionsFrom(WED);
-  const climbing = sessions.find((s) => s.groupId === "g10"); // Thu 18:00-20:00
+  const climbing = sessions.find((s) => s.groupId === "g06"); // game club, Thu 17:00-21:00
   const trivia = sessions.find((s) => s.groupId === "g01");   // Thu 19:00-21:00
   const hike = sessions.find((s) => s.groupId === "g12");
   const existing = [commitFor(climbing)];
@@ -118,8 +118,8 @@ test("show-up score counts attended over attended plus missed, ignoring timely c
 
 test("progress sums hours per group from attended sessions only", () => {
   const list = [
-    { id: "a", groupId: "g06", startsAt: "x", status: "attended" },
-    { id: "b", groupId: "g06", startsAt: "y", status: "attended" },
+    { id: "a", groupId: "g14", startsAt: "x", status: "attended" },
+    { id: "b", groupId: "g14", startsAt: "y", status: "attended" },
     { id: "c", groupId: "g01", startsAt: "z", status: "missed" }
   ];
   const rows = logic.progressByGroup(list, GROUPS);
@@ -198,10 +198,10 @@ test("Given someone who likes doing things together, Then activity groups score 
   const doer = { interests: [], freeSlots: [], step: "open", traits: { style: -1 } };
   const talker = { interests: [], freeSlots: [], step: "open", traits: { style: 1 } };
   const trivia = sessions.find((s) => s.groupId === "g01");   // doing
-  const potluck = sessions.find((s) => s.groupId === "g14");  // talking
+  const potluck = sessions.find((s) => s.groupId === "g07");  // city market, talking
   const none = { attendedGroupIds: [] };
   assert.equal(logic.scoreSession(trivia, group("g01"), doer, none).score - logic.scoreSession(trivia, group("g01"), talker, none).score, 2);
-  assert.equal(logic.scoreSession(potluck, group("g14"), talker, none).score - logic.scoreSession(potluck, group("g14"), doer, none).score, 2);
+  assert.equal(logic.scoreSession(potluck, group("g07"), talker, none).score - logic.scoreSession(potluck, group("g07"), doer, none).score, 2);
 });
 
 test("Given onboarding is done, dailyQuestion asks the next pair once a day until the bank runs out", () => {

@@ -24,18 +24,18 @@ Empower.demo = (function () {
   var PERSONAS = {
     maya: {
       name: "Maya", label: "Maya: small groups, hands busy",
-      interests: ["crafts", "arts", "volunteering", "photography"], freeSlots: ["tue-eve", "sun-am"],
+      interests: ["dancing", "music", "volunteering", "community"], freeSlots: ["wed-eve", "sat-am"],
       groupIds: ["g04", "g09"], leans: { energy: "aa", style: "aa", novelty: "aa", rhythm: "aa" }
     },
     rick: {
       name: "Rick", label: "Rick: a bit of everything",
-      interests: ["trivia", "games", "hiking", "outdoors"], freeSlots: ["thu-eve", "sat-am", "sun-am"],
+      interests: ["trivia", "games", "running", "board games"], freeSlots: ["thu-eve", "mon-eve", "sun-pm"],
       groupIds: ["g01", "g12"], leans: { energy: "ab", style: "aa", novelty: "bb", rhythm: "aa" }
     },
     priya: {
       name: "Priya", label: "Priya: big crowds, good talks",
-      interests: ["languages", "food", "cooking", "music"], freeSlots: ["tue-eve", "fri-eve", "sat-am"],
-      groupIds: ["g13", "g14", "g07"], leans: { energy: "bb", style: "bb", novelty: "bb", rhythm: "bb" }
+      interests: ["music", "comedy", "food", "performance"], freeSlots: ["mon-eve", "wed-eve", "sat-am"],
+      groupIds: ["g11", "g08", "g07"], leans: { energy: "bb", style: "bb", novelty: "bb", rhythm: "bb" }
     }
   };
 
