@@ -88,6 +88,10 @@ In `scoreSession`, Cozy and Social get +2 for high structure and lose points for
 | --- | --- |
 | `Empower.store.getMeetups()` / `addMeetup({ personId, at, confirmed })` | Private meetups with a match, outside sessions. |
 | `empowerScore(meetups, answers)` | The public score: 10 per confirmed meetup, 1 per answered pair. Skips and unconfirmed meetups don't count. |
+| `emberLevel(score)` | How the score's ember looks: `{ level, name, next }`; spark 0-9, warm 10-29, glow 30-59, blaze 60+. |
+| `scoreParts(meetups, answers)` | `{ meetups, answers }` counted in the score, for "3 meetups · 9 answers". |
+| `Empower.ui.ember(score, size)` | The score as a flame plus the number; the flame warms with the level. |
+| `Empower.ui.avatar(person, size)` | The person's photo from `data/photos.js` (`Empower.PHOTOS`, id to file in `img/people/`), or their initials. |
 | `canLogMeetup(meetups, personId, now)` | `false` if a meetup with that person was already logged today. |
 | `Empower.people.scoreOf(person)` | A synthetic person's fixed public score (0 to 120). |
 | `Empower.people.confirmsMeetup(person, profile, together, userKey)` | Whether a synthetic person confirms a meetup: yes if they're a mutual match. A real backend (E12) replaces this with the other person tapping confirm. |

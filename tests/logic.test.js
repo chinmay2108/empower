@@ -438,3 +438,18 @@ test("historyFor counts visits per group for pitch", () => {
   const { cs, rs } = ratedTrivia(2, true);
   assert.deepEqual(logic.historyFor(RICK, cs, rs, GROUPS, WED).visitsByGroup, { g01: 2 });
 });
+
+/* ---------- Empower score: ember levels ---------- */
+
+test("emberLevel: spark under 10, warm from 10, glow from 30, blaze from 60", () => {
+  assert.deepEqual(logic.emberLevel(0), { level: 0, name: "spark", next: 10 });
+  assert.deepEqual(logic.emberLevel(23), { level: 1, name: "warm", next: 30 });
+  assert.deepEqual(logic.emberLevel(30), { level: 2, name: "glow", next: 60 });
+  assert.deepEqual(logic.emberLevel(120), { level: 3, name: "blaze", next: null });
+});
+
+test("scoreParts counts confirmed meetups and real answers", () => {
+  const meetups = [{ confirmed: true }, { confirmed: false }];
+  const answers = [{ choice: "a" }, { choice: "skip" }, { choice: "b" }];
+  assert.deepEqual(logic.scoreParts(meetups, answers), { meetups: 1, answers: 2 });
+});

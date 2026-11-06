@@ -15,7 +15,7 @@
    fails if a file is missing from the list.
    ========================================================================== */
 
-var CACHE = "empower-v2";
+var CACHE = "empower-v3";
 var NETWORK_WAIT_MS = 3000;
 
 var FILES = [
@@ -54,6 +54,7 @@ var FILES = [
   "./js/thread.js",
   "./js/ui.js",
   "./data/groups.js",
+  "./data/photos.js",
   "./data/population.js",
   "./data/questions.js",
   "./icons/apple-touch-icon.png",
