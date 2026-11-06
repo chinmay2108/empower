@@ -6,15 +6,17 @@
    and works with no signal. It does nothing when index.html is opened as
    a file from your computer.
 
-   How it serves a file: from the saved copy if there is one, while it
-   fetches a fresh copy in the background for next time (so a new deploy
-   shows up on the second open). With no saved copy, from the network.
+   How it serves a file: it asks the network first, so a new deploy shows
+   up the first time the app is opened, and saves that fresh copy. If the
+   network fails or takes longer than 3 seconds, it uses the saved copy
+   instead, so the app still opens fast offline or on a bad connection.
 
    Adding a new page or script? Add it to FILES below. tests/pwa.test.js
    fails if a file is missing from the list.
    ========================================================================== */
 
-var CACHE = "empower-v1";
+var CACHE = "empower-v2";
+var NETWORK_WAIT_MS = 3000;
 
 var FILES = [
   "./index.html",
@@ -81,8 +83,12 @@ self.addEventListener("fetch", function (event) {
       var fresh = fetch(event.request).then(function (response) {
         if (response.ok) cache.put(event.request, response.clone());
         return response;
-      }).catch(function () { return saved; });
-      return saved || fresh;
+      });
+      if (!saved) return fresh;
+      // Network first, but don't keep someone waiting: after 3 seconds, or on
+      // any network error, show the saved copy (the fetch still updates it).
+      var fallback = new Promise(function (resolve) { setTimeout(function () { resolve(saved); }, NETWORK_WAIT_MS); });
+      return Promise.race([fresh.catch(function () { return saved; }), fallback]);
     });
   }));
 });
