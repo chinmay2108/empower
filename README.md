@@ -19,6 +19,8 @@ Then open http://localhost:8000.
 
 **Live site:** GitHub Pages, at https://chinmay2108.github.io/empower/ once Pages is turned on (Settings > Pages > Deploy from branch > `main`).
 
+**Install it like an app:** open the live site on your phone. iPhone (Safari): Share > Add to Home Screen. Android (Chrome): menu > Install app. It opens full-screen and works offline. This only works on the live site (https), not when you open `index.html` as a file; the app itself works the same either way. How it works: `manifest.webmanifest` (name, icons) and `sw.js` (saves every file for offline). Adding a page or script? Add it to the list in `sw.js`; `tests/pwa.test.js` checks.
+
 **Clickable mockups of every flow:** open `prototype/index.html` (live: https://chinmay2108.github.io/empower/prototype/). Sample data, no logic. Use them to agree on a screen before building it.
 
 **Start from a clean slate:** open the browser console (Cmd+Option+J) and run `Empower.store.resetAll()`, then reload.
