@@ -20,6 +20,7 @@
   var score = logic.showUpScore(commitments, groups, now);
   var next = logic.nextCommitment(commitments, now);
 
+  var STEP_NAMES = { cozy: "Cozy", social: "Social", open: "Open" };
   var SLOT_LABELS = { "sat-am": "Sat morning", "sat-pm": "Sat afternoon", "sun-am": "Sun morning", "sun-pm": "Sun afternoon" };
   function slotLabel(s) { return SLOT_LABELS[s] || s.slice(0, 3).replace(/^./, function (x) { return x.toUpperCase(); }) + " evening"; }
 
@@ -40,7 +41,9 @@
     '<h2 class="section-title">Your setup</h2>' +
     (profile ? '<ul class="facts"><li><span>Interests</span><span>' + profile.interests.join(", ") + "</span></li>" +
       "<li><span>Free</span><span>" + profile.freeSlots.map(slotLabel).join(", ") + "</span></li>" +
-      "<li><span>Picks start at</span><span>" + { cozy: "Cozy", social: "Social", open: "Open" }[logic.stepOf(profile)] + "</span></li></ul>" +
+      "<li><span>Comfort step</span><span><span class=\"score-badge\">" + STEP_NAMES[logic.stepOf(profile)] + "</span></span></li></ul>" +
+      (logic.stepOf(profile) !== "cozy" ? '<p class="small muted">Picks feeling like too much? <button type="button" class="link-btn" data-action="step-down">Move back to ' +
+        STEP_NAMES[logic.stepDown(logic.stepOf(profile))] + "</button></p>" : "") +
       '<a class="btn btn--secondary" href="onboarding.html?edit=1">Edit preferences</a>' :
       '<a class="btn" href="onboarding.html">Set up your profile</a>') +
     '<div class="demo"><p class="label">Demo tools</p>' +
@@ -53,6 +56,14 @@
     '<button type="button" class="btn btn--secondary btn--small" data-demo="reset">Erase my data</button></div></div>';
 
   host.addEventListener("click", function (e) {
+    if (e.target.closest('[data-action="step-down"]')) {
+      var down = logic.stepDown(logic.stepOf(profile));
+      store.saveProfile(Object.assign({}, profile, { step: down, stepChangedAt: now.toISOString() }));
+      Empower.log("me.stepped_down", { to: down });
+      ui.toast("Picks are back to " + STEP_NAMES[down]);
+      setTimeout(function () { window.location.reload(); }, 900);
+      return;
+    }
     var el = e.target.closest("[data-demo]");
     if (!el) return;
     var a = el.getAttribute("data-demo");
