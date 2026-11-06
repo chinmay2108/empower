@@ -26,6 +26,8 @@ A mobile web app that helps people new to a city keep going back to the same gro
 
 **If your task is mechanics work, do not change page markup or styles** beyond the minimum needed to call a new function.
 
+**Exception for new features:** Chinmaya may ship basic working screens for a new feature, styled only with the existing CSS variables, so the feature can be tested end to end. Mockups for these live in the team design canvas, not in `prototype/`. Daniel owns the final look and restyles these screens; the logic they call does not change when he does.
+
 ## The contract
 `docs/mechanics.md` lists every function pages may call. When you add or change one:
 1. Update the function, keeping it pure.
