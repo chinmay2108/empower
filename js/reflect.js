@@ -61,11 +61,26 @@
     }).join("") + "</div>";
   }
 
+  /* The most recent note you left at this group (not this session), or null. */
+  function lastNote(c) {
+    var byId = {};
+    store.getCommitments().forEach(function (x) { byId[x.id] = x; });
+    var notes = store.getReflections().filter(function (r) {
+      var rc = byId[r.commitmentId];
+      return rc && rc.id !== c.id && rc.groupId === c.groupId && r.note;
+    }).map(function (r) { return { note: r.note, startsAt: byId[r.commitmentId].startsAt }; });
+    notes.sort(function (a, b) { return a.startsAt < b.startsAt ? 1 : -1; });
+    return notes[0] || null;
+  }
+
   function renderForm(c) {
     var g = groupOf(c);
+    var last = lastNote(c);
     host.innerHTML =
       '<h1 class="title">How was it?</h1><p class="subtitle">' + g.name + " · " + when(c) + "</p>" +
       (form.error ? '<div class="notice notice--error" role="alert">' + form.error + "</div>" : "") +
+      (last ? '<div class="card"><p class="card__title">Last time you wrote</p><p class="card__meta">"' + ui.escapeHtml(last.note) +
+        '" · ' + ui.formatDay(last.startsAt) + "</p></div>" : "") +
       '<p class="label">Overall</p>' + choiceRow("enjoyed", [["1", "Meh"], ["2", "Good"], ["3", "Great"]]) +
       '<p class="label">Did you talk to anyone new?</p>' + choiceRow("talkedToSomeone", [["yes", "Yes"], ["no", "Not really"]]) +
       '<p class="label">Would you go back?</p>' + choiceRow("wouldReturn", [["yes", "Yes"], ["no", "Probably not"]]) +
