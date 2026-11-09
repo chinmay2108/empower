@@ -1,0 +1,657 @@
+{
+  "format_version": "1.0",
+  "document_kind": "template",
+  "system_id": "empower",
+  "tier": 0,
+  "category": "Foundations",
+  "status": "complete",
+  "allowed_dependency_tiers": [],
+  "purpose": "Empower's production foundation tokens. css/design-system.css mirrors these values as CSS variables.",
+  "tokens": [
+    {
+      "category": "color",
+      "token_name": "color.surface.canvas",
+      "token_value": "#ffffff",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.canvas."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.panel",
+      "token_value": "#f5f5f7",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--color-surface)"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.overlay",
+      "token_value": "#ffffff29",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.glass."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.primary",
+      "token_value": "#161616",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Most common matching pixel in a bounded source region; no original design token is available.",
+        "notes": "From events.color.ink."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.secondary",
+      "token_value": "#686868",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Most common matching pixel in a bounded source region; no original design token is available.",
+        "notes": "From events.color.muted."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.inverse",
+      "token_value": "#ffffff",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.white."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.primary",
+      "token_value": "#713ad5",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.purple."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.secondary",
+      "token_value": "#eee5fc",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.purple_bg."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.border.default",
+      "token_value": "#eeeeee",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.line."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.focus.ring",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": "color.action.primary",
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Alias: the focus ring uses the primary action color."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.success",
+      "token_value": "#4cb943",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.green."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.warning",
+      "token_value": "#ca951f",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_3",
+        "figma_node_id": "13:3",
+        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
+        "notes": "From events.color.amber."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.error",
+      "token_value": "#b4401a",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--color-danger)"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.family.body",
+      "token_value": "\"DM Sans\", system-ui, sans-serif",
+      "value_type": "font_family",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "User-authorized provisional font. Exact source font is unidentifiable from PNG; review required.",
+        "notes": "From events.font.family. DM Sans is provisional in the derivation; system fallbacks added."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.family.heading",
+      "token_value": null,
+      "value_type": "font_family",
+      "unit": null,
+      "reference_token": "type.family.body",
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Alias: headings use the body family."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.body",
+      "token_value": 17,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.type.body.size."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.heading",
+      "token_value": 26,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.type.title.size."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.size.label",
+      "token_value": 14,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.type.meta.size."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.weight.regular",
+      "token_value": 400,
+      "value_type": "font_weight",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Available provisional font style; user authorized provisional typography.",
+        "notes": "From events.font.regular. Figma style 'Regular' = 400."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.weight.emphasis",
+      "token_value": 600,
+      "value_type": "font_weight",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Available provisional font style; user authorized provisional typography.",
+        "notes": "From events.font.semibold. Figma style 'SemiBold' = 600."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.line_height.body",
+      "token_value": 24,
+      "value_type": "number",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.type.body.leading."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.line_height.heading",
+      "token_value": 32,
+      "value_type": "number",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.type.title.leading."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "typography",
+      "token_name": "type.letter_spacing.default",
+      "token_value": 0,
+      "value_type": "dimension",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.small",
+      "token_value": 8,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.size.8."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.medium",
+      "token_value": 16,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.size.16."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "spacing",
+      "token_name": "space.large",
+      "token_value": 24,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.size.24."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.small",
+      "token_value": 8,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value. The derivation only measured a pill radius."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.medium",
+      "token_value": 16,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value. The derivation only measured a pill radius."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.pill",
+      "token_value": 999,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Explicit implementation of a fully rounded capsule, observed in reference.",
+        "notes": "From events.radius.pill."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "border",
+      "token_name": "border.width.default",
+      "token_value": 1,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.size.1."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.elevated",
+      "token_value": "0 4px 16px rgba(22, 22, 22, 0.08)",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "blur",
+      "token_name": "blur.overlay",
+      "token_value": 16,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.short",
+      "token_value": 150,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value. Motion can't be measured from the PNG references."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.medium",
+      "token_value": 250,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value. Motion can't be measured from the PNG references."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.easing.standard",
+      "token_value": "ease-out",
+      "value_type": "easing",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.base",
+      "token_value": 0,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.overlay",
+      "token_value": 100,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.disabled",
+      "token_value": 0.4,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; chosen value."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "sizing",
+      "token_name": "size.touch_target",
+      "token_value": 44,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "luma_13_17",
+        "figma_node_id": "13:17",
+        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
+        "notes": "From events.size.44. Also the common minimum tap size on phones."
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "breakpoint",
+      "token_name": "breakpoint.compact",
+      "token_value": 480,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "figma_node_id": null,
+        "measurement_method": null,
+        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--page-width)"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    }
+  ],
+  "components": [],
+  "notes": [
+    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
+    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+  ]
+}

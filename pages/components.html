@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Components · Empower</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+</head>
+<body>
+  <h1>Buttons</h1>
+  <p><button class="button">.button</button></p>
+  <p><button class="button button--secondary">.button .button--secondary</button></p>
+  <p><button class="button button--small">.button .button--small</button></p>
+  <p><button class="button" disabled>.button (disabled)</button></p>
+  <h1>Cards</h1>
+  <div class="card"><p class="card__title">.card</p><p class="card__meta">The default panel.</p></div>
+  <div class="card card--accent"><p class="card__title">.card .card--accent</p><p class="card__meta">For highlights.</p></div>
+  <div class="card card--outline"><p class="card__title">.card .card--outline</p><p class="card__meta">For lists.</p></div>
+  <!-- Shared scripts every page loads (checked by scripts/check_architecture.js). -->
+  <script src="../data/groups.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/schedule.js"></script>
+  <script src="../js/logic.js"></script>
+  <script src="../data/population.js"></script>
+  <script src="../js/people.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* Empower design system: foundation tokens, then recipes.
+   Tokens mirror design_system/tier_00_foundations.json. Keep them in sync
+   until scripts/build_tokens.js generates this file.
+   Rule: below :root, every value is a var(--token). No hex, px or font names. */
+
+:root {
+  --color-surface-canvas: #ffffff;
+  --color-surface-panel: #f5f5f7;
+  --color-surface-overlay: #ffffff29;
+  --color-text-primary: #161616;
+  --color-text-secondary: #686868;
+  --color-text-inverse: #ffffff;
+  --color-action-primary: #713ad5;
+  --color-action-secondary: #eee5fc;
+  --color-border-default: #eeeeee;
+  --color-focus-ring: var(--color-action-primary);
+  --color-status-success: #4cb943;
+  --color-status-warning: #ca951f;
+  --color-status-error: #b4401a;
+  --type-family-body: "DM Sans", system-ui, sans-serif;
+  --type-family-heading: var(--type-family-body);
+  --type-size-body: 17px;
+  --type-size-heading: 26px;
+  --type-size-label: 14px;
+  --type-weight-regular: 400;
+  --type-weight-emphasis: 600;
+  --type-line_height-body: 24px;
+  --type-line_height-heading: 32px;
+  --type-letter_spacing-default: 0;
+  --space-small: 8px;
+  --space-medium: 16px;
+  --space-large: 24px;
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-pill: 999px;
+  --border-width-default: 1px;
+  --shadow-elevated: 0 4px 16px rgba(22, 22, 22, 0.08);
+  --blur-overlay: 16px;
+  --motion-duration-short: 150ms;
+  --motion-duration-medium: 250ms;
+  --motion-easing-standard: ease-out;
+  --layer-base: 0;
+  --layer-overlay: 100;
+  --opacity-disabled: 0.4;
+  --size-touch_target: 44px;
+  --breakpoint-compact: 480px;
+}
+
+/* Button recipe: .button (primary), .button--secondary, .button--small */
+.button {
+  min-height: var(--size-touch_target);
+  padding: 0 var(--space-large);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--type-family-body);
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-emphasis);
+  cursor: pointer;
+}
+.button--secondary {
+  background: var(--color-action-secondary);
+  color: var(--color-action-primary);
+}
+.button--small {
+  padding: 0 var(--space-medium);
+  font-size: var(--type-size-label);
+}
+.button:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Card recipe: .card, .card--accent, .card--outline, with .card__title and .card__meta */
+.card {
+  padding: var(--space-medium);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface-panel);
+  color: var(--color-text-primary);
+  font-family: var(--type-family-body);
+}
+.card + .card {
+  margin-top: var(--space-small);
+}
+.card--accent {
+  background: var(--color-action-secondary);
+}
+.card--outline {
+  background: var(--color-surface-canvas);
+  border: var(--border-width-default) solid var(--color-border-default);
+}
+.card__title {
+  margin: 0;
+  font-size: var(--type-size-body);
+  font-weight: var(--type-weight-emphasis);
+}
+.card__meta {
+  margin: var(--space-small) 0 0;
+  font-size: var(--type-size-label);
+  color: var(--color-text-secondary);
+}
