@@ -1,6 +1,6 @@
 # Empower backlog
 
-Format follows the course (Session 1): each story has a test prompt (for usability testing), an OEC (how we will know it works for the business), and Given-When-Then scenarios. For the PR stories, each owner writes their own scenarios in their PR. That part is graded individual work.
+Format follows the course (Session 1): each story has a test prompt (for usability testing), an OEC (how we will know it works for the business), and Given-When-Then scenarios. For the PR stories, each owner owns the scenarios in their PR (AI may draft them from the owner's direction; the PR says so). That part is graded individual work.
 
 ## Positioning
 

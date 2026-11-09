@@ -49,4 +49,4 @@ A mobile web app that helps people new to a city keep going back to the same gro
   - `node scripts/check_architecture.js`
 - Fill in the PR template (`.github/pull_request_template.md`), including scenarios you actually ran and what the AI got wrong.
 - Pull `main` before starting. If your branch touches a file another open PR also touches, say so in the PR.
-- Graded course PRs: the scenarios, results, PR description and review comments must be written by the human teammate. Draft the code; don't write those parts for them.
+- Graded course PRs: AI may draft the scenarios, results, PR description and review comments, from the teammate's direction and from scenarios actually run. The teammate reviews and owns them, and the PR says they were AI-drafted. Never report a result that wasn't actually run.
