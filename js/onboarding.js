@@ -85,7 +85,7 @@
           '<h1 class="title">Find your people.<br>One group at a time.</h1>' +
           '<p class="subtitle">Tell us a little about you. We\'ll find a few places worth coming back to.</p></div>' +
           '<div class="field"><label class="label" for="name">Your first name</label>' +
-          '<input class="input" id="name" autocomplete="given-name" value="' + ui.escapeHtml(state.name) + '"></div>';
+          '<input class="input" id="name" autocomplete="given-name" maxlength="40" enterkeyhint="next" value="' + ui.escapeHtml(state.name) + '"></div>';
       case 1:
         return '<h1 class="title">What do you enjoy?</h1><p class="subtitle">Pick three or more. You can change them anytime.</p>' +
           chips(INTERESTS, state.interests, "interests") +
@@ -133,6 +133,14 @@
 
   host.addEventListener("input", function (e) {
     if (e.target.id === "name") state.name = e.target.value;
+  });
+
+  /* Enter in the name field does the same as the main button, so the keyboard alone gets you through. */
+  host.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" || e.isComposing || e.target.id !== "name") return;
+    e.preventDefault();
+    var next = host.querySelector('[data-action="next"]');
+    if (next) next.click();
   });
 
   host.addEventListener("click", function (e) {
