@@ -21,12 +21,24 @@ A mobile web app that helps people new to a city keep going back to the same gro
 | UI | `css/styles.css`, `pages/*.html`, `index.html`, the page scripts (`js/home.js`, `js/events.js`, `js/group.js`, `js/commit.js`, `js/prep.js`, `js/reflect.js`, `js/me.js`, `js/matches.js`, `js/person.js`, `js/chat.js`, `js/onboarding.js`, `js/lab-page.js`, `js/thread.js`, `js/browse.js`) | Daniel | Layout, styling, markup and wording. Page scripts call the API in `docs/mechanics.md`; they do not contain business rules. |
 | Design assets | `events_flow/`, `user_connecting_flow/`, `skills/`, `_templates/` | Daniel | Design specs and validators. |
 | Mockups | `prototype/` | Reference only | Superseded by Daniel's designs. Don't extend. |
+| Design system | `design_system/`, `scripts/build_tokens.js`, generated `css/design-system.css` | Daniel | Token-based design system. See "Design system: tokens first" below. |
 
 **If your task is UI work and needs a new rule or new data, do not write the rule in the page.** Stop and tell the user it needs a mechanics change (a new function in `js/logic.js` or `js/people.js`, with a test and a row in `docs/mechanics.md`).
 
 **If your task is mechanics work, do not change page markup or styles** beyond the minimum needed to call a new function.
 
 **Exception for new features:** Chinmaya may ship basic working screens for a new feature, styled only with the existing CSS variables, so the feature can be tested end to end. Mockups for these live in the team design canvas, not in `prototype/`. Daniel owns the final look and restyles these screens; the logic they call does not change when he does.
+
+## Design system: tokens first
+
+Team decision, November 8, 2026: Empower's UI is moving to a **token-based design system**. Every style value comes from a design token, and components are built from recipes that use only tokens.
+
+- **Source of truth:** the foundation tokens in `design_system/tier_00_foundations.json`. This file is filled in from `_templates/components_system_template/tier_00_foundations.json`, with values traced to the team Figma library and `events_flow/`.
+- **Recipes in PandaCSS's shape, without installing Panda.** Recipes are JSON files in `design_system/recipes/`, shaped like Panda recipes: `{ className, base, variants, defaultVariants }`, where every value is a token name. Do not install `@pandacss/dev` or any npm package. The course allows no frameworks, bundlers or build step. If the team adopts Panda later, the recipes and tokens can move into `panda.config`.
+- **Generated plain CSS, committed.** `node scripts/build_tokens.js` (Node standard library only) writes `css/design-system.css`. It has one CSS variable per token, named from the token path (`color.action.primary` becomes `--color-action-primary`), and one class per recipe and variant (`.button`, `.button--variant_secondary`). The file is committed and never edited by hand, like `data/population.js`, so the app still runs with no build step.
+- **Recipes use tokens only.** No hex codes, pixel values or font names inside a recipe. To change a value, edit the foundations file and rerun the script. A test checks that the committed CSS matches the script output.
+- **Markup helpers.** A component that needs HTML gets a small helper in `js/ui.js` that outputs its recipe classes, the way `Empower.ui.avatar` does. Changing `js/ui.js` is a shared-file PR.
+- **Transition.** Existing pages keep using the variables at the top of `css/styles.css` until they are migrated. Each migration is its own PR. New components use the token system.
 
 ## The contract
 `docs/mechanics.md` lists every function pages may call. When you add or change one:
@@ -39,7 +51,7 @@ A mobile web app that helps people new to a city keep going back to the same gro
 - Use `Empower.clock.now()` for the current time, never `new Date()` with no argument in app code.
 - Escape user-typed text with `Empower.ui.escapeHtml` before putting it in HTML.
 - Log key moments with `Empower.log("area.what_happened", {...})`.
-- Colors, type, spacing and radius come from the CSS variables at the top of `css/styles.css`. No inline `style=""` in HTML.
+- Colors, type, spacing and radius come from design tokens: `css/design-system.css` for the token system, or the variables at the top of `css/styles.css` on pages not yet migrated. Never hard-code them. No inline `style=""` in HTML.
 - Every page loads scripts in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `js/schedule.js`, `js/logic.js`, `data/population.js`, `js/people.js`, then its own script.
 
 ## Workflow
