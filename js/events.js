@@ -118,8 +118,26 @@
     undoRow.innerHTML = '<button type="button" class="link-btn" id="undo">Undo</button>';
     setTimeout(function () {
       card.remove();
-      if (!promote()) window.location.href = "browse.html?from=swipes";
+      if (!promote()) lastPassGrace();
     }, 280);
+  }
+
+  /* After the last pass, wait a few seconds before showing everything, so Undo is still in reach. */
+  var GRACE_SECONDS = 8;
+  function lastPassGrace() {
+    var left = GRACE_SECONDS;
+    var actions = host.querySelector(".deck__actions");
+    if (actions) actions.remove();
+    deck.innerHTML = '<div class="empty"><p class="empty__title">That was your last pick this week</p>' +
+      '<p class="mt-4"><a class="btn btn--inline" href="browse.html?from=swipes">See everything now</a></p></div>';
+    var count = document.getElementById("deck-count");
+    function tick() {
+      count.textContent = "Showing everything in " + left + "s.";
+      if (left <= 0) { window.location.href = "browse.html?from=swipes"; return; }
+      left -= 1;
+      setTimeout(tick, 1000);
+    }
+    tick();
   }
 
   /* Undo: right after a pass, take it back and reload, so that card is back on top and the swipe is refunded. */
