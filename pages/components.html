@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Components · Empower</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+</head>
+<body>
+  <!-- A mock "This week" screen built only from the design system, with sample data from data/groups.js. -->
+  <main class="screen">
+    <p class="screen__eyebrow">Mon, Nov 9 to Mon, Nov 16</p>
+    <h1 class="screen__title">This week.</h1>
+
+    <div class="card card--accent">
+      <p class="card__title">Why these picks</p>
+      <p class="card__meta">You're free Wednesday and Thursday evenings, and you like games and dancing.</p>
+    </div>
+
+    <h2 class="screen__section">Your picks</h2>
+    <div class="card">
+      <p class="card__title">Thursday Trivia at Alamo Drafthouse</p>
+      <p class="card__meta">Thu, Nov 12 · 7pm · Alamo Drafthouse, 5th Street Station</p>
+      <p class="card__meta">Jada M. and Aaron B. are going</p>
+      <div class="card__actions">
+        <button class="button">I'm in</button>
+        <button class="button button--secondary">Pass</button>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card__title">Swing Cville Wednesday Lessons</p>
+      <p class="card__meta">Wed, Nov 11 · 7pm · The Front Porch, 221 E Water St</p>
+      <div class="card__actions">
+        <button class="button button--small">I'm in</button>
+        <button class="button button--small button--secondary">Pass</button>
+      </div>
+    </div>
+
+    <h2 class="screen__section">Already going</h2>
+    <div class="card card--outline">
+      <p class="card__title">Charlottesville Game Club</p>
+      <p class="card__meta">Thu, Nov 12 · 5pm · The End Games, 390 Hillsdale Dr</p>
+      <div class="card__actions">
+        <button class="button" disabled>Check in opens at 4:30pm</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared scripts every page loads (checked by scripts/check_architecture.js). -->
+  <script src="../data/groups.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/store.js"></script>
+  <script src="../js/schedule.js"></script>
+  <script src="../js/logic.js"></script>
+  <script src="../data/population.js"></script>
+  <script src="../js/people.js"></script>
+</body>
+</html>
