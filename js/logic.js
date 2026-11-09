@@ -361,6 +361,15 @@ Empower.logic = (function () {
     return Math.max(0, SWIPES_PER_WEEK - passesThisWeek(passes, now).length);
   }
 
+  /* Undo a pass: drop the most recent pass of this session, keep everything else.
+     Returns a new list; passes with no match come back unchanged. */
+  function undoPass(passes, sessionId) {
+    var last = -1;
+    passes.forEach(function (p, i) { if (p.sessionId === sessionId) last = i; });
+    if (last === -1) return passes.slice();
+    return passes.slice(0, last).concat(passes.slice(last + 1));
+  }
+
   /* ---------- Session threads (E16) ---------- */
 
   var THREAD_DAYS = 7;
@@ -721,6 +730,7 @@ Empower.logic = (function () {
     threadOpen: threadOpen,
     passesThisWeek: passesThisWeek,
     swipesLeft: swipesLeft,
+    undoPass: undoPass,
     slotsToCheck: slotsToCheck,
     answerSlotCheck: answerSlotCheck
   };
