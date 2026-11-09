@@ -345,6 +345,7 @@ Empower.logic = (function () {
   /* ---------- This week: swipe to decide ---------- */
 
   var SWIPES_PER_WEEK = 3;
+  var UNDO_GRACE_SECONDS = 8; // after the last pass, how long Undo stays in reach before the full list
 
   /* passesThisWeek(passes, now): passes ({ sessionId, groupId, at }) from the last 7 days. */
   function passesThisWeek(passes, now) {
@@ -359,6 +360,15 @@ Empower.logic = (function () {
    */
   function swipesLeft(passes, now) {
     return Math.max(0, SWIPES_PER_WEEK - passesThisWeek(passes, now).length);
+  }
+
+  /* Undo a pass: drop the most recent pass of this session, keep everything else.
+     Returns a new list; passes with no match come back unchanged. */
+  function undoPass(passes, sessionId) {
+    var last = -1;
+    passes.forEach(function (p, i) { if (p.sessionId === sessionId) last = i; });
+    if (last === -1) return passes.slice();
+    return passes.slice(0, last).concat(passes.slice(last + 1));
   }
 
   /* ---------- Session threads (E16) ---------- */
@@ -721,6 +731,8 @@ Empower.logic = (function () {
     threadOpen: threadOpen,
     passesThisWeek: passesThisWeek,
     swipesLeft: swipesLeft,
+    undoPass: undoPass,
+    UNDO_GRACE_SECONDS: UNDO_GRACE_SECONDS,
     slotsToCheck: slotsToCheck,
     answerSlotCheck: answerSlotCheck
   };

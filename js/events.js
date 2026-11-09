@@ -78,10 +78,12 @@
     '<div class="deck" id="deck">' + picks.map(swipeCard).reverse().join("") + "</div>" +
     '<div class="deck__actions"><button type="button" class="deck__btn deck__btn--no" data-swipe="left" aria-label="Pass">' + CROSS + "</button>" +
     '<button type="button" class="deck__btn deck__btn--yes" data-swipe="right" aria-label="I\'m in">' + CHECK + "</button></div>" +
-    '<p class="small muted center" id="deck-count">' + countText(picks.length) + "</p>";
+    '<p class="small muted center"><span id="deck-count">' + countText(picks.length) + '</span> <span id="undo-row"></span></p>';
 
   var deck = document.getElementById("deck");
+  var undoRow = document.getElementById("undo-row");
   var shown = 0;
+  var lastPassed = null; // the session you just passed, so Undo can bring it back
 
   function top() { return deck.querySelector(".swipe-card.is-top"); }
 
@@ -111,11 +113,39 @@
     store.addPass({ sessionId: sessionId, groupId: card.getAttribute("data-group"), at: now.toISOString() });
     Empower.log("events.swiped_left", { session: sessionId, position: passes.length + shown });
     shown += 1;
+    lastPassed = sessionId;
+    // Added only after a pass, so there is never an Undo with nothing to undo.
+    undoRow.innerHTML = '<button type="button" class="link-btn" id="undo">Undo</button>';
     setTimeout(function () {
       card.remove();
-      if (!promote()) window.location.href = "browse.html?from=swipes";
+      if (!promote()) lastPassGrace();
     }, 280);
   }
+
+  /* After the last pass, wait a few seconds before showing everything, so Undo is still in reach. */
+  function lastPassGrace() {
+    var left = logic.UNDO_GRACE_SECONDS;
+    var actions = host.querySelector(".deck__actions");
+    if (actions) actions.remove();
+    deck.innerHTML = '<div class="empty"><p class="empty__title">That was your last pick this week</p>' +
+      '<p class="mt-4"><a class="btn btn--inline" href="browse.html?from=swipes">See everything now</a></p></div>';
+    var count = document.getElementById("deck-count");
+    function tick() {
+      count.textContent = "Showing everything in " + left + "s.";
+      if (left <= 0) { window.location.href = "browse.html?from=swipes"; return; }
+      left -= 1;
+      setTimeout(tick, 1000);
+    }
+    tick();
+  }
+
+  /* Undo: right after a pass, take it back and reload, so that card is back on top and the swipe is refunded. */
+  undoRow.addEventListener("click", function (e) {
+    if (!e.target.closest("#undo") || !lastPassed) return;
+    store.removePass(lastPassed);
+    Empower.log("events.pass_undone", { session: lastPassed });
+    window.location.reload();
+  });
 
   host.addEventListener("click", function (e) {
     var b = e.target.closest("[data-swipe]");

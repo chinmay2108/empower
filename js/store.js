@@ -112,6 +112,13 @@ Empower.store = (function () {
       Empower.log("store.pass_added", { sessionId: item.sessionId });
       return item;
     },
+    removePass: function (sessionId) {
+      var before = read(KEYS.passes, []);
+      var after = Empower.logic.undoPass(before, sessionId);
+      write(KEYS.passes, after);
+      Empower.log("store.pass_removed", { sessionId: sessionId, removed: before.length - after.length });
+      return before.length !== after.length;
+    },
 
     /* ---- Session threads: posts by the user and replies ---- */
     getThreadPosts: function (sessionId) {

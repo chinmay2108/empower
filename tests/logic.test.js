@@ -470,3 +470,25 @@ test("Given a group swiped left, rankPicks offers the next best instead", () => 
   const next = logic.rankPicks(sessionsFrom(WED), GROUPS, RICK, [], WED, 1, { passedGroupIds: [first.group.id] })[0];
   assert.notEqual(next.group.id, first.group.id);
 });
+
+test("Given passes this week, When I undo a pass, Then only the most recent pass of that session is removed", () => {
+  const passes = [
+    { sessionId: "s1", groupId: "g01", at: "2026-11-09T10:00:00Z" },
+    { sessionId: "s2", groupId: "g02", at: "2026-11-09T10:01:00Z" },
+    { sessionId: "s1", groupId: "g01", at: "2026-11-09T10:02:00Z" }
+  ];
+  const after = logic.undoPass(passes, "s1");
+  assert.deepEqual(after.map((p) => p.at), ["2026-11-09T10:00:00Z", "2026-11-09T10:01:00Z"]);
+  assert.equal(passes.length, 3, "the original list is not changed");
+  assert.equal(logic.swipesLeft(after, new Date("2026-11-09T12:00:00Z")), 1);
+});
+
+test("Given no pass for that session, When I undo, Then nothing changes", () => {
+  const passes = [{ sessionId: "s2", groupId: "g02", at: "2026-11-09T10:01:00Z" }];
+  assert.deepEqual(logic.undoPass(passes, "nope"), passes);
+  assert.deepEqual(logic.undoPass([], "s1"), []);
+});
+
+test("Given the last pass of the week, Then Undo stays available for a short, positive grace window", () => {
+  assert.equal(logic.UNDO_GRACE_SECONDS, 8);
+});

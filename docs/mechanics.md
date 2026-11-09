@@ -185,6 +185,8 @@ This week shows one pick at a time as a card: swipe right (or tap the check) to 
 | Call | What it decides |
 | --- | --- |
 | `passesThisWeek(passes, now)` | Passes from the last 7 days. |
+| `undoPass(passes, sessionId)` | Returns a new list without the most recent pass of that session. Unknown session: list unchanged. Used by Undo on This week. |
+| `UNDO_GRACE_SECONDS` | 8. After the last pass, This week waits this long, with Undo showing, before moving to the full list. |
 | `swipesLeft(passes, now)` | Picks left to see this week: 3 minus passes this week, never below 0. |
-| `Empower.store.getPasses()` / `addPass({ sessionId, groupId, at })` | Picks swiped left. `rankPicks` skips their groups via `extras.passedGroupIds`. |
+| `Empower.store.getPasses()` / `addPass({ sessionId, groupId, at })` / `removePass(sessionId)` | Picks swiped left. `rankPicks` skips their groups via `extras.passedGroupIds`. |
 
