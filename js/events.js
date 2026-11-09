@@ -123,9 +123,8 @@
   }
 
   /* After the last pass, wait a few seconds before showing everything, so Undo is still in reach. */
-  var GRACE_SECONDS = 8;
   function lastPassGrace() {
-    var left = GRACE_SECONDS;
+    var left = logic.UNDO_GRACE_SECONDS;
     var actions = host.querySelector(".deck__actions");
     if (actions) actions.remove();
     deck.innerHTML = '<div class="empty"><p class="empty__title">That was your last pick this week</p>' +

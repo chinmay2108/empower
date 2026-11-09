@@ -488,3 +488,7 @@ test("Given no pass for that session, When I undo, Then nothing changes", () => 
   assert.deepEqual(logic.undoPass(passes, "nope"), passes);
   assert.deepEqual(logic.undoPass([], "s1"), []);
 });
+
+test("Given the last pass of the week, Then Undo stays available for a short, positive grace window", () => {
+  assert.equal(logic.UNDO_GRACE_SECONDS, 8);
+});

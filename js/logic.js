@@ -345,6 +345,7 @@ Empower.logic = (function () {
   /* ---------- This week: swipe to decide ---------- */
 
   var SWIPES_PER_WEEK = 3;
+  var UNDO_GRACE_SECONDS = 8; // after the last pass, how long Undo stays in reach before the full list
 
   /* passesThisWeek(passes, now): passes ({ sessionId, groupId, at }) from the last 7 days. */
   function passesThisWeek(passes, now) {
@@ -731,6 +732,7 @@ Empower.logic = (function () {
     passesThisWeek: passesThisWeek,
     swipesLeft: swipesLeft,
     undoPass: undoPass,
+    UNDO_GRACE_SECONDS: UNDO_GRACE_SECONDS,
     slotsToCheck: slotsToCheck,
     answerSlotCheck: answerSlotCheck
   };
