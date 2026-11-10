@@ -649,6 +649,23 @@ Empower.logic = (function () {
     }).sort(byStart).reverse();
   }
 
+  /*
+   * lastNoteFor(commitments, reflections, commitment)
+   * The most recent note you left at the same group as this commitment
+   * (never this commitment's own), as { note, startsAt }, or null.
+   * Empty notes don't count.
+   */
+  function lastNoteFor(commitments, reflections, commitment) {
+    var byId = {};
+    commitments.forEach(function (c) { byId[c.id] = c; });
+    var notes = reflections.filter(function (r) {
+      var rc = byId[r.commitmentId];
+      return rc && rc.id !== commitment.id && rc.groupId === commitment.groupId && r.note;
+    }).map(function (r) { return { note: r.note, startsAt: byId[r.commitmentId].startsAt }; });
+    notes.sort(function (a, b) { return a.startsAt < b.startsAt ? 1 : -1; });
+    return notes[0] || null;
+  }
+
   /* ---------- Progress ---------- */
 
   /*
@@ -712,6 +729,7 @@ Empower.logic = (function () {
     todaysCommitments: todaysCommitments,
     nextCommitment: nextCommitment,
     awaitingReflection: awaitingReflection,
+    lastNoteFor: lastNoteFor,
     progressByGroup: progressByGroup,
     totalHours: totalHours,
     showUpScore: showUpScore,

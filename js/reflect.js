@@ -61,21 +61,9 @@
     }).join("") + "</div>";
   }
 
-  /* The most recent note you left at this group (not this session), or null. */
-  function lastNote(c) {
-    var byId = {};
-    store.getCommitments().forEach(function (x) { byId[x.id] = x; });
-    var notes = store.getReflections().filter(function (r) {
-      var rc = byId[r.commitmentId];
-      return rc && rc.id !== c.id && rc.groupId === c.groupId && r.note;
-    }).map(function (r) { return { note: r.note, startsAt: byId[r.commitmentId].startsAt }; });
-    notes.sort(function (a, b) { return a.startsAt < b.startsAt ? 1 : -1; });
-    return notes[0] || null;
-  }
-
   function renderForm(c) {
     var g = groupOf(c);
-    var last = lastNote(c);
+    var last = logic.lastNoteFor(store.getCommitments(), store.getReflections(), c);
     host.innerHTML =
       '<h1 class="title">How was it?</h1><p class="subtitle">' + g.name + " · " + when(c) + "</p>" +
       (form.error ? '<div class="notice notice--error" role="alert">' + form.error + "</div>" : "") +
