@@ -49,6 +49,7 @@ Every page loads, in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `j
 | `effectiveStatus(commitment, group, now)` | Treats an unmarked commitment as `"missed"` once the check-in window closes. |
 | `todaysCommitments(commitments, now)`, `nextCommitment(commitments, now)` | For Home. |
 | `awaitingReflection(commitments, reflections)` | Attended sessions not rated yet. |
+| `lastNoteFor(commitments, reflections, commitment)` | The most recent non-empty note from another session at the same group, as `{ note, startsAt }`, or `null`. Shown on the rating form as "Last time you wrote". |
 | `progressByGroup(commitments, groups)`, `totalHours(...)` | Sessions and hours per group, from attended sessions. |
 | `showUpScore(commitments, groups, now)` | `{ attended, total }` over the last 10 resolved commitments. |
 
