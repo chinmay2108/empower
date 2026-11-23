@@ -1,0 +1,69 @@
+{
+  "purpose": "The one place that says what each kind of surface is made of: its fill, corner, edge and shadow. A recipe names a preset under \"surface\"; the generator lays the preset under the recipe's own styles, so a change here reaches every panel, tile or bar at once.",
+  "presets": {
+    "panel": {
+      "purpose": "A flat block that groups content: the grey fill, squared corners, a lit top edge and a soft shadow.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.small}",
+        "box-shadow": "{shadow.highlight}, {shadow.raised}"
+      }
+    },
+    "field": {
+      "purpose": "Somewhere you type or choose: the panel fill and corner, with the lit edge only, so it sits in the page.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.small}",
+        "box-shadow": "{shadow.highlight}"
+      }
+    },
+    "tile": {
+      "purpose": "The frame around artwork in a grid or rail: a faint edge and the deep double shadow of a Disney tile.",
+      "styles": {
+        "background": "{color.surface.sunken}",
+        "border-radius": "{radius.small}",
+        "border": "{border.width.default} solid {color.border.hairline}",
+        "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
+        "overflow": "hidden"
+      }
+    },
+    "poster": {
+      "purpose": "A large card led by a photograph: rounder corners, the faint edge and the deep double shadow.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.medium}",
+        "border": "{border.width.default} solid {color.border.hairline}",
+        "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
+        "overflow": "hidden"
+      }
+    },
+    "floating": {
+      "purpose": "Something that sits above the page for a moment, such as a toast or a pop-up card.",
+      "styles": {
+        "box-shadow": "{shadow.elevated}"
+      }
+    },
+    "bar": {
+      "purpose": "A strip fixed to an edge of the screen: see-through and frosted, so content scrolls under it.",
+      "styles": {
+        "background": "{color.surface.bar}",
+        "backdrop-filter": "blur({blur.overlay})",
+        "-webkit-backdrop-filter": "blur({blur.overlay})"
+      }
+    },
+    "fill": {
+      "purpose": "A small filled mark, such as a quiet tag or an avatar with no photo: the panel grey and nothing else.",
+      "styles": {
+        "background": "{color.surface.panel}"
+      }
+    },
+    "sheet": {
+      "purpose": "A pop-up card that sits above a dimmed page: the panel fill, large corners, a lit edge and the high shadow.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.large}",
+        "box-shadow": "{shadow.highlight}, {shadow.elevated}"
+      }
+    }
+  }
+}

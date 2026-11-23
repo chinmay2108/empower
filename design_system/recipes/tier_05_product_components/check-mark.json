@@ -1,0 +1,13 @@
+{
+  "className": "check-mark",
+  "purpose": "The tick inside a done screen's circle, drawn as a line so it is not a text glyph.",
+  "base": {
+    "width": "{size.icon.lg}",
+    "height": "{size.icon.lg}",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "{border.width.heavy}",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "className": "ladder-pop",
+  "purpose": "The moment you step up the comfort ladder: a dialog that then flies to the Me tab.",
+  "base": {
+    "position": "fixed",
+    "inset": "0",
+    "display": "flex",
+    "align-items": "center",
+    "justify-content": "center",
+    "padding": "{space.5}",
+    "background": "{color.surface.overlay}",
+    "animation": "ladder-fade-in {motion.duration.medium} {motion.easing.standard}",
+    "z-index": "{layer.overlay}",
+    "@media (prefers-reduced-motion: reduce)": {
+      "animation": "none"
+    }
+  },
+  "elements": {
+    "card": {
+      "padding": "{space.6}",
+      "max-width": "calc({size.page_width} - 2 * {space.5})",
+      "animation": "ladder-pop-in {motion.duration.long} {motion.easing.standard}",
+      "@media (prefers-reduced-motion: reduce)": {
+        "animation": "none"
+      }
+    }
+  },
+  "states": {
+    "leaving": {
+      "animation": "ladder-fade-out {motion.duration.exit} {motion.easing.exit} forwards",
+      "& $card": {
+        "animation": "ladder-fly-to-me {motion.duration.exit} {motion.easing.exit} forwards"
+      },
+      "@media (prefers-reduced-motion: reduce)": {
+        "animation": "ladder-fade-out {motion.duration.instant} {motion.easing.exit} forwards",
+        "& $card": {
+          "animation": "ladder-fade-card {motion.duration.instant} {motion.easing.exit} forwards"
+        }
+      }
+    }
+  },
+  "keyframes": {
+    "ladder-fade-in": {
+      "from": {
+        "opacity": "{opacity.hidden}"
+      },
+      "to": {
+        "opacity": "{opacity.full}"
+      }
+    },
+    "ladder-fade-out": {
+      "to": {
+        "background": "{color.scrim.none}"
+      }
+    },
+    "ladder-pop-in": {
+      "from": {
+        "opacity": "{opacity.hidden}",
+        "transform": "scale({motion.scale.enter}) translateY({motion.distance.enter})"
+      },
+      "to": {
+        "opacity": "{opacity.full}",
+        "transform": "none"
+      }
+    },
+    "ladder-fly-to-me": {
+      "to": {
+        "opacity": "{opacity.hidden}",
+        "transform": "translate({size.card.thumb}, {size.card.thumb}) scale({motion.scale.fly})"
+      }
+    },
+    "ladder-fade-card": {
+      "to": {
+        "opacity": "{opacity.hidden}"
+      }
+    }
+  },
+  "surface": {
+    "__card": "sheet"
+  }
+}

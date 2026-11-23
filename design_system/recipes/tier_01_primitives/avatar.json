@@ -1,0 +1,44 @@
+{
+  "className": "avatar",
+  "purpose": "A person's photo or initials in a circle.",
+  "base": {
+    "flex": "none",
+    "width": "{size.avatar.md}",
+    "height": "{size.avatar.md}",
+    "border-radius": "{radius.round}",
+    "display": "grid",
+    "place-items": "center",
+    "font-weight": "{type.weight.bold}",
+    "font-size": "{type.size.sm}",
+    "color": "{color.text.primary}",
+    "object-fit": "cover"
+  },
+  "variants": {
+    "size": {
+      "sm": {
+        "width": "{size.avatar.xs}",
+        "height": "{size.avatar.xs}",
+        "font-size": "{type.size.xs}"
+      },
+      "lg": {
+        "width": "{size.avatar.lg}",
+        "height": "{size.avatar.lg}",
+        "font-size": "{type.size.lg}"
+      }
+    },
+    "kind": {
+      "photo": {
+        "padding": "0"
+      },
+      "center": {
+        "margin": "0 auto {space.3}"
+      }
+    }
+  },
+  "defaultVariants": {
+    "size": "default"
+  },
+  "surface": {
+    "base": "fill"
+  }
+}

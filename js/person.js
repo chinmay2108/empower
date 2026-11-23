@@ -12,7 +12,7 @@
   var now = Empower.clock.now();
 
   ui.renderNav("people");
-  document.getElementById("topbar").innerHTML = '<a class="back" href="people.html">&larr; People</a>';
+  document.getElementById("topbar").innerHTML = '<a class="back" href="people.html">' + ui.backIcon() + "People</a>";
 
   var profile = store.getProfile();
   var person = store.getPerson(ui.param("id"));
@@ -34,14 +34,15 @@
   var reliability = person.reliability >= 0.8 ? "Almost always" : person.reliability >= 0.65 ? "Usually" : "Sometimes";
 
   host.innerHTML =
-    '<div class="center"><div class="avatar-wrap">' + ui.avatar(person, "lg") + "</div>" +
-    '<h1 class="title">' + person.name + '</h1><p class="ember-line">' + ui.ember(people.scoreOf(person), "lg") +
+    '<div class="person-hero"><div class="person-hero__scene" aria-hidden="true">' + ui.avatar(person) + "</div>" +
+    '<div class="person-hero__photo">' + ui.avatar(person, "lg") + "</div>" +
+    '<div class="person-hero__body"><h1 class="person-hero__name">' + person.name + '</h1><p class="person-hero__line">' + ui.ember(people.scoreOf(person), "lg") +
     ' <span class="small muted">Empower score</span></p>' +
-    '<p class="card__meta">Met at ' + ui.escapeHtml(store.getGroup(connection.groupId).name) + '</p>' +
-    '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
-    '<p class="center"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
-    tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</p>" +
-    '<p class="small muted center">Just between you two.</p>' +
+    '<p class="person-hero__meta">Met at ' + ui.escapeHtml(store.getGroup(connection.groupId).name) + "</p></div></div>" +
+    '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p>" +
+    '<div class="chip-row"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
+    tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</div>" +
+    '<p class="small muted mt-3">Just between you two.</p>' +
     '<ul class="facts">' +
     "<li><span>Time together</span><span>" + time.sessions + (time.sessions === 1 ? " session, " : " sessions, ") + time.hours + " hours</span></li>" +
     "<li><span>You both like</span><span>" + (shared.length ? shared.join(", ") : "Still finding out") + "</span></li>" +

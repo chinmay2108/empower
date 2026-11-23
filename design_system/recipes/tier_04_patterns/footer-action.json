@@ -1,0 +1,26 @@
+{
+  "className": "footer-action",
+  "purpose": "The screen's main action, pinned above the navigation bar.",
+  "uses": [
+    "btn"
+  ],
+  "base": {
+    "position": "fixed",
+    "left": "0",
+    "right": "0",
+    "bottom": "0",
+    "padding": "{space.6} {space.5} {space.4}",
+    "background": "linear-gradient(to top, {color.surface.canvas} 50%, {color.scrim.none})",
+    "z-index": "{layer.sticky}",
+    "pointer-events": "none"
+  },
+  "elements": {
+    "inner": {
+      "max-width": "calc({size.page_width} - 2 * {space.5})",
+      "margin": "0 auto",
+      "display": "grid",
+      "gap": "{space.2}",
+      "pointer-events": "auto"
+    }
+  }
+}

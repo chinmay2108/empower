@@ -1,0 +1,9 @@
+{
+  "className": "chip-row",
+  "purpose": "A wrapping row of chips.",
+  "base": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "gap": "{space.2}"
+  }
+}

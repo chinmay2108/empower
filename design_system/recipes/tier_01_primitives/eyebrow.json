@@ -1,0 +1,11 @@
+{
+  "className": "eyebrow",
+  "purpose": "Short label that names the group of content right below it.",
+  "base": {
+    "margin": "0 0 {space.2}",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.medium}",
+    "line-height": "{type.line_height.snug}",
+    "color": "{color.text.secondary}"
+  }
+}

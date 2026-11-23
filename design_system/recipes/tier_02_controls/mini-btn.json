@@ -1,0 +1,45 @@
+{
+  "className": "mini-btn",
+  "purpose": "A small action inside a row, such as Add or Message.",
+  "base": {
+    "flex": "none",
+    "display": "inline-flex",
+    "align-items": "center",
+    "justify-content": "center",
+    "min-height": "{size.touch_target}",
+    "padding": "{space.2} {space.4}",
+    "border-radius": "{radius.small}",
+    "border": "{border.width.default} solid {color.border.strong}",
+    "background": "transparent",
+    "color": "{color.text.primary}",
+    "font-family": "inherit",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.bold}",
+    "text-decoration": "none",
+    "&[aria-pressed=\"true\"]": {
+      "background": "{color.action.primary}",
+      "color": "{color.text.inverse}",
+      "border-color": "{color.action.primary}"
+    }
+  },
+  "variants": {
+    "tone": {
+      "dark": {
+        "background": "{color.action.primary}",
+        "color": "{color.text.inverse}",
+        "border-color": "{color.action.primary}"
+      }
+    }
+  },
+  "states": {
+    "selected": {
+      "background": "{color.action.primary}",
+      "color": "{color.text.inverse}",
+      "border-color": "{color.action.primary}"
+    }
+  },
+  "interaction": {
+    "base": "toggle",
+    "--dark": "on-light"
+  }
+}

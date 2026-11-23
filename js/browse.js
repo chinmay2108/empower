@@ -32,14 +32,13 @@
     var g = store.getGroup(s.groupId);
     var going = committedIds.indexOf(s.id) !== -1;
     var tag = going ? "Going" : "";
-    return '<div class="card card--outline pick">' +
-      '<a class="pick__link" href="group.html?session=' + encodeURIComponent(s.id) + '">' +
-      ui.eventImage(g) +
-      '<div class="pick__top"><div><p class="card__title">' + g.name + "</p>" +
-      '<p class="card__meta">' + ui.formatDay(s.startsAt) + " · " + ui.formatTime(s.startsAt) + " · " + g.venue + "</p></div>" +
-      (tag ? '<span class="tag">' + tag + "</span>" : "") + "</div>" +
+    return '<article class="event-card">' +
+      '<a class="event-card__link" href="group.html?session=' + encodeURIComponent(s.id) + '">' +
+      '<div class="event-card__media">' + ui.eventImage(g) + (tag ? '<span class="tag">' + tag + "</span>" : "") + "</div>" +
+      '<h2 class="event-card__title">' + g.name + "</h2>" +
+      '<p class="event-card__meta">' + ui.formatDay(s.startsAt) + " · " + ui.formatTime(s.startsAt) + " · " + g.venue + "</p>" +
       goingLine(s) + "</a>" +
-      "</div>";
+      "</article>";
   }
 
   // Passed picks are left out: once you pass, that session is gone for the week.
@@ -47,10 +46,9 @@
   var left = logic.swipesLeft(store.getPasses(), now);
 
   host.innerHTML =
-    '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
     '<h1 class="title">Everything this week</h1>' +
-    '<p class="subtitle">' + (fromSwipes ? "None of those clicked? No worries. Here's the whole week." : "The whole week. Tap one to see more.") + "</p>" +
-    (left > 0 ? '<p><a class="btn btn--secondary btn--small" href="events.html">Back to your picks</a></p>' : "") +
+    '<p class="subtitle">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + ". " + (fromSwipes ? "None of those clicked? No worries. Here's the whole week." : "The whole week. Tap one to see more.") + "</p>" +
+    (left > 0 ? '<p class="browse-entry"><a class="btn btn--secondary btn--inline" href="events.html">Back to your picks</a></p>' : "") +
     '<div class="browse-grid">' + rest.map(card).join("") + "</div>";
 
   Empower.log("browse.viewed", { from: fromSwipes ? "swipes" : "link", sessions: sessions.length });

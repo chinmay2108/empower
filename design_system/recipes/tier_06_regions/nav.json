@@ -1,0 +1,54 @@
+{
+  "className": "nav",
+  "purpose": "The bottom navigation bar: frosted, icon over label, the current tab in white.",
+  "base": {
+    "position": "fixed",
+    "left": "0",
+    "right": "0",
+    "bottom": "0",
+    "height": "calc({size.nav} + env(safe-area-inset-bottom, 0px))",
+    "padding-bottom": "env(safe-area-inset-bottom, 0px)",
+    "z-index": "{layer.nav}",
+    "border-top": "{border.width.default} solid {color.border.default}"
+  },
+  "elements": {
+    "inner": {
+      "max-width": "{size.page_width}",
+      "height": "100%",
+      "margin": "0 auto",
+      "padding": "0 {space.2}",
+      "display": "grid",
+      "grid-template-columns": "repeat(5, 1fr)"
+    },
+    "link": {
+      "display": "flex",
+      "flex-direction": "column",
+      "align-items": "center",
+      "justify-content": "center",
+      "gap": "{space.1}",
+      "min-width": "0",
+      "text-decoration": "none",
+      "font-size": "{type.size.xs}",
+      "font-weight": "{type.weight.medium}",
+      "line-height": "{type.line_height.none}",
+      "white-space": "nowrap",
+      "color": "{color.text.tertiary}",
+      "&[aria-current=\"page\"]": {
+        "color": "{color.text.primary}"
+      },
+      "&:focus-visible": {
+        "outline-offset": "calc({space.1} * -1)"
+      }
+    },
+    "icon": {
+      "width": "{size.icon.md}",
+      "height": "{size.icon.md}"
+    }
+  },
+  "interaction": {
+    "__link": "text"
+  },
+  "surface": {
+    "base": "bar"
+  }
+}

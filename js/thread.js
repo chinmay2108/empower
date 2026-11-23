@@ -25,7 +25,7 @@
     Empower.log("thread.locked", { commitment: ui.param("c") });
     return;
   }
-  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="prep.html?c=' + c.id + '" aria-label="Back">&larr;</a>' +
+  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="prep.html?c=' + c.id + '" aria-label="Back">' + ui.backIcon() + "</a>" +
     '<span class="chat-header__who"><span class="chat-header__group" aria-hidden="true">' + ui.initials(group.name) + "</span>" +
     '<span><span class="chat-header__name">' + group.name + '</span><span class="chat-header__sub">' + ui.formatDay(c.startsAt) + "</span></span></span>";
 
@@ -49,7 +49,7 @@
       '<p class="chat__note">' + (state === "open" ? "You and " + there.length + " others were there. Say thanks while it\'s fresh." :
         "This one\'s wrapped up. See you at the next.") + "</p>" +
       posts().map(function (p) {
-        return '<div class="bubble bubble--' + (p.me ? "me" : "them") + '">' +
+        return '<div class="bubble ' + (p.me ? "bubble--me" : "bubble--them") + '">' +
           (p.me ? "" : '<span class="bubble__who">' + (p.person ? ui.avatar(p.person, "sm") : "") + "<strong>" + ui.escapeHtml(p.name.split(" ")[0]) + "</strong></span>") +
           (p.audio ? ui.voiceNote(p.audio, p.seconds) : ui.escapeHtml(p.text)) + '<span class="bubble__time">' + ui.chatTime(p.at) + "</span></div>";
       }).join("") +

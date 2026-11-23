@@ -1,0 +1,89 @@
+{
+  "className": "composer",
+  "purpose": "The message box pinned to the bottom of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "position": "fixed",
+    "left": "0",
+    "right": "0",
+    "bottom": "0",
+    "z-index": "{layer.nav}",
+    "border-top": "{border.width.default} solid {color.border.default}",
+    "padding": "{space.2} {space.3} calc({space.2} + env(safe-area-inset-bottom, 0px))"
+  },
+  "elements": {
+    "inner": {
+      "max-width": "{size.page_width}",
+      "margin": "0 auto",
+      "display": "flex",
+      "align-items": "center",
+      "gap": "{space.2}"
+    },
+    "type": {},
+    "rec": {
+      "justify-content": "space-between"
+    },
+    "input": {
+      "flex": "1",
+      "min-width": "0",
+      "min-height": "{size.touch_target}",
+      "padding": "0 {space.4}",
+      "border": "{border.width.default} solid transparent",
+      "border-radius": "{radius.pill}",
+      "font": "inherit",
+      "font-size": "{type.size.md}",
+      "color": "{color.text.primary}",
+      "&::placeholder": {
+        "color": "{color.text.tertiary}"
+      },
+      "&:focus": {
+        "outline": "none",
+        "border-color": "{color.accent.default}"
+      }
+    },
+    "send": {
+      "flex": "none",
+      "width": "{size.touch_target}",
+      "height": "{size.touch_target}",
+      "border-radius": "{radius.round}",
+      "border": "0",
+      "background": "{color.action.primary}",
+      "display": "grid",
+      "place-items": "center",
+      "& svg": {
+        "width": "{size.icon.md}",
+        "height": "{size.icon.md}",
+        "fill": "{color.text.inverse}"
+      },
+      "&:disabled": {
+        "opacity": "{opacity.disabled}",
+        "cursor": "default"
+      },
+      "&--mic": {
+        "background": "{color.action.primary}"
+      }
+    },
+    "cancel": {
+      "background": "none",
+      "border": "0",
+      "font": "inherit",
+      "color": "{color.text.secondary}",
+      "min-height": "{size.touch_target}",
+      "padding": "0 {space.3}"
+    },
+    "timer": {
+      "display": "inline-flex",
+      "align-items": "center",
+      "gap": "{space.2}",
+      "font-weight": "{type.weight.medium}",
+      "font-variant-numeric": "tabular-nums"
+    }
+  },
+  "interaction": {
+    "__send": "on-light",
+    "__cancel": "text"
+  },
+  "surface": {
+    "base": "bar",
+    "__input": "field"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "className": "notice",
+  "purpose": "An inline message that says what happened and what to do.",
+  "base": {
+    "padding": "{space.4}",
+    "font-size": "{type.size.sm}",
+    "margin-bottom": "{space.4}"
+  },
+  "variants": {
+    "tone": {
+      "error": {
+        "background": "{color.status.error_soft}",
+        "color": "{color.status.error}"
+      },
+      "success": {
+        "background": "{color.status.success_soft}",
+        "color": "{color.status.success}"
+      }
+    }
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

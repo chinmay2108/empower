@@ -1,0 +1,28 @@
+{
+  "className": "choice",
+  "purpose": "One of two or three big answers, such as Yes, Sort of, No.",
+  "base": {
+    "display": "grid",
+    "place-items": "center",
+    "min-height": "{size.field}",
+    "padding": "{space.3} {space.2}",
+    "border": "{border.width.default} solid {color.border.strong}",
+    "border-radius": "{radius.small}",
+    "background": "transparent",
+    "color": "{color.text.primary}",
+    "font-family": "inherit",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.bold}",
+    "text-align": "center"
+  },
+  "states": {
+    "selected": {
+      "background": "{color.action.primary}",
+      "color": "{color.text.inverse}",
+      "border-color": "{color.action.primary}"
+    }
+  },
+  "interaction": {
+    "base": "toggle"
+  }
+}

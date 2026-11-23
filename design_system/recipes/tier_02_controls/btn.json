@@ -1,0 +1,56 @@
+{
+  "className": "btn",
+  "purpose": "The main action on a screen: white, squared, capitals, like Disney's Play button.",
+  "base": {
+    "display": "inline-flex",
+    "align-items": "center",
+    "justify-content": "center",
+    "gap": "{space.2}",
+    "width": "100%",
+    "min-height": "{size.touch_target}",
+    "padding": "{space.3} {space.6}",
+    "border": "0",
+    "border-radius": "{radius.small}",
+    "background": "{color.action.primary}",
+    "color": "{color.text.inverse}",
+    "font-family": "inherit",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.heavy}",
+    "line-height": "{type.line_height.snug}",
+    "letter-spacing": "{type.letter_spacing.caps}",
+    "text-transform": "uppercase",
+    "text-decoration": "none",
+    "text-align": "center",
+    "user-select": "none"
+  },
+  "variants": {
+    "tone": {
+      "secondary": {
+        "background": "{color.action.secondary}",
+        "color": "{color.text.primary}"
+      },
+      "accent": {
+        "background": "{color.action.primary}"
+      }
+    },
+    "size": {
+      "small": {
+        "min-height": "{size.touch_target}",
+        "padding": "{space.2} {space.4}",
+        "font-size": "{type.size.xs}"
+      }
+    },
+    "width": {
+      "inline": {
+        "width": "auto"
+      }
+    }
+  },
+  "defaultVariants": {
+    "tone": "default"
+  },
+  "interaction": {
+    "base": "on-light",
+    "--secondary": "on-dark"
+  }
+}

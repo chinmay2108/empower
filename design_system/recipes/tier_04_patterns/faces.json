@@ -1,0 +1,18 @@
+{
+  "className": "faces",
+  "purpose": "A small overlapping stack of the people going.",
+  "uses": [
+    "avatar"
+  ],
+  "base": {
+    "display": "inline-flex",
+    "margin-right": "{space.2}",
+    "vertical-align": "middle",
+    "& .avatar": {
+      "border": "{border.width.strong} solid {color.surface.canvas}"
+    },
+    "& .avatar + .avatar": {
+      "margin-left": "calc({space.2} * -1)"
+    }
+  }
+}

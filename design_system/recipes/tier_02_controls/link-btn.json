@@ -1,0 +1,18 @@
+{
+  "className": "link-btn",
+  "purpose": "A text link that behaves as a button, such as Undo.",
+  "base": {
+    "background": "none",
+    "border": "0",
+    "padding": "{space.2} {space.1}",
+    "color": "{color.accent.default}",
+    "font": "inherit",
+    "font-weight": "{type.weight.medium}",
+    "display": "inline-flex",
+    "align-items": "center",
+    "min-height": "{size.touch_target}"
+  },
+  "interaction": {
+    "base": "link"
+  }
+}

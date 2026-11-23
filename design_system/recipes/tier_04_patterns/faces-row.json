@@ -1,0 +1,7 @@
+{
+  "className": "faces-row",
+  "purpose": "A line that holds a faces stack.",
+  "base": {
+    "margin": "0 0 {space.2}"
+  }
+}

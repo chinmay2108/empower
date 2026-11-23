@@ -1,0 +1,50 @@
+{
+  "className": "event-row",
+  "uses": [
+    "event-art"
+  ],
+  "purpose": "An event as a row: small artwork, title, when. Like Disney's episode rows.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "{size.card.thumb} 1fr",
+    "align-items": "center",
+    "gap": "{space.4}",
+    "padding": "{space.2}",
+    "margin-bottom": "{space.3}",
+    "color": "inherit",
+    "text-decoration": "none",
+    "&--plain": {
+      "grid-template-columns": "1fr",
+      "padding": "{space.4}"
+    },
+    "&--today": {
+      "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.default}"
+    }
+  },
+  "elements": {
+    "body": {
+      "display": "block",
+      "min-width": "0"
+    },
+    "title": {
+      "display": "block",
+      "margin": "0 0 {space.1}",
+      "font-size": "{type.size.md}",
+      "font-weight": "{type.weight.bold}",
+      "line-height": "{type.line_height.snug}"
+    },
+    "meta": {
+      "display": "block",
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.snug}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "interaction": {
+    "base": "surface"
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

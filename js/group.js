@@ -10,7 +10,7 @@
   var now = Empower.clock.now();
 
   ui.renderNav("events");
-  document.getElementById("topbar").innerHTML = '<a class="back" href="events.html">&larr; This week</a>';
+  document.getElementById("topbar").innerHTML = '<a class="back" href="events.html">' + ui.backIcon() + "This week</a>";
 
   var groups = store.getGroups();
   var session = Empower.schedule.sessionById(groups, ui.param("session"));
@@ -44,9 +44,10 @@
   }
 
   host.innerHTML =
-    ui.eventImage(group) +
-    '<p class="eyebrow">' + group.category + " · weekly</p>" +
+    '<div class="hero">' + ui.eventImage(group) + "</div>" +
     '<h1 class="title">' + group.name + "</h1>" +
+    '<p class="chip-row"><span class="tag tag--quiet">' + group.category + '</span><span class="tag tag--quiet">Weekly</span>' +
+    (mine ? '<span class="tag">Going</span>' : "") + "</p>" +
     '<p class="subtitle">' + group.description + "</p>" +
     '<ul class="facts">' +
     "<li><span>Next session</span><span>" + ui.formatDay(session.startsAt) + " · " + ui.formatTime(session.startsAt) + " to " + ui.formatTime(session.endsAt) + "</span></li>" +
@@ -59,7 +60,7 @@
     "</ul>" +
     (why ? '<div class="card card--accent"><p class="card__title">Why it fits you</p><p class="card__meta">' + why + "</p></div>" : "") +
     '<p class="small muted mt-4">Listing checked ' + ui.escapeHtml(group.checked || "") +
-    ' · <a href="' + ui.escapeHtml(group.source || "#") + '" target="_blank" rel="noopener">where we found it</a></p>' +
+    ' · <a class="link" href="' + ui.escapeHtml(group.source || "#") + '" target="_blank" rel="noopener">where we found it</a></p>' +
     '<div class="footer-action"><div class="footer-action__inner">' + action + "</div></div>";
 
   Empower.log("group.viewed", { session: session.id, committed: !!mine });

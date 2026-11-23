@@ -22,3 +22,7 @@ jobs:
         run: node --test tests/*.test.js
       - name: Check architecture rules (see AGENTS.md)
         run: node scripts/check_architecture.js
+      - name: Check the generated stylesheet is up to date
+        run: node scripts/build_tokens.js --check
+      - name: Check design-system rules (tokens only, see AGENTS.md)
+        run: node scripts/check_design_system.js

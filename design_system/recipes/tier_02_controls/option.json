@@ -1,0 +1,38 @@
+{
+  "className": "option",
+  "purpose": "A selectable row with a title and a line of detail.",
+  "base": {
+    "display": "block",
+    "width": "100%",
+    "text-align": "left",
+    "text-decoration": "none",
+    "color": "inherit",
+    "font-family": "inherit",
+    "border": "{border.width.strong} solid transparent",
+    "padding": "{space.4}",
+    "margin-bottom": "{space.2}"
+  },
+  "elements": {
+    "title": {
+      "margin": "0 0 {space.hairline}",
+      "font-size": "{type.size.md}",
+      "font-weight": "{type.weight.bold}"
+    },
+    "meta": {
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "states": {
+    "selected": {
+      "border-color": "{color.accent.default}"
+    }
+  },
+  "interaction": {
+    "base": "surface"
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

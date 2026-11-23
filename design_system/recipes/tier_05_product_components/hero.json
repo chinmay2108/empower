@@ -1,0 +1,22 @@
+{
+  "className": "hero",
+  "uses": [
+    "event-art"
+  ],
+  "purpose": "Artwork across the top of a detail screen, fading into the page, like Disney's title screen.",
+  "base": {
+    "position": "relative",
+    "margin": "0 calc({space.5} * -1) {space.4}",
+    "& .event-art": {
+      "aspect-ratio": "{ratio.detail}",
+      "border-radius": "0"
+    },
+    "&::after": {
+      "content": "\"\"",
+      "position": "absolute",
+      "inset": "0",
+      "background": "linear-gradient(to top, {color.surface.canvas}, {color.scrim.none} 50%)",
+      "pointer-events": "none"
+    }
+  }
+}

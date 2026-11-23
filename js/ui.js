@@ -74,6 +74,10 @@ Empower.ui = (function () {
       'aria-hidden="true">' + ICONS[key] + "</svg>";
   }
 
+  /* backIcon(): the chevron in front of a "back" link. */
+  function backIcon() {
+    return '<svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+  }
   /* Pages set <body data-root="../"> when they live in /pages/. */
   function root() { return document.body.getAttribute("data-root") || ""; }
 
@@ -149,7 +153,7 @@ Empower.ui = (function () {
   }
 
   /*
-   * toast(text): a short message at the bottom of the screen for small
+   * toast(text): a short message at the top of the screen for small
    * wins ("+1 Empower score"), with a light vibration where the phone
    * supports it. Gone after about 2.5 seconds.
    */
@@ -187,7 +191,9 @@ Empower.ui = (function () {
    */
   function ember(score, size) {
     var lvl = Empower.logic.emberLevel(score);
-    return '<span class="ember ember--' + lvl.name + (size ? " ember--" + size : "") + '" title="Empower score ' + score +
+    /* Whole class names, so the design check can see each one is a real recipe class. */
+    var warmth = { spark: "ember--spark", warm: "ember--warm", glow: "ember--glow", blaze: "ember--blaze" }[lvl.name];
+    return '<span class="ember ' + warmth + (size === "lg" ? " ember--lg" : "") + '" title="Empower score ' + score +
       '" aria-label="Empower score ' + score + '">' + FLAME + '<span class="ember__value">' + score + "</span></span>";
   }
 
@@ -328,7 +334,8 @@ Empower.ui = (function () {
   function voiceNote(src, seconds) {
     if (!/^data:audio\//.test(String(src))) return "";
     return '<span class="voice" data-voice="' + escapeHtml(src) + '">' +
-      '<button type="button" class="voice__play" aria-label="Play voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>' +
+      '<button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' +
+      '<svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>' +
       '<span class="voice__track"><span class="voice__fill"></span></span>' +
       '<span class="voice__len">' + duration(seconds || 0) + "</span></span>";
   }
@@ -356,9 +363,9 @@ Empower.ui = (function () {
       btn.setAttribute("aria-label", "Play voice note");
     });
     audio.addEventListener("timeupdate", function () {
-      if (audio.duration && isFinite(audio.duration)) fill.style.width = Math.round((audio.currentTime / audio.duration) * 100) + "%";
+      if (audio.duration && isFinite(audio.duration)) fill.style.setProperty("--runtime-fill", Math.round((audio.currentTime / audio.duration) * 100) + "%");
     });
-    audio.addEventListener("ended", function () { fill.style.width = "0%"; box.classList.remove("is-playing"); });
+    audio.addEventListener("ended", function () { fill.style.removeProperty("--runtime-fill"); box.classList.remove("is-playing"); });
     audio.play();
     Empower.log("chat.voice_played", {});
   });
@@ -384,6 +391,7 @@ Empower.ui = (function () {
     ember: ember,
     avatar: avatar,
     eventImage: eventImage,
+    backIcon: backIcon,
     renderNav: renderNav,
     namesText: namesText,
     initials: initials,

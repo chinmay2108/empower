@@ -1,0 +1,16 @@
+{
+  "className": "intro-card",
+  "uses": [
+    "avatar"
+  ],
+  "purpose": "A suggested introduction: a face and why you would get on.",
+  "base": {
+    "display": "flex",
+    "gap": "{space.4}",
+    "align-items": "flex-start",
+    "& .avatar--lg": {
+      "width": "{size.field}",
+      "height": "{size.field}"
+    }
+  }
+}

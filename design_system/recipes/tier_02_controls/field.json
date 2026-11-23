@@ -1,0 +1,7 @@
+{
+  "className": "field",
+  "purpose": "One labelled input in a form.",
+  "base": {
+    "margin-bottom": "{space.6}"
+  }
+}

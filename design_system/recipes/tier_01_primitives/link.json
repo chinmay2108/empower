@@ -1,0 +1,11 @@
+{
+  "className": "link",
+  "purpose": "A link inside a sentence, such as the source of an event.",
+  "base": {
+    "color": "{color.accent.default}",
+    "font-weight": "{type.weight.medium}"
+  },
+  "interaction": {
+    "base": "link"
+  }
+}

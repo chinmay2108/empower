@@ -1,0 +1,41 @@
+{
+  "className": "card",
+  "purpose": "A panel that groups one thing. Image cards live in the product tier.",
+  "base": {
+    "display": "block",
+    "padding": "{space.4}",
+    "margin-bottom": "{space.3}",
+    "color": "inherit"
+  },
+  "elements": {
+    "title": {
+      "margin": "0 0 {space.1}",
+      "font-size": "{type.size.lg}",
+      "font-weight": "{type.weight.bold}",
+      "line-height": "{type.line_height.snug}"
+    },
+    "meta": {
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.snug}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "variants": {
+    "tone": {
+      "outline": {
+        "border": "{border.width.default} solid {color.border.default}"
+      },
+      "accent": {
+        "background": "{color.accent.soft}",
+        "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.strong}"
+      }
+    }
+  },
+  "defaultVariants": {
+    "tone": "default"
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

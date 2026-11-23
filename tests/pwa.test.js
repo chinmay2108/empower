@@ -10,7 +10,7 @@ const ROOT = path.resolve(__dirname, "..");
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const list = (dir, ext) => fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith(ext)).map((f) => dir + "/" + f);
 const appFiles = ["index.html", ...list("pages", ".html"), ...list("css", ".css"), ...list("js", ".js"),
-  ...list("data", ".js"), ...list("icons", ".png"), ...list("img", ".jpg"), "manifest.webmanifest"].sort();
+  ...list("data", ".js"), ...list("icons", ".png"), ...list("img", ".jpg"), ...list("fonts", ".woff2"), "manifest.webmanifest"].sort();
 const cached = [...read("sw.js").matchAll(/"\.\/([^"]+)"/g)].map((m) => m[1]).sort();
 
 test("sw.js saves every app file for offline, and nothing that doesn't exist", () => {

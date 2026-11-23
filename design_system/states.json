@@ -1,0 +1,142 @@
+{
+  "purpose": "The one place that says how anything you can press answers the pointer and the finger. A recipe names a preset under \"interaction\"; the generator writes the hover, pressed and reduced-motion rules, so no component can forget one and a change here reaches every component.",
+  "presets": {
+    "on-dark": {
+      "purpose": "A control drawn on a dark fill: a light veil on hover, a stronger one and a slight shrink when pressed.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "transform {motion.duration.instant} {motion.easing.standard}, background-color {motion.duration.short} {motion.easing.standard}, border-color {motion.duration.short} {motion.easing.standard}, color {motion.duration.short} {motion.easing.standard}, opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "background-image": "linear-gradient({color.state.hover_on_dark}, {color.state.hover_on_dark})"
+      },
+      "pressed": {
+        "background-image": "linear-gradient({color.state.pressed_on_dark}, {color.state.pressed_on_dark})",
+        "transform": "scale({motion.scale.pressed})"
+      },
+      "reduced": {
+        "transition": "none"
+      },
+      "reduced_pressed": {
+        "transform": "none"
+      }
+    },
+    "on-light": {
+      "purpose": "A control drawn on the white fill: a dark veil on hover, a stronger one and a slight shrink when pressed.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "transform {motion.duration.instant} {motion.easing.standard}, background-color {motion.duration.short} {motion.easing.standard}, border-color {motion.duration.short} {motion.easing.standard}, color {motion.duration.short} {motion.easing.standard}, opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "background-image": "linear-gradient({color.state.hover_on_light}, {color.state.hover_on_light})"
+      },
+      "pressed": {
+        "background-image": "linear-gradient({color.state.pressed_on_light}, {color.state.pressed_on_light})",
+        "transform": "scale({motion.scale.pressed})"
+      },
+      "reduced": {
+        "transition": "none"
+      },
+      "reduced_pressed": {
+        "transform": "none"
+      }
+    },
+    "toggle": {
+      "purpose": "A control that can be switched on. Off, it answers like a dark control; on, it has turned white, so the veil turns dark.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "transform {motion.duration.instant} {motion.easing.standard}, background-color {motion.duration.short} {motion.easing.standard}, border-color {motion.duration.short} {motion.easing.standard}, color {motion.duration.short} {motion.easing.standard}, opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "background-image": "linear-gradient({color.state.hover_on_dark}, {color.state.hover_on_dark})"
+      },
+      "pressed": {
+        "background-image": "linear-gradient({color.state.pressed_on_dark}, {color.state.pressed_on_dark})",
+        "transform": "scale({motion.scale.pressed})"
+      },
+      "selected_hover": {
+        "background-image": "linear-gradient({color.state.hover_on_light}, {color.state.hover_on_light})"
+      },
+      "selected_pressed": {
+        "background-image": "linear-gradient({color.state.pressed_on_light}, {color.state.pressed_on_light})"
+      },
+      "reduced": {
+        "transition": "none"
+      },
+      "reduced_pressed": {
+        "transform": "none"
+      }
+    },
+    "surface": {
+      "purpose": "A whole row or panel you can press: the same light veil, and a smaller shrink because the thing is bigger.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "transform {motion.duration.instant} {motion.easing.standard}, background-color {motion.duration.short} {motion.easing.standard}, border-color {motion.duration.short} {motion.easing.standard}, color {motion.duration.short} {motion.easing.standard}, opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "background-image": "linear-gradient({color.state.hover_on_dark}, {color.state.hover_on_dark})"
+      },
+      "pressed": {
+        "background-image": "linear-gradient({color.state.pressed_on_dark}, {color.state.pressed_on_dark})",
+        "transform": "scale({motion.scale.card_pressed})"
+      },
+      "reduced": {
+        "transition": "none"
+      },
+      "reduced_pressed": {
+        "transform": "none"
+      }
+    },
+    "text": {
+      "purpose": "Quiet text you can press, such as Back or a tab: it brightens to full white on hover and dims while held.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "color {motion.duration.short} {motion.easing.standard}, opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "color": "{color.text.primary}"
+      },
+      "pressed": {
+        "opacity": "{opacity.pressed}"
+      },
+      "reduced": {
+        "transition": "none"
+      }
+    },
+    "link": {
+      "purpose": "A coloured text link: its underline thickens on hover and the text dims while held.",
+      "rest": {
+        "cursor": "pointer",
+        "text-decoration": "underline",
+        "text-underline-offset": "{space.hairline}",
+        "text-decoration-thickness": "{border.width.default}",
+        "transition": "opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "text-decoration-thickness": "{border.width.strong}"
+      },
+      "pressed": {
+        "opacity": "{opacity.pressed}"
+      },
+      "reduced": {
+        "transition": "none"
+      }
+    },
+    "dim": {
+      "purpose": "A mark or icon already at full strength, such as the wordmark: it eases back on hover and further while held.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "opacity {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "opacity": "{opacity.hover}"
+      },
+      "pressed": {
+        "opacity": "{opacity.pressed}"
+      },
+      "reduced": {
+        "transition": "none"
+      }
+    }
+  }
+}

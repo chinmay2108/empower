@@ -1,0 +1,120 @@
+{
+  "className": "metric",
+  "purpose": "One size token shown at its own value, next to the name you write in a recipe.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "{size.lab_label} 1fr",
+    "align-items": "center",
+    "gap": "{space.4}",
+    "padding": "{space.3} 0",
+    "border-bottom": "{border.width.default} solid {color.border.default}",
+    "min-width": "0"
+  },
+  "elements": {
+    "name": {
+      "font-size": "{type.size.xs}",
+      "font-weight": "{type.weight.medium}",
+      "color": "{color.text.secondary}",
+      "overflow-wrap": "anywhere"
+    },
+    "type": {
+      "margin": "0",
+      "line-height": "{type.line_height.tight}",
+      "overflow-wrap": "anywhere",
+      "&--type-size-xs": {
+        "font-size": "{type.size.xs}"
+      },
+      "&--type-size-sm": {
+        "font-size": "{type.size.sm}"
+      },
+      "&--type-size-md": {
+        "font-size": "{type.size.md}"
+      },
+      "&--type-size-lg": {
+        "font-size": "{type.size.lg}"
+      },
+      "&--type-size-xl": {
+        "font-size": "{type.size.xl}"
+      },
+      "&--type-size-xxl": {
+        "font-size": "{type.size.xxl}"
+      },
+      "&--type-size-display": {
+        "font-size": "{type.size.display}"
+      },
+      "&--type-weight-regular": {
+        "font-weight": "{type.weight.regular}"
+      },
+      "&--type-weight-medium": {
+        "font-weight": "{type.weight.medium}"
+      },
+      "&--type-weight-bold": {
+        "font-weight": "{type.weight.bold}"
+      },
+      "&--type-weight-heavy": {
+        "font-weight": "{type.weight.heavy}"
+      }
+    },
+    "bar": {
+      "display": "block",
+      "height": "{size.meter}",
+      "border-radius": "{radius.pill}",
+      "background": "{color.accent.default}",
+      "&--space-hairline": {
+        "width": "{space.hairline}"
+      },
+      "&--space-1": {
+        "width": "{space.1}"
+      },
+      "&--space-2": {
+        "width": "{space.2}"
+      },
+      "&--space-3": {
+        "width": "{space.3}"
+      },
+      "&--space-4": {
+        "width": "{space.4}"
+      },
+      "&--space-5": {
+        "width": "{space.5}"
+      },
+      "&--space-6": {
+        "width": "{space.6}"
+      },
+      "&--space-7": {
+        "width": "{space.7}"
+      },
+      "&--space-8": {
+        "width": "{space.8}"
+      },
+      "&--space-9": {
+        "width": "{space.9}"
+      }
+    },
+    "box": {
+      "display": "block",
+      "width": "{size.action}",
+      "height": "{size.action}",
+      "background": "{color.surface.sunken}",
+      "box-shadow": "inset 0 0 0 {border.width.strong} {color.accent.default}",
+      "&--radius-small": {
+        "border-radius": "{radius.small}"
+      },
+      "&--radius-medium": {
+        "border-radius": "{radius.medium}"
+      },
+      "&--radius-large": {
+        "border-radius": "{radius.large}"
+      },
+      "&--radius-bubble": {
+        "border-radius": "{radius.bubble}"
+      },
+      "&--radius-pill": {
+        "border-radius": "{radius.pill}"
+      },
+      "&--radius-round": {
+        "border-radius": "{radius.round}"
+      }
+    }
+  }
+}

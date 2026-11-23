@@ -1,0 +1,24 @@
+{
+  "className": "quiz-pair",
+  "uses": [
+    "option"
+  ],
+  "purpose": "The two sides of one this-or-that question, as an even pair of tiles.",
+  "base": {
+    "display": "grid",
+    "gap": "{space.3}",
+    "margin-bottom": "{space.6}",
+    "& .option": {
+      "display": "grid",
+      "align-content": "center",
+      "min-height": "{size.stamp}",
+      "padding": "{space.5}",
+      "margin-bottom": "0"
+    },
+    "& .option__title": {
+      "font-size": "{type.size.lg}",
+      "line-height": "{type.line_height.snug}",
+      "text-wrap": "balance"
+    }
+  }
+}

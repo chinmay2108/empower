@@ -1,0 +1,22 @@
+{
+  "className": "steps",
+  "purpose": "How far through a multi-step flow you are.",
+  "base": {
+    "display": "grid",
+    "grid-auto-flow": "column",
+    "gap": "{space.1}",
+    "margin-bottom": "{space.6}",
+    "& span": {
+      "height": "{size.progress}",
+      "border-radius": "{radius.pill}",
+      "background": "{color.border.default}",
+      "transition": "background-color {motion.duration.medium} {motion.easing.standard}",
+      "@media (prefers-reduced-motion: reduce)": {
+        "transition": "none"
+      }
+    },
+    "& span.is-done": {
+      "background": "{color.accent.default}"
+    }
+  }
+}

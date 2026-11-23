@@ -1,0 +1,16 @@
+{
+  "name": "glow",
+  "className": "has-nav",
+  "purpose": "The soft colour glow behind the top of a screen, taken from Disney's home screen. This is the app's one signature move.",
+  "base": {
+    "background-image": "radial-gradient(ellipse {size.page_width} {size.deck} at 50% 0, {color.glow.ambient}, {color.scrim.none})",
+    "background-repeat": "no-repeat",
+    "background-attachment": "scroll",
+    "& .footer-action": {
+      "bottom": "calc({size.nav} + env(safe-area-inset-bottom, 0px))"
+    }
+  },
+  "uses": [
+    "footer-action"
+  ]
+}

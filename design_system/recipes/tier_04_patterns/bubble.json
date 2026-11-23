@@ -1,0 +1,89 @@
+{
+  "className": "bubble",
+  "purpose": "One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "max-width": "{size.bubble}",
+    "padding": "{space.2} {space.3}",
+    "border-radius": "{radius.bubble}",
+    "font-size": "{type.size.md}",
+    "line-height": "{type.line_height.snug}",
+    "overflow-wrap": "anywhere"
+  },
+  "elements": {
+    "who": {
+      "display": "flex",
+      "align-items": "center",
+      "gap": "{space.2}",
+      "margin-bottom": "{space.1}"
+    },
+    "time": {
+      "float": "right",
+      "margin": "{space.2} 0 0 {space.3}",
+      "font-size": "{type.size.xs}",
+      "color": "{color.text.tertiary}"
+    }
+  },
+  "variants": {
+    "side": {
+      "them": {
+        "align-self": "flex-start",
+        "justify-self": "start",
+        "background": "{color.surface.canvas}",
+        "border-bottom-left-radius": "{radius.small}"
+      },
+      "me": {
+        "align-self": "flex-end",
+        "justify-self": "end",
+        "background": "{color.surface.inverse}",
+        "color": "{color.text.inverse}",
+        "border-bottom-right-radius": "{radius.small}",
+        "& $time": {
+          "color": "{color.surface.panel}"
+        }
+      },
+      "app": {
+        "align-self": "stretch",
+        "justify-self": "stretch",
+        "max-width": "none",
+        "background": "{color.accent.soft}",
+        "font-size": "{type.size.sm}",
+        "border-radius": "{radius.medium}"
+      },
+      "typing": {
+        "display": "flex",
+        "gap": "{space.1}",
+        "padding": "{space.3} {space.4}",
+        "& span": {
+          "width": "{size.dot}",
+          "height": "{size.dot}",
+          "border-radius": "{radius.round}",
+          "background": "{color.text.secondary}",
+          "animation": "typing-dot {motion.duration.pulse} infinite {motion.easing.standard}"
+        },
+        "& span:nth-child(2)": {
+          "animation-delay": "{motion.duration.short}"
+        },
+        "& span:nth-child(3)": {
+          "animation-delay": "{motion.duration.medium}"
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          "& span": {
+            "animation": "none"
+          }
+        }
+      }
+    }
+  },
+  "keyframes": {
+    "typing-dot": {
+      "0%, 60%, 100%": {
+        "opacity": "{opacity.dim}",
+        "transform": "none"
+      },
+      "30%": {
+        "opacity": "{opacity.full}",
+        "transform": "translateY(calc({space.1} * -1))"
+      }
+    }
+  }
+}

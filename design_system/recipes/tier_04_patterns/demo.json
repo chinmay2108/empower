@@ -1,0 +1,10 @@
+{
+  "className": "demo",
+  "purpose": "The demo tools box on Me, clearly set apart from the product.",
+  "base": {
+    "border": "{border.width.default} dashed {color.border.strong}",
+    "border-radius": "{radius.small}",
+    "padding": "{space.4}",
+    "margin-top": "{space.7}"
+  }
+}

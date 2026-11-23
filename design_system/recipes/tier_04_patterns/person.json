@@ -1,0 +1,37 @@
+{
+  "className": "person",
+  "purpose": "A person as a row: photo, name, one line of detail, an action.",
+  "uses": [
+    "avatar",
+    "mini-btn"
+  ],
+  "base": {
+    "display": "flex",
+    "align-items": "center",
+    "gap": "{space.3}",
+    "min-height": "{size.row}",
+    "padding": "{space.3} 0",
+    "border-bottom": "{border.width.default} solid {color.border.default}",
+    "text-decoration": "none"
+  },
+  "elements": {
+    "body": {
+      "flex": "1",
+      "min-width": "0"
+    },
+    "name": {
+      "margin": "0",
+      "font-weight": "{type.weight.bold}"
+    },
+    "meta": {
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "color": "{color.text.secondary}"
+    },
+    "actions": {
+      "display": "flex",
+      "gap": "{space.2}",
+      "margin-top": "{space.2}"
+    }
+  }
+}

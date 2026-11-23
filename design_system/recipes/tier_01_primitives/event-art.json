@@ -1,0 +1,12 @@
+{
+  "className": "event-art",
+  "purpose": "An event's artwork. The card or screen around it sets the shape.",
+  "base": {
+    "display": "block",
+    "width": "100%",
+    "aspect-ratio": "{ratio.landscape}",
+    "object-fit": "cover",
+    "border-radius": "{radius.small}",
+    "background": "{color.surface.sunken}"
+  }
+}

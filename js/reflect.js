@@ -23,6 +23,21 @@
   function groupOf(c) { return store.getGroup(c.groupId); }
   function when(c) { return ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt); }
 
+  /* The event a screen is about: artwork, name, when. Held still, because it is not a link. */
+  function flowEvent(group, startsAt) {
+    var art = ui.eventImage(group);
+    return '<div class="event-row flow-event' + (art ? "" : " event-row--plain") + '">' + art +
+      '<span class="event-row__body"><span class="event-row__title">' + group.name +
+      '</span><span class="event-row__meta">' + ui.formatDay(startsAt) + " · " +
+      ui.formatTime(startsAt) + "</span></span></div>";
+  }
+
+  /* The tick on a done screen: a drawn line, never a text glyph. */
+  function bigCheck() {
+    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
+  }
+
   /* ---------- List ---------- */
 
   function renderList() {
@@ -36,16 +51,23 @@
         '<p class="mt-4"><a class="btn btn--inline" href="events.html">See this week</a></p></div>';
     }
     if (toConfirm.length) {
-      html += '<p class="label">Did you go?</p>' + toConfirm.map(function (c) {
-        return '<div class="option"><p class="option__title">' + groupOf(c).name + '</p><p class="option__meta">' + when(c) + "</p>" +
-          '<div class="btn-row mt-3"><button type="button" class="btn btn--small" data-went="' + c.id + '">Yes, I went</button>' +
-          '<button type="button" class="btn btn--secondary btn--small" data-missed="' + c.id + '">I didn\'t make it</button></div></div>';
+      html += '<h2 class="section-title">Did you go?</h2>' + toConfirm.map(function (c) {
+        var art = ui.eventImage(groupOf(c));
+        return '<div class="confirm-row' + (art ? "" : " confirm-row--plain") + '">' + art +
+          '<div class="confirm-row__body"><p class="confirm-row__title">' + groupOf(c).name + "</p>" +
+          '<p class="confirm-row__meta">' + when(c) + "</p>" +
+          '<div class="confirm-row__actions">' +
+          '<button type="button" class="mini-btn mini-btn--dark" data-went="' + c.id + '">Yes, I went</button>' +
+          '<button type="button" class="mini-btn" data-missed="' + c.id + '">I didn\'t make it</button>' +
+          "</div></div></div>";
       }).join("");
     }
     if (toRate.length) {
-      html += '<p class="label mt-4">How was it?</p>' + toRate.map(function (c) {
-        return '<a class="option" href="reflect.html?c=' + c.id + '"><p class="option__title">' + groupOf(c).name +
-          '</p><p class="option__meta">' + when(c) + " · tap to rate</p></a>";
+      html += '<h2 class="section-title">How was it?</h2>' + toRate.map(function (c) {
+        var art = ui.eventImage(groupOf(c));
+        return '<a class="event-row' + (art ? "" : " event-row--plain") + '" href="reflect.html?c=' + c.id + '">' + art +
+          '<span class="event-row__body"><span class="event-row__title">' + groupOf(c).name +
+          '</span><span class="event-row__meta">' + when(c) + " · tap to rate</span></span></a>";
       }).join("");
     }
     host.innerHTML = html;
@@ -65,7 +87,8 @@
     var g = groupOf(c);
     var last = logic.lastNoteFor(store.getCommitments(), store.getReflections(), c);
     host.innerHTML =
-      '<h1 class="title">How was it?</h1><p class="subtitle">' + g.name + " · " + when(c) + "</p>" +
+      flowEvent(g, c.startsAt) +
+      '<h1 class="title">How was it?</h1>' +
       (form.error ? '<div class="notice notice--error" role="alert">' + form.error + "</div>" : "") +
       (last ? '<div class="card"><p class="card__title">Last time you wrote</p><p class="card__meta">"' + ui.escapeHtml(last.note) +
         '" · ' + ui.formatDay(last.startsAt) + "</p></div>" : "") +
@@ -97,7 +120,7 @@
           '<p class="person__name">' + p.name + '</p><p class="person__meta">' +
           (Empower.people.sessionsTogether(p, store.getCommitments()) >= 2 ? "You've been at " + Empower.people.sessionsTogether(p, store.getCommitments()) + " sessions together" :
             shared.length ? "Also likes " + shared.slice(0, 2).join(", ") : p.neighborhood) + "</p></div>" +
-          '<button type="button" class="mini-btn' + (on ? " is-on" : "") + '" data-add="' + p.id + '" aria-pressed="' + on + '">' +
+          '<button type="button" class="mini-btn' + (on ? " is-selected" : "") + '" data-add="' + p.id + '" aria-pressed="' + on + '">' +
           (on ? "Added" : "Add") + "</button></div>";
       }).join("") +
       footer('<button type="button" class="btn" data-action="meet-done">Done</button>' +
@@ -161,7 +184,7 @@
     var liked = form.talkedToSomeone === "yes" ?
       '<div class="card card--accent"><p class="card__meta">They probably liked you more than you think. Most people do.</p></div>' : "";
     host.innerHTML =
-      '<div class="center"><div class="big-check">&#10003;</div>' +
+      '<div class="center">' + bigCheck() +
       '<h1 class="title">' + row.sessions + (row.sessions === 1 ? " session" : " sessions") + " with this group.</h1>" +
       '<p class="subtitle">That\'s ' + row.hours + " hours with this crew so far. Same time next week?</p></div>" +
       liked +
@@ -169,10 +192,9 @@
         return '<div class="card card--accent"><p class="card__title">Things with ' + ch.person.name.split(" ")[0] + " " + STAGE_WORDS[ch.stage] +
           '</p><p class="card__meta">' + ch.time.sessions + " sessions, " + ch.time.hours + " hours together.</p></div>";
       }).join("") +
-      (next ? '<div class="card card--outline"><p class="eyebrow">Next session</p><p class="card__title">' + g.name +
-        '</p><p class="card__meta">' + ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt) + "</p></div>" : "") +
+      (next ? '<h2 class="section-title">Next session</h2>' + flowEvent(g, next.startsAt) : "") +
       (meet.added.length ? '<p class="small muted center">Added ' + meet.added.length +
-        '. If they add you back, they\'ll be in <a href="people.html">People</a>.</p>' : "") +
+        '. If they add you back, they\'ll be in <a class="link" href="people.html">People</a>.</p>' : "") +
       footer((next && form.wouldReturn === "yes" ? '<a class="btn" href="commit.html?session=' + encodeURIComponent(next.id) + '">Commit to the next one</a>' : "") +
         '<a class="btn btn--secondary" href="thread.html?c=' + c.id + '">Say thanks in the session thread</a>' +
         '<a class="btn btn--secondary" href="../index.html">Back to home</a>');

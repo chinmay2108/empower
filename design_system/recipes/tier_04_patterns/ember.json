@@ -1,0 +1,60 @@
+{
+  "className": "ember",
+  "purpose": "The Empower score as a flame that warms as it grows. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "display": "inline-flex",
+    "align-items": "center",
+    "gap": "{space.hairline}",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.bold}",
+    "color": "{color.text.primary}",
+    "vertical-align": "middle",
+    "font-variant-numeric": "tabular-nums"
+  },
+  "elements": {
+    "icon": {
+      "width": "{size.icon.xs}",
+      "height": "{size.icon.xs}",
+      "fill": "currentColor"
+    },
+    "value": {}
+  },
+  "variants": {
+    "level": {
+      "spark": {
+        "& $icon": {
+          "color": "{color.ember.spark}",
+          "fill": "none",
+          "stroke": "currentColor",
+          "stroke-width": "{border.width.strong}"
+        }
+      },
+      "warm": {
+        "& $icon": {
+          "color": "{color.ember.warm}"
+        }
+      },
+      "glow": {
+        "& $icon": {
+          "color": "{color.ember.glow}"
+        }
+      },
+      "blaze": {
+        "& $icon": {
+          "color": "{color.ember.blaze}",
+          "filter": "drop-shadow(0 0 {space.1} {color.ember.glow})"
+        }
+      }
+    },
+    "size": {
+      "lg": {
+        "font-size": "{type.size.xl}",
+        "gap": "{space.1}",
+        "& $icon": {
+          "width": "{size.icon.md}",
+          "height": "{size.icon.md}"
+        }
+      }
+    }
+  }
+}

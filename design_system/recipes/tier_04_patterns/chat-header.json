@@ -1,0 +1,83 @@
+{
+  "className": "chat-header",
+  "uses": [
+    "avatar",
+    "back"
+  ],
+  "purpose": "Who you are talking to, pinned at the top of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "position": "sticky",
+    "top": "0",
+    "z-index": "{layer.nav}",
+    "display": "flex",
+    "align-items": "center",
+    "justify-content": "flex-start",
+    "gap": "{space.2}",
+    "margin": "0 calc({space.4} * -1) {space.3}",
+    "padding": "calc({space.3} + env(safe-area-inset-top, 0px)) {space.4} {space.3}",
+    "border-bottom": "{border.width.default} solid {color.border.default}"
+  },
+  "elements": {
+    "back": {
+      "flex": "none",
+      "color": "{color.text.primary}",
+      "text-decoration": "none",
+      "min-width": "{size.touch_target}",
+      "min-height": "{size.touch_target}",
+      "display": "grid",
+      "place-items": "center",
+      "margin-left": "calc({space.3} * -1)",
+      "& .back__icon": {
+        "width": "{size.icon.md}",
+        "height": "{size.icon.md}"
+      }
+    },
+    "who": {
+      "flex": "1",
+      "display": "flex",
+      "align-items": "center",
+      "gap": "{space.3}",
+      "text-decoration": "none",
+      "color": "{color.text.primary}",
+      "min-width": "0",
+      "& > span": {
+        "min-width": "0"
+      }
+    },
+    "group": {
+      "flex": "none",
+      "width": "{size.avatar.md}",
+      "height": "{size.avatar.md}",
+      "border-radius": "{radius.round}",
+      "display": "grid",
+      "place-items": "center",
+      "background": "{color.accent.soft}",
+      "color": "{color.accent.default}",
+      "font-weight": "{type.weight.bold}",
+      "font-size": "{type.size.sm}"
+    },
+    "name": {
+      "display": "block",
+      "font-weight": "{type.weight.bold}",
+      "font-size": "{type.size.md}",
+      "white-space": "nowrap",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    },
+    "sub": {
+      "display": "block",
+      "font-size": "{type.size.xs}",
+      "color": "{color.text.secondary}",
+      "white-space": "nowrap",
+      "overflow": "hidden",
+      "text-overflow": "ellipsis"
+    }
+  },
+  "interaction": {
+    "__back": "text",
+    "__who": "dim"
+  },
+  "surface": {
+    "base": "bar"
+  }
+}

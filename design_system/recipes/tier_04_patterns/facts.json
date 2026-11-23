@@ -1,0 +1,26 @@
+{
+  "className": "facts",
+  "purpose": "Key facts as label and value rows, like Disney's settings rows.",
+  "base": {
+    "margin": "0 0 {space.6}",
+    "padding": "0",
+    "list-style": "none",
+    "& li": {
+      "display": "flex",
+      "justify-content": "space-between",
+      "align-items": "center",
+      "gap": "{space.4}",
+      "min-height": "{size.row}",
+      "padding": "{space.3} 0",
+      "border-bottom": "{border.width.default} solid {color.border.default}",
+      "font-size": "{type.size.sm}"
+    },
+    "& li span:first-child": {
+      "color": "{color.text.secondary}"
+    },
+    "& li span:last-child": {
+      "font-weight": "{type.weight.bold}",
+      "text-align": "right"
+    }
+  }
+}

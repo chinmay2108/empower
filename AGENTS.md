@@ -31,14 +31,15 @@ A mobile web app that helps people new to a city keep going back to the same gro
 
 ## Design system: tokens first
 
-Team decision, November 8, 2026: Empower's UI is moving to a **token-based design system**. Every style value comes from a design token, and components are built from recipes that use only tokens.
+Team decision, November 8, 2026: Empower's UI is a **token-based design system**. Every style value comes from a design token, and every component is a recipe that uses only tokens. Since November 23, 2026 the whole app is on it, and a check rejects anything that is not.
 
-- **Source of truth:** the foundation tokens in `design_system/tier_00_foundations.json`. This file is filled in from `_templates/components_system_template/tier_00_foundations.json`, with values traced to the team Figma library and `events_flow/`.
-- **Recipes in PandaCSS's shape, without installing Panda.** Recipes are JSON files in `design_system/recipes/`, shaped like Panda recipes: `{ className, base, variants, defaultVariants }`, where every value is a token name. Do not install `@pandacss/dev` or any npm package. The course allows no frameworks, bundlers or build step. If the team adopts Panda later, the recipes and tokens can move into `panda.config`.
-- **Generated plain CSS, committed.** `node scripts/build_tokens.js` (Node standard library only) writes `css/design-system.css`. It has one CSS variable per token, named from the token path (`color.action.primary` becomes `--color-action-primary`), and one class per recipe and variant (`.button`, `.button--variant_secondary`). The file is committed, like `data/population.js`, so the app still runs with no build step. **Until the script exists**, `css/design-system.css` is written directly and must match the JSON files. Once the script lands, the file is generated only and never edited directly.
-- **Recipes use tokens only.** No hex codes, pixel values or font names inside a recipe. To change a value, edit the foundations file and update the CSS (by rerunning the script, once it exists). Once the script lands, a test checks that the committed CSS matches its output.
+- **One file holds raw values:** `design_system/tier_00_foundations.json`. Each token records where its value came from (`evidence.reference_id`, listed under `references`). Round 1 values are measured from the Disney+ iOS app; chat, the onboarding quiz, the Empower score and the swipe stamps are outside that reference and use the shared tokens until a second reference is chosen.
+- **Recipes build upward in tiers.** Recipes are JSON files in `design_system/recipes/tier_0N_*/`, shaped like PandaCSS recipes: `{ className, purpose, uses, base, elements, variants, states, keyframes }`. Values are written as `{token.name}`. A recipe may only build on recipes in lower tiers, and must list them in `uses`. Tiers: 1 primitives, 2 controls, 3 overlays and feedback, 4 patterns, 5 product components, 6 regions, 7 screens. Do not install `@pandacss/dev` or any npm package.
+- **Generated plain CSS, committed.** `node scripts/build_tokens.js` (Node standard library only) writes `css/design-system.css`: one CSS variable per token (`color.action.primary` becomes `--color-action-primary`) and one class per recipe, element (`.card__title`), variant (`.btn--secondary`) and state (`.chip.is-selected`). Never edit that file by hand. `css/styles.css` only imports it and holds no rules.
+- **The gate.** `node scripts/check_design_system.js` fails on: a raw colour, size, time, easing curve or font name in a recipe; a token that does not exist or is used for the wrong job (a spacing token as a colour); a recipe that builds on its own or a higher tier; a class used in a page or script that no recipe defines; inline `style=""` or `.style.x =` in a page or script; a text and surface pair below its contrast minimum; and a stale `css/design-system.css`. The header of the script lists every rule, and `tests/design-system.test.js` has one failing example per rule.
+- **Values that change while the app runs** (the swipe position, a progress bar's width) are `runtime.*` tokens. A script may set only those: `el.style.setProperty("--runtime-fill", "40%")`.
 - **Markup helpers.** A component that needs HTML gets a small helper in `js/ui.js` that outputs its recipe classes, the way `Empower.ui.avatar` does. Changing `js/ui.js` is a shared-file PR.
-- **Transition.** Existing pages keep using the variables at the top of `css/styles.css` until they are migrated. Each migration is its own PR. New components use the token system.
+- **To change a look:** edit a token or a recipe, run `node scripts/build_tokens.js`, then run the check. `pages/components.html` shows every component in every state.
 
 ## The contract
 `docs/mechanics.md` lists every function pages may call. When you add or change one:
@@ -51,14 +52,15 @@ Team decision, November 8, 2026: Empower's UI is moving to a **token-based desig
 - Use `Empower.clock.now()` for the current time, never `new Date()` with no argument in app code.
 - Escape user-typed text with `Empower.ui.escapeHtml` before putting it in HTML.
 - Log key moments with `Empower.log("area.what_happened", {...})`.
-- Colors, type, spacing and radius come from design tokens: `css/design-system.css` for the token system, or the variables at the top of `css/styles.css` on pages not yet migrated. Never hard-code them. No inline `style=""` in HTML.
+- Colors, type, spacing, radius and motion come from design tokens, through a recipe in `design_system/recipes/`. Never hard-code them. No inline `style=""` in HTML.
 - Every page loads scripts in this order: `data/groups.js`, `js/ui.js`, `js/store.js`, `js/schedule.js`, `js/logic.js`, `data/population.js`, `js/people.js`, then its own script.
 
 ## Workflow
 - Never commit to `main`. One story per branch (`name/short-story`), one PR per story, small enough to review in 15 minutes.
-- Before opening a PR, run both checks and make sure they pass:
+- Before opening a PR, run these checks and make sure they pass:
   - `node --test tests/*.test.js`
   - `node scripts/check_architecture.js`
+  - `node scripts/check_design_system.js`
 - Fill in the PR template (`.github/pull_request_template.md`), including scenarios you actually ran and what the AI got wrong.
 - Pull `main` before starting. If your branch touches a file another open PR also touches, say so in the PR.
 - Graded course PRs: AI may draft the scenarios, results, PR description and review comments, from the teammate's direction and from scenarios actually run. The teammate reviews and owns them, and the PR says they were AI-drafted. Never report a result that wasn't actually run.

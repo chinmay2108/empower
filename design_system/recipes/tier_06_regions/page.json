@@ -1,0 +1,20 @@
+{
+  "className": "page",
+  "purpose": "The screen frame: Disney's 20pt side margins, with room for the navigation bar.",
+  "uses": [
+    "footer-action"
+  ],
+  "base": {
+    "position": "relative",
+    "max-width": "{size.page_width}",
+    "margin": "0 auto",
+    "padding": "calc({space.4} + env(safe-area-inset-top, 0px)) {space.5} calc({size.nav} + {space.7} + env(safe-area-inset-bottom, 0px))",
+    "min-height": "100dvh",
+    "&--wide": {
+      "max-width": "{size.page_wide}"
+    },
+    "&:has(.footer-action)": {
+      "padding-bottom": "calc({size.nav} + {size.footer_clearance} + env(safe-area-inset-bottom, 0px))"
+    }
+  }
+}

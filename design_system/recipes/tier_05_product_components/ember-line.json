@@ -1,0 +1,11 @@
+{
+  "className": "ember-line",
+  "purpose": "A centred line holding the Empower score.",
+  "base": {
+    "display": "flex",
+    "align-items": "center",
+    "justify-content": "center",
+    "gap": "{space.2}",
+    "margin": "0"
+  }
+}

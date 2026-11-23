@@ -1,0 +1,22 @@
+{
+  "className": "empty",
+  "purpose": "What a screen shows when there is nothing yet, with the next step.",
+  "base": {
+    "text-align": "center",
+    "padding": "{space.8} {space.5}",
+    "color": "{color.text.secondary}"
+  },
+  "elements": {
+    "title": {
+      "margin": "0 0 {space.2}",
+      "color": "{color.text.primary}",
+      "font-weight": "{type.weight.bold}",
+      "font-size": "{type.size.xl}",
+      "line-height": "{type.line_height.tight}",
+      "text-wrap": "balance"
+    }
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

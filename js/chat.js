@@ -26,7 +26,7 @@
 
   var sharedGroup = store.getGroup(connected.groupId);
   var first = person.name.split(" ")[0];
-  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="people.html" aria-label="Back to People">&larr;</a>' +
+  document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="people.html" aria-label="Back to People">' + ui.backIcon() + "</a>" +
     '<a class="chat-header__who" href="person.html?id=' + person.id + '">' + ui.avatar(person) +
     '<span><span class="chat-header__name">' + person.name + '</span><span class="chat-header__sub">' + (sharedGroup ? "Met at " + ui.escapeHtml(sharedGroup.name) : "View profile") + '</span></span></a>';
 
@@ -50,7 +50,7 @@
       return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
         (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
     }
-    return '<div class="bubble bubble--' + (m.from === "me" ? "me" : "them") + '">' + (m.audio ? ui.voiceNote(m.audio, m.seconds) : ui.escapeHtml(m.text)) +
+    return '<div class="bubble ' + (m.from === "me" ? "bubble--me" : "bubble--them") + '">' + (m.audio ? ui.voiceNote(m.audio, m.seconds) : ui.escapeHtml(m.text)) +
       '<span class="bubble__time">' + ui.chatTime(m.at) + "</span></div>";
   }
 

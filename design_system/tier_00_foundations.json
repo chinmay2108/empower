@@ -1,146 +1,445 @@
 {
   "format_version": "1.0",
-  "document_kind": "template",
+  "document_kind": "system",
   "system_id": "empower",
   "tier": 0,
   "category": "Foundations",
   "status": "complete",
   "allowed_dependency_tiers": [],
-  "purpose": "Empower's production foundation tokens. css/design-system.css mirrors these values as CSS variables.",
+  "purpose": "Empower's foundation tokens. scripts/build_tokens.js turns these and the recipes into css/design-system.css. This is the only file allowed to hold a raw colour, size, time or font name.",
+  "references": [
+    {
+      "reference_id": "disney_home",
+      "url": "https://mobbin.com/screens/ddd0f42d-cb54-4c3d-92a4-b58ff7b27b90",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS home, For You"
+    },
+    {
+      "reference_id": "disney_home_rails",
+      "url": "https://mobbin.com/screens/982c6809-adea-43b4-8e0f-187780e40c0d",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS home, landscape and poster rails"
+    },
+    {
+      "reference_id": "disney_detail",
+      "url": "https://mobbin.com/screens/3ec46388-d750-45ee-a1de-3249df26ac05",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS title detail"
+    },
+    {
+      "reference_id": "disney_account",
+      "url": "https://mobbin.com/screens/e83357d1-11ec-4fa8-9234-b74b095815b7",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS account settings"
+    },
+    {
+      "reference_id": "disney_app_settings",
+      "url": "https://mobbin.com/screens/1508e238-f59f-4ddf-bed7-818ec92104be",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS app settings"
+    },
+    {
+      "reference_id": "disney_confirm",
+      "url": "https://mobbin.com/screens/16f7bc7c-7096-4f87-adda-c555bd1f3fd9",
+      "evidence_kind": "screenshot",
+      "notes": "Disney+ iOS confirm with password"
+    },
+    {
+      "reference_id": "nunito_sans",
+      "url": "https://fonts.google.com/specimen/Nunito+Sans",
+      "evidence_kind": "decision",
+      "notes": "Open-licence stand-in for Disney's private Inspire typeface"
+    },
+    {
+      "reference_id": "empower_decision",
+      "url": "https://github.com/chinmay2108/empower/blob/main/DESIGN.md",
+      "evidence_kind": "decision",
+      "notes": "Empower team decision where the Disney+ reference has no answer"
+    }
+  ],
+  "font_faces": [
+    {
+      "family": "Nunito Sans",
+      "file": "fonts/nunito-sans-latin.woff2",
+      "weight": "200 1000",
+      "style": "normal"
+    }
+  ],
+  "contrast_pairs": [
+    [
+      "color.text.primary",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.text.secondary",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.text.tertiary",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.text.primary",
+      "color.surface.panel",
+      4.5
+    ],
+    [
+      "color.text.secondary",
+      "color.surface.panel",
+      4.5
+    ],
+    [
+      "color.text.tertiary",
+      "color.surface.panel",
+      4.5
+    ],
+    [
+      "color.text.primary",
+      "color.surface.sunken",
+      4.5
+    ],
+    [
+      "color.text.inverse",
+      "color.surface.inverse",
+      4.5
+    ],
+    [
+      "color.text.inverse",
+      "color.action.primary_pressed",
+      4.5
+    ],
+    [
+      "color.accent.default",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.accent.default",
+      "color.surface.panel",
+      4.5
+    ],
+    [
+      "color.text.primary",
+      "color.accent.strong",
+      4.5
+    ],
+    [
+      "color.status.success",
+      "color.status.success_soft",
+      4.5
+    ],
+    [
+      "color.status.error",
+      "color.status.error_soft",
+      4.5
+    ],
+    [
+      "color.status.success",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.status.error",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.status.warning",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.border.strong",
+      "color.surface.canvas",
+      3
+    ]
+  ],
   "tokens": [
     {
       "category": "color",
       "token_name": "color.surface.canvas",
-      "token_value": "#10121b",
+      "token_value": "#17171b",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_home",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Page background"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.panel",
-      "token_value": "#1c202d",
+      "token_value": "#2f3036",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_account",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Section bands, fields, chips, secondary buttons"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.sunken",
+      "token_value": "#080808",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Base of an image card, under the title"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.bar",
+      "token_value": "#1a1a1cd9",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_account",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "notes": "Frosted bottom navigation"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.inverse",
+      "token_value": "#fcfcfe",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "White primary button and New badge"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.overlay",
-      "token_value": "#ffffff29",
+      "token_value": "#000000b3",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.glass."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Dimmed backdrop behind a dialog"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.primary",
-      "token_value": "#f5f6fc",
+      "token_value": "#ffffff",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_detail",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Titles and body text"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.secondary",
-      "token_value": "#b5b9cb",
+      "token_value": "#cacacc",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_confirm",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Supporting text and metadata"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.tertiary",
+      "token_value": "#9d9ea6",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Quiet labels; keeps 4.5:1 on canvas and panel"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.inverse",
-      "token_value": "#10121b",
+      "token_value": "#020202",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_detail",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Text on a white button or badge"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.primary",
-      "token_value": "#9be1e2",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": "color.surface.inverse",
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "measurement_method": null,
+        "notes": "Alias"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.primary_pressed",
+      "token_value": "#dbdbdd",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_confirm",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Primary button while pressed or busy"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.secondary",
-      "token_value": "#18383e",
+      "token_value": null,
+      "value_type": "color",
+      "unit": null,
+      "reference_token": "color.surface.panel",
+      "status": "complete",
+      "evidence": {
+        "reference_id": null,
+        "measurement_method": null,
+        "notes": "Alias"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.action.secondary_pressed",
+      "token_value": "#46464a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_account",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Secondary button while pressed"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.accent.default",
+      "token_value": "#58e9ff",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_account",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Links, focus ring, selected state"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.accent.strong",
+      "token_value": "#07708a",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Switch track when on, progress fill"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.accent.soft",
+      "token_value": "#07708a40",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "notes": "Tinted surface behind accent content"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.border.default",
-      "token_value": "#383e50",
+      "token_value": "#46464a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "disney_account",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
+        "notes": "Row dividers and outlines"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.border.strong",
+      "token_value": "#6e6e73",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Sampled as #626266, then lightened to reach 3:1 on the canvas",
+        "notes": "Outline of a control you can press"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -150,13 +449,12 @@
       "token_value": null,
       "value_type": "color",
       "unit": null,
-      "reference_token": "color.action.primary",
+      "reference_token": "color.accent.default",
       "status": "complete",
       "evidence": {
         "reference_id": null,
-        "figma_node_id": null,
         "measurement_method": null,
-        "notes": "Alias: the focus ring uses the primary action color."
+        "notes": "Alias"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -169,9 +467,24 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Success text and icons"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.status.success_soft",
+      "token_value": "#1b3931",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Success surface"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -184,10 +497,9 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.amber."
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Warning text and icons"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -200,30 +512,164 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_discovery",
-        "measurement_method": "Authored Empower palette",
-        "notes": "Cinematic event discovery, November 2026."
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Error text and icons"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "typography",
+      "category": "color",
+      "token_name": "color.status.error_soft",
+      "token_value": "#452c2b",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Error surface"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.ember.spark",
+      "token_value": "#9a9aa6",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Empower score, first stage"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.ember.warm",
+      "token_value": "#d97706",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Empower score, second stage"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.ember.glow",
+      "token_value": "#ea580c",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Empower score, third stage"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.ember.blaze",
+      "token_value": "#dc2626",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "notes": "Empower score, top stage"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.scrim.strong",
+      "token_value": "#080808f2",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "notes": "Bottom of the fade over a card image"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.scrim.soft",
+      "token_value": "#08080866",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "notes": "Middle of the fade over a card image"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.scrim.none",
+      "token_value": "#08080800",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "notes": "Top of the fade over a card image"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.glow.ambient",
+      "token_value": "#07708a38",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Modelled on the soft colour glow behind the home title",
+        "notes": "Glow at the top of a discovery screen"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
       "token_name": "type.family.body",
-      "token_value": "\"DM Sans\", system-ui, sans-serif",
+      "token_value": "\"Nunito Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
       "value_type": "font_family",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "User-authorized provisional font. Exact source font is unidentifiable from PNG; review required.",
-        "notes": "From events.font.family. DM Sans is provisional in the derivation; system fallbacks added."
+        "reference_id": "nunito_sans",
+        "measurement_method": "Closest open-licence match to Disney's Inspire; self-hosted in fonts/",
+        "notes": "All text"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "typography",
+      "category": "type",
       "token_name": "type.family.heading",
       "token_value": null,
       "value_type": "font_family",
@@ -232,217 +678,473 @@
       "status": "complete",
       "evidence": {
         "reference_id": null,
-        "figma_node_id": null,
         "measurement_method": null,
-        "notes": "Alias: headings use the body family."
+        "notes": "Alias"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "typography",
-      "token_name": "type.size.body",
-      "token_value": 17,
+      "category": "type",
+      "token_name": "type.size.xs",
+      "token_value": 12,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.type.body.size."
+        "reference_id": "disney_account",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Section labels, fine print"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "typography",
-      "token_name": "type.size.heading",
-      "token_value": 26,
-      "value_type": "dimension",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.type.title.size."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "typography",
-      "token_name": "type.size.label",
+      "category": "type",
+      "token_name": "type.size.sm",
       "token_value": 14,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.type.meta.size."
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Metadata, chips, small buttons"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "typography",
-      "token_name": "type.weight.regular",
-      "token_value": 400,
-      "value_type": "font_weight",
-      "unit": null,
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Available provisional font style; user authorized provisional typography.",
-        "notes": "From events.font.regular. Figma style 'Regular' = 400."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "typography",
-      "token_name": "type.weight.emphasis",
-      "token_value": 600,
-      "value_type": "font_weight",
-      "unit": null,
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Available provisional font style; user authorized provisional typography.",
-        "notes": "From events.font.semibold. Figma style 'SemiBold' = 600."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "typography",
-      "token_name": "type.line_height.body",
-      "token_value": 24,
-      "value_type": "number",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.type.body.leading."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "typography",
-      "token_name": "type.line_height.heading",
-      "token_value": 32,
-      "value_type": "number",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.type.title.leading."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "typography",
-      "token_name": "type.letter_spacing.default",
-      "token_value": 0,
-      "value_type": "dimension",
-      "unit": null,
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "spacing",
-      "token_name": "space.small",
-      "token_value": 8,
-      "value_type": "dimension",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.size.8."
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "spacing",
-      "token_name": "space.medium",
+      "category": "type",
+      "token_name": "type.size.md",
       "token_value": 16,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.size.16."
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Row labels, buttons, body"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "spacing",
-      "token_name": "space.large",
+      "category": "type",
+      "token_name": "type.size.lg",
+      "token_value": 18,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Lead paragraph, rail headings"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.size.xl",
+      "token_value": 22,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Card and dialog titles"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.size.xxl",
+      "token_value": 28,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Screen title"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.size.display",
+      "token_value": 34,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Large numbers such as the Empower score"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.weight.regular",
+      "token_value": 400,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Body text"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.weight.medium",
+      "token_value": 600,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Labels and rail headings"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.weight.bold",
+      "token_value": 700,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Titles and buttons"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.weight.heavy",
+      "token_value": 800,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Screen title"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.line_height.tight",
+      "token_value": 1.15,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Titles"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.line_height.snug",
+      "token_value": 1.3,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_account",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Labels and short text"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.line_height.body",
+      "token_value": 1.5,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Paragraphs"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.letter_spacing.default",
+      "token_value": 0,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Body text"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.letter_spacing.tight",
+      "token_value": -0.01,
+      "value_type": "dimension",
+      "unit": "em",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Large titles"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.letter_spacing.caps",
+      "token_value": 0.08,
+      "value_type": "dimension",
+      "unit": "em",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Read from the reference lettering",
+        "notes": "Capital-letter labels, tabs and the Play button"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.hairline",
+      "token_value": 2,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Gap between an icon and its label"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.1",
+      "token_value": 4,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Inside a badge"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.2",
+      "token_value": 8,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Between chips, inside small controls"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.3",
+      "token_value": 12,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Between cards in a rail"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.4",
+      "token_value": 16,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_account",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Inside a row or field"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.5",
+      "token_value": 20,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Screen edge margin"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.6",
       "token_value": 24,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.size.24."
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Between groups"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.7",
+      "token_value": 32,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Between sections"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.8",
+      "token_value": 48,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Around an empty state"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "space",
+      "token_name": "space.9",
+      "token_value": 64,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Largest gap"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "radius",
       "token_name": "radius.small",
-      "token_value": 8,
+      "token_value": 4,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value. The derivation only measured a pill radius."
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Buttons, fields, cards, badges"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "radius",
       "token_name": "radius.medium",
+      "token_value": 8,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Larger image cards"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.large",
       "token_value": 16,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value. The derivation only measured a pill radius."
+        "reference_id": "disney_account",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Top corners of a sheet or dialog"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.bubble",
+      "token_value": 18,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Chat bubbles; chat is outside the Disney+ reference"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -455,10 +1157,24 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Explicit implementation of a fully rounded capsule, observed in reference.",
-        "notes": "From events.radius.pill."
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Chips and round buttons"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.round",
+      "token_value": 50,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Avatars"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -471,42 +1187,99 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.size.1."
+        "reference_id": "disney_account",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Dividers and outlines"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "border",
+      "token_name": "border.width.strong",
+      "token_value": 2,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Focus ring and selected outline"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "border",
+      "token_name": "border.width.heavy",
+      "token_value": 4,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Underline of the selected tab"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.raised",
+      "token_value": "0 2px 8px #00000059",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Cards that lift on press"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "shadow",
       "token_name": "shadow.elevated",
-      "token_value": "0 4px 16px rgba(22, 22, 22, 0.08)",
+      "token_value": "0 8px 24px #00000080",
       "value_type": "shadow",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Toasts and dialogs"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "blur",
       "token_name": "blur.overlay",
-      "token_value": 16,
+      "token_value": 20,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "disney_home",
+        "measurement_method": "Estimated from the frosted navigation bar",
+        "notes": "Blur behind the navigation bar"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.instant",
+      "token_value": 100,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Press feedback"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -519,10 +1292,9 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value. Motion can't be measured from the PNG references."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Colour and opacity changes"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -535,26 +1307,204 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value. Motion can't be measured from the PNG references."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Things that move a short way"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.long",
+      "token_value": 450,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Dialogs and cards leaving the deck"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.exit",
+      "token_value": 700,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Step-up card flying to the Me tab"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.pulse",
+      "token_value": 1200,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Typing dots and the recording light"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.duration.toast",
+      "token_value": 2600,
+      "value_type": "duration",
+      "unit": "ms",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "How long a toast stays"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "motion",
       "token_name": "motion.easing.standard",
-      "token_value": "ease-out",
+      "token_value": "cubic-bezier(0.16, 1, 0.3, 1)",
       "value_type": "easing",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Fast start, soft landing"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.easing.exit",
+      "token_value": "cubic-bezier(0.4, 0, 1, 1)",
+      "value_type": "easing",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Things leaving the screen"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.pressed",
+      "token_value": 0.97,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "A control while pressed"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.enter",
+      "token_value": 0.96,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Where an entering element starts"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.card_pressed",
+      "token_value": 0.985,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "An image card while pressed"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.distance.enter",
+      "token_value": 12,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "How far an entering element travels"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.angle.stamp",
+      "token_value": 12,
+      "value_type": "dimension",
+      "unit": "deg",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Tilt of the swipe stamps"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.angle.throw",
+      "token_value": 18,
+      "value_type": "dimension",
+      "unit": "deg",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Tilt of a card thrown off the deck"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.distance.throw",
+      "token_value": 140,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "How far a thrown card travels"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -567,26 +1517,99 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Page content"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.raised",
+      "token_value": 1,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Content over an image"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.stamp",
+      "token_value": 3,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Swipe stamps over a card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.sticky",
+      "token_value": 8,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Pinned headers and pinned actions"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.nav",
+      "token_value": 10,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Bottom navigation"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "layer",
+      "token_name": "layer.toast",
+      "token_value": 50,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Toasts"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "layer",
       "token_name": "layer.overlay",
-      "token_value": 100,
+      "token_value": 60,
       "value_type": "number",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Dialogs"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -599,15 +1622,59 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; chosen value."
+        "reference_id": "disney_account",
+        "measurement_method": "Estimated from the dimmed Delete account row",
+        "notes": "Controls that cannot be used"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
-      "category": "sizing",
+      "category": "opacity",
+      "token_name": "opacity.dim",
+      "token_value": 0.3,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Low point of a pulse"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.hidden",
+      "token_value": 0,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Start of a fade"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.full",
+      "token_value": 1,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "End of a fade"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
       "token_name": "size.touch_target",
       "token_value": 44,
       "value_type": "dimension",
@@ -615,10 +1682,384 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_17",
-        "figma_node_id": "13:17",
-        "measurement_method": "Measured from reference raster at source scale; normalized to mobile logical coordinates.",
-        "notes": "From events.size.44. Also the common minimum tap size on phones."
+        "reference_id": "empower_decision",
+        "measurement_method": "Accessibility minimum; Disney's 40pt Play button is raised to it",
+        "notes": "Smallest thing you can press"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.field",
+      "token_value": 56,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Height of a text field"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.row",
+      "token_value": 56,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Height of a settings row"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.nav",
+      "token_value": 64,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Height of the navigation bar"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.page_width",
+      "token_value": 480,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Widest the phone layout grows"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.icon.sm",
+      "token_value": 16,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Icon inside a chip or badge"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.icon.md",
+      "token_value": 24,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Navigation and action icons"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.icon.lg",
+      "token_value": 32,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home_rails",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Play button on a card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.avatar.sm",
+      "token_value": 32,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Avatar in the navigation bar or a stack"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.avatar.md",
+      "token_value": 44,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Avatar in a list row"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.avatar.lg",
+      "token_value": 72,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Avatar at the top of a profile"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.avatar.xl",
+      "token_value": 96,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_confirm",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Large profile portrait"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.progress",
+      "token_value": 4,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Thickness of a progress line"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.meter",
+      "token_value": 12,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Thickness of a comparison bar"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.dot",
+      "token_value": 8,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Typing dots and unread marks"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.switch.width",
+      "token_value": 44,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Switch track width"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.switch.knob",
+      "token_value": 24,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_app_settings",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Switch knob"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.stamp",
+      "token_value": 72,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Check mark on the done screen"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.deck",
+      "token_value": 430,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Height of the weekly picks deck"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.hero",
+      "token_value": 68,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Width of a featured card in a rail, so the next one peeks in"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.poster",
+      "token_value": 30,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Width of a small poster in a rail"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.landscape",
+      "token_value": 58,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home_rails",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Width of a wide card in a rail"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "ratio",
+      "token_name": "ratio.hero",
+      "token_value": "2 / 3",
+      "value_type": "ratio",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Featured card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "ratio",
+      "token_name": "ratio.poster",
+      "token_value": "5 / 7",
+      "value_type": "ratio",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Small poster"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "ratio",
+      "token_name": "ratio.landscape",
+      "token_value": "16 / 9",
+      "value_type": "ratio",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home_rails",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Wide card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "ratio",
+      "token_name": "ratio.square",
+      "token_value": "1",
+      "value_type": "ratio",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Square tiles"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -631,17 +2072,496 @@
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--page-width)"
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Phone layout up to here"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "breakpoint",
+      "token_name": "breakpoint.wide",
+      "token_value": 768,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Tablet and wider"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.line_height.none",
+      "token_value": 1,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Icons and single-line labels"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.icon.xs",
+      "token_value": 14,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Flame beside the Empower score"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.avatar.xs",
+      "token_value": 24,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Faces in a who-is-going stack"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.bubble",
+      "token_value": 80,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Widest a chat bubble grows"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.voice",
+      "token_value": 180,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Narrowest a voice note gets"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.lab_label",
+      "token_value": 110,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Label column in the Matching Lab bars"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.thumb",
+      "token_value": 34,
+      "value_type": "dimension",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Thumbnail in a row with text beside it"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.min",
+      "token_value": 256,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Narrowest a grid card gets"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.page_wide",
+      "token_value": 1088,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Widest the browse grid grows"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.footer_clearance",
+      "token_value": 168,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Room left under a page for a pinned action"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.composer_clearance",
+      "token_value": 88,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Room left under a chat for the message box"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.action",
+      "token_value": 64,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Width of an icon-over-label action"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.back",
+      "token_value": 0.92,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "The third card in the deck"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.fly",
+      "token_value": 0.3,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "The step-up card shrinking as it flies to the Me tab"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "motion",
+      "token_name": "motion.scale.hover",
+      "token_value": 1.04,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Card artwork under a mouse pointer"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "ratio",
+      "token_name": "ratio.detail",
+      "token_value": "4 / 3",
+      "value_type": "ratio",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_detail",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Artwork at the top of a detail screen"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.art_clear",
+      "token_value": 208,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "disney_home",
+        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
+        "notes": "Artwork left clear above the text of a featured card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "runtime",
+      "token_name": "runtime.swipe_x",
+      "token_value": 0,
+      "value_type": "runtime",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Set by js/events.js while a card is dragged",
+        "notes": "Sideways position of the dragged card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "runtime",
+      "token_name": "runtime.swipe_angle",
+      "token_value": 0,
+      "value_type": "runtime",
+      "unit": "deg",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Set by js/events.js while a card is dragged",
+        "notes": "Tilt of the dragged card"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "runtime",
+      "token_name": "runtime.fill",
+      "token_value": 0,
+      "value_type": "runtime",
+      "unit": "%",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Set by page scripts for bars and progress",
+        "notes": "How full a bar is"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.state.hover_on_dark",
+      "token_value": "#ffffff14",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "A light veil laid over a dark control while the pointer is on it"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.state.pressed_on_dark",
+      "token_value": "#ffffff29",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "A stronger light veil while a dark control is held down"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.state.hover_on_light",
+      "token_value": "#00000014",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "A dark veil laid over a white control while the pointer is on it"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.state.pressed_on_light",
+      "token_value": "#00000029",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "A stronger dark veil while a white control is held down"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.hover",
+      "token_value": 0.8,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "A full-strength mark or icon while the pointer is on it"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "opacity",
+      "token_name": "opacity.pressed",
+      "token_value": 0.6,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ stills do not show hover or pressed feedback",
+        "notes": "Text or an icon while it is held down"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.highlight",
+      "token_value": "inset 0 1px 0 #ffffff12",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "notes": "A lit top edge that lifts a panel off the page"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.tile_far",
+      "token_value": "0 26px 30px -10px #000000b0",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "notes": "The wide soft shadow under an image tile"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.tile_near",
+      "token_value": "0 16px 10px -10px #000000ba",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "notes": "The tight contact shadow under an image tile"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.border.hairline",
+      "token_value": "#f9f9f91a",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "notes": "The faint edge that keeps a dark image from melting into the page"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.border.hairline_strong",
+      "token_value": "#f9f9f9cc",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "notes": "That edge at full strength while the pointer is on the tile"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     }
   ],
   "components": [],
   "notes": [
-    "Candidate slots are organizational placeholders. Include only the pieces the flow actually needs.",
-    "No token values, variants, dependencies, Figma component IDs, or recipe implementations have been assigned."
+    "Values marked as sampled or measured come from the Disney+ iOS screens listed in references.",
+    "Values marked as a team decision cover what the Disney+ reference does not show: motion timing, status colours, the Empower score and chat."
   ]
 }

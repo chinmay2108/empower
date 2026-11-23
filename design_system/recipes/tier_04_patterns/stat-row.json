@@ -1,0 +1,9 @@
+{
+  "className": "stat-row",
+  "purpose": "Two stats side by side.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "1fr 1fr",
+    "gap": "{space.3}"
+  }
+}

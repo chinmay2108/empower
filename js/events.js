@@ -39,6 +39,8 @@
   var usedLines = [];
   var history = logic.historyFor(profile, commitments, store.getReflections(), groups, now, familiar);
 
+  /* Where a card sits in the stack: top, one back, two back. Whole class names, so the design check can see each one. */
+  var STACK_CLASS = [" is-top", " is-next-1", " is-next-2"];
   var CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   var CROSS = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
@@ -48,13 +50,13 @@
   }
 
   function swipeCard(p, i) {
-    return '<article class="swipe-card' + (i === 0 ? " is-top" : " is-next-" + i) + '" data-i="' + i + '" data-session="' + p.session.id +
+    return '<article class="swipe-card' + STACK_CLASS[Math.min(i, 2)] + '" data-i="' + i + '" data-session="' + p.session.id +
       '" data-group="' + p.group.id + '"' + (i ? " inert" : "") + ' aria-label="' + ui.escapeHtml(p.group.name) + '">' +
       ui.eventImage(p.group) +
       '<span class="swipe-card__stamp swipe-card__stamp--yes">I\'m in</span><span class="swipe-card__stamp swipe-card__stamp--no">Pass</span>' +
-      '<p class="eyebrow">' + (passes.length + i === 0 ? "Your pick this week" : "Next best") + "</p>" +
+      '<span class="tag">' + (passes.length + i === 0 ? "Your pick this week" : "Next best") + "</span>" +
       '<h2 class="swipe-card__title">' + p.group.name + "</h2>" +
-      '<p class="card__meta">' + ui.formatDay(p.session.startsAt) + " · " + ui.formatTime(p.session.startsAt) + " · " + p.group.venue + "</p>" +
+      '<p class="swipe-card__meta">' + ui.formatDay(p.session.startsAt) + " · " + ui.formatTime(p.session.startsAt) + " · " + p.group.venue + "</p>" +
       '<p class="pick__why">' + logic.pitch(p.session, p.group, profile, history, usedLines) + "</p>" +
       going(p.session) +
       '<a class="swipe-card__more" href="group.html?session=' + encodeURIComponent(p.session.id) + '">More about this group</a>' +
@@ -74,11 +76,11 @@
   }
 
   host.innerHTML =
-    '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
-    '<h1 class="title">This week.</h1><p class="subtitle">Swipe right if you\'re in, left for another.</p>' +
+    '<h1 class="title">This week</h1><p class="subtitle">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) +
+    ". Swipe right if you\'re in, left for another.</p>" +
     '<div class="deck" id="deck">' + picks.map(swipeCard).reverse().join("") + "</div>" +
-    '<div class="deck__actions"><button type="button" class="deck__btn deck__btn--no" data-swipe="left" aria-label="Pass">' + CROSS + "Pass</button>" +
-    '<button type="button" class="deck__btn deck__btn--yes" data-swipe="right" aria-label="I\'m in">' + CHECK + "I'm in</button></div>" +
+    '<div class="deck__actions"><button type="button" class="btn btn--secondary deck__btn" data-swipe="left" aria-label="Pass">' + CROSS + "Pass</button>" +
+    '<button type="button" class="btn deck__btn" data-swipe="right" aria-label="I\'m in">' + CHECK + "I'm in</button></div>" +
     '<p class="small muted center"><span id="deck-count">' + countText(picks.length) + '</span> <span id="undo-row"></span></p>' +
     '<p class="browse-entry center"><a class="btn btn--secondary btn--inline" href="browse.html">Explore all groups</a></p>';
 
@@ -94,7 +96,7 @@
     cards.sort(function (a, b) { return a.getAttribute("data-i") - b.getAttribute("data-i"); });
     cards.forEach(function (c, i) {
       c.inert = i !== 0;
-      c.className = "swipe-card" + (i === 0 ? " is-top" : " is-next-" + Math.min(i, 2));
+      c.className = "swipe-card" + STACK_CLASS[Math.min(i, 2)];
     });
     document.getElementById("deck-count").textContent = countText(cards.length);
     return cards.length;
@@ -107,7 +109,7 @@
     var sessionId = card.getAttribute("data-session");
     card.classList.add(dir === "right" ? "is-out-right" : "is-out-left", "is-gone");
     card.classList.remove("is-top");
-    card.style.transform = "";
+    clearDrag(card);
     if (dir === "right") {
       Empower.log("events.swiped_right", { session: sessionId, position: passes.length + shown });
       setTimeout(function () { window.location.href = "commit.html?session=" + encodeURIComponent(sessionId); }, 280);
@@ -158,6 +160,11 @@
 
   /* Drag the top card: past 100px it counts as a swipe; otherwise it springs back. */
   var drag = null;
+  /* The card follows the finger through two runtime tokens; clearing them lets the recipe take over again. */
+  function clearDrag(card) {
+    card.style.removeProperty("--runtime-swipe_x");
+    card.style.removeProperty("--runtime-swipe_angle");
+  }
   deck.addEventListener("pointerdown", function (e) {
     var card = e.target.closest(".swipe-card.is-top");
     if (!card || e.target.closest("a")) return;
@@ -168,7 +175,8 @@
   deck.addEventListener("pointermove", function (e) {
     if (!drag) return;
     drag.dx = e.clientX - drag.x;
-    drag.card.style.transform = "translateX(" + drag.dx + "px) rotate(" + (drag.dx / 18) + "deg)";
+    drag.card.style.setProperty("--runtime-swipe_x", drag.dx + "px");
+    drag.card.style.setProperty("--runtime-swipe_angle", (drag.dx / 18) + "deg");
     drag.card.classList.toggle("is-yes", drag.dx > 40);
     drag.card.classList.toggle("is-no", drag.dx < -40);
   });
@@ -178,7 +186,7 @@
     drag = null;
     card.classList.remove("is-dragging", "is-yes", "is-no");
     if (Math.abs(dx) > 100) decide(dx > 0 ? "right" : "left");
-    else card.style.transform = "";
+    else clearDrag(card);
   }
   deck.addEventListener("pointerup", endDrag);
   deck.addEventListener("pointercancel", function () {
