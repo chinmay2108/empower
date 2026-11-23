@@ -9,7 +9,6 @@
     "display": "grid",
     "place-items": "center",
     "font-weight": "{type.weight.bold}",
-    "font-size": "{type.size.sm}",
     "color": "{color.text.primary}",
     "object-fit": "cover"
   },
@@ -17,21 +16,16 @@
     "size": {
       "sm": {
         "width": "{size.avatar.xs}",
-        "height": "{size.avatar.xs}",
-        "font-size": "{type.size.xs}"
+        "height": "{size.avatar.xs}"
       },
       "lg": {
         "width": "{size.avatar.lg}",
-        "height": "{size.avatar.lg}",
-        "font-size": "{type.size.lg}"
+        "height": "{size.avatar.lg}"
       }
     },
     "kind": {
       "photo": {
         "padding": "0"
-      },
-      "center": {
-        "margin": "0 auto {space.3}"
       }
     }
   },
@@ -40,5 +34,15 @@
   },
   "surface": {
     "base": "fill"
-  }
+  },
+  "text": {
+    "base": "glyph-sm",
+    "--sm": "glyph-xs",
+    "--lg": "glyph-lg"
+  },
+  "example": "<div class=\"avatar\">MK</div>",
+  "examples": {
+    "--photo": "<img class=\"avatar avatar--photo\" src=\"../img/people/u009.jpg\" alt=\"\">"
+  },
+  "frame": "inline"
 }

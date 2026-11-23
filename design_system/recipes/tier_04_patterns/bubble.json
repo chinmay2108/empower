@@ -1,12 +1,15 @@
 {
   "className": "bubble",
   "purpose": "One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "text": {
+    "base": "message",
+    "__time": "caption",
+    "--app": "note"
+  },
   "base": {
     "max-width": "{size.bubble}",
     "padding": "{space.2} {space.3}",
     "border-radius": "{radius.bubble}",
-    "font-size": "{type.size.md}",
-    "line-height": "{type.line_height.snug}",
     "overflow-wrap": "anywhere"
   },
   "elements": {
@@ -19,7 +22,6 @@
     "time": {
       "float": "right",
       "margin": "{space.2} 0 0 {space.3}",
-      "font-size": "{type.size.xs}",
       "color": "{color.text.tertiary}"
     }
   },
@@ -46,7 +48,6 @@
         "justify-self": "stretch",
         "max-width": "none",
         "background": "{color.accent.soft}",
-        "font-size": "{type.size.sm}",
         "border-radius": "{radius.medium}"
       },
       "typing": {
@@ -85,5 +86,10 @@
         "transform": "translateY(calc({space.1} * -1))"
       }
     }
-  }
+  },
+  "example": "<div class=\"bubble\"><span class=\"bubble__who\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u009.jpg\" alt=\"\"><strong>Felix</strong></span>See you there<span class=\"bubble__time\">11:46 AM</span></div>",
+  "examples": {
+    "--typing": "<div class=\"bubble bubble--them bubble--typing\" aria-label=\"Felix is typing\"><span></span><span></span><span></span></div>"
+  },
+  "frame": "block"
 }

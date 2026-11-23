@@ -6,7 +6,6 @@
   ],
   "purpose": "The weekly pick: artwork fills the card, a fade carries the title, like Disney's featured card.",
   "base": {
-    "background": "{color.surface.sunken}",
     "position": "relative",
     "grid-area": "1 / 1",
     "min-width": "0",
@@ -60,23 +59,15 @@
   "elements": {
     "title": {
       "margin": "0",
-      "font-size": "{type.size.xxl}",
-      "font-weight": "{type.weight.heavy}",
-      "letter-spacing": "{type.letter_spacing.tight}",
-      "line-height": "{type.line_height.tight}",
       "text-wrap": "balance"
     },
     "meta": {
-      "font-size": "{type.size.sm}",
-      "font-weight": "{type.weight.medium}",
       "color": "{color.text.secondary}"
     },
     "more": {
       "display": "inline-flex",
       "align-items": "center",
       "min-height": "{size.touch_target}",
-      "font-size": "{type.size.sm}",
-      "font-weight": "{type.weight.bold}",
       "color": "{color.accent.default}"
     },
     "stamp": {
@@ -85,10 +76,6 @@
       "border": "{border.width.heavy} solid currentColor",
       "border-radius": "{radius.small}",
       "background": "{color.surface.canvas}",
-      "font-weight": "{type.weight.heavy}",
-      "font-size": "{type.size.lg}",
-      "letter-spacing": "{type.letter_spacing.caps}",
-      "text-transform": "uppercase",
       "opacity": "{opacity.hidden}",
       "transition": "opacity {motion.duration.short} {motion.easing.standard}",
       "z-index": "{layer.stamp}",
@@ -150,6 +137,18 @@
     "__more": "link"
   },
   "surface": {
-    "base": "poster"
-  }
+    "base": "photo"
+  },
+  "text": {
+    "__title": "title",
+    "__meta": "label",
+    "__more": "label-strong",
+    "__stamp": "stamp"
+  },
+  "example": "<article class=\"swipe-card\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"swipe-card__meta\">Thu, Nov 26 · 7pm · 5th Street Station</p><p class=\"pick__why\">You liked the last two, and it is a short walk from you.</p><p class=\"pick__social\"><span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u011.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u012.jpg\" alt=\"\"></span>Jada M. and Aaron B. are going</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article>",
+  "examples": {
+    ".is-yes": "<article class=\"swipe-card is-dragging is-yes\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"swipe-card__meta\">Thu, Nov 26 · 7pm · 5th Street Station</p><p class=\"pick__why\">You liked the last two, and it is a short walk from you.</p><p class=\"pick__social\"><span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u011.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u012.jpg\" alt=\"\"></span>Jada M. and Aaron B. are going</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article>",
+    ".is-no": "<article class=\"swipe-card is-dragging is-no\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"swipe-card__meta\">Thu, Nov 26 · 7pm · 5th Street Station</p><p class=\"pick__why\">You liked the last two, and it is a short walk from you.</p><p class=\"pick__social\"><span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u011.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u012.jpg\" alt=\"\"></span>Jada M. and Aaron B. are going</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article>"
+  },
+  "frame": "block"
 }

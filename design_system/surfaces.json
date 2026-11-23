@@ -64,6 +64,42 @@
         "border-radius": "{radius.large}",
         "box-shadow": "{shadow.highlight}, {shadow.elevated}"
       }
+    },
+    "photo": {
+      "purpose": "A card that is all photograph: the poster's corners, edge and shadow, and black behind the picture while it loads.",
+      "styles": {
+        "background": "{color.surface.sunken}",
+        "border-radius": "{radius.medium}",
+        "border": "{border.width.default} solid {color.border.hairline}",
+        "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
+        "overflow": "hidden"
+      }
+    },
+    "field-round": {
+      "purpose": "A field shaped as a pill, for one line you write and send: the chat composer.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.pill}",
+        "box-shadow": "{shadow.highlight}"
+      }
+    },
+    "marked": {
+      "purpose": "A block singled out from its neighbours: an accent line drawn just inside its edge.",
+      "styles": {
+        "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.default}"
+      }
+    },
+    "glow": {
+      "purpose": "A warm halo around a small mark that has reached its highest level.",
+      "styles": {
+        "filter": "drop-shadow(0 0 {space.1} {color.ember.glow})"
+      }
+    },
+    "photo-fade": {
+      "purpose": "The foot of a photograph melting into the panel below it, so a name can sit across the join.",
+      "styles": {
+        "background": "linear-gradient(to top, {color.surface.panel}, {color.scrim.soft} 50%, {color.scrim.none})"
+      }
     }
   }
 }

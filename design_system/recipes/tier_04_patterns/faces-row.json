@@ -3,5 +3,7 @@
   "purpose": "A line that holds a faces stack.",
   "base": {
     "margin": "0 0 {space.2}"
-  }
+  },
+  "example": "<p class=\"faces-row\"><span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u006.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u007.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u008.jpg\" alt=\"\"></span>Jada M., Aaron B. and 3 others are going</p>",
+  "frame": "block"
 }

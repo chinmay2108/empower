@@ -4,6 +4,9 @@
     "option"
   ],
   "purpose": "The two sides of one this-or-that question, as an even pair of tiles.",
+  "text": {
+    "base & .option__title": "heading"
+  },
   "base": {
     "display": "grid",
     "gap": "{space.3}",
@@ -16,9 +19,9 @@
       "margin-bottom": "0"
     },
     "& .option__title": {
-      "font-size": "{type.size.lg}",
-      "line-height": "{type.line_height.snug}",
       "text-wrap": "balance"
     }
-  }
+  },
+  "example": "<div class=\"quiz-pair\"><button type=\"button\" class=\"option\" aria-pressed=\"false\"><p class=\"option__title\">Somewhere I can talk</p></button><button type=\"button\" class=\"option\" aria-pressed=\"false\"><p class=\"option__title\">Somewhere there is music</p></button></div>",
+  "frame": "block"
 }

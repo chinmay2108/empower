@@ -1,6 +1,9 @@
 {
   "className": "big-check",
   "purpose": "The check mark on a done screen.",
+  "text": {
+    "base": "glyph-xxl"
+  },
   "base": {
     "width": "{size.stamp}",
     "height": "{size.stamp}",
@@ -10,7 +13,8 @@
     "place-items": "center",
     "background": "{color.status.success_soft}",
     "color": "{color.status.success}",
-    "font-size": "{type.size.xxl}",
     "font-weight": "{type.weight.heavy}"
-  }
+  },
+  "example": "<div class=\"big-check\"><svg class=\"check-mark\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg></div>",
+  "frame": "inline"
 }

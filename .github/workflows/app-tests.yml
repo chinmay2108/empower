@@ -26,3 +26,5 @@ jobs:
         run: node scripts/build_tokens.js --check
       - name: Check design-system rules (tokens only, see AGENTS.md)
         run: node scripts/check_design_system.js
+      - name: Check the generated review board is up to date
+        run: node scripts/build_board.js --check

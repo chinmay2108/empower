@@ -1,13 +1,15 @@
 {
   "className": "lab-bar",
   "purpose": "One comparison bar in the Matching Lab.",
+  "text": {
+    "base": "meta"
+  },
   "base": {
     "display": "grid",
     "grid-template-columns": "{size.lab_label} 1fr {size.touch_target}",
     "align-items": "center",
     "gap": "{space.2}",
-    "margin-bottom": "{space.2}",
-    "font-size": "{type.size.sm}"
+    "margin-bottom": "{space.2}"
   },
   "elements": {
     "label": {
@@ -44,5 +46,11 @@
         "transition": "none"
       }
     }
+  },
+  "example": "<div class=\"lab-bar\"><span class=\"lab-bar__label\">Empower picks</span><span class=\"lab-bar__track\"><span class=\"lab-bar__fill lab-bar__fill--empower\"></span></span><span class=\"lab-bar__value\">100%</span></div>",
+  "frame": "block",
+  "examples": {
+    "__fill--random": "<div class=\"lab-bar\"><span class=\"lab-bar__label\">Random picks</span><span class=\"lab-bar__track\"><span class=\"lab-bar__fill lab-bar__fill--random\"></span></span><span class=\"lab-bar__value\">38%</span></div>",
+    "__fill--interests": "<div class=\"lab-bar\"><span class=\"lab-bar__label\">Interests only</span><span class=\"lab-bar__track\"><span class=\"lab-bar__fill lab-bar__fill--interests\"></span></span><span class=\"lab-bar__value\">61%</span></div>"
   }
 }

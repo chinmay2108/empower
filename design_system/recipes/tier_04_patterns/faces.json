@@ -14,5 +14,7 @@
     "& .avatar + .avatar": {
       "margin-left": "calc({space.2} * -1)"
     }
-  }
+  },
+  "example": "<span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u006.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u007.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u008.jpg\" alt=\"\"></span>",
+  "frame": "inline"
 }

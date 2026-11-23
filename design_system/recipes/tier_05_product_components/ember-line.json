@@ -7,5 +7,10 @@
     "justify-content": "center",
     "gap": "{space.2}",
     "margin": "0"
+  },
+  "example": "<p class=\"ember-line\"><span class=\"ember ember--warm\" aria-label=\"Empower score 18\"><svg class=\"ember__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z\"/></svg><span class=\"ember__value\">18</span></span><span class=\"small muted\">Felix's score</span></p>",
+  "frame": "block",
+  "waive": {
+    "unused": "Not on any screen today. Kept until Daniel decides whether to remove it."
   }
 }

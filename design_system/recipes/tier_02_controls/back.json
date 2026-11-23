@@ -6,8 +6,6 @@
     "align-items": "center",
     "gap": "{space.2}",
     "min-height": "{size.touch_target}",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.medium}",
     "color": "{color.text.secondary}",
     "text-decoration": "none"
   },
@@ -22,14 +20,12 @@
       "stroke-linejoin": "round"
     }
   },
-  "variants": {
-    "kind": {
-      "person": {
-        "gap": "{space.2}"
-      }
-    }
-  },
   "interaction": {
     "base": "text"
-  }
+  },
+  "text": {
+    "base": "label"
+  },
+  "example": "<a class=\"back\" href=\"#\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg>This week</a>",
+  "frame": "inline"
 }

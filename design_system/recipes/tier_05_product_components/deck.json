@@ -30,5 +30,10 @@
         "stroke-linejoin": "round"
       }
     }
+  },
+  "example": "<div class=\"deck\"><article class=\"swipe-card is-next-2\"><img class=\"event-art\" src=\"../img/choir.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Community Choir</h2><p class=\"swipe-card__meta\">Tue, Nov 24 · 6:30pm</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article><article class=\"swipe-card is-next-1\"><img class=\"event-art\" src=\"../img/dance.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Swing Cville Wednesday Lessons</h2><p class=\"swipe-card__meta\">Wed, Nov 25 · 7pm</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article><article class=\"swipe-card is-top\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"swipe-card__stamp swipe-card__stamp--yes\">I'm in</span><span class=\"swipe-card__stamp swipe-card__stamp--no\">Pass</span><span class=\"tag\">Your pick this week</span><h2 class=\"swipe-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"swipe-card__meta\">Thu, Nov 26 · 7pm · 5th Street Station</p><a class=\"swipe-card__more\" href=\"#\">More about this group</a></article></div>",
+  "frame": "phone",
+  "examples": {
+    "__actions": "<div class=\"deck__actions\"><button type=\"button\" class=\"btn btn--secondary deck__btn\" aria-label=\"Pass\">Pass</button><button type=\"button\" class=\"btn deck__btn\" aria-label=\"I'm in\">I'm in</button></div>"
   }
 }

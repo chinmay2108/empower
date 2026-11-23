@@ -18,5 +18,7 @@
     "& span.is-done": {
       "background": "{color.accent.default}"
     }
-  }
+  },
+  "example": "<div class=\"steps\"><span class=\"is-done\"></span><span class=\"is-done\"></span><span></span><span></span><span></span></div>",
+  "frame": "block"
 }

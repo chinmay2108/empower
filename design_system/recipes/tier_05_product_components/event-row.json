@@ -12,13 +12,15 @@
     "padding": "{space.2}",
     "margin-bottom": "{space.3}",
     "color": "inherit",
-    "text-decoration": "none",
-    "&--plain": {
-      "grid-template-columns": "1fr",
-      "padding": "{space.4}"
-    },
-    "&--today": {
-      "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.default}"
+    "text-decoration": "none"
+  },
+  "variants": {
+    "kind": {
+      "plain": {
+        "grid-template-columns": "1fr",
+        "padding": "{space.4}"
+      },
+      "today": {}
     }
   },
   "elements": {
@@ -28,16 +30,11 @@
     },
     "title": {
       "display": "block",
-      "margin": "0 0 {space.1}",
-      "font-size": "{type.size.md}",
-      "font-weight": "{type.weight.bold}",
-      "line-height": "{type.line_height.snug}"
+      "margin": "0 0 {space.1}"
     },
     "meta": {
       "display": "block",
       "margin": "0",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.secondary}"
     }
   },
@@ -45,6 +42,13 @@
     "base": "surface"
   },
   "surface": {
-    "base": "panel"
-  }
+    "base": "panel",
+    "--today": "marked"
+  },
+  "text": {
+    "__title": "subheading",
+    "__meta": "meta"
+  },
+  "example": "<a class=\"event-row\" href=\"#\"><img class=\"event-art\" src=\"../img/games.jpg\" alt=\"\" draggable=\"false\"><span class=\"event-row__body\"><span class=\"event-row__title\">Charlottesville Game Club</span><span class=\"event-row__meta\">Thu, Nov 26 · 5pm · The End Games</span></span></a>",
+  "frame": "block"
 }

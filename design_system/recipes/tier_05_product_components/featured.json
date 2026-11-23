@@ -6,7 +6,6 @@
   ],
   "purpose": "The home invitation to this week's picks: a strip of event artwork fading into a title and one action.",
   "base": {
-    "background": "{color.surface.sunken}",
     "position": "relative",
     "isolation": "isolate"
   },
@@ -40,19 +39,20 @@
       }
     },
     "title": {
-      "margin": "0",
-      "font-size": "{type.size.xxl}",
-      "font-weight": "{type.weight.heavy}",
-      "letter-spacing": "{type.letter_spacing.tight}",
-      "line-height": "{type.line_height.tight}"
+      "margin": "0"
     },
     "meta": {
       "margin": "0",
-      "font-size": "{type.size.md}",
       "color": "{color.text.secondary}"
     }
   },
   "surface": {
-    "base": "poster"
-  }
+    "base": "photo"
+  },
+  "text": {
+    "__title": "title",
+    "__meta": "body"
+  },
+  "example": "<div class=\"featured\"><div class=\"featured__art\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><img class=\"event-art\" src=\"../img/dance.jpg\" alt=\"\" draggable=\"false\"><img class=\"event-art\" src=\"../img/volunteer.jpg\" alt=\"\" draggable=\"false\"></div><div class=\"featured__body\"><p class=\"featured__title\">Your weekly picks</p><p class=\"featured__meta\">Just one thing. We've lined up a few.</p><a class=\"btn\" href=\"#\">See this week</a></div></div>",
+  "frame": "block"
 }

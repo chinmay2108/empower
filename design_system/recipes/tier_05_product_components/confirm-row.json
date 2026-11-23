@@ -11,10 +11,14 @@
     "align-items": "start",
     "gap": "{space.4}",
     "padding": "{space.2}",
-    "margin-bottom": "{space.3}",
-    "&--plain": {
-      "grid-template-columns": "1fr",
-      "padding": "{space.4}"
+    "margin-bottom": "{space.3}"
+  },
+  "variants": {
+    "kind": {
+      "plain": {
+        "grid-template-columns": "1fr",
+        "padding": "{space.4}"
+      }
     }
   },
   "elements": {
@@ -22,15 +26,10 @@
       "min-width": "0"
     },
     "title": {
-      "margin": "0 0 {space.1}",
-      "font-size": "{type.size.md}",
-      "font-weight": "{type.weight.bold}",
-      "line-height": "{type.line_height.snug}"
+      "margin": "0 0 {space.1}"
     },
     "meta": {
       "margin": "0 0 {space.3}",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.secondary}"
     },
     "actions": {
@@ -41,5 +40,11 @@
   },
   "surface": {
     "base": "panel"
-  }
+  },
+  "text": {
+    "__title": "subheading",
+    "__meta": "meta"
+  },
+  "example": "<div class=\"confirm-row\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><div class=\"confirm-row__body\"><p class=\"confirm-row__title\">Thursday Trivia at Alamo Drafthouse</p><p class=\"confirm-row__meta\">Thu, Nov 19 · 7pm</p><div class=\"confirm-row__actions\"><button type=\"button\" class=\"mini-btn mini-btn--dark\">Yes, I went</button><button type=\"button\" class=\"mini-btn\">I didn't make it</button></div></div></div>",
+  "frame": "block"
 }

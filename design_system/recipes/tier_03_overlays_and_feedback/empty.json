@@ -10,13 +10,15 @@
     "title": {
       "margin": "0 0 {space.2}",
       "color": "{color.text.primary}",
-      "font-weight": "{type.weight.bold}",
-      "font-size": "{type.size.xl}",
-      "line-height": "{type.line_height.tight}",
       "text-wrap": "balance"
     }
   },
   "surface": {
     "base": "panel"
-  }
+  },
+  "text": {
+    "__title": "headline"
+  },
+  "example": "<div class=\"empty\"><p class=\"empty__title\">No matches yet</p><p class=\"mt-4\"><a class=\"btn btn--inline\" href=\"#\">Back to People</a></p></div>",
+  "frame": "block"
 }

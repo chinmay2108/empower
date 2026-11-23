@@ -3,5 +3,7 @@
   "purpose": "One labelled input in a form.",
   "base": {
     "margin-bottom": "{space.6}"
-  }
+  },
+  "example": "<div class=\"field\"><label class=\"label\">I'll leave at</label><input class=\"input\" type=\"time\" value=\"18:30\" aria-label=\"I'll leave at\"></div>",
+  "frame": "block"
 }

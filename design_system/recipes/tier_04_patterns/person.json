@@ -5,6 +5,9 @@
     "avatar",
     "mini-btn"
   ],
+  "text": {
+    "__meta": "meta"
+  },
   "base": {
     "display": "flex",
     "align-items": "center",
@@ -25,13 +28,9 @@
     },
     "meta": {
       "margin": "0",
-      "font-size": "{type.size.sm}",
       "color": "{color.text.secondary}"
-    },
-    "actions": {
-      "display": "flex",
-      "gap": "{space.2}",
-      "margin-top": "{space.2}"
     }
-  }
+  },
+  "example": "<div class=\"person\"><img class=\"avatar avatar--photo\" src=\"../img/people/u005.jpg\" alt=\"\"><div class=\"person__body\"><p class=\"person__name\">Maya K.</p><p class=\"person__meta\">You've been at 3 sessions together</p></div><button type=\"button\" class=\"mini-btn\" aria-pressed=\"false\">Add</button></div>",
+  "frame": "block"
 }

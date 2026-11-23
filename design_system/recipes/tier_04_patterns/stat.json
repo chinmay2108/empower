@@ -6,18 +6,19 @@
   },
   "elements": {
     "value": {
-      "font-size": "{type.size.xxl}",
-      "font-weight": "{type.weight.heavy}",
-      "line-height": "{type.line_height.tight}",
-      "letter-spacing": "{type.letter_spacing.tight}",
       "font-variant-numeric": "tabular-nums"
     },
     "label": {
-      "font-size": "{type.size.sm}",
       "color": "{color.text.secondary}"
     }
   },
   "surface": {
     "base": "panel"
-  }
+  },
+  "text": {
+    "__value": "title",
+    "__label": "meta"
+  },
+  "example": "<div class=\"stat\"><div class=\"stat__value\">7</div><div class=\"stat__label\">hours together</div></div>",
+  "frame": "block"
 }

@@ -1,6 +1,10 @@
 {
   "className": "chat",
   "purpose": "The list of messages. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "text": {
+    "__day": "caption",
+    "__note": "caption"
+  },
   "base": {
     "display": "flex",
     "flex-direction": "column",
@@ -15,7 +19,6 @@
       "border-radius": "{radius.pill}",
       "background": "{color.surface.canvas}",
       "color": "{color.text.secondary}",
-      "font-size": "{type.size.xs}",
       "text-align": "center"
     },
     "note": {
@@ -26,8 +29,9 @@
       "border-radius": "{radius.pill}",
       "background": "{color.surface.canvas}",
       "color": "{color.text.secondary}",
-      "font-size": "{type.size.xs}",
       "text-align": "center"
     }
-  }
+  },
+  "example": "<div class=\"chat\"><p class=\"chat__note\">Say hi to Felix. (Replies are simulated in this demo.)</p><p class=\"chat__day\">Mon, Nov 23</p><div class=\"bubble bubble--me\">Thursday works for me<span class=\"bubble__time\">11:36 AM</span></div><div class=\"bubble bubble--them\">See you there<span class=\"bubble__time\">11:46 AM</span></div></div>",
+  "frame": "block"
 }

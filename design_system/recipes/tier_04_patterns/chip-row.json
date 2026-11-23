@@ -5,5 +5,7 @@
     "display": "flex",
     "flex-wrap": "wrap",
     "gap": "{space.2}"
-  }
+  },
+  "example": "<div class=\"chip-row\"><button type=\"button\" class=\"chip\" aria-pressed=\"false\">Walk</button><button type=\"button\" class=\"chip\" aria-pressed=\"false\">Drive</button><button type=\"button\" class=\"chip\" aria-pressed=\"false\">Bus</button></div>",
+  "frame": "block"
 }

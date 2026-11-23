@@ -137,6 +137,28 @@
       "reduced": {
         "transition": "none"
       }
+    },
+    "card": {
+      "purpose": "A card led by artwork, like a Disney tile: it grows a touch on hover and settles back a touch when pressed.",
+      "rest": {
+        "cursor": "pointer",
+        "transition": "transform {motion.duration.short} {motion.easing.standard}"
+      },
+      "hover": {
+        "transform": "scale({motion.scale.hover})"
+      },
+      "pressed": {
+        "transform": "scale({motion.scale.card_pressed})"
+      },
+      "reduced": {
+        "transition": "none"
+      },
+      "reduced_hover": {
+        "transform": "none"
+      },
+      "reduced_pressed": {
+        "transform": "none"
+      }
     }
   }
 }

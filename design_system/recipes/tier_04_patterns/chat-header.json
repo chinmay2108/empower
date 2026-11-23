@@ -52,21 +52,16 @@
       "display": "grid",
       "place-items": "center",
       "background": "{color.accent.soft}",
-      "color": "{color.accent.default}",
-      "font-weight": "{type.weight.bold}",
-      "font-size": "{type.size.sm}"
+      "color": "{color.accent.default}"
     },
     "name": {
       "display": "block",
-      "font-weight": "{type.weight.bold}",
-      "font-size": "{type.size.md}",
       "white-space": "nowrap",
       "overflow": "hidden",
       "text-overflow": "ellipsis"
     },
     "sub": {
       "display": "block",
-      "font-size": "{type.size.xs}",
       "color": "{color.text.secondary}",
       "white-space": "nowrap",
       "overflow": "hidden",
@@ -74,10 +69,20 @@
     }
   },
   "interaction": {
-    "__back": "text",
+    "__back": "dim",
     "__who": "dim"
   },
   "surface": {
     "base": "bar"
+  },
+  "text": {
+    "__group": "label-strong",
+    "__name": "subheading",
+    "__sub": "caption"
+  },
+  "example": "<header class=\"chat-header\"><a class=\"chat-header__back\" href=\"#\" aria-label=\"Back to People\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg></a><a class=\"chat-header__who\" href=\"#\"><img class=\"avatar avatar--photo\" src=\"../img/people/u010.jpg\" alt=\"\"><span><span class=\"chat-header__name\">Felix C.</span><span class=\"chat-header__sub\">Met at Thursday Trivia at Alamo Drafthouse</span></span></a></header>",
+  "frame": "page",
+  "examples": {
+    "__group": "<header class=\"chat-header\"><a class=\"chat-header__back\" href=\"#\" aria-label=\"Back\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg></a><span class=\"chat-header__who\"><span class=\"chat-header__group\" aria-hidden=\"true\">TT</span><span><span class=\"chat-header__name\">Thursday Trivia at Alamo Drafthouse</span><span class=\"chat-header__sub\">Thu, Nov 26</span></span></span></header>"
   }
 }

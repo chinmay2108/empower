@@ -5,5 +5,7 @@
     "display": "grid",
     "grid-template-columns": "repeat(auto-fill, minmax(min(100%, {size.card.min}), 1fr))",
     "gap": "{space.7} {space.4}"
-  }
+  },
+  "example": "<div class=\"browse-grid\"><article class=\"event-card\"><a class=\"event-card__link\" href=\"#\"><div class=\"event-card__media\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"tag\">Going</span></div><h2 class=\"event-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"event-card__meta\">Thu, Nov 26 · 7pm</p></a></article><article class=\"event-card\"><a class=\"event-card__link\" href=\"#\"><div class=\"event-card__media\"><img class=\"event-art\" src=\"../img/dance.jpg\" alt=\"\" draggable=\"false\"><span class=\"tag tag--quiet\">Dance</span></div><h2 class=\"event-card__title\">Swing Cville Wednesday Lessons</h2><p class=\"event-card__meta\">Wed, Nov 25 · 7pm</p></a></article><article class=\"event-card\"><a class=\"event-card__link\" href=\"#\"><div class=\"event-card__media\"><img class=\"event-art\" src=\"../img/choir.jpg\" alt=\"\" draggable=\"false\"></div><h2 class=\"event-card__title\">Community Choir, open rehearsal</h2><p class=\"event-card__meta\">Tue, Nov 24 · 6:30pm</p></a></article></div>",
+  "frame": "block"
 }

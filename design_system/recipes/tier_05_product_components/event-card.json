@@ -5,6 +5,9 @@
     "tag"
   ],
   "purpose": "An event in a grid: artwork first, then title and when, like Disney's wide cards.",
+  "interaction": {
+    "__link": "card"
+  },
   "base": {
     "display": "block",
     "margin": "0",
@@ -16,30 +19,14 @@
       "color": "inherit",
       "text-decoration": "none",
       "border-radius": "{radius.small}",
-      "transition": "transform {motion.duration.instant} {motion.easing.standard}",
-      "&:active": {
-        "transform": "scale({motion.scale.card_pressed})"
-      },
       "@media (hover: hover)": {
-        "&:hover .event-art": {
-          "transform": "scale({motion.scale.hover})"
-        }
-      },
-      "@media (prefers-reduced-motion: reduce)": {
-        "transition": "none",
-        "&:active": {
-          "transform": "none"
-        },
-        "&:hover .event-art": {
-          "transform": "none"
+        "&:hover .event-card__media, &.is-hover .event-card__media": {
+          "border-color": "{color.border.hairline_strong}"
         }
       }
     },
     "media": {
       "position": "relative",
-      "& .event-art": {
-        "transition": "transform {motion.duration.long} {motion.easing.standard}"
-      },
       "& .tag": {
         "position": "absolute",
         "top": "{space.2}",
@@ -47,18 +34,20 @@
       }
     },
     "title": {
-      "margin": "{space.3} 0 {space.1}",
-      "font-size": "{type.size.lg}",
-      "font-weight": "{type.weight.bold}",
-      "line-height": "{type.line_height.snug}"
+      "margin": "{space.3} 0 {space.1}"
     },
     "meta": {
       "margin": "0",
-      "font-size": "{type.size.sm}",
       "color": "{color.text.secondary}"
     }
   },
   "surface": {
     "__media": "tile"
-  }
+  },
+  "text": {
+    "__title": "heading",
+    "__meta": "meta"
+  },
+  "example": "<article class=\"event-card\"><a class=\"event-card__link\" href=\"#\"><div class=\"event-card__media\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"tag\">Going</span></div><h2 class=\"event-card__title\">Thursday Trivia at Alamo Drafthouse</h2><p class=\"event-card__meta\">Thu, Nov 26 · 7pm</p></a></article>",
+  "frame": "block"
 }

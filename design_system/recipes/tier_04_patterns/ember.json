@@ -1,12 +1,17 @@
 {
   "className": "ember",
   "purpose": "The Empower score as a flame that warms as it grows. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "text": {
+    "base": "label-strong",
+    "--lg": "headline"
+  },
+  "surface": {
+    "--blaze & $icon": "glow"
+  },
   "base": {
     "display": "inline-flex",
     "align-items": "center",
     "gap": "{space.hairline}",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.bold}",
     "color": "{color.text.primary}",
     "vertical-align": "middle",
     "font-variant-numeric": "tabular-nums"
@@ -41,14 +46,12 @@
       },
       "blaze": {
         "& $icon": {
-          "color": "{color.ember.blaze}",
-          "filter": "drop-shadow(0 0 {space.1} {color.ember.glow})"
+          "color": "{color.ember.blaze}"
         }
       }
     },
     "size": {
       "lg": {
-        "font-size": "{type.size.xl}",
         "gap": "{space.1}",
         "& $icon": {
           "width": "{size.icon.md}",
@@ -56,5 +59,7 @@
         }
       }
     }
-  }
+  },
+  "example": "<span class=\"ember\" aria-label=\"Empower score 18\"><svg class=\"ember__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z\"/></svg><span class=\"ember__value\">18</span></span>",
+  "frame": "inline"
 }

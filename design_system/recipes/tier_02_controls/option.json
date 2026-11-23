@@ -10,23 +10,14 @@
     "font-family": "inherit",
     "border": "{border.width.strong} solid transparent",
     "padding": "{space.4}",
-    "margin-bottom": "{space.2}"
+    "margin-bottom": "{space.2}",
+    "&[aria-pressed=\"true\"]": {
+      "border-color": "{color.accent.default}"
+    }
   },
   "elements": {
     "title": {
-      "margin": "0 0 {space.hairline}",
-      "font-size": "{type.size.md}",
-      "font-weight": "{type.weight.bold}"
-    },
-    "meta": {
-      "margin": "0",
-      "font-size": "{type.size.sm}",
-      "color": "{color.text.secondary}"
-    }
-  },
-  "states": {
-    "selected": {
-      "border-color": "{color.accent.default}"
+      "margin": "0 0 {space.hairline}"
     }
   },
   "interaction": {
@@ -34,5 +25,10 @@
   },
   "surface": {
     "base": "panel"
-  }
+  },
+  "text": {
+    "__title": "subheading"
+  },
+  "example": "<button type=\"button\" class=\"option\" aria-pressed=\"false\"><p class=\"option__title\">A quiet table of six</p></button>",
+  "frame": "block"
 }

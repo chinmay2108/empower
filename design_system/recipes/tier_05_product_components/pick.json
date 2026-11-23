@@ -1,45 +1,30 @@
 {
   "className": "pick",
-  "purpose": "The reason and the people attached to an event pick.",
+  "purpose": "The reason an event was picked for you and who is going, set under the event's name.",
   "base": {
     "text-decoration": "none",
     "display": "block"
   },
   "elements": {
-    "top": {
-      "display": "flex",
-      "justify-content": "space-between",
-      "align-items": "flex-start",
-      "gap": "{space.3}"
-    },
-    "link": {
-      "display": "block",
-      "color": "inherit",
-      "text-decoration": "none"
-    },
     "why": {
       "margin": "{space.1} 0 0",
-      "font-size": "{type.size.md}",
-      "font-weight": "{type.weight.medium}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.primary}"
     },
     "social": {
       "display": "flex",
       "align-items": "center",
       "margin": "{space.2} 0 0",
-      "font-size": "{type.size.sm}",
       "color": "{color.text.secondary}"
     }
   },
-  "variants": {
-    "tone": {
-      "highlight": {
-        "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.default}"
-      }
-    }
+  "text": {
+    "__why": "body-strong",
+    "__social": "meta"
   },
-  "interaction": {
-    "__link": "dim"
-  }
+  "example": "<div class=\"pick\"><p class=\"pick__why\">You liked the last two, and it is a short walk from you.</p><p class=\"pick__social\"><span class=\"faces\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u011.jpg\" alt=\"\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u012.jpg\" alt=\"\"></span>Jada M. and Aaron B. are going</p></div>",
+  "frame": "block",
+  "waive": {
+    "unused": "Only its two parts are drawn, inside a swipe card or an event card; the wrapper itself is not on a screen."
+  },
+  "uses": []
 }

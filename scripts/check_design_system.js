@@ -28,19 +28,36 @@
      9. Styling from markup or scripts: style attributes, <style> blocks,
         extra stylesheets, el.style writes (only declared runtime.* tokens
         may be set), raw colours, coloured SVG attributes.
-    11. Surfaces. The panel fill, the frosted bar, every shadow token and
-        every backdrop blur come from one shared preset
-        (design_system/surfaces.json) that a recipe names under "surface".
-        A recipe that sets one of them by hand is refused, so the look of
-        every panel, tile and bar changes in one place.
     10. States. Every button, link and field written in a page or script
         must have its states styled by its component: hover and pressed for
-        anything you can press, selected for anything that can be chosen,
-        focus for a field. Hover and pressed come from one shared preset
-        (design_system/states.json) that a recipe names under "interaction".
-        A recipe may waive a state only with a written reason ("waive"). Hover must sit inside "@media (hover: hover)", a
-        focus outline may not be removed without a replacement, and one
-        state has one name (is-selected, not is-on or is-active).
+        anything you can press, selected for anything that can be chosen
+        (by the same aria attribute the markup carries), focus for a field.
+        Hover and pressed come only from a shared preset
+        (design_system/states.json) that a recipe names under
+        "interaction"; a recipe may not write them by hand on a part, and a
+        preset whose hover or pressed looks the same as rest is refused.
+        A state may be waived only with a written reason ("waive"). The focus
+        ring is the system's: a component may not remove it or make it
+        see-through, and one state has one name. A control built where the check cannot read it
+        (createElement, a role set by script) is refused.
+    11. Surfaces. The panel fill and the frosted bar (under any alias, or
+        inside a gradient), every shadow, drop-shadow and backdrop blur
+        come only from a shared preset (design_system/surfaces.json) that a
+        recipe names under "surface". This holds in every tier, in global
+        rules and in keyframes, and a part may not overrule its preset.
+    12. The review board. pages/components.html must be exactly what
+        scripts/build_board.js writes from the recipes, and the held-still
+        state classes (is-hover, is-pressed, is-focus) may appear nowhere
+        else, however they are spelled.
+    13. Text. A size, line spacing, letter spacing or capitals come only
+        from a text role in design_system/type.json that a recipe names
+        under "text". (A weight alone may be set by hand, for emphasis.)
+    14. Examples. Every component recipe carries an "example": one piece
+        of markup whose root wears the recipe's class. The review board is
+        drawn from it, so a component with no example cannot hide.
+    15. Everything shown. A class a screen uses must appear in a card on the
+        review board: the board may hold more than the app needs, never
+        less. (A part no screen draws is printed as a note, not a failure.)
 
    What it cannot prove (needs the rendered board and a person): that the
    right token of a family was chosen, that a design looks like its reference,
@@ -52,7 +69,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { build, loadFoundations, loadRecipes, loadStates, loadSurfaces, resolveToken, cssVar, expandSelector, ROOT } = require("./build_tokens.js");
+const { build, loadFoundations, loadRecipes, loadStates, loadSurfaces, loadType, partBlock, resolveToken, cssVar, expandSelector, ROOT } = require("./build_tokens.js");
 
 const words = (text) => text.split(" ").filter(Boolean);
 
@@ -129,6 +146,7 @@ const PROPERTIES = [
   [/^display$/, { keywords: words("none block inline inline-block flex inline-flex grid inline-grid contents -webkit-box") }],
   [/^position$/, { keywords: words("static relative absolute fixed sticky") }],
   [/^overflow(-x|-y)?$/, { keywords: words("hidden auto visible scroll clip") }],
+  [/^overflow-clip-margin$/, { tokens: ["space"] }],
   [/^cursor$/, { keywords: words("pointer grab grabbing default not-allowed text") }],
   [/^pointer-events$/, { keywords: words("none auto") }],
   [/^box-sizing$/, { keywords: words("border-box") }],
@@ -176,9 +194,10 @@ const MEDIA_ALLOWED = [
   /^@media \((min|max)-width: \{breakpoint\.[a-z_]+\}\)$/,
 ];
 const REDUCED_MOTION = "@media (prefers-reduced-motion: reduce)";
+const BOARD_PAGE = "pages/components.html";
 
 /* Top-level keys a recipe file may hold ("tier" and "file" are added on load). */
-const RECIPE_KEYS = words("className name global purpose uses waive interaction surface system base elements variants defaultVariants states keyframes rules tier file");
+const RECIPE_KEYS = words("className name global purpose uses waive interaction surface text example examples frame system base elements variants defaultVariants states keyframes rules tier file");
 
 /* How each state is recognised in a selector. Hover must also sit inside the hover media query. */
 const HOVER_MEDIA = "@media (hover: hover)";
@@ -191,7 +210,10 @@ const STATE_SHAPES = {
 };
 /* One state, one name: these would all mean "selected". */
 const STATE_SYNONYMS = { on: "selected", active: "selected", current: "selected", checked: "selected", chosen: "selected", picked: "selected" };
-const WAIVE_KEY = /^(?:__([a-z][a-z0-9-]*):)?(hover|pressed|selected|focus|disabled)$/;
+const WAIVE_KEY = /^(?:__([a-z][a-z0-9-]*):)?(hover|pressed|selected|focus|disabled|example|unused)$/;
+const FRAMES = ["inline", "block", "phone", "page"];
+/* The fills only a surface preset may lay down. An alias of one counts as the same fill. */
+const OWNED_FILLS = ["color.surface.panel", "color.surface.bar"];
 
 /* Folders the check does not read, each for a stated reason. Everything else
    in the repository is covered. */
@@ -374,18 +396,36 @@ function expandedRules(recipe) {
 }
 
 /** True when the rules style the given state for a class (or, with no class, for a bare tag). */
-function stylesState(rules, state, className, tag) {
-  const target = className
-    ? new RegExp("\\." + className.replace(/[-]/g, "\\-") + "(?![\\w-])")
-    : new RegExp("(^|[\\s>+~(])" + tag + "(?![\\w-])|^[^a-z.]*[:\\[]");
+function stylesState(rules, state, className, tag, aria) {
+  // The state must sit on the component itself (".chip:hover"), not on something inside it (".chip span:hover").
+  const own = className ? new RegExp("\\." + className.replace(/[-]/g, "\\-") + "(?![\\w-])[^\\s>+~]*", "g") : null;
+  const shape = state === "selected" && aria
+    ? new RegExp("\\[aria-" + aria + (aria === "current" ? "(=\"[a-z]+\")?\\]" : "=\"true\"\\]"))
+    : STATE_SHAPES[state];
   return rules.some((rule) => {
     if (state === "hover" && rule.media.indexOf(HOVER_MEDIA) === -1) return false;
-    return rule.selector.split(",").some((part) => {
-      const one = part.trim();
-      if (!STATE_SHAPES[state].test(one)) return false;
-      return className ? target.test(one) : (new RegExp("(^|[\\s>+~(])" + tag + "(?![\\w-])").test(one) || /^[:\[]/.test(one));
+    return splitSelectors(rule.selector).some((one) => {
+      if (!className) return STATE_SHAPES[state].test(one) && (new RegExp("(^|[\\s>+~(])" + tag + "(?![\\w-])").test(one) || /^[:\[]/.test(one));
+      // Brackets are emptied first, so the list inside ":is(a, button)" does not read as a descendant.
+      const flat = one.replace(/\([^()]*\)/g, "()");
+      return (flat.match(own) || []).some((compound) => shape.test(compound));
     });
   });
+}
+
+/** Splits a selector list on its top-level commas (a comma inside brackets does not split). */
+function splitSelectors(selector) {
+  const parts = [];
+  let depth = 0;
+  let from = 0;
+  for (let i = 0; i < selector.length; i += 1) {
+    const ch = selector.charAt(i);
+    if (ch === "(" || ch === "[") depth += 1;
+    else if (ch === ")" || ch === "]") depth -= 1;
+    else if (ch === "," && depth === 0) { parts.push(selector.slice(from, i).trim()); from = i + 1; }
+  }
+  parts.push(selector.slice(from).trim());
+  return parts.filter(Boolean);
 }
 
 /** Every button, link and field written in a page or a script, with its literal classes. */
@@ -397,17 +437,24 @@ function interactiveElements(file, text) {
     const attrs = m[2];
     const cls = /(?:^|\s)class\s*=\s*\\?["']([^"'<>]*)/.exec(attrs);
     if (m[1] === "input" && /type\s*=\s*\\?["']hidden/.test(attrs)) continue;
+    // An input may be a button or a tick box in disguise: it owes the states of what it is.
+    const type = m[1] === "input" ? (/type\s*=\s*\\?["']?([a-z]+)/.exec(attrs) || [])[1] : "";
+    const aria = (/aria-(pressed|selected|checked|current)\b/.exec(attrs) || [])[1];
+    const ticks = /^(checkbox|radio)$/.test(type || "");
     found.push({
-      file: file, line: lineAt(text, m.index), tag: m[1],
+      file: file, line: lineAt(text, m.index), tag: /^(button|submit|reset|image)$/.test(type || "") || ticks ? "button" : m[1],
       hasClass: Boolean(cls),
       classes: cls ? cls[1].split(/\s+/).filter((name) => /^[a-z][a-zA-Z0-9_-]*$/.test(name)) : [],
-      selectable: /aria-(pressed|selected|checked|current)\b/.test(attrs),
+      selectable: Boolean(aria) || ticks,
+      aria: aria || "",
     });
   }
-  const role = /<(div|span|li|p|article|section)\b([^>]*\brole\s*=\s*\\?["'](?:button|tab|link|switch|checkbox|radio)[^>]*)/g;
+  const role = /<([a-z][a-z0-9]*)\b([^>]*\brole\s*=\s*\\?["'](?:button|tab|link|switch|checkbox|radio|menuitem|option)[^>]*)/g;
   while ((m = role.exec(text))) {
+    if (/^(button|a|input|select|textarea|summary)$/.test(m[1])) continue;
     const cls = /(?:^|\s)class\s*=\s*\\?["']([^"'<>]*)/.exec(m[2]);
-    found.push({ file: file, line: lineAt(text, m.index), tag: "button", hasClass: Boolean(cls), classes: cls ? cls[1].split(/\s+/).filter(Boolean) : [], selectable: /aria-(pressed|selected|checked|current)\b/.test(m[2]) });
+    const aria = (/aria-(pressed|selected|checked|current)\b/.exec(m[2]) || [])[1];
+    found.push({ file: file, line: lineAt(text, m.index), tag: "button", hasClass: Boolean(cls), classes: cls ? cls[1].split(/\s+/).filter(Boolean) : [], selectable: Boolean(aria), aria: aria || "" });
   }
   return found;
 }
@@ -422,6 +469,8 @@ function checkInteraction(elements, recipes) {
     if (recipe.global) globalRules = globalRules.concat(expandedRules(recipe));
     else if (recipe.className) { byClass[recipe.className] = recipe; rulesOf[recipe.className] = expandedRules(recipe); }
   });
+  // Focus belongs to the system: one global ring reaches every control, and no component may turn it off.
+  const systemFocus = globalRules.some((rule) => /:focus-visible/.test(rule.selector) && rule.styles.outline !== undefined && !/^(none|0|0px)$/.test(String(rule.styles.outline).trim()));
   const seen = {};
   elements.forEach((el) => {
     const needs = [];
@@ -438,8 +487,9 @@ function checkInteraction(elements, recipes) {
       return;
     }
     needs.forEach((state) => {
+      if (state === "focus" && systemFocus) return;
       const styled = owned.length
-        ? owned.some((name) => stylesState(rulesOf[name.split("__")[0]], state, name))
+        ? owned.some((name) => stylesState(rulesOf[name.split("__")[0]], state, name, "", el.aria))
         : stylesState(globalRules, state, "", el.tag);
       if (styled) return;
       const waived = owned.some((name) => {
@@ -457,10 +507,78 @@ function checkInteraction(elements, recipes) {
   return errors;
 }
 
-/** Checks the shared surface presets: a purpose, and every value built from tokens. */
-function checkSurfaces(doc, byName) {
+/** Reports every class, part, variant and state a recipe defines that the app never draws. */
+function checkUnused(recipes, appText) {
   const errors = [];
-  const file = "design_system/surfaces.json";
+  const names = {};
+  (appText.match(/[a-zA-Z][a-zA-Z0-9_-]*/g) || []).forEach((name) => { names[name] = true; });
+  recipes.forEach((recipe) => {
+    if (recipe.global || !recipe.className || (recipe.waive && recipe.waive.unused)) return;
+    const cls = recipe.className;
+    const dead = [];
+    if (!names[cls]) dead.push("." + cls);
+    Object.keys(recipe.elements || {}).forEach((part) => { if (!names[cls + "__" + part]) dead.push("." + cls + "__" + part); });
+    // A variant may be joined on in a script ("avatar--" + size): then its name must appear on its own as a quoted word.
+    const joined = new RegExp(cls + "--[\"']\\s*\\+").test(appText);
+    Object.keys(recipe.variants || {}).forEach((group) => Object.keys(recipe.variants[group] || {}).forEach((choice) => {
+      const quoted = new RegExp("[\"']" + choice + "[\"']").test(appText);
+      if (!names[cls + "--" + choice] && !(joined && quoted)) dead.push("." + cls + "--" + choice);
+    }));
+    Object.keys(recipe.states || {}).forEach((state) => { if (!names["is-" + state]) dead.push("." + cls + ".is-" + state); });
+    dead.forEach((name) => errors.push(recipe.file + ": " + name + " is not drawn anywhere in the app; remove it, or waive \"unused\" with a reason"));
+  });
+  return errors;
+}
+
+/**
+ * Everything the app draws has a card: a class a screen uses, which a recipe defines, must appear inside a card on the
+ * review board. "boardText" is the generated page. The board may show more than the app uses; it may not show less.
+ */
+function checkShown(recipes, appText, boardText) {
+  const errors = [];
+  const names = {};
+  (appText.match(/[a-zA-Z][a-zA-Z0-9_-]*/g) || []).forEach((name) => { names[name] = true; });
+  const shown = {};
+  (boardText.match(/<div class="board__bed[^"]*">[\s\S]*?<\/figure>/g) || []).forEach((bed) => {
+    (bed.replace(/^<div class="board__bed[^"]*">/, "").match(/class="([^"]*)"/g) || []).forEach((attr) => attr.slice(7, -1).split(/\s+/).forEach((name) => { shown[name] = true; }));
+  });
+  recipes.forEach((recipe) => {
+    const want = [];
+    if (recipe.global) {
+      Object.keys(recipe.rules || {}).forEach((sel) => { if (/^\.[a-z][a-z0-9-]*$/.test(sel) && sel.indexOf(".is-") !== 0) want.push(sel.slice(1)); });
+    } else if (recipe.className && recipe.className !== "board") {
+      const cls = recipe.className;
+      want.push(cls);
+      Object.keys(recipe.elements || {}).forEach((part) => {
+        want.push(cls + "__" + part);
+        Object.keys(recipe.elements[part] || {}).forEach((key) => { if (/^&--[a-z][a-z0-9-]*$/.test(key)) want.push(cls + "__" + part + key.slice(1)); });
+      });
+      Object.keys(recipe.variants || {}).forEach((group) => Object.keys(recipe.variants[group] || {}).forEach((choice) => want.push(cls + "--" + choice)));
+    }
+    want.forEach((name) => {
+      if (names[name] && !shown[name]) errors.push(recipe.file + ": ." + name + " is drawn in the app but no card on the review board shows it; add it to the recipe's example, or give it one under \"examples\"");
+    });
+  });
+  return errors;
+}
+
+/** Checks the shared text roles: a purpose, a size, and nothing but text properties built from tokens. */
+function checkType(doc, byName) {
+  const errors = checkSurfaces(doc, byName, "design_system/type.json");
+  Object.keys((doc && doc.presets) || {}).forEach((name) => {
+    const styles = doc.presets[name].styles || {};
+    if (!styles["font-size"]) errors.push("design_system/type.json: role " + name + " must set a font-size");
+    Object.keys(styles).forEach((prop) => {
+      if (!/^(font-size|font-weight|line-height|letter-spacing|text-transform)$/.test(prop)) errors.push("design_system/type.json: role " + name + " may only set text properties, not " + prop);
+    });
+  });
+  return errors;
+}
+
+/** Checks the shared surface presets: a purpose, and every value built from tokens. */
+function checkSurfaces(doc, byName, fileName) {
+  const errors = [];
+  const file = fileName || "design_system/surfaces.json";
   Object.keys((doc && doc.presets) || {}).forEach((name) => {
     const preset = doc.presets[name];
     if (!/^[a-z][a-z0-9]*(-[a-z0-9]+)*$/.test(name)) errors.push(file + ": preset name \"" + name + "\" must be lower-case words joined by hyphens");
@@ -480,7 +598,8 @@ function checkSurfaces(doc, byName) {
 function checkStates(doc, byName) {
   const errors = [];
   const file = "design_system/states.json";
-  const parts = words("purpose rest hover pressed selected_hover selected_pressed reduced reduced_pressed");
+  const parts = words("purpose rest hover pressed selected_hover selected_pressed reduced reduced_hover reduced_pressed");
+  const shown = (value) => String(value).replace(/\{([a-z0-9_.]+)\}/g, (whole, name) => { const t = resolveToken(name, byName); return t ? JSON.stringify(t.token_value) : whole; });
   Object.keys((doc && doc.presets) || {}).forEach((name) => {
     const preset = doc.presets[name];
     if (!/^[a-z][a-z0-9]*(-[a-z0-9]+)*$/.test(name)) errors.push(file + ": preset name \"" + name + "\" must be lower-case words joined by hyphens");
@@ -497,6 +616,14 @@ function checkStates(doc, byName) {
     const moves = preset.rest && preset.rest.transition && String(preset.rest.transition).trim() !== "none";
     if (moves && !(preset.reduced && String(preset.reduced.transition).trim() === "none")) errors.push(file + ": preset " + name + " has a transition but no reduced rule that turns it off");
     if (preset.pressed && preset.pressed.transform && !(preset.reduced_pressed && preset.reduced_pressed.transform === "none")) errors.push(file + ": preset " + name + " moves when pressed but has no reduced_pressed rule");
+    if (preset.hover && preset.hover.transform && !(preset.reduced_hover && preset.reduced_hover.transform === "none")) errors.push(file + ": preset " + name + " moves on hover but has no reduced_hover rule");
+    // A state nobody can see is not a state: hover and pressed must each change something from rest.
+    ["hover", "pressed"].forEach((part) => {
+      const state = preset[part] || {};
+      const rest = preset.rest || {};
+      const changes = Object.keys(state).some((prop) => rest[prop] === undefined || shown(state[prop]) !== shown(rest[prop]));
+      if (preset[part] && !changes) errors.push(file + ": preset " + name + " " + part + " looks the same as rest, so nobody could see it");
+    });
   });
   return errors;
 }
@@ -535,26 +662,99 @@ function contrastInBlocks(styles, where, byName, errors, file) {
 }
 
 /** Checks all recipes: shape, values, token use, tier order, motion and contrast. */
-function checkRecipes(recipes, byName, presets, surfacePresets, rawRecipes) {
+function checkRecipes(recipes, byName, presets, surfacePresets, rawRecipes, typePresets) {
   const errors = [];
   const known = presets || loadStates().presets || {};
   const surfaces = surfacePresets || loadSurfaces().presets || {};
+  const roles = typePresets || loadType().presets || {};
   // Surface materials may only come from a preset. "rawRecipes" are the files as written, before presets are laid in.
   (rawRecipes || []).forEach((raw) => {
     const walk = (styles, where) => Object.keys(styles || {}).forEach((key) => {
       const value = styles[key];
       if (value !== null && typeof value === "object") { walk(value, where + " " + key); return; }
       const text = String(value);
-      const owned = (/^background(-color)?$/.test(key) && /^\s*\{color\.surface\.(panel|bar)\}\s*$/.test(text)) ||
-        (key === "box-shadow" && /\{shadow\./.test(text)) || /^(-webkit-)?backdrop-filter$/.test(key);
+      const fills = (text.match(/\{([a-z0-9_.]+)\}/g) || []).some((ref) => {
+        const token = resolveToken(ref.slice(1, -1), byName);
+        return token && OWNED_FILLS.indexOf(token.token_name) !== -1;
+      });
+      const owned = (/^background(-color|-image)?$/.test(key) && fills) ||
+        (key === "box-shadow" && text.trim() !== "none") || (key === "filter" && /drop-shadow/.test(text)) ||
+        /^(-webkit-)?backdrop-filter$/.test(key);
       if (owned) errors.push(raw.file + ": " + where + " { " + key + ": " + text + " } sets a surface by hand; name a preset from design_system/surfaces.json under \"surface\"");
     });
-    // Tier 7 holds the specimen screens that display the materials themselves (swatches, shadow samples).
-    if (raw.global || /\/tier_07_/.test(raw.file)) return;
+    const walkText = (styles, where) => Object.keys(styles || {}).forEach((key) => {
+      const value = styles[key];
+      if (value !== null && typeof value === "object") { walkText(value, where + " " + key); return; }
+      if (/^(font-size|line-height|letter-spacing|text-transform|font)$/.test(key) && String(value).trim() !== "inherit") {
+        errors.push(raw.file + ": " + where + " { " + key + ": " + value + " } sets text by hand; name a role from design_system/type.json under \"text\"");
+      }
+    });
+    if (!raw.global) {
+      walkText(raw.base, "base");
+      Object.keys(raw.elements || {}).forEach((n) => walkText(raw.elements[n], "__" + n));
+      Object.keys(raw.variants || {}).forEach((g) => Object.keys(raw.variants[g] || {}).forEach((c) => walkText(raw.variants[g][c], "--" + c)));
+      Object.keys(raw.states || {}).forEach((n) => walkText(raw.states[n], ".is-" + n));
+    }
+    Object.keys(raw.rules || {}).forEach((n) => walk(raw.rules[n], n));
+    Object.keys(raw.keyframes || {}).forEach((n) => walk(raw.keyframes[n], "keyframes " + n));
     walk(raw.base, "base");
     Object.keys(raw.elements || {}).forEach((n) => walk(raw.elements[n], "__" + n));
     Object.keys(raw.variants || {}).forEach((g) => Object.keys(raw.variants[g] || {}).forEach((c) => walk(raw.variants[g][c], "--" + c)));
     Object.keys(raw.states || {}).forEach((n) => walk(raw.states[n], ".is-" + n));
+    // A part that names a surface or a text role may not then overrule what that preset sets.
+    [["surface", surfaces], ["text", roles]].forEach((kind) => Object.keys(raw[kind[0]] || {}).forEach((part) => {
+      const preset = kind[1][raw[kind[0]][part]];
+      const block = typeof raw[kind[0]] === "object" && !raw.global ? partBlock(JSON.parse(JSON.stringify(raw)), part) : null;
+      if (!preset || !block) return;
+      Object.keys(preset.styles || {}).forEach((prop) => {
+        if (prop === "font-weight" || block[prop] === undefined || typeof block[prop] === "object") return;
+        errors.push(raw.file + ": " + part + " { " + prop + ": " + block[prop] + " } overrules its " + kind[0] + " preset \"" + raw[kind[0]][part] + "\"; choose another preset");
+      });
+    }));
+    // A preset's hover or pressed must change this part: one that sets only what the part already has cannot be seen.
+    Object.keys(raw.interaction !== null && typeof raw.interaction === "object" && !raw.global ? raw.interaction : {}).forEach((part) => {
+      const preset = (presets || {})[raw.interaction[part]];
+      const block = partBlock(JSON.parse(JSON.stringify(raw)), part);
+      if (!preset || !block) return;
+      const rest = Object.assign({}, preset.rest || {}, block);
+      ["hover", "pressed"].forEach((state) => {
+        const set = preset[state] || {};
+        if (Object.keys(set).length && Object.keys(set).every((prop) => rest[prop] !== undefined && String(rest[prop]).trim() === String(set[prop]).trim())) {
+          errors.push(raw.file + ": " + part + " takes preset \"" + raw.interaction[part] + "\", whose " + state + " sets only what this part already has, so nobody could see it; choose another preset");
+        }
+      });
+    });
+    // Hover and pressed on a part itself come only from "interaction". (A hover that changes something inside is fine.)
+    const walkStates = (styles, where) => Object.keys(styles || {}).forEach((key) => {
+      if (styles[key] === null || typeof styles[key] !== "object") return;
+      if (key.charAt(0) !== "@") splitSelectors(key).forEach((one) => {
+        const last = one.replace(/\([^()]*\)/g, "()").split(/[\s>+~]+/).pop();
+        if (/:(hover|active)/.test(last)) errors.push(raw.file + ": " + where + " \"" + key + "\" writes hover or pressed by hand; name a preset from design_system/states.json under \"interaction\"");
+      });
+      walkStates(styles[key], where + " " + key);
+    });
+    if (!raw.global) {
+      walkStates(raw.base, "base");
+      Object.keys(raw.elements || {}).forEach((n) => walkStates(raw.elements[n], "__" + n));
+      Object.keys(raw.variants || {}).forEach((g) => Object.keys(raw.variants[g] || {}).forEach((c) => walkStates(raw.variants[g][c], "--" + c)));
+      Object.keys(raw.states || {}).forEach((n) => walkStates(raw.states[n], ".is-" + n));
+      // Every component shows itself: one example, its root wearing the recipe's class first.
+      const waived = raw.waive && typeof raw.waive.example === "string";
+      const rootOf = (html) => /^\s*<[a-z][a-z0-9]*\b[^>]*?\bclass="([^"\s]+)/.exec(String(html));
+      if (!waived) {
+        const root = rootOf(raw.example);
+        if (typeof raw.example !== "string" || !raw.example.trim()) errors.push(raw.file + ": the recipe has no example, so the review board cannot show it");
+        else if (!root || root[1] !== raw.className) errors.push(raw.file + ": the example's root must wear ." + raw.className + " as its first class");
+        if (FRAMES.indexOf(raw.frame) === -1) errors.push(raw.file + ": frame must be one of " + FRAMES.join(", "));
+      }
+      Object.keys(raw.examples || {}).forEach((key) => {
+        const root = rootOf(raw.examples[key]);
+        if (!/^(--|__|\.is-)[a-z][a-z0-9-]*$/.test(key)) errors.push(raw.file + ": examples key \"" + key + "\" must be \"--variant\", \"__part\" or \".is-state\"");
+        // A part that the app draws beside its component (the deck's buttons) may stand alone as its own root.
+        const alone = key.indexOf("__") === 0 && root && root[1] === raw.className + key.split("--")[0];
+        if (!root || (root[1] !== raw.className && !alone)) errors.push(raw.file + ": the example for " + key + " must have a root that wears ." + raw.className + " first");
+      });
+    }
   });
   const byClass = {};
   const keyframes = {};
@@ -598,16 +798,16 @@ function checkRecipes(recipes, byName, presets, surfacePresets, rawRecipes) {
         if (!known[recipe.interaction[part]]) errors.push(recipe.file + ": interaction preset \"" + recipe.interaction[part] + "\" is not in design_system/states.json");
       });
     }
-    if (recipe.surface !== undefined) {
-      if (recipe.surface === null || typeof recipe.surface !== "object" || Array.isArray(recipe.surface) || recipe.global) errors.push(recipe.file + ": surface must be an object of part: preset, on a component recipe");
-      else Object.keys(recipe.surface).forEach((part) => {
-        const m = /^(base|__([a-z][a-z0-9-]*)|--([a-z][a-z0-9-]*))$/.exec(part);
-        if (!m) errors.push(recipe.file + ": surface key \"" + part + "\" must be \"base\", \"__part\" or \"--variant\"");
-        else if (m[2] && !(recipe.elements || {})[m[2]]) errors.push(recipe.file + ": surface names the part " + part + ", which this recipe does not have");
-        else if (m[3] && !Object.keys(recipe.variants || {}).some((group) => recipe.variants[group][m[3]])) errors.push(recipe.file + ": surface names the variant " + part + ", which this recipe does not have");
-        if (!(surfaces || {})[recipe.surface[part]]) errors.push(recipe.file + ": surface preset \"" + recipe.surface[part] + "\" is not in design_system/surfaces.json");
+    [["surface", surfaces, "surfaces.json"], ["text", roles, "type.json"]].forEach((kind) => {
+      const map = recipe[kind[0]];
+      if (map === undefined) return;
+      if (map === null || typeof map !== "object" || Array.isArray(map) || recipe.global) { errors.push(recipe.file + ": " + kind[0] + " must be an object of part: preset, on a component recipe"); return; }
+      Object.keys(map).forEach((part) => {
+        if (!/^(base|__[a-z][a-z0-9-]*|--[a-z][a-z0-9-]*)( .+)?$/.test(part)) errors.push(recipe.file + ": " + kind[0] + " key \"" + part + "\" must be \"base\", \"__part\" or \"--variant\", optionally followed by a nested selector");
+        else if (!partBlock(recipe, part)) errors.push(recipe.file + ": " + kind[0] + " names " + part + ", which this recipe does not have");
+        if (!(kind[1] || {})[map[part]]) errors.push(recipe.file + ": " + kind[0] + " preset \"" + map[part] + "\" is not in design_system/" + kind[2]);
       });
-    }
+    });
     if (recipe.waive !== undefined) {
       if (recipe.waive === null || typeof recipe.waive !== "object" || Array.isArray(recipe.waive)) errors.push(recipe.file + ": waive must be an object of state: reason");
       else Object.keys(recipe.waive).forEach((key) => {
@@ -649,8 +849,16 @@ function checkRecipes(recipes, byName, presets, surfacePresets, rawRecipes) {
       if (/\.is-(on|active|current|checked|chosen|picked)(?![\w-])/.test(rule.selector)) {
         errors.push(recipe.file + ": \"" + rule.selector + "\" uses a second name for the selected state; use .is-selected");
       }
+      if (/:focus/.test(rule.selector) && /\btransparent\b/.test(String(rule.styles.outline || "") + " " + String(rule.styles["outline-color"] || ""))) {
+        errors.push(recipe.file + ": \"" + rule.selector + "\" draws a see-through focus outline, which nobody can see");
+      }
+      // The focus ring belongs to the system. A component may move where it sits (a tab at the screen edge), nothing else.
+      const ringProps = Object.keys(rule.styles).filter((prop) => /^outline/.test(prop) && prop !== "outline-offset");
+      if (!recipe.global && ringProps.length) {
+        errors.push(recipe.file + ": \"" + rule.selector + "\" sets " + ringProps.join(", ") + "; the focus ring belongs to the system and a component may not restyle or remove it");
+      }
       const outline = rule.styles.outline !== undefined ? String(rule.styles.outline).trim() : (rule.styles["outline-width"] !== undefined ? String(rule.styles["outline-width"]).trim() : null);
-      if (outline !== null && /^(none|0|0px)$/.test(outline)) {
+      if (recipe.global && outline !== null && /^(none|0|0px)$/.test(outline)) {
         const replaced = flat.some((other) => (other === rule ? /:focus/.test(rule.selector) : /:focus-visible/.test(other.selector)) &&
           ["outline", "box-shadow", "border-color", "border"].filter((prop) => other !== rule || prop !== "outline").some((prop) => other.styles[prop] !== undefined && !/^(none|0|0px)$/.test(String(other.styles[prop]).trim())));
         if (!replaced) errors.push(recipe.file + ": \"" + rule.selector + "\" removes the focus outline and the recipe draws no :focus-visible replacement");
@@ -810,6 +1018,13 @@ function checkSource(file, text, byName, definedClasses) {
     return href && /(^|\/)css\/styles\.css$/.test(href[1]) ? null : "stylesheet other than css/styles.css";
   });
   report(/@import\b/, isScript ? "script imports a stylesheet" : "@import in a page");
+  // Controls the check cannot read, and class names written so the check cannot read them.
+  report(/class(?:Name)?\s*=\s*\\?["'][^"'<>]*&#?\w+;/, "a class name is written with an HTML entity; write it plainly");
+  if (isScript) {
+    report(/createElement\(\s*["'](button|input|select|textarea|summary)["']/, (m) => "script builds a <" + m[1] + "> the check cannot read; write it as markup");
+    report(/setAttribute\(\s*["']role["']\s*,(?!\s*["'](?:status|alert|dialog|img|presentation|none|list|listitem|group|region|log)["'])/, "script sets a role the check cannot read; write it in the markup");
+    report(/\\u\{?[0-9a-fA-F]{2,}|\\x[0-9a-fA-F]{2}/, "an escaped character in a script; write the character plainly");
+  }
 
   if (isScript) {
     report(/\.style\.(\w+)/, (m) => (m[1] === "setProperty" || m[1] === "removeProperty") ? null
@@ -902,8 +1117,9 @@ function run() {
   const recipes = loadRecipes();
   const states = loadStates();
   const surfaces = loadSurfaces();
-  let errors = checkFoundations(doc, byName).concat(checkStates(states, byName), checkSurfaces(surfaces, byName),
-    checkRecipes(recipes, byName, states.presets, surfaces.presets, rawRecipes()));
+  const type = loadType();
+  let errors = checkFoundations(doc, byName).concat(checkStates(states, byName), checkSurfaces(surfaces, byName), checkType(type, byName),
+    checkRecipes(recipes, byName, states.presets, surfaces.presets, rawRecipes(), type.presets));
 
   const css = build();
   const committed = fs.readFileSync(path.join(ROOT, "css/design-system.css"), "utf8").replace(/\r\n/g, "\n");
@@ -922,12 +1138,27 @@ function run() {
     Object.keys(recipe.states || {}).forEach((name) => { defined["is-" + name] = true; });
   });
   let elements = [];
+  let appText = "";
   repoFiles([".html", ".js"]).forEach((file) => {
-    const text = fs.readFileSync(path.join(ROOT, file), "utf8");
+    let text = fs.readFileSync(path.join(ROOT, file), "utf8");
+    if (file !== BOARD_PAGE) appText += text + "\n";
+    if (file === BOARD_PAGE) {
+      // The board is generated. It must match the recipes, and the token values it prints as text are not styling.
+      if (text.replace(/\r\n/g, "\n") !== require("./build_board.js").build()) errors.push(BOARD_PAGE + " is out of date or was edited by hand. Run: node scripts/build_board.js");
+      text = text.replace(/(<span class="board__token-value">)[^<]*(<\/span>)/g, "$1$2");
+    } else {
+      // The held-still state classes exist for the board only; the app's states follow the pointer.
+      (text.match(/["'\s]is-(hover|pressed|focus)(?=["'\s])/g) || []).forEach((hit) => errors.push(file + ": " + hit.trim().replace(/["']/g, "") + " is for the review board only"));
+    }
     errors = errors.concat(checkSource(file, text, byName, defined));
     elements = elements.concat(interactiveElements(file, text));
   });
-  errors = errors.concat(checkInteraction(elements, recipes));
+  const appOnly = appText.length;
+  // The board's own chrome is drawn by its generator, so that one script counts as where it is used.
+  appText += fs.readFileSync(path.join(__dirname, "build_board.js"), "utf8");
+  errors = errors.concat(checkInteraction(elements, recipes), checkShown(rawRecipes(), appText.slice(0, appOnly), fs.readFileSync(path.join(ROOT, BOARD_PAGE), "utf8")));
+  // More than the app needs is allowed for now: an unused part is a note, not a failure.
+  run.notes = checkUnused(recipes, appText);
 
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, "manifest.webmanifest"), "utf8"));
   const canvas = resolveToken("color.surface.canvas", byName).token_value;
@@ -945,6 +1176,10 @@ if (require.main === module) {
     process.exit(1);
   }
   console.log("Design system check passed: every style builds from the foundation tokens.");
+  if ((run.notes || []).length) {
+    console.log("\nNotes (allowed for now, " + run.notes.length + "): defined but not drawn in the app.");
+    run.notes.forEach((n) => console.log("  - " + n.replace(/; remove it.*$/, "")));
+  }
 }
 
-module.exports = { checkValue, checkStates, checkSurfaces, checkRecipes, checkFoundations, checkSource, checkInteraction, interactiveElements, expandedRules, classesIn, contrast, run, EXCLUDED_FOLDERS };
+module.exports = { checkUnused, checkShown, splitSelectors, checkValue, checkStates, checkSurfaces, checkType, checkRecipes, checkFoundations, checkSource, checkInteraction, interactiveElements, expandedRules, classesIn, contrast, run, EXCLUDED_FOLDERS };
