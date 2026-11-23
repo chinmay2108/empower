@@ -50,8 +50,8 @@
         ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt), "Next up");
     }
     if (!html) {
-      html = '<div class="empty"><p class="empty__title">No plans yet</p><p class="small">Just one thing. We\'ve lined up a few.</p>' +
-        '<p class="mt-4"><a class="btn btn--inline" href="pages/events.html">See this week</a></p></div>';
+      html = '<div class="empty"><p class="empty__title">Your weekly picks</p><p class="small">Just one thing. We\'ve lined up a few.</p>' +
+        '<p class="mt-4"><a class="btn btn--inline" href="pages/events.html">See my picks</a></p></div>';
     }
   }
   var DAY_NAMES = { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" };

@@ -8,7 +8,7 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
-const list = (dir, ext) => fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith(ext)).map((f) => path.join(dir, f));
+const list = (dir, ext) => fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith(ext)).map((f) => path.posix.join(dir, f));
 const problems = [];
 
 const RULE_FILES = ["js/logic.js", "js/people.js", "js/schedule.js", "js/demo.js", "js/lab.js"];

@@ -77,6 +77,17 @@ Empower.ui = (function () {
   /* Pages set <body data-root="../"> when they live in /pages/. */
   function root() { return document.body.getAttribute("data-root") || ""; }
 
+  var eventArt = {
+    g01: "trivia", g02: "running", g03: "choir", g04: "dance", g05: "pickleball",
+    g06: "games", g07: "market", g08: "open-mic", g09: "volunteer", g10: "games",
+    g11: "open-mic", g12: "games", g13: "trivia", g14: "games", g15: "trivia"
+  };
+
+  function eventImage(group) {
+    var scene = eventArt[group.id];
+    return scene ? '<img class="event-art" alt="" draggable="false" src="' + root() + 'img/' + scene + '.jpg">' : "";
+  }
+
   /* renderNav(activeKey): put <nav id="nav"></nav> at the end of <body>. */
   function renderNav(activeKey) {
     var host = document.getElementById("nav");
@@ -336,8 +347,14 @@ Empower.ui = (function () {
     var audio = new Audio(box.getAttribute("data-voice"));
     var fill = box.querySelector(".voice__fill");
     playing = { box: box, audio: audio };
-    audio.addEventListener("play", function () { box.classList.add("is-playing"); });
-    audio.addEventListener("pause", function () { box.classList.remove("is-playing"); });
+    audio.addEventListener("play", function () {
+      box.classList.add("is-playing");
+      btn.setAttribute("aria-label", "Pause voice note");
+    });
+    audio.addEventListener("pause", function () {
+      box.classList.remove("is-playing");
+      btn.setAttribute("aria-label", "Play voice note");
+    });
     audio.addEventListener("timeupdate", function () {
       if (audio.duration && isFinite(audio.duration)) fill.style.width = Math.round((audio.currentTime / audio.duration) * 100) + "%";
     });
@@ -366,6 +383,7 @@ Empower.ui = (function () {
     faces: faces,
     ember: ember,
     avatar: avatar,
+    eventImage: eventImage,
     renderNav: renderNav,
     namesText: namesText,
     initials: initials,

@@ -37,12 +37,12 @@
     '<div class="center"><div class="avatar-wrap">' + ui.avatar(person, "lg") + "</div>" +
     '<h1 class="title">' + person.name + '</h1><p class="ember-line">' + ui.ember(people.scoreOf(person), "lg") +
     ' <span class="small muted">Empower score</span></p>' +
+    '<p class="card__meta">Met at ' + ui.escapeHtml(store.getGroup(connection.groupId).name) + '</p>' +
     '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
     '<p class="center"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
     tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</p>" +
     '<p class="small muted center">Just between you two.</p>' +
     '<ul class="facts">' +
-    "<li><span>Met at</span><span>" + store.getGroup(connection.groupId).name + "</span></li>" +
     "<li><span>Time together</span><span>" + time.sessions + (time.sessions === 1 ? " session, " : " sessions, ") + time.hours + " hours</span></li>" +
     "<li><span>You both like</span><span>" + (shared.length ? shared.join(", ") : "Still finding out") + "</span></li>" +
     (groupsInCommon.length ? "<li><span>Groups in common</span><span>" + groupsInCommon.map(function (g) { return g.name; }).join(", ") + "</span></li>" : "") +
