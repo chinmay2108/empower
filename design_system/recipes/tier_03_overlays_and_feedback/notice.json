@@ -3,7 +3,6 @@
   "purpose": "An inline message that says what happened and what to do.",
   "base": {
     "padding": "{space.4}",
-    "font-size": "{type.size.sm}",
     "margin-bottom": "{space.4}"
   },
   "variants": {
@@ -20,5 +19,10 @@
   },
   "surface": {
     "base": "panel"
-  }
+  },
+  "text": {
+    "base": "note"
+  },
+  "example": "<div class=\"notice\">You can change this later in Me.</div>",
+  "frame": "block"
 }

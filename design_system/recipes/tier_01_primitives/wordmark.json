@@ -2,9 +2,6 @@
   "className": "wordmark",
   "purpose": "The Empower name in the top bar.",
   "base": {
-    "font-weight": "{type.weight.heavy}",
-    "font-size": "{type.size.lg}",
-    "letter-spacing": "{type.letter_spacing.tight}",
     "text-decoration": "none",
     "& span": {
       "color": "{color.accent.default}"
@@ -15,5 +12,10 @@
   },
   "interaction": {
     "base": "dim"
-  }
+  },
+  "text": {
+    "base": "poster"
+  },
+  "example": "<a class=\"wordmark\" href=\"#\">empower<span>.</span></a>",
+  "frame": "inline"
 }

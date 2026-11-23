@@ -16,5 +16,10 @@
         "grid-template-columns": "repeat(2, 1fr)"
       }
     }
-  }
+  },
+  "example": "<div class=\"choice-row\"><button type=\"button\" class=\"choice\" aria-pressed=\"false\">Great</button><button type=\"button\" class=\"choice\" aria-pressed=\"false\">Good</button><button type=\"button\" class=\"choice\" aria-pressed=\"false\">Not for me</button></div>",
+  "examples": {
+    "--two": "<div class=\"choice-row choice-row--two\"><button type=\"button\" class=\"choice\" aria-pressed=\"false\">Yes</button><button type=\"button\" class=\"choice\" aria-pressed=\"false\">No</button></div>"
+  },
+  "frame": "block"
 }

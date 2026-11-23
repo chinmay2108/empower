@@ -1,12 +1,13 @@
 {
   "className": "title",
   "purpose": "The one screen title, like Disney's For You.",
+  "text": {
+    "base": "title"
+  },
   "base": {
     "margin": "0 0 {space.2}",
-    "font-size": "{type.size.xxl}",
-    "font-weight": "{type.weight.heavy}",
-    "line-height": "{type.line_height.tight}",
-    "letter-spacing": "{type.letter_spacing.tight}",
     "text-wrap": "balance"
-  }
+  },
+  "example": "<h1 class=\"title\">This week.</h1>",
+  "frame": "block"
 }

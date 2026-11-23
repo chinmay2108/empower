@@ -3,5 +3,7 @@
   "purpose": "The link from the picks to the whole week.",
   "base": {
     "margin": "{space.6} 0"
-  }
+  },
+  "example": "<p class=\"browse-entry\"><a class=\"btn btn--secondary btn--inline\" href=\"#\">Back to your picks</a></p>",
+  "frame": "block"
 }

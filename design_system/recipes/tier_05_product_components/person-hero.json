@@ -44,8 +44,7 @@
         "height": "auto",
         "aspect-ratio": "{ratio.square}",
         "border-radius": "0",
-        "object-fit": "cover",
-        "font-size": "{type.size.display}"
+        "object-fit": "cover"
       },
       "width": "50%"
     },
@@ -56,10 +55,6 @@
     },
     "name": {
       "margin": "0",
-      "font-size": "{type.size.display}",
-      "font-weight": "{type.weight.heavy}",
-      "line-height": "{type.line_height.tight}",
-      "letter-spacing": "{type.letter_spacing.tight}",
       "text-wrap": "balance"
     },
     "line": {
@@ -70,12 +65,17 @@
     },
     "meta": {
       "margin": "{space.1} 0 0",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.secondary}"
     }
   },
   "surface": {
     "__photo": "poster"
-  }
+  },
+  "text": {
+    "__photo & .avatar": "glyph-display",
+    "__name": "display",
+    "__meta": "meta"
+  },
+  "example": "<div class=\"person-hero\"><div class=\"person-hero__scene\" aria-hidden=\"true\"><img class=\"avatar avatar--photo\" src=\"../img/people/u017.jpg\" alt=\"\"></div><div class=\"person-hero__photo\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u017.jpg\" alt=\"\"></div><div class=\"person-hero__body\"><h1 class=\"person-hero__name\">Carlos M.</h1><p class=\"person-hero__line\"><span class=\"ember ember--blaze ember--lg\" aria-label=\"Empower score 76\"><svg class=\"ember__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z\"/></svg><span class=\"ember__value\">76</span></span><span class=\"score-badge\">Open</span></p><p class=\"person-hero__meta\">Met at Thursday Trivia at Alamo Drafthouse</p></div></div>",
+  "frame": "block"
 }

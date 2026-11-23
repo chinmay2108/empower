@@ -1,11 +1,14 @@
 {
   "className": "subtitle",
   "purpose": "One supporting line under the screen title.",
+  "text": {
+    "base": "body"
+  },
   "base": {
     "margin": "0 0 {space.6}",
-    "font-size": "{type.size.md}",
-    "line-height": "{type.line_height.body}",
     "color": "{color.text.secondary}",
     "text-wrap": "pretty"
-  }
+  },
+  "example": "<p class=\"subtitle\">Five groups near you meet in the next seven days.</p>",
+  "frame": "block"
 }

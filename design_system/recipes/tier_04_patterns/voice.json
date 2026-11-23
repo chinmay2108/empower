@@ -50,7 +50,6 @@
       "background": "currentColor"
     },
     "len": {
-      "font-size": "{type.size.xs}",
       "font-weight": "{type.weight.medium}",
       "color": "currentColor",
       "font-variant-numeric": "tabular-nums"
@@ -68,5 +67,10 @@
   },
   "interaction": {
     "__play": "dim"
-  }
+  },
+  "text": {
+    "__len": "caption"
+  },
+  "example": "<span class=\"voice\"><button type=\"button\" class=\"voice__play\" aria-label=\"Play voice note\"><svg class=\"voice__start\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5v14l11-7z\"/></svg><svg class=\"voice__pause\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 5h4v14H7zM13 5h4v14h-4z\"/></svg></button><span class=\"voice__track\"><span class=\"voice__fill\"></span></span><span class=\"voice__len\">0:07</span></span>",
+  "frame": "inline"
 }

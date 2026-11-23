@@ -22,5 +22,7 @@
       "gap": "{space.2}",
       "pointer-events": "auto"
     }
-  }
+  },
+  "example": "<div class=\"footer-action\"><div class=\"footer-action__inner\"><button type=\"button\" class=\"btn\">Commit</button><a class=\"btn btn--secondary\" href=\"#\">See the whole week</a></div></div>",
+  "frame": "phone"
 }

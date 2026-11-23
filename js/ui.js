@@ -78,6 +78,23 @@ Empower.ui = (function () {
   function backIcon() {
     return '<svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
   }
+
+  /* bigCheck(): the tick on a done screen. A drawn line, never a text glyph. */
+  function bigCheck() {
+    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
+  }
+
+  /* flowEvent(group, startsAt): the event a screen is about (artwork, name, when).
+     Held still, because it is not a link. */
+  function flowEvent(group, startsAt) {
+    var art = eventImage(group);
+    return '<div class="event-row flow-event' + (art ? "" : " event-row--plain") + '">' + art +
+      '<span class="event-row__body"><span class="event-row__title">' + group.name +
+      '</span><span class="event-row__meta">' + formatDay(startsAt) + " · " +
+      formatTime(startsAt) + "</span></span></div>";
+  }
+
   /* Pages set <body data-root="../"> when they live in /pages/. */
   function root() { return document.body.getAttribute("data-root") || ""; }
 
@@ -392,6 +409,8 @@ Empower.ui = (function () {
     avatar: avatar,
     eventImage: eventImage,
     backIcon: backIcon,
+    bigCheck: bigCheck,
+    flowEvent: flowEvent,
     renderNav: renderNav,
     namesText: namesText,
     initials: initials,

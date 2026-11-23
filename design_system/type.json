@@ -1,0 +1,210 @@
+{
+  "purpose": "The one place that says how each kind of text is set: its size, weight, line spacing and letter spacing together. A recipe names a role under \"text\"; it may not set a size, line spacing or letter spacing by hand, so the same kind of text is set the same way on every screen.",
+  "presets": {
+    "display": {
+      "purpose": "The biggest words on a screen, such as a person's name on their own page.",
+      "styles": {
+        "font-size": "{type.size.display}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.tight}",
+        "letter-spacing": "{type.letter_spacing.tight}"
+      }
+    },
+    "title": {
+      "purpose": "The title of a screen, or a number that is the point of the screen.",
+      "styles": {
+        "font-size": "{type.size.xxl}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.tight}",
+        "letter-spacing": "{type.letter_spacing.tight}"
+      }
+    },
+    "headline": {
+      "purpose": "A short headline inside a screen, such as the title of an empty state.",
+      "styles": {
+        "font-size": "{type.size.xl}",
+        "font-weight": "{type.weight.bold}",
+        "line-height": "{type.line_height.tight}"
+      }
+    },
+    "poster": {
+      "purpose": "A name set large and tight: the wordmark, or a name laid over a photograph.",
+      "styles": {
+        "font-size": "{type.size.lg}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.tight}",
+        "letter-spacing": "{type.letter_spacing.tight}"
+      }
+    },
+    "heading": {
+      "purpose": "The title of a card.",
+      "styles": {
+        "font-size": "{type.size.lg}",
+        "font-weight": "{type.weight.bold}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "section": {
+      "purpose": "The label above a group of things on a screen.",
+      "styles": {
+        "font-size": "{type.size.lg}",
+        "font-weight": "{type.weight.medium}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "subheading": {
+      "purpose": "The title of a row.",
+      "styles": {
+        "font-size": "{type.size.md}",
+        "font-weight": "{type.weight.bold}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "body": {
+      "purpose": "Ordinary reading text, and what you type into a field.",
+      "styles": {
+        "font-size": "{type.size.md}",
+        "font-weight": "{type.weight.regular}",
+        "line-height": "{type.line_height.body}"
+      }
+    },
+    "body-strong": {
+      "purpose": "A line of reading text that carries the reason for something.",
+      "styles": {
+        "font-size": "{type.size.md}",
+        "font-weight": "{type.weight.medium}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "message": {
+      "purpose": "A chat message.",
+      "styles": {
+        "font-size": "{type.size.md}",
+        "font-weight": "{type.weight.regular}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "note": {
+      "purpose": "A smaller paragraph meant to be read, such as a briefing.",
+      "styles": {
+        "font-size": "{type.size.sm}",
+        "font-weight": "{type.weight.regular}",
+        "line-height": "{type.line_height.body}"
+      }
+    },
+    "meta": {
+      "purpose": "The quiet second line under a title: when, where, who.",
+      "styles": {
+        "font-size": "{type.size.sm}",
+        "font-weight": "{type.weight.regular}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "label": {
+      "purpose": "The words on a small control or above a field.",
+      "styles": {
+        "font-size": "{type.size.sm}",
+        "font-weight": "{type.weight.medium}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "label-strong": {
+      "purpose": "The words on a small button, a badge or a toast.",
+      "styles": {
+        "font-size": "{type.size.sm}",
+        "font-weight": "{type.weight.bold}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "button": {
+      "purpose": "The words on a main button: capitals, spaced out, like Disney's Play.",
+      "styles": {
+        "font-size": "{type.size.sm}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.snug}",
+        "letter-spacing": "{type.letter_spacing.caps}",
+        "text-transform": "uppercase"
+      }
+    },
+    "button-small": {
+      "purpose": "The words on a small main button.",
+      "styles": {
+        "font-size": "{type.size.xs}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.snug}",
+        "letter-spacing": "{type.letter_spacing.caps}",
+        "text-transform": "uppercase"
+      }
+    },
+    "stamp": {
+      "purpose": "The big YES or NO stamped on a card as you swipe it.",
+      "styles": {
+        "font-size": "{type.size.lg}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.tight}",
+        "letter-spacing": "{type.letter_spacing.caps}",
+        "text-transform": "uppercase"
+      }
+    },
+    "caption": {
+      "purpose": "The smallest text: a time, a count, a note under something.",
+      "styles": {
+        "font-size": "{type.size.xs}",
+        "font-weight": "{type.weight.regular}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "caption-strong": {
+      "purpose": "The words on a tag.",
+      "styles": {
+        "font-size": "{type.size.xs}",
+        "font-weight": "{type.weight.bold}",
+        "line-height": "{type.line_height.snug}"
+      }
+    },
+    "nav": {
+      "purpose": "A label under an icon in the navigation bar.",
+      "styles": {
+        "font-size": "{type.size.xs}",
+        "font-weight": "{type.weight.medium}",
+        "line-height": "{type.line_height.none}"
+      }
+    },
+    "glyph-xs": {
+      "purpose": "Initials or a symbol drawn as text, at the xs step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.xs}"
+      }
+    },
+    "glyph-sm": {
+      "purpose": "Initials or a symbol drawn as text, at the sm step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.sm}"
+      }
+    },
+    "glyph-lg": {
+      "purpose": "Initials or a symbol drawn as text, at the lg step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.lg}"
+      }
+    },
+    "glyph-xl": {
+      "purpose": "Initials or a symbol drawn as text, at the xl step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.xl}"
+      }
+    },
+    "glyph-xxl": {
+      "purpose": "Initials or a symbol drawn as text, at the xxl step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.xxl}"
+      }
+    },
+    "glyph-display": {
+      "purpose": "Initials or a symbol drawn as text, at the display step. Not for words.",
+      "styles": {
+        "font-size": "{type.size.display}"
+      }
+    }
+  }
+}

@@ -12,8 +12,6 @@
     "background": "transparent",
     "color": "{color.text.primary}",
     "font-family": "inherit",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.medium}",
     "user-select": "none",
     "&[aria-pressed=\"true\"]": {
       "background": "{color.action.primary}",
@@ -21,14 +19,12 @@
       "color": "{color.text.inverse}"
     }
   },
-  "states": {
-    "selected": {
-      "background": "{color.action.primary}",
-      "border-color": "{color.action.primary}",
-      "color": "{color.text.inverse}"
-    }
-  },
   "interaction": {
     "base": "toggle"
-  }
+  },
+  "text": {
+    "base": "label"
+  },
+  "example": "<button type=\"button\" class=\"chip\" aria-pressed=\"false\">Walk</button>",
+  "frame": "inline"
 }

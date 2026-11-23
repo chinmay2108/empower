@@ -7,5 +7,7 @@
   },
   "interaction": {
     "base": "link"
-  }
+  },
+  "example": "<a class=\"link\" href=\"#\">People</a>",
+  "frame": "inline"
 }

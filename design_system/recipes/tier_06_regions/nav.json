@@ -28,9 +28,6 @@
       "gap": "{space.1}",
       "min-width": "0",
       "text-decoration": "none",
-      "font-size": "{type.size.xs}",
-      "font-weight": "{type.weight.medium}",
-      "line-height": "{type.line_height.none}",
       "white-space": "nowrap",
       "color": "{color.text.tertiary}",
       "&[aria-current=\"page\"]": {
@@ -50,5 +47,10 @@
   },
   "surface": {
     "base": "bar"
-  }
+  },
+  "text": {
+    "__link": "nav"
+  },
+  "example": "<nav class=\"nav\"><div class=\"nav__inner\"><a class=\"nav__link\" href=\"#\"><svg class=\"nav__icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/></svg><span>Home</span></a><a class=\"nav__link\" href=\"#\" aria-current=\"page\"><svg class=\"nav__icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M3 10h18M8 3v4M16 3v4\"/></svg><span>This week</span></a><a class=\"nav__link\" href=\"#\"><svg class=\"nav__icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6L9 17l-5-5\"/></svg><span>Check in</span></a><a class=\"nav__link\" href=\"#\"><svg class=\"nav__icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c1-3.5 3.8-5.5 6.5-5.5s5.5 2 6.5 5.5\"/><circle cx=\"17\" cy=\"9\" r=\"2.5\"/><path d=\"M16 14.6c2.6.2 4.6 2 5.5 5.4\"/></svg><span>People</span></a><a class=\"nav__link\" href=\"#\"><svg class=\"nav__icon\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1.5-4 5-6 8-6s6.5 2 8 6\"/></svg><span>Me</span></a></div></nav>",
+  "frame": "phone"
 }

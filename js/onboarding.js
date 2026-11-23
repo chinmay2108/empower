@@ -78,12 +78,6 @@
     }).join("") + "</div>";
   }
 
-  /* The tick on a done screen: a drawn line, never a text glyph. */
-  function bigCheck() {
-    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
-      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
-  }
-
   function body() {
     switch (state.step) {
       case 0:
@@ -106,12 +100,11 @@
           '<p class="label">' + (state.quizIndex + 1) + " of " + QUIZ.length + "</p>" +
           '<div class="quiz-pair">' + ["a", "b"].map(function (side) {
             var on = state.answers[q.id] === side;
-            return '<button type="button" class="option' + (on ? " is-selected" : "") +
-              '" data-kind="quiz" data-value="' + side + '" aria-pressed="' + on +
+            return '<button type="button" class="option" data-kind="quiz" data-value="' + side + '" aria-pressed="' + on +
               '"><p class="option__title">' + ui.escapeHtml(q[side]) + "</p></button>";
           }).join("") + "</div>";
       default:
-        return '<div class="center">' + bigCheck() +
+        return '<div class="center">' + ui.bigCheck() +
           '<h1 class="title">You\'re set, ' + ui.escapeHtml(state.name) + ".</h1>" +
           '<p class="subtitle">We found a few spots you\'ll like.</p></div>';
     }

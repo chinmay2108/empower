@@ -12,5 +12,7 @@
       "width": "{size.icon.lg}",
       "height": "{size.icon.lg}"
     }
-  }
+  },
+  "example": "<div class=\"ember-card card\"><span class=\"ember ember--glow ember--lg\" aria-label=\"Empower score 41\"><svg class=\"ember__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z\"/></svg><span class=\"ember__value\">41</span></span><div><p class=\"card__title\">Empower score</p><p class=\"card__meta\">4 meetups · 9 answers. It warms every time you go back to the same group.</p></div></div>",
+  "frame": "block"
 }

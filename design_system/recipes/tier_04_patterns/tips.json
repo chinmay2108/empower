@@ -11,5 +11,7 @@
     "& li::marker": {
       "color": "{color.accent.default}"
     }
-  }
+  },
+  "example": "<ul class=\"tips small\"><li>Get there five minutes early so you are not walking into a full room.</li><li>Teams form at the bar. Say you are on your own and someone will take you.</li></ul>",
+  "frame": "block"
 }

@@ -6,5 +6,10 @@
     "justify-content": "space-between",
     "align-items": "center",
     "gap": "{space.3}"
+  },
+  "example": "<div class=\"link-row\"><p class=\"flush small\">Three sessions with Felix so far</p><a class=\"mini-btn\" href=\"#\">Message</a></div>",
+  "frame": "block",
+  "waive": {
+    "unused": "Not on any screen today. Kept until Daniel decides whether to remove it."
   }
 }

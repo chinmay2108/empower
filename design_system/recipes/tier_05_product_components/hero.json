@@ -18,5 +18,7 @@
       "background": "linear-gradient(to top, {color.surface.canvas}, {color.scrim.none} 50%)",
       "pointer-events": "none"
     }
-  }
+  },
+  "example": "<div class=\"hero\"><img class=\"event-art\" src=\"../img/market.jpg\" alt=\"\" draggable=\"false\"></div>",
+  "frame": "block"
 }

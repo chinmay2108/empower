@@ -1,0 +1,609 @@
+{
+  "_about": "Ways around the state, surface, text and review-board rules, found by an independent reviewer (Codex, November 23, 2026) who did not write them, plus the neighbouring cases those findings pointed at. Each 'refuse' case passed the gate before the fix. 'pass' cases are controls against a gate that refuses honest work.",
+  "cases": [
+    {
+      "id": "r11-global-surface",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 1,
+        "name": "rogue-global",
+        "global": true,
+        "purpose": "Global audit probe",
+        "file": "design_system/recipes/tier_01_primitives/rogue-global.json",
+        "rules": {
+          ".rogue-panel": {
+            "background": "{color.surface.panel}",
+            "box-shadow": "{shadow.elevated}",
+            "backdrop-filter": "blur({blur.overlay})"
+          }
+        }
+      }
+    },
+    {
+      "id": "r11-screen-tier-surface",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 7,
+        "className": "rogue-screen",
+        "purpose": "A recipe used only by this test",
+        "file": "design_system/recipes/tier_07_screens/rogue-screen.json",
+        "base": {
+          "background": "{color.surface.panel}"
+        }
+      }
+    },
+    {
+      "id": "r10-dynamic-button",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "plain",
+        "purpose": "A recipe used only by this test",
+        "file": "test/plain.json",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      },
+      "file": "js/x.js",
+      "text": "const el=document.createElement(\"button\"); el.className=\"plain\";"
+    },
+    {
+      "id": "r10-role-on-any-tag",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "plain",
+        "purpose": "A recipe used only by this test",
+        "file": "test/plain.json",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<aside role=\"button\" class=\"plain\">Go</aside>"
+    },
+    {
+      "id": "r10-selection-mechanism-mismatch",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "mismatch",
+        "purpose": "A recipe used only by this test",
+        "file": "test/mismatch.json",
+        "interaction": {
+          "base": "on-dark"
+        },
+        "base": {
+          "color": "{color.text.primary}",
+          "&[aria-pressed=\"true\"]": {
+            "color": "{color.action.primary}"
+          }
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<button class=\"mismatch\" aria-selected=\"false\">Go</button>"
+    },
+    {
+      "id": "r10-state-on-a-child-only",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "inner",
+        "purpose": "A recipe used only by this test",
+        "file": "test/inner.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "@media (hover: hover)": {
+            "& span:hover": {
+              "color": "{color.action.primary}"
+            }
+          },
+          "& span:active": {
+            "color": "{color.action.primary}"
+          }
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<button class=\"inner\">Go</button>"
+    },
+    {
+      "id": "r10-manual-noop-states",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "manual",
+        "purpose": "A recipe used only by this test",
+        "file": "test/manual.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "&:active": {
+            "color": "{color.text.primary}"
+          },
+          "&[aria-pressed=\"true\"]": {
+            "color": "{color.text.primary}"
+          },
+          "@media (hover: hover)": {
+            "&:hover": {
+              "color": "{color.text.primary}"
+            }
+          }
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<button class=\"manual\" aria-pressed=\"false\">Go</button>"
+    },
+    {
+      "id": "r10-native-checkbox",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "fieldish",
+        "purpose": "A recipe used only by this test",
+        "file": "test/fieldish.json",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<input type=\"checkbox\" class=\"fieldish\">"
+    },
+    {
+      "id": "r10-input-button",
+      "kind": "interaction",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "fieldish",
+        "purpose": "A recipe used only by this test",
+        "file": "test/fieldish.json",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<input type=\"button\" class=\"fieldish\" value=\"Go\">"
+    },
+    {
+      "id": "r10-inert-preset",
+      "kind": "states",
+      "expect": "refuse",
+      "states": {
+        "presets": {
+          "inert": {
+            "purpose": "A deliberately invisible interaction preset",
+            "rest": {
+              "color": "{color.text.primary}"
+            },
+            "hover": {
+              "color": "{color.text.primary}"
+            },
+            "pressed": {
+              "color": "{color.text.primary}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "r10-hover-moves-without-reduced",
+      "kind": "states",
+      "expect": "refuse",
+      "states": {
+        "presets": {
+          "jumpy": {
+            "purpose": "A preset that moves on hover with no still version",
+            "rest": {
+              "cursor": "pointer"
+            },
+            "hover": {
+              "transform": "scale({motion.scale.hover})"
+            },
+            "pressed": {
+              "opacity": "{opacity.pressed}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "r10-transparent-focus",
+      "kind": "recipe-plain",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "ghost",
+        "purpose": "A recipe used only by this test",
+        "file": "test/ghost.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "&:focus-visible": {
+            "outline": "{border.width.strong} solid transparent"
+          }
+        }
+      }
+    },
+    {
+      "id": "r11-aliased-panel-fill",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-panel",
+        "purpose": "A recipe used only by this test",
+        "file": "design_system/recipes/tier_04_patterns/rogue-panel.json",
+        "base": {
+          "background": "{color.action.secondary}"
+        }
+      }
+    },
+    {
+      "id": "r11-gradient-panel-fill",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-wash",
+        "purpose": "A recipe used only by this test",
+        "file": "test/rogue-wash.json",
+        "base": {
+          "background-image": "linear-gradient({color.surface.panel}, {color.surface.panel})"
+        }
+      }
+    },
+    {
+      "id": "r11-overrule-preset",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-over",
+        "purpose": "A recipe used only by this test",
+        "file": "test/rogue-over.json",
+        "surface": {
+          "base": "panel"
+        },
+        "base": {
+          "border-radius": "{radius.pill}"
+        }
+      }
+    },
+    {
+      "id": "r11-composed-shadow",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-shade",
+        "purpose": "A recipe used only by this test",
+        "file": "test/rogue-shade.json",
+        "base": {
+          "box-shadow": "0 0 {space.2} {color.scrim.strong}"
+        }
+      }
+    },
+    {
+      "id": "r11-drop-shadow",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-drop",
+        "purpose": "A recipe used only by this test",
+        "file": "test/rogue-drop.json",
+        "base": {
+          "filter": "drop-shadow(0 0 {space.2} {color.scrim.strong})"
+        }
+      }
+    },
+    {
+      "id": "r11-keyframe-shadow",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "rogue-shadow",
+        "purpose": "A recipe used only by this test",
+        "file": "test/rogue-shadow.json",
+        "base": {
+          "animation": "rogue-shadow {motion.duration.short} {motion.easing.standard}",
+          "@media (prefers-reduced-motion: reduce)": {
+            "animation": "none"
+          }
+        },
+        "keyframes": {
+          "rogue-shadow": {
+            "0%": {
+              "box-shadow": "none"
+            },
+            "100%": {
+              "box-shadow": "{shadow.elevated}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "r12-encoded-held-state",
+      "kind": "app-source",
+      "expect": "refuse",
+      "file": "pages/x.html",
+      "classes": [
+        "btn"
+      ],
+      "text": "<button class=\"btn is-&#104;over\">Stuck hover</button>"
+    },
+    {
+      "id": "r12-escaped-held-state",
+      "kind": "app-source",
+      "expect": "refuse",
+      "file": "js/x.js",
+      "classes": [
+        "btn"
+      ],
+      "text": "el.classList.add(\"is-\\\\u0068over\");"
+    },
+    {
+      "id": "r12-missing-example",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "silent",
+        "purpose": "A recipe used only by this test",
+        "file": "test/silent.json",
+        "example": "",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      }
+    },
+    {
+      "id": "r12-example-of-something-else",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "wrong-example",
+        "purpose": "A recipe used only by this test",
+        "file": "test/wrong-example.json",
+        "example": "<div>Wrong specimen</div>",
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      }
+    },
+    {
+      "id": "r12-aria-selected-card",
+      "kind": "board-cards",
+      "expect": "pass",
+      "requiredLabels": [
+        "Selected"
+      ],
+      "recipe": {
+        "tier": 2,
+        "className": "audit-tab",
+        "purpose": "A recipe used only by this test",
+        "file": "test/audit-tab.json",
+        "example": "<button class=\"audit-tab\" aria-selected=\"false\">Tab</button>",
+        "interaction": {
+          "base": "on-dark"
+        },
+        "base": {
+          "color": "{color.text.primary}",
+          "&[aria-selected=\"true\"]": {
+            "color": "{color.action.primary}"
+          }
+        }
+      }
+    },
+    {
+      "id": "r13-text-by-hand",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "loud",
+        "purpose": "A recipe used only by this test",
+        "file": "test/loud.json",
+        "base": {
+          "font-size": "{type.size.xl}"
+        }
+      }
+    },
+    {
+      "id": "r13-capitals-by-hand",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "shout",
+        "purpose": "A recipe used only by this test",
+        "file": "test/shout.json",
+        "base": {
+          "text-transform": "uppercase"
+        }
+      }
+    },
+    {
+      "id": "r13-role-with-a-fill",
+      "kind": "type",
+      "expect": "refuse",
+      "type": {
+        "presets": {
+          "painted": {
+            "purpose": "A text role that tries to set a colour",
+            "styles": {
+              "font-size": "{type.size.sm}",
+              "color": "{color.text.primary}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-shared-interaction",
+      "kind": "interaction",
+      "expect": "pass",
+      "recipe": {
+        "tier": 2,
+        "className": "fine",
+        "purpose": "A recipe used only by this test",
+        "file": "test/fine.json",
+        "interaction": {
+          "base": "on-dark"
+        },
+        "base": {
+          "color": "{color.text.primary}"
+        }
+      },
+      "file": "pages/x.html",
+      "text": "<button class=\"fine\">Go</button>"
+    },
+    {
+      "id": "control-shared-surface",
+      "kind": "raw-recipe",
+      "expect": "pass",
+      "recipe": {
+        "tier": 2,
+        "className": "slab",
+        "purpose": "A recipe used only by this test",
+        "file": "test/slab.json",
+        "surface": {
+          "base": "panel"
+        },
+        "base": {
+          "padding": "{space.4}"
+        }
+      }
+    },
+    {
+      "id": "control-text-role",
+      "kind": "raw-recipe",
+      "expect": "pass",
+      "recipe": {
+        "tier": 2,
+        "className": "words",
+        "purpose": "A recipe used only by this test",
+        "file": "test/words.json",
+        "text": {
+          "base": "meta"
+        },
+        "base": {
+          "font-weight": "{type.weight.bold}"
+        }
+      }
+    },
+    {
+      "id": "control-hover-changes-a-part",
+      "kind": "raw-recipe",
+      "expect": "pass",
+      "recipe": {
+        "tier": 2,
+        "className": "tile",
+        "purpose": "A recipe used only by this test",
+        "file": "test/tile.json",
+        "elements": {
+          "art": {
+            "margin": "0"
+          }
+        },
+        "base": {
+          "@media (hover: hover)": {
+            "&:hover .tile__art": {
+              "opacity": "{opacity.hover}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-selected-class-in-app",
+      "kind": "app-source",
+      "expect": "pass",
+      "file": "pages/x.html",
+      "classes": [
+        "btn",
+        "is-selected"
+      ],
+      "text": "<button class=\"btn is-selected\">On</button>"
+    },
+    {
+      "id": "r10-field-swaps-focus-ring",
+      "kind": "recipe-plain",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "quietfield",
+        "purpose": "A recipe used only by this test",
+        "file": "test/quietfield.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "border": "{border.width.default} solid transparent",
+          "&:focus": {
+            "outline": "none",
+            "border-color": "{color.accent.default}"
+          }
+        }
+      }
+    },
+    {
+      "id": "r10-preset-hover-changes-nothing",
+      "kind": "raw-recipe",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "samehover",
+        "purpose": "A recipe used only by this test",
+        "file": "test/samehover.json",
+        "interaction": {
+          "base": "text"
+        },
+        "base": {
+          "color": "{color.text.primary}"
+        },
+        "example": "<a class=\"samehover\" href=\"#\">Back</a>",
+        "frame": "inline"
+      }
+    },
+    {
+      "id": "r10-ring-recoloured-at-rest",
+      "kind": "recipe-plain",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "ringless",
+        "purpose": "A recipe used only by this test",
+        "file": "test/ringless.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "outline-color": "transparent"
+        }
+      }
+    },
+    {
+      "id": "r10-ring-painted-as-background",
+      "kind": "recipe-plain",
+      "expect": "refuse",
+      "recipe": {
+        "tier": 2,
+        "className": "ringless",
+        "purpose": "A recipe used only by this test",
+        "file": "test/ringless.json",
+        "base": {
+          "color": "{color.text.primary}",
+          "&:focus-visible": {
+            "outline-color": "{color.surface.canvas}"
+          }
+        }
+      }
+    }
+  ]
+}

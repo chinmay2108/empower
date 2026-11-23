@@ -11,12 +11,8 @@
     "background": "transparent",
     "color": "{color.text.primary}",
     "font-family": "inherit",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.bold}",
-    "text-align": "center"
-  },
-  "states": {
-    "selected": {
+    "text-align": "center",
+    "&[aria-pressed=\"true\"]": {
       "background": "{color.action.primary}",
       "color": "{color.text.inverse}",
       "border-color": "{color.action.primary}"
@@ -24,5 +20,10 @@
   },
   "interaction": {
     "base": "toggle"
-  }
+  },
+  "text": {
+    "base": "label-strong"
+  },
+  "example": "<button type=\"button\" class=\"choice\" aria-pressed=\"false\">Good</button>",
+  "frame": "block"
 }

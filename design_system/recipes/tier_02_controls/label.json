@@ -1,11 +1,14 @@
 {
   "className": "label",
   "purpose": "The label above an input.",
+  "text": {
+    "base": "label"
+  },
   "base": {
     "display": "block",
     "margin-bottom": "{space.2}",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.medium}",
     "color": "{color.text.secondary}"
-  }
+  },
+  "example": "<label class=\"label\">I'll leave at</label>",
+  "frame": "block"
 }

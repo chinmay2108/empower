@@ -9,5 +9,7 @@
     "stroke-width": "{border.width.heavy}",
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
-  }
+  },
+  "example": "<svg class=\"check-mark\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg>",
+  "frame": "inline"
 }

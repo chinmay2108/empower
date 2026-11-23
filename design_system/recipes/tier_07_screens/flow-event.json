@@ -8,5 +8,7 @@
     "&.event-row": {
       "cursor": "default"
     }
-  }
+  },
+  "example": "<div class=\"flow-event event-row\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><span class=\"event-row__body\"><span class=\"event-row__title\">Thursday Trivia at Alamo Drafthouse</span><span class=\"event-row__meta\">Thu, Nov 26 · 7pm</span></span></div>",
+  "frame": "block"
 }

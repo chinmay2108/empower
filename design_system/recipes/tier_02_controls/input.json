@@ -8,20 +8,16 @@
     "border": "{border.width.default} solid transparent",
     "color": "{color.text.primary}",
     "font-family": "inherit",
-    "font-size": "{type.size.md}",
-    "transition": "border-color {motion.duration.short} {motion.easing.standard}",
     "&::placeholder": {
       "color": "{color.text.tertiary}"
-    },
-    "&:focus": {
-      "outline": "none",
-      "border-color": "{color.accent.default}"
-    },
-    "@media (prefers-reduced-motion: reduce)": {
-      "transition": "none"
     }
   },
   "surface": {
     "base": "field"
-  }
+  },
+  "text": {
+    "base": "body"
+  },
+  "example": "<input class=\"input\" type=\"time\" value=\"18:30\" aria-label=\"I'll leave at\">",
+  "frame": "block"
 }

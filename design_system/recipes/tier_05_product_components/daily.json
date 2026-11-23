@@ -4,5 +4,7 @@
   "base": {
     "display": "grid",
     "gap": "{space.1}"
-  }
+  },
+  "example": "<div class=\"daily\"><button type=\"button\" class=\"option\"><p class=\"option__title\">A quiet table of six</p></button><button type=\"button\" class=\"option\"><p class=\"option__title\">A room that fills up</p></button></div>",
+  "frame": "block"
 }

@@ -37,7 +37,7 @@
     ":focus": {
       "outline": "none"
     },
-    ":focus-visible": {
+    ":focus-visible, .is-focus": {
       "outline": "{border.width.strong} solid {color.focus.ring}",
       "outline-offset": "{space.hairline}"
     },

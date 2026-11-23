@@ -14,5 +14,7 @@
   },
   "interaction": {
     "base": "link"
-  }
+  },
+  "example": "<button type=\"button\" class=\"link-btn\">Undo</button>",
+  "frame": "inline"
 }

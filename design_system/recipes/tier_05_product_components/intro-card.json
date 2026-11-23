@@ -12,5 +12,7 @@
       "width": "{size.field}",
       "height": "{size.field}"
     }
-  }
+  },
+  "example": "<div class=\"intro-card card\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u013.jpg\" alt=\"\"><div><p class=\"eyebrow\">Someone to look for</p><p class=\"card__title\">Devon will be there. You two would get on.</p><p class=\"card__meta\">They're a regular, and also new to town this year.</p></div></div>",
+  "frame": "block"
 }

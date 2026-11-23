@@ -5,6 +5,7 @@
    Reads:  design_system/tier_00_foundations.json   (every raw value lives here)
            design_system/states.json                (how pressable things answer)
            design_system/surfaces.json              (what each kind of surface is made of)
+           design_system/type.json                  (how each kind of text is set)
            design_system/recipes/tier_0N_*\/*.json  (components, tokens only)
    Writes: css/design-system.css                    (committed, plain CSS)
 
@@ -23,6 +24,7 @@ const FOUNDATIONS = path.join(ROOT, "design_system/tier_00_foundations.json");
 const RECIPES = path.join(ROOT, "design_system/recipes");
 const STATES = path.join(ROOT, "design_system/states.json");
 const SURFACES = path.join(ROOT, "design_system/surfaces.json");
+const TYPE = path.join(ROOT, "design_system/type.json");
 const OUTPUT = path.join(ROOT, "css/design-system.css");
 const HOVER_MEDIA = "@media (hover: hover)";
 const REDUCED_MEDIA = "@media (prefers-reduced-motion: reduce)";
@@ -70,17 +72,31 @@ function loadSurfaces() {
   return fs.existsSync(SURFACES) ? JSON.parse(fs.readFileSync(SURFACES, "utf8")) : { presets: {} };
 }
 
-/** The style block a part key names: "base", "__part" or "--variant". Null when the recipe has no such part. */
-function partBlock(recipe, part) {
-  if (part === "base") { recipe.base = recipe.base || {}; return recipe.base; }
-  if (part.indexOf("__") === 0) return (recipe.elements || {})[part.slice(2)] || null;
-  const group = Object.keys(recipe.variants || {}).filter((g) => recipe.variants[g][part.slice(2)])[0];
-  return group ? recipe.variants[group][part.slice(2)] : null;
+/** Loads the shared text roles (size, weight, line spacing, letter spacing). */
+function loadType() {
+  return fs.existsSync(TYPE) ? JSON.parse(fs.readFileSync(TYPE, "utf8")) : { presets: {} };
 }
 
-/** Lays a part's surface preset under the recipe's own styles (the recipe's own keys win). */
-function applySurface(recipe, presets) {
-  const map = recipe.surface;
+/** The style block a part key names: "base", "__part" or "--variant", optionally followed by a space and a
+    nested selector written exactly as in the recipe ("__media & .avatar"). Null when there is no such block. */
+function partBlock(recipe, key) {
+  const space = key.indexOf(" ");
+  const part = space === -1 ? key : key.slice(0, space);
+  const nested = space === -1 ? "" : key.slice(space + 1);
+  let block = null;
+  if (part === "base") { recipe.base = recipe.base || {}; block = recipe.base; }
+  else if (part.indexOf("__") === 0) block = (recipe.elements || {})[part.slice(2)] || null;
+  else {
+    const group = Object.keys(recipe.variants || {}).filter((g) => recipe.variants[g][part.slice(2)])[0];
+    block = group ? recipe.variants[group][part.slice(2)] : null;
+  }
+  if (!block || !nested) return block;
+  return block[nested] !== null && typeof block[nested] === "object" ? block[nested] : null;
+}
+
+/** Lays a part's preset under the recipe's own styles (the recipe's own keys win). "key" is "surface" or "text". */
+function applySurface(recipe, presets, key) {
+  const map = recipe[key || "surface"];
   if (!map || typeof map !== "object" || !recipe.className) return recipe;
   Object.keys(map).forEach((part) => {
     const preset = presets[map[part]];
@@ -110,11 +126,15 @@ function applyInteraction(recipe, presets) {
     }
     const on = [target + "[aria-pressed=\"true\"]", target + "[aria-current]", target + ".is-selected"];
     const rule = (selector, media, styles) => { if (styles) recipe.system.push({ selector: selector, media: media, styles: styles }); };
+    // Each state rule has a twin class (.is-hover, .is-pressed) so the review board can hold a state still.
     rule(target + ":hover" + LIVE, [HOVER_MEDIA], preset.hover);
+    rule(target + ".is-hover", [], preset.hover);
     rule(on.map((sel) => sel + ":hover" + LIVE).join(", "), [HOVER_MEDIA], preset.selected_hover);
-    rule(target + ":active" + LIVE, [], preset.pressed);
-    rule(on.map((sel) => sel + ":active" + LIVE).join(", "), [], preset.selected_pressed);
+    rule(on.map((sel) => sel + ".is-hover").join(", "), [], preset.selected_hover);
+    rule(target + ":active" + LIVE + ", " + target + ".is-pressed", [], preset.pressed);
+    rule(on.map((sel) => sel + ":active" + LIVE).concat(on.map((sel) => sel + ".is-pressed")).join(", "), [], preset.selected_pressed);
     rule(target, [REDUCED_MEDIA], preset.reduced);
+    rule(target + ":hover" + LIVE, [REDUCED_MEDIA], preset.reduced_hover);
     rule(target + ":active" + LIVE, [REDUCED_MEDIA], preset.reduced_pressed);
   });
   return recipe;
@@ -126,6 +146,7 @@ function loadRecipes() {
   const recipes = [];
   const presets = loadStates().presets || {};
   const surfaces = loadSurfaces().presets || {};
+  const roles = loadType().presets || {};
   fs.readdirSync(RECIPES).sort().forEach((folder) => {
     const match = /^tier_0(\d)_/.exec(folder);
     const dir = path.join(RECIPES, folder);
@@ -134,7 +155,7 @@ function loadRecipes() {
       const recipe = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
       recipe.tier = Number(match[1]);
       recipe.file = "design_system/recipes/" + folder + "/" + file;
-      recipes.push(applyInteraction(applySurface(recipe, surfaces), presets));
+      recipes.push(applyInteraction(applySurface(applySurface(recipe, surfaces, "surface"), roles, "text"), presets));
     });
   });
   return recipes;
@@ -224,6 +245,37 @@ function emitRecipe(recipe, byName) {
   return css;
 }
 
+/* Which CSS property shows a token of each family on the review board. Families not listed are shown as a value only. */
+const SAMPLE_PROPERTY = [
+  ["color.", "background"], ["space.", "width"], ["size.", "width"], ["radius.", "border-radius"], ["border.width.", "height"],
+  ["shadow.", "box-shadow"], ["type.size.", "font-size"], ["type.weight.", "font-weight"], ["type.line_height.", "line-height"],
+  ["type.letter_spacing.", "letter-spacing"], ["type.family.", "font-family"], ["opacity.", "opacity"], ["ratio.", "aspect-ratio"],
+];
+
+/** The property that shows a token on the board, or null. */
+function sampleProperty(tokenName) {
+  const hit = SAMPLE_PROPERTY.filter((pair) => tokenName.indexOf(pair[0]) === 0)[0];
+  return hit ? hit[1] : null;
+}
+
+/** "color.text.primary" -> "sample--color-text-primary" */
+function sampleClass(name) {
+  return "sample--" + name.replace(/[._]/g, "-");
+}
+
+/** One class per token and per surface preset, so the review board can show each at its real value. */
+function emitSamples(doc, surfaces, byName) {
+  let css = "\n/* Samples for the review board (pages/components.html): one class per token and per surface preset. */\n";
+  doc.tokens.forEach((t) => {
+    const property = sampleProperty(t.token_name);
+    if (property) css += "." + sampleClass(t.token_name) + " { " + property + ": var(" + cssVar(t.token_name) + "); }\n";
+  });
+  Object.keys(surfaces || {}).forEach((name) => {
+    css += emitRules("." + sampleClass("surface." + name), surfaces[name].styles || {}, "", byName);
+  });
+  return css;
+}
+
 /** Builds the whole stylesheet as a string. */
 function build() {
   const { doc, byName } = loadFoundations();
@@ -244,6 +296,7 @@ function build() {
   });
   css += "}\n";
   loadRecipes().forEach((recipe) => { css += emitRecipe(recipe, byName); });
+  css += emitSamples(doc, loadSurfaces().presets || {}, byName);
   return css;
 }
 
@@ -262,4 +315,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { build, loadFoundations, loadRecipes, loadStates, loadSurfaces, applyInteraction, applySurface, resolveToken, tokenCss, cssVar, expandSelector, ROOT };
+module.exports = { build, loadFoundations, loadRecipes, loadStates, loadSurfaces, loadType, partBlock, applyInteraction, applySurface, sampleProperty, sampleClass, resolveToken, tokenCss, cssVar, expandSelector, ROOT };

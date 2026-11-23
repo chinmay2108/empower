@@ -77,5 +77,7 @@
   },
   "surface": {
     "__card": "sheet"
-  }
+  },
+  "example": "<div class=\"ladder-pop\"><div class=\"ladder-pop__card\" role=\"dialog\" aria-label=\"Ready for a little more?\"><p class=\"eyebrow\">Three good sessions</p><p class=\"card__title\">Ready for a little more?</p><p class=\"card__meta\">We'll mix in some bigger groups. You're now on the Social step.</p><p class=\"mt-4\"><button type=\"button\" class=\"btn\">Nice</button></p></div></div>",
+  "frame": "phone"
 }

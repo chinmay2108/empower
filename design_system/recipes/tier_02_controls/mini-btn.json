@@ -13,8 +13,6 @@
     "background": "transparent",
     "color": "{color.text.primary}",
     "font-family": "inherit",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.bold}",
     "text-decoration": "none",
     "&[aria-pressed=\"true\"]": {
       "background": "{color.action.primary}",
@@ -31,15 +29,13 @@
       }
     }
   },
-  "states": {
-    "selected": {
-      "background": "{color.action.primary}",
-      "color": "{color.text.inverse}",
-      "border-color": "{color.action.primary}"
-    }
-  },
   "interaction": {
     "base": "toggle",
     "--dark": "on-light"
-  }
+  },
+  "text": {
+    "base": "label-strong"
+  },
+  "example": "<button type=\"button\" class=\"mini-btn\" aria-pressed=\"false\">Add</button>",
+  "frame": "inline"
 }

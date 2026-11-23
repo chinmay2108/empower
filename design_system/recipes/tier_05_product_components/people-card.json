@@ -22,14 +22,12 @@
         "height": "auto",
         "aspect-ratio": "{ratio.square}",
         "border-radius": "0",
-        "object-fit": "cover",
-        "font-size": "{type.size.xl}"
+        "object-fit": "cover"
       },
       "&::after": {
         "content": "\"\"",
         "position": "absolute",
         "inset": "0",
-        "background": "linear-gradient(to top, {color.surface.panel}, {color.scrim.soft} 50%, {color.scrim.none})",
         "pointer-events": "none"
       },
       "& .tag": {
@@ -50,10 +48,6 @@
       "flex-wrap": "wrap",
       "align-items": "center",
       "gap": "{space.2}",
-      "font-size": "{type.size.lg}",
-      "font-weight": "{type.weight.heavy}",
-      "line-height": "{type.line_height.tight}",
-      "letter-spacing": "{type.letter_spacing.tight}",
       "text-shadow": "0 0 {space.2} {color.scrim.strong}"
     },
     "body": {
@@ -65,8 +59,6 @@
     },
     "meta": {
       "margin": "0",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.secondary}"
     },
     "actions": {
@@ -76,6 +68,14 @@
     }
   },
   "surface": {
-    "base": "poster"
-  }
+    "base": "poster",
+    "__media &::after": "photo-fade"
+  },
+  "text": {
+    "__media & .avatar": "glyph-xl",
+    "__name": "poster",
+    "__meta": "meta"
+  },
+  "example": "<article class=\"people-card\"><div class=\"people-card__media\"><img class=\"avatar avatar--photo\" src=\"../img/people/u015.jpg\" alt=\"\"><span class=\"tag\">New</span><p class=\"people-card__name\">Maya K.<span class=\"ember ember--glow\" aria-label=\"Empower score 41\"><svg class=\"ember__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z\"/></svg><span class=\"ember__value\">41</span></span></p></div><div class=\"people-card__body\"><p class=\"people-card__meta\">Three sessions together at Thursday Trivia.</p><div class=\"people-card__actions\"><a class=\"mini-btn mini-btn--dark\" href=\"#\">Message</a><a class=\"mini-btn\" href=\"#\">Profile</a></div></div></article>",
+  "frame": "block"
 }

@@ -28,16 +28,10 @@
       "min-height": "{size.touch_target}",
       "padding": "0 {space.4}",
       "border": "{border.width.default} solid transparent",
-      "border-radius": "{radius.pill}",
       "font": "inherit",
-      "font-size": "{type.size.md}",
       "color": "{color.text.primary}",
       "&::placeholder": {
         "color": "{color.text.tertiary}"
-      },
-      "&:focus": {
-        "outline": "none",
-        "border-color": "{color.accent.default}"
       }
     },
     "send": {
@@ -46,6 +40,7 @@
       "height": "{size.touch_target}",
       "border-radius": "{radius.round}",
       "border": "0",
+      "padding": "0",
       "background": "{color.action.primary}",
       "display": "grid",
       "place-items": "center",
@@ -84,6 +79,15 @@
   },
   "surface": {
     "base": "bar",
-    "__input": "field"
-  }
+    "__input": "field-round"
+  },
+  "text": {
+    "__input": "body"
+  },
+  "example": "<form class=\"composer\"><div class=\"composer__inner composer__type\"><input class=\"composer__input\" autocomplete=\"off\" maxlength=\"300\" placeholder=\"Message Felix\" aria-label=\"Message Felix\"><button class=\"composer__send\" type=\"submit\" aria-label=\"Send\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z\"/></svg></button></div></form>",
+  "examples": {
+    "__cancel": "<form class=\"composer\"><div class=\"composer__inner composer__rec\"><button type=\"button\" class=\"composer__cancel\">Cancel</button><span class=\"composer__timer\"><span class=\"rec-dot\"></span><span>0:07</span></span><button type=\"button\" class=\"composer__send\" aria-label=\"Send voice note\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z\"/></svg></button></div></form>",
+    "__send--mic": "<form class=\"composer\"><div class=\"composer__inner composer__type\"><input class=\"composer__input\" autocomplete=\"off\" maxlength=\"300\" placeholder=\"Message Felix\" aria-label=\"Message Felix\"><button class=\"composer__send composer__send--mic\" type=\"submit\" aria-label=\"Record a voice note\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6 6 0 0 0 5 5.9V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.6a6 6 0 0 0 5-5.9z\"/></svg></button></div></form>"
+  },
+  "frame": "phone"
 }

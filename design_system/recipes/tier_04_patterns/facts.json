@@ -1,6 +1,9 @@
 {
   "className": "facts",
   "purpose": "Key facts as label and value rows, like Disney's settings rows.",
+  "text": {
+    "base & li": "note"
+  },
   "base": {
     "margin": "0 0 {space.6}",
     "padding": "0",
@@ -12,8 +15,7 @@
       "gap": "{space.4}",
       "min-height": "{size.row}",
       "padding": "{space.3} 0",
-      "border-bottom": "{border.width.default} solid {color.border.default}",
-      "font-size": "{type.size.sm}"
+      "border-bottom": "{border.width.default} solid {color.border.default}"
     },
     "& li span:first-child": {
       "color": "{color.text.secondary}"
@@ -22,5 +24,7 @@
       "font-weight": "{type.weight.bold}",
       "text-align": "right"
     }
-  }
+  },
+  "example": "<ul class=\"facts\"><li><span>Next session</span><span>Thu, Nov 26 · 7pm to 9pm</span></li><li><span>Where</span><span>Alamo Drafthouse, 5th Street Station</span></li><li><span>Usually there</span><span>About 18 people</span></li></ul>",
+  "frame": "block"
 }

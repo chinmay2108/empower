@@ -12,5 +12,7 @@
   },
   "uses": [
     "footer-action"
-  ]
+  ],
+  "example": "<div class=\"has-nav page\"><header class=\"topbar\"><a class=\"back\" href=\"#\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg>This week</a><span class=\"topbar__meta\">Week 3</span></header><p class=\"eyebrow\">Thu, Nov 26</p><h1 class=\"title\">Thursday Trivia.</h1><p class=\"subtitle\">Alamo Drafthouse, 5th Street Station.</p><div class=\"card\"><p class=\"card__title\">You're going</p><p class=\"card__meta\">With Jada M. and Aaron B.</p></div></div>",
+  "frame": "phone"
 }

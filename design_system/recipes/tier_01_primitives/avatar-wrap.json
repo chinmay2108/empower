@@ -5,5 +5,10 @@
     "display": "flex",
     "justify-content": "center",
     "margin-bottom": "{space.3}"
+  },
+  "example": "<div class=\"avatar-wrap\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u004.jpg\" alt=\"\"></div>",
+  "frame": "block",
+  "waive": {
+    "unused": "Not on any screen today. Kept until Daniel decides whether to remove it."
   }
 }

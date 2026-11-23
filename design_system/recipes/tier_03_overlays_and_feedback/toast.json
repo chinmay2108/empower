@@ -9,8 +9,6 @@
     "white-space": "nowrap",
     "background": "{color.surface.inverse}",
     "color": "{color.text.inverse}",
-    "font-size": "{type.size.sm}",
-    "font-weight": "{type.weight.bold}",
     "padding": "{space.3} {space.5}",
     "border-radius": "{radius.pill}",
     "animation": "toast-in-out {motion.duration.toast} {motion.easing.standard} forwards",
@@ -41,5 +39,10 @@
   },
   "surface": {
     "base": "floating"
-  }
+  },
+  "text": {
+    "base": "label-strong"
+  },
+  "example": "<div class=\"toast\" role=\"status\">+1 Empower score</div>",
+  "frame": "phone"
 }

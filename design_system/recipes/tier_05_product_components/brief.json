@@ -1,6 +1,11 @@
 {
   "className": "brief",
   "purpose": "What to know before you walk in: short headed notes split by hairlines, like a settings list.",
+  "text": {
+    "__title": "label-strong",
+    "__body": "note",
+    "__list": "note"
+  },
   "base": {
     "margin": "0 0 {space.6}",
     "border-top": "{border.width.default} solid {color.border.default}"
@@ -12,22 +17,15 @@
     },
     "title": {
       "margin": "0 0 {space.2}",
-      "font-size": "{type.size.sm}",
-      "font-weight": "{type.weight.bold}",
-      "line-height": "{type.line_height.snug}",
       "color": "{color.text.primary}"
     },
     "body": {
       "margin": "0",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.body}",
       "color": "{color.text.secondary}"
     },
     "list": {
       "margin": "0",
       "padding-left": "{space.5}",
-      "font-size": "{type.size.sm}",
-      "line-height": "{type.line_height.body}",
       "color": "{color.text.secondary}",
       "& li + li": {
         "margin-top": "{space.1}"
@@ -36,5 +34,7 @@
         "color": "{color.accent.default}"
       }
     }
-  }
+  },
+  "example": "<div class=\"brief\"><div class=\"brief__row\"><p class=\"brief__title\">Getting in</p><p class=\"brief__body\">Walk past the box office and go up the stairs. The room is on the left.</p></div><div class=\"brief__row\"><p class=\"brief__title\">What to expect</p><ul class=\"brief__list\"><li>Teams of four, formed at the bar.</li><li>Two rounds, with a break between them.</li></ul></div></div>",
+  "frame": "block"
 }

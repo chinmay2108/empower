@@ -50,12 +50,6 @@
     return art ? '<div class="hero">' + art + "</div>" : "";
   }
 
-  /* The tick on a done screen: a drawn line, never a text glyph. */
-  function bigCheck() {
-    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
-      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
-  }
-
   /* One headed note in the brief. */
   function briefRow(title, inner) {
     return '<div class="brief__row"><p class="brief__title">' + title + "</p>" + inner + "</div>";
@@ -105,7 +99,7 @@
       cancelled: ["Cancelled.", "All good. Plans change.", '<a class="btn" href="events.html">Pick something else</a>'],
       missed: ["Missed this one.", "It happens. Next week's a fresh start.", '<a class="btn" href="events.html">See this week</a>']
     }[status];
-    host.innerHTML = '<div class="center">' + bigCheck() + '<h1 class="title">' + text[0] +
+    host.innerHTML = '<div class="center">' + ui.bigCheck() + '<h1 class="title">' + text[0] +
       '</h1><p class="subtitle">' + text[1] + "</p></div>" +
       '<div class="footer-action"><div class="footer-action__inner">' + text[2] + "</div></div>";
   }

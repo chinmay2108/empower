@@ -8,5 +8,7 @@
     "object-fit": "cover",
     "border-radius": "{radius.small}",
     "background": "{color.surface.sunken}"
-  }
+  },
+  "example": "<img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\">",
+  "frame": "block"
 }

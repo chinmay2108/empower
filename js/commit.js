@@ -33,26 +33,11 @@
       ", I'll " + how + " to " + group.name + ".";
   }
 
-  /* The event this plan is about: its artwork, its name, when it is. Not a link. */
-  function eventRow() {
-    var art = ui.eventImage(group);
-    return '<div class="event-row flow-event' + (art ? "" : " event-row--plain") + '">' + art +
-      '<span class="event-row__body"><span class="event-row__title">' + group.name +
-      '</span><span class="event-row__meta">' + ui.formatDay(session.startsAt) + " · " +
-      ui.formatTime(session.startsAt) + "</span></span></div>";
-  }
-
-  /* The tick on a done screen: a drawn line, never a text glyph. */
-  function bigCheck() {
-    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
-      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
-  }
-
   function render() {
     if (state.done) return renderDone();
     var conflictGroup = state.conflict ? store.getGroup(state.conflict.groupId) : null;
     host.innerHTML =
-      eventRow() +
+      ui.flowEvent(group, session.startsAt) +
       '<h1 class="title">Make it a plan.</h1>' +
       '<p class="subtitle">Let\'s make it a plan. When are you heading out?</p>' +
       '<div class="field"><p class="label">I\'ll get there by</p><div class="chip-row">' +
@@ -74,9 +59,9 @@
 
   function renderDone() {
     host.innerHTML =
-      '<div class="center">' + bigCheck() + '<h1 class="title">You\'re going.</h1>' +
+      '<div class="center">' + ui.bigCheck() + '<h1 class="title">You\'re going.</h1>' +
       '<p class="subtitle">Leave at ' + ui.formatHHMM(state.done.leaveAt) + ".</p></div>" +
-      eventRow() +
+      ui.flowEvent(group, session.startsAt) +
       '<div class="card"><p class="card__title">What happens next</p><p class="card__meta">Your plan will be on Home that day. Can\'t make it? Cancel a day ahead, no big deal.</p></div>' +
       '<div class="footer-action"><div class="footer-action__inner">' +
       '<button type="button" class="btn btn--secondary" data-action="ics">Add to calendar</button>' +

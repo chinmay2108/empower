@@ -5,5 +5,7 @@
     "display": "grid",
     "grid-template-columns": "1fr 1fr",
     "gap": "{space.2}"
-  }
+  },
+  "example": "<div class=\"btn-row\"><a class=\"btn btn--secondary\" href=\"#\">Keep that one</a><button type=\"button\" class=\"btn\">Switch to this</button></div>",
+  "frame": "block"
 }
