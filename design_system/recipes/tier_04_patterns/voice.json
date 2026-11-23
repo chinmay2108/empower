@@ -1,0 +1,72 @@
+{
+  "className": "voice",
+  "purpose": "A playable voice note. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "display": "inline-flex",
+    "align-items": "center",
+    "gap": "{space.2}",
+    "min-width": "{size.voice}",
+    "vertical-align": "middle"
+  },
+  "elements": {
+    "play": {
+      "flex": "none",
+      "width": "{size.touch_target}",
+      "height": "{size.touch_target}",
+      "border-radius": "{radius.round}",
+      "border": "0",
+      "display": "grid",
+      "place-items": "center",
+      "background": "{color.accent.strong}",
+      "& svg": {
+        "width": "{size.icon.sm}",
+        "height": "{size.icon.sm}",
+        "fill": "{color.text.primary}"
+      }
+    },
+    "pause": {
+      "display": "none"
+    },
+    "track": {
+      "flex": "1",
+      "height": "{size.progress}",
+      "border-radius": "{radius.pill}",
+      "position": "relative",
+      "overflow": "hidden",
+      "&::before": {
+        "content": "\"\"",
+        "position": "absolute",
+        "inset": "0",
+        "background": "currentColor",
+        "opacity": "{opacity.dim}"
+      }
+    },
+    "fill": {
+      "position": "absolute",
+      "left": "0",
+      "top": "0",
+      "bottom": "0",
+      "width": "{runtime.fill}",
+      "background": "currentColor"
+    },
+    "len": {
+      "font-size": "{type.size.xs}",
+      "font-weight": "{type.weight.medium}",
+      "color": "currentColor",
+      "font-variant-numeric": "tabular-nums"
+    }
+  },
+  "states": {
+    "playing": {
+      "& $play $pause": {
+        "display": "block"
+      },
+      "& $play $start": {
+        "display": "none"
+      }
+    }
+  },
+  "interaction": {
+    "__play": "dim"
+  }
+}

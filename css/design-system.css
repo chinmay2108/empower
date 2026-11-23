@@ -1,138 +1,3126 @@
-/* Empower design system: foundation tokens, then recipes.
-   Tokens mirror design_system/tier_00_foundations.json. Keep them in sync
-   until scripts/build_tokens.js generates this file.
-   Rule: below :root, every value is a var(--token). No hex, px or font names. */
+/* ==========================================================================
+   Empower design system. GENERATED FILE: do not edit by hand.
+   Change design_system/tier_00_foundations.json or a recipe in
+   design_system/recipes/, then run: node scripts/build_tokens.js
+   ========================================================================== */
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../fonts/nunito-sans-latin.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --color-surface-canvas: #10121b;
-  --color-surface-panel: #1c202d;
-  --color-surface-overlay: #ffffff29;
-  --color-text-primary: #f5f6fc;
-  --color-text-secondary: #b5b9cb;
-  --color-text-inverse: #10121b;
-  --color-action-primary: #9be1e2;
-  --color-action-secondary: #18383e;
-  --color-border-default: #383e50;
-  --color-focus-ring: var(--color-action-primary);
+  color-scheme: dark;
+
+  /* color */
+  --color-surface-canvas: #17171b;
+  --color-surface-panel: #2f3036;
+  --color-surface-sunken: #080808;
+  --color-surface-bar: #1a1a1cd9;
+  --color-surface-inverse: #fcfcfe;
+  --color-surface-overlay: #000000b3;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cacacc;
+  --color-text-tertiary: #9d9ea6;
+  --color-text-inverse: #020202;
+  --color-action-primary: var(--color-surface-inverse);
+  --color-action-primary_pressed: #dbdbdd;
+  --color-action-secondary: var(--color-surface-panel);
+  --color-action-secondary_pressed: #46464a;
+  --color-accent-default: #58e9ff;
+  --color-accent-strong: #07708a;
+  --color-accent-soft: #07708a40;
+  --color-border-default: #46464a;
+  --color-border-strong: #6e6e73;
+  --color-focus-ring: var(--color-accent-default);
   --color-status-success: #8ce0b2;
+  --color-status-success_soft: #1b3931;
   --color-status-warning: #ca951f;
   --color-status-error: #ffa789;
-  --type-family-body: "DM Sans", system-ui, sans-serif;
+  --color-status-error_soft: #452c2b;
+  --color-ember-spark: #9a9aa6;
+  --color-ember-warm: #d97706;
+  --color-ember-glow: #ea580c;
+  --color-ember-blaze: #dc2626;
+  --color-scrim-strong: #080808f2;
+  --color-scrim-soft: #08080866;
+  --color-scrim-none: #08080800;
+  --color-glow-ambient: #07708a38;
+
+  /* type */
+  --type-family-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --type-family-heading: var(--type-family-body);
-  --type-size-body: 17px;
-  --type-size-heading: 26px;
-  --type-size-label: 14px;
+  --type-size-xs: 12px;
+  --type-size-sm: 14px;
+  --type-size-md: 16px;
+  --type-size-lg: 18px;
+  --type-size-xl: 22px;
+  --type-size-xxl: 28px;
+  --type-size-display: 34px;
   --type-weight-regular: 400;
-  --type-weight-emphasis: 600;
-  --type-line_height-body: 24px;
-  --type-line_height-heading: 32px;
+  --type-weight-medium: 600;
+  --type-weight-bold: 700;
+  --type-weight-heavy: 800;
+  --type-line_height-tight: 1.15;
+  --type-line_height-snug: 1.3;
+  --type-line_height-body: 1.5;
   --type-letter_spacing-default: 0;
-  --space-small: 8px;
-  --space-medium: 16px;
-  --space-large: 24px;
-  --radius-small: 8px;
-  --radius-medium: 16px;
+  --type-letter_spacing-tight: -0.01em;
+  --type-letter_spacing-caps: 0.08em;
+
+  /* space */
+  --space-hairline: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+
+  /* radius */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+  --radius-bubble: 18px;
   --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* border */
   --border-width-default: 1px;
-  --shadow-elevated: 0 4px 16px rgba(22, 22, 22, 0.08);
-  --blur-overlay: 16px;
+  --border-width-strong: 2px;
+  --border-width-heavy: 4px;
+
+  /* shadow */
+  --shadow-raised: 0 2px 8px #00000059;
+  --shadow-elevated: 0 8px 24px #00000080;
+
+  /* blur */
+  --blur-overlay: 20px;
+
+  /* motion */
+  --motion-duration-instant: 100ms;
   --motion-duration-short: 150ms;
   --motion-duration-medium: 250ms;
-  --motion-easing-standard: ease-out;
+  --motion-duration-long: 450ms;
+  --motion-duration-exit: 700ms;
+  --motion-duration-pulse: 1200ms;
+  --motion-duration-toast: 2600ms;
+  --motion-easing-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --motion-scale-pressed: 0.97;
+  --motion-scale-enter: 0.96;
+  --motion-scale-card_pressed: 0.985;
+  --motion-distance-enter: 12px;
+  --motion-angle-stamp: 12deg;
+  --motion-angle-throw: 18deg;
+  --motion-distance-throw: 140%;
+
+  /* layer */
   --layer-base: 0;
-  --layer-overlay: 100;
+  --layer-raised: 1;
+  --layer-stamp: 3;
+  --layer-sticky: 8;
+  --layer-nav: 10;
+  --layer-toast: 50;
+  --layer-overlay: 60;
+
+  /* opacity */
   --opacity-disabled: 0.4;
+  --opacity-dim: 0.3;
+  --opacity-hidden: 0;
+  --opacity-full: 1;
+
+  /* size */
   --size-touch_target: 44px;
+  --size-field: 56px;
+  --size-row: 56px;
+  --size-nav: 64px;
+  --size-page_width: 480px;
+  --size-icon-sm: 16px;
+  --size-icon-md: 24px;
+  --size-icon-lg: 32px;
+  --size-avatar-sm: 32px;
+  --size-avatar-md: 44px;
+  --size-avatar-lg: 72px;
+  --size-avatar-xl: 96px;
+  --size-progress: 4px;
+  --size-meter: 12px;
+  --size-dot: 8px;
+  --size-switch-width: 44px;
+  --size-switch-knob: 24px;
+  --size-stamp: 72px;
+  --size-deck: 430px;
+  --size-card-hero: 68%;
+  --size-card-poster: 30%;
+  --size-card-landscape: 58%;
+
+  /* ratio */
+  --ratio-hero: 2 / 3;
+  --ratio-poster: 5 / 7;
+  --ratio-landscape: 16 / 9;
+  --ratio-square: 1;
+
+  /* breakpoint */
   --breakpoint-compact: 480px;
+  --breakpoint-wide: 768px;
+
+  /* type */
+  --type-line_height-none: 1;
+
+  /* size */
+  --size-icon-xs: 14px;
+  --size-avatar-xs: 24px;
+  --size-bubble: 80%;
+  --size-voice: 180px;
+  --size-lab_label: 110px;
+  --size-card-thumb: 34%;
+  --size-card-min: 256px;
+  --size-page_wide: 1088px;
+  --size-footer_clearance: 168px;
+  --size-composer_clearance: 88px;
+  --size-action: 64px;
+
+  /* motion */
+  --motion-scale-back: 0.92;
+  --motion-scale-fly: 0.3;
+  --motion-scale-hover: 1.04;
+
+  /* ratio */
+  --ratio-detail: 4 / 3;
+
+  /* size */
+  --size-card-art_clear: 208px;
+
+  /* runtime */
+  --runtime-swipe_x: 0px;
+  --runtime-swipe_angle: 0deg;
+  --runtime-fill: 0%;
+
+  /* color */
+  --color-state-hover_on_dark: #ffffff14;
+  --color-state-pressed_on_dark: #ffffff29;
+  --color-state-hover_on_light: #00000014;
+  --color-state-pressed_on_light: #00000029;
+
+  /* opacity */
+  --opacity-hover: 0.8;
+  --opacity-pressed: 0.6;
+
+  /* shadow */
+  --shadow-highlight: inset 0 1px 0 #ffffff12;
+  --shadow-tile_far: 0 26px 30px -10px #000000b0;
+  --shadow-tile_near: 0 16px 10px -10px #000000ba;
+
+  /* color */
+  --color-border-hairline: #f9f9f91a;
+  --color-border-hairline_strong: #f9f9f9cc;
 }
 
-/* Button recipe: .button (primary), .button--secondary, .button--small */
-.button {
-  min-height: var(--size-touch_target);
-  padding: 0 var(--space-large);
-  border: none;
-  border-radius: var(--radius-pill);
-  background: var(--color-action-primary);
-  color: var(--color-text-inverse);
+/* avatar-wrap (tier 1): Centres a profile avatar. */
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+/* avatar (tier 1): A person's photo or initials in a circle. */
+.avatar {
+  background: var(--color-surface-panel);
+  flex: none;
+  width: var(--size-avatar-md);
+  height: var(--size-avatar-md);
+  border-radius: var(--radius-round);
+  display: grid;
+  place-items: center;
+  font-weight: var(--type-weight-bold);
+  font-size: var(--type-size-sm);
+  color: var(--color-text-primary);
+  object-fit: cover;
+}
+.avatar--sm {
+  width: var(--size-avatar-xs);
+  height: var(--size-avatar-xs);
+  font-size: var(--type-size-xs);
+}
+.avatar--lg {
+  width: var(--size-avatar-lg);
+  height: var(--size-avatar-lg);
+  font-size: var(--type-size-lg);
+}
+.avatar--photo {
+  padding: 0;
+}
+.avatar--center {
+  margin: 0 auto var(--space-3);
+}
+
+/* base (tier 1): Page defaults and the browser surfaces we did not draw: selection, caret, focus ring, scrollbars. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface-canvas);
+  color: var(--color-text-primary);
   font-family: var(--type-family-body);
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-emphasis);
-  cursor: pointer;
+  font-size: var(--type-size-md);
+  line-height: var(--type-line_height-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
 }
-.button--secondary {
-  background: var(--color-action-secondary);
-  color: var(--color-action-primary);
+html {
+  scrollbar-color: var(--color-border-default) var(--color-surface-canvas);
+  -webkit-text-size-adjust: 100%;
 }
-.button--small {
-  padding: 0 var(--space-medium);
-  font-size: var(--type-size-label);
+a {
+  color: inherit;
 }
-.button:disabled {
+button, input, select, textarea {
+  font-family: inherit;
+  caret-color: var(--color-accent-default);
+  accent-color: var(--color-accent-default);
+}
+::selection {
+  background: var(--color-accent-strong);
+  color: var(--color-text-primary);
+}
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: var(--border-width-strong) solid var(--color-focus-ring);
+  outline-offset: var(--space-hairline);
+}
+button:disabled, [aria-disabled="true"] {
   opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
+[hidden] {
+  display: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto;
+  }
+}
 
-/* Card recipe: .card, .card--accent, .card--outline,
-   with parts .card__title, .card__meta and .card__actions */
-.card {
-  padding: var(--space-medium);
-  border: var(--border-width-default) solid var(--color-border-default);
-  border-radius: var(--radius-medium);
-  background: var(--color-surface-canvas);
-  box-shadow: var(--shadow-elevated);
+/* event-art (tier 1): An event's artwork. The card or screen around it sets the shape. */
+.event-art {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--ratio-landscape);
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  background: var(--color-surface-sunken);
+}
+
+/* eyebrow (tier 1): Short label that names the group of content right below it. */
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+
+/* link (tier 1): A link inside a sentence, such as the source of an event. */
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: var(--space-hairline);
+  text-decoration-thickness: var(--border-width-default);
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  color: var(--color-accent-default);
+  font-weight: var(--type-weight-medium);
+}
+@media (hover: hover) {
+  .link:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    text-decoration-thickness: var(--border-width-strong);
+  }
+}
+.link:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
+
+/* section-title (tier 1): Heading over a rail or group of rows, like Recommended For You. */
+.section-title {
+  margin: var(--space-7) 0 var(--space-3);
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+
+/* subtitle (tier 1): One supporting line under the screen title. */
+.subtitle {
+  margin: 0 0 var(--space-6);
+  font-size: var(--type-size-md);
+  line-height: var(--type-line_height-body);
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+/* tag (tier 1): White badge on a card, like Disney's New badge. */
+.tag {
+  display: inline-block;
+  padding: var(--space-hairline) var(--space-2);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  font-size: var(--type-size-xs);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+  white-space: nowrap;
+}
+.tag--quiet {
+  background: var(--color-surface-panel);
   color: var(--color-text-primary);
-  font-family: var(--type-family-body);
 }
-.card + .card {
-  margin-top: var(--space-medium);
+
+/* text-helpers (tier 1): Small text and layout helpers used inside any component. */
+.muted {
+  color: var(--color-text-secondary);
 }
-.card--accent {
-  border-color: var(--color-action-secondary);
+.small {
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+}
+.center {
+  text-align: center;
+}
+.flush {
+  margin: 0;
+}
+.mt-3 {
+  margin-top: var(--space-3);
+  margin-bottom: 0;
+}
+.mt-4 {
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+}
+.is-hidden {
+  display: none !important;
+}
+.list-plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* title (tier 1): The one screen title, like Disney's For You. */
+.title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
+  text-wrap: balance;
+}
+
+/* wordmark (tier 1): The Empower name in the top bar. */
+.wordmark {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  font-weight: var(--type-weight-heavy);
+  font-size: var(--type-size-lg);
+  letter-spacing: var(--type-letter_spacing-tight);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch_target);
+}
+.wordmark span {
+  color: var(--color-accent-default);
+}
+@media (hover: hover) {
+  .wordmark:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.wordmark:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .wordmark {
+    transition: none;
+  }
+}
+
+/* back (tier 2): The way back to the previous screen. */
+.back {
+  cursor: pointer;
+  transition: color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--size-touch_target);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+.back__icon {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-strong);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.back--person {
+  gap: var(--space-2);
+}
+@media (hover: hover) {
+  .back:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    color: var(--color-text-primary);
+  }
+}
+.back:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .back {
+    transition: none;
+  }
+}
+
+/* btn (tier 2): The main action on a screen: white, squared, capitals, like Disney's Play button. */
+.btn {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: var(--size-touch_target);
+  padding: var(--space-3) var(--space-6);
+  border: 0;
+  border-radius: var(--radius-small);
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  font-family: inherit;
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-snug);
+  letter-spacing: var(--type-letter_spacing-caps);
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+}
+.btn--secondary {
   background: var(--color-action-secondary);
+  color: var(--color-text-primary);
 }
-.card--outline {
-  box-shadow: none;
+.btn--accent {
+  background: var(--color-action-primary);
+}
+.btn--small {
+  min-height: var(--size-touch_target);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--type-size-xs);
+}
+.btn--inline {
+  width: auto;
+}
+@media (hover: hover) {
+  .btn:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+  transform: scale(var(--motion-scale-pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+@media (hover: hover) {
+  .btn--secondary:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+.btn--secondary:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn--secondary {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn--secondary:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* chip (tier 2): A choice you can switch on, like Disney's filter chips. */
+.chip {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--size-touch_target);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  user-select: none;
+}
+.chip[aria-pressed="true"] {
+  background: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+.chip.is-selected {
+  background: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+@media (hover: hover) {
+  .chip:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+@media (hover: hover) {
+  .chip[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.chip:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-pressed));
+}
+.chip[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* choice (tier 2): One of two or three big answers, such as Yes, Sort of, No. */
+.choice {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: grid;
+  place-items: center;
+  min-height: var(--size-field);
+  padding: var(--space-3) var(--space-2);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  text-align: center;
+}
+.choice.is-selected {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary);
+}
+@media (hover: hover) {
+  .choice:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+@media (hover: hover) {
+  .choice[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.choice:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-pressed));
+}
+.choice[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+}
+@media (prefers-reduced-motion: reduce) {
+  .choice {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .choice:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* field (tier 2): One labelled input in a form. */
+.field {
+  margin-bottom: var(--space-6);
+}
+
+/* input (tier 2): A text field: filled, squared, like Disney's password field. */
+.input {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight);
+  width: 100%;
+  min-height: var(--size-field);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width-default) solid transparent;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--type-size-md);
+  transition: border-color var(--motion-duration-short) var(--motion-easing-standard);
+}
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent-default);
+}
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}
+
+/* label (tier 2): The label above an input. */
+.label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* link-btn (tier 2): A text link that behaves as a button, such as Undo. */
+.link-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: var(--space-hairline);
+  text-decoration-thickness: var(--border-width-default);
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  background: none;
+  border: 0;
+  padding: var(--space-2) var(--space-1);
+  color: var(--color-accent-default);
+  font: inherit;
+  font-weight: var(--type-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch_target);
+}
+@media (hover: hover) {
+  .link-btn:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    text-decoration-thickness: var(--border-width-strong);
+  }
+}
+.link-btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-btn {
+    transition: none;
+  }
+}
+
+/* mini-btn (tier 2): A small action inside a row, such as Add or Message. */
+.mini-btn {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-touch_target);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-small);
+  border: var(--border-width-default) solid var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  text-decoration: none;
+}
+.mini-btn[aria-pressed="true"] {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary);
+}
+.mini-btn--dark {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary);
+}
+.mini-btn.is-selected {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-action-primary);
+}
+@media (hover: hover) {
+  .mini-btn:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+@media (hover: hover) {
+  .mini-btn[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.mini-btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-pressed));
+}
+.mini-btn[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+}
+@media (prefers-reduced-motion: reduce) {
+  .mini-btn {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mini-btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+@media (hover: hover) {
+  .mini-btn--dark:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.mini-btn--dark:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+  transform: scale(var(--motion-scale-pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .mini-btn--dark {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mini-btn--dark:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* option (tier 2): A selectable row with a title and a line of detail. */
+.option {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  display: block;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  border: var(--border-width-strong) solid transparent;
+  padding: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+.option__title {
+  margin: 0 0 var(--space-hairline);
+  font-size: var(--type-size-md);
+  font-weight: var(--type-weight-bold);
+}
+.option__meta {
+  margin: 0;
+  font-size: var(--type-size-sm);
+  color: var(--color-text-secondary);
+}
+.option.is-selected {
+  border-color: var(--color-accent-default);
+}
+@media (hover: hover) {
+  .option:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+.option:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-card_pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .option {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .option:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* select (tier 2): A dropdown that matches the text field. */
+.select {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight);
+  width: 100%;
+  min-height: var(--size-field);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width-default) solid transparent;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: var(--type-size-md);
+  transition: border-color var(--motion-duration-short) var(--motion-easing-standard);
+}
+.select::placeholder {
+  color: var(--color-text-tertiary);
+}
+.select:focus {
+  outline: none;
+  border-color: var(--color-accent-default);
+}
+@media (prefers-reduced-motion: reduce) {
+  .select {
+    transition: none;
+  }
+}
+
+/* big-check (tier 3): The check mark on a done screen. */
+.big-check {
+  width: var(--size-stamp);
+  height: var(--size-stamp);
+  margin: var(--space-8) auto var(--space-6);
+  border-radius: var(--radius-round);
+  display: grid;
+  place-items: center;
+  background: var(--color-status-success_soft);
+  color: var(--color-status-success);
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+}
+
+/* empty (tier 3): What a screen shows when there is nothing yet, with the next step. */
+.empty {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+  color: var(--color-text-secondary);
+}
+.empty__title {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-primary);
+  font-weight: var(--type-weight-bold);
+  font-size: var(--type-size-xl);
+  line-height: var(--type-line_height-tight);
+  text-wrap: balance;
+}
+
+/* ladder-pop (tier 3): The moment you step up the comfort ladder: a dialog that then flies to the Me tab. */
+.ladder-pop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--color-surface-overlay);
+  animation: ladder-fade-in var(--motion-duration-medium) var(--motion-easing-standard);
+  z-index: var(--layer-overlay);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ladder-pop {
+    animation: none;
+  }
+}
+.ladder-pop__card {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-highlight), var(--shadow-elevated);
+  padding: var(--space-6);
+  max-width: calc(var(--size-page_width) - 2 * var(--space-5));
+  animation: ladder-pop-in var(--motion-duration-long) var(--motion-easing-standard);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ladder-pop__card {
+    animation: none;
+  }
+}
+.ladder-pop.is-leaving {
+  animation: ladder-fade-out var(--motion-duration-exit) var(--motion-easing-exit) forwards;
+}
+.ladder-pop.is-leaving .ladder-pop__card {
+  animation: ladder-fly-to-me var(--motion-duration-exit) var(--motion-easing-exit) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ladder-pop.is-leaving {
+    animation: ladder-fade-out var(--motion-duration-instant) var(--motion-easing-exit) forwards;
+  }
+  .ladder-pop.is-leaving .ladder-pop__card {
+    animation: ladder-fade-card var(--motion-duration-instant) var(--motion-easing-exit) forwards;
+  }
+}
+@keyframes ladder-fade-in {
+  from {
+    opacity: var(--opacity-hidden);
+  }
+  to {
+    opacity: var(--opacity-full);
+  }
+}
+@keyframes ladder-fade-out {
+  to {
+    background: var(--color-scrim-none);
+  }
+}
+@keyframes ladder-pop-in {
+  from {
+    opacity: var(--opacity-hidden);
+    transform: scale(var(--motion-scale-enter)) translateY(var(--motion-distance-enter));
+  }
+  to {
+    opacity: var(--opacity-full);
+    transform: none;
+  }
+}
+@keyframes ladder-fly-to-me {
+  to {
+    opacity: var(--opacity-hidden);
+    transform: translate(var(--size-card-thumb), var(--size-card-thumb)) scale(var(--motion-scale-fly));
+  }
+}
+@keyframes ladder-fade-card {
+  to {
+    opacity: var(--opacity-hidden);
+  }
+}
+
+/* notice (tier 3): An inline message that says what happened and what to do. */
+.notice {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  padding: var(--space-4);
+  font-size: var(--type-size-sm);
+  margin-bottom: var(--space-4);
+}
+.notice--error {
+  background: var(--color-status-error_soft);
+  color: var(--color-status-error);
+}
+.notice--success {
+  background: var(--color-status-success_soft);
+  color: var(--color-status-success);
+}
+
+/* steps (tier 3): How far through a multi-step flow you are. */
+.steps {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+}
+.steps span {
+  height: var(--size-progress);
+  border-radius: var(--radius-pill);
+  background: var(--color-border-default);
+  transition: background-color var(--motion-duration-medium) var(--motion-easing-standard);
+}
+@media (prefers-reduced-motion: reduce) {
+  .steps span {
+    transition: none;
+  }
+}
+.steps span.is-done {
+  background: var(--color-accent-default);
+}
+
+/* toast (tier 3): A short confirmation that slides in at the top and leaves by itself. */
+.toast {
+  box-shadow: var(--shadow-elevated);
+  position: fixed;
+  left: 50%;
+  top: calc(var(--space-6) + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  animation: toast-in-out var(--motion-duration-toast) var(--motion-easing-standard) forwards;
+  z-index: var(--layer-toast);
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}
+@keyframes toast-in-out {
+  0% {
+    opacity: var(--opacity-hidden);
+    transform: translate(-50%, calc(var(--motion-distance-enter) * -1)) scale(var(--motion-scale-enter));
+  }
+  8% {
+    opacity: var(--opacity-full);
+    transform: translate(-50%, 0);
+  }
+  88% {
+    opacity: var(--opacity-full);
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: var(--opacity-hidden);
+    transform: translate(-50%, calc(var(--motion-distance-enter) * -1));
+  }
+}
+
+/* btn-row (tier 4): Two buttons side by side. */
+.btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+/* bubble (tier 4): One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.bubble {
+  max-width: var(--size-bubble);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-bubble);
+  font-size: var(--type-size-md);
+  line-height: var(--type-line_height-snug);
+  overflow-wrap: anywhere;
+}
+.bubble__who {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+.bubble__time {
+  float: right;
+  margin: var(--space-2) 0 0 var(--space-3);
+  font-size: var(--type-size-xs);
+  color: var(--color-text-tertiary);
+}
+.bubble--them {
+  align-self: flex-start;
+  justify-self: start;
+  background: var(--color-surface-canvas);
+  border-bottom-left-radius: var(--radius-small);
+}
+.bubble--me {
+  align-self: flex-end;
+  justify-self: end;
+  background: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+  border-bottom-right-radius: var(--radius-small);
+}
+.bubble--me .bubble__time {
+  color: var(--color-surface-panel);
+}
+.bubble--app {
+  align-self: stretch;
+  justify-self: stretch;
+  max-width: none;
+  background: var(--color-accent-soft);
+  font-size: var(--type-size-sm);
+  border-radius: var(--radius-medium);
+}
+.bubble--typing {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+}
+.bubble--typing span {
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-round);
+  background: var(--color-text-secondary);
+  animation: typing-dot var(--motion-duration-pulse) infinite var(--motion-easing-standard);
+}
+.bubble--typing span:nth-child(2) {
+  animation-delay: var(--motion-duration-short);
+}
+.bubble--typing span:nth-child(3) {
+  animation-delay: var(--motion-duration-medium);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubble--typing span {
+    animation: none;
+  }
+}
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    opacity: var(--opacity-dim);
+    transform: none;
+  }
+  30% {
+    opacity: var(--opacity-full);
+    transform: translateY(calc(var(--space-1) * -1));
+  }
+}
+
+/* card (tier 4): A panel that groups one thing. Image cards live in the product tier. */
+.card {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  display: block;
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+  color: inherit;
 }
 .card__title {
-  margin: 0;
-  font-size: var(--type-size-body);
-  font-weight: var(--type-weight-emphasis);
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
 }
 .card__meta {
-  margin: var(--space-small) 0 0;
-  font-size: var(--type-size-label);
+  margin: 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
   color: var(--color-text-secondary);
 }
-.card__actions {
-  display: flex;
-  gap: var(--space-small);
-  margin-top: var(--space-medium);
+.card--outline {
+  border: var(--border-width-default) solid var(--color-border-default);
+}
+.card--accent {
+  background: var(--color-accent-soft);
+  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-strong);
 }
 
-/* Screen region: a phone-width page on the panel background */
-body {
-  margin: 0;
-  background: var(--color-surface-panel);
+/* chat-header (tier 4): Who you are talking to, pinned at the top of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.chat-header {
+  background: var(--color-surface-bar);
+  backdrop-filter: blur(var(--blur-overlay));
+  -webkit-backdrop-filter: blur(var(--blur-overlay));
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-nav);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  margin: 0 calc(var(--space-4) * -1) var(--space-3);
+  padding: calc(var(--space-3) + env(safe-area-inset-top, 0px)) var(--space-4) var(--space-3);
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
 }
-.screen {
-  max-width: var(--breakpoint-compact);
+.chat-header__back {
+  cursor: pointer;
+  transition: color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  flex: none;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  min-width: var(--size-touch_target);
+  min-height: var(--size-touch_target);
+  display: grid;
+  place-items: center;
+  margin-left: calc(var(--space-3) * -1);
+}
+.chat-header__back .back__icon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+.chat-header__who {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  min-width: 0;
+}
+.chat-header__who > span {
+  min-width: 0;
+}
+.chat-header__group {
+  flex: none;
+  width: var(--size-avatar-md);
+  height: var(--size-avatar-md);
+  border-radius: var(--radius-round);
+  display: grid;
+  place-items: center;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-default);
+  font-weight: var(--type-weight-bold);
+  font-size: var(--type-size-sm);
+}
+.chat-header__name {
+  display: block;
+  font-weight: var(--type-weight-bold);
+  font-size: var(--type-size-md);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chat-header__sub {
+  display: block;
+  font-size: var(--type-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (hover: hover) {
+  .chat-header__back:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    color: var(--color-text-primary);
+  }
+}
+.chat-header__back:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-header__back {
+    transition: none;
+  }
+}
+@media (hover: hover) {
+  .chat-header__who:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.chat-header__who:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-header__who {
+    transition: none;
+  }
+}
+
+/* chat (tier 4): The list of messages. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+.chat__day {
+  align-self: center;
+  margin: var(--space-3) 0 var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-canvas);
+  color: var(--color-text-secondary);
+  font-size: var(--type-size-xs);
+  text-align: center;
+}
+.chat__note {
+  align-self: center;
+  max-width: var(--size-bubble);
+  margin: var(--space-3) 0 var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-canvas);
+  color: var(--color-text-secondary);
+  font-size: var(--type-size-xs);
+  text-align: center;
+}
+
+/* chip-row (tier 4): A wrapping row of chips. */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* choice-row (tier 4): A row of two or three big answers. */
+.choice-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+.choice-row--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* composer (tier 4): The message box pinned to the bottom of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.composer {
+  background: var(--color-surface-bar);
+  backdrop-filter: blur(var(--blur-overlay));
+  -webkit-backdrop-filter: blur(var(--blur-overlay));
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--layer-nav);
+  border-top: var(--border-width-default) solid var(--color-border-default);
+  padding: var(--space-2) var(--space-3) calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+}
+.composer__inner {
+  max-width: var(--size-page_width);
   margin: 0 auto;
-  padding: var(--space-large) var(--space-medium);
-  font-family: var(--type-family-body);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.composer__rec {
+  justify-content: space-between;
+}
+.composer__input {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-highlight);
+  flex: 1;
+  min-width: 0;
+  min-height: var(--size-touch_target);
+  padding: 0 var(--space-4);
+  border: var(--border-width-default) solid transparent;
+  font: inherit;
+  font-size: var(--type-size-md);
   color: var(--color-text-primary);
 }
-.screen__eyebrow {
+.composer__input::placeholder {
+  color: var(--color-text-tertiary);
+}
+.composer__input:focus {
+  outline: none;
+  border-color: var(--color-accent-default);
+}
+.composer__send {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  flex: none;
+  width: var(--size-touch_target);
+  height: var(--size-touch_target);
+  border-radius: var(--radius-round);
+  border: 0;
+  background: var(--color-action-primary);
+  display: grid;
+  place-items: center;
+}
+.composer__send svg {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  fill: var(--color-text-inverse);
+}
+.composer__send:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: default;
+}
+.composer__send--mic {
+  background: var(--color-action-primary);
+}
+.composer__cancel {
+  cursor: pointer;
+  transition: color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--color-text-secondary);
+  min-height: var(--size-touch_target);
+  padding: 0 var(--space-3);
+}
+.composer__timer {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--type-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) {
+  .composer__send:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
+  }
+}
+.composer__send:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
+  transform: scale(var(--motion-scale-pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .composer__send {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .composer__send:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+@media (hover: hover) {
+  .composer__cancel:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    color: var(--color-text-primary);
+  }
+}
+.composer__cancel:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .composer__cancel {
+    transition: none;
+  }
+}
+
+/* demo (tier 4): The demo tools box on Me, clearly set apart from the product. */
+.demo {
+  border: var(--border-width-default) dashed var(--color-border-strong);
+  border-radius: var(--radius-small);
+  padding: var(--space-4);
+  margin-top: var(--space-7);
+}
+
+/* ember (tier 4): The Empower score as a flame that warms as it grows. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.ember {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-hairline);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+.ember__icon {
+  width: var(--size-icon-xs);
+  height: var(--size-icon-xs);
+  fill: currentColor;
+}
+.ember--spark .ember__icon {
+  color: var(--color-ember-spark);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-strong);
+}
+.ember--warm .ember__icon {
+  color: var(--color-ember-warm);
+}
+.ember--glow .ember__icon {
+  color: var(--color-ember-glow);
+}
+.ember--blaze .ember__icon {
+  color: var(--color-ember-blaze);
+  filter: drop-shadow(0 0 var(--space-1) var(--color-ember-glow));
+}
+.ember--lg {
+  font-size: var(--type-size-xl);
+  gap: var(--space-1);
+}
+.ember--lg .ember__icon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+/* faces-row (tier 4): A line that holds a faces stack. */
+.faces-row {
+  margin: 0 0 var(--space-2);
+}
+
+/* faces (tier 4): A small overlapping stack of the people going. */
+.faces {
+  display: inline-flex;
+  margin-right: var(--space-2);
+  vertical-align: middle;
+}
+.faces .avatar {
+  border: var(--border-width-strong) solid var(--color-surface-canvas);
+}
+.faces .avatar + .avatar {
+  margin-left: calc(var(--space-2) * -1);
+}
+
+/* facts (tier 4): Key facts as label and value rows, like Disney's settings rows. */
+.facts {
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+.facts li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: var(--size-row);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
+  font-size: var(--type-size-sm);
+}
+.facts li span:first-child {
+  color: var(--color-text-secondary);
+}
+.facts li span:last-child {
+  font-weight: var(--type-weight-bold);
+  text-align: right;
+}
+
+/* footer-action (tier 4): The screen's main action, pinned above the navigation bar. */
+.footer-action {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-6) var(--space-5) var(--space-4);
+  background: linear-gradient(to top, var(--color-surface-canvas) 50%, var(--color-scrim-none));
+  z-index: var(--layer-sticky);
+  pointer-events: none;
+}
+.footer-action__inner {
+  max-width: calc(var(--size-page_width) - 2 * var(--space-5));
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-2);
+  pointer-events: auto;
+}
+
+/* link-row (tier 4): A row with content on the left and an action on the right. */
+.link-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* person (tier 4): A person as a row: photo, name, one line of detail, an action. */
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--size-row);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
+  text-decoration: none;
+}
+.person__body {
+  flex: 1;
+  min-width: 0;
+}
+.person__name {
   margin: 0;
-  font-size: var(--type-size-label);
+  font-weight: var(--type-weight-bold);
+}
+.person__meta {
+  margin: 0;
+  font-size: var(--type-size-sm);
   color: var(--color-text-secondary);
 }
-.screen__title {
-  margin: var(--space-small) 0 var(--space-large);
-  font-size: var(--type-size-heading);
-  line-height: var(--type-line_height-heading);
+.person__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
 }
-.screen__section {
-  margin: var(--space-large) 0 var(--space-small);
-  font-size: var(--type-size-label);
+
+/* rec-dot (tier 4): The pulsing light while a voice note records. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.rec-dot {
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-round);
+  background: var(--color-ember-blaze);
+  animation: rec-pulse var(--motion-duration-pulse) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rec-dot {
+    animation: none;
+  }
+}
+@keyframes rec-pulse {
+  50% {
+    opacity: var(--opacity-dim);
+  }
+}
+
+/* stat-row (tier 4): Two stats side by side. */
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+/* stat (tier 4): One number with its label. */
+.stat {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  padding: var(--space-4);
+}
+.stat__value {
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
+  font-variant-numeric: tabular-nums;
+}
+.stat__label {
+  font-size: var(--type-size-sm);
   color: var(--color-text-secondary);
+}
+
+/* tips (tier 4): A short checklist. */
+.tips {
+  margin: 0 0 var(--space-6);
+  padding-left: var(--space-6);
+  color: var(--color-text-secondary);
+}
+.tips li {
+  margin-bottom: var(--space-2);
+}
+.tips li::marker {
+  color: var(--color-accent-default);
+}
+
+/* voice (tier 4): A playable voice note. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.voice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: var(--size-voice);
+  vertical-align: middle;
+}
+.voice__play {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  flex: none;
+  width: var(--size-touch_target);
+  height: var(--size-touch_target);
+  border-radius: var(--radius-round);
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent-strong);
+}
+.voice__play svg {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  fill: var(--color-text-primary);
+}
+.voice__pause {
+  display: none;
+}
+.voice__track {
+  flex: 1;
+  height: var(--size-progress);
+  border-radius: var(--radius-pill);
+  position: relative;
+  overflow: hidden;
+}
+.voice__track::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: var(--opacity-dim);
+}
+.voice__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--runtime-fill);
+  background: currentColor;
+}
+.voice__len {
+  font-size: var(--type-size-xs);
+  font-weight: var(--type-weight-medium);
+  color: currentColor;
+  font-variant-numeric: tabular-nums;
+}
+.voice.is-playing .voice__play .voice__pause {
+  display: block;
+}
+.voice.is-playing .voice__play .voice__start {
+  display: none;
+}
+@media (hover: hover) {
+  .voice__play:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.voice__play:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .voice__play {
+    transition: none;
+  }
+}
+
+/* brief (tier 5): What to know before you walk in: short headed notes split by hairlines, like a settings list. */
+.brief {
+  margin: 0 0 var(--space-6);
+  border-top: var(--border-width-default) solid var(--color-border-default);
+}
+.brief__row {
+  padding: var(--space-4) 0;
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
+}
+.brief__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-primary);
+}
+.brief__body {
+  margin: 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-body);
+  color: var(--color-text-secondary);
+}
+.brief__list {
+  margin: 0;
+  padding-left: var(--space-5);
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-body);
+  color: var(--color-text-secondary);
+}
+.brief__list li + li {
+  margin-top: var(--space-1);
+}
+.brief__list li::marker {
+  color: var(--color-accent-default);
+}
+
+/* browse-entry (tier 5): The link from the picks to the whole week. */
+.browse-entry {
+  margin: var(--space-6) 0;
+}
+
+/* browse-grid (tier 5): The whole week as a grid of event cards. */
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--size-card-min)), 1fr));
+  gap: var(--space-7) var(--space-4);
+}
+
+/* check-mark (tier 5): The tick inside a done screen's circle, drawn as a line so it is not a text glyph. */
+.check-mark {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-heavy);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* confirm-row (tier 5): A session waiting to be confirmed: its artwork, when it was, and the two answers. */
+.confirm-row {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  display: grid;
+  grid-template-columns: var(--size-card-thumb) 1fr;
+  align-items: start;
+  gap: var(--space-4);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.confirm-row--plain {
+  grid-template-columns: 1fr;
+  padding: var(--space-4);
+}
+.confirm-row__body {
+  min-width: 0;
+}
+.confirm-row__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-size-md);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+}
+.confirm-row__meta {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+.confirm-row__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* daily (tier 5): Today's this-or-that question: two answers and a way to skip. */
+.daily {
+  display: grid;
+  gap: var(--space-1);
+}
+
+/* deck (tier 5): The stack of weekly picks and its two actions. */
+.deck {
+  display: grid;
+  isolation: isolate;
+  margin: var(--space-4) 0 var(--space-6);
+  touch-action: pan-y;
+}
+.deck__actions {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-3);
+  margin: 0;
+  position: sticky;
+  bottom: calc(var(--size-nav) + var(--space-2));
+  z-index: var(--layer-sticky);
+  padding: var(--space-3) 0;
+  background: linear-gradient(to top, var(--color-surface-canvas) 50%, var(--color-scrim-none));
+}
+.deck__btn svg {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-strong);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ember-card (tier 5): The Empower score with its explanation. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.ember-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.ember-card .ember--lg .ember__icon {
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+}
+
+/* ember-line (tier 5): A centred line holding the Empower score. */
+.ember-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+/* event-card (tier 5): An event in a grid: artwork first, then title and when, like Disney's wide cards. */
+.event-card {
+  display: block;
+  margin: 0;
+  min-width: 0;
+}
+.event-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--radius-small);
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard);
+}
+.event-card__link:active {
+  transform: scale(var(--motion-scale-card_pressed));
+}
+@media (hover: hover) {
+  .event-card__link:hover .event-art {
+    transform: scale(var(--motion-scale-hover));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-card__link {
+    transition: none;
+  }
+  .event-card__link:active {
+    transform: none;
+  }
+  .event-card__link:hover .event-art {
+    transform: none;
+  }
+}
+.event-card__media {
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-small);
+  border: var(--border-width-default) solid var(--color-border-hairline);
+  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  overflow: hidden;
+  position: relative;
+}
+.event-card__media .event-art {
+  transition: transform var(--motion-duration-long) var(--motion-easing-standard);
+}
+.event-card__media .tag {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+}
+.event-card__title {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+}
+.event-card__meta {
+  margin: 0;
+  font-size: var(--type-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* event-row (tier 5): An event as a row: small artwork, title, when. Like Disney's episode rows. */
+.event-row {
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  display: grid;
+  grid-template-columns: var(--size-card-thumb) 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+  color: inherit;
+  text-decoration: none;
+}
+.event-row--plain {
+  grid-template-columns: 1fr;
+  padding: var(--space-4);
+}
+.event-row--today {
+  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-default);
+}
+.event-row__body {
+  display: block;
+  min-width: 0;
+}
+.event-row__title {
+  display: block;
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-size-md);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+}
+.event-row__meta {
+  display: block;
+  margin: 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+@media (hover: hover) {
+  .event-row:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
+  }
+}
+.event-row:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
+  transform: scale(var(--motion-scale-card_pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-row {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-row:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+
+/* featured (tier 5): The home invitation to this week's picks: a strip of event artwork fading into a title and one action. */
+.featured {
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-hairline);
+  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.featured__art {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-hairline);
+}
+.featured__art .event-art {
+  aspect-ratio: var(--ratio-poster);
+  border-radius: 0;
+}
+.featured__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface-sunken), var(--color-scrim-none) 50%);
+  pointer-events: none;
+}
+.featured__body {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  margin: calc(var(--space-7) * -1) 0 0;
+  padding: 0 var(--space-5) var(--space-5);
+  z-index: var(--layer-raised);
+}
+.featured__body .btn {
+  margin: var(--space-3) 0 0;
+}
+.featured__title {
+  margin: 0;
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+  letter-spacing: var(--type-letter_spacing-tight);
+  line-height: var(--type-line_height-tight);
+}
+.featured__meta {
+  margin: 0;
+  font-size: var(--type-size-md);
+  color: var(--color-text-secondary);
+}
+
+/* hero (tier 5): Artwork across the top of a detail screen, fading into the page, like Disney's title screen. */
+.hero {
+  position: relative;
+  margin: 0 calc(var(--space-5) * -1) var(--space-4);
+}
+.hero .event-art {
+  aspect-ratio: var(--ratio-detail);
+  border-radius: 0;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface-canvas), var(--color-scrim-none) 50%);
+  pointer-events: none;
+}
+
+/* intro-card (tier 5): A suggested introduction: a face and why you would get on. */
+.intro-card {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.intro-card .avatar--lg {
+  width: var(--size-field);
+  height: var(--size-field);
+}
+
+/* lab-bar (tier 5): One comparison bar in the Matching Lab. */
+.lab-bar {
+  display: grid;
+  grid-template-columns: var(--size-lab_label) 1fr var(--size-touch_target);
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-size: var(--type-size-sm);
+}
+.lab-bar__label {
+  color: var(--color-text-secondary);
+}
+.lab-bar__value {
+  font-weight: var(--type-weight-bold);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.lab-bar__track {
+  height: var(--size-meter);
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.lab-bar__fill {
+  display: block;
+  height: 100%;
+  width: var(--runtime-fill);
+  border-radius: var(--radius-pill);
+  background: var(--color-border-strong);
+  transition: width var(--motion-duration-long) var(--motion-easing-standard);
+}
+.lab-bar__fill--random {
+  background: var(--color-border-strong);
+}
+.lab-bar__fill--interests {
+  background: var(--color-text-secondary);
+}
+.lab-bar__fill--empower {
+  background: var(--color-accent-default);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-bar__fill {
+    transition: none;
+  }
+}
+
+/* people-card (tier 5): A match as a poster: their photo fills the top, a fade carries their name, then one line of shared context and the two ways to reach them. */
+.people-card {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-hairline);
+  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  isolation: isolate;
+}
+.people-card__media {
+  position: relative;
+}
+.people-card__media .avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio-square);
+  border-radius: 0;
+  object-fit: cover;
+  font-size: var(--type-size-xl);
+}
+.people-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface-panel), var(--color-scrim-soft) 50%, var(--color-scrim-none));
+  pointer-events: none;
+}
+.people-card__media .tag {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: var(--layer-raised);
+}
+.people-card__name {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: var(--space-2);
+  z-index: var(--layer-raised);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
+  text-shadow: 0 0 var(--space-2) var(--color-scrim-strong);
+}
+.people-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+.people-card__meta {
+  margin: 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+.people-card__actions {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+/* people-grid (tier 5): The people who matter most, two posters to a row. */
+.people-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* people-row (tier 5): Someone you keep seeing, as a row: a square photo, their name, one line of why they are here, and the way to add them. */
+.people-row {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.people-row .avatar {
+  width: var(--size-avatar-lg);
+  height: auto;
+  aspect-ratio: var(--ratio-square);
+  border-radius: var(--radius-small);
+  object-fit: cover;
+  font-size: var(--type-size-lg);
+}
+.people-row__body {
+  min-width: 0;
+}
+.people-row__name {
+  margin: 0 0 var(--space-1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--type-size-md);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-snug);
+}
+.people-row__meta {
+  margin: 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+
+/* person-hero (tier 5): A match's portrait across the top of their profile, their own photo blurred behind it, fading into the page like Disney's title screen. */
+.person-hero {
+  position: relative;
+  margin: 0 calc(var(--space-5) * -1) var(--space-5);
+  padding: var(--space-7) var(--space-5) var(--space-5);
+  overflow: hidden;
+  isolation: isolate;
+}
+.person-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--layer-base);
+  background: linear-gradient(to top, var(--color-surface-canvas), var(--color-scrim-none) 50%);
+  pointer-events: none;
+}
+.person-hero__scene {
+  position: absolute;
+  inset: calc(var(--space-7) * -1);
+  z-index: var(--layer-base);
+  opacity: var(--opacity-dim);
+  pointer-events: none;
+}
+.person-hero__scene .avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  filter: blur(var(--blur-overlay));
+}
+.person-hero__photo {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-hairline);
+  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  overflow: hidden;
+  position: relative;
+  z-index: var(--layer-raised);
+  width: 50%;
+}
+.person-hero__photo .avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio-square);
+  border-radius: 0;
+  object-fit: cover;
+  font-size: var(--type-size-display);
+}
+.person-hero__body {
+  position: relative;
+  z-index: var(--layer-raised);
+  margin-top: var(--space-4);
+}
+.person-hero__name {
+  margin: 0;
+  font-size: var(--type-size-display);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
+  text-wrap: balance;
+}
+.person-hero__line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+}
+.person-hero__meta {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+}
+
+/* pick (tier 5): The reason and the people attached to an event pick. */
+.pick {
+  text-decoration: none;
+  display: block;
+}
+.pick__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+.pick__link {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.pick__why {
+  margin: var(--space-1) 0 0;
+  font-size: var(--type-size-md);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-primary);
+}
+.pick__social {
+  display: flex;
+  align-items: center;
+  margin: var(--space-2) 0 0;
+  font-size: var(--type-size-sm);
+  color: var(--color-text-secondary);
+}
+.pick--highlight {
+  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-default);
+}
+@media (hover: hover) {
+  .pick__link:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.pick__link:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pick__link {
+    transition: none;
+  }
+}
+
+/* quiz-pair (tier 5): The two sides of one this-or-that question, as an even pair of tiles. */
+.quiz-pair {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.quiz-pair .option {
+  display: grid;
+  align-content: center;
+  min-height: var(--size-stamp);
+  padding: var(--space-5);
+  margin-bottom: 0;
+}
+.quiz-pair .option__title {
+  font-size: var(--type-size-lg);
+  line-height: var(--type-line_height-snug);
+  text-wrap: balance;
+}
+
+/* score-badge (tier 5): A small pill that shows a match score. */
+.score-badge {
+  display: inline-block;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-default);
+  font-weight: var(--type-weight-bold);
+  font-size: var(--type-size-sm);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-variant-numeric: tabular-nums;
+}
+.score-badge--sm {
+  font-size: var(--type-size-xs);
+  padding: var(--space-hairline) var(--space-2);
+  vertical-align: middle;
+}
+
+/* swipe-card (tier 5): The weekly pick: artwork fills the card, a fade carries the title, like Disney's featured card. */
+.swipe-card {
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-hairline);
+  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  overflow: hidden;
+  position: relative;
+  grid-area: 1 / 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: var(--space-2);
+  min-height: var(--size-deck);
+  padding: var(--size-card-art_clear) var(--space-5) var(--space-4);
+  isolation: isolate;
+  user-select: none;
+  transform: translateX(var(--runtime-swipe_x)) rotate(var(--runtime-swipe_angle));
+  transition: transform var(--motion-duration-medium) var(--motion-easing-standard), opacity var(--motion-duration-medium) var(--motion-easing-standard);
+}
+.swipe-card .event-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: var(--ratio-square);
+  border-radius: 0;
+  z-index: var(--layer-base);
+  pointer-events: none;
+}
+.swipe-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: var(--ratio-square);
+  background: linear-gradient(to top, var(--color-surface-sunken), var(--color-scrim-soft) 50%, var(--color-scrim-none));
+  pointer-events: none;
+}
+.swipe-card > *:not(.event-art) {
+  position: relative;
+  z-index: var(--layer-raised);
+}
+.swipe-card > p {
+  margin: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .swipe-card {
+    transition: none;
+  }
+}
+.swipe-card > .swipe-card__stamp {
+  position: absolute;
+  top: var(--space-5);
+  z-index: var(--layer-stamp);
+}
+.swipe-card__title {
+  margin: 0;
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+  letter-spacing: var(--type-letter_spacing-tight);
+  line-height: var(--type-line_height-tight);
+  text-wrap: balance;
+}
+.swipe-card__meta {
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  color: var(--color-text-secondary);
+}
+.swipe-card__more {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: var(--space-hairline);
+  text-decoration-thickness: var(--border-width-default);
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch_target);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-bold);
+  color: var(--color-accent-default);
+}
+.swipe-card__stamp {
+  position: absolute;
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-width-heavy) solid currentColor;
+  border-radius: var(--radius-small);
+  background: var(--color-surface-canvas);
+  font-weight: var(--type-weight-heavy);
+  font-size: var(--type-size-lg);
+  letter-spacing: var(--type-letter_spacing-caps);
+  text-transform: uppercase;
+  opacity: var(--opacity-hidden);
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  z-index: var(--layer-stamp);
+}
+.swipe-card__stamp--yes {
+  right: var(--space-5);
+  color: var(--color-status-success);
+  transform: rotate(var(--motion-angle-stamp));
+}
+.swipe-card__stamp--no {
+  left: var(--space-5);
+  color: var(--color-status-error);
+  transform: rotate(calc(var(--motion-angle-stamp) * -1));
+}
+@media (prefers-reduced-motion: reduce) {
+  .swipe-card__stamp {
+    transition: none;
+  }
+}
+.swipe-card.is-top {
+  z-index: var(--layer-stamp);
+  cursor: grab;
+}
+.swipe-card.is-next-1 {
+  z-index: var(--layer-raised);
+  transform: translateY(var(--space-3)) scale(var(--motion-scale-enter));
+}
+.swipe-card.is-next-2 {
+  z-index: var(--layer-base);
+  transform: translateY(var(--space-6)) scale(var(--motion-scale-back));
+}
+.swipe-card.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+.swipe-card.is-gone {
+  pointer-events: none;
+}
+.swipe-card.is-out-right {
+  transform: translateX(var(--motion-distance-throw)) rotate(var(--motion-angle-throw));
+  opacity: var(--opacity-hidden);
+}
+.swipe-card.is-out-left {
+  transform: translateX(calc(var(--motion-distance-throw) * -1)) rotate(calc(var(--motion-angle-throw) * -1));
+  opacity: var(--opacity-hidden);
+}
+.swipe-card.is-yes .swipe-card__stamp--yes {
+  opacity: var(--opacity-full);
+}
+.swipe-card.is-no .swipe-card__stamp--no {
+  opacity: var(--opacity-full);
+}
+@media (hover: hover) {
+  .swipe-card__more:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    text-decoration-thickness: var(--border-width-strong);
+  }
+}
+.swipe-card__more:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .swipe-card__more {
+    transition: none;
+  }
+}
+
+/* has-nav (tier 6): The soft colour glow behind the top of a screen, taken from Disney's home screen. This is the app's one signature move. */
+.has-nav {
+  background-image: radial-gradient(ellipse var(--size-page_width) var(--size-deck) at 50% 0, var(--color-glow-ambient), var(--color-scrim-none));
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.has-nav .footer-action {
+  bottom: calc(var(--size-nav) + env(safe-area-inset-bottom, 0px));
+}
+
+/* nav (tier 6): The bottom navigation bar: frosted, icon over label, the current tab in white. */
+.nav {
+  background: var(--color-surface-bar);
+  backdrop-filter: blur(var(--blur-overlay));
+  -webkit-backdrop-filter: blur(var(--blur-overlay));
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--size-nav) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: var(--layer-nav);
+  border-top: var(--border-width-default) solid var(--color-border-default);
+}
+.nav__inner {
+  max-width: var(--size-page_width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.nav__link {
+  cursor: pointer;
+  transition: color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-width: 0;
+  text-decoration: none;
+  font-size: var(--type-size-xs);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line_height-none);
+  white-space: nowrap;
+  color: var(--color-text-tertiary);
+}
+.nav__link[aria-current="page"] {
+  color: var(--color-text-primary);
+}
+.nav__link:focus-visible {
+  outline-offset: calc(var(--space-1) * -1);
+}
+.nav__icon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+@media (hover: hover) {
+  .nav__link:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    color: var(--color-text-primary);
+  }
+}
+.nav__link:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav__link {
+    transition: none;
+  }
+}
+
+/* page (tier 6): The screen frame: Disney's 20pt side margins, with room for the navigation bar. */
+.page {
+  position: relative;
+  max-width: var(--size-page_width);
+  margin: 0 auto;
+  padding: calc(var(--space-4) + env(safe-area-inset-top, 0px)) var(--space-5) calc(var(--size-nav) + var(--space-7) + env(safe-area-inset-bottom, 0px));
+  min-height: 100dvh;
+}
+.page--wide {
+  max-width: var(--size-page_wide);
+}
+.page:has(.footer-action) {
+  padding-bottom: calc(var(--size-nav) + var(--size-footer_clearance) + env(safe-area-inset-bottom, 0px));
+}
+
+/* topbar (tier 6): The strip at the top with the wordmark or the way back. */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--size-touch_target);
+  margin-bottom: var(--space-4);
+}
+.topbar__meta {
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* chat-page (tier 7): The chat screen layout: messages sit just above the message box. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+.chat-page {
+  background: var(--color-surface-panel);
+}
+.chat-page .page {
+  padding: 0 var(--space-4) calc(var(--size-composer_clearance) + env(safe-area-inset-bottom, 0px));
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.chat-page .page > section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.chat-page .page > section:has(.empty) {
+  justify-content: center;
+}
+.chat-page .empty {
+  background: var(--color-surface-canvas);
+}
+
+/* flow-event (tier 7): The event a commit or check-in screen is about: an event row held still, because here it is not a link. */
+.flow-event.event-row {
+  cursor: default;
+}
+
+/* gallery (tier 7): The design-system gallery: the frame that holds one specimen of every recipe, including the ones that normally pin themselves to the window. */
+.gallery {
+  display: block;
+  max-width: var(--size-page_wide);
+  margin: 0 auto;
+  padding: calc(var(--space-7) + env(safe-area-inset-top, 0px)) var(--space-5) var(--space-9);
+}
+.gallery__lead {
+  margin: 0 0 var(--space-7);
+  font-size: var(--type-size-md);
+  line-height: var(--type-line_height-body);
+  color: var(--color-text-secondary);
+  max-width: var(--size-page_width);
+  text-wrap: pretty;
+}
+.gallery__part {
+  margin: var(--space-9) 0 0;
+  padding: var(--space-7) 0 0;
+  border-top: var(--border-width-strong) solid var(--color-border-strong);
+}
+.gallery__part-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--type-size-xl);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
+}
+.gallery__part-note {
+  margin: 0 0 var(--space-6);
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-body);
+  color: var(--color-text-secondary);
+  max-width: var(--size-page_width);
+}
+.gallery__group {
+  margin: var(--space-7) 0 0;
+  min-width: 0;
+}
+.gallery__label {
+  display: block;
+  margin: 0 0 var(--space-1);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-accent-default);
+  overflow-wrap: anywhere;
+}
+.gallery__note {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-size-sm);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+  max-width: var(--size-page_width);
+}
+.gallery__caption {
+  margin: 0;
+  font-size: var(--type-size-xs);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-tertiary);
+  overflow-wrap: anywhere;
+}
+.gallery__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+.gallery__cell {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  min-width: 0;
+  flex: 1;
+}
+.gallery__cell--wide {
+  flex-basis: 100%;
+}
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--size-card-min)), 1fr));
+  gap: var(--space-4);
+}
+.gallery__swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--size-lab_label)), 1fr));
+  gap: var(--space-3);
+}
+.gallery__scale {
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+.gallery__stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  padding: var(--space-5);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-default);
+  background-color: var(--color-surface-canvas);
+  min-width: 0;
+}
+.gallery__stage .toast {
+  position: static;
+  transform: none;
+  animation: none;
+  width: max-content;
+  margin: 0 auto;
+}
+.gallery__stage .ladder-pop {
+  position: static;
+}
+.gallery__stage .ladder-pop.is-leaving .ladder-pop__card {
+  animation: none;
+}
+.gallery__stage .nav {
+  position: static;
+  height: var(--size-nav);
+  padding-bottom: 0;
+}
+.gallery__stage .composer {
+  position: static;
+}
+.gallery__stage .footer-action {
+  position: static;
+}
+.gallery__stage .chat-header {
+  position: static;
+  margin: 0;
+}
+.gallery__stage--flush {
+  padding: 0;
+}
+.gallery__stage--tall {
+  min-height: var(--size-deck);
+}
+.gallery__fill-full {
+  --runtime-fill: 100%;
+}
+.gallery__fill-half {
+  --runtime-fill: 50%;
+}
+.gallery__fill-quarter {
+  --runtime-fill: calc(50% / 2);
+}
+.gallery__screen {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  width: 100%;
+  max-width: var(--size-page_width);
+  height: var(--size-deck);
+  border-radius: var(--radius-medium);
+  border: var(--border-width-default) solid var(--color-border-default);
+  background-color: var(--color-surface-canvas);
+}
+.gallery__screen .page {
+  min-height: 100%;
+}
+
+/* metric (tier 7): One size token shown at its own value, next to the name you write in a recipe. */
+.metric {
+  display: grid;
+  grid-template-columns: var(--size-lab_label) 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width-default) solid var(--color-border-default);
+  min-width: 0;
+}
+.metric__name {
+  font-size: var(--type-size-xs);
+  font-weight: var(--type-weight-medium);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.metric__type {
+  margin: 0;
+  line-height: var(--type-line_height-tight);
+  overflow-wrap: anywhere;
+}
+.metric__type--type-size-xs {
+  font-size: var(--type-size-xs);
+}
+.metric__type--type-size-sm {
+  font-size: var(--type-size-sm);
+}
+.metric__type--type-size-md {
+  font-size: var(--type-size-md);
+}
+.metric__type--type-size-lg {
+  font-size: var(--type-size-lg);
+}
+.metric__type--type-size-xl {
+  font-size: var(--type-size-xl);
+}
+.metric__type--type-size-xxl {
+  font-size: var(--type-size-xxl);
+}
+.metric__type--type-size-display {
+  font-size: var(--type-size-display);
+}
+.metric__type--type-weight-regular {
+  font-weight: var(--type-weight-regular);
+}
+.metric__type--type-weight-medium {
+  font-weight: var(--type-weight-medium);
+}
+.metric__type--type-weight-bold {
+  font-weight: var(--type-weight-bold);
+}
+.metric__type--type-weight-heavy {
+  font-weight: var(--type-weight-heavy);
+}
+.metric__bar {
+  display: block;
+  height: var(--size-meter);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-default);
+}
+.metric__bar--space-hairline {
+  width: var(--space-hairline);
+}
+.metric__bar--space-1 {
+  width: var(--space-1);
+}
+.metric__bar--space-2 {
+  width: var(--space-2);
+}
+.metric__bar--space-3 {
+  width: var(--space-3);
+}
+.metric__bar--space-4 {
+  width: var(--space-4);
+}
+.metric__bar--space-5 {
+  width: var(--space-5);
+}
+.metric__bar--space-6 {
+  width: var(--space-6);
+}
+.metric__bar--space-7 {
+  width: var(--space-7);
+}
+.metric__bar--space-8 {
+  width: var(--space-8);
+}
+.metric__bar--space-9 {
+  width: var(--space-9);
+}
+.metric__box {
+  display: block;
+  width: var(--size-action);
+  height: var(--size-action);
+  background: var(--color-surface-sunken);
+  box-shadow: inset 0 0 0 var(--border-width-strong) var(--color-accent-default);
+}
+.metric__box--radius-small {
+  border-radius: var(--radius-small);
+}
+.metric__box--radius-medium {
+  border-radius: var(--radius-medium);
+}
+.metric__box--radius-large {
+  border-radius: var(--radius-large);
+}
+.metric__box--radius-bubble {
+  border-radius: var(--radius-bubble);
+}
+.metric__box--radius-pill {
+  border-radius: var(--radius-pill);
+}
+.metric__box--radius-round {
+  border-radius: var(--radius-round);
+}
+
+/* swatch (tier 7): One colour token as a block of that colour with the token's name under it. */
+.swatch {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.swatch__chip {
+  height: var(--size-action);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-canvas);
+  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-border-default);
+}
+.swatch__chip--color-surface-canvas {
+  background: var(--color-surface-canvas);
+}
+.swatch__chip--color-surface-sunken {
+  background: var(--color-surface-sunken);
+}
+.swatch__chip--color-surface-inverse {
+  background: var(--color-surface-inverse);
+}
+.swatch__chip--color-surface-overlay {
+  background: var(--color-surface-overlay);
+}
+.swatch__chip--color-text-primary {
+  background: var(--color-text-primary);
+}
+.swatch__chip--color-text-secondary {
+  background: var(--color-text-secondary);
+}
+.swatch__chip--color-text-tertiary {
+  background: var(--color-text-tertiary);
+}
+.swatch__chip--color-text-inverse {
+  background: var(--color-text-inverse);
+}
+.swatch__chip--color-action-primary {
+  background: var(--color-action-primary);
+}
+.swatch__chip--color-action-primary-pressed {
+  background: var(--color-action-primary_pressed);
+}
+.swatch__chip--color-action-secondary {
+  background: var(--color-action-secondary);
+}
+.swatch__chip--color-action-secondary-pressed {
+  background: var(--color-action-secondary_pressed);
+}
+.swatch__chip--color-accent-default {
+  background: var(--color-accent-default);
+}
+.swatch__chip--color-accent-strong {
+  background: var(--color-accent-strong);
+}
+.swatch__chip--color-accent-soft {
+  background: var(--color-accent-soft);
+}
+.swatch__chip--color-border-default {
+  background: var(--color-border-default);
+}
+.swatch__chip--color-border-strong {
+  background: var(--color-border-strong);
+}
+.swatch__chip--color-focus-ring {
+  background: var(--color-focus-ring);
+}
+.swatch__chip--color-status-success {
+  background: var(--color-status-success);
+}
+.swatch__chip--color-status-success-soft {
+  background: var(--color-status-success_soft);
+}
+.swatch__chip--color-status-warning {
+  background: var(--color-status-warning);
+}
+.swatch__chip--color-status-error {
+  background: var(--color-status-error);
+}
+.swatch__chip--color-status-error-soft {
+  background: var(--color-status-error_soft);
+}
+.swatch__chip--color-ember-spark {
+  background: var(--color-ember-spark);
+}
+.swatch__chip--color-ember-warm {
+  background: var(--color-ember-warm);
+}
+.swatch__chip--color-ember-glow {
+  background: var(--color-ember-glow);
+}
+.swatch__chip--color-ember-blaze {
+  background: var(--color-ember-blaze);
+}
+.swatch__chip--color-scrim-strong {
+  background: var(--color-scrim-strong);
+}
+.swatch__chip--color-scrim-soft {
+  background: var(--color-scrim-soft);
+}
+.swatch__chip--color-scrim-none {
+  background: var(--color-scrim-none);
+}
+.swatch__chip--color-glow-ambient {
+  background: var(--color-glow-ambient);
+}
+.swatch__name {
+  font-size: var(--type-size-xs);
+  line-height: var(--type-line_height-snug);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
 }

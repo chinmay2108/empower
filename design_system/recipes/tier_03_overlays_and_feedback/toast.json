@@ -1,0 +1,45 @@
+{
+  "className": "toast",
+  "purpose": "A short confirmation that slides in at the top and leaves by itself.",
+  "base": {
+    "position": "fixed",
+    "left": "50%",
+    "top": "calc({space.6} + env(safe-area-inset-top, 0px))",
+    "transform": "translateX(-50%)",
+    "white-space": "nowrap",
+    "background": "{color.surface.inverse}",
+    "color": "{color.text.inverse}",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.bold}",
+    "padding": "{space.3} {space.5}",
+    "border-radius": "{radius.pill}",
+    "animation": "toast-in-out {motion.duration.toast} {motion.easing.standard} forwards",
+    "z-index": "{layer.toast}",
+    "@media (prefers-reduced-motion: reduce)": {
+      "animation": "none"
+    }
+  },
+  "keyframes": {
+    "toast-in-out": {
+      "0%": {
+        "opacity": "{opacity.hidden}",
+        "transform": "translate(-50%, calc({motion.distance.enter} * -1)) scale({motion.scale.enter})"
+      },
+      "8%": {
+        "opacity": "{opacity.full}",
+        "transform": "translate(-50%, 0)"
+      },
+      "88%": {
+        "opacity": "{opacity.full}",
+        "transform": "translate(-50%, 0)"
+      },
+      "100%": {
+        "opacity": "{opacity.hidden}",
+        "transform": "translate(-50%, calc({motion.distance.enter} * -1))"
+      }
+    }
+  },
+  "surface": {
+    "base": "floating"
+  }
+}

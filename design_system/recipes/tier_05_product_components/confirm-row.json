@@ -1,0 +1,45 @@
+{
+  "className": "confirm-row",
+  "uses": [
+    "event-art",
+    "mini-btn"
+  ],
+  "purpose": "A session waiting to be confirmed: its artwork, when it was, and the two answers.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "{size.card.thumb} 1fr",
+    "align-items": "start",
+    "gap": "{space.4}",
+    "padding": "{space.2}",
+    "margin-bottom": "{space.3}",
+    "&--plain": {
+      "grid-template-columns": "1fr",
+      "padding": "{space.4}"
+    }
+  },
+  "elements": {
+    "body": {
+      "min-width": "0"
+    },
+    "title": {
+      "margin": "0 0 {space.1}",
+      "font-size": "{type.size.md}",
+      "font-weight": "{type.weight.bold}",
+      "line-height": "{type.line_height.snug}"
+    },
+    "meta": {
+      "margin": "0 0 {space.3}",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.snug}",
+      "color": "{color.text.secondary}"
+    },
+    "actions": {
+      "display": "flex",
+      "flex-wrap": "wrap",
+      "gap": "{space.2}"
+    }
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

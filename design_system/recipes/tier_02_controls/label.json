@@ -1,0 +1,11 @@
+{
+  "className": "label",
+  "purpose": "The label above an input.",
+  "base": {
+    "display": "block",
+    "margin-bottom": "{space.2}",
+    "font-size": "{type.size.sm}",
+    "font-weight": "{type.weight.medium}",
+    "color": "{color.text.secondary}"
+  }
+}

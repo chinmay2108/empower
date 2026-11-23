@@ -13,7 +13,7 @@
   var now = Empower.clock.now();
 
   ui.renderNav("home");
-  document.getElementById("topbar").innerHTML = '<a class="back" href="../index.html">&larr; Home</a>';
+  document.getElementById("topbar").innerHTML = '<a class="back" href="../index.html">' + ui.backIcon() + "Home</a>";
 
   var c = store.getCommitment(ui.param("c"));
   if (!c) {
@@ -44,6 +44,23 @@
     return c.leaveAt ? ui.formatHHMM(c.leaveAt) + (c.travelMode ? " by " + c.travelMode : "") : "Your choice";
   }
 
+  /* The event's artwork across the top, fading into the page. */
+  function hero() {
+    var art = ui.eventImage(group);
+    return art ? '<div class="hero">' + art + "</div>" : "";
+  }
+
+  /* The tick on a done screen: a drawn line, never a text glyph. */
+  function bigCheck() {
+    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
+  }
+
+  /* One headed note in the brief. */
+  function briefRow(title, inner) {
+    return '<div class="brief__row"><p class="brief__title">' + title + "</p>" + inner + "</div>";
+  }
+
   function render() {
     var status = logic.effectiveStatus(c, group, now);
     if (status !== "committed") return renderClosed(status);
@@ -60,10 +77,11 @@
       '<button type="button" class="btn btn--secondary" data-action="ask-cancel">Can\'t make it</button>';
 
     host.innerHTML =
+      hero() +
+      '<h1 class="title">' + group.name + "</h1>" +
+      '<p class="subtitle">' + ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt) + "</p>" +
       (warm.length ? '<div class="card card--accent"><p class="faces-row">' + ui.faces(warm, 3) + '</p><p class="card__title">' + ui.namesText(warm, 2) + (warm.length === 1 ? " will" : warm.length === 2 ? " will both" : " will all") +
         ' be there</p><p class="card__meta">So you won\'t walk in alone.</p></div>' : "") +
-      '<p class="eyebrow">' + ui.formatDay(c.startsAt) + " · " + ui.formatTime(c.startsAt) + "</p>" +
-      '<h1 class="title">' + group.name + "</h1>" +
       '<ul class="facts"><li><span>Leave</span><span>' + travelText() + "</span></li>" +
       "<li><span>Where</span><span>" + group.venue + "</span></li>" +
       "<li><span>Usual size</span><span>About " + group.typicalSize + " people</span></li>" +
@@ -72,9 +90,11 @@
         intro.person.name.split(" ")[0] + " will be there. You two would get on.</p>" +
         '<p class="card__meta">They\'re a regular, and into ' + intro.shared[0] + " too." +
         " Ask what keeps them coming back.</p></div></div>" : "") +
-      '<p class="label">What to expect</p><p class="small muted">' + EXPECT[group.structure] + "</p>" +
-      '<p class="label mt-4">Two easy openers</p><ul class="tips small"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>" +
-      '<p class="label">If it\'s not your night</p><p class="small muted">Give it half an hour. Still not clicking? Head home, no guilt.</p>' +
+      '<div class="brief">' +
+      briefRow("What to expect", '<p class="brief__body">' + EXPECT[group.structure] + "</p>") +
+      briefRow("Two easy openers", '<ul class="brief__list"><li>' + OPENERS[group.structure].join("</li><li>") + "</li></ul>") +
+      briefRow("If it's not your night", '<p class="brief__body">Give it half an hour. Still not clicking? Head home, no guilt.</p>') +
+      "</div>" +
       '<div class="footer-action"><div class="footer-action__inner">' + actions + "</div></div>";
   }
 
@@ -85,7 +105,7 @@
       cancelled: ["Cancelled.", "All good. Plans change.", '<a class="btn" href="events.html">Pick something else</a>'],
       missed: ["Missed this one.", "It happens. Next week's a fresh start.", '<a class="btn" href="events.html">See this week</a>']
     }[status];
-    host.innerHTML = '<div class="center"><div class="big-check">&#10003;</div><h1 class="title">' + text[0] +
+    host.innerHTML = '<div class="center">' + bigCheck() + '<h1 class="title">' + text[0] +
       '</h1><p class="subtitle">' + text[1] + "</p></div>" +
       '<div class="footer-action"><div class="footer-action__inner">' + text[2] + "</div></div>";
   }

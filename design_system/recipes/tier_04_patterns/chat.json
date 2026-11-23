@@ -1,0 +1,33 @@
+{
+  "className": "chat",
+  "purpose": "The list of messages. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "display": "flex",
+    "flex-direction": "column",
+    "gap": "{space.2}",
+    "margin": "0"
+  },
+  "elements": {
+    "day": {
+      "align-self": "center",
+      "margin": "{space.3} 0 {space.1}",
+      "padding": "{space.1} {space.3}",
+      "border-radius": "{radius.pill}",
+      "background": "{color.surface.canvas}",
+      "color": "{color.text.secondary}",
+      "font-size": "{type.size.xs}",
+      "text-align": "center"
+    },
+    "note": {
+      "align-self": "center",
+      "max-width": "{size.bubble}",
+      "margin": "{space.3} 0 {space.1}",
+      "padding": "{space.1} {space.3}",
+      "border-radius": "{radius.pill}",
+      "background": "{color.surface.canvas}",
+      "color": "{color.text.secondary}",
+      "font-size": "{type.size.xs}",
+      "text-align": "center"
+    }
+  }
+}

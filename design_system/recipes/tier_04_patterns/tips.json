@@ -1,0 +1,15 @@
+{
+  "className": "tips",
+  "purpose": "A short checklist.",
+  "base": {
+    "margin": "0 0 {space.6}",
+    "padding-left": "{space.6}",
+    "color": "{color.text.secondary}",
+    "& li": {
+      "margin-bottom": "{space.2}"
+    },
+    "& li::marker": {
+      "color": "{color.accent.default}"
+    }
+  }
+}

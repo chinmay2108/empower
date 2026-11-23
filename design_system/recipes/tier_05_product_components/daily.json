@@ -1,0 +1,8 @@
+{
+  "className": "daily",
+  "purpose": "Today's this-or-that question: two answers and a way to skip.",
+  "base": {
+    "display": "grid",
+    "gap": "{space.1}"
+  }
+}

@@ -35,8 +35,8 @@
       function (n) { return n + " sessions together, and you haven't added each other yet."; }
     ];
     return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f, i) {
-      return '<div class="person">' + ui.avatar(f.person) + '<div class="person__body">' +
-        '<p class="person__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="person__meta">' + ui.escapeHtml(LINES[i % LINES.length](f.sessions)) + "</p></div>" +
+      return '<div class="people-row">' + ui.avatar(f.person) + '<div class="people-row__body">' +
+        '<p class="people-row__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="people-row__meta">' + ui.escapeHtml(LINES[i % LINES.length](f.sessions)) + "</p></div>" +
         '<button type="button" class="mini-btn" data-add="' + f.person.id + '">Add</button></div>';
     }).join("");
   }
@@ -53,18 +53,19 @@
   host.innerHTML =
     '<h1 class="title">Your people</h1>' +
     '<p class="subtitle">The people you keep running into.</p>' +
-    (matches.length ? matches.map(function (r) {
+    (matches.length ? '<div class="people-grid">' + matches.map(function (r) {
       var g = store.getGroup(r.connection.groupId);
       var last = store.getMessages(r.person.id).slice(-1)[0];
-      return '<div class="person">' + ui.avatar(r.person) +
-        '<div class="person__body"><p class="person__name">' + r.person.name + scoreBadge(r.person) +
-        (last ? "" : ' <span class="tag">New</span>') + '</p><p class="person__meta">' +
+      return '<article class="people-card"><div class="people-card__media">' + ui.avatar(r.person) +
+        (last ? "" : '<span class="tag">New</span>') +
+        '<p class="people-card__name">' + r.person.name + scoreBadge(r.person) + "</p></div>" +
+        '<div class="people-card__body"><p class="people-card__meta">' +
         (people.needsNudge(r.person, commitments, now) ? "It's been 3 weeks. Go together this week?" :
           last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
         " · " + STAGE_LABELS[people.warmthStage(people.timeTogether(r.person, commitments, store.getGroups()), true)] +
-        "</p>" + '<div class="person__actions"><a class="mini-btn mini-btn--dark" href="chat.html?id=' + r.person.id + '">Message</a>' +
-        '<a class="mini-btn" href="person.html?id=' + r.person.id + '">Profile</a></div></div></div>';
-    }).join("") :
+        "</p>" + '<div class="people-card__actions"><a class="mini-btn mini-btn--dark" href="chat.html?id=' + r.person.id + '">Message</a>' +
+        '<a class="mini-btn" href="person.html?id=' + r.person.id + '">Profile</a></div></div></article>';
+    }).join("") + "</div>" :
       '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">Met someone you liked? Add them after you check in. If they add you too, they\'ll show up here.</p>' +
       '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>') +
     familiarSection() +

@@ -1,0 +1,49 @@
+{
+  "className": "people-row",
+  "uses": [
+    "avatar",
+    "ember",
+    "mini-btn"
+  ],
+  "purpose": "Someone you keep seeing, as a row: a square photo, their name, one line of why they are here, and the way to add them.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "auto 1fr auto",
+    "align-items": "center",
+    "gap": "{space.3}",
+    "padding": "{space.2}",
+    "margin-bottom": "{space.2}",
+    "& .avatar": {
+      "width": "{size.avatar.lg}",
+      "height": "auto",
+      "aspect-ratio": "{ratio.square}",
+      "border-radius": "{radius.small}",
+      "object-fit": "cover",
+      "font-size": "{type.size.lg}"
+    }
+  },
+  "elements": {
+    "body": {
+      "min-width": "0"
+    },
+    "name": {
+      "margin": "0 0 {space.1}",
+      "display": "flex",
+      "flex-wrap": "wrap",
+      "align-items": "center",
+      "gap": "{space.2}",
+      "font-size": "{type.size.md}",
+      "font-weight": "{type.weight.bold}",
+      "line-height": "{type.line_height.snug}"
+    },
+    "meta": {
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.snug}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

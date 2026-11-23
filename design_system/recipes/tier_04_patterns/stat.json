@@ -1,0 +1,23 @@
+{
+  "className": "stat",
+  "purpose": "One number with its label.",
+  "base": {
+    "padding": "{space.4}"
+  },
+  "elements": {
+    "value": {
+      "font-size": "{type.size.xxl}",
+      "font-weight": "{type.weight.heavy}",
+      "line-height": "{type.line_height.tight}",
+      "letter-spacing": "{type.letter_spacing.tight}",
+      "font-variant-numeric": "tabular-nums"
+    },
+    "label": {
+      "font-size": "{type.size.sm}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "surface": {
+    "base": "panel"
+  }
+}

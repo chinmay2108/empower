@@ -1,0 +1,48 @@
+{
+  "className": "lab-bar",
+  "purpose": "One comparison bar in the Matching Lab.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "{size.lab_label} 1fr {size.touch_target}",
+    "align-items": "center",
+    "gap": "{space.2}",
+    "margin-bottom": "{space.2}",
+    "font-size": "{type.size.sm}"
+  },
+  "elements": {
+    "label": {
+      "color": "{color.text.secondary}"
+    },
+    "value": {
+      "font-weight": "{type.weight.bold}",
+      "text-align": "right",
+      "font-variant-numeric": "tabular-nums"
+    },
+    "track": {
+      "height": "{size.meter}",
+      "background": "{color.surface.sunken}",
+      "border-radius": "{radius.pill}",
+      "overflow": "hidden"
+    },
+    "fill": {
+      "display": "block",
+      "height": "100%",
+      "width": "{runtime.fill}",
+      "border-radius": "{radius.pill}",
+      "background": "{color.border.strong}",
+      "transition": "width {motion.duration.long} {motion.easing.standard}",
+      "&--random": {
+        "background": "{color.border.strong}"
+      },
+      "&--interests": {
+        "background": "{color.text.secondary}"
+      },
+      "&--empower": {
+        "background": "{color.accent.default}"
+      },
+      "@media (prefers-reduced-motion: reduce)": {
+        "transition": "none"
+      }
+    }
+  }
+}

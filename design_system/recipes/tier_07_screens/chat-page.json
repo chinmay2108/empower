@@ -1,0 +1,31 @@
+{
+  "className": "chat-page",
+  "uses": [
+    "page",
+    "empty"
+  ],
+  "purpose": "The chat screen layout: messages sit just above the message box. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "& .page": {
+      "padding": "0 {space.4} calc({size.composer_clearance} + env(safe-area-inset-bottom, 0px))",
+      "min-height": "100dvh",
+      "display": "flex",
+      "flex-direction": "column"
+    },
+    "& .page > section": {
+      "flex": "1",
+      "display": "flex",
+      "flex-direction": "column",
+      "justify-content": "flex-end"
+    },
+    "& .page > section:has(.empty)": {
+      "justify-content": "center"
+    },
+    "& .empty": {
+      "background": "{color.surface.canvas}"
+    }
+  },
+  "surface": {
+    "base": "fill"
+  }
+}

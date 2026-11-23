@@ -1,0 +1,16 @@
+{
+  "className": "big-check",
+  "purpose": "The check mark on a done screen.",
+  "base": {
+    "width": "{size.stamp}",
+    "height": "{size.stamp}",
+    "margin": "{space.8} auto {space.6}",
+    "border-radius": "{radius.round}",
+    "display": "grid",
+    "place-items": "center",
+    "background": "{color.status.success_soft}",
+    "color": "{color.status.success}",
+    "font-size": "{type.size.xxl}",
+    "font-weight": "{type.weight.heavy}"
+  }
+}

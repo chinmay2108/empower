@@ -1,0 +1,18 @@
+{
+  "className": "topbar",
+  "purpose": "The strip at the top with the wordmark or the way back.",
+  "base": {
+    "display": "flex",
+    "align-items": "center",
+    "justify-content": "space-between",
+    "min-height": "{size.touch_target}",
+    "margin-bottom": "{space.4}"
+  },
+  "elements": {
+    "meta": {
+      "font-size": "{type.size.sm}",
+      "font-weight": "{type.weight.medium}",
+      "color": "{color.text.secondary}"
+    }
+  }
+}

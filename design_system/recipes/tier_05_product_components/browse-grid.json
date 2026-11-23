@@ -1,0 +1,9 @@
+{
+  "className": "browse-grid",
+  "purpose": "The whole week as a grid of event cards.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "repeat(auto-fill, minmax(min(100%, {size.card.min}), 1fr))",
+    "gap": "{space.7} {space.4}"
+  }
+}

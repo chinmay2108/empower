@@ -1,0 +1,20 @@
+{
+  "className": "choice-row",
+  "purpose": "A row of two or three big answers.",
+  "uses": [
+    "choice"
+  ],
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "repeat(3, 1fr)",
+    "gap": "{space.2}",
+    "margin-bottom": "{space.6}"
+  },
+  "variants": {
+    "count": {
+      "two": {
+        "grid-template-columns": "repeat(2, 1fr)"
+      }
+    }
+  }
+}

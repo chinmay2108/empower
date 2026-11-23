@@ -1,0 +1,57 @@
+{
+  "name": "base",
+  "global": true,
+  "purpose": "Page defaults and the browser surfaces we did not draw: selection, caret, focus ring, scrollbars.",
+  "rules": {
+    "*, *::before, *::after": {
+      "box-sizing": "border-box"
+    },
+    "html, body": {
+      "margin": "0",
+      "padding": "0",
+      "background": "{color.surface.canvas}",
+      "color": "{color.text.primary}",
+      "font-family": "{type.family.body}",
+      "font-size": "{type.size.md}",
+      "line-height": "{type.line_height.body}",
+      "-webkit-font-smoothing": "antialiased",
+      "text-rendering": "optimizeLegibility",
+      "-webkit-tap-highlight-color": "transparent"
+    },
+    "html": {
+      "scrollbar-color": "{color.border.default} {color.surface.canvas}",
+      "-webkit-text-size-adjust": "100%"
+    },
+    "a": {
+      "color": "inherit"
+    },
+    "button, input, select, textarea": {
+      "font-family": "inherit",
+      "caret-color": "{color.accent.default}",
+      "accent-color": "{color.accent.default}"
+    },
+    "::selection": {
+      "background": "{color.accent.strong}",
+      "color": "{color.text.primary}"
+    },
+    ":focus": {
+      "outline": "none"
+    },
+    ":focus-visible": {
+      "outline": "{border.width.strong} solid {color.focus.ring}",
+      "outline-offset": "{space.hairline}"
+    },
+    "button:disabled, [aria-disabled=\"true\"]": {
+      "opacity": "{opacity.disabled}",
+      "cursor": "not-allowed"
+    },
+    "[hidden]": {
+      "display": "none !important"
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      "*, *::before, *::after": {
+        "scroll-behavior": "auto"
+      }
+    }
+  }
+}

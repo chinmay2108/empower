@@ -1,0 +1,58 @@
+{
+  "className": "featured",
+  "uses": [
+    "event-art",
+    "btn"
+  ],
+  "purpose": "The home invitation to this week's picks: a strip of event artwork fading into a title and one action.",
+  "base": {
+    "background": "{color.surface.sunken}",
+    "position": "relative",
+    "isolation": "isolate"
+  },
+  "elements": {
+    "art": {
+      "position": "relative",
+      "display": "grid",
+      "grid-template-columns": "1fr 1fr 1fr",
+      "gap": "{space.hairline}",
+      "& .event-art": {
+        "aspect-ratio": "{ratio.poster}",
+        "border-radius": "0"
+      },
+      "&::after": {
+        "content": "\"\"",
+        "position": "absolute",
+        "inset": "0",
+        "background": "linear-gradient(to top, {color.surface.sunken}, {color.scrim.none} 50%)",
+        "pointer-events": "none"
+      }
+    },
+    "body": {
+      "position": "relative",
+      "display": "grid",
+      "gap": "{space.2}",
+      "margin": "calc({space.7} * -1) 0 0",
+      "padding": "0 {space.5} {space.5}",
+      "z-index": "{layer.raised}",
+      "& .btn": {
+        "margin": "{space.3} 0 0"
+      }
+    },
+    "title": {
+      "margin": "0",
+      "font-size": "{type.size.xxl}",
+      "font-weight": "{type.weight.heavy}",
+      "letter-spacing": "{type.letter_spacing.tight}",
+      "line-height": "{type.line_height.tight}"
+    },
+    "meta": {
+      "margin": "0",
+      "font-size": "{type.size.md}",
+      "color": "{color.text.secondary}"
+    }
+  },
+  "surface": {
+    "base": "poster"
+  }
+}

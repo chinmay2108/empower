@@ -1,0 +1,16 @@
+{
+  "className": "ember-card",
+  "uses": [
+    "ember"
+  ],
+  "purpose": "The Empower score with its explanation. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "display": "flex",
+    "align-items": "center",
+    "gap": "{space.4}",
+    "& .ember--lg .ember__icon": {
+      "width": "{size.icon.lg}",
+      "height": "{size.icon.lg}"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "className": "deck",
+  "purpose": "The stack of weekly picks and its two actions.",
+  "base": {
+    "display": "grid",
+    "isolation": "isolate",
+    "margin": "{space.4} 0 {space.6}",
+    "touch-action": "pan-y"
+  },
+  "elements": {
+    "actions": {
+      "display": "grid",
+      "grid-template-columns": "1fr 2fr",
+      "gap": "{space.3}",
+      "margin": "0",
+      "position": "sticky",
+      "bottom": "calc({size.nav} + {space.2})",
+      "z-index": "{layer.sticky}",
+      "padding": "{space.3} 0",
+      "background": "linear-gradient(to top, {color.surface.canvas} 50%, {color.scrim.none})"
+    },
+    "btn": {
+      "& svg": {
+        "width": "{size.icon.sm}",
+        "height": "{size.icon.sm}",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-width": "{border.width.strong}",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+      }
+    }
+  }
+}

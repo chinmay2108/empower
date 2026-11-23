@@ -1,0 +1,25 @@
+{
+  "className": "tag",
+  "purpose": "White badge on a card, like Disney's New badge.",
+  "base": {
+    "display": "inline-block",
+    "padding": "{space.hairline} {space.2}",
+    "border-radius": "{radius.small}",
+    "background": "{color.surface.inverse}",
+    "color": "{color.text.inverse}",
+    "font-size": "{type.size.xs}",
+    "font-weight": "{type.weight.bold}",
+    "line-height": "{type.line_height.snug}",
+    "white-space": "nowrap"
+  },
+  "variants": {
+    "tone": {
+      "quiet": {
+        "color": "{color.text.primary}"
+      }
+    }
+  },
+  "surface": {
+    "--quiet": "fill"
+  }
+}

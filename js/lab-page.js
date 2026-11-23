@@ -12,7 +12,10 @@
   var WEEKS = 8;
 
   ui.renderNav("me");
+  document.getElementById("topbar").innerHTML = '<a class="back" href="me.html">' + ui.backIcon() + "Me</a>";
 
+  /* Whole class names, so the design check can see each one is a real recipe class. */
+  var FILL_CLASS = { random: "lab-bar__fill--random", interests: "lab-bar__fill--interests", empower: "lab-bar__fill--empower" };
   var LABELS = { random: "Random", interests: "Interests only", empower: "Empower picks" };
   var METRICS = [
     ["kindlingAt4", "Have a Kindling connection after 4 weeks", "The number we steer by: 3+ sessions with the same person."],
@@ -27,11 +30,19 @@
   function bars(results, key) {
     return Empower.lab.strategies.map(function (s) {
       var v = results[s][key];
+      /* The bar's width is a runtime token, set on the element after render. */
       var width = Math.max(2, Math.round(v * 100));
       return '<div class="lab-bar"><span class="lab-bar__label">' + LABELS[s] + '</span>' +
-        '<span class="lab-bar__track"><span class="lab-bar__fill lab-bar__fill--' + s + ' lab-w-' + width + '"></span></span>' +
+        '<span class="lab-bar__track"><span class="lab-bar__fill ' + FILL_CLASS[s] + '" data-fill="' + width + '"></span></span>' +
         '<span class="lab-bar__value">' + pct(v) + "</span></div>";
     }).join("");
+  }
+
+  /* Give every bar its width, the only styling a script may set. */
+  function paintBars() {
+    Array.prototype.forEach.call(host.querySelectorAll("[data-fill]"), function (el) {
+      el.style.setProperty("--runtime-fill", el.getAttribute("data-fill") + "%");
+    });
   }
 
   function render(results, ms) {
@@ -49,6 +60,7 @@
       "<li>Who else is there comes from the synthetic population's own weekly attendance.</li>" +
       "<li>These are model results, not real-world proof. Change the model in <code>js/lab.js</code> and run it again.</li></ul>" +
       '<p class="small muted">Ran in ' + ms + " ms. Same inputs give the same results every time.</p>";
+    paintBars();
   }
 
   var start = Empower.clock.now();

@@ -1,0 +1,21 @@
+{
+  "className": "rec-dot",
+  "purpose": "The pulsing light while a voice note records. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "base": {
+    "width": "{size.dot}",
+    "height": "{size.dot}",
+    "border-radius": "{radius.round}",
+    "background": "{color.ember.blaze}",
+    "animation": "rec-pulse {motion.duration.pulse} infinite",
+    "@media (prefers-reduced-motion: reduce)": {
+      "animation": "none"
+    }
+  },
+  "keyframes": {
+    "rec-pulse": {
+      "50%": {
+        "opacity": "{opacity.dim}"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "className": "brief",
+  "purpose": "What to know before you walk in: short headed notes split by hairlines, like a settings list.",
+  "base": {
+    "margin": "0 0 {space.6}",
+    "border-top": "{border.width.default} solid {color.border.default}"
+  },
+  "elements": {
+    "row": {
+      "padding": "{space.4} 0",
+      "border-bottom": "{border.width.default} solid {color.border.default}"
+    },
+    "title": {
+      "margin": "0 0 {space.2}",
+      "font-size": "{type.size.sm}",
+      "font-weight": "{type.weight.bold}",
+      "line-height": "{type.line_height.snug}",
+      "color": "{color.text.primary}"
+    },
+    "body": {
+      "margin": "0",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.body}",
+      "color": "{color.text.secondary}"
+    },
+    "list": {
+      "margin": "0",
+      "padding-left": "{space.5}",
+      "font-size": "{type.size.sm}",
+      "line-height": "{type.line_height.body}",
+      "color": "{color.text.secondary}",
+      "& li + li": {
+        "margin-top": "{space.1}"
+      },
+      "& li::marker": {
+        "color": "{color.accent.default}"
+      }
+    }
+  }
+}

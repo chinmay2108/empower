@@ -1,0 +1,7 @@
+{
+  "className": "browse-entry",
+  "purpose": "The link from the picks to the whole week.",
+  "base": {
+    "margin": "{space.6} 0"
+  }
+}

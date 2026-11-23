@@ -1,0 +1,10 @@
+{
+  "className": "link-row",
+  "purpose": "A row with content on the left and an action on the right.",
+  "base": {
+    "display": "flex",
+    "justify-content": "space-between",
+    "align-items": "center",
+    "gap": "{space.3}"
+  }
+}

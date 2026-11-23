@@ -1,0 +1,10 @@
+{
+  "className": "people-grid",
+  "purpose": "The people who matter most, two posters to a row.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "1fr 1fr",
+    "gap": "{space.3}",
+    "margin-bottom": "{space.4}"
+  }
+}

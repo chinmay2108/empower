@@ -1,0 +1,23 @@
+{
+  "className": "score-badge",
+  "purpose": "A small pill that shows a match score.",
+  "base": {
+    "display": "inline-block",
+    "background": "{color.accent.soft}",
+    "color": "{color.accent.default}",
+    "font-weight": "{type.weight.bold}",
+    "font-size": "{type.size.sm}",
+    "padding": "{space.1} {space.3}",
+    "border-radius": "{radius.pill}",
+    "font-variant-numeric": "tabular-nums"
+  },
+  "variants": {
+    "size": {
+      "sm": {
+        "font-size": "{type.size.xs}",
+        "padding": "{space.hairline} {space.2}",
+        "vertical-align": "middle"
+      }
+    }
+  }
+}

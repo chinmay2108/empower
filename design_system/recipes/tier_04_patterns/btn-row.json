@@ -1,0 +1,9 @@
+{
+  "className": "btn-row",
+  "purpose": "Two buttons side by side.",
+  "base": {
+    "display": "grid",
+    "grid-template-columns": "1fr 1fr",
+    "gap": "{space.2}"
+  }
+}

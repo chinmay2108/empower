@@ -1,0 +1,12 @@
+{
+  "className": "flow-event",
+  "uses": [
+    "event-row"
+  ],
+  "purpose": "The event a commit or check-in screen is about: an event row held still, because here it is not a link.",
+  "base": {
+    "&.event-row": {
+      "cursor": "default"
+    }
+  }
+}

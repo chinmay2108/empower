@@ -4,48 +4,1134 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Components · Empower</title>
-  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#17171b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Empower">
 </head>
-<body>
-  <!-- A mock "This week" screen built only from the design system, with sample data from data/groups.js. -->
-  <main class="screen">
-    <p class="screen__eyebrow">Mon, Nov 9 to Mon, Nov 16</p>
-    <h1 class="screen__title">This week.</h1>
+<!--
+  The design-system gallery. Every token and every recipe in design_system/
+  appears here once, in each state, so the look can be signed off in one place.
+  It is plain markup: no page script, no app data. Components that normally pin
+  themselves to the window (the navigation bar, the message box, a toast) sit
+  inside a gallery stage, which holds them still.
+-->
+<body data-root="../" class="has-nav">
+  <main class="gallery">
+    <p class="eyebrow">Empower design system</p>
+    <h1 class="title">Components.</h1>
+    <p class="gallery__lead">Everything the app is built from, in every state the product owner signs off:
+      resting, pressed or selected, disabled, focused, empty and in error. Nothing here is styled by hand.
+      Each specimen carries the class you write in markup; the look comes from the token recipe behind it.</p>
+    <p class="gallery__lead"><strong>Focus states:</strong> press <kbd>Tab</kbd> to walk this page with the keyboard.
+      Every button, link, chip and field draws the aqua focus ring from the <em>base</em> recipe when it has focus.
+      Nothing on this page is clickable; the links point nowhere on purpose.</p>
 
-    <div class="card card--accent">
-      <p class="card__title">Why these picks</p>
-      <p class="card__meta">You're free Wednesday and Thursday evenings, and you like games and dancing.</p>
-    </div>
+    <!-- ====================================================== TOKENS -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Tokens</h2>
+      <p class="gallery__part-note">Raw values live in one file, design_system/tier_00_foundations.json, and nowhere else.
+        Every recipe writes a token name; the build turns it into a CSS variable. These are the names you may use.</p>
 
-    <h2 class="screen__section">Your picks</h2>
-    <div class="card">
-      <p class="card__title">Thursday Trivia at Alamo Drafthouse</p>
-      <p class="card__meta">Thu, Nov 12 · 7pm · Alamo Drafthouse, 5th Street Station</p>
-      <p class="card__meta">Jada M. and Aaron B. are going</p>
-      <div class="card__actions">
-        <button class="button">I'm in</button>
-        <button class="button button--secondary">Pass</button>
+      <div class="gallery__group">
+        <span class="gallery__label">colour</span>
+        <p class="gallery__note">Surfaces, text, actions, accent, borders, status, the Empower ember and the scrims
+          over artwork. Four of these are deliberately see-through, so they show the page behind their hairline frame.</p>
+        <div class="gallery__swatches">
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-surface-canvas"></span><span class="swatch__name">color.surface.canvas</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-surface-sunken"></span><span class="swatch__name">color.surface.sunken</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-surface-inverse"></span><span class="swatch__name">color.surface.inverse</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-surface-overlay"></span><span class="swatch__name">color.surface.overlay</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-text-primary"></span><span class="swatch__name">color.text.primary</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-text-secondary"></span><span class="swatch__name">color.text.secondary</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-text-tertiary"></span><span class="swatch__name">color.text.tertiary</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-text-inverse"></span><span class="swatch__name">color.text.inverse</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-action-primary"></span><span class="swatch__name">color.action.primary</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-action-primary-pressed"></span><span class="swatch__name">color.action.primary_pressed</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-action-secondary"></span><span class="swatch__name">color.action.secondary</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-action-secondary-pressed"></span><span class="swatch__name">color.action.secondary_pressed</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-accent-default"></span><span class="swatch__name">color.accent.default</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-accent-strong"></span><span class="swatch__name">color.accent.strong</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-accent-soft"></span><span class="swatch__name">color.accent.soft</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-border-default"></span><span class="swatch__name">color.border.default</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-border-strong"></span><span class="swatch__name">color.border.strong</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-focus-ring"></span><span class="swatch__name">color.focus.ring</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-status-success"></span><span class="swatch__name">color.status.success</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-status-success-soft"></span><span class="swatch__name">color.status.success_soft</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-status-warning"></span><span class="swatch__name">color.status.warning</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-status-error"></span><span class="swatch__name">color.status.error</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-status-error-soft"></span><span class="swatch__name">color.status.error_soft</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-ember-spark"></span><span class="swatch__name">color.ember.spark</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-ember-warm"></span><span class="swatch__name">color.ember.warm</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-ember-glow"></span><span class="swatch__name">color.ember.glow</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-ember-blaze"></span><span class="swatch__name">color.ember.blaze</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-scrim-strong"></span><span class="swatch__name">color.scrim.strong</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-scrim-soft"></span><span class="swatch__name">color.scrim.soft</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-scrim-none"></span><span class="swatch__name">color.scrim.none</span></div>
+          <div class="swatch"><span class="swatch__chip swatch__chip--color-glow-ambient"></span><span class="swatch__name">color.glow.ambient</span></div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <p class="card__title">Swing Cville Wednesday Lessons</p>
-      <p class="card__meta">Wed, Nov 11 · 7pm · The Front Porch, 221 E Water St</p>
-      <div class="card__actions">
-        <button class="button button--small">I'm in</button>
-        <button class="button button--small button--secondary">Pass</button>
-      </div>
-    </div>
 
-    <h2 class="screen__section">Already going</h2>
-    <div class="card card--outline">
-      <p class="card__title">Charlottesville Game Club</p>
-      <p class="card__meta">Thu, Nov 12 · 5pm · The End Games, 390 Hillsdale Dr</p>
-      <div class="card__actions">
-        <button class="button" disabled>Check in opens at 4:30pm</button>
+      <div class="gallery__group">
+        <span class="gallery__label">type scale</span>
+        <p class="gallery__note">One family, Nunito Sans. Seven sizes and four weights carry the whole app.</p>
+        <ul class="gallery__scale list-plain">
+          <li class="metric"><span class="metric__name">type.size.xs</span><p class="metric__type metric__type--type-size-xs">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.sm</span><p class="metric__type metric__type--type-size-sm">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.md</span><p class="metric__type metric__type--type-size-md">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.lg</span><p class="metric__type metric__type--type-size-lg">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.xl</span><p class="metric__type metric__type--type-size-xl">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.xxl</span><p class="metric__type metric__type--type-size-xxl">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.size.display</span><p class="metric__type metric__type--type-size-display">Thursday</p></li>
+          <li class="metric"><span class="metric__name">type.weight.regular</span><p class="metric__type metric__type--type-weight-regular">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.weight.medium</span><p class="metric__type metric__type--type-weight-medium">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.weight.bold</span><p class="metric__type metric__type--type-weight-bold">Thursday Trivia</p></li>
+          <li class="metric"><span class="metric__name">type.weight.heavy</span><p class="metric__type metric__type--type-weight-heavy">Thursday Trivia</p></li>
+        </ul>
       </div>
-    </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">spacing</span>
+        <p class="gallery__note">A 4-point step. Screens use 20 points at the sides, the step named space.5.</p>
+        <ul class="gallery__scale list-plain">
+          <li class="metric"><span class="metric__name">space.hairline</span><span class="metric__bar metric__bar--space-hairline"></span></li>
+          <li class="metric"><span class="metric__name">space.1</span><span class="metric__bar metric__bar--space-1"></span></li>
+          <li class="metric"><span class="metric__name">space.2</span><span class="metric__bar metric__bar--space-2"></span></li>
+          <li class="metric"><span class="metric__name">space.3</span><span class="metric__bar metric__bar--space-3"></span></li>
+          <li class="metric"><span class="metric__name">space.4</span><span class="metric__bar metric__bar--space-4"></span></li>
+          <li class="metric"><span class="metric__name">space.5</span><span class="metric__bar metric__bar--space-5"></span></li>
+          <li class="metric"><span class="metric__name">space.6</span><span class="metric__bar metric__bar--space-6"></span></li>
+          <li class="metric"><span class="metric__name">space.7</span><span class="metric__bar metric__bar--space-7"></span></li>
+          <li class="metric"><span class="metric__name">space.8</span><span class="metric__bar metric__bar--space-8"></span></li>
+          <li class="metric"><span class="metric__name">space.9</span><span class="metric__bar metric__bar--space-9"></span></li>
+        </ul>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">radius</span>
+        <p class="gallery__note">Cards and buttons take the small radius, the 4-point corner measured from the reference.
+          Pill and round are for chips, avatars and the message box.</p>
+        <ul class="gallery__scale list-plain">
+          <li class="metric"><span class="metric__name">radius.small</span><span class="metric__box metric__box--radius-small"></span></li>
+          <li class="metric"><span class="metric__name">radius.medium</span><span class="metric__box metric__box--radius-medium"></span></li>
+          <li class="metric"><span class="metric__name">radius.large</span><span class="metric__box metric__box--radius-large"></span></li>
+          <li class="metric"><span class="metric__name">radius.bubble</span><span class="metric__box metric__box--radius-bubble"></span></li>
+          <li class="metric"><span class="metric__name">radius.pill</span><span class="metric__box metric__box--radius-pill"></span></li>
+          <li class="metric"><span class="metric__name">radius.round</span><span class="metric__box metric__box--radius-round"></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 1 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tier 1: primitives</h2>
+      <p class="gallery__part-note">The smallest pieces. Everything above is built from these.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.title .eyebrow .subtitle .section-title</span>
+        <p class="gallery__note">One title per screen. No small label above a screen title: the eyebrow names a group of content below it.</p>
+        <div class="gallery__stage">
+          <h3 class="title">This week.</h3>
+          <p class="subtitle">Five groups near you meet in the next seven days.</p>
+          <p class="eyebrow">Mon, Nov 9 to Mon, Nov 16</p>
+          <h4 class="section-title">Your picks</h4>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.wordmark</span>
+        <div class="gallery__stage">
+          <span class="wordmark">empower<span>.</span></span>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.tag .tag--quiet</span>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><span class="tag">Your pick this week</span><p class="gallery__caption">default</p></div>
+            <div class="gallery__cell"><span class="tag tag--quiet">Games</span><p class="gallery__caption">--quiet</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.avatar .avatar--sm .avatar--lg .avatar--photo .avatar--center .avatar-wrap</span>
+        <p class="gallery__note">A person is shown by their portrait first. Initials are the fallback when there is no photo.</p>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><span class="avatar avatar--center">MK</span><p class="gallery__caption">--center</p></div>
+            <div class="gallery__cell"><span class="avatar avatar--sm">MK</span><p class="gallery__caption">--sm, initials</p></div>
+            <div class="gallery__cell"><span class="avatar">MK</span><p class="gallery__caption">default, initials</p></div>
+            <div class="gallery__cell"><span class="avatar avatar--lg">MK</span><p class="gallery__caption">--lg, initials</p></div>
+            <div class="gallery__cell"><img class="avatar avatar--sm avatar--photo" src="../img/people/u001.jpg" alt=""><p class="gallery__caption">--sm --photo</p></div>
+            <div class="gallery__cell"><img class="avatar avatar--photo" src="../img/people/u002.jpg" alt=""><p class="gallery__caption">--photo</p></div>
+            <div class="gallery__cell"><img class="avatar avatar--lg avatar--photo" src="../img/people/u003.jpg" alt=""><p class="gallery__caption">--lg --photo</p></div>
+          </div>
+          <div class="avatar-wrap mt-4"><img class="avatar avatar--lg avatar--photo" src="../img/people/u004.jpg" alt=""></div>
+          <p class="gallery__caption center">.avatar-wrap centres a profile portrait</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.event-art</span>
+        <p class="gallery__note">The artwork follows an event through the whole flow. The card or screen around it sets the shape.</p>
+        <div class="gallery__stage">
+          <div class="gallery__grid">
+            <img class="event-art" src="../img/trivia.jpg" alt="" draggable="false">
+            <img class="event-art" src="../img/dance.jpg" alt="" draggable="false">
+            <img class="event-art" src="../img/running.jpg" alt="" draggable="false">
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.base .muted .small .center .flush .mt-3 .mt-4 .is-hidden .list-plain</span>
+        <p class="gallery__note">The base recipe sets the page defaults and the surfaces we did not draw: the text selection colour,
+          the caret, the focus ring and the scrollbar. Select this sentence to see the selection colour.
+          The text helpers are the small nudges every component may use.</p>
+        <div class="gallery__stage">
+          <p class="flush">.flush, no margin at all</p>
+          <p class="mt-3">.mt-3, one step down</p>
+          <p class="mt-4">.mt-4, one step more</p>
+          <p class="small mt-4">.small, the supporting size</p>
+          <p class="muted small">.muted, the quieter colour</p>
+          <p class="center small">.center</p>
+          <p class="is-hidden">.is-hidden removes this line completely</p>
+          <ul class="list-plain small muted"><li>.list-plain, no bullets and no indent</li><li>a second row</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 2 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tier 2: controls</h2>
+      <p class="gallery__part-note">Everything you press or type into. All are at least 44 points tall.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.btn .btn--secondary .btn--accent .btn--small .btn--inline</span>
+        <p class="gallery__note">One white, squared, uppercase primary action per screen. Press and hold a button to see the pressed state.</p>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><button type="button" class="btn">I'm in</button><p class="gallery__caption">default</p></div>
+            <div class="gallery__cell"><button type="button" class="btn btn--secondary">Pass</button><p class="gallery__caption">--secondary</p></div>
+            <div class="gallery__cell"><button type="button" class="btn btn--accent">Commit</button><p class="gallery__caption">--accent</p></div>
+          </div>
+          <div class="gallery__row mt-4">
+            <div class="gallery__cell"><button type="button" class="btn btn--small btn--inline">Commit to it</button><p class="gallery__caption">--small --inline</p></div>
+            <div class="gallery__cell"><a class="btn btn--secondary btn--inline" href="#">Back to your picks</a><p class="gallery__caption">--inline, as a link</p></div>
+          </div>
+          <div class="gallery__row mt-4">
+            <div class="gallery__cell"><button type="button" class="btn" disabled>Check in opens at 4:30pm</button><p class="gallery__caption">disabled</p></div>
+            <div class="gallery__cell"><a class="btn btn--secondary" href="#" aria-disabled="true">Already going</a><p class="gallery__caption">aria-disabled, as a link</p></div>
+          </div>
+          <p class="gallery__caption mt-3">Focus: tab onto any of these to see the aqua ring.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.chip .chip.is-selected .chip-row</span>
+        <div class="gallery__stage">
+          <div class="chip-row">
+            <button type="button" class="chip">Walk</button>
+            <button type="button" class="chip is-selected">Drive</button>
+            <button type="button" class="chip" aria-pressed="true">Bus</button>
+            <button type="button" class="chip" aria-pressed="false">Bike</button>
+            <button type="button" class="chip" disabled>Ride with someone</button>
+          </div>
+          <p class="gallery__caption mt-3">Resting, .is-selected, aria-pressed=true, aria-pressed=false, and the browser's own disabled
+            look: the chip recipe has no disabled rule, because nothing in the app disables a chip yet.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.choice .choice.is-selected .choice-row .choice-row--two</span>
+        <div class="gallery__stage">
+          <div class="choice-row">
+            <button type="button" class="choice">Great</button>
+            <button type="button" class="choice is-selected">Good</button>
+            <button type="button" class="choice">Not for me</button>
+          </div>
+          <div class="choice-row choice-row--two">
+            <button type="button" class="choice">Yes</button>
+            <button type="button" class="choice" disabled>No</button>
+          </div>
+          <p class="gallery__caption">Three answers, then --two for a pair. The second row's right answer is disabled.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.field .label .input .select</span>
+        <p class="gallery__note">The label sits above the field, never inside it. Click into a field to see the aqua border it takes on focus.</p>
+        <div class="gallery__stage">
+          <div class="field">
+            <label class="label" for="gallery-name">What should people call you?</label>
+            <input class="input" id="gallery-name" type="text" value="Rick" autocomplete="off">
+          </div>
+          <div class="field">
+            <label class="label" for="gallery-empty">Empty, showing its placeholder</label>
+            <input class="input" id="gallery-empty" type="text" placeholder="First name" autocomplete="off">
+          </div>
+          <div class="field">
+            <label class="label" for="gallery-off">Disabled</label>
+            <input class="input" id="gallery-off" type="text" value="Set during onboarding" disabled>
+          </div>
+          <div class="field">
+            <label class="label" for="gallery-select">How far will you travel?</label>
+            <select class="select" id="gallery-select">
+              <option>A walk away</option>
+              <option>A short drive</option>
+              <option>Anywhere in town</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.link-btn .back .back--person .back__icon</span>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><button type="button" class="link-btn">Undo</button><p class="gallery__caption">.link-btn</p></div>
+            <div class="gallery__cell"><a class="back" href="#"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>This week</a><p class="gallery__caption">.back</p></div>
+            <div class="gallery__cell"><a class="back back--person" href="#"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>People</a><p class="gallery__caption">.back--person</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.mini-btn .mini-btn--dark .mini-btn.is-selected</span>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><button type="button" class="mini-btn">Add</button><p class="gallery__caption">default</p></div>
+            <div class="gallery__cell"><button type="button" class="mini-btn mini-btn--dark">Message</button><p class="gallery__caption">--dark</p></div>
+            <div class="gallery__cell"><button type="button" class="mini-btn is-selected">Added</button><p class="gallery__caption">.is-selected</p></div>
+            <div class="gallery__cell"><button type="button" class="mini-btn" disabled>Add</button><p class="gallery__caption">disabled, browser default</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.option .option__title .option__meta .option.is-selected</span>
+        <div class="gallery__stage">
+          <button type="button" class="option">
+            <p class="option__title">A quiet table of six</p>
+            <p class="option__meta">Board games, every Thursday</p>
+          </button>
+          <button type="button" class="option is-selected">
+            <p class="option__title">A room that fills up</p>
+            <p class="option__meta">Trivia night, teams of four</p>
+          </button>
+          <button type="button" class="option" disabled>
+            <p class="option__title">Not available this week</p>
+            <p class="option__meta">The host is away</p>
+          </button>
+          <p class="gallery__caption">Resting, .is-selected with its aqua border, and disabled.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 3 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tier 3: overlays and feedback</h2>
+      <p class="gallery__part-note">What the app says back: the empty screen, the error, the confirmation, the moment worth marking.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.empty .empty__title</span>
+        <p class="gallery__note">What a screen shows when there is nothing yet. Always with the next step.</p>
+        <div class="gallery__stage">
+          <div class="empty">
+            <p class="empty__title">No matches yet</p>
+            <p class="small">Go to two sessions with the same group and people start showing up here.</p>
+            <p class="mt-4"><a class="btn btn--inline" href="#">Find this week's picks</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.notice .notice--error .notice--success</span>
+        <div class="gallery__stage">
+          <div class="notice">You can change this later in Me.</div>
+          <div class="notice notice--error" role="alert">You're already going to <strong>Swing Cville</strong> at the same time.</div>
+          <div class="notice notice--success" role="status">Saved. We'll remind you on Thursday morning.</div>
+          <p class="gallery__caption">Default, --error and --success.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.big-check .check-mark</span>
+        <p class="gallery__note">The tick on a done screen, drawn as a line so it is never a text glyph or an emoji.</p>
+        <div class="gallery__stage">
+          <div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.steps .is-done</span>
+        <p class="gallery__note">How far through onboarding you are. Done steps turn aqua.</p>
+        <div class="gallery__stage">
+          <div class="steps" aria-hidden="true"><span class="is-done"></span><span class="is-done"></span><span></span><span></span><span></span></div>
+          <p class="gallery__caption">Two of five done. An empty bar is the resting state.</p>
+          <div class="steps mt-4" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="gallery__caption">Nothing done yet.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.toast</span>
+        <p class="gallery__note">A short confirmation that slides in at the top and leaves by itself.
+          Held still here so it can be signed off; in the app it fades after about two and a half seconds,
+          and does not animate at all when the phone asks for less motion.</p>
+        <div class="gallery__stage">
+          <div class="toast" role="status">+1 Empower score</div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.ladder-pop .ladder-pop__card .ladder-pop.is-leaving</span>
+        <p class="gallery__note">The moment you step up the comfort ladder. In .is-leaving the dark backdrop clears and the card
+          flies to the Me tab; the flight is stopped here so the card can still be seen.</p>
+        <div class="gallery__row">
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--flush">
+              <div class="ladder-pop">
+                <div class="ladder-pop__card">
+                  <p class="eyebrow">You stepped up</p>
+                  <p class="card__title">Cozy to Social</p>
+                  <p class="card__meta">Three good sessions in a row. We'll start showing you bigger rooms.</p>
+                  <p class="mt-4"><button type="button" class="btn">Nice</button></p>
+                </div>
+              </div>
+            </div>
+            <p class="gallery__caption">resting</p>
+          </div>
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--flush">
+              <div class="ladder-pop is-leaving">
+                <div class="ladder-pop__card">
+                  <p class="eyebrow">You stepped up</p>
+                  <p class="card__title">Cozy to Social</p>
+                  <p class="card__meta">Three good sessions in a row. We'll start showing you bigger rooms.</p>
+                  <p class="mt-4"><button type="button" class="btn">Nice</button></p>
+                </div>
+              </div>
+            </div>
+            <p class="gallery__caption">.is-leaving: the backdrop has cleared</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 4 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tier 4: patterns</h2>
+      <p class="gallery__part-note">Pieces that put the controls together: cards, rows, the chat, the Empower score.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.card .card--outline .card--accent .card__title .card__meta</span>
+        <p class="gallery__note">A panel that groups one thing. Never a card inside a card.</p>
+        <div class="gallery__stage">
+          <div class="card">
+            <p class="card__title">Thursday Trivia at Alamo Drafthouse</p>
+            <p class="card__meta">Thu, Nov 12 · 7pm · 5th Street Station</p>
+          </div>
+          <div class="card card--outline">
+            <p class="card__title">Charlottesville Game Club</p>
+            <p class="card__meta">Thu, Nov 12 · 5pm · The End Games</p>
+          </div>
+          <div class="card card--accent">
+            <p class="card__title">Why these picks</p>
+            <p class="card__meta">You're free Wednesday and Thursday evenings, and you like games and dancing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.btn-row .link-row .stat .stat__value .stat__label .stat-row</span>
+        <div class="gallery__stage">
+          <div class="btn-row">
+            <a class="btn btn--secondary" href="#">Keep that one</a>
+            <button type="button" class="btn">Swap it</button>
+          </div>
+          <div class="link-row mt-4">
+            <p class="flush small">Three sessions with Felix so far</p>
+            <button type="button" class="mini-btn">Message</button>
+          </div>
+          <div class="stat-row mt-4">
+            <div class="stat"><p class="stat__value flush">7</p><p class="stat__label flush">Sessions attended</p></div>
+            <div class="stat"><p class="stat__value flush">2</p><p class="stat__label flush">Kindling connections</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.facts .tips .demo</span>
+        <div class="gallery__stage">
+          <ul class="facts">
+            <li><span>When</span><span>Thursdays, 7pm</span></li>
+            <li><span>How long</span><span>2 hours</span></li>
+            <li><span>Usually there</span><span>About 18 people</span></li>
+          </ul>
+          <ul class="tips small">
+            <li>Get there five minutes early so you are not walking into a full room.</li>
+            <li>Teams form at the bar. Say you are on your own and someone will take you.</li>
+          </ul>
+          <div class="demo">
+            <p class="card__title">Demo tools</p>
+            <p class="card__meta">Set apart from the product with a dashed border, so nobody mistakes it for a feature.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.person .person__body .person__name .person__meta .person__actions</span>
+        <div class="gallery__stage">
+          <div class="person">
+            <img class="avatar avatar--photo" src="../img/people/u005.jpg" alt="">
+            <span class="person__body">
+              <p class="person__name flush">Maya K.</p>
+              <p class="person__meta flush">Three sessions together at Thursday Trivia</p>
+            </span>
+            <button type="button" class="mini-btn">Add</button>
+          </div>
+          <div class="person">
+            <span class="avatar">SP</span>
+            <span class="person__body">
+              <p class="person__name flush">Sam P.</p>
+              <p class="person__meta flush">Two sessions together</p>
+              <span class="person__actions">
+                <button type="button" class="mini-btn is-selected">Added</button>
+                <button type="button" class="mini-btn mini-btn--dark">Message</button>
+              </span>
+            </span>
+          </div>
+          <p class="gallery__caption">With a photo and a single action, and with initials and a row of actions.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.faces .faces-row</span>
+        <div class="gallery__stage">
+          <p class="faces-row">
+            <span class="faces">
+              <img class="avatar avatar--sm avatar--photo" src="../img/people/u006.jpg" alt="">
+              <img class="avatar avatar--sm avatar--photo" src="../img/people/u007.jpg" alt="">
+              <img class="avatar avatar--sm avatar--photo" src="../img/people/u008.jpg" alt="">
+            </span>
+            Jada M., Aaron B. and 3 others are going
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.ember .ember__icon .ember__value .ember--spark .ember--warm .ember--glow .ember--blaze .ember--lg</span>
+        <p class="gallery__note">The Empower score as a flame that warms as it grows. Outside the Disney reference, so it uses the shared tokens only.</p>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><span class="ember ember--spark" aria-label="Empower score 4"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">4</span></span><p class="gallery__caption">--spark</p></div>
+            <div class="gallery__cell"><span class="ember ember--warm" aria-label="Empower score 18"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">18</span></span><p class="gallery__caption">--warm</p></div>
+            <div class="gallery__cell"><span class="ember ember--glow" aria-label="Empower score 41"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">41</span></span><p class="gallery__caption">--glow</p></div>
+            <div class="gallery__cell"><span class="ember ember--blaze" aria-label="Empower score 76"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">76</span></span><p class="gallery__caption">--blaze</p></div>
+            <div class="gallery__cell"><span class="ember ember--blaze ember--lg" aria-label="Empower score 76"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">76</span></span><p class="gallery__caption">--blaze --lg</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.bubble .bubble--them .bubble--me .bubble--app .bubble--typing .bubble__who .bubble__time .chat .chat__day .chat__note</span>
+        <p class="gallery__note">Chat is outside the Disney reference: it takes the shared tokens and stays plain until a second
+          reference is chosen. Both bubble colours carry their time stamp above 4.5:1.</p>
+        <div class="gallery__stage">
+          <div class="chat">
+            <p class="chat__note">Say hi to Felix. (Replies are simulated in this demo.)</p>
+            <p class="chat__day">Mon, Nov 23</p>
+            <div class="bubble bubble--app">Felix goes to Thursday Trivia. They're going Thu, Nov 26 at 7pm. Want to go together?
+              <p class="mt-3"><a class="btn btn--small btn--inline" href="#">Commit to it</a></p>
+            </div>
+            <div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div>
+            <div class="bubble bubble--them">
+              <span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>
+              See you there<span class="bubble__time">11:46 AM</span>
+            </div>
+            <div class="bubble bubble--them bubble--typing" aria-label="Felix is typing"><span></span><span></span><span></span></div>
+          </div>
+          <p class="gallery__caption mt-3">--app with its action, --me, --them with .bubble__who, and --typing. The three dots pulse,
+            and hold still when the phone asks for less motion.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.voice .voice__play .voice__pause .voice__track .voice__fill .voice__len .voice.is-playing .rec-dot</span>
+        <div class="gallery__stage">
+          <div class="chat">
+            <div class="bubble bubble--me">
+              <span class="voice">
+                <button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+                <span class="voice__track"><span class="voice__fill"></span></span>
+                <span class="voice__len">0:07</span>
+              </span>
+              <span class="bubble__time">11:36 AM</span>
+            </div>
+            <div class="bubble bubble--them">
+              <span class="voice is-playing">
+                <button type="button" class="voice__play" aria-label="Pause voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+                <span class="voice__track"><span class="voice__fill gallery__fill-half"></span></span>
+                <span class="voice__len">0:12</span>
+              </span>
+              <span class="bubble__time">11:46 AM</span>
+            </div>
+          </div>
+          <p class="gallery__caption mt-3">Resting, then .is-playing: the play icon becomes a pause and the bar fills as it plays.</p>
+          <div class="gallery__row mt-4">
+            <div class="gallery__cell"><span class="rec-dot"></span><p class="gallery__caption">.rec-dot, the light while a voice note records. It pulses, and holds still under reduced motion.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.chat-header .chat-header__back .chat-header__who .chat-header__group .chat-header__name .chat-header__sub</span>
+        <div class="gallery__stage gallery__stage--flush">
+          <header class="chat-header">
+            <a class="chat-header__back" href="#" aria-label="Back to People"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+            <a class="chat-header__who" href="#"><img class="avatar avatar--photo" src="../img/people/u010.jpg" alt="">
+              <span><span class="chat-header__name">Felix C.</span><span class="chat-header__sub">Met at Thursday Trivia at Alamo Drafthouse</span></span></a>
+          </header>
+          <header class="chat-header">
+            <a class="chat-header__back" href="#" aria-label="Back to the session"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+            <span class="chat-header__who"><span class="chat-header__group" aria-hidden="true">TT</span>
+              <span><span class="chat-header__name">Thursday Trivia at Alamo Drafthouse</span><span class="chat-header__sub">Thu, Nov 19</span></span></span>
+          </header>
+        </div>
+        <p class="gallery__caption">A person, then a session group. A name too long to fit ends in an ellipsis instead of pushing the row wide.</p>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.composer .composer__inner .composer__type .composer__rec .composer__input .composer__send .composer__send--mic .composer__cancel .composer__timer</span>
+        <p class="gallery__note">The message box. Held still here; in the app it is pinned to the bottom of the chat.</p>
+        <div class="gallery__stage gallery__stage--flush">
+          <form class="composer">
+            <div class="composer__inner composer__type">
+              <input class="composer__input" aria-label="Message Felix" placeholder="Message Felix" autocomplete="off" maxlength="300">
+              <button class="composer__send" type="button" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button>
+            </div>
+          </form>
+        </div>
+        <p class="gallery__caption">The type row with text to send.</p>
+        <div class="gallery__stage gallery__stage--flush mt-3">
+          <form class="composer">
+            <div class="composer__inner composer__type">
+              <input class="composer__input" aria-label="Message Felix" placeholder="Message Felix" autocomplete="off" maxlength="300">
+              <button class="composer__send composer__send--mic" type="button" aria-label="Record a voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6 6 0 0 0 5 5.9V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.6a6 6 0 0 0 5-5.9z"/></svg></button>
+            </div>
+          </form>
+        </div>
+        <p class="gallery__caption">Empty: the send button becomes a microphone.</p>
+        <div class="gallery__stage gallery__stage--flush mt-3">
+          <form class="composer">
+            <div class="composer__inner composer__rec">
+              <button type="button" class="composer__cancel">Cancel</button>
+              <span class="composer__timer"><span class="rec-dot"></span><span>0:07</span></span>
+              <button type="button" class="composer__send" aria-label="Send voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button>
+            </div>
+          </form>
+        </div>
+        <p class="gallery__caption">Recording: cancel, the running time next to the pulsing light, and send.</p>
+        <div class="gallery__stage gallery__stage--flush mt-3">
+          <form class="composer">
+            <div class="composer__inner composer__type">
+              <input class="composer__input" aria-label="Message Felix" placeholder="Message Felix" autocomplete="off" disabled>
+              <button class="composer__send" type="button" aria-label="Send" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button>
+            </div>
+          </form>
+        </div>
+        <p class="gallery__caption">Disabled: the send button dims when there is nothing to send and the phone has no microphone.</p>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.footer-action .footer-action__inner</span>
+        <p class="gallery__note">The screen's main action, normally pinned above the navigation bar over a fade to the canvas colour.</p>
+        <div class="gallery__stage gallery__stage--flush">
+          <div class="footer-action">
+            <div class="footer-action__inner">
+              <button type="button" class="btn">I'm in</button>
+              <a class="btn btn--secondary" href="#">See the whole week</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 5 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tier 5: product components</h2>
+      <p class="gallery__part-note">The pieces that are Empower and nothing else: events, picks, people and the Matching Lab.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.event-card .event-card__link .event-card__media .event-card__title .event-card__meta .browse-grid</span>
+        <p class="gallery__note">Artwork first, then title and when. The whole week is a grid of these.</p>
+        <div class="gallery__stage">
+          <div class="browse-grid">
+            <article class="event-card">
+              <a class="event-card__link" href="#">
+                <span class="event-card__media"><img class="event-art" src="../img/trivia.jpg" alt="" draggable="false"><span class="tag">Your pick</span></span>
+                <p class="event-card__title">Thursday Trivia at Alamo Drafthouse</p>
+                <p class="event-card__meta">Thu, Nov 26 · 7pm</p>
+              </a>
+            </article>
+            <article class="event-card">
+              <a class="event-card__link" href="#">
+                <span class="event-card__media"><img class="event-art" src="../img/dance.jpg" alt="" draggable="false"><span class="tag tag--quiet">Dance</span></span>
+                <p class="event-card__title">Swing Cville Wednesday Lessons</p>
+                <p class="event-card__meta">Wed, Nov 25 · 7pm</p>
+              </a>
+            </article>
+            <article class="event-card">
+              <a class="event-card__link" href="#">
+                <span class="event-card__media"><img class="event-art" src="../img/choir.jpg" alt="" draggable="false"></span>
+                <p class="event-card__title">Community Choir, open rehearsal</p>
+                <p class="event-card__meta">Tue, Nov 24 · 6:30pm</p>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.event-row .event-row--plain .event-row--today .event-row__body .event-row__title .event-row__meta .flow-event</span>
+        <div class="gallery__stage">
+          <a class="event-row" href="#">
+            <img class="event-art" src="../img/games.jpg" alt="" draggable="false">
+            <span class="event-row__body">
+              <span class="event-row__title">Charlottesville Game Club</span>
+              <span class="event-row__meta">Thu, Nov 26 · 5pm · The End Games</span>
+            </span>
+          </a>
+          <a class="event-row event-row--today" href="#">
+            <img class="event-art" src="../img/pickleball.jpg" alt="" draggable="false">
+            <span class="event-row__body">
+              <span class="event-row__title">Morning Pickleball</span>
+              <span class="event-row__meta">Today · 8am · Darden Towe Park</span>
+            </span>
+          </a>
+          <div class="event-row event-row--plain flow-event">
+            <span class="event-row__body">
+              <span class="event-row__title">Open Mic at The Southern</span>
+              <span class="event-row__meta">Fri, Nov 27 · 8pm · No artwork for this one</span>
+            </span>
+          </div>
+          <p class="gallery__caption">Default, --today with its aqua outline, and --plain with .flow-event: the same row held
+            still on a commit screen, because there it is not a link.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.hero</span>
+        <p class="gallery__note">Artwork across the top of a detail screen, fading into the page.</p>
+        <div class="gallery__stage">
+          <div class="hero"><img class="event-art" src="../img/market.jpg" alt="" draggable="false"></div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.featured .featured__art .featured__body .featured__title .featured__meta</span>
+        <p class="gallery__note">The invitation on Home: a strip of this week's artwork fading into one title and one action.</p>
+        <div class="gallery__stage gallery__stage--flush">
+          <div class="featured">
+            <div class="featured__art">
+              <img class="event-art" src="../img/trivia.jpg" alt="" draggable="false">
+              <img class="event-art" src="../img/dance.jpg" alt="" draggable="false">
+              <img class="event-art" src="../img/volunteer.jpg" alt="" draggable="false">
+            </div>
+            <div class="featured__body">
+              <p class="featured__title">Three picks for this week.</p>
+              <p class="featured__meta">Chosen from the groups you keep going back to.</p>
+              <a class="btn" href="#">See this week</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.deck .deck__actions .deck__btn .swipe-card and its nine states</span>
+        <p class="gallery__note">The weekly pick as a stack you swipe. The top card is .is-top; the two behind it sit back
+          and smaller. Dragging adds .is-dragging, and crossing the threshold shows the stamp.</p>
+        <div class="gallery__stage gallery__stage--tall">
+          <div class="deck">
+            <article class="swipe-card is-next-2">
+              <p class="swipe-card__title">Community Choir</p>
+            </article>
+            <article class="swipe-card is-next-1">
+              <p class="swipe-card__title">Swing Cville</p>
+            </article>
+            <article class="swipe-card is-top">
+              <img class="event-art" src="../img/trivia.jpg" alt="" draggable="false">
+              <span class="tag">Your pick this week</span>
+              <p class="swipe-card__title">Thursday Trivia at Alamo Drafthouse</p>
+              <p class="swipe-card__meta">Thu, Nov 26 · 7pm · 5th Street Station</p>
+              <span class="swipe-card__more">Why this one</span>
+              <span class="swipe-card__stamp swipe-card__stamp--yes">I'm in</span>
+              <span class="swipe-card__stamp swipe-card__stamp--no">Pass</span>
+            </article>
+            <div class="deck__actions">
+              <button type="button" class="btn btn--secondary deck__btn" aria-label="Pass"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Pass</button>
+              <button type="button" class="btn deck__btn" aria-label="I'm in"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>I'm in</button>
+            </div>
+          </div>
+          <p class="gallery__caption">.is-top over .is-next-1 over .is-next-2, with .deck__actions below.</p>
+        </div>
+        <div class="gallery__row mt-4">
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--tall">
+              <article class="swipe-card is-top is-dragging is-yes">
+                <img class="event-art" src="../img/dance.jpg" alt="" draggable="false">
+                <p class="swipe-card__title">Swing Cville Wednesday Lessons</p>
+                <p class="swipe-card__meta">Wed, Nov 25 · 7pm</p>
+                <span class="swipe-card__stamp swipe-card__stamp--yes">I'm in</span>
+                <span class="swipe-card__stamp swipe-card__stamp--no">Pass</span>
+              </article>
+            </div>
+            <p class="gallery__caption">.is-dragging .is-yes: the green stamp appears</p>
+          </div>
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--tall">
+              <article class="swipe-card is-top is-dragging is-no">
+                <img class="event-art" src="../img/running.jpg" alt="" draggable="false">
+                <p class="swipe-card__title">Sunrise Run Club</p>
+                <p class="swipe-card__meta">Sat, Nov 28 · 7am</p>
+                <span class="swipe-card__stamp swipe-card__stamp--yes">I'm in</span>
+                <span class="swipe-card__stamp swipe-card__stamp--no">Pass</span>
+              </article>
+            </div>
+            <p class="gallery__caption">.is-dragging .is-no: the red stamp appears</p>
+          </div>
+        </div>
+        <div class="gallery__row mt-4">
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--tall">
+              <article class="swipe-card is-out-right">
+                <img class="event-art" src="../img/games.jpg" alt="" draggable="false">
+                <p class="swipe-card__title">Charlottesville Game Club</p>
+              </article>
+            </div>
+            <p class="gallery__caption">.is-out-right: thrown off to the right and faded to nothing, so the frame is empty</p>
+          </div>
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--tall">
+              <article class="swipe-card is-out-left">
+                <img class="event-art" src="../img/games.jpg" alt="" draggable="false">
+                <p class="swipe-card__title">Charlottesville Game Club</p>
+              </article>
+            </div>
+            <p class="gallery__caption">.is-out-left: the same, to the left</p>
+          </div>
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__stage gallery__stage--tall">
+              <article class="swipe-card is-gone">
+                <img class="event-art" src="../img/market.jpg" alt="" draggable="false">
+                <p class="swipe-card__title">Saturday Market Volunteers</p>
+              </article>
+            </div>
+            <p class="gallery__caption">.is-gone: still drawn, but nothing can touch it</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.pick .pick--highlight .pick__top .pick__link .pick__why .pick__social .browse-entry</span>
+        <div class="gallery__stage">
+          <div class="card pick">
+            <div class="pick__top">
+              <span class="pick__link"><p class="card__title flush">Thursday Trivia at Alamo Drafthouse</p></span>
+              <span class="score-badge">82</span>
+            </div>
+            <p class="pick__why">You liked the last two, and it is a short walk from you.</p>
+            <p class="pick__social"><span class="faces"><img class="avatar avatar--sm avatar--photo" src="../img/people/u011.jpg" alt=""><img class="avatar avatar--sm avatar--photo" src="../img/people/u012.jpg" alt=""></span>Jada M. and Aaron B. are going</p>
+          </div>
+          <div class="card pick pick--highlight">
+            <div class="pick__top">
+              <span class="pick__link"><p class="card__title flush">Swing Cville Wednesday Lessons</p></span>
+              <span class="score-badge score-badge--sm">74</span>
+            </div>
+            <p class="pick__why">One step up the comfort ladder, and you said Wednesdays are free.</p>
+          </div>
+          <p class="browse-entry"><a class="btn btn--secondary btn--inline" href="#">See the whole week</a></p>
+          <p class="gallery__caption">Default and --highlight, with .score-badge and --sm, then .browse-entry below.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.score-badge .score-badge--sm</span>
+        <div class="gallery__stage">
+          <div class="gallery__row">
+            <div class="gallery__cell"><span class="score-badge">82</span><p class="gallery__caption">default</p></div>
+            <div class="gallery__cell"><span class="score-badge score-badge--sm">Social</span><p class="gallery__caption">--sm</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.people-grid .people-card .people-card__media .people-card__name .people-card__body .people-card__meta .people-card__actions</span>
+        <p class="gallery__note">A match as a poster: their photo fills the top, a fade carries their name, then why they are here
+          and the two ways to reach them.</p>
+        <div class="gallery__stage">
+          <div class="people-grid">
+            <article class="people-card">
+              <div class="people-card__media">
+                <img class="avatar avatar--photo" src="../img/people/u015.jpg" alt="">
+                <span class="tag">Kindling</span>
+                <p class="people-card__name">Maya K.<span class="ember ember--glow" aria-label="Empower score 41"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">41</span></span></p>
+              </div>
+              <div class="people-card__body">
+                <p class="people-card__meta">Three sessions together at Thursday Trivia.</p>
+                <div class="people-card__actions">
+                  <button type="button" class="mini-btn mini-btn--dark">Message</button>
+                  <button type="button" class="mini-btn">See profile</button>
+                </div>
+              </div>
+            </article>
+            <article class="people-card">
+              <div class="people-card__media">
+                <span class="avatar">SP</span>
+                <p class="people-card__name">Sam P.</p>
+              </div>
+              <div class="people-card__body">
+                <p class="people-card__meta">Two sessions together. No photo, so the initials fill the poster.</p>
+                <div class="people-card__actions">
+                  <button type="button" class="mini-btn">Add</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.people-row .people-row__body .people-row__name .people-row__meta</span>
+        <div class="gallery__stage">
+          <div class="people-row">
+            <img class="avatar avatar--photo" src="../img/people/u016.jpg" alt="">
+            <div class="people-row__body">
+              <p class="people-row__name">Devon R.<span class="ember ember--warm" aria-label="Empower score 18"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">18</span></span></p>
+              <p class="people-row__meta">You have both been to the last two trivia nights.</p>
+            </div>
+            <button type="button" class="mini-btn">Add</button>
+          </div>
+          <div class="people-row">
+            <span class="avatar">OB</span>
+            <div class="people-row__body">
+              <p class="people-row__name">Omar B.</p>
+              <p class="people-row__meta">One session together at Charlottesville Game Club.</p>
+            </div>
+            <button type="button" class="mini-btn is-selected">Added</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.person-hero .person-hero__scene .person-hero__photo .person-hero__body .person-hero__name .person-hero__line .person-hero__meta</span>
+        <p class="gallery__note">A match's portrait across the top of their profile, their own photo blurred behind it, fading into the page.</p>
+        <div class="gallery__stage">
+          <div class="person-hero">
+            <div class="person-hero__scene" aria-hidden="true"><img class="avatar avatar--photo" src="../img/people/u017.jpg" alt=""></div>
+            <div class="person-hero__photo"><img class="avatar avatar--photo" src="../img/people/u017.jpg" alt=""></div>
+            <div class="person-hero__body">
+              <h3 class="person-hero__name">Carlos M.</h3>
+              <p class="person-hero__line"><span class="ember ember--blaze" aria-label="Empower score 76"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">76</span></span><span class="score-badge score-badge--sm">Open</span></p>
+              <p class="person-hero__meta">Four sessions together. Also new to town this year.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.confirm-row .confirm-row--plain .confirm-row__body .confirm-row__title .confirm-row__meta .confirm-row__actions</span>
+        <div class="gallery__stage">
+          <div class="confirm-row">
+            <img class="event-art" src="../img/trivia.jpg" alt="" draggable="false">
+            <div class="confirm-row__body">
+              <p class="confirm-row__title">Thursday Trivia at Alamo Drafthouse</p>
+              <p class="confirm-row__meta">Thu, Nov 19 · 7pm. Did you make it?</p>
+              <div class="confirm-row__actions">
+                <button type="button" class="mini-btn mini-btn--dark">I went</button>
+                <button type="button" class="mini-btn">I missed it</button>
+              </div>
+            </div>
+          </div>
+          <div class="confirm-row confirm-row--plain">
+            <div class="confirm-row__body">
+              <p class="confirm-row__title">Open Mic at The Southern</p>
+              <p class="confirm-row__meta">Fri, Nov 20 · 8pm. No artwork for this one.</p>
+              <div class="confirm-row__actions">
+                <button type="button" class="mini-btn mini-btn--dark">I went</button>
+                <button type="button" class="mini-btn">I missed it</button>
+              </div>
+            </div>
+          </div>
+          <p class="gallery__caption">With artwork, then --plain without it.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.brief .brief__row .brief__title .brief__body .brief__list</span>
+        <div class="gallery__stage">
+          <div class="brief">
+            <div class="brief__row">
+              <p class="brief__title">Getting in</p>
+              <p class="brief__body">Walk past the box office and go up the stairs. The room is on the left.</p>
+            </div>
+            <div class="brief__row">
+              <p class="brief__title">What to expect</p>
+              <ul class="brief__list">
+                <li>Teams of four, formed at the bar.</li>
+                <li>Two rounds, with a break between them.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.daily .quiz-pair</span>
+        <p class="gallery__note">Today's this-or-that question, and the two-tile pair the onboarding quiz uses.</p>
+        <div class="gallery__stage">
+          <div class="daily">
+            <button type="button" class="option"><p class="option__title">A quiet table of six</p></button>
+            <button type="button" class="option"><p class="option__title">A room that fills up</p></button>
+            <p class="center"><button type="button" class="link-btn">Skip today</button></p>
+          </div>
+          <div class="quiz-pair mt-4">
+            <button type="button" class="option"><p class="option__title">Somewhere I can talk</p></button>
+            <button type="button" class="option is-selected"><p class="option__title">Somewhere there is music</p></button>
+          </div>
+          <p class="gallery__caption">.daily with its skip, then .quiz-pair with one tile selected.</p>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.ember-card .ember-line .intro-card</span>
+        <div class="gallery__stage">
+          <div class="card card--outline ember-card">
+            <span class="ember ember--glow ember--lg" aria-label="Empower score 41"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">41</span></span>
+            <div>
+              <p class="card__title">Your Empower score</p>
+              <p class="card__meta">It warms every time you go back to the same group.</p>
+            </div>
+          </div>
+          <p class="ember-line"><span class="ember ember--warm" aria-label="Empower score 18"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">18</span></span><span class="small muted">Felix's score</span></p>
+          <div class="card card--outline intro-card mt-4">
+            <img class="avatar avatar--lg avatar--photo" src="../img/people/u013.jpg" alt="">
+            <div>
+              <p class="eyebrow">Someone to look for</p>
+              <p class="card__title">Devon R.</p>
+              <p class="card__meta">Also new here, and also picked trivia two weeks running.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.lab-bar .lab-bar__label .lab-bar__track .lab-bar__fill and its three strategies</span>
+        <p class="gallery__note">One comparison bar in the Matching Lab. The width is a runtime token the page sets after it runs the model.</p>
+        <div class="gallery__stage">
+          <div class="card card--outline">
+            <p class="card__title">Have a Kindling connection after 4 weeks</p>
+            <p class="card__meta">The number we steer by: 3+ sessions with the same person.</p>
+            <div class="mt-3">
+              <div class="lab-bar"><span class="lab-bar__label">Random</span><span class="lab-bar__track"><span class="lab-bar__fill lab-bar__fill--random gallery__fill-quarter"></span></span><span class="lab-bar__value">25%</span></div>
+              <div class="lab-bar"><span class="lab-bar__label">Interests only</span><span class="lab-bar__track"><span class="lab-bar__fill lab-bar__fill--interests gallery__fill-half"></span></span><span class="lab-bar__value">50%</span></div>
+              <div class="lab-bar"><span class="lab-bar__label">Empower picks</span><span class="lab-bar__track"><span class="lab-bar__fill lab-bar__fill--empower gallery__fill-full"></span></span><span class="lab-bar__value">100%</span></div>
+              <div class="lab-bar"><span class="lab-bar__label">Not run yet</span><span class="lab-bar__track"><span class="lab-bar__fill lab-bar__fill--random"></span></span><span class="lab-bar__value">0%</span></div>
+            </div>
+          </div>
+          <p class="gallery__caption">--random, --interests, --empower, then the empty track before the model has run.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== COMPONENTS: TIER 6 and 7 -->
+    <section class="gallery__part">
+      <h2 class="gallery__part-title">Components, tiers 6 and 7: regions and screens</h2>
+      <p class="gallery__part-note">The frame around everything. These normally dress the page itself, so each one sits in a
+        phone-sized frame here. The frame is shorter than a real screen, so the content is cut off at the bottom on purpose.</p>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.page .page--wide .topbar .topbar__meta .has-nav .nav .nav__inner .nav__link .nav__icon</span>
+        <p class="gallery__note">The screen frame with 20-point gutters, the strip at the top, the aqua glow behind the top of
+          every screen, and the frosted navigation bar with the current tab in white.</p>
+        <div class="gallery__row">
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__screen has-nav">
+              <div class="page">
+                <header class="topbar">
+                  <a class="back" href="#"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>This week</a>
+                  <span class="topbar__meta">Week 3</span>
+                </header>
+                <p class="eyebrow">Thu, Nov 26</p>
+                <h3 class="title">Thursday Trivia.</h3>
+                <p class="subtitle">Alamo Drafthouse, 5th Street Station.</p>
+                <div class="card"><p class="card__title">You're going</p><p class="card__meta">With Jada M. and Aaron B.</p></div>
+              </div>
+              <nav class="nav">
+                <div class="nav__inner">
+                  <a class="nav__link" href="#"><svg class="nav__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+                  <a class="nav__link" href="#" aria-current="page"><svg class="nav__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>This week</span></a>
+                  <a class="nav__link" href="#"><svg class="nav__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Check in</span></a>
+                  <a class="nav__link" href="#"><svg class="nav__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.8-5.5 6.5-5.5s5.5 2 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.6c2.6.2 4.6 2 5.5 5.4"/></svg><span>People</span></a>
+                  <a class="nav__link" href="#"><svg class="nav__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg><span>Me</span></a>
+                </div>
+              </nav>
+            </div>
+            <p class="gallery__caption">.has-nav glow, .page, .topbar with .topbar__meta, and .nav with the current tab in white</p>
+          </div>
+          <div class="gallery__cell gallery__cell--wide">
+            <div class="gallery__screen">
+              <div class="page page--wide">
+                <header class="topbar"><span class="wordmark">empower<span>.</span></span><span class="topbar__meta">500 people</span></header>
+                <p class="eyebrow">Matching Lab</p>
+                <h3 class="title">Do our picks work?</h3>
+                <p class="subtitle">The wide frame, for the one screen that shows a table rather than a phone column.</p>
+              </div>
+            </div>
+            <p class="gallery__caption">.page--wide</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.chat-page</span>
+        <p class="gallery__note">The chat screen: the header pinned at the top, the messages resting on the bottom,
+          and room kept below them so the message box never covers the last one.</p>
+        <div class="gallery__screen chat-page">
+          <div class="page">
+            <header class="chat-header">
+              <a class="chat-header__back" href="#" aria-label="Back to People"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+              <a class="chat-header__who" href="#"><img class="avatar avatar--photo" src="../img/people/u014.jpg" alt="">
+                <span><span class="chat-header__name">Felix C.</span><span class="chat-header__sub">Met at Thursday Trivia</span></span></a>
+            </header>
+            <section>
+              <div class="chat">
+                <p class="chat__day">Mon, Nov 23</p>
+                <div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div>
+                <div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div>
+              </div>
+            </section>
+          </div>
+          <form class="composer">
+            <div class="composer__inner composer__type">
+              <input class="composer__input" aria-label="Message Felix" placeholder="Message Felix" autocomplete="off">
+              <button class="composer__send composer__send--mic" type="button" aria-label="Record a voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-6a3.5 3.5 0 0 0-7 0v6A3.5 3.5 0 0 0 12 15zm6-3.5a1 1 0 1 0-2 0 4 4 0 0 1-8 0 1 1 0 1 0-2 0 6 6 0 0 0 5 5.9V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.6a6 6 0 0 0 5-5.9z"/></svg></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="gallery__group">
+        <span class="gallery__label">.gallery .swatch .metric</span>
+        <p class="gallery__note">The three recipes this page is made of. The gallery frame, a colour swatch and a token row
+          are all design-system pieces too, so they are listed here for completeness: you are looking at every one of them.</p>
+      </div>
+    </section>
   </main>
 
   <!-- Shared scripts every page loads (checked by scripts/check_architecture.js). -->

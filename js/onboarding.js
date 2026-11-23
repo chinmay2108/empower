@@ -78,12 +78,18 @@
     }).join("") + "</div>";
   }
 
+  /* The tick on a done screen: a drawn line, never a text glyph. */
+  function bigCheck() {
+    return '<div class="big-check"><svg class="check-mark" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
+  }
+
   function body() {
     switch (state.step) {
       case 0:
-        return '<div class="center"><p class="eyebrow mt-4">New in town?</p>' +
+        return '<div class="center mt-4">' +
           '<h1 class="title">Find your people.<br>One group at a time.</h1>' +
-          '<p class="subtitle">Tell us a little about you. We\'ll find a few places worth coming back to.</p></div>' +
+          '<p class="subtitle">New in town? Tell us a little about you. We\'ll find a few places worth coming back to.</p></div>' +
           '<div class="field"><label class="label" for="name">Your first name</label>' +
           '<input class="input" id="name" autocomplete="given-name" value="' + ui.escapeHtml(state.name) + '"></div>';
       case 1:
@@ -98,12 +104,14 @@
         var q = QUIZ[state.quizIndex];
         return '<h1 class="title">This or that?</h1><p class="subtitle">First instinct wins. There\'s no wrong pick.</p>' +
           '<p class="label">' + (state.quizIndex + 1) + " of " + QUIZ.length + "</p>" +
-          ["a", "b"].map(function (side) {
-            return '<button type="button" class="option' + (state.answers[q.id] === side ? " is-selected" : "") +
-              '" data-kind="quiz" data-value="' + side + '"><p class="option__title">' + ui.escapeHtml(q[side]) + "</p></button>";
-          }).join("");
+          '<div class="quiz-pair">' + ["a", "b"].map(function (side) {
+            var on = state.answers[q.id] === side;
+            return '<button type="button" class="option' + (on ? " is-selected" : "") +
+              '" data-kind="quiz" data-value="' + side + '" aria-pressed="' + on +
+              '"><p class="option__title">' + ui.escapeHtml(q[side]) + "</p></button>";
+          }).join("") + "</div>";
       default:
-        return '<div class="center"><div class="big-check">&#10003;</div>' +
+        return '<div class="center">' + bigCheck() +
           '<h1 class="title">You\'re set, ' + ui.escapeHtml(state.name) + ".</h1>" +
           '<p class="subtitle">We found a few spots you\'ll like.</p></div>';
     }

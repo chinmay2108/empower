@@ -1,0 +1,11 @@
+{
+  "className": "section-title",
+  "purpose": "Heading over a rail or group of rows, like Recommended For You.",
+  "base": {
+    "margin": "{space.7} 0 {space.3}",
+    "font-size": "{type.size.lg}",
+    "font-weight": "{type.weight.medium}",
+    "line-height": "{type.line_height.snug}",
+    "color": "{color.text.secondary}"
+  }
+}

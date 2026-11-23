@@ -1,0 +1,27 @@
+{
+  "className": "input",
+  "purpose": "A text field: filled, squared, like Disney's password field.",
+  "base": {
+    "width": "100%",
+    "min-height": "{size.field}",
+    "padding": "{space.3} {space.4}",
+    "border": "{border.width.default} solid transparent",
+    "color": "{color.text.primary}",
+    "font-family": "inherit",
+    "font-size": "{type.size.md}",
+    "transition": "border-color {motion.duration.short} {motion.easing.standard}",
+    "&::placeholder": {
+      "color": "{color.text.tertiary}"
+    },
+    "&:focus": {
+      "outline": "none",
+      "border-color": "{color.accent.default}"
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      "transition": "none"
+    }
+  },
+  "surface": {
+    "base": "field"
+  }
+}
