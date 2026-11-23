@@ -34,6 +34,7 @@
     var tag = going ? "Going" : "";
     return '<div class="card card--outline pick">' +
       '<a class="pick__link" href="group.html?session=' + encodeURIComponent(s.id) + '">' +
+      ui.eventImage(g) +
       '<div class="pick__top"><div><p class="card__title">' + g.name + "</p>" +
       '<p class="card__meta">' + ui.formatDay(s.startsAt) + " · " + ui.formatTime(s.startsAt) + " · " + g.venue + "</p></div>" +
       (tag ? '<span class="tag">' + tag + "</span>" : "") + "</div>" +
@@ -50,7 +51,7 @@
     '<h1 class="title">Everything this week</h1>' +
     '<p class="subtitle">' + (fromSwipes ? "None of those clicked? No worries. Here's the whole week." : "The whole week. Tap one to see more.") + "</p>" +
     (left > 0 ? '<p><a class="btn btn--secondary btn--small" href="events.html">Back to your picks</a></p>' : "") +
-    rest.map(card).join("");
+    '<div class="browse-grid">' + rest.map(card).join("") + "</div>";
 
   Empower.log("browse.viewed", { from: fromSwipes ? "swipes" : "link", sessions: sessions.length });
 })();

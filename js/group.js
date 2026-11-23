@@ -44,6 +44,7 @@
   }
 
   host.innerHTML =
+    ui.eventImage(group) +
     '<p class="eyebrow">' + group.category + " · weekly</p>" +
     '<h1 class="title">' + group.name + "</h1>" +
     '<p class="subtitle">' + group.description + "</p>" +

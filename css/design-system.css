@@ -4,19 +4,19 @@
    Rule: below :root, every value is a var(--token). No hex, px or font names. */
 
 :root {
-  --color-surface-canvas: #ffffff;
-  --color-surface-panel: #f5f5f7;
+  --color-surface-canvas: #10121b;
+  --color-surface-panel: #1c202d;
   --color-surface-overlay: #ffffff29;
-  --color-text-primary: #161616;
-  --color-text-secondary: #686868;
-  --color-text-inverse: #ffffff;
-  --color-action-primary: #713ad5;
-  --color-action-secondary: #eee5fc;
-  --color-border-default: #eeeeee;
+  --color-text-primary: #f5f6fc;
+  --color-text-secondary: #b5b9cb;
+  --color-text-inverse: #10121b;
+  --color-action-primary: #9be1e2;
+  --color-action-secondary: #18383e;
+  --color-border-default: #383e50;
   --color-focus-ring: var(--color-action-primary);
-  --color-status-success: #4cb943;
+  --color-status-success: #8ce0b2;
   --color-status-warning: #ca951f;
-  --color-status-error: #b4401a;
+  --color-status-error: #ffa789;
   --type-family-body: "DM Sans", system-ui, sans-serif;
   --type-family-heading: var(--type-family-body);
   --type-size-body: 17px;

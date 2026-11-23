@@ -49,7 +49,8 @@
 
   function swipeCard(p, i) {
     return '<article class="swipe-card' + (i === 0 ? " is-top" : " is-next-" + i) + '" data-i="' + i + '" data-session="' + p.session.id +
-      '" data-group="' + p.group.id + '" aria-label="' + ui.escapeHtml(p.group.name) + '">' +
+      '" data-group="' + p.group.id + '"' + (i ? " inert" : "") + ' aria-label="' + ui.escapeHtml(p.group.name) + '">' +
+      ui.eventImage(p.group) +
       '<span class="swipe-card__stamp swipe-card__stamp--yes">I\'m in</span><span class="swipe-card__stamp swipe-card__stamp--no">Pass</span>' +
       '<p class="eyebrow">' + (passes.length + i === 0 ? "Your pick this week" : "Next best") + "</p>" +
       '<h2 class="swipe-card__title">' + p.group.name + "</h2>" +
@@ -76,9 +77,10 @@
     '<p class="eyebrow">' + ui.formatDay(now.toISOString()) + " to " + ui.formatDay(new Date(now.getTime() + 7 * 864e5).toISOString()) + "</p>" +
     '<h1 class="title">This week.</h1><p class="subtitle">Swipe right if you\'re in, left for another.</p>' +
     '<div class="deck" id="deck">' + picks.map(swipeCard).reverse().join("") + "</div>" +
-    '<div class="deck__actions"><button type="button" class="deck__btn deck__btn--no" data-swipe="left" aria-label="Pass">' + CROSS + "</button>" +
-    '<button type="button" class="deck__btn deck__btn--yes" data-swipe="right" aria-label="I\'m in">' + CHECK + "</button></div>" +
-    '<p class="small muted center"><span id="deck-count">' + countText(picks.length) + '</span> <span id="undo-row"></span></p>';
+    '<div class="deck__actions"><button type="button" class="deck__btn deck__btn--no" data-swipe="left" aria-label="Pass">' + CROSS + "Pass</button>" +
+    '<button type="button" class="deck__btn deck__btn--yes" data-swipe="right" aria-label="I\'m in">' + CHECK + "I'm in</button></div>" +
+    '<p class="small muted center"><span id="deck-count">' + countText(picks.length) + '</span> <span id="undo-row"></span></p>' +
+    '<p class="browse-entry center"><a class="btn btn--secondary btn--inline" href="browse.html">Explore all groups</a></p>';
 
   var deck = document.getElementById("deck");
   var undoRow = document.getElementById("undo-row");
@@ -91,6 +93,7 @@
     var cards = Array.prototype.slice.call(deck.querySelectorAll(".swipe-card")).filter(function (c) { return !c.classList.contains("is-gone"); });
     cards.sort(function (a, b) { return a.getAttribute("data-i") - b.getAttribute("data-i"); });
     cards.forEach(function (c, i) {
+      c.inert = i !== 0;
       c.className = "swipe-card" + (i === 0 ? " is-top" : " is-next-" + Math.min(i, 2));
     });
     document.getElementById("deck-count").textContent = countText(cards.length);
@@ -127,6 +130,7 @@
     var left = logic.UNDO_GRACE_SECONDS;
     var actions = host.querySelector(".deck__actions");
     if (actions) actions.remove();
+    host.querySelector(".browse-entry").remove();
     deck.innerHTML = '<div class="empty"><p class="empty__title">That was your last pick this week</p>' +
       '<p class="mt-4"><a class="btn btn--inline" href="browse.html?from=swipes">See everything now</a></p></div>';
     var count = document.getElementById("deck-count");
@@ -177,7 +181,10 @@
     else card.style.transform = "";
   }
   deck.addEventListener("pointerup", endDrag);
-  deck.addEventListener("pointercancel", endDrag);
+  deck.addEventListener("pointercancel", function () {
+    if (drag) drag.dx = 0;
+    endDrag();
+  });
 
   Empower.log("events.viewed", { picks: picks.map(function (p) { return p.session.id; }), swipesLeft: left });
 })();

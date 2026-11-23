@@ -11,32 +11,30 @@
     {
       "category": "color",
       "token_name": "color.surface.canvas",
-      "token_value": "#ffffff",
+      "token_value": "#10121b",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.canvas."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.panel",
-      "token_value": "#f5f5f7",
+      "token_value": "#1c202d",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--color-surface)"
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -59,96 +57,90 @@
     {
       "category": "color",
       "token_name": "color.text.primary",
-      "token_value": "#161616",
+      "token_value": "#f5f6fc",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Most common matching pixel in a bounded source region; no original design token is available.",
-        "notes": "From events.color.ink."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.secondary",
-      "token_value": "#686868",
+      "token_value": "#b5b9cb",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Most common matching pixel in a bounded source region; no original design token is available.",
-        "notes": "From events.color.muted."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.inverse",
-      "token_value": "#ffffff",
+      "token_value": "#10121b",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.white."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.primary",
-      "token_value": "#713ad5",
+      "token_value": "#9be1e2",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.purple."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.secondary",
-      "token_value": "#eee5fc",
+      "token_value": "#18383e",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.purple_bg."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.border.default",
-      "token_value": "#eeeeee",
+      "token_value": "#383e50",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.line."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -171,16 +163,15 @@
     {
       "category": "color",
       "token_name": "color.status.success",
-      "token_value": "#4cb943",
+      "token_value": "#8ce0b2",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "luma_13_3",
-        "figma_node_id": "13:3",
-        "measurement_method": "Raster color estimate to be checked by pixel sampling; provisional until visual review.",
-        "notes": "From events.color.green."
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -203,16 +194,15 @@
     {
       "category": "color",
       "token_name": "color.status.error",
-      "token_value": "#b4401a",
+      "token_value": "#ffa789",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "figma_node_id": null,
-        "measurement_method": null,
-        "notes": "Not in the Figma derivation; taken from the app's current css/styles.css. (--color-danger)"
+        "reference_id": "disney_discovery",
+        "measurement_method": "Authored Empower palette",
+        "notes": "Cinematic event discovery, November 2026."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },

@@ -18,16 +18,17 @@
   var profile = store.getProfile();
   var person = store.getPerson(ui.param("id"));
   var together = person ? people.sessionsTogether(person, store.getCommitments()) : 0;
-  var connected = person && store.getConnections().some(function (k) { return k.personId === person.id; });
+  var connected = person && store.getConnections().find(function (k) { return k.personId === person.id; });
   if (!person || !connected || !people.willAddBack(person, profile, together, profile && profile.createdAt)) {
     host.innerHTML = '<div class="empty"><p class="empty__title">You can only message matches</p><p class="mt-4"><a class="btn btn--inline" href="people.html">Back to People</a></p></div>';
     return;
   }
 
+  var sharedGroup = store.getGroup(connected.groupId);
   var first = person.name.split(" ")[0];
   document.getElementById("topbar").innerHTML = '<a class="chat-header__back" href="people.html" aria-label="Back to People">&larr;</a>' +
     '<a class="chat-header__who" href="person.html?id=' + person.id + '">' + ui.avatar(person) +
-    '<span><span class="chat-header__name">' + person.name + '</span><span class="chat-header__sub">Tap for profile</span></span></a>';
+    '<span><span class="chat-header__name">' + person.name + '</span><span class="chat-header__sub">' + (sharedGroup ? "Met at " + ui.escapeHtml(sharedGroup.name) : "View profile") + '</span></span></a>';
 
   /* Seed the conversation with a plan suggestion the first time. */
   if (!store.getMessages(person.id).length) {

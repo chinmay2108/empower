@@ -16,11 +16,20 @@
    fails if a file is missing from the list.
    ========================================================================== */
 
-var CACHE = "empower-v4";
+var CACHE = "empower-v5";
 var NETWORK_WAIT_MS = 3000;
 
 var FILES = [
   "./index.html",
+  "./img/choir.jpg",
+  "./img/dance.jpg",
+  "./img/games.jpg",
+  "./img/market.jpg",
+  "./img/open-mic.jpg",
+  "./img/pickleball.jpg",
+  "./img/running.jpg",
+  "./img/trivia.jpg",
+  "./img/volunteer.jpg",
   "./pages/browse.html",
   "./pages/chat.html",
   "./pages/commit.html",
