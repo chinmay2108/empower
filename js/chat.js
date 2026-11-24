@@ -45,29 +45,45 @@
 
   var typing = false;
 
-  function bubble(m) {
+  /* Their messages sit in a row with their photo; the photo shows on the last message of a run. */
+  function theirRow(inner, showFace) {
+    return '<div class="chat__row' + (showFace ? "" : " chat__row--cont") + '">' + (showFace ? ui.avatar(person, "sm") : "") + inner + "</div>";
+  }
+
+  function bubble(m, showFace) {
     if (m.from === "app") {
       return '<div class="bubble bubble--app">' + ui.escapeHtml(m.text) +
         (m.sessionId ? '<p class="mt-3"><a class="btn btn--small btn--inline" href="commit.html?session=' + encodeURIComponent(m.sessionId) + "&with=" + person.id + '">Commit to it</a></p>' : "") + "</div>";
     }
-    return '<div class="bubble ' + (m.from === "me" ? "bubble--me" : "bubble--them") + '">' + (m.audio ? ui.voiceNote(m.audio, m.seconds) : ui.escapeHtml(m.text)) +
-      '<span class="bubble__time">' + ui.chatTime(m.at) + "</span></div>";
+    var body = (m.audio ? ui.voiceNote(m.audio, m.seconds) : ui.escapeHtml(m.text)) + '<span class="bubble__time">' + ui.chatTime(m.at) + "</span>";
+    return m.from === "me" ? '<div class="bubble bubble--me">' + body + "</div>" : theirRow('<div class="bubble bubble--them">' + body + "</div>", showFace);
   }
 
+  /* Messages are drawn in turns: one speaker's run of messages on one day. */
   function render() {
     var messages = store.getMessages(person.id);
-    var lastDay = "";
+    var lastDay = "", html = "", open = false;
+    messages.forEach(function (m, i) {
+      var day = ui.formatDay(m.at);
+      var prev = messages[i - 1], next = messages[i + 1];
+      var newDay = day !== lastDay;
+      lastDay = day;
+      if (open && (newDay || prev.from !== m.from)) { html += "</div>"; open = false; }
+      if (newDay) html += '<p class="chat__day">' + day + "</p>";
+      if (!open) { html += '<div class="chat__turn">'; open = true; }
+      var turnEnds = !next || next.from !== m.from || ui.formatDay(next.at) !== day;
+      html += bubble(m, turnEnds && !(typing && !next));
+    });
+    if (typing) {
+      var last = messages[messages.length - 1];
+      if (open && last.from !== "them") { html += "</div>"; open = false; }
+      if (!open) { html += '<div class="chat__turn">'; open = true; }
+      html += theirRow('<div class="bubble bubble--them bubble--typing" aria-label="' + ui.escapeHtml(first) + ' is typing"><span></span><span></span><span></span></div>', true);
+    }
+    if (open) html += "</div>";
     host.innerHTML = '<div class="chat">' +
       (messages.some(function (m) { return m.from !== "app"; }) ? "" :
-        '<p class="chat__note">Say hi to ' + ui.escapeHtml(first) + ". (Replies are simulated in this demo.)</p>") +
-      messages.map(function (m) {
-        var day = ui.formatDay(m.at);
-        var sep = day !== lastDay ? '<p class="chat__day">' + day + "</p>" : "";
-        lastDay = day;
-        return sep + bubble(m);
-      }).join("") +
-      (typing ? '<div class="bubble bubble--them bubble--typing" aria-label="' + ui.escapeHtml(first) + ' is typing"><span></span><span></span><span></span></div>' : "") +
-      "</div>";
+        '<p class="chat__note">Say hi to ' + ui.escapeHtml(first) + ". (Replies are simulated in this demo.)</p>") + html + "</div>";
     ui.scrollToLatest();
   }
 

@@ -1,6 +1,6 @@
 {
   "className": "voice",
-  "purpose": "A playable voice note. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "purpose": "A playable voice note, drawn the way Hinge draws one: a round play button, the sound as a row of bars that fill in as it plays, and its length.",
   "base": {
     "display": "inline-flex",
     "align-items": "center",
@@ -17,27 +17,22 @@
       "border": "0",
       "display": "grid",
       "place-items": "center",
-      "background": "{color.accent.strong}",
+      "background": "{color.surface.inverse}",
       "& svg": {
         "width": "{size.icon.sm}",
         "height": "{size.icon.sm}",
-        "fill": "{color.text.primary}"
+        "fill": "{color.text.inverse}"
       }
     },
     "pause": {
       "display": "none"
     },
     "track": {
-      "flex": "1",
-      "height": "{size.progress}",
-      "border-radius": "{radius.pill}",
+      "flex": "none",
       "position": "relative",
-      "overflow": "hidden",
-      "&::before": {
-        "content": "\"\"",
-        "position": "absolute",
-        "inset": "0",
-        "background": "currentColor",
+      "width": "{size.wave}",
+      "height": "{size.icon.md}",
+      "& > $wave": {
         "opacity": "{opacity.dim}"
       }
     },
@@ -47,12 +42,18 @@
       "top": "0",
       "bottom": "0",
       "width": "{runtime.fill}",
-      "background": "currentColor"
+      "overflow": "hidden"
     },
     "len": {
       "font-weight": "{type.weight.medium}",
       "color": "currentColor",
       "font-variant-numeric": "tabular-nums"
+    },
+    "wave": {
+      "display": "block",
+      "width": "{size.wave}",
+      "height": "100%",
+      "fill": "currentColor"
     }
   },
   "states": {
@@ -71,6 +72,6 @@
   "text": {
     "__len": "caption"
   },
-  "example": "<span class=\"voice\"><button type=\"button\" class=\"voice__play\" aria-label=\"Play voice note\"><svg class=\"voice__start\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5v14l11-7z\"/></svg><svg class=\"voice__pause\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 5h4v14H7zM13 5h4v14h-4z\"/></svg></button><span class=\"voice__track\"><span class=\"voice__fill\"></span></span><span class=\"voice__len\">0:07</span></span>",
+  "example": "<span class=\"voice\"><button type=\"button\" class=\"voice__play\" aria-label=\"Play voice note\"><svg class=\"voice__start\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5v14l11-7z\"/></svg><svg class=\"voice__pause\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 5h4v14H7zM13 5h4v14h-4z\"/></svg></button><span class=\"voice__track\"><svg class=\"voice__wave\" viewBox=\"0 0 96 24\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><rect x=\"1\" y=\"9\" width=\"2\" height=\"6\" rx=\"1\"/><rect x=\"5\" y=\"7\" width=\"2\" height=\"10\" rx=\"1\"/><rect x=\"9\" y=\"4\" width=\"2\" height=\"16\" rx=\"1\"/><rect x=\"13\" y=\"8\" width=\"2\" height=\"8\" rx=\"1\"/><rect x=\"17\" y=\"2\" width=\"2\" height=\"20\" rx=\"1\"/><rect x=\"21\" y=\"6\" width=\"2\" height=\"12\" rx=\"1\"/><rect x=\"25\" y=\"1\" width=\"2\" height=\"22\" rx=\"1\"/><rect x=\"29\" y=\"7.5\" width=\"2\" height=\"9\" rx=\"1\"/><rect x=\"33\" y=\"5\" width=\"2\" height=\"14\" rx=\"1\"/><rect x=\"37\" y=\"3\" width=\"2\" height=\"18\" rx=\"1\"/><rect x=\"41\" y=\"8.5\" width=\"2\" height=\"7\" rx=\"1\"/><rect x=\"45\" y=\"6\" width=\"2\" height=\"12\" rx=\"1\"/><rect x=\"49\" y=\"2\" width=\"2\" height=\"20\" rx=\"1\"/><rect x=\"53\" y=\"7\" width=\"2\" height=\"10\" rx=\"1\"/><rect x=\"57\" y=\"4\" width=\"2\" height=\"16\" rx=\"1\"/><rect x=\"61\" y=\"9\" width=\"2\" height=\"6\" rx=\"1\"/><rect x=\"65\" y=\"5.5\" width=\"2\" height=\"13\" rx=\"1\"/><rect x=\"69\" y=\"1\" width=\"2\" height=\"22\" rx=\"1\"/><rect x=\"73\" y=\"7.5\" width=\"2\" height=\"9\" rx=\"1\"/><rect x=\"77\" y=\"3.5\" width=\"2\" height=\"17\" rx=\"1\"/><rect x=\"81\" y=\"6.5\" width=\"2\" height=\"11\" rx=\"1\"/><rect x=\"85\" y=\"2.5\" width=\"2\" height=\"19\" rx=\"1\"/><rect x=\"89\" y=\"8\" width=\"2\" height=\"8\" rx=\"1\"/><rect x=\"93\" y=\"5\" width=\"2\" height=\"14\" rx=\"1\"/></svg><span class=\"voice__fill\"><svg class=\"voice__wave\" viewBox=\"0 0 96 24\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><rect x=\"1\" y=\"9\" width=\"2\" height=\"6\" rx=\"1\"/><rect x=\"5\" y=\"7\" width=\"2\" height=\"10\" rx=\"1\"/><rect x=\"9\" y=\"4\" width=\"2\" height=\"16\" rx=\"1\"/><rect x=\"13\" y=\"8\" width=\"2\" height=\"8\" rx=\"1\"/><rect x=\"17\" y=\"2\" width=\"2\" height=\"20\" rx=\"1\"/><rect x=\"21\" y=\"6\" width=\"2\" height=\"12\" rx=\"1\"/><rect x=\"25\" y=\"1\" width=\"2\" height=\"22\" rx=\"1\"/><rect x=\"29\" y=\"7.5\" width=\"2\" height=\"9\" rx=\"1\"/><rect x=\"33\" y=\"5\" width=\"2\" height=\"14\" rx=\"1\"/><rect x=\"37\" y=\"3\" width=\"2\" height=\"18\" rx=\"1\"/><rect x=\"41\" y=\"8.5\" width=\"2\" height=\"7\" rx=\"1\"/><rect x=\"45\" y=\"6\" width=\"2\" height=\"12\" rx=\"1\"/><rect x=\"49\" y=\"2\" width=\"2\" height=\"20\" rx=\"1\"/><rect x=\"53\" y=\"7\" width=\"2\" height=\"10\" rx=\"1\"/><rect x=\"57\" y=\"4\" width=\"2\" height=\"16\" rx=\"1\"/><rect x=\"61\" y=\"9\" width=\"2\" height=\"6\" rx=\"1\"/><rect x=\"65\" y=\"5.5\" width=\"2\" height=\"13\" rx=\"1\"/><rect x=\"69\" y=\"1\" width=\"2\" height=\"22\" rx=\"1\"/><rect x=\"73\" y=\"7.5\" width=\"2\" height=\"9\" rx=\"1\"/><rect x=\"77\" y=\"3.5\" width=\"2\" height=\"17\" rx=\"1\"/><rect x=\"81\" y=\"6.5\" width=\"2\" height=\"11\" rx=\"1\"/><rect x=\"85\" y=\"2.5\" width=\"2\" height=\"19\" rx=\"1\"/><rect x=\"89\" y=\"8\" width=\"2\" height=\"8\" rx=\"1\"/><rect x=\"93\" y=\"5\" width=\"2\" height=\"14\" rx=\"1\"/></svg></span></span><span class=\"voice__len\">0:07</span></span>",
   "frame": "inline"
 }

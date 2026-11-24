@@ -8,11 +8,11 @@
     "text-decoration": "none",
     "color": "inherit",
     "font-family": "inherit",
-    "border": "{border.width.strong} solid transparent",
+    "border": "0",
     "padding": "{space.4}",
-    "margin-bottom": "{space.2}",
+    "margin-bottom": "{space.3}",
     "&[aria-pressed=\"true\"]": {
-      "border-color": "{color.accent.default}"
+      "background": "{color.surface.marked}"
     }
   },
   "elements": {
@@ -24,7 +24,7 @@
     "base": "surface"
   },
   "surface": {
-    "base": "panel"
+    "base": "key-tile"
   },
   "text": {
     "__title": "subheading"

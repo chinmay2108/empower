@@ -21,9 +21,7 @@
       "outline": {
         "border": "{border.width.default} solid {color.border.default}"
       },
-      "accent": {
-        "background": "{color.accent.soft}"
-      }
+      "accent": {}
     }
   },
   "defaultVariants": {

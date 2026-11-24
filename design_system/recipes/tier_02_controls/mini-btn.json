@@ -1,6 +1,6 @@
 {
   "className": "mini-btn",
-  "purpose": "A small action inside a row, such as Add or Message.",
+  "purpose": "A small action inside a card or row, such as Add or Message. The action tone writes it in candle gold on the quiet fill.",
   "base": {
     "flex": "none",
     "display": "inline-flex",
@@ -8,34 +8,47 @@
     "justify-content": "center",
     "min-height": "{size.touch_target}",
     "padding": "{space.2} {space.4}",
-    "border-radius": "{radius.small}",
-    "border": "{border.width.default} solid {color.border.strong}",
-    "background": "transparent",
+    "border": "0",
     "color": "{color.text.primary}",
     "font-family": "inherit",
     "text-decoration": "none",
     "&[aria-pressed=\"true\"]": {
-      "background": "{color.action.primary}",
-      "color": "{color.text.inverse}",
-      "border-color": "{color.action.primary}"
-    }
+      "background": "{color.surface.marked}"
+    },
+    "gap": "{space.2}"
   },
   "variants": {
     "tone": {
       "dark": {
-        "background": "{color.action.primary}",
-        "color": "{color.text.inverse}",
-        "border-color": "{color.action.primary}"
+        "color": "{color.text.inverse}"
+      },
+      "action": {
+        "color": "{color.action.primary}"
       }
     }
   },
   "interaction": {
-    "base": "toggle",
+    "base": "on-dark",
     "--dark": "on-light"
   },
   "text": {
     "base": "label-strong"
   },
   "example": "<button type=\"button\" class=\"mini-btn\" aria-pressed=\"false\">Add</button>",
-  "frame": "inline"
+  "frame": "inline",
+  "surface": {
+    "base": "button-quiet",
+    "--dark": "button"
+  },
+  "elements": {
+    "icon": {
+      "width": "{size.icon.md}",
+      "height": "{size.icon.md}",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "{border.width.strong}",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round"
+    }
+  }
 }

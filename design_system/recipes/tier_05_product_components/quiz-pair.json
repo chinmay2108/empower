@@ -3,20 +3,21 @@
   "uses": [
     "option"
   ],
-  "purpose": "The two sides of one this-or-that question, as an even pair of tiles.",
+  "purpose": "The two sides of one this-or-that question, as two big keys that fill the screen.",
   "text": {
-    "base & .option__title": "heading"
+    "base & .option__title": "answer"
   },
   "base": {
     "display": "grid",
-    "gap": "{space.3}",
+    "gap": "{space.4}",
     "margin-bottom": "{space.6}",
     "& .option": {
       "display": "grid",
-      "align-content": "center",
-      "min-height": "{size.stamp}",
-      "padding": "{space.5}",
-      "margin-bottom": "0"
+      "place-items": "center",
+      "min-height": "{size.tile}",
+      "padding": "{space.6}",
+      "margin-bottom": "0",
+      "text-align": "center"
     },
     "& .option__title": {
       "text-wrap": "balance"

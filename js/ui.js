@@ -74,6 +74,36 @@ Empower.ui = (function () {
       'aria-hidden="true">' + ICONS[key] + "</svg>";
   }
 
+  /* actionIcon(key): the picture inside an icon-only small button. Keys: "message", "me". */
+  var ACTION_ICONS = {
+    message: '<path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/>',
+    me: ICONS.me
+  };
+  function actionIcon(key) {
+    return '<svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true">' + ACTION_ICONS[key] + "</svg>";
+  }
+
+  /* star(person, on): the favourite toggle on a person. The listener below flips it and saves it,
+     then tells the page with an "empower:favorite" event so a list can redraw. */
+  function favoriteLabel(name, on) {
+    return (on ? "Remove " : "Add ") + name + (on ? " from favourites" : " to favourites");
+  }
+  function star(person, on) {
+    return '<button type="button" class="star" data-favorite="' + person.id + '" data-name="' + escapeHtml(person.name) + '" aria-pressed="' + (on ? "true" : "false") +
+      '" aria-label="' + escapeHtml(favoriteLabel(person.name, on)) + '">' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button>';
+  }
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-favorite]");
+    if (!btn) return;
+    var name = btn.getAttribute("data-name");
+    var on = Empower.store.toggleFavorite(btn.getAttribute("data-favorite"));
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
+    btn.setAttribute("aria-label", favoriteLabel(name, on));
+    toast(on ? name.split(" ")[0] + " is a favourite" : "Removed from favourites");
+    document.dispatchEvent(new CustomEvent("empower:favorite"));
+  });
+
   /* backIcon(): the chevron in front of a "back" link. */
   function backIcon() {
     return '<svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
@@ -256,7 +286,7 @@ Empower.ui = (function () {
       ' placeholder="' + escapeHtml(placeholder) + '" aria-label="' + escapeHtml(placeholder) + '">' +
       '<button class="composer__send" type="submit" aria-label="Send"' + (voice ? "" : " disabled") + ">" + SEND_ICON + "</button></div>" +
       '<div class="composer__inner composer__rec" hidden><button type="button" class="composer__cancel" data-rec="cancel">Cancel</button>' +
-      '<span class="composer__timer"><span class="rec-dot"></span><span data-rec="time">0:00</span></span>' +
+      '<span class="composer__timer"><span class="rec-dot"></span>' + wave("composer__wave") + '<span data-rec="time">0:00</span></span>' +
       '<button type="button" class="composer__send" data-rec="send" aria-label="Send voice note">' + SEND_ICON + "</button></div>";
     document.body.appendChild(form);
     var input = form.querySelector("input");
@@ -348,12 +378,20 @@ Empower.ui = (function () {
    * voiceNote(src, seconds): a playable voice-note bubble body: play
    * button, progress bar, length. Only data:audio URLs are accepted.
    */
+  /* wave(cls): the bars that stand for a voice note's sound. One fixed drawing, so every note looks alike. */
+  var WAVE_BARS = [6, 10, 16, 8, 20, 12, 22, 9, 14, 18, 7, 12, 20, 10, 16, 6, 13, 22, 9, 17, 11, 19, 8, 14].map(function (h, i) {
+    return '<rect x="' + (i * 4 + 1) + '" y="' + (12 - h / 2) + '" width="2" height="' + h + '" rx="1"/>';
+  }).join("");
+  function wave(cls) {
+    return '<svg class="' + cls + '" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true">' + WAVE_BARS + "</svg>";
+  }
+
   function voiceNote(src, seconds) {
     if (!/^data:audio\//.test(String(src))) return "";
     return '<span class="voice" data-voice="' + escapeHtml(src) + '">' +
       '<button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' +
       '<svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>' +
-      '<span class="voice__track"><span class="voice__fill"></span></span>' +
+      '<span class="voice__track">' + wave("voice__wave") + '<span class="voice__fill">' + wave("voice__wave") + "</span></span>" +
       '<span class="voice__len">' + duration(seconds || 0) + "</span></span>";
   }
 
@@ -410,6 +448,8 @@ Empower.ui = (function () {
     eventImage: eventImage,
     backIcon: backIcon,
     bigCheck: bigCheck,
+    actionIcon: actionIcon,
+    star: star,
     flowEvent: flowEvent,
     renderNav: renderNav,
     namesText: namesText,

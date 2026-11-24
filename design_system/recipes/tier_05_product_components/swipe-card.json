@@ -72,9 +72,9 @@
     },
     "stamp": {
       "position": "absolute",
-      "padding": "{space.1} {space.3}",
-      "border": "{border.width.heavy} solid currentColor",
-      "border-radius": "{radius.small}",
+      "padding": "{space.2} {space.4}",
+      "border": "0",
+      "border-radius": "{radius.pill}",
       "background": "{color.surface.canvas}",
       "opacity": "{opacity.hidden}",
       "transition": "opacity {motion.duration.short} {motion.easing.standard}",

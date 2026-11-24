@@ -2,38 +2,33 @@
   "purpose": "The one place that says what each kind of surface is made of: its fill, corner, edge and shadow. A recipe names a preset under \"surface\"; the generator lays the preset under the recipe's own styles, so a change here reaches every panel, tile or bar at once.",
   "presets": {
     "panel": {
-      "purpose": "A flat block that groups content: the grey fill, squared corners, a lit top edge and a soft shadow.",
+      "purpose": "A block that groups content: the flat slate fill and round corners. No edge, no shadow.",
       "styles": {
         "background": "{color.surface.panel}",
-        "border-radius": "{radius.small}",
-        "box-shadow": "{shadow.highlight}, {shadow.raised}"
+        "border-radius": "{radius.large}"
       }
     },
     "field": {
       "purpose": "Somewhere you type or choose: the panel fill and corner, with the lit edge only, so it sits in the page.",
       "styles": {
         "background": "{color.surface.panel}",
-        "border-radius": "{radius.small}",
-        "box-shadow": "{shadow.highlight}"
+        "border-radius": "{radius.small}"
       }
     },
     "tile": {
-      "purpose": "The frame around artwork in a grid or rail: a faint edge and the deep double shadow of a Disney tile.",
+      "purpose": "The frame around artwork in a grid or rail: round corners and a deep shadow. No edge.",
       "styles": {
         "background": "{color.surface.sunken}",
-        "border-radius": "{radius.small}",
-        "border": "{border.width.default} solid {color.border.hairline}",
-        "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
+        "border-radius": "{radius.medium}",
+        "box-shadow": "{shadow.tile_near}",
         "overflow": "hidden"
       }
     },
     "poster": {
-      "purpose": "A large card led by a photograph: rounder corners, the faint edge and the deep double shadow.",
+      "purpose": "A card led by a photograph: the flat indigo fill and round corners, so it sits with the other panels. No edge, no shadow.",
       "styles": {
         "background": "{color.surface.panel}",
-        "border-radius": "{radius.medium}",
-        "border": "{border.width.default} solid {color.border.hairline}",
-        "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
+        "border-radius": "{radius.large}",
         "overflow": "hidden"
       }
     },
@@ -66,11 +61,10 @@
       }
     },
     "photo": {
-      "purpose": "A card that is all photograph: the poster's corners, edge and shadow, and black behind the picture while it loads.",
+      "purpose": "A card that is all photograph: the poster's corners and shadow, and near-black behind the picture while it loads.",
       "styles": {
         "background": "{color.surface.sunken}",
-        "border-radius": "{radius.medium}",
-        "border": "{border.width.default} solid {color.border.hairline}",
+        "border-radius": "{radius.large}",
         "box-shadow": "{shadow.tile_far}, {shadow.tile_near}",
         "overflow": "hidden"
       }
@@ -79,14 +73,13 @@
       "purpose": "A field shaped as a pill, for one line you write and send: the chat composer.",
       "styles": {
         "background": "{color.surface.panel}",
-        "border-radius": "{radius.pill}",
-        "box-shadow": "{shadow.highlight}"
+        "border-radius": "{radius.pill}"
       }
     },
     "marked": {
-      "purpose": "A block singled out from its neighbours: an accent line drawn just inside its edge.",
+      "purpose": "A block singled out from its neighbours, or a choice that is switched on: the ember shade. No outline.",
       "styles": {
-        "box-shadow": "inset 0 0 0 {border.width.default} {color.accent.default}"
+        "background": "{color.surface.marked}"
       }
     },
     "glow": {
@@ -96,9 +89,39 @@
       }
     },
     "photo-fade": {
-      "purpose": "The foot of a photograph melting into the panel below it, so a name can sit across the join.",
+      "purpose": "The foot of a photograph melting into the panel below it, so the picture does not end on a hard line.",
       "styles": {
-        "background": "linear-gradient(to top, {color.surface.panel}, {color.scrim.soft} 50%, {color.scrim.none})"
+        "background": "linear-gradient(to top, {color.surface.panel}, {color.scrim.none} 50%)"
+      }
+    },
+    "button": {
+      "purpose": "The main button: a flat candle-gold fill with a soft warm glow beneath it, like a lit sign. No lip, no outline.",
+      "styles": {
+        "background": "{color.action.primary}",
+        "border-radius": "{radius.medium}",
+        "box-shadow": "{shadow.button_lift}"
+      }
+    },
+    "button-quiet": {
+      "purpose": "A second button or a small control: the lighter indigo fill, so it shows on a card as well as on the page. No lip, no outline.",
+      "styles": {
+        "background": "{color.action.secondary_pressed}",
+        "border-radius": "{radius.medium}",
+        "box-shadow": "{shadow.none}"
+      }
+    },
+    "control": {
+      "purpose": "A pill you can switch on: the flat slate fill, with no outline.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.pill}"
+      }
+    },
+    "key-tile": {
+      "purpose": "A big answer you press: the flat indigo fill and large corners.",
+      "styles": {
+        "background": "{color.surface.panel}",
+        "border-radius": "{radius.large}"
       }
     }
   }

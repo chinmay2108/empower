@@ -13,8 +13,8 @@
     "title": {
       "purpose": "The title of a screen, or a number that is the point of the screen.",
       "styles": {
-        "font-size": "{type.size.xxl}",
-        "font-weight": "{type.weight.heavy}",
+        "font-size": "{type.size.display}",
+        "font-weight": "{type.weight.black}",
         "line-height": "{type.line_height.tight}",
         "letter-spacing": "{type.letter_spacing.tight}"
       }
@@ -204,6 +204,24 @@
       "purpose": "Initials or a symbol drawn as text, at the display step. Not for words.",
       "styles": {
         "font-size": "{type.size.display}"
+      }
+    },
+    "figure": {
+      "purpose": "A big number that leads its tile.",
+      "styles": {
+        "font-size": "{type.size.figure}",
+        "font-weight": "{type.weight.black}",
+        "line-height": "{type.line_height.none}",
+        "letter-spacing": "{type.letter_spacing.tight}"
+      }
+    },
+    "answer": {
+      "purpose": "One side of a this-or-that question, large enough to read at a glance.",
+      "styles": {
+        "font-size": "{type.size.xxl}",
+        "font-weight": "{type.weight.heavy}",
+        "line-height": "{type.line_height.tight}",
+        "letter-spacing": "{type.letter_spacing.tight}"
       }
     }
   }
