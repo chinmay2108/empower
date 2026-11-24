@@ -16,39 +16,40 @@
   color-scheme: dark;
 
   /* color */
-  --color-surface-canvas: #17171b;
-  --color-surface-panel: #2f3036;
-  --color-surface-sunken: #080808;
-  --color-surface-bar: #1a1a1cd9;
-  --color-surface-inverse: #fcfcfe;
+  --color-surface-canvas: #0e101c;
+  --color-surface-panel: #1b1e33;
+  --color-surface-sunken: #07080f;
+  --color-surface-bar: #111322d9;
+  --color-surface-inverse: #f5eee7;
   --color-surface-overlay: #000000b3;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #cacacc;
-  --color-text-tertiary: #9d9ea6;
-  --color-text-inverse: #020202;
-  --color-action-primary: var(--color-surface-inverse);
-  --color-action-primary_pressed: #dbdbdd;
+  --color-text-primary: #f5eee7;
+  --color-text-secondary: #c5c8dc;
+  --color-text-tertiary: #a0a4bd;
+  --color-text-inverse: #0e101c;
+  --color-action-primary: #ffb85c;
+  --color-action-primary_pressed: #f0a646;
   --color-action-secondary: var(--color-surface-panel);
-  --color-action-secondary_pressed: #46464a;
-  --color-accent-default: #58e9ff;
-  --color-accent-strong: #07708a;
-  --color-accent-soft: #07708a40;
-  --color-border-default: #46464a;
-  --color-border-strong: #6e6e73;
-  --color-focus-ring: var(--color-accent-default);
-  --color-status-success: #8ce0b2;
-  --color-status-success_soft: #1b3931;
-  --color-status-warning: #ca951f;
-  --color-status-error: #ffa789;
-  --color-status-error_soft: #452c2b;
-  --color-ember-spark: #9a9aa6;
-  --color-ember-warm: #d97706;
-  --color-ember-glow: #ea580c;
-  --color-ember-blaze: #dc2626;
-  --color-scrim-strong: #080808f2;
-  --color-scrim-soft: #08080866;
-  --color-scrim-none: #08080800;
-  --color-glow-ambient: #07708a38;
+  --color-action-secondary_pressed: #2a2e4a;
+  --color-accent-default: #8fa2ff;
+  --color-accent-strong: #3a43a0;
+  --color-accent-soft: #8fa2ff2b;
+  --color-brand-belong: #f0619f;
+  --color-border-default: #2f3350;
+  --color-border-strong: #737899;
+  --color-focus-ring: var(--color-text-primary);
+  --color-status-success: #a8d568;
+  --color-status-success_soft: #22301a;
+  --color-status-warning: #ff8f5a;
+  --color-status-error: #ff6b6b;
+  --color-status-error_soft: #3d1f24;
+  --color-ember-spark: #b8aea4;
+  --color-ember-warm: #e8853a;
+  --color-ember-glow: #d9541e;
+  --color-ember-blaze: #b3261e;
+  --color-scrim-strong: #07080ff2;
+  --color-scrim-soft: #07080f66;
+  --color-scrim-none: #07080f00;
+  --color-glow-ambient: #8fa2ff14;
 
   /* type */
   --type-family-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -60,10 +61,12 @@
   --type-size-xl: 22px;
   --type-size-xxl: 28px;
   --type-size-display: 34px;
+  --type-size-figure: 52px;
   --type-weight-regular: 400;
   --type-weight-medium: 600;
   --type-weight-bold: 700;
   --type-weight-heavy: 800;
+  --type-weight-black: 900;
   --type-line_height-tight: 1.15;
   --type-line_height-snug: 1.3;
   --type-line_height-body: 1.5;
@@ -84,12 +87,13 @@
   --space-9: 64px;
 
   /* radius */
-  --radius-small: 4px;
-  --radius-medium: 8px;
-  --radius-large: 16px;
-  --radius-bubble: 18px;
+  --radius-small: 10px;
+  --radius-medium: 13.5px;
+  --radius-large: 18.23px;
+  --radius-bubble: 18.23px;
   --radius-pill: 999px;
   --radius-round: 50%;
+  --radius-tight: 7.41px;
 
   /* border */
   --border-width-default: 1px;
@@ -97,7 +101,8 @@
   --border-width-heavy: 4px;
 
   /* shadow */
-  --shadow-raised: 0 2px 8px #00000059;
+  --shadow-raised: 0 6px 18px -6px #00000080;
+  --shadow-none: 0 0 0 #00000000;
   --shadow-elevated: 0 8px 24px #00000080;
 
   /* blur */
@@ -155,6 +160,8 @@
   --size-switch-width: 44px;
   --size-switch-knob: 24px;
   --size-stamp: 72px;
+  --size-tile: 168px;
+  --size-card-person: 156px;
   --size-deck: 430px;
   --size-card-hero: 68%;
   --size-card-poster: 30%;
@@ -178,6 +185,7 @@
   --size-avatar-xs: 24px;
   --size-bubble: 80%;
   --size-voice: 180px;
+  --size-wave: 96px;
   --size-lab_label: 110px;
   --size-card-thumb: 34%;
   --size-card-min: 256px;
@@ -213,13 +221,20 @@
   --opacity-pressed: 0.6;
 
   /* shadow */
-  --shadow-highlight: inset 0 1px 0 #ffffff12;
+  --shadow-highlight: inset 0 1px 0 #f5eee71f;
   --shadow-tile_far: 0 26px 30px -10px #000000b0;
   --shadow-tile_near: 0 16px 10px -10px #000000ba;
+  --shadow-button_edge: inset 0 1px 0 #ffffff66;
+  --shadow-button_foot: inset 0 -2px 0 #0000002e;
+  --shadow-button_lift: 0 10px 28px -10px #ffb85c80;
+  --shadow-halo_band: 0 0 0 4px #f5eee70f;
+  --shadow-halo_glow: 0 0 0 0 #00000000;
 
   /* color */
-  --color-border-hairline: #f9f9f91a;
-  --color-border-hairline_strong: #f9f9f9cc;
+  --color-border-hairline: #f5eee71a;
+  --color-border-hairline_strong: #f5eee7cc;
+  --color-surface-marked: #2b3162;
+  --color-ember-kindling: #f2b66d;
 }
 
 /* avatar-wrap (tier 1): Centres a profile avatar. */
@@ -374,14 +389,14 @@ button:disabled, [aria-disabled="true"] {
   text-wrap: pretty;
 }
 
-/* tag (tier 1): White badge on a card, like Disney's New badge. */
+/* tag (tier 1): A small light badge on a card. */
 .tag {
   font-size: var(--type-size-xs);
   font-weight: var(--type-weight-bold);
   line-height: var(--type-line_height-snug);
   display: inline-block;
   padding: var(--space-hairline) var(--space-2);
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-tight);
   background: var(--color-surface-inverse);
   color: var(--color-text-inverse);
   white-space: nowrap;
@@ -424,8 +439,8 @@ button:disabled, [aria-disabled="true"] {
 
 /* title (tier 1): The one screen title, like Disney's For You. */
 .title {
-  font-size: var(--type-size-xxl);
-  font-weight: var(--type-weight-heavy);
+  font-size: var(--type-size-display);
+  font-weight: var(--type-weight-black);
   line-height: var(--type-line_height-tight);
   letter-spacing: var(--type-letter_spacing-tight);
   margin: 0 0 var(--space-2);
@@ -505,7 +520,7 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* btn (tier 2): The main action on a screen: white, squared, capitals, like Disney's Play button. */
+/* btn (tier 2): The main action on a screen: candle gold with a soft warm glow. Use one per screen. */
 .btn {
   cursor: pointer;
   transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
@@ -514,6 +529,9 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-snug);
   letter-spacing: var(--type-letter_spacing-caps);
   text-transform: uppercase;
+  background: var(--color-action-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-button_lift);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -522,8 +540,6 @@ button:disabled, [aria-disabled="true"] {
   min-height: var(--size-touch_target);
   padding: var(--space-3) var(--space-6);
   border: 0;
-  border-radius: var(--radius-small);
-  background: var(--color-action-primary);
   color: var(--color-text-inverse);
   font-family: inherit;
   text-decoration: none;
@@ -531,7 +547,9 @@ button:disabled, [aria-disabled="true"] {
   user-select: none;
 }
 .btn--secondary {
-  background: var(--color-surface-panel);
+  background: var(--color-action-secondary_pressed);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
   color: var(--color-text-primary);
 }
 .btn--small {
@@ -591,29 +609,30 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* chip (tier 2): A choice you can switch on, like Disney's filter chips. */
+/* chip (tier 2): A choice you can switch on. On, it fills with a brighter indigo and shows a tick, so it never relies on colour alone. */
 .chip {
   cursor: pointer;
   transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
   font-size: var(--type-size-sm);
   font-weight: var(--type-weight-medium);
   line-height: var(--type-line_height-snug);
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
   min-height: var(--size-touch_target);
   padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-pill);
-  border: var(--border-width-default) solid var(--color-border-strong);
-  background: transparent;
   color: var(--color-text-primary);
   font-family: inherit;
   user-select: none;
+  border: 0;
 }
 .chip[aria-pressed="true"] {
-  background: var(--color-action-primary);
-  border-color: var(--color-action-primary);
-  color: var(--color-text-inverse);
+  background: var(--color-surface-marked);
+}
+.chip[aria-pressed="true"]::before {
+  content: "✓";
 }
 @media (hover: hover) {
   .chip:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
@@ -623,20 +642,9 @@ button:disabled, [aria-disabled="true"] {
 .chip.is-hover {
   background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
 }
-@media (hover: hover) {
-  .chip[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
-    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-  }
-}
-.chip[aria-pressed="true"].is-hover, .chip[aria-current].is-hover, .chip.is-selected.is-hover {
-  background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-}
 .chip:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip.is-pressed {
   background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
   transform: scale(var(--motion-scale-pressed));
-}
-.chip[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .chip[aria-pressed="true"].is-pressed, .chip[aria-current].is-pressed, .chip.is-selected.is-pressed {
-  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
 }
 @media (prefers-reduced-motion: reduce) {
   .chip {
@@ -656,21 +664,20 @@ button:disabled, [aria-disabled="true"] {
   font-size: var(--type-size-sm);
   font-weight: var(--type-weight-bold);
   line-height: var(--type-line_height-snug);
+  background: var(--color-action-secondary_pressed);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
   display: grid;
   place-items: center;
   min-height: var(--size-field);
   padding: var(--space-3) var(--space-2);
-  border: var(--border-width-default) solid var(--color-border-strong);
-  border-radius: var(--radius-small);
-  background: transparent;
+  border: 0;
   color: var(--color-text-primary);
   font-family: inherit;
   text-align: center;
 }
 .choice[aria-pressed="true"] {
-  background: var(--color-action-primary);
-  color: var(--color-text-inverse);
-  border-color: var(--color-action-primary);
+  background: var(--color-surface-marked);
 }
 @media (hover: hover) {
   .choice:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
@@ -680,20 +687,9 @@ button:disabled, [aria-disabled="true"] {
 .choice.is-hover {
   background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
 }
-@media (hover: hover) {
-  .choice[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
-    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-  }
-}
-.choice[aria-pressed="true"].is-hover, .choice[aria-current].is-hover, .choice.is-selected.is-hover {
-  background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-}
 .choice:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice.is-pressed {
   background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
   transform: scale(var(--motion-scale-pressed));
-}
-.choice[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .choice[aria-pressed="true"].is-pressed, .choice[aria-current].is-pressed, .choice.is-selected.is-pressed {
-  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
 }
 @media (prefers-reduced-motion: reduce) {
   .choice {
@@ -718,7 +714,6 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-body);
   background: var(--color-surface-panel);
   border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight);
   width: 100%;
   min-height: var(--size-field);
   padding: var(--space-3) var(--space-4);
@@ -774,35 +769,48 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* mini-btn (tier 2): A small action inside a row, such as Add or Message. */
+/* mini-btn (tier 2): A small action inside a card or row, such as Add or Message. The action tone writes it in candle gold on the quiet fill. */
 .mini-btn {
   cursor: pointer;
   transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
   font-size: var(--type-size-sm);
   font-weight: var(--type-weight-bold);
   line-height: var(--type-line_height-snug);
+  background: var(--color-action-secondary_pressed);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
   flex: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: var(--size-touch_target);
   padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-small);
-  border: var(--border-width-default) solid var(--color-border-strong);
-  background: transparent;
+  border: 0;
   color: var(--color-text-primary);
   font-family: inherit;
   text-decoration: none;
+  gap: var(--space-2);
 }
 .mini-btn[aria-pressed="true"] {
-  background: var(--color-action-primary);
-  color: var(--color-text-inverse);
-  border-color: var(--color-action-primary);
+  background: var(--color-surface-marked);
+}
+.mini-btn__icon {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-strong);
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .mini-btn--dark {
   background: var(--color-action-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-button_lift);
   color: var(--color-text-inverse);
-  border-color: var(--color-action-primary);
+}
+.mini-btn--action {
+  color: var(--color-action-primary);
 }
 @media (hover: hover) {
   .mini-btn:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
@@ -812,20 +820,9 @@ button:disabled, [aria-disabled="true"] {
 .mini-btn.is-hover {
   background-image: linear-gradient(var(--color-state-hover_on_dark), var(--color-state-hover_on_dark));
 }
-@media (hover: hover) {
-  .mini-btn[aria-pressed="true"]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn[aria-current]:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn.is-selected:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
-    background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-  }
-}
-.mini-btn[aria-pressed="true"].is-hover, .mini-btn[aria-current].is-hover, .mini-btn.is-selected.is-hover {
-  background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
-}
 .mini-btn:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn.is-pressed {
   background-image: linear-gradient(var(--color-state-pressed_on_dark), var(--color-state-pressed_on_dark));
   transform: scale(var(--motion-scale-pressed));
-}
-.mini-btn[aria-pressed="true"]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn[aria-current]:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn.is-selected:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .mini-btn[aria-pressed="true"].is-pressed, .mini-btn[aria-current].is-pressed, .mini-btn.is-selected.is-pressed {
-  background-image: linear-gradient(var(--color-state-pressed_on_light), var(--color-state-pressed_on_light));
 }
 @media (prefers-reduced-motion: reduce) {
   .mini-btn {
@@ -865,20 +862,19 @@ button:disabled, [aria-disabled="true"] {
   cursor: pointer;
   transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   display: block;
   width: 100%;
   text-align: left;
   text-decoration: none;
   color: inherit;
   font-family: inherit;
-  border: var(--border-width-strong) solid transparent;
+  border: 0;
   padding: var(--space-4);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 .option[aria-pressed="true"] {
-  border-color: var(--color-accent-default);
+  background: var(--color-surface-marked);
 }
 .option__title {
   font-size: var(--type-size-md);
@@ -916,7 +912,6 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-body);
   background: var(--color-surface-panel);
   border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight);
   width: 100%;
   min-height: var(--size-field);
   padding: var(--space-3) var(--space-4);
@@ -926,6 +921,51 @@ button:disabled, [aria-disabled="true"] {
 }
 .select::placeholder {
   color: var(--color-text-tertiary);
+}
+
+/* star (tier 2): Marks a person as a favourite. Off, it is an outlined star; on, the star fills with candle gold, so the change is a shape as well as a colour. */
+.star {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  display: grid;
+  place-items: center;
+  width: var(--size-touch_target);
+  height: var(--size-touch_target);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-round);
+  background: var(--color-scrim-soft);
+  color: var(--color-text-primary);
+}
+.star svg {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--border-width-strong);
+  stroke-linejoin: round;
+}
+.star[aria-pressed="true"] {
+  color: var(--color-action-primary);
+}
+.star[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+@media (hover: hover) {
+  .star:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.star.is-hover {
+  opacity: var(--opacity-hover);
+}
+.star:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .star.is-pressed {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    transition: none;
+  }
 }
 
 /* big-check (tier 3): The check mark on a done screen. */
@@ -945,8 +985,7 @@ button:disabled, [aria-disabled="true"] {
 /* empty (tier 3): What a screen shows when there is nothing yet, with the next step. */
 .empty {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   text-align: center;
   padding: var(--space-8) var(--space-5);
   color: var(--color-text-secondary);
@@ -1045,8 +1084,7 @@ button:disabled, [aria-disabled="true"] {
   font-weight: var(--type-weight-regular);
   line-height: var(--type-line_height-body);
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   padding: var(--space-4);
   margin-bottom: var(--space-4);
 }
@@ -1063,11 +1101,11 @@ button:disabled, [aria-disabled="true"] {
 .steps {
   display: grid;
   grid-auto-flow: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
   margin-bottom: var(--space-6);
 }
 .steps span {
-  height: var(--size-progress);
+  height: var(--size-dot);
   border-radius: var(--radius-pill);
   background: var(--color-border-default);
   transition: background-color var(--motion-duration-medium) var(--motion-easing-standard);
@@ -1130,13 +1168,13 @@ button:disabled, [aria-disabled="true"] {
   gap: var(--space-2);
 }
 
-/* bubble (tier 4): One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+/* bubble (tier 4): One chat message. Theirs sits on the indigo panel; yours fills with the deeper indigo-blue, so the two sides differ by colour and by side. */
 .bubble {
   font-size: var(--type-size-md);
   font-weight: var(--type-weight-regular);
   line-height: var(--type-line_height-snug);
   max-width: var(--size-bubble);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-bubble);
   overflow-wrap: anywhere;
 }
@@ -1155,20 +1193,21 @@ button:disabled, [aria-disabled="true"] {
   color: var(--color-text-tertiary);
 }
 .bubble--them {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-large);
   align-self: flex-start;
   justify-self: start;
-  background: var(--color-surface-canvas);
   border-bottom-left-radius: var(--radius-small);
 }
 .bubble--me {
   align-self: flex-end;
   justify-self: end;
-  background: var(--color-surface-inverse);
-  color: var(--color-text-inverse);
+  background: var(--color-accent-strong);
+  color: var(--color-text-primary);
   border-bottom-right-radius: var(--radius-small);
 }
 .bubble--me .bubble__time {
-  color: var(--color-surface-panel);
+  color: var(--color-text-secondary);
 }
 .bubble--app {
   font-size: var(--type-size-sm);
@@ -1217,8 +1256,7 @@ button:disabled, [aria-disabled="true"] {
 /* card (tier 4): A panel that groups one thing. Image cards live in the product tier. */
 .card {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   display: block;
   padding: var(--space-4);
   margin-bottom: var(--space-3);
@@ -1241,8 +1279,7 @@ button:disabled, [aria-disabled="true"] {
   border: var(--border-width-default) solid var(--color-border-default);
 }
 .card--accent {
-  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-default);
-  background: var(--color-accent-soft);
+  background: var(--color-surface-marked);
 }
 
 /* chat-header (tier 4): Who you are talking to, pinned at the top of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
@@ -1259,7 +1296,6 @@ button:disabled, [aria-disabled="true"] {
   gap: var(--space-2);
   margin: 0 calc(var(--space-4) * -1) var(--space-3);
   padding: calc(var(--space-3) + env(safe-area-inset-top, 0px)) var(--space-4) var(--space-3);
-  border-bottom: var(--border-width-default) solid var(--color-border-default);
 }
 .chat-header__back {
   cursor: pointer;
@@ -1356,11 +1392,11 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* chat (tier 4): The list of messages. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+/* chat (tier 4): The list of messages, in turns. Messages in one turn sit close; a change of speaker opens a wider gap. Their last message in a turn carries their photo. */
 .chat {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
   margin: 0;
 }
 .chat__day {
@@ -1368,11 +1404,8 @@ button:disabled, [aria-disabled="true"] {
   font-weight: var(--type-weight-regular);
   line-height: var(--type-line_height-snug);
   align-self: center;
-  margin: var(--space-3) 0 var(--space-1);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface-canvas);
-  color: var(--color-text-secondary);
+  margin: var(--space-4) 0 var(--space-2);
+  color: var(--color-text-tertiary);
   text-align: center;
 }
 .chat__note {
@@ -1382,11 +1415,21 @@ button:disabled, [aria-disabled="true"] {
   align-self: center;
   max-width: var(--size-bubble);
   margin: var(--space-3) 0 var(--space-1);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface-canvas);
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
   text-align: center;
+}
+.chat__row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+.chat__row--cont {
+  padding-left: calc(var(--size-avatar-sm) + var(--space-2));
+}
+.chat__turn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 /* chip-row (tier 4): A wrapping row of chips. */
@@ -1407,7 +1450,7 @@ button:disabled, [aria-disabled="true"] {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* composer (tier 4): The message box pinned to the bottom of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+/* composer (tier 4): The message box pinned to the bottom of a chat: a round field, and one gold button that is a microphone until you type. While recording it shows the sound as moving bars. */
 .composer {
   background: var(--color-surface-bar);
   backdrop-filter: blur(var(--blur-overlay));
@@ -1417,7 +1460,6 @@ button:disabled, [aria-disabled="true"] {
   right: 0;
   bottom: 0;
   z-index: var(--layer-nav);
-  border-top: var(--border-width-default) solid var(--color-border-default);
   padding: var(--space-2) var(--space-3) calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
 }
 .composer__inner {
@@ -1436,7 +1478,6 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-body);
   background: var(--color-surface-panel);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-highlight);
   flex: 1;
   min-width: 0;
   min-height: var(--size-touch_target);
@@ -1490,6 +1531,17 @@ button:disabled, [aria-disabled="true"] {
   font-weight: var(--type-weight-medium);
   font-variant-numeric: tabular-nums;
 }
+.composer__wave {
+  width: var(--size-avatar-lg);
+  height: var(--size-icon-md);
+  fill: var(--color-accent-default);
+  animation: wave-pulse var(--motion-duration-pulse) infinite var(--motion-easing-standard);
+}
+@media (prefers-reduced-motion: reduce) {
+  .composer__wave {
+    animation: none;
+  }
+}
 @media (hover: hover) {
   .composer__send:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
     background-image: linear-gradient(var(--color-state-hover_on_light), var(--color-state-hover_on_light));
@@ -1526,6 +1578,11 @@ button:disabled, [aria-disabled="true"] {
 @media (prefers-reduced-motion: reduce) {
   .composer__cancel {
     transition: none;
+  }
+}
+@keyframes wave-pulse {
+  50% {
+    opacity: var(--opacity-dim);
   }
 }
 
@@ -1678,6 +1735,28 @@ button:disabled, [aria-disabled="true"] {
   color: var(--color-text-secondary);
 }
 
+/* prompt (tier 4): One thing about a person, said large: a small label and a big answer on its own panel, the way Hinge shows a prompt. */
+.prompt {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-large);
+  padding: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+.prompt__label {
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line_height-snug);
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-secondary);
+}
+.prompt__answer {
+  font-size: var(--type-size-xl);
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line_height-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
 /* rec-dot (tier 4): The pulsing light while a voice note records. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
 .rec-dot {
   display: block;
@@ -1708,16 +1787,16 @@ button:disabled, [aria-disabled="true"] {
 /* stat (tier 4): One number with its label. */
 .stat {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
-  padding: var(--space-4);
+  border-radius: var(--radius-large);
+  padding: var(--space-5) var(--space-4);
 }
 .stat__value {
-  font-size: var(--type-size-xxl);
-  font-weight: var(--type-weight-heavy);
-  line-height: var(--type-line_height-tight);
+  font-size: var(--type-size-figure);
+  font-weight: var(--type-weight-black);
+  line-height: var(--type-line_height-none);
   letter-spacing: var(--type-letter_spacing-tight);
   font-variant-numeric: tabular-nums;
+  margin-bottom: var(--space-2);
 }
 .stat__label {
   font-size: var(--type-size-sm);
@@ -1739,7 +1818,7 @@ button:disabled, [aria-disabled="true"] {
   color: var(--color-accent-default);
 }
 
-/* voice (tier 4): A playable voice note. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
+/* voice (tier 4): A playable voice note, drawn the way Hinge draws one: a round play button, the sound as a row of bars that fill in as it plays, and its length. */
 .voice {
   display: inline-flex;
   align-items: center;
@@ -1757,28 +1836,23 @@ button:disabled, [aria-disabled="true"] {
   border: 0;
   display: grid;
   place-items: center;
-  background: var(--color-accent-strong);
+  background: var(--color-surface-inverse);
 }
 .voice__play svg {
   width: var(--size-icon-sm);
   height: var(--size-icon-sm);
-  fill: var(--color-text-primary);
+  fill: var(--color-text-inverse);
 }
 .voice__pause {
   display: none;
 }
 .voice__track {
-  flex: 1;
-  height: var(--size-progress);
-  border-radius: var(--radius-pill);
+  flex: none;
   position: relative;
-  overflow: hidden;
+  width: var(--size-wave);
+  height: var(--size-icon-md);
 }
-.voice__track::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: currentColor;
+.voice__track > .voice__wave {
   opacity: var(--opacity-dim);
 }
 .voice__fill {
@@ -1787,7 +1861,7 @@ button:disabled, [aria-disabled="true"] {
   top: 0;
   bottom: 0;
   width: var(--runtime-fill);
-  background: currentColor;
+  overflow: hidden;
 }
 .voice__len {
   font-size: var(--type-size-xs);
@@ -1795,6 +1869,12 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-snug);
   color: currentColor;
   font-variant-numeric: tabular-nums;
+}
+.voice__wave {
+  display: block;
+  width: var(--size-wave);
+  height: 100%;
+  fill: currentColor;
 }
 .voice.is-playing .voice__play .voice__pause {
   display: block;
@@ -1883,8 +1963,7 @@ button:disabled, [aria-disabled="true"] {
 /* confirm-row (tier 5): A session waiting to be confirmed: its artwork, when it was, and the two answers. */
 .confirm-row {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   display: grid;
   grid-template-columns: var(--size-card-thumb) 1fr;
   align-items: start;
@@ -1993,9 +2072,8 @@ button:disabled, [aria-disabled="true"] {
 }
 .event-card__media {
   background: var(--color-surface-sunken);
-  border-radius: var(--radius-small);
-  border: var(--border-width-default) solid var(--color-border-hairline);
-  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-tile_near);
   overflow: hidden;
   position: relative;
 }
@@ -2049,8 +2127,7 @@ button:disabled, [aria-disabled="true"] {
   cursor: pointer;
   transition: transform var(--motion-duration-instant) var(--motion-easing-standard), background-color var(--motion-duration-short) var(--motion-easing-standard), border-color var(--motion-duration-short) var(--motion-easing-standard), color var(--motion-duration-short) var(--motion-easing-standard), opacity var(--motion-duration-short) var(--motion-easing-standard);
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   display: grid;
   grid-template-columns: var(--size-card-thumb) 1fr;
   align-items: center;
@@ -2084,7 +2161,7 @@ button:disabled, [aria-disabled="true"] {
   padding: var(--space-4);
 }
 .event-row--today {
-  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-default);
+  background: var(--color-surface-marked);
 }
 @media (hover: hover) {
   .event-row:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
@@ -2109,15 +2186,20 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* featured (tier 5): The home invitation to this week's picks: a strip of event artwork fading into a title and one action. */
+/* featured (tier 5): The one thing to do next on Home: event artwork fading into a title and the screen's single action. */
 .featured {
+  cursor: pointer;
+  transition: transform var(--motion-duration-short) var(--motion-easing-standard);
   background: var(--color-surface-sunken);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
+  border-radius: var(--radius-large);
   box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
   overflow: hidden;
   position: relative;
   isolation: isolate;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: var(--space-3);
 }
 .featured__art {
   position: relative;
@@ -2136,6 +2218,13 @@ button:disabled, [aria-disabled="true"] {
   background: linear-gradient(to top, var(--color-surface-sunken), var(--color-scrim-none) 50%);
   pointer-events: none;
 }
+.featured__art--single {
+  grid-template-columns: 1fr;
+}
+.featured__art--single .event-art {
+  aspect-ratio: var(--ratio-detail);
+  border-radius: 0;
+}
 .featured__body {
   position: relative;
   display: grid;
@@ -2148,8 +2237,8 @@ button:disabled, [aria-disabled="true"] {
   margin: var(--space-3) 0 0;
 }
 .featured__title {
-  font-size: var(--type-size-xxl);
-  font-weight: var(--type-weight-heavy);
+  font-size: var(--type-size-display);
+  font-weight: var(--type-weight-black);
   line-height: var(--type-line_height-tight);
   letter-spacing: var(--type-letter_spacing-tight);
   margin: 0;
@@ -2160,6 +2249,32 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-body);
   margin: 0;
   color: var(--color-text-secondary);
+}
+@media (hover: hover) {
+  .featured:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: scale(var(--motion-scale-hover));
+  }
+}
+.featured.is-hover {
+  transform: scale(var(--motion-scale-hover));
+}
+.featured:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .featured.is-pressed {
+  transform: scale(var(--motion-scale-card_pressed));
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured {
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
 }
 
 /* hero (tier 5): Artwork across the top of a detail screen, fading into the page, like Disney's title screen. */
@@ -2238,17 +2353,22 @@ button:disabled, [aria-disabled="true"] {
   }
 }
 
-/* people-card (tier 5): A match as a poster: their photo fills the top, a fade carries their name, then one line of shared context and the two ways to reach them. */
+/* people-card (tier 5): A person as a small poster: their photo fading into the card, their name, why they are here, and one action. For a match the whole card opens their profile and a star marks a favourite. */
 .people-card {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
-  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  border-radius: var(--radius-large);
   overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   isolation: isolate;
+}
+.people-card .star {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  z-index: var(--layer-raised);
 }
 .people-card__media {
   position: relative;
@@ -2262,42 +2382,40 @@ button:disabled, [aria-disabled="true"] {
   border-radius: 0;
   object-fit: cover;
 }
-.people-card__media::after {
-  background: linear-gradient(to top, var(--color-surface-panel), var(--color-scrim-soft) 50%, var(--color-scrim-none));
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
 .people-card__media .tag {
   position: absolute;
   top: var(--space-2);
   left: var(--space-2);
   z-index: var(--layer-raised);
+  pointer-events: none;
+}
+.people-card__media::after {
+  background: linear-gradient(to top, var(--color-surface-panel), var(--color-scrim-none) 50%);
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 .people-card__name {
   font-size: var(--type-size-lg);
   font-weight: var(--type-weight-heavy);
   line-height: var(--type-line_height-tight);
   letter-spacing: var(--type-letter_spacing-tight);
-  position: absolute;
-  left: var(--space-3);
-  right: var(--space-3);
-  bottom: var(--space-2);
-  z-index: var(--layer-raised);
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
-  text-shadow: 0 0 var(--space-2) var(--color-scrim-strong);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .people-card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-3);
+  gap: var(--space-1);
+  padding: 0 var(--space-3) var(--space-3);
 }
 .people-card__meta {
   font-size: var(--type-size-sm);
@@ -2305,11 +2423,44 @@ button:disabled, [aria-disabled="true"] {
   line-height: var(--type-line_height-snug);
   margin: 0;
   color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .people-card__actions {
+  position: relative;
+  z-index: var(--layer-raised);
   display: grid;
-  gap: var(--space-2);
   margin-top: auto;
+  padding-top: var(--space-2);
+}
+.people-card__link {
+  cursor: pointer;
+  transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
+  color: inherit;
+  text-decoration: none;
+}
+.people-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+@media (hover: hover) {
+  .people-card__link:hover:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]) {
+    opacity: var(--opacity-hover);
+  }
+}
+.people-card__link.is-hover {
+  opacity: var(--opacity-hover);
+}
+.people-card__link:active:is(a, button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]), .people-card__link.is-pressed {
+  opacity: var(--opacity-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .people-card__link {
+    transition: none;
+  }
 }
 
 /* people-grid (tier 5): The people who matter most, two posters to a row. */
@@ -2323,8 +2474,7 @@ button:disabled, [aria-disabled="true"] {
 /* people-row (tier 5): Someone you keep seeing, as a row: a square photo, their name, one line of why they are here, and the way to add them. */
 .people-row {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -2361,7 +2511,7 @@ button:disabled, [aria-disabled="true"] {
   color: var(--color-text-secondary);
 }
 
-/* person-hero (tier 5): A match's portrait across the top of their profile, their own photo blurred behind it, fading into the page like Disney's title screen. */
+/* person-hero (tier 5): A match's portrait at the top of their profile, their own photo blurred into a wash of colour behind it and fading into the page. A star marks them as a favourite. */
 .person-hero {
   position: relative;
   margin: 0 calc(var(--space-5) * -1) var(--space-5);
@@ -2376,6 +2526,12 @@ button:disabled, [aria-disabled="true"] {
   z-index: var(--layer-base);
   background: linear-gradient(to top, var(--color-surface-canvas), var(--color-scrim-none) 50%);
   pointer-events: none;
+}
+.person-hero .star {
+  position: absolute;
+  top: var(--space-7);
+  right: var(--space-5);
+  z-index: var(--layer-raised);
 }
 .person-hero__scene {
   position: absolute;
@@ -2393,9 +2549,7 @@ button:disabled, [aria-disabled="true"] {
 }
 .person-hero__photo {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
-  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  border-radius: var(--radius-large);
   overflow: hidden;
   position: relative;
   z-index: var(--layer-raised);
@@ -2459,23 +2613,25 @@ button:disabled, [aria-disabled="true"] {
   color: var(--color-text-secondary);
 }
 
-/* quiz-pair (tier 5): The two sides of one this-or-that question, as an even pair of tiles. */
+/* quiz-pair (tier 5): The two sides of one this-or-that question, as two big keys that fill the screen. */
 .quiz-pair {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-4);
   margin-bottom: var(--space-6);
 }
 .quiz-pair .option {
   display: grid;
-  align-content: center;
-  min-height: var(--size-stamp);
-  padding: var(--space-5);
+  place-items: center;
+  min-height: var(--size-tile);
+  padding: var(--space-6);
   margin-bottom: 0;
+  text-align: center;
 }
 .quiz-pair .option__title {
-  font-size: var(--type-size-lg);
-  font-weight: var(--type-weight-bold);
-  line-height: var(--type-line_height-snug);
+  font-size: var(--type-size-xxl);
+  font-weight: var(--type-weight-heavy);
+  line-height: var(--type-line_height-tight);
+  letter-spacing: var(--type-letter_spacing-tight);
   text-wrap: balance;
 }
 
@@ -2495,8 +2651,7 @@ button:disabled, [aria-disabled="true"] {
 /* swipe-card (tier 5): The weekly pick: artwork fills the card, a fade carries the title, like Disney's featured card. */
 .swipe-card {
   background: var(--color-surface-sunken);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
+  border-radius: var(--radius-large);
   box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
   overflow: hidden;
   position: relative;
@@ -2552,8 +2707,8 @@ button:disabled, [aria-disabled="true"] {
   z-index: var(--layer-stamp);
 }
 .swipe-card__title {
-  font-size: var(--type-size-xxl);
-  font-weight: var(--type-weight-heavy);
+  font-size: var(--type-size-display);
+  font-weight: var(--type-weight-black);
   line-height: var(--type-line_height-tight);
   letter-spacing: var(--type-letter_spacing-tight);
   margin: 0;
@@ -2586,9 +2741,9 @@ button:disabled, [aria-disabled="true"] {
   letter-spacing: var(--type-letter_spacing-caps);
   text-transform: uppercase;
   position: absolute;
-  padding: var(--space-1) var(--space-3);
-  border: var(--border-width-heavy) solid currentColor;
-  border-radius: var(--radius-small);
+  padding: var(--space-2) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-pill);
   background: var(--color-surface-canvas);
   opacity: var(--opacity-hidden);
   transition: opacity var(--motion-duration-short) var(--motion-easing-standard);
@@ -2747,6 +2902,20 @@ button:disabled, [aria-disabled="true"] {
 }
 .page--wide {
   max-width: var(--size-page_wide);
+}
+
+/* people-shelf (tier 6): One row of person cards you scroll sideways, like a Disney shelf. Every group of people on the People screen is one of these, so a person always looks the same. */
+.people-shelf {
+  display: flex;
+  gap: var(--space-3);
+  margin: 0 calc(var(--space-5) * -1) var(--space-5);
+  padding: 0 var(--space-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.people-shelf > * {
+  flex: none;
+  width: var(--size-card-person);
 }
 
 /* topbar (tier 6): The strip at the top with the wordmark or the way back. */
@@ -2955,9 +3124,6 @@ button:disabled, [aria-disabled="true"] {
 }
 
 /* chat-page (tier 7): The chat screen layout: messages sit just above the message box. Round 2: outside the Disney+ reference, so it takes the shared tokens only. */
-.chat-page {
-  background: var(--color-surface-panel);
-}
 .chat-page .page {
   padding: 0 var(--space-4) calc(var(--size-composer_clearance) + env(safe-area-inset-bottom, 0px));
   min-height: 100dvh;
@@ -2972,9 +3138,6 @@ button:disabled, [aria-disabled="true"] {
 }
 .chat-page .page > section:has(.empty) {
   justify-content: center;
-}
-.chat-page .empty {
-  background: var(--color-surface-canvas);
 }
 
 /* flow-event (tier 7): The event a commit or check-in screen is about: an event row held still, because here it is not a link. */
@@ -3000,6 +3163,7 @@ button:disabled, [aria-disabled="true"] {
 .sample--color-accent-default { background: var(--color-accent-default); }
 .sample--color-accent-strong { background: var(--color-accent-strong); }
 .sample--color-accent-soft { background: var(--color-accent-soft); }
+.sample--color-brand-belong { background: var(--color-brand-belong); }
 .sample--color-border-default { background: var(--color-border-default); }
 .sample--color-border-strong { background: var(--color-border-strong); }
 .sample--color-focus-ring { background: var(--color-focus-ring); }
@@ -3025,10 +3189,12 @@ button:disabled, [aria-disabled="true"] {
 .sample--type-size-xl { font-size: var(--type-size-xl); }
 .sample--type-size-xxl { font-size: var(--type-size-xxl); }
 .sample--type-size-display { font-size: var(--type-size-display); }
+.sample--type-size-figure { font-size: var(--type-size-figure); }
 .sample--type-weight-regular { font-weight: var(--type-weight-regular); }
 .sample--type-weight-medium { font-weight: var(--type-weight-medium); }
 .sample--type-weight-bold { font-weight: var(--type-weight-bold); }
 .sample--type-weight-heavy { font-weight: var(--type-weight-heavy); }
+.sample--type-weight-black { font-weight: var(--type-weight-black); }
 .sample--type-line-height-tight { line-height: var(--type-line_height-tight); }
 .sample--type-line-height-snug { line-height: var(--type-line_height-snug); }
 .sample--type-line-height-body { line-height: var(--type-line_height-body); }
@@ -3051,10 +3217,12 @@ button:disabled, [aria-disabled="true"] {
 .sample--radius-bubble { border-radius: var(--radius-bubble); }
 .sample--radius-pill { border-radius: var(--radius-pill); }
 .sample--radius-round { border-radius: var(--radius-round); }
+.sample--radius-tight { border-radius: var(--radius-tight); }
 .sample--border-width-default { height: var(--border-width-default); }
 .sample--border-width-strong { height: var(--border-width-strong); }
 .sample--border-width-heavy { height: var(--border-width-heavy); }
 .sample--shadow-raised { box-shadow: var(--shadow-raised); }
+.sample--shadow-none { box-shadow: var(--shadow-none); }
 .sample--shadow-elevated { box-shadow: var(--shadow-elevated); }
 .sample--opacity-disabled { opacity: var(--opacity-disabled); }
 .sample--opacity-dim { opacity: var(--opacity-dim); }
@@ -3078,6 +3246,8 @@ button:disabled, [aria-disabled="true"] {
 .sample--size-switch-width { width: var(--size-switch-width); }
 .sample--size-switch-knob { width: var(--size-switch-knob); }
 .sample--size-stamp { width: var(--size-stamp); }
+.sample--size-tile { width: var(--size-tile); }
+.sample--size-card-person { width: var(--size-card-person); }
 .sample--size-deck { width: var(--size-deck); }
 .sample--size-card-hero { width: var(--size-card-hero); }
 .sample--size-card-poster { width: var(--size-card-poster); }
@@ -3091,6 +3261,7 @@ button:disabled, [aria-disabled="true"] {
 .sample--size-avatar-xs { width: var(--size-avatar-xs); }
 .sample--size-bubble { width: var(--size-bubble); }
 .sample--size-voice { width: var(--size-voice); }
+.sample--size-wave { width: var(--size-wave); }
 .sample--size-lab-label { width: var(--size-lab_label); }
 .sample--size-card-thumb { width: var(--size-card-thumb); }
 .sample--size-card-min { width: var(--size-card-min); }
@@ -3109,30 +3280,32 @@ button:disabled, [aria-disabled="true"] {
 .sample--shadow-highlight { box-shadow: var(--shadow-highlight); }
 .sample--shadow-tile-far { box-shadow: var(--shadow-tile_far); }
 .sample--shadow-tile-near { box-shadow: var(--shadow-tile_near); }
+.sample--shadow-button-edge { box-shadow: var(--shadow-button_edge); }
+.sample--shadow-button-foot { box-shadow: var(--shadow-button_foot); }
+.sample--shadow-button-lift { box-shadow: var(--shadow-button_lift); }
+.sample--shadow-halo-band { box-shadow: var(--shadow-halo_band); }
+.sample--shadow-halo-glow { box-shadow: var(--shadow-halo_glow); }
 .sample--color-border-hairline { background: var(--color-border-hairline); }
 .sample--color-border-hairline-strong { background: var(--color-border-hairline_strong); }
+.sample--color-surface-marked { background: var(--color-surface-marked); }
+.sample--color-ember-kindling { background: var(--color-ember-kindling); }
 .sample--surface-panel {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight), var(--shadow-raised);
+  border-radius: var(--radius-large);
 }
 .sample--surface-field {
   background: var(--color-surface-panel);
   border-radius: var(--radius-small);
-  box-shadow: var(--shadow-highlight);
 }
 .sample--surface-tile {
   background: var(--color-surface-sunken);
-  border-radius: var(--radius-small);
-  border: var(--border-width-default) solid var(--color-border-hairline);
-  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-tile_near);
   overflow: hidden;
 }
 .sample--surface-poster {
   background: var(--color-surface-panel);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
-  box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
+  border-radius: var(--radius-large);
   overflow: hidden;
 }
 .sample--surface-floating {
@@ -3153,22 +3326,38 @@ button:disabled, [aria-disabled="true"] {
 }
 .sample--surface-photo {
   background: var(--color-surface-sunken);
-  border-radius: var(--radius-medium);
-  border: var(--border-width-default) solid var(--color-border-hairline);
+  border-radius: var(--radius-large);
   box-shadow: var(--shadow-tile_far), var(--shadow-tile_near);
   overflow: hidden;
 }
 .sample--surface-field-round {
   background: var(--color-surface-panel);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-highlight);
 }
 .sample--surface-marked {
-  box-shadow: inset 0 0 0 var(--border-width-default) var(--color-accent-default);
+  background: var(--color-surface-marked);
 }
 .sample--surface-glow {
   filter: drop-shadow(0 0 var(--space-1) var(--color-ember-glow));
 }
 .sample--surface-photo-fade {
-  background: linear-gradient(to top, var(--color-surface-panel), var(--color-scrim-soft) 50%, var(--color-scrim-none));
+  background: linear-gradient(to top, var(--color-surface-panel), var(--color-scrim-none) 50%);
+}
+.sample--surface-button {
+  background: var(--color-action-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-button_lift);
+}
+.sample--surface-button-quiet {
+  background: var(--color-action-secondary_pressed);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
+}
+.sample--surface-control {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-pill);
+}
+.sample--surface-key-tile {
+  background: var(--color-surface-panel);
+  border-radius: var(--radius-large);
 }

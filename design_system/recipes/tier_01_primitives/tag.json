@@ -1,10 +1,10 @@
 {
   "className": "tag",
-  "purpose": "White badge on a card, like Disney's New badge.",
+  "purpose": "A small light badge on a card.",
   "base": {
     "display": "inline-block",
     "padding": "{space.hairline} {space.2}",
-    "border-radius": "{radius.small}",
+    "border-radius": "{radius.tight}",
     "background": "{color.surface.inverse}",
     "color": "{color.text.inverse}",
     "white-space": "nowrap"

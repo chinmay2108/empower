@@ -44,6 +44,7 @@ Empower.store = (function () {
     commitments: "empower.commitments",
     reflections: "empower.reflections",
     connections: "empower.connections",
+    favorites: "empower.favorites",
     messages: "empower.messages",
     answers: "empower.answers",
     meetups: "empower.meetups",
@@ -214,6 +215,18 @@ Empower.store = (function () {
       write(KEYS.connections, list);
       Empower.log("store.connection_added", { personId: item.personId });
       return item;
+    },
+
+    /* ---- Favourites: ids of the people the user starred ---- */
+    getFavorites: function () {
+      return read(KEYS.favorites, []);
+    },
+    toggleFavorite: function (personId) {
+      var list = read(KEYS.favorites, []);
+      var on = list.indexOf(personId) === -1;
+      write(KEYS.favorites, on ? list.concat(personId) : list.filter(function (id) { return id !== personId; }));
+      Empower.log("store.favorite_toggled", { personId: personId, on: on });
+      return on;
     },
 
     /* ---- Messages: { personId, from: "me" | "them" | "app", text, at, sessionId? } ---- */

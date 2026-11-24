@@ -14,10 +14,18 @@
   var commitments = store.getCommitments();
   var host = document.getElementById("home-next");
 
-  /* One row on Home: the event's artwork, its name and one line of detail, under a heading. */
-  function card(cls, href, title, meta, heading, group) {
+  /* One card on Home, under a heading. The first one is the lead: big artwork, a title and the screen's one button. */
+  var hasLead = false;
+  function card(cls, href, title, meta, heading, group, action) {
     var art = group ? ui.eventImage(group) : "";
-    return (heading ? '<h2 class="section-title">' + heading + "</h2>" : "") +
+    var head = heading ? '<h2 class="section-title">' + heading + "</h2>" : "";
+    if (!hasLead && art) {
+      hasLead = true;
+      return head + '<a class="featured" href="' + href + '"><div class="featured__art featured__art--single">' + art + "</div>" +
+        '<div class="featured__body"><p class="featured__title">' + title + '</p><p class="featured__meta">' + meta +
+        '</p><span class="btn">' + action + "</span></div></a>";
+    }
+    return head +
       '<a class="event-row ' + cls + (art ? "" : " event-row--plain") + '" href="' + href + '">' + art +
       '<span class="event-row__body"><span class="event-row__title">' + title +
       '</span><span class="event-row__meta">' + meta + "</span></span></a>";
@@ -41,16 +49,16 @@
     today.forEach(function (c) {
       var g = store.getGroup(c.groupId);
       html += card("event-row--today", "pages/prep.html?c=" + c.id, g.name + " · " + ui.formatTime(c.startsAt),
-        (c.leaveAt ? "Head out at " + ui.formatHHMM(c.leaveAt) + ". " : "") + "Everything you need is in here.", "Today", g);
+        (c.leaveAt ? "Head out at " + ui.formatHHMM(c.leaveAt) + ". " : "") + "Everything you need is in here.", "Today", g, "Get ready");
     });
     if (toCheck.length || toRate.length) {
       var first = toCheck[0] || toRate[0];
       html += card("", "pages/reflect.html", "How was " + store.getGroup(first.groupId).name + "?",
-        "How'd it go? Tell us in a tap.", "After your last session", store.getGroup(first.groupId));
+        "How'd it go? Tell us in a tap.", "After your last session", store.getGroup(first.groupId), "Tell us");
     }
     if (next && !today.some(function (c) { return c.id === next.id; })) {
       html += card("", "pages/prep.html?c=" + next.id, store.getGroup(next.groupId).name,
-        ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt), "Next up", store.getGroup(next.groupId));
+        ui.formatDay(next.startsAt) + " · " + ui.formatTime(next.startsAt), "Next up", store.getGroup(next.groupId), "See the plan");
     }
     if (!html) {
       /* Three different pieces of event artwork, so the invitation shows what is on offer. */

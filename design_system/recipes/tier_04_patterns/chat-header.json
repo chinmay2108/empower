@@ -14,8 +14,7 @@
     "justify-content": "flex-start",
     "gap": "{space.2}",
     "margin": "0 calc({space.4} * -1) {space.3}",
-    "padding": "calc({space.3} + env(safe-area-inset-top, 0px)) {space.4} {space.3}",
-    "border-bottom": "{border.width.default} solid {color.border.default}"
+    "padding": "calc({space.3} + env(safe-area-inset-top, 0px)) {space.4} {space.3}"
   },
   "elements": {
     "back": {

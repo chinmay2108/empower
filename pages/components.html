@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#17171b">
+  <meta name="theme-color" content="#0e101c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Empower">
 </head>
@@ -30,23 +30,23 @@
       <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">panel</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-panel">A flat block that groups content: the grey fill, squared corners, a lit top edge and a soft shadow.</div></div>
-          <p class="board__delta">background: color.surface.panel · border-radius: radius.small · box-shadow: shadow.highlight, shadow.raised · used by .option, .empty, .notice, .card, .stat, .confirm-row, .event-row, .people-row</p>
+          <div class="board__bed"><div class="board__surface sample--surface-panel">A block that groups content: the flat slate fill and round corners. No edge, no shadow.</div></div>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.large · used by .empty, .notice, .bubble, .card, .prompt, .stat, .confirm-row, .event-row, .people-row</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">field</figcaption>
           <div class="board__bed"><div class="board__surface sample--surface-field">Somewhere you type or choose: the panel fill and corner, with the lit edge only, so it sits in the page.</div></div>
-          <p class="board__delta">background: color.surface.panel · border-radius: radius.small · box-shadow: shadow.highlight · used by .input, .select</p>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.small · used by .input, .select</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">tile</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-tile">The frame around artwork in a grid or rail: a faint edge and the deep double shadow of a Disney tile.</div></div>
-          <p class="board__delta">background: color.surface.sunken · border-radius: radius.small · border: border.width.default solid color.border.hairline · box-shadow: shadow.tile_far, shadow.tile_near · overflow: hidden · used by .event-card</p>
+          <div class="board__bed"><div class="board__surface sample--surface-tile">The frame around artwork in a grid or rail: round corners and a deep shadow. No edge.</div></div>
+          <p class="board__delta">background: color.surface.sunken · border-radius: radius.medium · box-shadow: shadow.tile_near · overflow: hidden · used by .event-card</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">poster</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-poster">A large card led by a photograph: rounder corners, the faint edge and the deep double shadow.</div></div>
-          <p class="board__delta">background: color.surface.panel · border-radius: radius.medium · border: border.width.default solid color.border.hairline · box-shadow: shadow.tile_far, shadow.tile_near · overflow: hidden · used by .people-card, .person-hero</p>
+          <div class="board__bed"><div class="board__surface sample--surface-poster">A card led by a photograph: the flat indigo fill and round corners, so it sits with the other panels. No edge, no shadow.</div></div>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.large · overflow: hidden · used by .people-card, .person-hero</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">floating</figcaption>
@@ -61,7 +61,7 @@
         <figure class="board__card">
           <figcaption class="board__label">fill</figcaption>
           <div class="board__bed"><div class="board__surface sample--surface-fill">A small filled mark, such as a quiet tag or an avatar with no photo: the panel grey and nothing else.</div></div>
-          <p class="board__delta">background: color.surface.panel · used by .avatar, .tag, .btn, .board, .chat-page</p>
+          <p class="board__delta">background: color.surface.panel · used by .avatar, .tag, .board</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">sheet</figcaption>
@@ -70,18 +70,18 @@
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">photo</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-photo">A card that is all photograph: the poster's corners, edge and shadow, and black behind the picture while it loads.</div></div>
-          <p class="board__delta">background: color.surface.sunken · border-radius: radius.medium · border: border.width.default solid color.border.hairline · box-shadow: shadow.tile_far, shadow.tile_near · overflow: hidden · used by .featured, .swipe-card</p>
+          <div class="board__bed"><div class="board__surface sample--surface-photo">A card that is all photograph: the poster's corners and shadow, and near-black behind the picture while it loads.</div></div>
+          <p class="board__delta">background: color.surface.sunken · border-radius: radius.large · box-shadow: shadow.tile_far, shadow.tile_near · overflow: hidden · used by .featured, .swipe-card</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">field-round</figcaption>
           <div class="board__bed"><div class="board__surface sample--surface-field-round">A field shaped as a pill, for one line you write and send: the chat composer.</div></div>
-          <p class="board__delta">background: color.surface.panel · border-radius: radius.pill · box-shadow: shadow.highlight · used by .composer</p>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.pill · used by .composer</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">marked</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-marked">A block singled out from its neighbours: an accent line drawn just inside its edge.</div></div>
-          <p class="board__delta">box-shadow: inset 0 0 0 border.width.default color.accent.default · used by .card, .event-row</p>
+          <div class="board__bed"><div class="board__surface sample--surface-marked">A block singled out from its neighbours, or a choice that is switched on: the ember shade. No outline.</div></div>
+          <p class="board__delta">background: color.surface.marked · used by .card, .event-row</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">glow</figcaption>
@@ -90,8 +90,28 @@
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">photo-fade</figcaption>
-          <div class="board__bed"><div class="board__surface sample--surface-photo-fade">The foot of a photograph melting into the panel below it, so a name can sit across the join.</div></div>
-          <p class="board__delta">background: linear-gradient(to top, color.surface.panel, color.scrim.soft 50%, color.scrim.none) · used by .people-card</p>
+          <div class="board__bed"><div class="board__surface sample--surface-photo-fade">The foot of a photograph melting into the panel below it, so the picture does not end on a hard line.</div></div>
+          <p class="board__delta">background: linear-gradient(to top, color.surface.panel, color.scrim.none 50%) · used by .people-card</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">button</figcaption>
+          <div class="board__bed"><div class="board__surface sample--surface-button">The main button: a flat candle-gold fill with a soft warm glow beneath it, like a lit sign. No lip, no outline.</div></div>
+          <p class="board__delta">background: color.action.primary · border-radius: radius.medium · box-shadow: shadow.button_lift · used by .btn, .mini-btn</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">button-quiet</figcaption>
+          <div class="board__bed"><div class="board__surface sample--surface-button-quiet">A second button or a small control: the lighter indigo fill, so it shows on a card as well as on the page. No lip, no outline.</div></div>
+          <p class="board__delta">background: color.action.secondary_pressed · border-radius: radius.medium · box-shadow: shadow.none · used by .btn, .choice, .mini-btn</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">control</figcaption>
+          <div class="board__bed"><div class="board__surface sample--surface-control">A pill you can switch on: the flat slate fill, with no outline.</div></div>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.pill · used by .chip</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">key-tile</figcaption>
+          <div class="board__bed"><div class="board__surface sample--surface-key-tile">A big answer you press: the flat indigo fill and large corners.</div></div>
+          <p class="board__delta">background: color.surface.panel · border-radius: radius.large · used by .option</p>
         </figure>
       </div>
     </section>
@@ -102,7 +122,7 @@
       <div class="board__family">
         <h3 class="board__name">on-dark</h3>
         <p class="board__purpose">A control drawn on a dark fill: a light veil on hover, a stronger one and a slight shrink when pressed.</p>
-        <p class="board__meta">hover background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark) · pressed background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed) · used by .btn--secondary</p>
+        <p class="board__meta">hover background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark) · pressed background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed) · used by .btn--secondary, .chip, .choice, .mini-btn</p>
       </div>
       <div class="board__family">
         <h3 class="board__name">on-light</h3>
@@ -112,7 +132,7 @@
       <div class="board__family">
         <h3 class="board__name">toggle</h3>
         <p class="board__purpose">A control that can be switched on. Off, it answers like a dark control; on, it has turned white, so the veil turns dark.</p>
-        <p class="board__meta">hover background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark) · pressed background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed) · used by .chip, .choice, .mini-btn</p>
+        <p class="board__meta">hover background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark) · pressed background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed) · used by nothing yet</p>
       </div>
       <div class="board__family">
         <h3 class="board__name">surface</h3>
@@ -132,12 +152,12 @@
       <div class="board__family">
         <h3 class="board__name">dim</h3>
         <p class="board__purpose">A mark or icon already at full strength, such as the wordmark: it eases back on hover and further while held.</p>
-        <p class="board__meta">hover opacity: opacity.hover · pressed opacity: opacity.pressed · used by .wordmark, .chat-header__back, .chat-header__who, .voice__play</p>
+        <p class="board__meta">hover opacity: opacity.hover · pressed opacity: opacity.pressed · used by .wordmark, .star, .chat-header__back, .chat-header__who, .voice__play, .people-card__link</p>
       </div>
       <div class="board__family">
         <h3 class="board__name">card</h3>
         <p class="board__purpose">A card led by artwork, like a Disney tile: it grows a touch on hover and settles back a touch when pressed.</p>
-        <p class="board__meta">hover transform: scale(motion.scale.hover) · pressed transform: scale(motion.scale.card_pressed) · used by .event-card__link</p>
+        <p class="board__meta">hover transform: scale(motion.scale.hover) · pressed transform: scale(motion.scale.card_pressed) · used by .event-card__link, .featured</p>
       </div>
     </section>
 
@@ -294,7 +314,7 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.tag</h3>
-        <p class="board__purpose">White badge on a card, like Disney's New badge.</p>
+        <p class="board__purpose">A small light badge on a card.</p>
         <p class="board__meta">tier 1 · surface fill on --quiet</p>
         <div class="board__grid">
         <figure class="board__card">
@@ -377,8 +397,8 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.btn</h3>
-        <p class="board__purpose">The main action on a screen: white, squared, capitals, like Disney's Play button.</p>
-        <p class="board__meta">tier 2 · surface fill on --secondary · states on-light · states on-dark on --secondary</p>
+        <p class="board__purpose">The main action on a screen: candle gold with a soft warm glow. Use one per screen.</p>
+        <p class="board__meta">tier 2 · surface button · surface button-quiet on --secondary · states on-light · states on-dark on --secondary</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
@@ -407,7 +427,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Variant: secondary</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="btn btn--secondary">I'm in</button></div>
-          <p class="board__delta">surface fill · color: color.text.primary</p>
+          <p class="board__delta">surface button-quiet · color: color.text.primary</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: secondary + hover</figcaption>
@@ -433,8 +453,8 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.chip</h3>
-        <p class="board__purpose">A choice you can switch on, like Disney's filter chips.</p>
-        <p class="board__meta">tier 2 · states toggle</p>
+        <p class="board__purpose">A choice you can switch on. On, it fills with a brighter indigo and shows a tick, so it never relies on colour alone.</p>
+        <p class="board__meta">tier 2 · surface control · states on-dark</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
@@ -443,12 +463,12 @@
         <figure class="board__card">
           <figcaption class="board__label">Hover</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="chip is-hover" aria-pressed="false">Walk</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Pressed</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="chip is-pressed" aria-pressed="false">Walk</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Focus</figcaption>
@@ -458,12 +478,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Selected</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="chip" aria-pressed="true">Walk</button></div>
-          <p class="board__delta">background: color.action.primary · border-color: color.action.primary · color: color.text.inverse</p>
-        </figure>
-        <figure class="board__card">
-          <figcaption class="board__label">Selected + hover</figcaption>
-          <div class="board__bed board__bed--inline"><button type="button" class="chip is-hover" aria-pressed="true">Walk</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_light, color.state.hover_on_light)</p>
+          <p class="board__delta">background: color.surface.marked</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Disabled</figcaption>
@@ -475,7 +490,7 @@
       <section class="board__family">
         <h3 class="board__name">.choice</h3>
         <p class="board__purpose">One of two or three big answers, such as Yes, Sort of, No.</p>
-        <p class="board__meta">tier 2 · states toggle</p>
+        <p class="board__meta">tier 2 · surface button-quiet · states on-dark</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
@@ -484,12 +499,12 @@
         <figure class="board__card">
           <figcaption class="board__label">Hover</figcaption>
           <div class="board__bed"><button type="button" class="choice is-hover" aria-pressed="false">Good</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Pressed</figcaption>
           <div class="board__bed"><button type="button" class="choice is-pressed" aria-pressed="false">Good</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Focus</figcaption>
@@ -499,12 +514,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Selected</figcaption>
           <div class="board__bed"><button type="button" class="choice" aria-pressed="true">Good</button></div>
-          <p class="board__delta">background: color.action.primary · color: color.text.inverse · border-color: color.action.primary</p>
-        </figure>
-        <figure class="board__card">
-          <figcaption class="board__label">Selected + hover</figcaption>
-          <div class="board__bed"><button type="button" class="choice is-hover" aria-pressed="true">Good</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_light, color.state.hover_on_light)</p>
+          <p class="board__delta">background: color.surface.marked</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Disabled</figcaption>
@@ -584,8 +594,8 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.mini-btn</h3>
-        <p class="board__purpose">A small action inside a row, such as Add or Message.</p>
-        <p class="board__meta">tier 2 · states toggle · states on-light on --dark</p>
+        <p class="board__purpose">A small action inside a card or row, such as Add or Message. The action tone writes it in candle gold on the quiet fill.</p>
+        <p class="board__meta">tier 2 · surface button-quiet · surface button on --dark · states on-dark · states on-light on --dark</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
@@ -594,12 +604,12 @@
         <figure class="board__card">
           <figcaption class="board__label">Hover</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="mini-btn is-hover" aria-pressed="false">Add</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.hover_on_dark, color.state.hover_on_dark)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Pressed</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="mini-btn is-pressed" aria-pressed="false">Add</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
+          <p class="board__delta">preset on-dark · background-image: linear-gradient(color.state.pressed_on_dark, color.state.pressed_on_dark) · transform: scale(motion.scale.pressed)</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Focus</figcaption>
@@ -609,12 +619,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Selected</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="mini-btn" aria-pressed="true">Add</button></div>
-          <p class="board__delta">background: color.action.primary · color: color.text.inverse · border-color: color.action.primary</p>
-        </figure>
-        <figure class="board__card">
-          <figcaption class="board__label">Selected + hover</figcaption>
-          <div class="board__bed board__bed--inline"><button type="button" class="mini-btn is-hover" aria-pressed="true">Add</button></div>
-          <p class="board__delta">preset toggle · background-image: linear-gradient(color.state.hover_on_light, color.state.hover_on_light)</p>
+          <p class="board__delta">background: color.surface.marked</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Disabled</figcaption>
@@ -624,7 +629,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Variant: dark</figcaption>
           <div class="board__bed board__bed--inline"><button type="button" class="mini-btn mini-btn--dark" aria-pressed="false">Add</button></div>
-          <p class="board__delta">background: color.action.primary · color: color.text.inverse · border-color: color.action.primary</p>
+          <p class="board__delta">surface button · color: color.text.inverse</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: dark + hover</figcaption>
@@ -636,12 +641,17 @@
           <div class="board__bed board__bed--inline"><button type="button" class="mini-btn mini-btn--dark is-pressed" aria-pressed="false">Add</button></div>
           <p class="board__delta">preset on-light · background-image: linear-gradient(color.state.pressed_on_light, color.state.pressed_on_light) · transform: scale(motion.scale.pressed)</p>
         </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Variant: action</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="mini-btn mini-btn--action" aria-pressed="false">Add</button></div>
+          <p class="board__delta">color: color.action.primary</p>
+        </figure>
         </div>
       </section>
       <section class="board__family">
         <h3 class="board__name">.option</h3>
         <p class="board__purpose">A selectable row with a title and a line of detail.</p>
-        <p class="board__meta">tier 2 · surface panel · states surface</p>
+        <p class="board__meta">tier 2 · surface key-tile · states surface</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
@@ -665,7 +675,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Selected</figcaption>
           <div class="board__bed"><button type="button" class="option" aria-pressed="true"><p class="option__title">A quiet table of six</p></button></div>
-          <p class="board__delta">border-color: color.accent.default</p>
+          <p class="board__delta">background: color.surface.marked</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Disabled</figcaption>
@@ -687,6 +697,42 @@
           <figcaption class="board__label">Focus</figcaption>
           <div class="board__bed"><select class="select is-focus" aria-label="How far will you travel?"><option>A walk away</option><option>A short drive</option><option>Anywhere in town</option></select></div>
           <p class="board__delta">outline: border.width.strong solid color.focus.ring · outline-offset: space.hairline</p>
+        </figure>
+        </div>
+      </section>
+      <section class="board__family">
+        <h3 class="board__name">.star</h3>
+        <p class="board__purpose">Marks a person as a favourite. Off, it is an outlined star; on, the star fills with candle gold, so the change is a shape as well as a colour.</p>
+        <p class="board__meta">tier 2 · states dim</p>
+        <div class="board__grid">
+        <figure class="board__card">
+          <figcaption class="board__label">Default</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star" aria-pressed="false" aria-label="Add Maya K. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Hover</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star is-hover" aria-pressed="false" aria-label="Add Maya K. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+          <p class="board__delta">preset dim · opacity: opacity.hover</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Pressed</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star is-pressed" aria-pressed="false" aria-label="Add Maya K. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+          <p class="board__delta">preset dim · opacity: opacity.pressed</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Focus</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star is-focus" aria-pressed="false" aria-label="Add Maya K. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+          <p class="board__delta">outline: border.width.strong solid color.focus.ring · outline-offset: space.hairline</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Selected</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star" aria-pressed="true" aria-label="Add Maya K. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+          <p class="board__delta">color: color.action.primary</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Disabled</figcaption>
+          <div class="board__bed board__bed--inline"><button type="button" class="star" aria-pressed="false" aria-label="Add Maya K. to favourites" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div>
+          <p class="board__delta">opacity: opacity.disabled · cursor: not-allowed</p>
         </figure>
         </div>
       </section>
@@ -792,32 +838,36 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.bubble</h3>
-        <p class="board__purpose">One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
-        <p class="board__meta">tier 4</p>
+        <p class="board__purpose">One chat message. Theirs sits on the indigo panel; yours fills with the deeper indigo-blue, so the two sides differ by colour and by side.</p>
+        <p class="board__meta">tier 4 · surface panel on --them</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed"><div class="bubble"><span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>See you there<span class="bubble__time">11:46 AM</span></div></div>
+          <div class="board__bed"><div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: them</figcaption>
-          <div class="board__bed"><div class="bubble bubble--them"><span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>See you there<span class="bubble__time">11:46 AM</span></div></div>
-          <p class="board__delta">align-self: flex-start · justify-self: start · background: color.surface.canvas · border-bottom-left-radius: radius.small</p>
+          <div class="board__bed"><div class="bubble bubble--them bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div>
+          <p class="board__delta">surface panel · align-self: flex-start · justify-self: start · border-bottom-left-radius: radius.small</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: me</figcaption>
-          <div class="board__bed"><div class="bubble bubble--me"><span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>See you there<span class="bubble__time">11:46 AM</span></div></div>
-          <p class="board__delta">align-self: flex-end · justify-self: end · background: color.surface.inverse · color: color.text.inverse · border-bottom-right-radius: radius.small</p>
+          <div class="board__bed"><div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div></div>
+          <p class="board__delta">align-self: flex-end · justify-self: end · background: color.accent.strong · color: color.text.primary · border-bottom-right-radius: radius.small</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: app</figcaption>
-          <div class="board__bed"><div class="bubble bubble--app"><span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>See you there<span class="bubble__time">11:46 AM</span></div></div>
+          <div class="board__bed"><div class="bubble bubble--them bubble--app">See you there<span class="bubble__time">11:46 AM</span></div></div>
           <p class="board__delta">align-self: stretch · justify-self: stretch · max-width: none · background: color.accent.soft · border-radius: radius.medium</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Variant: typing</figcaption>
           <div class="board__bed"><div class="bubble bubble--them bubble--typing" aria-label="Felix is typing"><span></span><span></span><span></span></div></div>
           <p class="board__delta">display: flex · gap: space.1 · padding: space.3 space.4</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Shows: __who</figcaption>
+          <div class="board__bed"><div class="bubble bubble--them"><span class="bubble__who"><img class="avatar avatar--sm avatar--photo" src="../img/people/u009.jpg" alt=""><strong>Felix</strong></span>See you there<span class="bubble__time">11:46 AM</span></div></div>
         </figure>
         </div>
       </section>
@@ -838,7 +888,7 @@
         <figure class="board__card">
           <figcaption class="board__label">Variant: accent</figcaption>
           <div class="board__bed"><div class="card card--accent"><p class="card__title">Thursday Trivia at Alamo Drafthouse</p><p class="card__meta">Thu, Nov 26 · 7pm · 5th Street Station</p></div></div>
-          <p class="board__delta">surface marked · background: color.accent.soft</p>
+          <p class="board__delta">surface marked · </p>
         </figure>
         </div>
       </section>
@@ -879,12 +929,12 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.chat</h3>
-        <p class="board__purpose">The list of messages. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
-        <p class="board__meta">tier 4</p>
+        <p class="board__purpose">The list of messages, in turns. Messages in one turn sit close; a change of speaker opens a wider gap. Their last message in a turn carries their photo.</p>
+        <p class="board__meta">tier 4 · builds on .avatar</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed"><div class="chat"><p class="chat__note">Say hi to Felix. (Replies are simulated in this demo.)</p><p class="chat__day">Mon, Nov 23</p><div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div><div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div></div>
+          <div class="board__bed"><div class="chat"><p class="chat__note">Say hi to Felix. (Replies are simulated in this demo.)</p><p class="chat__day">Mon, Nov 23</p><div class="chat__turn"><div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div></div><div class="chat__turn"><div class="chat__row chat__row--cont"><div class="bubble bubble--them">Me too<span class="bubble__time">11:45 AM</span></div></div><div class="chat__row"><img class="avatar avatar--sm avatar--photo" src="../img/people/u010.jpg" alt=""><div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div></div></div></div>
         </figure>
         </div>
       </section>
@@ -917,7 +967,7 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.composer</h3>
-        <p class="board__purpose">The message box pinned to the bottom of a chat. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
+        <p class="board__purpose">The message box pinned to the bottom of a chat: a round field, and one gold button that is a microphone until you type. While recording it shows the sound as moving bars.</p>
         <p class="board__meta">tier 4 · surface bar · surface field-round on __input · states on-light on __send · states text on __cancel</p>
         <div class="board__grid">
         <figure class="board__card">
@@ -931,7 +981,7 @@
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Hover (__cancel)</figcaption>
-          <div class="board__bed board__bed--phone"><form class="composer"><div class="composer__inner composer__rec"><button type="button" class="composer__cancel is-hover">Cancel</button><span class="composer__timer"><span class="rec-dot"></span><span>0:07</span></span><button type="button" class="composer__send" aria-label="Send voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div>
+          <div class="board__bed board__bed--phone"><form class="composer"><div class="composer__inner composer__rec"><button type="button" class="composer__cancel is-hover">Cancel</button><span class="composer__timer"><span class="rec-dot"></span><svg class="composer__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span>0:07</span></span><button type="button" class="composer__send" aria-label="Send voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div>
           <p class="board__delta">preset text · color: color.text.primary</p>
         </figure>
         <figure class="board__card">
@@ -941,7 +991,7 @@
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Pressed (__cancel)</figcaption>
-          <div class="board__bed board__bed--phone"><form class="composer"><div class="composer__inner composer__rec"><button type="button" class="composer__cancel is-pressed">Cancel</button><span class="composer__timer"><span class="rec-dot"></span><span>0:07</span></span><button type="button" class="composer__send" aria-label="Send voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div>
+          <div class="board__bed board__bed--phone"><form class="composer"><div class="composer__inner composer__rec"><button type="button" class="composer__cancel is-pressed">Cancel</button><span class="composer__timer"><span class="rec-dot"></span><svg class="composer__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span>0:07</span></span><button type="button" class="composer__send" aria-label="Send voice note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div>
           <p class="board__delta">preset text · opacity: opacity.pressed</p>
         </figure>
         <figure class="board__card">
@@ -1060,6 +1110,17 @@
         </div>
       </section>
       <section class="board__family">
+        <h3 class="board__name">.prompt</h3>
+        <p class="board__purpose">One thing about a person, said large: a small label and a big answer on its own panel, the way Hinge shows a prompt.</p>
+        <p class="board__meta">tier 4 · surface panel</p>
+        <div class="board__grid">
+        <figure class="board__card">
+          <figcaption class="board__label">Default</figcaption>
+          <div class="board__bed"><div class="prompt"><p class="prompt__label">About Maya</p><p class="prompt__answer">Moved from Denver 11 months ago for a new job. Lives in Belmont.</p></div></div>
+        </figure>
+        </div>
+      </section>
+      <section class="board__family">
         <h3 class="board__name">.rec-dot</h3>
         <p class="board__purpose">The pulsing light while a voice note records. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
         <p class="board__meta">tier 4</p>
@@ -1105,26 +1166,26 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.voice</h3>
-        <p class="board__purpose">A playable voice note. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
+        <p class="board__purpose">A playable voice note, drawn the way Hinge draws one: a round play button, the sound as a row of bars that fill in as it plays, and its length.</p>
         <p class="board__meta">tier 4 · states dim on __play</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><span class="voice__fill"></span></span><span class="voice__len">0:07</span></span></div>
+          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span class="voice__fill"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg></span></span><span class="voice__len">0:07</span></span></div>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Hover (__play)</figcaption>
-          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play is-hover" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><span class="voice__fill"></span></span><span class="voice__len">0:07</span></span></div>
+          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play is-hover" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span class="voice__fill"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg></span></span><span class="voice__len">0:07</span></span></div>
           <p class="board__delta">preset dim · opacity: opacity.hover</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">Pressed (__play)</figcaption>
-          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play is-pressed" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><span class="voice__fill"></span></span><span class="voice__len">0:07</span></span></div>
+          <div class="board__bed board__bed--inline"><span class="voice"><button type="button" class="voice__play is-pressed" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span class="voice__fill"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg></span></span><span class="voice__len">0:07</span></span></div>
           <p class="board__delta">preset dim · opacity: opacity.pressed</p>
         </figure>
         <figure class="board__card">
           <figcaption class="board__label">State: playing</figcaption>
-          <div class="board__bed board__bed--inline"><span class="voice is-playing"><button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><span class="voice__fill"></span></span><span class="voice__len">0:07</span></span></div>
+          <div class="board__bed board__bed--inline"><span class="voice is-playing"><button type="button" class="voice__play" aria-label="Play voice note"><svg class="voice__start" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="voice__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button><span class="voice__track"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg><span class="voice__fill"><svg class="voice__wave" viewBox="0 0 96 24" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="9" width="2" height="6" rx="1"/><rect x="5" y="7" width="2" height="10" rx="1"/><rect x="9" y="4" width="2" height="16" rx="1"/><rect x="13" y="8" width="2" height="8" rx="1"/><rect x="17" y="2" width="2" height="20" rx="1"/><rect x="21" y="6" width="2" height="12" rx="1"/><rect x="25" y="1" width="2" height="22" rx="1"/><rect x="29" y="7.5" width="2" height="9" rx="1"/><rect x="33" y="5" width="2" height="14" rx="1"/><rect x="37" y="3" width="2" height="18" rx="1"/><rect x="41" y="8.5" width="2" height="7" rx="1"/><rect x="45" y="6" width="2" height="12" rx="1"/><rect x="49" y="2" width="2" height="20" rx="1"/><rect x="53" y="7" width="2" height="10" rx="1"/><rect x="57" y="4" width="2" height="16" rx="1"/><rect x="61" y="9" width="2" height="6" rx="1"/><rect x="65" y="5.5" width="2" height="13" rx="1"/><rect x="69" y="1" width="2" height="22" rx="1"/><rect x="73" y="7.5" width="2" height="9" rx="1"/><rect x="77" y="3.5" width="2" height="17" rx="1"/><rect x="81" y="6.5" width="2" height="11" rx="1"/><rect x="85" y="2.5" width="2" height="19" rx="1"/><rect x="89" y="8" width="2" height="8" rx="1"/><rect x="93" y="5" width="2" height="14" rx="1"/></svg></span></span><span class="voice__len">0:07</span></span></div>
         </figure>
         </div>
       </section>
@@ -1299,12 +1360,26 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.featured</h3>
-        <p class="board__purpose">The home invitation to this week's picks: a strip of event artwork fading into a title and one action.</p>
-        <p class="board__meta">tier 5 · builds on .event-art, .btn · surface photo</p>
+        <p class="board__purpose">The one thing to do next on Home: event artwork fading into a title and the screen's single action.</p>
+        <p class="board__meta">tier 5 · builds on .event-art, .btn · surface photo · states card</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
           <div class="board__bed"><div class="featured"><div class="featured__art"><img class="event-art" src="../img/trivia.jpg" alt="" draggable="false"><img class="event-art" src="../img/dance.jpg" alt="" draggable="false"><img class="event-art" src="../img/volunteer.jpg" alt="" draggable="false"></div><div class="featured__body"><p class="featured__title">Your weekly picks</p><p class="featured__meta">Just one thing. We've lined up a few.</p><a class="btn" href="#">See this week</a></div></div></div>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Hover</figcaption>
+          <div class="board__bed"><div class="featured is-hover"><div class="featured__art"><img class="event-art" src="../img/trivia.jpg" alt="" draggable="false"><img class="event-art" src="../img/dance.jpg" alt="" draggable="false"><img class="event-art" src="../img/volunteer.jpg" alt="" draggable="false"></div><div class="featured__body"><p class="featured__title">Your weekly picks</p><p class="featured__meta">Just one thing. We've lined up a few.</p><a class="btn" href="#">See this week</a></div></div></div>
+          <p class="board__delta">preset card · transform: scale(motion.scale.hover)</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Pressed</figcaption>
+          <div class="board__bed"><div class="featured is-pressed"><div class="featured__art"><img class="event-art" src="../img/trivia.jpg" alt="" draggable="false"><img class="event-art" src="../img/dance.jpg" alt="" draggable="false"><img class="event-art" src="../img/volunteer.jpg" alt="" draggable="false"></div><div class="featured__body"><p class="featured__title">Your weekly picks</p><p class="featured__meta">Just one thing. We've lined up a few.</p><a class="btn" href="#">See this week</a></div></div></div>
+          <p class="board__delta">preset card · transform: scale(motion.scale.card_pressed)</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Shows: __art--single</figcaption>
+          <div class="board__bed"><a class="featured" href="#"><div class="featured__art featured__art--single"><img class="event-art" src="../img/trivia.jpg" alt=""></div><div class="featured__body"><p class="featured__title">Thursday Trivia</p><p class="featured__meta">Thu, Nov 26 · 7pm</p><span class="btn">See the plan</span></div></a></div>
         </figure>
         </div>
       </section>
@@ -1351,12 +1426,26 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.people-card</h3>
-        <p class="board__purpose">A match as a poster: their photo fills the top, a fade carries their name, then one line of shared context and the two ways to reach them.</p>
-        <p class="board__meta">tier 5 · builds on .avatar, .tag, .ember, .mini-btn · surface poster · surface photo-fade on __media &amp;::after</p>
+        <p class="board__purpose">A person as a small poster: their photo fading into the card, their name, why they are here, and one action. For a match the whole card opens their profile and a star marks a favourite.</p>
+        <p class="board__meta">tier 5 · builds on .avatar, .tag, .ember, .mini-btn, .star · surface poster · surface photo-fade on __media &amp;::after · states dim on __link</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--photo" src="../img/people/u015.jpg" alt=""><span class="tag">New</span><p class="people-card__name">Maya K.<span class="ember ember--glow" aria-label="Empower score 41"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">41</span></span></p></div><div class="people-card__body"><p class="people-card__meta">Three sessions together at Thursday Trivia.</p><div class="people-card__actions"><a class="mini-btn mini-btn--dark" href="#">Message</a><a class="mini-btn" href="#">Profile</a></div></div></article></div>
+          <div class="board__bed"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u004.jpg" alt=""><span class="tag">New</span></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link" href="#">Maya K.</a></p><p class="people-card__meta">Three sessions together at Thursday Trivia.</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div><button type="button" class="star" aria-pressed="true" aria-label="Remove Maya K. from favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></article></div>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Hover (__link)</figcaption>
+          <div class="board__bed"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u004.jpg" alt=""><span class="tag">New</span></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link is-hover" href="#">Maya K.</a></p><p class="people-card__meta">Three sessions together at Thursday Trivia.</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div><button type="button" class="star" aria-pressed="true" aria-label="Remove Maya K. from favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></article></div>
+          <p class="board__delta">preset dim · opacity: opacity.hover</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Pressed (__link)</figcaption>
+          <div class="board__bed"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u004.jpg" alt=""><span class="tag">New</span></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link is-pressed" href="#">Maya K.</a></p><p class="people-card__meta">Three sessions together at Thursday Trivia.</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div><button type="button" class="star" aria-pressed="true" aria-label="Remove Maya K. from favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></article></div>
+          <p class="board__delta">preset dim · opacity: opacity.pressed</p>
+        </figure>
+        <figure class="board__card">
+          <figcaption class="board__label">Shows: --familiar</figcaption>
+          <div class="board__bed"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u016.jpg" alt=""></div><div class="people-card__body"><p class="people-card__name">Devon</p><p class="people-card__meta">You have both been to the last two trivia nights.</p><div class="people-card__actions"><button type="button" class="mini-btn mini-btn--action">Add</button></div></div></article></div>
         </figure>
         </div>
       </section>
@@ -1384,12 +1473,12 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.person-hero</h3>
-        <p class="board__purpose">A match's portrait across the top of their profile, their own photo blurred behind it, fading into the page like Disney's title screen.</p>
-        <p class="board__meta">tier 5 · builds on .avatar, .ember · surface poster on __photo</p>
+        <p class="board__purpose">A match's portrait at the top of their profile, their own photo blurred into a wash of colour behind it and fading into the page. A star marks them as a favourite.</p>
+        <p class="board__meta">tier 5 · builds on .avatar, .ember, .star · surface poster on __photo</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed"><div class="person-hero"><div class="person-hero__scene" aria-hidden="true"><img class="avatar avatar--photo" src="../img/people/u017.jpg" alt=""></div><div class="person-hero__photo"><img class="avatar avatar--lg avatar--photo" src="../img/people/u017.jpg" alt=""></div><div class="person-hero__body"><h1 class="person-hero__name">Carlos M.</h1><p class="person-hero__line"><span class="ember ember--blaze ember--lg" aria-label="Empower score 76"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">76</span></span><span class="score-badge">Open</span></p><p class="person-hero__meta">Met at Thursday Trivia at Alamo Drafthouse</p></div></div></div>
+          <div class="board__bed"><div class="person-hero"><div class="person-hero__scene" aria-hidden="true"><img class="avatar avatar--photo" src="../img/people/u017.jpg" alt=""></div><div class="person-hero__photo"><img class="avatar avatar--lg avatar--photo" src="../img/people/u017.jpg" alt=""></div><div class="person-hero__body"><h1 class="person-hero__name">Carlos M.</h1><p class="person-hero__line"><span class="ember ember--blaze ember--lg" aria-label="Empower score 76"><svg class="ember__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1.2 3.6 5.5 5.6 5.5 10.7a5.5 5.5 0 0 1-11 0c0-2.8 1.6-4.5 2.7-5.6.3 2.2 1.6 3.3 2.7 3.3 0-3.3-1-5.8.1-8.4z"/></svg><span class="ember__value">76</span></span><span class="score-badge">Open</span></p><p class="person-hero__meta">Met at Thursday Trivia at Alamo Drafthouse</p></div><button type="button" class="star" aria-pressed="false" aria-label="Add Carlos M. to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></button></div></div>
         </figure>
         </div>
       </section>
@@ -1406,7 +1495,7 @@
       </section>
       <section class="board__family">
         <h3 class="board__name">.quiz-pair</h3>
-        <p class="board__purpose">The two sides of one this-or-that question, as an even pair of tiles.</p>
+        <p class="board__purpose">The two sides of one this-or-that question, as two big keys that fill the screen.</p>
         <p class="board__meta">tier 5 · builds on .option</p>
         <div class="board__grid">
         <figure class="board__card">
@@ -1543,6 +1632,17 @@
         </div>
       </section>
       <section class="board__family">
+        <h3 class="board__name">.people-shelf</h3>
+        <p class="board__purpose">One row of person cards you scroll sideways, like a Disney shelf. Every group of people on the People screen is one of these, so a person always looks the same.</p>
+        <p class="board__meta">tier 6 · builds on .people-card</p>
+        <div class="board__grid">
+        <figure class="board__card">
+          <figcaption class="board__label">Default</figcaption>
+          <div class="board__bed"><div class="people-shelf"><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u004.jpg" alt=""></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link" href="#">Maya K.</a></p><p class="people-card__meta">Three sessions together.</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div></article><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u016.jpg" alt=""></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link" href="#">Devon R.</a></p><p class="people-card__meta">Met at Thursday Trivia.</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div></article><article class="people-card"><div class="people-card__media"><img class="avatar avatar--lg avatar--photo" src="../img/people/u009.jpg" alt=""></div><div class="people-card__body"><p class="people-card__name"><a class="people-card__link" href="#">Felix C.</a></p><p class="people-card__meta">Coffee before trivia?</p><div class="people-card__actions"><a class="mini-btn mini-btn--action" href="#"><svg class="mini-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>Message</a></div></div></article></div></div>
+        </figure>
+        </div>
+      </section>
+      <section class="board__family">
         <h3 class="board__name">.topbar</h3>
         <p class="board__purpose">The strip at the top with the wordmark or the way back.</p>
         <p class="board__meta">tier 6</p>
@@ -1566,11 +1666,11 @@
       <section class="board__family">
         <h3 class="board__name">.chat-page</h3>
         <p class="board__purpose">The chat screen layout: messages sit just above the message box. Round 2: outside the Disney+ reference, so it takes the shared tokens only.</p>
-        <p class="board__meta">tier 7 · builds on .page, .empty · surface fill</p>
+        <p class="board__meta">tier 7 · builds on .page, .empty</p>
         <div class="board__grid">
         <figure class="board__card">
           <figcaption class="board__label">Default</figcaption>
-          <div class="board__bed board__bed--phone"><div class="chat-page"><div class="page"><header class="chat-header"><a class="chat-header__back" href="#" aria-label="Back to People"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a><a class="chat-header__who" href="#"><img class="avatar avatar--photo" src="../img/people/u010.jpg" alt=""><span><span class="chat-header__name">Felix C.</span><span class="chat-header__sub">Met at Thursday Trivia at Alamo Drafthouse</span></span></a></header><section><div class="chat"><p class="chat__note">Say hi to Felix. (Replies are simulated in this demo.)</p><p class="chat__day">Mon, Nov 23</p><div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div><div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div></section></div><form class="composer"><div class="composer__inner composer__type"><input class="composer__input" autocomplete="off" maxlength="300" placeholder="Message Felix" aria-label="Message Felix"><button class="composer__send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div></div>
+          <div class="board__bed board__bed--phone"><div class="chat-page"><div class="page"><header class="chat-header"><a class="chat-header__back" href="#" aria-label="Back to People"><svg class="back__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a><a class="chat-header__who" href="#"><img class="avatar avatar--photo" src="../img/people/u010.jpg" alt=""><span><span class="chat-header__name">Felix C.</span><span class="chat-header__sub">Met at Thursday Trivia at Alamo Drafthouse</span></span></a></header><section><div class="chat"><p class="chat__note">Say hi to Felix. (Replies are simulated in this demo.)</p><p class="chat__day">Mon, Nov 23</p><div class="bubble bubble--me">Thursday works for me<span class="bubble__time">11:36 AM</span></div><div class="chat__row"><img class="avatar avatar--sm avatar--photo" src="../img/people/u010.jpg" alt=""><div class="bubble bubble--them">See you there<span class="bubble__time">11:46 AM</span></div></div></div></section></div><form class="composer"><div class="composer__inner composer__type"><input class="composer__input" autocomplete="off" maxlength="300" placeholder="Message Felix" aria-label="Message Felix"><button class="composer__send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z"/></svg></button></div></form></div></div>
         </figure>
         </div>
       </section>
@@ -1592,39 +1692,40 @@
       <p class="board__part-note">Every raw value in the system, from design_system/tier_00_foundations.json. Each sample is drawn at the token's own value.</p>
       <div class="board__family">
         <h3 class="board__name">color</h3>
-        <div class="board__token"><span class="board__token-name">color.surface.canvas</span><span class="board__chip sample--color-surface-canvas"></span><span class="board__token-value">#17171b</span></div>
-        <div class="board__token"><span class="board__token-name">color.surface.panel</span><span class="board__chip sample--color-surface-panel"></span><span class="board__token-value">#2f3036</span></div>
-        <div class="board__token"><span class="board__token-name">color.surface.sunken</span><span class="board__chip sample--color-surface-sunken"></span><span class="board__token-value">#080808</span></div>
-        <div class="board__token"><span class="board__token-name">color.surface.bar</span><span class="board__chip sample--color-surface-bar"></span><span class="board__token-value">#1a1a1cd9</span></div>
-        <div class="board__token"><span class="board__token-name">color.surface.inverse</span><span class="board__chip sample--color-surface-inverse"></span><span class="board__token-value">#fcfcfe</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.canvas</span><span class="board__chip sample--color-surface-canvas"></span><span class="board__token-value">#0e101c</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.panel</span><span class="board__chip sample--color-surface-panel"></span><span class="board__token-value">#1b1e33</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.sunken</span><span class="board__chip sample--color-surface-sunken"></span><span class="board__token-value">#07080f</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.bar</span><span class="board__chip sample--color-surface-bar"></span><span class="board__token-value">#111322d9</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.inverse</span><span class="board__chip sample--color-surface-inverse"></span><span class="board__token-value">#f5eee7</span></div>
         <div class="board__token"><span class="board__token-name">color.surface.overlay</span><span class="board__chip sample--color-surface-overlay"></span><span class="board__token-value">#000000b3</span></div>
-        <div class="board__token"><span class="board__token-name">color.text.primary</span><span class="board__chip sample--color-text-primary"></span><span class="board__token-value">#ffffff</span></div>
-        <div class="board__token"><span class="board__token-name">color.text.secondary</span><span class="board__chip sample--color-text-secondary"></span><span class="board__token-value">#cacacc</span></div>
-        <div class="board__token"><span class="board__token-name">color.text.tertiary</span><span class="board__chip sample--color-text-tertiary"></span><span class="board__token-value">#9d9ea6</span></div>
-        <div class="board__token"><span class="board__token-name">color.text.inverse</span><span class="board__chip sample--color-text-inverse"></span><span class="board__token-value">#020202</span></div>
-        <div class="board__token"><span class="board__token-name">color.action.primary</span><span class="board__chip sample--color-action-primary"></span><span class="board__token-value">same as color.surface.inverse</span></div>
-        <div class="board__token"><span class="board__token-name">color.action.primary_pressed</span><span class="board__chip sample--color-action-primary-pressed"></span><span class="board__token-value">#dbdbdd</span></div>
+        <div class="board__token"><span class="board__token-name">color.text.primary</span><span class="board__chip sample--color-text-primary"></span><span class="board__token-value">#f5eee7</span></div>
+        <div class="board__token"><span class="board__token-name">color.text.secondary</span><span class="board__chip sample--color-text-secondary"></span><span class="board__token-value">#c5c8dc</span></div>
+        <div class="board__token"><span class="board__token-name">color.text.tertiary</span><span class="board__chip sample--color-text-tertiary"></span><span class="board__token-value">#a0a4bd</span></div>
+        <div class="board__token"><span class="board__token-name">color.text.inverse</span><span class="board__chip sample--color-text-inverse"></span><span class="board__token-value">#0e101c</span></div>
+        <div class="board__token"><span class="board__token-name">color.action.primary</span><span class="board__chip sample--color-action-primary"></span><span class="board__token-value">#ffb85c</span></div>
+        <div class="board__token"><span class="board__token-name">color.action.primary_pressed</span><span class="board__chip sample--color-action-primary-pressed"></span><span class="board__token-value">#f0a646</span></div>
         <div class="board__token"><span class="board__token-name">color.action.secondary</span><span class="board__chip sample--color-action-secondary"></span><span class="board__token-value">same as color.surface.panel</span></div>
-        <div class="board__token"><span class="board__token-name">color.action.secondary_pressed</span><span class="board__chip sample--color-action-secondary-pressed"></span><span class="board__token-value">#46464a</span></div>
-        <div class="board__token"><span class="board__token-name">color.accent.default</span><span class="board__chip sample--color-accent-default"></span><span class="board__token-value">#58e9ff</span></div>
-        <div class="board__token"><span class="board__token-name">color.accent.strong</span><span class="board__chip sample--color-accent-strong"></span><span class="board__token-value">#07708a</span></div>
-        <div class="board__token"><span class="board__token-name">color.accent.soft</span><span class="board__chip sample--color-accent-soft"></span><span class="board__token-value">#07708a40</span></div>
-        <div class="board__token"><span class="board__token-name">color.border.default</span><span class="board__chip sample--color-border-default"></span><span class="board__token-value">#46464a</span></div>
-        <div class="board__token"><span class="board__token-name">color.border.strong</span><span class="board__chip sample--color-border-strong"></span><span class="board__token-value">#6e6e73</span></div>
-        <div class="board__token"><span class="board__token-name">color.focus.ring</span><span class="board__chip sample--color-focus-ring"></span><span class="board__token-value">same as color.accent.default</span></div>
-        <div class="board__token"><span class="board__token-name">color.status.success</span><span class="board__chip sample--color-status-success"></span><span class="board__token-value">#8ce0b2</span></div>
-        <div class="board__token"><span class="board__token-name">color.status.success_soft</span><span class="board__chip sample--color-status-success-soft"></span><span class="board__token-value">#1b3931</span></div>
-        <div class="board__token"><span class="board__token-name">color.status.warning</span><span class="board__chip sample--color-status-warning"></span><span class="board__token-value">#ca951f</span></div>
-        <div class="board__token"><span class="board__token-name">color.status.error</span><span class="board__chip sample--color-status-error"></span><span class="board__token-value">#ffa789</span></div>
-        <div class="board__token"><span class="board__token-name">color.status.error_soft</span><span class="board__chip sample--color-status-error-soft"></span><span class="board__token-value">#452c2b</span></div>
-        <div class="board__token"><span class="board__token-name">color.ember.spark</span><span class="board__chip sample--color-ember-spark"></span><span class="board__token-value">#9a9aa6</span></div>
-        <div class="board__token"><span class="board__token-name">color.ember.warm</span><span class="board__chip sample--color-ember-warm"></span><span class="board__token-value">#d97706</span></div>
-        <div class="board__token"><span class="board__token-name">color.ember.glow</span><span class="board__chip sample--color-ember-glow"></span><span class="board__token-value">#ea580c</span></div>
-        <div class="board__token"><span class="board__token-name">color.ember.blaze</span><span class="board__chip sample--color-ember-blaze"></span><span class="board__token-value">#dc2626</span></div>
-        <div class="board__token"><span class="board__token-name">color.scrim.strong</span><span class="board__chip sample--color-scrim-strong"></span><span class="board__token-value">#080808f2</span></div>
-        <div class="board__token"><span class="board__token-name">color.scrim.soft</span><span class="board__chip sample--color-scrim-soft"></span><span class="board__token-value">#08080866</span></div>
-        <div class="board__token"><span class="board__token-name">color.scrim.none</span><span class="board__chip sample--color-scrim-none"></span><span class="board__token-value">#08080800</span></div>
-        <div class="board__token"><span class="board__token-name">color.glow.ambient</span><span class="board__chip sample--color-glow-ambient"></span><span class="board__token-value">#07708a38</span></div>
+        <div class="board__token"><span class="board__token-name">color.action.secondary_pressed</span><span class="board__chip sample--color-action-secondary-pressed"></span><span class="board__token-value">#2a2e4a</span></div>
+        <div class="board__token"><span class="board__token-name">color.accent.default</span><span class="board__chip sample--color-accent-default"></span><span class="board__token-value">#8fa2ff</span></div>
+        <div class="board__token"><span class="board__token-name">color.accent.strong</span><span class="board__chip sample--color-accent-strong"></span><span class="board__token-value">#3a43a0</span></div>
+        <div class="board__token"><span class="board__token-name">color.accent.soft</span><span class="board__chip sample--color-accent-soft"></span><span class="board__token-value">#8fa2ff2b</span></div>
+        <div class="board__token"><span class="board__token-name">color.brand.belong</span><span class="board__chip sample--color-brand-belong"></span><span class="board__token-value">#f0619f</span></div>
+        <div class="board__token"><span class="board__token-name">color.border.default</span><span class="board__chip sample--color-border-default"></span><span class="board__token-value">#2f3350</span></div>
+        <div class="board__token"><span class="board__token-name">color.border.strong</span><span class="board__chip sample--color-border-strong"></span><span class="board__token-value">#737899</span></div>
+        <div class="board__token"><span class="board__token-name">color.focus.ring</span><span class="board__chip sample--color-focus-ring"></span><span class="board__token-value">same as color.text.primary</span></div>
+        <div class="board__token"><span class="board__token-name">color.status.success</span><span class="board__chip sample--color-status-success"></span><span class="board__token-value">#a8d568</span></div>
+        <div class="board__token"><span class="board__token-name">color.status.success_soft</span><span class="board__chip sample--color-status-success-soft"></span><span class="board__token-value">#22301a</span></div>
+        <div class="board__token"><span class="board__token-name">color.status.warning</span><span class="board__chip sample--color-status-warning"></span><span class="board__token-value">#ff8f5a</span></div>
+        <div class="board__token"><span class="board__token-name">color.status.error</span><span class="board__chip sample--color-status-error"></span><span class="board__token-value">#ff6b6b</span></div>
+        <div class="board__token"><span class="board__token-name">color.status.error_soft</span><span class="board__chip sample--color-status-error-soft"></span><span class="board__token-value">#3d1f24</span></div>
+        <div class="board__token"><span class="board__token-name">color.ember.spark</span><span class="board__chip sample--color-ember-spark"></span><span class="board__token-value">#b8aea4</span></div>
+        <div class="board__token"><span class="board__token-name">color.ember.warm</span><span class="board__chip sample--color-ember-warm"></span><span class="board__token-value">#e8853a</span></div>
+        <div class="board__token"><span class="board__token-name">color.ember.glow</span><span class="board__chip sample--color-ember-glow"></span><span class="board__token-value">#d9541e</span></div>
+        <div class="board__token"><span class="board__token-name">color.ember.blaze</span><span class="board__chip sample--color-ember-blaze"></span><span class="board__token-value">#b3261e</span></div>
+        <div class="board__token"><span class="board__token-name">color.scrim.strong</span><span class="board__chip sample--color-scrim-strong"></span><span class="board__token-value">#07080ff2</span></div>
+        <div class="board__token"><span class="board__token-name">color.scrim.soft</span><span class="board__chip sample--color-scrim-soft"></span><span class="board__token-value">#07080f66</span></div>
+        <div class="board__token"><span class="board__token-name">color.scrim.none</span><span class="board__chip sample--color-scrim-none"></span><span class="board__token-value">#07080f00</span></div>
+        <div class="board__token"><span class="board__token-name">color.glow.ambient</span><span class="board__chip sample--color-glow-ambient"></span><span class="board__token-value">#8fa2ff14</span></div>
       </div>
       <div class="board__family">
         <h3 class="board__name">type</h3>
@@ -1637,10 +1738,12 @@
         <div class="board__token"><span class="board__token-name">type.size.xl</span><p class="board__text sample--type-size-xl">Thursday Trivia</p><span class="board__token-value">22px</span></div>
         <div class="board__token"><span class="board__token-name">type.size.xxl</span><p class="board__text sample--type-size-xxl">Thursday Trivia</p><span class="board__token-value">28px</span></div>
         <div class="board__token"><span class="board__token-name">type.size.display</span><p class="board__text sample--type-size-display">Thursday Trivia</p><span class="board__token-value">34px</span></div>
+        <div class="board__token"><span class="board__token-name">type.size.figure</span><p class="board__text sample--type-size-figure">Thursday Trivia</p><span class="board__token-value">52px</span></div>
         <div class="board__token"><span class="board__token-name">type.weight.regular</span><p class="board__text sample--type-weight-regular">Thursday Trivia</p><span class="board__token-value">400</span></div>
         <div class="board__token"><span class="board__token-name">type.weight.medium</span><p class="board__text sample--type-weight-medium">Thursday Trivia</p><span class="board__token-value">600</span></div>
         <div class="board__token"><span class="board__token-name">type.weight.bold</span><p class="board__text sample--type-weight-bold">Thursday Trivia</p><span class="board__token-value">700</span></div>
         <div class="board__token"><span class="board__token-name">type.weight.heavy</span><p class="board__text sample--type-weight-heavy">Thursday Trivia</p><span class="board__token-value">800</span></div>
+        <div class="board__token"><span class="board__token-name">type.weight.black</span><p class="board__text sample--type-weight-black">Thursday Trivia</p><span class="board__token-value">900</span></div>
         <div class="board__token"><span class="board__token-name">type.line_height.tight</span><p class="board__text sample--type-line-height-tight">Thursday Trivia</p><span class="board__token-value">1.15</span></div>
         <div class="board__token"><span class="board__token-name">type.line_height.snug</span><p class="board__text sample--type-line-height-snug">Thursday Trivia</p><span class="board__token-value">1.3</span></div>
         <div class="board__token"><span class="board__token-name">type.line_height.body</span><p class="board__text sample--type-line-height-body">Thursday Trivia</p><span class="board__token-value">1.5</span></div>
@@ -1663,12 +1766,13 @@
       </div>
       <div class="board__family">
         <h3 class="board__name">radius</h3>
-        <div class="board__token"><span class="board__token-name">radius.small</span><span class="board__box sample--radius-small"></span><span class="board__token-value">4px</span></div>
-        <div class="board__token"><span class="board__token-name">radius.medium</span><span class="board__box sample--radius-medium"></span><span class="board__token-value">8px</span></div>
-        <div class="board__token"><span class="board__token-name">radius.large</span><span class="board__box sample--radius-large"></span><span class="board__token-value">16px</span></div>
-        <div class="board__token"><span class="board__token-name">radius.bubble</span><span class="board__box sample--radius-bubble"></span><span class="board__token-value">18px</span></div>
+        <div class="board__token"><span class="board__token-name">radius.small</span><span class="board__box sample--radius-small"></span><span class="board__token-value">10px</span></div>
+        <div class="board__token"><span class="board__token-name">radius.medium</span><span class="board__box sample--radius-medium"></span><span class="board__token-value">13.5px</span></div>
+        <div class="board__token"><span class="board__token-name">radius.large</span><span class="board__box sample--radius-large"></span><span class="board__token-value">18.23px</span></div>
+        <div class="board__token"><span class="board__token-name">radius.bubble</span><span class="board__box sample--radius-bubble"></span><span class="board__token-value">18.23px</span></div>
         <div class="board__token"><span class="board__token-name">radius.pill</span><span class="board__box sample--radius-pill"></span><span class="board__token-value">999px</span></div>
         <div class="board__token"><span class="board__token-name">radius.round</span><span class="board__box sample--radius-round"></span><span class="board__token-value">50%</span></div>
+        <div class="board__token"><span class="board__token-name">radius.tight</span><span class="board__box sample--radius-tight"></span><span class="board__token-value">7.41px</span></div>
       </div>
       <div class="board__family">
         <h3 class="board__name">border</h3>
@@ -1678,7 +1782,8 @@
       </div>
       <div class="board__family">
         <h3 class="board__name">shadow</h3>
-        <div class="board__token"><span class="board__token-name">shadow.raised</span><span class="board__box sample--shadow-raised"></span><span class="board__token-value">0 2px 8px #00000059</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.raised</span><span class="board__box sample--shadow-raised"></span><span class="board__token-value">0 6px 18px -6px #00000080</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.none</span><span class="board__box sample--shadow-none"></span><span class="board__token-value">0 0 0 #00000000</span></div>
         <div class="board__token"><span class="board__token-name">shadow.elevated</span><span class="board__box sample--shadow-elevated"></span><span class="board__token-value">0 8px 24px #00000080</span></div>
       </div>
       <div class="board__family">
@@ -1741,6 +1846,8 @@
         <div class="board__token"><span class="board__token-name">size.switch.width</span><span class="board__bar sample--size-switch-width"></span><span class="board__token-value">44px</span></div>
         <div class="board__token"><span class="board__token-name">size.switch.knob</span><span class="board__bar sample--size-switch-knob"></span><span class="board__token-value">24px</span></div>
         <div class="board__token"><span class="board__token-name">size.stamp</span><span class="board__bar sample--size-stamp"></span><span class="board__token-value">72px</span></div>
+        <div class="board__token"><span class="board__token-name">size.tile</span><span class="board__bar sample--size-tile"></span><span class="board__token-value">168px</span></div>
+        <div class="board__token"><span class="board__token-name">size.card.person</span><span class="board__bar sample--size-card-person"></span><span class="board__token-value">156px</span></div>
         <div class="board__token"><span class="board__token-name">size.deck</span><span class="board__bar sample--size-deck"></span><span class="board__token-value">430px</span></div>
         <div class="board__token"><span class="board__token-name">size.card.hero</span><span class="board__bar sample--size-card-hero"></span><span class="board__token-value">68%</span></div>
         <div class="board__token"><span class="board__token-name">size.card.poster</span><span class="board__bar sample--size-card-poster"></span><span class="board__token-value">30%</span></div>
@@ -1768,6 +1875,7 @@
         <div class="board__token"><span class="board__token-name">size.avatar.xs</span><span class="board__bar sample--size-avatar-xs"></span><span class="board__token-value">24px</span></div>
         <div class="board__token"><span class="board__token-name">size.bubble</span><span class="board__bar sample--size-bubble"></span><span class="board__token-value">80%</span></div>
         <div class="board__token"><span class="board__token-name">size.voice</span><span class="board__bar sample--size-voice"></span><span class="board__token-value">180px</span></div>
+        <div class="board__token"><span class="board__token-name">size.wave</span><span class="board__bar sample--size-wave"></span><span class="board__token-value">96px</span></div>
         <div class="board__token"><span class="board__token-name">size.lab_label</span><span class="board__bar sample--size-lab-label"></span><span class="board__token-value">110px</span></div>
         <div class="board__token"><span class="board__token-name">size.card.thumb</span><span class="board__bar sample--size-card-thumb"></span><span class="board__token-value">34%</span></div>
         <div class="board__token"><span class="board__token-name">size.card.min</span><span class="board__bar sample--size-card-min"></span><span class="board__token-value">256px</span></div>
@@ -1810,14 +1918,21 @@
       </div>
       <div class="board__family">
         <h3 class="board__name">shadow</h3>
-        <div class="board__token"><span class="board__token-name">shadow.highlight</span><span class="board__box sample--shadow-highlight"></span><span class="board__token-value">inset 0 1px 0 #ffffff12</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.highlight</span><span class="board__box sample--shadow-highlight"></span><span class="board__token-value">inset 0 1px 0 #f5eee71f</span></div>
         <div class="board__token"><span class="board__token-name">shadow.tile_far</span><span class="board__box sample--shadow-tile-far"></span><span class="board__token-value">0 26px 30px -10px #000000b0</span></div>
         <div class="board__token"><span class="board__token-name">shadow.tile_near</span><span class="board__box sample--shadow-tile-near"></span><span class="board__token-value">0 16px 10px -10px #000000ba</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.button_edge</span><span class="board__box sample--shadow-button-edge"></span><span class="board__token-value">inset 0 1px 0 #ffffff66</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.button_foot</span><span class="board__box sample--shadow-button-foot"></span><span class="board__token-value">inset 0 -2px 0 #0000002e</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.button_lift</span><span class="board__box sample--shadow-button-lift"></span><span class="board__token-value">0 10px 28px -10px #ffb85c80</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.halo_band</span><span class="board__box sample--shadow-halo-band"></span><span class="board__token-value">0 0 0 4px #f5eee70f</span></div>
+        <div class="board__token"><span class="board__token-name">shadow.halo_glow</span><span class="board__box sample--shadow-halo-glow"></span><span class="board__token-value">0 0 0 0 #00000000</span></div>
       </div>
       <div class="board__family">
         <h3 class="board__name">color</h3>
-        <div class="board__token"><span class="board__token-name">color.border.hairline</span><span class="board__chip sample--color-border-hairline"></span><span class="board__token-value">#f9f9f91a</span></div>
-        <div class="board__token"><span class="board__token-name">color.border.hairline_strong</span><span class="board__chip sample--color-border-hairline-strong"></span><span class="board__token-value">#f9f9f9cc</span></div>
+        <div class="board__token"><span class="board__token-name">color.border.hairline</span><span class="board__chip sample--color-border-hairline"></span><span class="board__token-value">#f5eee71a</span></div>
+        <div class="board__token"><span class="board__token-name">color.border.hairline_strong</span><span class="board__chip sample--color-border-hairline-strong"></span><span class="board__token-value">#f5eee7cc</span></div>
+        <div class="board__token"><span class="board__token-name">color.surface.marked</span><span class="board__chip sample--color-surface-marked"></span><span class="board__token-value">#2b3162</span></div>
+        <div class="board__token"><span class="board__token-name">color.ember.kindling</span><span class="board__chip sample--color-ember-kindling"></span><span class="board__token-value">#f2b66d</span></div>
       </div>
     </section>
   </main>

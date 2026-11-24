@@ -1,6 +1,6 @@
 {
   "className": "bubble",
-  "purpose": "One chat message. Round 2: outside the Disney+ reference, so it takes the shared tokens only.",
+  "purpose": "One chat message. Theirs sits on the indigo panel; yours fills with the deeper indigo-blue, so the two sides differ by colour and by side.",
   "text": {
     "base": "message",
     "__time": "caption",
@@ -8,7 +8,7 @@
   },
   "base": {
     "max-width": "{size.bubble}",
-    "padding": "{space.2} {space.3}",
+    "padding": "{space.3} {space.4}",
     "border-radius": "{radius.bubble}",
     "overflow-wrap": "anywhere"
   },
@@ -30,17 +30,16 @@
       "them": {
         "align-self": "flex-start",
         "justify-self": "start",
-        "background": "{color.surface.canvas}",
         "border-bottom-left-radius": "{radius.small}"
       },
       "me": {
         "align-self": "flex-end",
         "justify-self": "end",
-        "background": "{color.surface.inverse}",
-        "color": "{color.text.inverse}",
+        "background": "{color.accent.strong}",
+        "color": "{color.text.primary}",
         "border-bottom-right-radius": "{radius.small}",
         "& $time": {
-          "color": "{color.surface.panel}"
+          "color": "{color.text.secondary}"
         }
       },
       "app": {
@@ -87,9 +86,14 @@
       }
     }
   },
-  "example": "<div class=\"bubble\"><span class=\"bubble__who\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u009.jpg\" alt=\"\"><strong>Felix</strong></span>See you there<span class=\"bubble__time\">11:46 AM</span></div>",
+  "example": "<div class=\"bubble bubble--them\">See you there<span class=\"bubble__time\">11:46 AM</span></div>",
   "examples": {
-    "--typing": "<div class=\"bubble bubble--them bubble--typing\" aria-label=\"Felix is typing\"><span></span><span></span><span></span></div>"
+    "--typing": "<div class=\"bubble bubble--them bubble--typing\" aria-label=\"Felix is typing\"><span></span><span></span><span></span></div>",
+    "--me": "<div class=\"bubble bubble--me\">Thursday works for me<span class=\"bubble__time\">11:36 AM</span></div>",
+    "__who": "<div class=\"bubble bubble--them\"><span class=\"bubble__who\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u009.jpg\" alt=\"\"><strong>Felix</strong></span>See you there<span class=\"bubble__time\">11:46 AM</span></div>"
   },
-  "frame": "block"
+  "frame": "block",
+  "surface": {
+    "--them": "panel"
+  }
 }

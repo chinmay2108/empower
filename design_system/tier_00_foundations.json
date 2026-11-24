@@ -55,6 +55,12 @@
       "url": "https://github.com/chinmay2108/empower/blob/main/DESIGN.md",
       "evidence_kind": "decision",
       "notes": "Empower team decision where the Disney+ reference has no answer"
+    },
+    {
+      "reference_id": "saumya_palette",
+      "url": "docs/palette-brief.md",
+      "evidence_kind": "document",
+      "notes": "Saumya's Warm Evenings palette brief, November 10, 2026"
     }
   ],
   "font_faces": [
@@ -155,81 +161,126 @@
       "color.border.strong",
       "color.surface.canvas",
       3
+    ],
+    [
+      "color.action.primary",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.text.inverse",
+      "color.action.primary",
+      4.5
+    ],
+    [
+      "color.text.primary",
+      "color.surface.marked",
+      4.5
+    ],
+    [
+      "color.brand.belong",
+      "color.surface.canvas",
+      4.5
+    ],
+    [
+      "color.brand.belong",
+      "color.surface.panel",
+      4.5
+    ],
+    [
+      "color.text.tertiary",
+      "color.surface.marked",
+      4.5
+    ],
+    [
+      "color.text.inverse",
+      "color.action.primary",
+      4.5
+    ],
+    [
+      "color.action.primary",
+      "color.action.secondary_pressed",
+      4.5
+    ],
+    [
+      "color.text.secondary",
+      "color.accent.strong",
+      4.5
     ]
   ],
   "tokens": [
     {
       "category": "color",
       "token_name": "color.surface.canvas",
-      "token_value": "#17171b",
+      "token_value": "#0e101c",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Page background"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Midnight: the page, an indigo near-black"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.panel",
-      "token_value": "#2f3036",
+      "token_value": "#1b1e33",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Section bands, fields, chips, secondary buttons"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Indigo: cards, rows, fields, second buttons"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.sunken",
-      "token_value": "#080808",
+      "token_value": "#07080f",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Base of an image card, under the title"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Behind photographs while they load"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.bar",
-      "token_value": "#1a1a1cd9",
+      "token_value": "#111322d9",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
-        "notes": "Frosted bottom navigation"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Midnight, see-through, for the frosted bar"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.surface.inverse",
-      "token_value": "#fcfcfe",
+      "token_value": "#f5eee7",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_detail",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "White primary button and New badge"
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette (docs/palette-brief.md), kept in the palette Daniel approved on November 23, 2026",
+        "notes": "Cream as a fill"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -251,90 +302,90 @@
     {
       "category": "color",
       "token_name": "color.text.primary",
-      "token_value": "#ffffff",
+      "token_value": "#f5eee7",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_detail",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Titles and body text"
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette (docs/palette-brief.md), kept in the palette Daniel approved on November 23, 2026",
+        "notes": "Cream: main text"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.secondary",
-      "token_value": "#cacacc",
-      "value_type": "color",
-      "unit": null,
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "disney_confirm",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Supporting text and metadata"
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "color",
-      "token_name": "color.text.tertiary",
-      "token_value": "#9d9ea6",
+      "token_value": "#c5c8dc",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; the Disney+ reference does not show this",
-        "notes": "Quiet labels; keeps 4.5:1 on canvas and panel"
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Haze: second-level text"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.text.tertiary",
+      "token_value": "#a0a4bd",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Mist: dates, hints, captions"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.text.inverse",
-      "token_value": "#020202",
+      "token_value": "#0e101c",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_detail",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Text on a white button or badge"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Midnight: text on candle and on cream"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.primary",
-      "token_value": null,
+      "token_value": "#ffb85c",
       "value_type": "color",
       "unit": null,
-      "reference_token": "color.surface.inverse",
+      "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": null,
-        "measurement_method": null,
-        "notes": "Alias"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Candle: the one main action on a screen. A warm gold, like candlelight or a lit sign."
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.action.primary_pressed",
-      "token_value": "#dbdbdd",
+      "token_value": "#f0a646",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_confirm",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Primary button while pressed or busy"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Candle while held"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -356,90 +407,105 @@
     {
       "category": "color",
       "token_name": "color.action.secondary_pressed",
-      "token_value": "#46464a",
+      "token_value": "#2a2e4a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Secondary button while pressed"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Indigo light: a pressed or raised panel"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.accent.default",
-      "token_value": "#58e9ff",
+      "token_value": "#8fa2ff",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Links, focus ring, selected state"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Periwinkle: links, progress, small selection marks"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.accent.strong",
-      "token_value": "#07708a",
+      "token_value": "#3a43a0",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_app_settings",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Switch track when on, progress fill"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Deep periwinkle: a fill behind text"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.accent.soft",
-      "token_value": "#07708a40",
+      "token_value": "#8fa2ff2b",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_app_settings",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
-        "notes": "Tinted surface behind accent content"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Periwinkle wash"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.brand.belong",
+      "token_value": "#f0619f",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Neon pink: people and belonging, in small amounts only"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.border.default",
-      "token_value": "#46464a",
+      "token_value": "#2f3350",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot",
-        "notes": "Row dividers and outlines"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Divider lines"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.border.strong",
-      "token_value": "#6e6e73",
+      "token_value": "#737899",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_app_settings",
-        "measurement_method": "Sampled as #626266, then lightened to reach 3:1 on the canvas",
-        "notes": "Outline of a control you can press"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "A line that must be found"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -449,7 +515,7 @@
       "token_value": null,
       "value_type": "color",
       "unit": null,
-      "reference_token": "color.accent.default",
+      "reference_token": "color.text.primary",
       "status": "complete",
       "evidence": {
         "reference_id": null,
@@ -461,52 +527,52 @@
     {
       "category": "color",
       "token_name": "color.status.success",
-      "token_value": "#8ce0b2",
+      "token_value": "#a8d568",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
-        "notes": "Success text and icons"
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Lime: success"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.status.success_soft",
-      "token_value": "#1b3931",
+      "token_value": "#22301a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
-        "notes": "Success surface"
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Lime wash"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.status.warning",
-      "token_value": "#ca951f",
+      "token_value": "#ff8f5a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
-        "notes": "Warning text and icons"
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Warning: a red-orange, clearly apart from the candle-gold button"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.status.error",
-      "token_value": "#ffa789",
+      "token_value": "#ff6b6b",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
@@ -514,14 +580,14 @@
       "evidence": {
         "reference_id": "empower_decision",
         "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
-        "notes": "Error text and icons"
+        "notes": "Error: red"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
       "category": "color",
       "token_name": "color.status.error_soft",
-      "token_value": "#452c2b",
+      "token_value": "#3d1f24",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
@@ -536,14 +602,14 @@
     {
       "category": "color",
       "token_name": "color.ember.spark",
-      "token_value": "#9a9aa6",
+      "token_value": "#b8aea4",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette, warmth stages (docs/palette-brief.md)",
         "notes": "Empower score, first stage"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -551,14 +617,14 @@
     {
       "category": "color",
       "token_name": "color.ember.warm",
-      "token_value": "#d97706",
+      "token_value": "#e8853a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette, warmth stages (docs/palette-brief.md)",
         "notes": "Empower score, second stage"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -566,14 +632,14 @@
     {
       "category": "color",
       "token_name": "color.ember.glow",
-      "token_value": "#ea580c",
+      "token_value": "#d9541e",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette, warmth stages (docs/palette-brief.md)",
         "notes": "Empower score, third stage"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -581,14 +647,14 @@
     {
       "category": "color",
       "token_name": "color.ember.blaze",
-      "token_value": "#dc2626",
+      "token_value": "#b3261e",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "empower_decision",
-        "measurement_method": "Kept from the Empower palette of 8 November; Disney+ has no equivalent",
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette, warmth stages (docs/palette-brief.md). She calls this stage Bonfire",
         "notes": "Empower score, top stage"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -596,14 +662,14 @@
     {
       "category": "color",
       "token_name": "color.scrim.strong",
-      "token_value": "#080808f2",
+      "token_value": "#07080ff2",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
         "notes": "Bottom of the fade over a card image"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -611,14 +677,14 @@
     {
       "category": "color",
       "token_name": "color.scrim.soft",
-      "token_value": "#08080866",
+      "token_value": "#07080f66",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
         "notes": "Middle of the fade over a card image"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -626,14 +692,14 @@
     {
       "category": "color",
       "token_name": "color.scrim.none",
-      "token_value": "#08080800",
+      "token_value": "#07080f00",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Sampled pixel value from the 3x reference screenshot; the transparency is a decision",
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
         "notes": "Top of the fade over a card image"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -641,15 +707,15 @@
     {
       "category": "color",
       "token_name": "color.glow.ambient",
-      "token_value": "#07708a38",
+      "token_value": "#8fa2ff14",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Modelled on the soft colour glow behind the home title",
-        "notes": "Glow at the top of a discovery screen"
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "A very faint periwinkle wash at the top of a screen"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -790,6 +856,21 @@
     },
     {
       "category": "type",
+      "token_name": "type.size.figure",
+      "token_value": 52,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "A big number, such as hours together"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
       "token_name": "type.weight.regular",
       "token_value": 400,
       "value_type": "number",
@@ -845,6 +926,21 @@
         "reference_id": "disney_home",
         "measurement_method": "Read from the reference lettering",
         "notes": "Screen title"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "type",
+      "token_name": "type.weight.black",
+      "token_value": 900,
+      "value_type": "number",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "Screen titles and big figures, for character"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -1091,60 +1187,60 @@
     {
       "category": "radius",
       "token_name": "radius.small",
-      "token_value": 4,
-      "value_type": "dimension",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "disney_detail",
-        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
-        "notes": "Buttons, fields, cards, badges"
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "radius",
-      "token_name": "radius.medium",
-      "token_value": 8,
-      "value_type": "dimension",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "disney_home",
-        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
-        "notes": "Larger image cards"
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "radius",
-      "token_name": "radius.large",
-      "token_value": 16,
-      "value_type": "dimension",
-      "unit": "px",
-      "reference_token": null,
-      "status": "complete",
-      "evidence": {
-        "reference_id": "disney_account",
-        "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
-        "notes": "Top corners of a sheet or dialog"
-      },
-      "value_rule": "Set a verified core value, or an alias; never both."
-    },
-    {
-      "category": "radius",
-      "token_name": "radius.bubble",
-      "token_value": 18,
+      "token_value": 10,
       "value_type": "dimension",
       "unit": "px",
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; the Disney+ reference does not show this",
-        "notes": "Chat bubbles; chat is outside the Disney+ reference"
+        "measurement_method": "Daniel's decision, November 23, 2026: the corner scale of the Caelos design system",
+        "notes": "Controls: buttons, fields, choices"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.medium",
+      "token_value": 13.5,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Daniel's decision, November 23, 2026: the corner scale of the Caelos design system",
+        "notes": "Tiles and small cards"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.large",
+      "token_value": 18.23,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Daniel's decision, November 23, 2026: the corner scale of the Caelos design system",
+        "notes": "Panels, cards, sheets"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.bubble",
+      "token_value": 18.23,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Daniel's decision, November 23, 2026: the corner scale of the Caelos design system",
+        "notes": "Chat bubbles"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -1175,6 +1271,21 @@
         "reference_id": "disney_home",
         "measurement_method": "Measured in the 3x reference screenshot and divided by 3",
         "notes": "Avatars"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "radius",
+      "token_name": "radius.tight",
+      "token_value": 7.41,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Daniel's decision, November 23, 2026: the corner scale of the Caelos design system",
+        "notes": "Small marks such as tags"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -1226,15 +1337,30 @@
     {
       "category": "shadow",
       "token_name": "shadow.raised",
-      "token_value": "0 2px 8px #00000059",
+      "token_value": "0 6px 18px -6px #00000080",
       "value_type": "shadow",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; the Disney+ reference does not show this",
-        "notes": "Cards that lift on press"
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "A soft shadow under a panel"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.none",
+      "token_value": "0 0 0 #00000000",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "No shadow: switches off one a part would otherwise inherit"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -1945,6 +2071,36 @@
     },
     {
       "category": "size",
+      "token_name": "size.tile",
+      "token_value": 168,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "The least height of a big answer tile"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.card.person",
+      "token_value": 156,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "Width of one person card on a shelf: two and a bit fit across a phone, so the next card peeks in"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
       "token_name": "size.deck",
       "token_value": 430,
       "value_type": "dimension",
@@ -2165,6 +2321,21 @@
         "reference_id": "empower_decision",
         "measurement_method": "Team decision; the Disney+ reference does not show this",
         "notes": "Narrowest a voice note gets"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "size",
+      "token_name": "size.wave",
+      "token_value": 96,
+      "value_type": "dimension",
+      "unit": "px",
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Team decision; the Disney+ reference does not show this",
+        "notes": "Width of the bars that draw a voice note"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     },
@@ -2486,14 +2657,14 @@
     {
       "category": "shadow",
       "token_name": "shadow.highlight",
-      "token_value": "inset 0 1px 0 #ffffff12",
+      "token_value": "inset 0 1px 0 #f5eee71f",
       "value_type": "shadow",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
         "notes": "A lit top edge that lifts a panel off the page"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -2529,16 +2700,91 @@
       "value_rule": "Set a verified core value, or an alias; never both."
     },
     {
+      "category": "shadow",
+      "token_name": "shadow.button_edge",
+      "token_value": "inset 0 1px 0 #ffffff66",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "A lit top edge on a button"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.button_foot",
+      "token_value": "inset 0 -2px 0 #0000002e",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "A shaded foot on a button, so it reads as raised"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.button_lift",
+      "token_value": "0 10px 28px -10px #ffb85c80",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "A warm glow under the main button, like a lit sign"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.halo_band",
+      "token_value": "0 0 0 4px #f5eee70f",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Design decision by Designer on November 23, 2026, for Daniel's review",
+        "notes": "A soft band around a photograph, so it does not cut straight into the page"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "shadow",
+      "token_name": "shadow.halo_glow",
+      "token_value": "0 0 0 0 #00000000",
+      "value_type": "shadow",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "No glow around photographs: the photograph carries the colour"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
       "category": "color",
       "token_name": "color.border.hairline",
-      "token_value": "#f9f9f91a",
+      "token_value": "#f5eee71a",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "measurement_method": "Derived from Saumya's Warm Evenings palette by Designer on November 23, 2026; not one of her values",
         "notes": "The faint edge that keeps a dark image from melting into the page"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
@@ -2546,15 +2792,45 @@
     {
       "category": "color",
       "token_name": "color.border.hairline_strong",
-      "token_value": "#f9f9f9cc",
+      "token_value": "#f5eee7cc",
       "value_type": "color",
       "unit": null,
       "reference_token": null,
       "status": "complete",
       "evidence": {
         "reference_id": "empower_decision",
-        "measurement_method": "Team decision; modelled on the Disney+ tile and panel treatment, not measured from the iOS stills",
+        "measurement_method": "Derived from Saumya's Warm Evenings palette by Designer on November 23, 2026; not one of her values",
         "notes": "That edge at full strength while the pointer is on the tile"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.surface.marked",
+      "token_value": "#2b3162",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "empower_decision",
+        "measurement_method": "Indigo-and-candle palette, a trial by Designer on November 23, 2026, after Daniel's notes and the Codex review",
+        "notes": "Indigo bright: a selected choice or a block singled out"
+      },
+      "value_rule": "Set a verified core value, or an alias; never both."
+    },
+    {
+      "category": "color",
+      "token_name": "color.ember.kindling",
+      "token_value": "#f2b66d",
+      "value_type": "color",
+      "unit": null,
+      "reference_token": null,
+      "status": "complete",
+      "evidence": {
+        "reference_id": "saumya_palette",
+        "measurement_method": "Saumya's Warm Evenings palette, warmth stages (docs/palette-brief.md)",
+        "notes": "The stage between spark and warm; no screen draws it yet"
       },
       "value_rule": "Set a verified core value, or an alias; never both."
     }

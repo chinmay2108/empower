@@ -16,7 +16,7 @@
    fails if a file is missing from the list.
    ========================================================================== */
 
-var CACHE = "empower-v6";
+var CACHE = "empower-v7";
 var NETWORK_WAIT_MS = 3000;
 
 var FILES = [

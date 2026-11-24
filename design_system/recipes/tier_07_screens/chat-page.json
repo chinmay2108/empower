@@ -20,14 +20,8 @@
     },
     "& .page > section:has(.empty)": {
       "justify-content": "center"
-    },
-    "& .empty": {
-      "background": "{color.surface.canvas}"
     }
   },
-  "surface": {
-    "base": "fill"
-  },
-  "example": "<div class=\"chat-page\"><div class=\"page\"><header class=\"chat-header\"><a class=\"chat-header__back\" href=\"#\" aria-label=\"Back to People\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg></a><a class=\"chat-header__who\" href=\"#\"><img class=\"avatar avatar--photo\" src=\"../img/people/u010.jpg\" alt=\"\"><span><span class=\"chat-header__name\">Felix C.</span><span class=\"chat-header__sub\">Met at Thursday Trivia at Alamo Drafthouse</span></span></a></header><section><div class=\"chat\"><p class=\"chat__note\">Say hi to Felix. (Replies are simulated in this demo.)</p><p class=\"chat__day\">Mon, Nov 23</p><div class=\"bubble bubble--me\">Thursday works for me<span class=\"bubble__time\">11:36 AM</span></div><div class=\"bubble bubble--them\">See you there<span class=\"bubble__time\">11:46 AM</span></div></div></section></div><form class=\"composer\"><div class=\"composer__inner composer__type\"><input class=\"composer__input\" autocomplete=\"off\" maxlength=\"300\" placeholder=\"Message Felix\" aria-label=\"Message Felix\"><button class=\"composer__send\" type=\"submit\" aria-label=\"Send\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z\"/></svg></button></div></form></div>",
+  "example": "<div class=\"chat-page\"><div class=\"page\"><header class=\"chat-header\"><a class=\"chat-header__back\" href=\"#\" aria-label=\"Back to People\"><svg class=\"back__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 5l-7 7 7 7\"/></svg></a><a class=\"chat-header__who\" href=\"#\"><img class=\"avatar avatar--photo\" src=\"../img/people/u010.jpg\" alt=\"\"><span><span class=\"chat-header__name\">Felix C.</span><span class=\"chat-header__sub\">Met at Thursday Trivia at Alamo Drafthouse</span></span></a></header><section><div class=\"chat\"><p class=\"chat__note\">Say hi to Felix. (Replies are simulated in this demo.)</p><p class=\"chat__day\">Mon, Nov 23</p><div class=\"bubble bubble--me\">Thursday works for me<span class=\"bubble__time\">11:36 AM</span></div><div class=\"chat__row\"><img class=\"avatar avatar--sm avatar--photo\" src=\"../img/people/u010.jpg\" alt=\"\"><div class=\"bubble bubble--them\">See you there<span class=\"bubble__time\">11:46 AM</span></div></div></div></section></div><form class=\"composer\"><div class=\"composer__inner composer__type\"><input class=\"composer__input\" autocomplete=\"off\" maxlength=\"300\" placeholder=\"Message Felix\" aria-label=\"Message Felix\"><button class=\"composer__send\" type=\"submit\" aria-label=\"Send\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1l1.9 6.4 9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z\"/></svg></button></div></form></div>",
   "frame": "phone"
 }

@@ -1,0 +1,34 @@
+{
+  "className": "star",
+  "purpose": "Marks a person as a favourite. Off, it is an outlined star; on, the star fills with candle gold, so the change is a shape as well as a colour.",
+  "base": {
+    "display": "grid",
+    "place-items": "center",
+    "width": "{size.touch_target}",
+    "height": "{size.touch_target}",
+    "padding": "0",
+    "border": "0",
+    "border-radius": "{radius.round}",
+    "background": "{color.scrim.soft}",
+    "color": "{color.text.primary}",
+    "& svg": {
+      "width": "{size.icon.md}",
+      "height": "{size.icon.md}",
+      "fill": "none",
+      "stroke": "currentColor",
+      "stroke-width": "{border.width.strong}",
+      "stroke-linejoin": "round"
+    },
+    "&[aria-pressed=\"true\"]": {
+      "color": "{color.action.primary}"
+    },
+    "&[aria-pressed=\"true\"] svg": {
+      "fill": "currentColor"
+    }
+  },
+  "interaction": {
+    "base": "dim"
+  },
+  "example": "<button type=\"button\" class=\"star\" aria-pressed=\"false\" aria-label=\"Add Maya K. to favourites\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z\"/></svg></button>",
+  "frame": "inline"
+}

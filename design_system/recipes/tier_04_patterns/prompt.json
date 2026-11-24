@@ -1,0 +1,27 @@
+{
+  "className": "prompt",
+  "purpose": "One thing about a person, said large: a small label and a big answer on its own panel, the way Hinge shows a prompt.",
+  "base": {
+    "padding": "{space.5}",
+    "margin-bottom": "{space.3}"
+  },
+  "elements": {
+    "label": {
+      "margin": "0 0 {space.2}",
+      "color": "{color.text.secondary}"
+    },
+    "answer": {
+      "margin": "0",
+      "text-wrap": "balance"
+    }
+  },
+  "surface": {
+    "base": "panel"
+  },
+  "text": {
+    "__label": "label",
+    "__answer": "headline"
+  },
+  "example": "<div class=\"prompt\"><p class=\"prompt__label\">About Maya</p><p class=\"prompt__answer\">Moved from Denver 11 months ago for a new job. Lives in Belmont.</p></div>",
+  "frame": "block"
+}

@@ -24,21 +24,38 @@
     return " " + ui.ember(people.scoreOf(person));
   }
 
+  function shelf(heading, cards) {
+    return (heading ? '<h2 class="section-title">' + heading + "</h2>" : "") + '<div class="people-shelf">' + cards.join("") + "</div>";
+  }
+
+  /* A match: the whole card opens their profile; the star and Message sit on top of that. */
+  function matchCard(r, favorites) {
+    var g = store.getGroup(r.connection.groupId);
+    var last = store.getMessages(r.person.id).slice(-1)[0];
+    return '<article class="people-card"><div class="people-card__media">' + ui.avatar(r.person) + (last ? "" : '<span class="tag">New</span>') + "</div>" +
+      '<div class="people-card__body"><p class="people-card__name"><a class="people-card__link" href="person.html?id=' + r.person.id + '">' + r.person.name + "</a>" + scoreBadge(r.person) +
+      '</p><p class="people-card__meta">' +
+      (people.needsNudge(r.person, commitments, now) ? "It's been 3 weeks. Go together this week?" :
+        last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
+      " · " + STAGE_LABELS[people.warmthStage(people.timeTogether(r.person, commitments, store.getGroups()), true)] + "</p>" +
+      '<div class="people-card__actions"><a class="mini-btn mini-btn--action" href="chat.html?id=' + r.person.id + '">' + ui.actionIcon("message") + "Message</a></div></div>" +
+      ui.star(r.person, favorites.indexOf(r.person.id) !== -1) + "</article>";
+  }
+
   /* People you keep seeing but haven't added: first names only, with an Add button. */
-  function familiarSection() {
-    var faces = people.familiarFaces(store.getPopulation(), commitments, store.getConnections(), 3);
-    if (!faces.length) return "";
+  function familiarCards() {
     var LINES = [
       function (n) { return n + " sessions in the same room. Maybe say hi?"; },
       function (n) { return "You've crossed paths " + n + " times. Worth a hello?"; },
       function (n) { return "You keep ending up at the same sessions (" + n + " so far)."; },
       function (n) { return n + " sessions together, and you haven't added each other yet."; }
     ];
-    return '<h2 class="section-title">Familiar faces</h2>' + faces.map(function (f, i) {
-      return '<div class="people-row">' + ui.avatar(f.person) + '<div class="people-row__body">' +
-        '<p class="people-row__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="people-row__meta">' + ui.escapeHtml(LINES[i % LINES.length](f.sessions)) + "</p></div>" +
-        '<button type="button" class="mini-btn" data-add="' + f.person.id + '">Add</button></div>';
-    }).join("");
+    return people.familiarFaces(store.getPopulation(), commitments, store.getConnections(), 3).map(function (f, i) {
+      return '<article class="people-card"><div class="people-card__media">' + ui.avatar(f.person) + "</div>" +
+        '<div class="people-card__body"><p class="people-card__name">' + f.person.name.split(" ")[0] + scoreBadge(f.person) + '</p><p class="people-card__meta">' +
+        ui.escapeHtml(LINES[i % LINES.length](f.sessions)) + "</p>" +
+        '<div class="people-card__actions"><button type="button" class="mini-btn mini-btn--action" data-add="' + f.person.id + '">Add</button></div></div></article>';
+    });
   }
 
   var rows = store.getConnections().map(function (k) {
@@ -50,26 +67,23 @@
   var matches = rows.filter(function (r) { return r.matched; });
   var pending = rows.length - matches.length;
 
-  host.innerHTML =
-    '<h1 class="title">Your people</h1>' +
-    '<p class="subtitle">The people you keep running into.</p>' +
-    (matches.length ? '<div class="people-grid">' + matches.map(function (r) {
-      var g = store.getGroup(r.connection.groupId);
-      var last = store.getMessages(r.person.id).slice(-1)[0];
-      return '<article class="people-card"><div class="people-card__media">' + ui.avatar(r.person) +
-        (last ? "" : '<span class="tag">New</span>') +
-        '<p class="people-card__name">' + r.person.name + scoreBadge(r.person) + "</p></div>" +
-        '<div class="people-card__body"><p class="people-card__meta">' +
-        (people.needsNudge(r.person, commitments, now) ? "It's been 3 weeks. Go together this week?" :
-          last ? ui.escapeHtml(last.text).slice(0, 48) : "Met at " + g.name) +
-        " · " + STAGE_LABELS[people.warmthStage(people.timeTogether(r.person, commitments, store.getGroups()), true)] +
-        "</p>" + '<div class="people-card__actions"><a class="mini-btn mini-btn--dark" href="chat.html?id=' + r.person.id + '">Message</a>' +
-        '<a class="mini-btn" href="person.html?id=' + r.person.id + '">Profile</a></div></div></article>';
-    }).join("") + "</div>" :
-      '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">Met someone you liked? Add them after you check in. If they add you too, they\'ll show up here.</p>' +
-      '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>') +
-    familiarSection() +
-    (pending ? '<p class="small muted mt-4">' + pending + " more might add you back soon.</p>" : "");
+  /* Favourites get their own shelf first; every match is still on the shelf below it. */
+  function render() {
+    var favorites = store.getFavorites();
+    var starred = matches.filter(function (r) { return favorites.indexOf(r.person.id) !== -1; });
+    var familiar = familiarCards();
+    host.innerHTML =
+      '<h1 class="title">Your people</h1>' +
+      '<p class="subtitle">The people you keep running into.</p>' +
+      (starred.length ? shelf("Favourites", starred.map(function (r) { return matchCard(r, favorites); })) : "") +
+      (matches.length ? shelf(starred.length ? "Everyone" : "", matches.map(function (r) { return matchCard(r, favorites); })) :
+        '<div class="empty"><p class="empty__title">No matches yet</p><p class="small">Met someone you liked? Add them after you check in. If they add you too, they\'ll show up here.</p>' +
+        '<p class="mt-4"><a class="btn btn--inline" href="reflect.html">Check in</a></p></div>') +
+      (familiar.length ? shelf("Familiar faces", familiar) : "") +
+      (pending ? '<p class="small muted mt-4">' + pending + " more might add you back soon.</p>" : "");
+  }
+  render();
+  document.addEventListener("empower:favorite", render);
 
   /* Add a familiar face. If they add you back you match; either way they leave Familiar faces. */
   host.addEventListener("click", function (e) {

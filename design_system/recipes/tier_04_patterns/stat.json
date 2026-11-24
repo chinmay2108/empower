@@ -2,11 +2,12 @@
   "className": "stat",
   "purpose": "One number with its label.",
   "base": {
-    "padding": "{space.4}"
+    "padding": "{space.5} {space.4}"
   },
   "elements": {
     "value": {
-      "font-variant-numeric": "tabular-nums"
+      "font-variant-numeric": "tabular-nums",
+      "margin-bottom": "{space.2}"
     },
     "label": {
       "color": "{color.text.secondary}"
@@ -16,7 +17,7 @@
     "base": "panel"
   },
   "text": {
-    "__value": "title",
+    "__value": "figure",
     "__label": "meta"
   },
   "example": "<div class=\"stat\"><div class=\"stat__value\">7</div><div class=\"stat__label\">hours together</div></div>",

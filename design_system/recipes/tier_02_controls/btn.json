@@ -1,8 +1,9 @@
 {
   "className": "btn",
-  "purpose": "The main action on a screen: white, squared, capitals, like Disney's Play button.",
+  "purpose": "The main action on a screen: candle gold with a soft warm glow. Use one per screen.",
   "surface": {
-    "--secondary": "fill"
+    "base": "button",
+    "--secondary": "button-quiet"
   },
   "base": {
     "display": "inline-flex",
@@ -13,8 +14,6 @@
     "min-height": "{size.touch_target}",
     "padding": "{space.3} {space.6}",
     "border": "0",
-    "border-radius": "{radius.small}",
-    "background": "{color.action.primary}",
     "color": "{color.text.inverse}",
     "font-family": "inherit",
     "text-decoration": "none",

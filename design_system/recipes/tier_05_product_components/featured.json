@@ -4,10 +4,14 @@
     "event-art",
     "btn"
   ],
-  "purpose": "The home invitation to this week's picks: a strip of event artwork fading into a title and one action.",
+  "purpose": "The one thing to do next on Home: event artwork fading into a title and the screen's single action.",
   "base": {
     "position": "relative",
-    "isolation": "isolate"
+    "isolation": "isolate",
+    "display": "block",
+    "color": "inherit",
+    "text-decoration": "none",
+    "margin-bottom": "{space.3}"
   },
   "elements": {
     "art": {
@@ -25,6 +29,13 @@
         "inset": "0",
         "background": "linear-gradient(to top, {color.surface.sunken}, {color.scrim.none} 50%)",
         "pointer-events": "none"
+      },
+      "&--single": {
+        "grid-template-columns": "1fr",
+        "& .event-art": {
+          "aspect-ratio": "{ratio.detail}",
+          "border-radius": "0"
+        }
       }
     },
     "body": {
@@ -54,5 +65,11 @@
     "__meta": "body"
   },
   "example": "<div class=\"featured\"><div class=\"featured__art\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\" draggable=\"false\"><img class=\"event-art\" src=\"../img/dance.jpg\" alt=\"\" draggable=\"false\"><img class=\"event-art\" src=\"../img/volunteer.jpg\" alt=\"\" draggable=\"false\"></div><div class=\"featured__body\"><p class=\"featured__title\">Your weekly picks</p><p class=\"featured__meta\">Just one thing. We've lined up a few.</p><a class=\"btn\" href=\"#\">See this week</a></div></div>",
-  "frame": "block"
+  "frame": "block",
+  "examples": {
+    "__art--single": "<a class=\"featured\" href=\"#\"><div class=\"featured__art featured__art--single\"><img class=\"event-art\" src=\"../img/trivia.jpg\" alt=\"\"></div><div class=\"featured__body\"><p class=\"featured__title\">Thursday Trivia</p><p class=\"featured__meta\">Thu, Nov 26 · 7pm</p><span class=\"btn\">See the plan</span></div></a>"
+  },
+  "interaction": {
+    "base": "card"
+  }
 }

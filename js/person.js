@@ -33,28 +33,30 @@
     .filter(function (g) { return store.getCommitments().some(function (c) { return c.groupId === g.id; }); });
   var reliability = person.reliability >= 0.8 ? "Almost always" : person.reliability >= 0.65 ? "Usually" : "Sometimes";
 
+  var first = person.name.split(" ")[0];
   host.innerHTML =
     '<div class="person-hero"><div class="person-hero__scene" aria-hidden="true">' + ui.avatar(person) + "</div>" +
     '<div class="person-hero__photo">' + ui.avatar(person, "lg") + "</div>" +
     '<div class="person-hero__body"><h1 class="person-hero__name">' + person.name + '</h1><p class="person-hero__line">' + ui.ember(people.scoreOf(person), "lg") +
     ' <span class="small muted">Empower score</span></p>' +
-    '<p class="person-hero__meta">Met at ' + ui.escapeHtml(store.getGroup(connection.groupId).name) + "</p></div></div>" +
-    '<p class="subtitle">' + person.bio + " Lives in " + person.neighborhood + ".</p>" +
-    '<div class="chip-row"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
+    '<p class="person-hero__meta">Met at ' + ui.escapeHtml(store.getGroup(connection.groupId).name) + "</p></div>" +
+    ui.star(person, store.getFavorites().indexOf(person.id) !== -1) + "</div>" +
+    '<div class="prompt"><p class="prompt__label">About ' + first + '</p><p class="prompt__answer">' + person.bio + " Lives in " + person.neighborhood + ".</p></div>" +
+    '<div class="prompt"><p class="prompt__label">You both like</p><p class="prompt__answer">' + (shared.length ? shared.join(", ") : "Still finding out") + "</p></div>" +
+    '<h2 class="section-title">Just between you two</h2>' +
+    '<div class="stat-row"><div class="stat"><div class="stat__value">' + time.sessions + '</div><div class="stat__label">' + (time.sessions === 1 ? "session together" : "sessions together") + "</div></div>" +
+    '<div class="stat"><div class="stat__value">' + time.hours + '</div><div class="stat__label">hours together</div></div></div>' +
+    '<div class="chip-row mt-3"><span class="tag">' + STAGE_LABELS[stage] + "</span> " +
     tags.map(function (t) { return '<span class="tag">' + ui.escapeHtml(t) + "</span>"; }).join(" ") + "</div>" +
-    '<p class="small muted mt-3">Just between you two.</p>' +
     '<ul class="facts">' +
-    "<li><span>Time together</span><span>" + time.sessions + (time.sessions === 1 ? " session, " : " sessions, ") + time.hours + " hours</span></li>" +
-    "<li><span>You both like</span><span>" + (shared.length ? shared.join(", ") : "Still finding out") + "</span></li>" +
     (groupsInCommon.length ? "<li><span>Groups in common</span><span>" + groupsInCommon.map(function (g) { return g.name; }).join(", ") + "</span></li>" : "") +
     "<li><span>Shows up</span><span>" + reliability + "</span></li>" +
     "<li><span>Meetups outside sessions</span><span id=\"meetup-count\">" + meetupsWith().length + "</span></li></ul>" +
-    '<div class="card card--outline"><p class="card__title">Met up outside a session?</p>' +
-    '<p class="card__meta">Saw ' + person.name.split(" ")[0] + " outside a session? Log it and it counts for both of you.</p>" +
+    '<div class="card"><p class="card__title">Met up outside a session?</p>' +
+    '<p class="card__meta">Saw ' + first + " outside a session? Log it and it counts for both of you.</p>" +
     '<p class="mt-4" id="meetup-action">' + meetupButton() + "</p></div>" +
     '<p class="small muted">Demo profile, not a real person.</p>' +
-    '<div class="footer-action"><div class="footer-action__inner"><a class="btn" href="chat.html?id=' + person.id + '">Message ' +
-    person.name.split(" ")[0] + "</a></div></div>";
+    '<div class="footer-action"><div class="footer-action__inner"><a class="btn" href="chat.html?id=' + person.id + '">Message ' + first + "</a></div></div>";
 
   function meetupsWith() {
     return store.getMeetups().filter(function (m) { return m.personId === person.id && m.confirmed; });

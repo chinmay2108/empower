@@ -6,24 +6,23 @@
     "place-items": "center",
     "min-height": "{size.field}",
     "padding": "{space.3} {space.2}",
-    "border": "{border.width.default} solid {color.border.strong}",
-    "border-radius": "{radius.small}",
-    "background": "transparent",
+    "border": "0",
     "color": "{color.text.primary}",
     "font-family": "inherit",
     "text-align": "center",
     "&[aria-pressed=\"true\"]": {
-      "background": "{color.action.primary}",
-      "color": "{color.text.inverse}",
-      "border-color": "{color.action.primary}"
+      "background": "{color.surface.marked}"
     }
   },
   "interaction": {
-    "base": "toggle"
+    "base": "on-dark"
   },
   "text": {
     "base": "label-strong"
   },
   "example": "<button type=\"button\" class=\"choice\" aria-pressed=\"false\">Good</button>",
-  "frame": "block"
+  "frame": "block",
+  "surface": {
+    "base": "button-quiet"
+  }
 }

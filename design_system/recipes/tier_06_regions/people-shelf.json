@@ -1,0 +1,21 @@
+{
+  "className": "people-shelf",
+  "uses": [
+    "people-card"
+  ],
+  "purpose": "One row of person cards you scroll sideways, like a Disney shelf. Every group of people on the People screen is one of these, so a person always looks the same.",
+  "base": {
+    "display": "flex",
+    "gap": "{space.3}",
+    "margin": "0 calc({space.5} * -1) {space.5}",
+    "padding": "0 {space.5}",
+    "overflow-x": "auto",
+    "scrollbar-width": "none",
+    "& > *": {
+      "flex": "none",
+      "width": "{size.card.person}"
+    }
+  },
+  "example": "<div class=\"people-shelf\"><article class=\"people-card\"><div class=\"people-card__media\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u004.jpg\" alt=\"\"></div><div class=\"people-card__body\"><p class=\"people-card__name\"><a class=\"people-card__link\" href=\"#\">Maya K.</a></p><p class=\"people-card__meta\">Three sessions together.</p><div class=\"people-card__actions\"><a class=\"mini-btn mini-btn--action\" href=\"#\"><svg class=\"mini-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/></svg>Message</a></div></div></article><article class=\"people-card\"><div class=\"people-card__media\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u016.jpg\" alt=\"\"></div><div class=\"people-card__body\"><p class=\"people-card__name\"><a class=\"people-card__link\" href=\"#\">Devon R.</a></p><p class=\"people-card__meta\">Met at Thursday Trivia.</p><div class=\"people-card__actions\"><a class=\"mini-btn mini-btn--action\" href=\"#\"><svg class=\"mini-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/></svg>Message</a></div></div></article><article class=\"people-card\"><div class=\"people-card__media\"><img class=\"avatar avatar--lg avatar--photo\" src=\"../img/people/u009.jpg\" alt=\"\"></div><div class=\"people-card__body\"><p class=\"people-card__name\"><a class=\"people-card__link\" href=\"#\">Felix C.</a></p><p class=\"people-card__meta\">Coffee before trivia?</p><div class=\"people-card__actions\"><a class=\"mini-btn mini-btn--action\" href=\"#\"><svg class=\"mini-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/></svg>Message</a></div></div></article></div>",
+  "frame": "block"
+}

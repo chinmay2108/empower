@@ -10,9 +10,9 @@ Round 1 transcribes the craft of the Disney+ iOS app: how it presents cards, how
 
 Taken from the reference (values measured from its screens, recorded per token in `design_system/tier_00_foundations.json`):
 
-- Near-black canvas (`#17171b`), one lighter panel colour for fields and rows, a darker base under artwork.
+- Midnight canvas (`#0e101c`), one indigo panel colour (`#1b1e33`) for cards, fields and rows, a brighter indigo (`#2b3162`) for anything selected. The mood is a city at night: dark indigo with warm lights.
 - Image-led cards: artwork fills the card, a fade at the bottom carries a bold white title.
-- One white, squared, uppercase primary button per screen. Secondary buttons are panel-coloured.
+- One candle-gold (`#ffb85c`), rounded, uppercase primary button per screen, flat with a soft warm glow under it. Secondary buttons are a lighter indigo; small actions on cards write their label in candle gold on that fill. Nothing draws a coloured outline or a lip: a selected choice fills with the brighter indigo and shows a tick. Corners follow the Caelos scale (10, 13.5 and 18.23 pixels).
 - White badges on artwork ("Your pick this week"), quiet grey badges for categories.
 - Settings-style rows: label left, value right, a hairline between rows.
 - A frosted bottom bar with five destinations; the current one is white.
